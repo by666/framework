@@ -1,14 +1,14 @@
 //
-//  ColorUtil.m
+//  STColorUtil.m
 //
 //  Created by mark.zhang on 6/5/15.
 //  Copyright (c) 2015 idreamsky. All rights reserved.
 //
 
-#import "ColorUtil.h"
+#import "STColorUtil.h"
 #import <Accelerate/Accelerate.h>
 
-@implementation ColorUtil
+@implementation STColorUtil
 
 
 

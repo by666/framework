@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "STDataBaseUtil.h"
+#import "ByModel.h"
+#import "STRuntimeUtil.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    NSArray *array = [STRuntimeUtil getAllMethodNames:[ByModel class]];
+//    for(NSString *temp in array){
+//        [STLog print:@"这是啥" content:temp];
+//    }
+//    [[STDataBaseUtil sharedSTDataBaseUtil]insertRow:@"by666" cid:@"1"];
+    
+    ByModel *model = [[ByModel alloc]init];
+    model.title = @"by";
+    model.content = @"666";
+    
+
+    id test = model;
+    
+    [STLog print:@"测试" content:[test valueForKey:@"title"]];
     return YES;
 }
 

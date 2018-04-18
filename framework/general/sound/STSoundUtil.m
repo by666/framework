@@ -1,14 +1,14 @@
 //
-//  SoundUtil.m
-//  签到动画
+//  STSoundUtil.m
 //
-//  Created by 蒙奇D路飞 on 16/9/18.
+//
+//  Created by by.huang on 16/9/18.
 //  Copyright © 2016年 com.smh.pcn. All rights reserved.
 //
 
-#import "SoundUtil.h"
+#import "STSoundUtil.h"
 
-@implementation SoundUtil
+@implementation STSoundUtil
 /**生成音效ID*/
 +(SystemSoundID)creatSoundIDWithSoundName:(NSString *)soundName{
     NSString *audioFile = [[NSBundle mainBundle]pathForResource:soundName ofType:nil];

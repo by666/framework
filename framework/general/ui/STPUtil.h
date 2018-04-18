@@ -1,5 +1,5 @@
 //
-//  PUtil.h
+//  STPUtil.h
 //  gogo
 //
 //  Created by by.huang on 2017/10/21.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PUtil : NSObject
+@interface STPUtil : NSObject
 
 +(int)getActualWidth : (int)width;
 

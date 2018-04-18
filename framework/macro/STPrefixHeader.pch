@@ -15,6 +15,7 @@
 #import "STLog.h"
 #import "ThreePartyMacro.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "Singleton.h"
 
 
 //获取当前屏幕的高度

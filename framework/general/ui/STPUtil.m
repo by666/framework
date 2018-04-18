@@ -1,15 +1,15 @@
 
 //
-//  PUtil.m
+//  STPUtil.m
 //  gogo
 //
 //  Created by by.huang on 2017/10/21.
 //  Copyright © 2017年 by.huang. All rights reserved.
 //
 
-#import "PUtil.h"
+#import "STPUtil.h"
 
-@implementation PUtil
+@implementation STPUtil
 
 +(int)getActualWidth : (int)width{
     return ScreenWidth * width / 750;

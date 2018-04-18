@@ -1,14 +1,14 @@
 //
-//  TimeUtil.m
+//  STTimeUtil.m
 //  gogo
 //
 //  Created by by.huang on 2017/11/5.
 //  Copyright © 2017年 by.huang. All rights reserved.
 //
 
-#import "TimeUtil.h"
+#import "STTimeUtil.h"
 
-@implementation TimeUtil
+@implementation STTimeUtil
 
 +(NSString *)generateAll : (NSString *)timestamp{
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];

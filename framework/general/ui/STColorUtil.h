@@ -1,5 +1,5 @@
 //
-//  ColorUtil.h
+//  STColorUtil.h
 //
 //  Created by mark.zhang on 6/5/15.
 //  Copyright (c) 2015 idreamsky. All rights reserved.
@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger,ColorDirector){
     Top
 };
 
-@interface ColorUtil : NSObject
+@interface STColorUtil : NSObject
 
 #pragma mark 色彩转换UIColor,带alpha值
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert alpha:(CGFloat)alpha;

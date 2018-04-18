@@ -1,5 +1,5 @@
 //
-//  TimeUtil.h
+//  STTimeUtil.h
 //  gogo
 //
 //  Created by by.huang on 2017/11/5.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TimeUtil : NSObject
+@interface STTimeUtil : NSObject
 
 #pragma mark 格式化时间（YYYY年MM月dd日 HH:mm）
 +(NSString *)generateAll : (NSString *)timestamp;
