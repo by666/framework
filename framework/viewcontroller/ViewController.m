@@ -7,37 +7,26 @@
 //
 
 #import "ViewController.h"
-#import "TestView.h"
-#import "TestViewModel.h"
+#import "ByViewModel.h"
+#import "ByView.h"
 
 @interface ViewController ()
 
-@property (strong, nonatomic)TestViewModel *mViewModel;
+@property (strong, nonatomic)ByViewModel *mByViewModel;
 
 @end
 
 @implementation ViewController
 
 
-+(instancetype)allocWithZone:(struct _NSZone *)zone{
-    ViewController *viewController = [super allocWithZone:zone];
-    @weakify(viewController)
-    
-    [[viewController rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
-        
-        @strongify(viewController)
-        TestViewModel *viewModel = [[TestViewModel alloc]init];
-        [viewController initView:viewModel];
-    }];
-    return viewController;
+
+-(void)viewDidLoad{
+    _mByViewModel = [[ByViewModel alloc]init];
+    ByView *byView = [[ByView alloc]initWithViewModel:_mByViewModel];
+    [self.view addSubview:byView];
+   
 }
 
-
--(void)initView:(TestViewModel *)viewModel{
-    TestView *testView = [[TestView alloc]init];
-    [testView bindViewModel:viewModel];
-    [self.view addSubview:testView];
-}
 
 
 

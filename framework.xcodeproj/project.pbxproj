@@ -25,8 +25,8 @@
 		00D324B1208598A7001EC82F /* ColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324A9208598A6001EC82F /* ColorUtil.m */; };
 		00D324B2208598A7001EC82F /* TimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324AC208598A7001EC82F /* TimeUtil.m */; };
 		00D324B3208598A7001EC82F /* PUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324AD208598A7001EC82F /* PUtil.m */; };
-		00D324B82085EE58001EC82F /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324B72085EE58001EC82F /* TestView.m */; };
-		00D324BB2085EEAC001EC82F /* TestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324BA2085EEAC001EC82F /* TestViewModel.m */; };
+		00D324C72086E330001EC82F /* ByModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324C62086E330001EC82F /* ByModel.m */; };
+		00D324CA2086E355001EC82F /* ByView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324C92086E355001EC82F /* ByView.m */; };
 		F7CC18FEA014615A522B69A1 /* Pods_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD31C7F288F0669DDF6673 /* Pods_framework.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,8 +78,6 @@
 		00D3249A208596ED001EC82F /* UILabel+StringFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+StringFrame.h"; sourceTree = "<group>"; };
 		00D3249E20859778001EC82F /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		00D3249F20859778001EC82F /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		00D324A120859794001EC82F /* TestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
-		00D324A220859794001EC82F /* TestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
 		00D324A4208597DF001EC82F /* ColorMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorMacro.h; sourceTree = "<group>"; };
 		00D324A7208598A6001EC82F /* SoundUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundUtil.m; sourceTree = "<group>"; };
 		00D324A8208598A6001EC82F /* SoundUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundUtil.h; sourceTree = "<group>"; };
@@ -90,11 +88,12 @@
 		00D324AD208598A7001EC82F /* PUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PUtil.m; sourceTree = "<group>"; };
 		00D324AE208598A7001EC82F /* PUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUtil.h; sourceTree = "<group>"; };
 		00D324AF208598A7001EC82F /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
-		00D324B62085EE58001EC82F /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
-		00D324B72085EE58001EC82F /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
-		00D324B92085EEAC001EC82F /* TestViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewModel.h; sourceTree = "<group>"; };
-		00D324BA2085EEAC001EC82F /* TestViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewModel.m; sourceTree = "<group>"; };
-		00D324BC2085F261001EC82F /* TestViewModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewModelProtocol.h; sourceTree = "<group>"; };
+		00D324C22086E2E0001EC82F /* ByViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ByViewModel.h; sourceTree = "<group>"; };
+		00D324C32086E2E0001EC82F /* ByViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ByViewModel.m; sourceTree = "<group>"; };
+		00D324C52086E330001EC82F /* ByModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ByModel.h; sourceTree = "<group>"; };
+		00D324C62086E330001EC82F /* ByModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ByModel.m; sourceTree = "<group>"; };
+		00D324C82086E355001EC82F /* ByView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ByView.h; sourceTree = "<group>"; };
+		00D324C92086E355001EC82F /* ByView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ByView.m; sourceTree = "<group>"; };
 		44CB19A2824E78F5D9947AB8 /* Pods-framework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-framework.release.xcconfig"; path = "Pods/Target Support Files/Pods-framework/Pods-framework.release.xcconfig"; sourceTree = "<group>"; };
 		70AB2E3AF702425BEFAEA1B9 /* Pods-framework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-framework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-framework/Pods-framework.debug.xcconfig"; sourceTree = "<group>"; };
 		C7AD31C7F288F0669DDF6673 /* Pods_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,8 +231,8 @@
 		007B1F6220858F17009EA9F1 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				00D324A120859794001EC82F /* TestModel.h */,
-				00D324A220859794001EC82F /* TestModel.m */,
+				00D324C52086E330001EC82F /* ByModel.h */,
+				00D324C62086E330001EC82F /* ByModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -241,8 +240,8 @@
 		007B1F6320858F1D009EA9F1 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				00D324B62085EE58001EC82F /* TestView.h */,
-				00D324B72085EE58001EC82F /* TestView.m */,
+				00D324C82086E355001EC82F /* ByView.h */,
+				00D324C92086E355001EC82F /* ByView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -269,9 +268,8 @@
 		00D324B42085EE25001EC82F /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
-				00D324B92085EEAC001EC82F /* TestViewModel.h */,
-				00D324BA2085EEAC001EC82F /* TestViewModel.m */,
-				00D324BC2085F261001EC82F /* TestViewModelProtocol.h */,
+				00D324C22086E2E0001EC82F /* ByViewModel.h */,
+				00D324C32086E2E0001EC82F /* ByViewModel.m */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -487,21 +485,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00D324B82085EE58001EC82F /* TestView.m in Sources */,
 				00D3249C208596ED001EC82F /* UIView+Frame.m in Sources */,
 				00D324A020859778001EC82F /* BaseViewController.m in Sources */,
 				00D324B2208598A7001EC82F /* TimeUtil.m in Sources */,
 				00D324B3208598A7001EC82F /* PUtil.m in Sources */,
 				007B1F3220858EB3009EA9F1 /* ViewController.m in Sources */,
-				00D324BB2085EEAC001EC82F /* TestViewModel.m in Sources */,
 				00D3249D208596ED001EC82F /* UILabel+ContentSize.m in Sources */,
 				00D324B1208598A7001EC82F /* ColorUtil.m in Sources */,
 				007B1F3D20858EB6009EA9F1 /* main.m in Sources */,
+				00D324C42086E2E0001EC82F /* ByViewModel.m in Sources */,
 				00D324B0208598A7001EC82F /* SoundUtil.m in Sources */,
+				00D324C72086E330001EC82F /* ByModel.m in Sources */,
 				007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */,
-				00D324A320859794001EC82F /* TestModel.m in Sources */,
 				00D3249B208596ED001EC82F /* UILabel+StringFrame.m in Sources */,
 				00D32491208594F4001EC82F /* STLog.m in Sources */,
+				00D324CA2086E355001EC82F /* ByView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
