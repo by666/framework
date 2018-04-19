@@ -7,6 +7,7 @@
 //
 
 #import "ByView.h"
+#import "STDataBaseUtil.h"
 @interface ByView()
 
 @property (strong, nonatomic)ByViewModel *mByViewModel;
@@ -36,7 +37,7 @@
     _mTestLabel.frame = CGRectMake(20, StatuBarHeight+30, ScreenWidth-40, 30);
     _mTestLabel.font = [UIFont systemFontOfSize:24];
     _mTestLabel.textColor = [UIColor yellowColor];
-    _mTestLabel.text = _mByModel.title;
+    _mTestLabel.text = _mByModel.test1;
     [self addSubview:_mTestLabel];
     
     UIButton *button = [[UIButton alloc]init];
@@ -49,12 +50,13 @@
 }
 
 -(void)OnClicked{
-    [_mByViewModel changeData:self];
+//    [_mByViewModel changeData:self];
 }
 
 
+
 -(void)updateView:(ByModel *)model{
-    _mTestLabel.text = _mByModel.title;
+    _mTestLabel.text = _mByModel.test1;
 
 }
 

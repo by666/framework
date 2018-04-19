@@ -26,13 +26,13 @@
 
 
 -(ByModel *)requestData{
-    _mByModel.title = @"测试标题";
-    _mByModel.content = @"测试内容";
+    _mByModel.test1 = @"测试标题";
+    _mByModel.test2 = @"测试内容";
     return _mByModel;
 }
 
 -(void)changeData : (id<ByViewModelProtocol>) delegate{
-    _mByModel.title = @"改变标题";
+    _mByModel.test1 = @"改变标题";
     if(delegate){
         [delegate updateView:_mByModel];
     }

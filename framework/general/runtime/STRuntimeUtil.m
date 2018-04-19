@@ -18,7 +18,6 @@
     for (int i = 0; i < propertyCount; i ++) {
         objc_property_t property = propertys[i];
         const char * propertyName = property_getName(property);
-        id propertyValue =[tempClass valueForKey:[NSString stringWithUTF8String:propertyName]];
         [allNames addObject:[NSString stringWithUTF8String:propertyName]];
     }
     free(propertys);
@@ -39,6 +38,12 @@
         }
     }
     return allMethods;
+}
+
+
++(id)getPropertyValue:(Class)tempClass key:(NSString *)key{
+    return [tempClass valueForKey:key];
+
 }
 
 @end

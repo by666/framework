@@ -10,7 +10,11 @@
 
 @interface ByModel : NSObject
 
-@property (copy, nonatomic) NSString *title;
-@property (copy, nonatomic) NSString *content;
+@property (copy, nonatomic) NSString *cid;
+@property (copy, nonatomic) NSString *test1;
+@property (copy, nonatomic) NSString *test2;
+@property (copy, nonatomic) NSString *test3;
+@property (copy, nonatomic) NSString *test4;
+@property (copy, nonatomic) NSString *test5;
 
 @end

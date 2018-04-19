@@ -13,7 +13,7 @@
 SINGLETON_DECLARATION(STDataBaseUtil)
 
 //建表
--(void)createTable:(NSString *)tableName;
+-(void)createTable:(NSString *)tableName model:(id)model;
 
 //插入一行数据源
 -(void)insertRow:(NSString *)tableName model:(id)model;
@@ -24,14 +24,14 @@ SINGLETON_DECLARATION(STDataBaseUtil)
 //删除所有数据
 -(void)deletaAll:(NSString *)tableName;
 
-//修改一条数据
--(void)updateRow:(NSString *)tableName cid:(NSString *)cid;
-
 //查找一条数据
--(void)queryRow:(NSString *)tableName cid:(NSString *)cid;
+-(id)queryRow:(NSString *)tableName cid:(NSString *)cid model:(id)model;
 
 //查找所有数据
--(void)queryAll:(NSString *)tableName;
+-(NSMutableArray *)queryAll:(NSString *)tableName model:(id)model;
+
+//修改一条数据
+-(void)updateRow:(NSString *)tableName cid:(NSString *)cid model:(id)model;
 
 
 @end

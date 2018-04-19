@@ -19,21 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-//    NSArray *array = [STRuntimeUtil getAllMethodNames:[ByModel class]];
-//    for(NSString *temp in array){
-//        [STLog print:@"这是啥" content:temp];
-//    }
-//    [[STDataBaseUtil sharedSTDataBaseUtil]insertRow:@"by666" cid:@"1"];
-    
-    ByModel *model = [[ByModel alloc]init];
-    model.title = @"by";
-    model.content = @"666";
-    
+    [[STDataBaseUtil sharedSTDataBaseUtil]createTable:@"st" model:[ByModel new]];
 
-    id test = model;
-    
-    [STLog print:@"测试" content:[test valueForKey:@"title"]];
     return YES;
 }
 
