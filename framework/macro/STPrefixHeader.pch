@@ -11,9 +11,10 @@
 
 #import <UIKit/UIKit.h>
 #import "APIMacro.h"
+#import "ColorMacro.h"
 #import "NotifyMacro.h"
-#import "STLog.h"
 #import "ThreePartyMacro.h"
+#import "STLog.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "Singleton.h"
 

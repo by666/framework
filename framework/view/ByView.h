@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ByViewModel.h"
-@interface ByView : UIView<ByViewModelProtocol>
+@interface ByView : UIView
 
 -(instancetype)initWithViewModel:(ByViewModel *)byViewModel;
 

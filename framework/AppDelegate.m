@@ -10,6 +10,7 @@
 #import "STDataBaseUtil.h"
 #import "ByModel.h"
 #import "STRuntimeUtil.h"
+#import "ByViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,8 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[STDataBaseUtil sharedSTDataBaseUtil]createTable:@"st" model:[ByModel new]];
-
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    ByViewController *controller = [[ByViewController alloc]init];
+        controller = [[UINavigationController alloc]initWithRootViewController:controller];
+    self.window.rootViewController = controller;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -51,5 +55,15 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler{
+    if ([shortcutItem.type isEqualToString:@"ShortCutOpen"]) {
+        [STLog print:@"打开App"];
+    }
+    
+    if ([shortcutItem.type isEqualToString:@"ShortCutShare"]) {
+        [STLog print:@"分享"];
+    }
+    
+}
 
 @end

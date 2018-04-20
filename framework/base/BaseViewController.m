@@ -14,9 +14,23 @@
 
 @implementation BaseViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+
+
+-(void)hideNavigationBar : (Boolean) hidden{
+    self.navigationController.navigationBarHidden = hidden;
 }
 
+
+-(void)setStatuBarBackgroud : (UIColor *)color{
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = color;
+    }
+}
+
+
+-(void)pushPage:(BaseViewController *)targetPage{
+    [self.navigationController pushViewController:targetPage animated:YES];
+}
 
 @end

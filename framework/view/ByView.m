@@ -8,11 +8,12 @@
 
 #import "ByView.h"
 #import "STDataBaseUtil.h"
-@interface ByView()
+#import "TouchScrollView.h"
+@interface ByView()<TouchScrollViewDelegate>
 
 @property (strong, nonatomic)ByViewModel *mByViewModel;
-@property (strong, nonatomic)UILabel *mTestLabel;
 @property (strong, nonatomic)ByModel *mByModel;
+@property (strong, nonatomic)TouchScrollView *scrollView;
 
 @end
 
@@ -29,35 +30,24 @@
 
 -(void)initView{
     self.frame = CGRectMake(0, StatuBarHeight, ScreenWidth, ScreenHeight - StatuBarHeight);
-    self.backgroundColor = [UIColor redColor];
+    self.backgroundColor = c02;
 
     _mByModel = [_mByViewModel requestData];
     
-    _mTestLabel = [[UILabel alloc]init];
-    _mTestLabel.frame = CGRectMake(20, StatuBarHeight+30, ScreenWidth-40, 30);
-    _mTestLabel.font = [UIFont systemFontOfSize:24];
-    _mTestLabel.textColor = [UIColor yellowColor];
-    _mTestLabel.text = _mByModel.test1;
-    [self addSubview:_mTestLabel];
     
-    UIButton *button = [[UIButton alloc]init];
-    button.frame = CGRectMake(20, StatuBarHeight + 100, ScreenWidth - 40, 60);
-    button.backgroundColor = [UIColor blueColor];
-    [button setTitle:@"改变数据" forState:UIControlStateNormal];
-    [self addSubview:button];
-    
-    [button addTarget:self action:@selector(OnClicked) forControlEvents:UIControlEventTouchUpInside];
+    _scrollView = [[TouchScrollView alloc]initWithParentView:self delegate:self];
+    _scrollView.frame = CGRectMake(0, StatuBarHeight, ScreenWidth, ScreenHeight - StatuBarHeight);
+    _scrollView.backgroundColor = [UIColor redColor];
+    _scrollView.contentSize = CGSizeMake(ScreenWidth, ScreenHeight *2);
+    [self addSubview:_scrollView];
 }
 
--(void)OnClicked{
-//    [_mByViewModel changeData:self];
+-(void)uploadMore{
+    
 }
 
-
-
--(void)updateView:(ByModel *)model{
-    _mTestLabel.text = _mByModel.test1;
-
+-(void)refreshNew{
+    
 }
 
 @end
