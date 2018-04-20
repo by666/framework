@@ -62,6 +62,7 @@
     
     if ([shortcutItem.type isEqualToString:@"ShortCutShare"]) {
         [STLog print:@"分享"];
+        
     }
     
 }
