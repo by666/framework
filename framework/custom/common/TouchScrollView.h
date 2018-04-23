@@ -28,4 +28,10 @@
 //支持上拉加载
 -(void)enableFooter;
 
+//结束上拉加载
+-(void)endUploadMore;
+
+//结束下拉刷新
+-(void)endRefreshNew;
+
 @end

@@ -36,8 +36,13 @@
 
 -(void)refreshNew{
     if(_touchScollViewDelegate && [_touchScollViewDelegate respondsToSelector:@selector(refreshNew)]){
-        [self.mj_header endRefreshing];
         [_touchScollViewDelegate refreshNew];
+    }
+}
+
+-(void)endRefreshNew{
+    if(self.mj_header){
+        [self.mj_header endRefreshing];
     }
 }
 
@@ -48,8 +53,13 @@
 
 -(void)uploadMore{
     if(_touchScollViewDelegate && [_touchScollViewDelegate respondsToSelector:@selector(uploadMore)]){
-        [self.mj_footer endRefreshing];
         [_touchScollViewDelegate uploadMore];
+    }
+}
+
+-(void)endUploadMore{
+    if(self.mj_footer){
+        [self.mj_footer endRefreshing];
     }
 }
 
