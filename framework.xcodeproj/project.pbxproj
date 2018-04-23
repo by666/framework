@@ -10,6 +10,41 @@
 		0006DF132089875E005A4465 /* ByViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF122089875E005A4465 /* ByViewController.m */; };
 		0006DF1820898BDE005A4465 /* STRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF1720898BDE005A4465 /* STRefreshTableView.m */; };
 		0006DF1C20898F70005A4465 /* TouchScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF1B20898F70005A4465 /* TouchScrollView.m */; };
+		0006DF20208DB0B5005A4465 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF1F208DB0B5005A4465 /* libz.tbd */; };
+		0006DF2E208DB0E4005A4465 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF2D208DB0E4005A4465 /* SystemConfiguration.framework */; };
+		0006DF32208DB0EF005A4465 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF31208DB0EF005A4465 /* UIKit.framework */; };
+		0006DF34208DB0F5005A4465 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF33208DB0F5005A4465 /* Foundation.framework */; };
+		0006DF36208DB0FA005A4465 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF35208DB0FA005A4465 /* CoreGraphics.framework */; };
+		0006DF38208DB15D005A4465 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF37208DB15D005A4465 /* libc++.tbd */; };
+		0006DF3C208DB949005A4465 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF3B208DB949005A4465 /* libstdc++.tbd */; };
+		0006DF3D208DB9CF005A4465 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF27208DB0CF005A4465 /* AddressBook.framework */; };
+		0006DF3F208DBA08005A4465 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF3E208DBA07005A4465 /* CoreMotion.framework */; };
+		0006DF41208DBA13005A4465 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF40208DBA13005A4465 /* CoreVideo.framework */; };
+		0006DF42208DBA27005A4465 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF23208DB0C2005A4465 /* CoreTelephony.framework */; };
+		0006DF44208DBA2C005A4465 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF43208DBA2C005A4465 /* CoreMedia.framework */; };
+		0006DF46208DBA48005A4465 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF45208DBA48005A4465 /* AssetsLibrary.framework */; };
+		0006DF47208DBA52005A4465 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF2B208DB0DA005A4465 /* AudioToolbox.framework */; };
+		0006DF48208DBA5D005A4465 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF25208DB0C9005A4465 /* AVFoundation.framework */; };
+		0006DF4A208DBA6B005A4465 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF49208DBA6B005A4465 /* MobileCoreServices.framework */; };
+		0006DF4B208DBA7B005A4465 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF2F208DB0EA005A4465 /* QuartzCore.framework */; };
+		0006DF59208DBBC9005A4465 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF58208DBBC9005A4465 /* iflyMSC.framework */; };
+		0006DF75208DBC76005A4465 /* FaceDetectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF6B208DBC75005A4465 /* FaceDetectorViewController.m */; };
+		0006DF76208DBC76005A4465 /* FaceStreamDetectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF6D208DBC75005A4465 /* FaceStreamDetectorViewController.m */; };
+		0006DF78208DBC76005A4465 /* FaceRequestSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF72208DBC76005A4465 /* FaceRequestSettingViewController.m */; };
+		0006DF79208DBC76005A4465 /* FaceRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF74208DBC76005A4465 /* FaceRequestViewController.m */; };
+		0006DF95208DBCAD005A4465 /* CalculatorTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF7C208DBCA8005A4465 /* CalculatorTools.m */; };
+		0006DF96208DBCAD005A4465 /* IFlyFaceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF7E208DBCA8005A4465 /* IFlyFaceImage.m */; };
+		0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF80208DBCA8005A4465 /* UIImage+compress.m */; };
+		0006DF98208DBCAD005A4465 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF82208DBCA8005A4465 /* UIImage+Extensions.m */; };
+		0006DF99208DBCAD005A4465 /* CaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF85208DBCA9005A4465 /* CaptureManager.m */; };
+		0006DF9A208DBCAD005A4465 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF87208DBCA9005A4465 /* CaptureSessionManager.m */; };
+		0006DF9B208DBCAD005A4465 /* IFlyFaceResultDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF8A208DBCAA005A4465 /* IFlyFaceResultDetector.m */; };
+		0006DF9C208DBCAD005A4465 /* IFlyFaceResultKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF8C208DBCAA005A4465 /* IFlyFaceResultKeys.m */; };
+		0006DF9D208DBCAD005A4465 /* IFlyFaceResultTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF8E208DBCAA005A4465 /* IFlyFaceResultTrack.m */; };
+		0006DF9E208DBCAD005A4465 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF91208DBCAC005A4465 /* CanvasView.m */; };
+		0006DF9F208DBCAD005A4465 /* PermissionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF94208DBCAD005A4465 /* PermissionDetector.m */; };
+		0006DFA2208DC05B005A4465 /* SystemFacePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DFA1208DC05B005A4465 /* SystemFacePage.m */; };
+		0006DFA8208DCB66005A4465 /* IFlyOnlineImagePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DFA7208DCB66005A4465 /* IFlyOnlineImagePage.m */; };
 		007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F2E20858EB3009EA9F1 /* AppDelegate.m */; };
 		007B1F3720858EB6009EA9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007B1F3620858EB6009EA9F1 /* Assets.xcassets */; };
 		007B1F3D20858EB6009EA9F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F3C20858EB6009EA9F1 /* main.m */; };
@@ -58,6 +93,61 @@
 		0006DF1720898BDE005A4465 /* STRefreshTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STRefreshTableView.m; sourceTree = "<group>"; };
 		0006DF1A20898F70005A4465 /* TouchScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchScrollView.h; sourceTree = "<group>"; };
 		0006DF1B20898F70005A4465 /* TouchScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchScrollView.m; sourceTree = "<group>"; };
+		0006DF1F208DB0B5005A4465 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0006DF21208DB0BC005A4465 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0006DF23208DB0C2005A4465 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		0006DF25208DB0C9005A4465 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0006DF27208DB0CF005A4465 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		0006DF29208DB0D5005A4465 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		0006DF2B208DB0DA005A4465 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0006DF2D208DB0E4005A4465 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0006DF2F208DB0EA005A4465 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0006DF31208DB0EF005A4465 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0006DF33208DB0F5005A4465 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0006DF35208DB0FA005A4465 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0006DF37208DB15D005A4465 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		0006DF39208DB178005A4465 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		0006DF3B208DB949005A4465 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		0006DF3E208DBA07005A4465 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		0006DF40208DBA13005A4465 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		0006DF43208DBA2C005A4465 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		0006DF45208DBA48005A4465 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		0006DF49208DBA6B005A4465 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0006DF58208DBBC9005A4465 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
+		0006DF6A208DBC75005A4465 /* FaceDetectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceDetectorViewController.h; sourceTree = "<group>"; };
+		0006DF6B208DBC75005A4465 /* FaceDetectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceDetectorViewController.m; sourceTree = "<group>"; };
+		0006DF6C208DBC75005A4465 /* FaceStreamDetectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceStreamDetectorViewController.h; sourceTree = "<group>"; };
+		0006DF6D208DBC75005A4465 /* FaceStreamDetectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceStreamDetectorViewController.m; sourceTree = "<group>"; };
+		0006DF71208DBC76005A4465 /* FaceRequestSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceRequestSettingViewController.h; sourceTree = "<group>"; };
+		0006DF72208DBC76005A4465 /* FaceRequestSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceRequestSettingViewController.m; sourceTree = "<group>"; };
+		0006DF73208DBC76005A4465 /* FaceRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceRequestViewController.h; sourceTree = "<group>"; };
+		0006DF74208DBC76005A4465 /* FaceRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceRequestViewController.m; sourceTree = "<group>"; };
+		0006DF7B208DBCA8005A4465 /* CalculatorTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorTools.h; sourceTree = "<group>"; };
+		0006DF7C208DBCA8005A4465 /* CalculatorTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorTools.m; sourceTree = "<group>"; };
+		0006DF7D208DBCA8005A4465 /* IFlyFaceImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFlyFaceImage.h; sourceTree = "<group>"; };
+		0006DF7E208DBCA8005A4465 /* IFlyFaceImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFlyFaceImage.m; sourceTree = "<group>"; };
+		0006DF7F208DBCA8005A4465 /* UIImage+compress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+compress.h"; sourceTree = "<group>"; };
+		0006DF80208DBCA8005A4465 /* UIImage+compress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+compress.m"; sourceTree = "<group>"; };
+		0006DF81208DBCA8005A4465 /* UIImage+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extensions.h"; sourceTree = "<group>"; };
+		0006DF82208DBCA8005A4465 /* UIImage+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extensions.m"; sourceTree = "<group>"; };
+		0006DF84208DBCA9005A4465 /* CaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureManager.h; sourceTree = "<group>"; };
+		0006DF85208DBCA9005A4465 /* CaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureManager.m; sourceTree = "<group>"; };
+		0006DF86208DBCA9005A4465 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
+		0006DF87208DBCA9005A4465 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
+		0006DF89208DBCAA005A4465 /* IFlyFaceResultDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFlyFaceResultDetector.h; sourceTree = "<group>"; };
+		0006DF8A208DBCAA005A4465 /* IFlyFaceResultDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFlyFaceResultDetector.m; sourceTree = "<group>"; };
+		0006DF8B208DBCAA005A4465 /* IFlyFaceResultKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFlyFaceResultKeys.h; sourceTree = "<group>"; };
+		0006DF8C208DBCAA005A4465 /* IFlyFaceResultKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFlyFaceResultKeys.m; sourceTree = "<group>"; };
+		0006DF8D208DBCAA005A4465 /* IFlyFaceResultTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFlyFaceResultTrack.h; sourceTree = "<group>"; };
+		0006DF8E208DBCAA005A4465 /* IFlyFaceResultTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFlyFaceResultTrack.m; sourceTree = "<group>"; };
+		0006DF90208DBCAC005A4465 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
+		0006DF91208DBCAC005A4465 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
+		0006DF93208DBCAD005A4465 /* PermissionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionDetector.h; sourceTree = "<group>"; };
+		0006DF94208DBCAD005A4465 /* PermissionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionDetector.m; sourceTree = "<group>"; };
+		0006DFA0208DC05B005A4465 /* SystemFacePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemFacePage.h; sourceTree = "<group>"; };
+		0006DFA1208DC05B005A4465 /* SystemFacePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemFacePage.m; sourceTree = "<group>"; };
+		0006DFA6208DCB66005A4465 /* IFlyOnlineImagePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFlyOnlineImagePage.h; sourceTree = "<group>"; };
+		0006DFA7208DCB66005A4465 /* IFlyOnlineImagePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFlyOnlineImagePage.m; sourceTree = "<group>"; };
 		007B1F2A20858EB3009EA9F1 /* framework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = framework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007B1F2D20858EB3009EA9F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		007B1F2E20858EB3009EA9F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -118,6 +208,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0006DF3C208DB949005A4465 /* libstdc++.tbd in Frameworks */,
+				0006DF38208DB15D005A4465 /* libc++.tbd in Frameworks */,
+				0006DF20208DB0B5005A4465 /* libz.tbd in Frameworks */,
+				0006DF44208DBA2C005A4465 /* CoreMedia.framework in Frameworks */,
+				0006DF59208DBBC9005A4465 /* iflyMSC.framework in Frameworks */,
+				0006DF42208DBA27005A4465 /* CoreTelephony.framework in Frameworks */,
+				0006DF41208DBA13005A4465 /* CoreVideo.framework in Frameworks */,
+				0006DF3F208DBA08005A4465 /* CoreMotion.framework in Frameworks */,
+				0006DF36208DB0FA005A4465 /* CoreGraphics.framework in Frameworks */,
+				0006DF3D208DB9CF005A4465 /* AddressBook.framework in Frameworks */,
+				0006DF46208DBA48005A4465 /* AssetsLibrary.framework in Frameworks */,
+				0006DF47208DBA52005A4465 /* AudioToolbox.framework in Frameworks */,
+				0006DF48208DBA5D005A4465 /* AVFoundation.framework in Frameworks */,
+				0006DF2E208DB0E4005A4465 /* SystemConfiguration.framework in Frameworks */,
+				0006DF4A208DBA6B005A4465 /* MobileCoreServices.framework in Frameworks */,
+				0006DF4B208DBA7B005A4465 /* QuartzCore.framework in Frameworks */,
+				0006DF32208DB0EF005A4465 /* UIKit.framework in Frameworks */,
+				0006DF34208DB0F5005A4465 /* Foundation.framework in Frameworks */,
 				F7CC18FEA014615A522B69A1 /* Pods_framework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +271,124 @@
 			path = common;
 			sourceTree = "<group>";
 		};
+		0006DF53208DBB7B005A4465 /* threeparty */ = {
+			isa = PBXGroup;
+			children = (
+				0006DF54208DBB81005A4465 /* ifly */,
+			);
+			path = threeparty;
+			sourceTree = "<group>";
+		};
+		0006DF54208DBB81005A4465 /* ifly */ = {
+			isa = PBXGroup;
+			children = (
+				0006DF64208DBC29005A4465 /* ui */,
+				0006DF58208DBBC9005A4465 /* iflyMSC.framework */,
+				0006DF55208DBB85005A4465 /* tools */,
+			);
+			path = ifly;
+			sourceTree = "<group>";
+		};
+		0006DF55208DBB85005A4465 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				0006DF8F208DBCAC005A4465 /* CanvasView */,
+				0006DF83208DBCA9005A4465 /* Capture */,
+				0006DF7A208DBCA8005A4465 /* Image */,
+				0006DF92208DBCAD005A4465 /* Permission */,
+				0006DF88208DBCAA005A4465 /* Result */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		0006DF64208DBC29005A4465 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				0006DF69208DBC75005A4465 /* FaceDetector */,
+				0006DF70208DBC76005A4465 /* FaceRequest */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		0006DF69208DBC75005A4465 /* FaceDetector */ = {
+			isa = PBXGroup;
+			children = (
+				0006DF6A208DBC75005A4465 /* FaceDetectorViewController.h */,
+				0006DF6B208DBC75005A4465 /* FaceDetectorViewController.m */,
+				0006DF6C208DBC75005A4465 /* FaceStreamDetectorViewController.h */,
+				0006DF6D208DBC75005A4465 /* FaceStreamDetectorViewController.m */,
+			);
+			path = FaceDetector;
+			sourceTree = "<group>";
+		};
+		0006DF70208DBC76005A4465 /* FaceRequest */ = {
+			isa = PBXGroup;
+			children = (
+				0006DF71208DBC76005A4465 /* FaceRequestSettingViewController.h */,
+				0006DF72208DBC76005A4465 /* FaceRequestSettingViewController.m */,
+				0006DF73208DBC76005A4465 /* FaceRequestViewController.h */,
+				0006DF74208DBC76005A4465 /* FaceRequestViewController.m */,
+			);
+			path = FaceRequest;
+			sourceTree = "<group>";
+		};
+		0006DF7A208DBCA8005A4465 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				0006DF7B208DBCA8005A4465 /* CalculatorTools.h */,
+				0006DF7C208DBCA8005A4465 /* CalculatorTools.m */,
+				0006DF7D208DBCA8005A4465 /* IFlyFaceImage.h */,
+				0006DF7E208DBCA8005A4465 /* IFlyFaceImage.m */,
+				0006DF7F208DBCA8005A4465 /* UIImage+compress.h */,
+				0006DF80208DBCA8005A4465 /* UIImage+compress.m */,
+				0006DF81208DBCA8005A4465 /* UIImage+Extensions.h */,
+				0006DF82208DBCA8005A4465 /* UIImage+Extensions.m */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		0006DF83208DBCA9005A4465 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				0006DF84208DBCA9005A4465 /* CaptureManager.h */,
+				0006DF85208DBCA9005A4465 /* CaptureManager.m */,
+				0006DF86208DBCA9005A4465 /* CaptureSessionManager.h */,
+				0006DF87208DBCA9005A4465 /* CaptureSessionManager.m */,
+			);
+			path = Capture;
+			sourceTree = "<group>";
+		};
+		0006DF88208DBCAA005A4465 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				0006DF89208DBCAA005A4465 /* IFlyFaceResultDetector.h */,
+				0006DF8A208DBCAA005A4465 /* IFlyFaceResultDetector.m */,
+				0006DF8B208DBCAA005A4465 /* IFlyFaceResultKeys.h */,
+				0006DF8C208DBCAA005A4465 /* IFlyFaceResultKeys.m */,
+				0006DF8D208DBCAA005A4465 /* IFlyFaceResultTrack.h */,
+				0006DF8E208DBCAA005A4465 /* IFlyFaceResultTrack.m */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		0006DF8F208DBCAC005A4465 /* CanvasView */ = {
+			isa = PBXGroup;
+			children = (
+				0006DF90208DBCAC005A4465 /* CanvasView.h */,
+				0006DF91208DBCAC005A4465 /* CanvasView.m */,
+			);
+			path = CanvasView;
+			sourceTree = "<group>";
+		};
+		0006DF92208DBCAD005A4465 /* Permission */ = {
+			isa = PBXGroup;
+			children = (
+				0006DF93208DBCAD005A4465 /* PermissionDetector.h */,
+				0006DF94208DBCAD005A4465 /* PermissionDetector.m */,
+			);
+			path = Permission;
+			sourceTree = "<group>";
+		};
 		007B1F2120858EB3009EA9F1 = {
 			isa = PBXGroup;
 			children = (
@@ -188,11 +414,11 @@
 		007B1F2C20858EB3009EA9F1 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				0006DF53208DBB7B005A4465 /* threeparty */,
 				00D324B52085EE3F001EC82F /* viewcontroller */,
 				007B1F6320858F1D009EA9F1 /* view */,
 				007B1F6220858F17009EA9F1 /* model */,
 				00D324B42085EE25001EC82F /* viewmodel */,
-				007B1F6520858F46009EA9F1 /* threeparty */,
 				007B1F6420858F20009EA9F1 /* macro */,
 				007B1F6120858F06009EA9F1 /* custom */,
 				007B1F6020858EF5009EA9F1 /* general */,
@@ -289,13 +515,6 @@
 			path = macro;
 			sourceTree = "<group>";
 		};
-		007B1F6520858F46009EA9F1 /* threeparty */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = threeparty;
-			sourceTree = "<group>";
-		};
 		00D324B42085EE25001EC82F /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +529,10 @@
 			children = (
 				0006DF112089875E005A4465 /* ByViewController.h */,
 				0006DF122089875E005A4465 /* ByViewController.m */,
+				0006DFA0208DC05B005A4465 /* SystemFacePage.h */,
+				0006DFA1208DC05B005A4465 /* SystemFacePage.m */,
+				0006DFA6208DCB66005A4465 /* IFlyOnlineImagePage.h */,
+				0006DFA7208DCB66005A4465 /* IFlyOnlineImagePage.m */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -398,6 +621,26 @@
 		F4CB1C08952DCB6FCA6926B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0006DF49208DBA6B005A4465 /* MobileCoreServices.framework */,
+				0006DF45208DBA48005A4465 /* AssetsLibrary.framework */,
+				0006DF43208DBA2C005A4465 /* CoreMedia.framework */,
+				0006DF40208DBA13005A4465 /* CoreVideo.framework */,
+				0006DF3E208DBA07005A4465 /* CoreMotion.framework */,
+				0006DF3B208DB949005A4465 /* libstdc++.tbd */,
+				0006DF39208DB178005A4465 /* libicucore.tbd */,
+				0006DF37208DB15D005A4465 /* libc++.tbd */,
+				0006DF35208DB0FA005A4465 /* CoreGraphics.framework */,
+				0006DF33208DB0F5005A4465 /* Foundation.framework */,
+				0006DF31208DB0EF005A4465 /* UIKit.framework */,
+				0006DF2F208DB0EA005A4465 /* QuartzCore.framework */,
+				0006DF2D208DB0E4005A4465 /* SystemConfiguration.framework */,
+				0006DF2B208DB0DA005A4465 /* AudioToolbox.framework */,
+				0006DF29208DB0D5005A4465 /* Contacts.framework */,
+				0006DF27208DB0CF005A4465 /* AddressBook.framework */,
+				0006DF25208DB0C9005A4465 /* AVFoundation.framework */,
+				0006DF23208DB0C2005A4465 /* CoreTelephony.framework */,
+				0006DF21208DB0BC005A4465 /* CoreLocation.framework */,
+				0006DF1F208DB0B5005A4465 /* libz.tbd */,
 				C7AD31C7F288F0669DDF6673 /* Pods_framework.framework */,
 			);
 			name = Frameworks;
@@ -596,23 +839,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D3249C208596ED001EC82F /* UIView+Frame.m in Sources */,
+				0006DF79208DBC76005A4465 /* FaceRequestViewController.m in Sources */,
+				0006DF75208DBC76005A4465 /* FaceDetectorViewController.m in Sources */,
 				00D324A020859778001EC82F /* BaseViewController.m in Sources */,
 				0006DF1C20898F70005A4465 /* TouchScrollView.m in Sources */,
+				0006DF9A208DBCAD005A4465 /* CaptureSessionManager.m in Sources */,
 				00D324B2208598A7001EC82F /* STTimeUtil.m in Sources */,
 				00D324B3208598A7001EC82F /* STPUtil.m in Sources */,
 				00D3249D208596ED001EC82F /* UILabel+ContentSize.m in Sources */,
 				00D324B1208598A7001EC82F /* STColorUtil.m in Sources */,
 				00D324D320873B14001EC82F /* RespondModel.m in Sources */,
 				007B1F3D20858EB6009EA9F1 /* main.m in Sources */,
+				0006DF99208DBCAD005A4465 /* CaptureManager.m in Sources */,
+				0006DF78208DBC76005A4465 /* FaceRequestSettingViewController.m in Sources */,
+				0006DF9E208DBCAD005A4465 /* CanvasView.m in Sources */,
+				0006DF96208DBCAD005A4465 /* IFlyFaceImage.m in Sources */,
+				0006DF98208DBCAD005A4465 /* UIImage+Extensions.m in Sources */,
 				00D324E420874874001EC82F /* STRuntimeUtil.m in Sources */,
+				0006DF9F208DBCAD005A4465 /* PermissionDetector.m in Sources */,
 				00D324C42086E2E0001EC82F /* ByViewModel.m in Sources */,
 				00D324CD2087277E001EC82F /* STNetUtil.m in Sources */,
 				00D324B0208598A7001EC82F /* STSoundUtil.m in Sources */,
 				00D324C72086E330001EC82F /* ByModel.m in Sources */,
+				0006DF76208DBC76005A4465 /* FaceStreamDetectorViewController.m in Sources */,
+				0006DF9D208DBCAD005A4465 /* IFlyFaceResultTrack.m in Sources */,
+				0006DFA8208DCB66005A4465 /* IFlyOnlineImagePage.m in Sources */,
 				007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */,
+				0006DFA2208DC05B005A4465 /* SystemFacePage.m in Sources */,
 				00D3249B208596ED001EC82F /* UILabel+StringFrame.m in Sources */,
 				00D32491208594F4001EC82F /* STLog.m in Sources */,
+				0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */,
+				0006DF95208DBCAD005A4465 /* CalculatorTools.m in Sources */,
 				0006DF1820898BDE005A4465 /* STRefreshTableView.m in Sources */,
+				0006DF9C208DBCAD005A4465 /* IFlyFaceResultKeys.m in Sources */,
+				0006DF9B208DBCAD005A4465 /* IFlyFaceResultDetector.m in Sources */,
 				00D324CA2086E355001EC82F /* ByView.m in Sources */,
 				0006DF132089875E005A4465 /* ByViewController.m in Sources */,
 				00D324E0208742CC001EC82F /* STDataBaseUtil.m in Sources */,
@@ -769,6 +1029,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB86U4DT8H;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/framework/threeparty",
+					"$(PROJECT_DIR)/framework/threeparty/ifly/New\\ Group",
+					"$(PROJECT_DIR)/framework/threeparty/ifly",
+				);
 				GCC_PREFIX_HEADER = framework/macro/STPrefixHeader.pch;
 				INFOPLIST_FILE = framework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -789,6 +1056,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB86U4DT8H;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/framework/threeparty",
+					"$(PROJECT_DIR)/framework/threeparty/ifly/New\\ Group",
+					"$(PROJECT_DIR)/framework/threeparty/ifly",
+				);
 				GCC_PREFIX_HEADER = framework/macro/STPrefixHeader.pch;
 				INFOPLIST_FILE = framework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -9,6 +9,7 @@
 #import "ByView.h"
 #import "STDataBaseUtil.h"
 #import "TouchScrollView.h"
+
 @interface ByView()<TouchScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic)ByViewModel *mByViewModel;
@@ -18,10 +19,13 @@
 
 @end
 
-@implementation ByView
+@implementation ByView{
+    NSArray *titles;
+}
 
 -(instancetype)initWithViewModel:(ByViewModel *)byViewModel{
     if(self == [super init]){
+        titles = [[NSArray alloc]initWithObjects:@"系统人脸识别",@"ifly在线图片识别",@"ify离线图片识别",@"ify离线视频识别",nil];
         _mByViewModel = byViewModel;
         [self initView];
     }
@@ -39,13 +43,11 @@
     _scrollView.frame = CGRectMake(0, StatuBarHeight, ScreenWidth, ScreenHeight - StatuBarHeight);
     [_scrollView enableHeader];
     [_scrollView enableFooter];
-//    _scrollView.backgroundColor = [UIColor redColor];
-    _scrollView.contentSize = CGSizeMake(ScreenWidth, 200+50 *20);
+    _scrollView.contentSize = CGSizeMake(ScreenWidth, 50 *[titles count]);
     [self addSubview:_scrollView];
-    
-    
 
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 200, ScreenWidth, 50 *20)];
+
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 50 *[titles count])];
     _tableView.delegate = self;
     _tableView.scrollEnabled = NO;
     _tableView.showsVerticalScrollIndicator = NO;
@@ -57,7 +59,7 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return [titles count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -69,8 +71,31 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"test"];
-    [cell.textLabel setText:@"测试"];
+    NSString *title = [titles objectAtIndex:indexPath.row];
+    [cell.textLabel setText:title];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(_byViewDelegate){
+        switch (indexPath.row) {
+            case 0:
+                [_byViewDelegate goSystemFacePage];
+                break;
+            case 1:
+                [_byViewDelegate goIFlyOnlineImagePage];
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+                
+            default:
+                break;
+        }
+    }
 }
 
 -(void)uploadMore{

@@ -10,4 +10,4 @@
 
 #pragma mark 定义三方库appid,appkey....
 
-#define WechatAppkey @"123213213"
+#define IFLY_FACE_APPID @"5add784a"

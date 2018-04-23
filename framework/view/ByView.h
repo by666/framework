@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "ByViewModel.h"
+
+@protocol ByViewDelegate
+
+-(void)goSystemFacePage;
+-(void)goIFlyOnlineImagePage;
+
+@end
+
 @interface ByView : UIView
 
+@property (weak, nonatomic) id<ByViewDelegate> byViewDelegate;
+
 -(instancetype)initWithViewModel:(ByViewModel *)byViewModel;
+
 
 @end
