@@ -12,7 +12,9 @@
 @protocol ByViewDelegate
 
 -(void)goSystemFacePage;
--(void)goIFlyOnlineImagePage;
+-(void)goIFlyOnlineFaceDetectPage;
+-(void)goIFlyOfflineFaceDetectPage;
+-(void)goIFlyOfflineVedioDetectPage;
 
 @end
 

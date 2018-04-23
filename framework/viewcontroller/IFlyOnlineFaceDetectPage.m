@@ -1,12 +1,12 @@
 //
-//  IFlyOnlineImagePage.m
+//  IFlyOnlineFaceDetectPage.m
 //  framework
 //
 //  Created by 黄成实 on 2018/4/23.
 //  Copyright © 2018年 黄成实. All rights reserved.
 //
 
-#import "IFlyOnlineImagePage.h"
+#import "IFlyOnlineFaceDetectPage.h"
 #import "UIImage+Extensions.h"
 #import "UIImage+compress.h"
 #import <iflyMSC/IFlyFaceSDK.h>
@@ -14,7 +14,7 @@
 #import "IFlyFaceResultKeys.h"
 #import "PermissionDetector.h"
 
-@interface IFlyOnlineImagePage ()<IFlyFaceRequestDelegate,
+@interface IFlyOnlineFaceDetectPage ()<IFlyFaceRequestDelegate,
 UINavigationControllerDelegate,
 UIImagePickerControllerDelegate,
 UIActionSheetDelegate>
@@ -32,7 +32,7 @@ UIActionSheetDelegate>
 
 @end
 
-@implementation IFlyOnlineImagePage
+@implementation IFlyOnlineFaceDetectPage
 
 - (void)viewDidLoad {
     [super viewDidLoad];

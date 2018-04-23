@@ -83,13 +83,13 @@
                 [_byViewDelegate goSystemFacePage];
                 break;
             case 1:
-                [_byViewDelegate goIFlyOnlineImagePage];
+                [_byViewDelegate goIFlyOnlineFaceDetectPage];
                 break;
             case 2:
-                
+                [_byViewDelegate goIFlyOfflineFaceDetectPage];
                 break;
             case 3:
-                
+                [_byViewDelegate goIFlyOfflineVedioDetectPage];
                 break;
                 
             default:

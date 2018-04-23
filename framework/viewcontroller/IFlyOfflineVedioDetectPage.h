@@ -1,5 +1,5 @@
 //
-//  IFlyOnlineImagePage.h
+//  IFlyOfflineVedioDetectPage.h
 //  framework
 //
 //  Created by 黄成实 on 2018/4/23.
@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface IFlyOnlineImagePage : BaseViewController
+@interface IFlyOfflineVedioDetectPage : BaseViewController
 
 @end

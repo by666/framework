@@ -10,7 +10,9 @@
 #import "ByViewModel.h"
 #import "ByView.h"
 #import "SystemFacePage.h"
-#import "IFlyOnlineImagePage.h"
+#import "IFlyOnlineFaceDetectPage.h"
+#import "IFlyOfflineFaceDetectPage.h"
+#import "IFlyOfflineVedioDetectPage.h"
 
 
 @interface ByViewController ()<ByViewDelegate>
@@ -47,8 +49,18 @@
     [self pushPage:page];
 }
 
--(void)goIFlyOnlineImagePage{
-    IFlyOnlineImagePage *page = [[IFlyOnlineImagePage alloc]init];
+-(void)goIFlyOnlineFaceDetectPage{
+    IFlyOnlineFaceDetectPage *page = [[IFlyOnlineFaceDetectPage alloc]init];
+    [self pushPage:page];
+}
+
+-(void)goIFlyOfflineFaceDetectPage{
+    IFlyOfflineFaceDetectPage *page = [[IFlyOfflineFaceDetectPage alloc]init];
+    [self pushPage:page];
+}
+
+-(void)goIFlyOfflineVedioDetectPage{
+    IFlyOfflineVedioDetectPage *page = [[IFlyOfflineVedioDetectPage alloc]init];
     [self pushPage:page];
 }
 
