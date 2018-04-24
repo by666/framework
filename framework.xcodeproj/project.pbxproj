@@ -52,6 +52,9 @@
 		007B1F5220858EB7009EA9F1 /* frameworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F5120858EB7009EA9F1 /* frameworkUITests.m */; };
 		00CCE9A8208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */; };
 		00CCE9AB208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9AA208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m */; };
+		00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9AD208ECB9300032B4A /* UserModel.m */; };
+		00CCE9B1208ECCDD00032B4A /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9B0208ECCDD00032B4A /* AccountManager.m */; };
+		00CCE9B4208ECDD300032B4A /* STUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9B3208ECDD300032B4A /* STUserDefaults.m */; };
 		00D32491208594F4001EC82F /* STLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D32490208594F4001EC82F /* STLog.m */; };
 		00D3249B208596ED001EC82F /* UILabel+StringFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D32495208596EC001EC82F /* UILabel+StringFrame.m */; };
 		00D3249C208596ED001EC82F /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D32497208596EC001EC82F /* UIView+Frame.m */; };
@@ -168,6 +171,13 @@
 		00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFlyOfflineFaceDetectPage.m; sourceTree = "<group>"; };
 		00CCE9A9208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFlyOfflineVedioDetectPage.h; sourceTree = "<group>"; };
 		00CCE9AA208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFlyOfflineVedioDetectPage.m; sourceTree = "<group>"; };
+		00CCE9AC208ECB9300032B4A /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		00CCE9AD208ECB9300032B4A /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		00CCE9AF208ECCDD00032B4A /* AccountManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
+		00CCE9B0208ECCDD00032B4A /* AccountManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
+		00CCE9B2208ECDD300032B4A /* STUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STUserDefaults.h; sourceTree = "<group>"; };
+		00CCE9B3208ECDD300032B4A /* STUserDefaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STUserDefaults.m; sourceTree = "<group>"; };
+		00CCE9B5208EDCAA00032B4A /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		00D3248C208593CA001EC82F /* NotifyMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotifyMacro.h; sourceTree = "<group>"; };
 		00D3248F208594F4001EC82F /* STLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STLog.h; sourceTree = "<group>"; };
 		00D32490208594F4001EC82F /* STLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STLog.m; sourceTree = "<group>"; };
@@ -476,6 +486,8 @@
 				00D324D7208740B5001EC82F /* log */,
 				00D324D42087409C001EC82F /* net */,
 				00D324AF208598A7001EC82F /* Singleton.h */,
+				00CCE9AF208ECCDD00032B4A /* AccountManager.h */,
+				00CCE9B0208ECCDD00032B4A /* AccountManager.m */,
 			);
 			path = general;
 			sourceTree = "<group>";
@@ -496,6 +508,8 @@
 				00D324C62086E330001EC82F /* ByModel.m */,
 				00D324D120873B14001EC82F /* RespondModel.h */,
 				00D324D220873B14001EC82F /* RespondModel.m */,
+				00CCE9AC208ECB9300032B4A /* UserModel.h */,
+				00CCE9AD208ECB9300032B4A /* UserModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -517,6 +531,7 @@
 				00D3248C208593CA001EC82F /* NotifyMacro.h */,
 				00D3249220859626001EC82F /* ThreePartyMacro.h */,
 				00D324A4208597DF001EC82F /* ColorMacro.h */,
+				00CCE9B5208EDCAA00032B4A /* Constant.h */,
 			);
 			path = macro;
 			sourceTree = "<group>";
@@ -615,6 +630,8 @@
 			children = (
 				00D324DE208742CC001EC82F /* STDataBaseUtil.h */,
 				00D324DF208742CC001EC82F /* STDataBaseUtil.m */,
+				00CCE9B2208ECDD300032B4A /* STUserDefaults.h */,
+				00CCE9B3208ECDD300032B4A /* STUserDefaults.m */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -865,6 +882,8 @@
 				0006DF9E208DBCAD005A4465 /* CanvasView.m in Sources */,
 				0006DF96208DBCAD005A4465 /* IFlyFaceImage.m in Sources */,
 				0006DF98208DBCAD005A4465 /* UIImage+Extensions.m in Sources */,
+				00CCE9B4208ECDD300032B4A /* STUserDefaults.m in Sources */,
+				00CCE9B1208ECCDD00032B4A /* AccountManager.m in Sources */,
 				00D324E420874874001EC82F /* STRuntimeUtil.m in Sources */,
 				0006DF9F208DBCAD005A4465 /* PermissionDetector.m in Sources */,
 				00D324C42086E2E0001EC82F /* ByViewModel.m in Sources */,
@@ -877,6 +896,7 @@
 				0006DFA8208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m in Sources */,
 				007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */,
 				0006DFA2208DC05B005A4465 /* SystemFacePage.m in Sources */,
+				00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */,
 				00D3249B208596ED001EC82F /* UILabel+StringFrame.m in Sources */,
 				00D32491208594F4001EC82F /* STLog.m in Sources */,
 				0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */,

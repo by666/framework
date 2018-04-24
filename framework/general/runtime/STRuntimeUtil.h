@@ -11,12 +11,12 @@
 @interface STRuntimeUtil : NSObject
 
 //获取类所有的属性名
-+(NSArray *)getAllPropertyNames:(Class)tempClass;
++(NSArray *)getAllPropertyNames:(id)tempClass;
 
 //获取类所有的方法名
-+(NSArray *)getAllMethodNames:(Class)tempClass;
++(NSArray *)getAllMethodNames:(id)tempClass;
 
 //根据类的属性，获取属性值
-+(id)getPropertyValue:(Class)tempClass key:(NSString *)key;
++(id)getPropertyValue:(id)tempClass key:(NSString *)key;
 
 @end

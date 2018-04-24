@@ -12,6 +12,9 @@
 #import "STRuntimeUtil.h"
 #import "ByViewController.h"
 #import <iflyMSC/IFlyFaceSDK.h>
+#import "UserModel.h"
+#import "STUserDefaults.h"
+
 @interface AppDelegate ()
 
 @end
@@ -28,6 +31,7 @@
     [self.window makeKeyAndVisible];
     
     [self initIFly];
+    [self initDB];
     return YES;
 }
 
@@ -51,32 +55,42 @@
 
 }
 
+-(void)initDB{
+    [[STDataBaseUtil sharedSTDataBaseUtil]createTable:@"by666" model:[ByModel class]];
+    
+    
+    UserModel *model = [[UserModel alloc]init];
+    model.uid = 123124;
+    model.age = 12;
+    model.nickName = @"by";
+    model.gender = @"male";
+    model.avatarUrl = @"http://www.baidu.com";
+    model.phoneNum = @"18680686420";
+    [STUserDefaults saveModel:@"usermodel" model:model];
+
+    UserModel *testModel = [STUserDefaults getModel:@"usermodel"];
+    
+    UIImage *image = [UIImage imageNamed:@"test"];
+    [STUserDefaults saveImage:@"testImg" image:image];
+
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
 }
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-}
+- (void)applicationWillEnterForeground:(UIApplication *)application {}
 
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
+- (void)applicationDidBecomeActive:(UIApplication *)application {}
 
 
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
+- (void)applicationWillTerminate:(UIApplication *)application {}
 
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler{
     if ([shortcutItem.type isEqualToString:@"ShortCutOpen"]) {
@@ -85,7 +99,6 @@
     
     if ([shortcutItem.type isEqualToString:@"ShortCutShare"]) {
         [STLog print:@"分享"];
-        
     }
     
 }

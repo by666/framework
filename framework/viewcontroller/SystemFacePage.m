@@ -7,6 +7,7 @@
 //
 
 #import "SystemFacePage.h"
+#import "STUserDefaults.h"
 
 @interface SystemFacePage ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 

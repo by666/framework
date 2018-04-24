@@ -11,7 +11,7 @@
 
 @implementation STRuntimeUtil
 
-+(NSArray *)getAllPropertyNames:(Class)tempClass{
++(NSArray *)getAllPropertyNames:(id)tempClass{
     NSMutableArray *allNames = [[NSMutableArray alloc] init];
     unsigned int propertyCount = 0;
     objc_property_t *propertys = class_copyPropertyList([tempClass class], &propertyCount);
@@ -25,7 +25,7 @@
 }
 
 
-+(NSArray *)getAllMethodNames:(Class)tempClass{
++(NSArray *)getAllMethodNames:(id)tempClass{
     NSMutableArray *allMethods = [[NSMutableArray alloc] init];
     unsigned int count;
     Method *methods = class_copyMethodList([tempClass class], &count);
@@ -41,7 +41,7 @@
 }
 
 
-+(id)getPropertyValue:(Class)tempClass key:(NSString *)key{
++(id)getPropertyValue:(id)tempClass key:(NSString *)key{
     return [tempClass valueForKey:key];
 
 }

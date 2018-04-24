@@ -10,6 +10,7 @@
 #define STPrefixHeader_pch
 
 #import <UIKit/UIKit.h>
+#import "Constant.h"
 #import "APIMacro.h"
 #import "ColorMacro.h"
 #import "NotifyMacro.h"
