@@ -22,6 +22,7 @@
 #import "UIView+Frame.h"
 #import <MJExtension/MJExtension.h>
 #import <MJRefresh/MJRefresh.h>
+#import <Masonry/Masonry.h>
 
 
 //获取当前屏幕的高度

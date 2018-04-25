@@ -36,6 +36,7 @@ UIActionSheetDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:c01];
+    self.navigationItem.title = @"离线识别";
     self.faceDetector=[IFlyFaceDetector sharedInstance];
     [self initView];
 }

@@ -42,6 +42,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:c01];
+    self.navigationItem.title = @"视频识别";
     [self initView];
 }
 

@@ -13,6 +13,7 @@
 #import "IFlyOnlineFaceDetectPage.h"
 #import "IFlyOfflineFaceDetectPage.h"
 #import "IFlyOfflineVedioDetectPage.h"
+#import "MasonryPage.h"
 
 
 @interface ByViewController ()<ByViewDelegate>
@@ -29,7 +30,7 @@
 
 -(void)viewDidLoad{
     [self hideNavigationBar:NO];
-    self.navigationItem.title = @"人脸识别测试";
+    self.navigationItem.title = @"demo";
     [self.view setBackgroundColor:c01];
     [self initBodyView];
 }
@@ -61,6 +62,11 @@
 
 -(void)goIFlyOfflineVedioDetectPage{
     IFlyOfflineVedioDetectPage *page = [[IFlyOfflineVedioDetectPage alloc]init];
+    [self pushPage:page];
+}
+
+-(void)goMasonryPage{
+    MasonryPage *page = [[MasonryPage alloc]init];
     [self pushPage:page];
 }
 

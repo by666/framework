@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/viewcontroller/SystemFacePage.m"
-            timestampString = "546234804.343084"
+            timestampString = "546321354.292254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "-beginDetectorFacewithImage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/viewcontroller/IFlyOnlineFaceDetectPage.m"
-            timestampString = "546234804.343135"
+            timestampString = "546321354.292326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -169,8 +169,8 @@
                   symbolName = "-[IFlyOnlineFaceDetectPage checkBtn]"
                   moduleName = "framework"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/huangchengshi/Desktop/framework/framework/viewcontroller/IFlyOnlineFaceDetectPage.m"
-                  timestampString = "546234804.4095761"
+                  urlString = "file:///Users/huangchengshi/Desktop/master/framework/viewcontroller/IFlyOnlineFaceDetectPage.m"
+                  timestampString = "546315966.196595"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
@@ -184,8 +184,8 @@
                   symbolName = "-[IFlyOnlineFaceDetectPage setCheckBtn:]"
                   moduleName = "framework"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/huangchengshi/Desktop/framework/framework/viewcontroller/IFlyOnlineFaceDetectPage.m"
-                  timestampString = "546234804.411032"
+                  urlString = "file:///Users/huangchengshi/Desktop/master/framework/viewcontroller/IFlyOnlineFaceDetectPage.m"
+                  timestampString = "546315966.198074"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
@@ -202,28 +202,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/viewcontroller/IFlyOfflineFaceDetectPage.m"
-            timestampString = "546234804.3431751"
+            timestampString = "546321354.292369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "-praseDetectResult:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "framework/viewcontroller/ByViewController.m"
-            timestampString = "546234804.3432111"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "-goIFlyOfflineFaceDetectPage"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -240,38 +224,6 @@
             startingLineNumber = "16"
             endingLineNumber = "16"
             landmarkName = "-saveUserModel:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "framework/AppDelegate.m"
-            timestampString = "546234804.3432831"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "-initDB"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "framework/AppDelegate.m"
-            timestampString = "546234804.3433191"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-initDB"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

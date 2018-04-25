@@ -25,7 +25,7 @@
 
 -(instancetype)initWithViewModel:(ByViewModel *)byViewModel{
     if(self == [super init]){
-        titles = [[NSArray alloc]initWithObjects:@"系统人脸识别",@"ifly在线图片识别",@"ify离线图片识别",@"ify离线视频识别",nil];
+        titles = [[NSArray alloc]initWithObjects:@"系统人脸识别",@"ifly在线图片识别",@"ify离线图片识别",@"ify离线视频识别",@"Massory测试",nil];
         _mByViewModel = byViewModel;
         [self initView];
     }
@@ -90,6 +90,9 @@
                 break;
             case 3:
                 [_byViewDelegate goIFlyOfflineVedioDetectPage];
+                break;
+            case 4:
+                [_byViewDelegate goMasonryPage];
                 break;
                 
             default:

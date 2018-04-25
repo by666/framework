@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:c01];
+    self.navigationItem.title = @"系统识别";
     [self initView];
 }
 

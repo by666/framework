@@ -37,6 +37,7 @@ UIActionSheetDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:c01];
+    self.navigationItem.title = @"在线识别";
     self.iFlySpFaceRequest=[IFlyFaceRequest sharedInstance];
     [self.iFlySpFaceRequest setDelegate:self];
     [self initView];
