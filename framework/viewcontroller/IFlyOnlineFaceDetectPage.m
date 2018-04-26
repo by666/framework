@@ -15,6 +15,7 @@
 #import "PermissionDetector.h"
 #import "STNetUtil.h"
 #import "STConvertUtil.h"
+#import "STFileUtil.h"
 
 @interface IFlyOnlineFaceDetectPage ()<IFlyFaceRequestDelegate,
 UINavigationControllerDelegate,
@@ -34,7 +35,9 @@ UIActionSheetDelegate>
 
 @end
 
-@implementation IFlyOnlineFaceDetectPage
+@implementation IFlyOnlineFaceDetectPage{
+    NSString *imagePath;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -163,7 +166,7 @@ UIActionSheetDelegate>
     UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
     //压缩图片
     _imgToUse.image = [[image fixOrientation] compressedImage];
-    
+    imagePath = [STFileUtil saveImageFile:@"st" image:image];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -712,10 +715,12 @@ UIActionSheetDelegate>
 
 
 -(void)doOcrDetect{
+
     
-    NSData *imageData = UIImageJPEGRepresentation(_imgToUse.image , 100);
-    NSString *imgStr = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    
+    NSData *imgData = UIImageJPEGRepresentation(_imgToUse.image, 1.0f);
+    NSString *imgStr = [imgData base64Encoding];
+    [STLog print:imgStr];
+
     NSString *appcode = @"60a5718e77604a61befe69f65ff36d21";
     NSString *host = @"https://ocrcp.market.alicloudapi.com";
     NSString *path = @"/rest/160601/ocr/ocr_vehicle_plate.json";
@@ -723,8 +728,7 @@ UIActionSheetDelegate>
     NSString *querys = @"";
     NSString *url = [NSString stringWithFormat:@"%@%@%@",  host,  path , querys];
     NSString *bodys =
-    [NSString stringWithFormat:@"{\"image\": \"base64_image_string\",\"configure\": \"{\"multi_crop\":false}\"}"];
-    [STLog print:bodys];
+    [NSString stringWithFormat:@"{\"image\": \"%@\",\"configure\": {\"multi_crop\":false}}",imgStr];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: url]  cachePolicy:1  timeoutInterval:  5];
     request.HTTPMethod  =  method;
@@ -738,14 +742,25 @@ UIActionSheetDelegate>
                                                    completionHandler:^(NSData * _Nullable body , NSURLResponse * _Nullable response, NSError * _Nullable error) {
                                                        NSLog(@"Response object: %@" , response);
                                                        NSString *bodyString = [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding];
+                                                       NSDictionary *dic = [STConvertUtil jsonToDic:bodyString];
+                                                       NSMutableArray *plates = [dic mutableArrayValueForKey:@"plates"];
+                                                       NSString *result;
+                                                       if(!IS_NS_COLLECTION_EMPTY(plates)){
+                                                           for(id index in plates){
+                                                               result = [index objectForKey:@"txt"];
+                                                            }
+                                                       }
+                                                       dispatch_sync(dispatch_get_main_queue(), ^{
+                                                           [self showResultInfo:[NSString stringWithFormat:@"车牌号是：%@",result]];
+                                                       });
+                                                   
                                                        
-                                                       //打印应答中的body
-                                                       NSLog(@"Response body: %@" , bodyString);
                                                    }];
     
     [task resume];
     
 }
+
 
 
 @end

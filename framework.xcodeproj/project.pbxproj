@@ -56,6 +56,7 @@
 		00812BD12091BC4200E2E70B /* jpush-extension-ios-1.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BC92091BA2500E2E70B /* jpush-extension-ios-1.1.1.a */; };
 		00812BD22091BC4200E2E70B /* jpush-ios-3.0.9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BCA2091BA2500E2E70B /* jpush-ios-3.0.9.a */; };
 		00812BD42091BCAA00E2E70B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BD32091BCAA00E2E70B /* libresolv.tbd */; };
+		00BBBD972091D0E300556B90 /* STFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BBBD962091D0E300556B90 /* STFileUtil.m */; };
 		00CCE9A8208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */; };
 		00CCE9AB208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9AA208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m */; };
 		00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9AD208ECB9300032B4A /* UserModel.m */; };
@@ -184,6 +185,8 @@
 		00812BCB2091BA2500E2E70B /* JPushNotificationExtensionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPushNotificationExtensionService.h; sourceTree = "<group>"; };
 		00812BCC2091BA2500E2E70B /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		00812BD32091BCAA00E2E70B /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		00BBBD952091D0E300556B90 /* STFileUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STFileUtil.h; sourceTree = "<group>"; };
+		00BBBD962091D0E300556B90 /* STFileUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STFileUtil.m; sourceTree = "<group>"; };
 		00CCE9A6208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFlyOfflineFaceDetectPage.h; sourceTree = "<group>"; };
 		00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFlyOfflineFaceDetectPage.m; sourceTree = "<group>"; };
 		00CCE9A9208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFlyOfflineVedioDetectPage.h; sourceTree = "<group>"; };
@@ -679,6 +682,8 @@
 				00D324DF208742CC001EC82F /* STDataBaseUtil.m */,
 				00CCE9B2208ECDD300032B4A /* STUserDefaults.h */,
 				00CCE9B3208ECDD300032B4A /* STUserDefaults.m */,
+				00BBBD952091D0E300556B90 /* STFileUtil.h */,
+				00BBBD962091D0E300556B90 /* STFileUtil.m */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -929,6 +934,7 @@
 				0006DF9A208DBCAD005A4465 /* CaptureSessionManager.m in Sources */,
 				00D324B2208598A7001EC82F /* STTimeUtil.m in Sources */,
 				005F7A8920901F0C003CA4CA /* MasonryPage.m in Sources */,
+				00BBBD972091D0E300556B90 /* STFileUtil.m in Sources */,
 				00D324B3208598A7001EC82F /* STPUtil.m in Sources */,
 				00812BC52091A14500E2E70B /* STConvertUtil.m in Sources */,
 				00D3249D208596ED001EC82F /* UILabel+ContentSize.m in Sources */,

@@ -11,15 +11,22 @@
 @interface STConvertUtil : NSObject
 
 //data转string
-+(NSString *)DataToString:(NSData *)data;
++(NSString *)dataToString:(NSData *)data;
 
 //string转data
-+(NSData *)StringToData:(NSString *)str;
++(NSData *)stringToData:(NSString *)str;
 
 //base编码
 +(NSString *)base64Encode:(NSString *)str;
 
 //base64解码
 +(NSString *)base64Decode:(NSString *)str;
+
+//json转NSDictionary
++ (NSDictionary *)jsonToDic:(NSString *)jsonStr;
+
+//NSDictionary转json
++ (NSString*)dicToJson:(NSDictionary *)dic;
+
 
 @end
