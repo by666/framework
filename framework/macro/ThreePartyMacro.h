@@ -11,3 +11,4 @@
 #pragma mark 定义三方库appid,appkey....
 
 #define IFLY_FACE_APPID @"5add784a"
+#define JPUSH_APPKEY @"49828a3f5529d51df648f0ad"

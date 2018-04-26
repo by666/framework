@@ -13,6 +13,8 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "IFlyFaceResultKeys.h"
 #import "PermissionDetector.h"
+#import "STNetUtil.h"
+#import "STConvertUtil.h"
 
 @interface IFlyOnlineFaceDetectPage ()<IFlyFaceRequestDelegate,
 UINavigationControllerDelegate,
@@ -162,7 +164,6 @@ UIActionSheetDelegate>
     //压缩图片
     _imgToUse.image = [[image fixOrientation] compressedImage];
     
-    
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -194,6 +195,10 @@ UIActionSheetDelegate>
     UIAlertAction *faceDetailAction = [UIAlertAction actionWithTitle:@"人脸关键点检测" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         [self doFaceDetail];
     }];
+    
+    UIAlertAction *ocrAction = [UIAlertAction actionWithTitle:@"OCR识别" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        [self doOcrDetect];
+    }];
 
     
     [alertController addAction:cancelAction];
@@ -201,6 +206,7 @@ UIActionSheetDelegate>
     [alertController addAction:verifyAction];
     [alertController addAction:faceAction];
     [alertController addAction:faceDetailAction];
+    [alertController addAction:ocrAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
@@ -704,6 +710,42 @@ UIActionSheetDelegate>
     alert=nil;
 }
 
+
+-(void)doOcrDetect{
+    
+    NSData *imageData = UIImageJPEGRepresentation(_imgToUse.image , 100);
+    NSString *imgStr = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
+    NSString *appcode = @"60a5718e77604a61befe69f65ff36d21";
+    NSString *host = @"https://ocrcp.market.alicloudapi.com";
+    NSString *path = @"/rest/160601/ocr/ocr_vehicle_plate.json";
+    NSString *method = @"POST";
+    NSString *querys = @"";
+    NSString *url = [NSString stringWithFormat:@"%@%@%@",  host,  path , querys];
+    NSString *bodys =
+    [NSString stringWithFormat:@"{\"image\": \"base64_image_string\",\"configure\": \"{\"multi_crop\":false}\"}"];
+    [STLog print:bodys];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: url]  cachePolicy:1  timeoutInterval:  5];
+    request.HTTPMethod  =  method;
+    [request addValue:  [NSString  stringWithFormat:@"APPCODE %@" ,  appcode]  forHTTPHeaderField:  @"Authorization"];
+    //根据API的要求，定义相对应的Content-Type
+    [request addValue: @"application/json; charset=UTF-8" forHTTPHeaderField: @"Content-Type"];
+    NSData *data = [bodys dataUsingEncoding: NSUTF8StringEncoding];
+    [request setHTTPBody: data];
+    NSURLSession *requestSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    NSURLSessionDataTask *task = [requestSession dataTaskWithRequest:request
+                                                   completionHandler:^(NSData * _Nullable body , NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                       NSLog(@"Response object: %@" , response);
+                                                       NSString *bodyString = [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding];
+                                                       
+                                                       //打印应答中的body
+                                                       NSLog(@"Response body: %@" , bodyString);
+                                                   }];
+    
+    [task resume];
+    
+}
 
 
 @end

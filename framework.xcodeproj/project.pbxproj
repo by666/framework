@@ -51,6 +51,11 @@
 		007B1F3D20858EB6009EA9F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F3C20858EB6009EA9F1 /* main.m */; };
 		007B1F4720858EB6009EA9F1 /* frameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F4620858EB6009EA9F1 /* frameworkTests.m */; };
 		007B1F5220858EB7009EA9F1 /* frameworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F5120858EB7009EA9F1 /* frameworkUITests.m */; };
+		00812BC52091A14500E2E70B /* STConvertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00812BC42091A14500E2E70B /* STConvertUtil.m */; };
+		00812BD02091BC4200E2E70B /* jcore-ios-1.1.9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BC82091BA2500E2E70B /* jcore-ios-1.1.9.a */; };
+		00812BD12091BC4200E2E70B /* jpush-extension-ios-1.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BC92091BA2500E2E70B /* jpush-extension-ios-1.1.1.a */; };
+		00812BD22091BC4200E2E70B /* jpush-ios-3.0.9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BCA2091BA2500E2E70B /* jpush-ios-3.0.9.a */; };
+		00812BD42091BCAA00E2E70B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BD32091BCAA00E2E70B /* libresolv.tbd */; };
 		00CCE9A8208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */; };
 		00CCE9AB208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9AA208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m */; };
 		00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9AD208ECB9300032B4A /* UserModel.m */; };
@@ -170,6 +175,15 @@
 		007B1F5320858EB7009EA9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007B1F6620858F87009EA9F1 /* STPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STPrefixHeader.pch; sourceTree = "<group>"; };
 		007B1F6720859123009EA9F1 /* APIMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIMacro.h; sourceTree = "<group>"; };
+		00812BC32091A14500E2E70B /* STConvertUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STConvertUtil.h; sourceTree = "<group>"; };
+		00812BC42091A14500E2E70B /* STConvertUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STConvertUtil.m; sourceTree = "<group>"; };
+		00812BC62091B34400E2E70B /* framework.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = framework.entitlements; sourceTree = "<group>"; };
+		00812BC82091BA2500E2E70B /* jcore-ios-1.1.9.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jcore-ios-1.1.9.a"; sourceTree = "<group>"; };
+		00812BC92091BA2500E2E70B /* jpush-extension-ios-1.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-extension-ios-1.1.1.a"; sourceTree = "<group>"; };
+		00812BCA2091BA2500E2E70B /* jpush-ios-3.0.9.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-3.0.9.a"; sourceTree = "<group>"; };
+		00812BCB2091BA2500E2E70B /* JPushNotificationExtensionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPushNotificationExtensionService.h; sourceTree = "<group>"; };
+		00812BCC2091BA2500E2E70B /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		00812BD32091BCAA00E2E70B /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		00CCE9A6208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFlyOfflineFaceDetectPage.h; sourceTree = "<group>"; };
 		00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFlyOfflineFaceDetectPage.m; sourceTree = "<group>"; };
 		00CCE9A9208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFlyOfflineVedioDetectPage.h; sourceTree = "<group>"; };
@@ -227,6 +241,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00812BD42091BCAA00E2E70B /* libresolv.tbd in Frameworks */,
+				00812BD02091BC4200E2E70B /* jcore-ios-1.1.9.a in Frameworks */,
+				00812BD12091BC4200E2E70B /* jpush-extension-ios-1.1.1.a in Frameworks */,
+				00812BD22091BC4200E2E70B /* jpush-ios-3.0.9.a in Frameworks */,
 				0006DF3C208DB949005A4465 /* libstdc++.tbd in Frameworks */,
 				0006DF38208DB15D005A4465 /* libc++.tbd in Frameworks */,
 				0006DF20208DB0B5005A4465 /* libz.tbd in Frameworks */,
@@ -293,6 +311,7 @@
 		0006DF53208DBB7B005A4465 /* threeparty */ = {
 			isa = PBXGroup;
 			children = (
+				00812BC72091BA2500E2E70B /* jpush */,
 				0006DF54208DBB81005A4465 /* ifly */,
 			);
 			path = threeparty;
@@ -433,6 +452,7 @@
 		007B1F2C20858EB3009EA9F1 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				00812BC62091B34400E2E70B /* framework.entitlements */,
 				0006DF53208DBB7B005A4465 /* threeparty */,
 				00D324B52085EE3F001EC82F /* viewcontroller */,
 				007B1F6320858F1D009EA9F1 /* view */,
@@ -481,6 +501,7 @@
 		007B1F6020858EF5009EA9F1 /* general */ = {
 			isa = PBXGroup;
 			children = (
+				00812BC22091A10000E2E70B /* data */,
 				00D324E120874868001EC82F /* runtime */,
 				00D324DD208742BD001EC82F /* db */,
 				00D324D9208740CE001EC82F /* ui */,
@@ -537,6 +558,27 @@
 				00CCE9B5208EDCAA00032B4A /* Constant.h */,
 			);
 			path = macro;
+			sourceTree = "<group>";
+		};
+		00812BC22091A10000E2E70B /* data */ = {
+			isa = PBXGroup;
+			children = (
+				00812BC32091A14500E2E70B /* STConvertUtil.h */,
+				00812BC42091A14500E2E70B /* STConvertUtil.m */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		00812BC72091BA2500E2E70B /* jpush */ = {
+			isa = PBXGroup;
+			children = (
+				00812BC82091BA2500E2E70B /* jcore-ios-1.1.9.a */,
+				00812BC92091BA2500E2E70B /* jpush-extension-ios-1.1.1.a */,
+				00812BCA2091BA2500E2E70B /* jpush-ios-3.0.9.a */,
+				00812BCB2091BA2500E2E70B /* JPushNotificationExtensionService.h */,
+				00812BCC2091BA2500E2E70B /* JPUSHService.h */,
+			);
+			path = jpush;
 			sourceTree = "<group>";
 		};
 		00D324B42085EE25001EC82F /* viewmodel */ = {
@@ -653,6 +695,7 @@
 		F4CB1C08952DCB6FCA6926B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00812BD32091BCAA00E2E70B /* libresolv.tbd */,
 				0006DF49208DBA6B005A4465 /* MobileCoreServices.framework */,
 				0006DF45208DBA48005A4465 /* AssetsLibrary.framework */,
 				0006DF43208DBA2C005A4465 /* CoreMedia.framework */,
@@ -756,6 +799,14 @@
 				TargetAttributes = {
 					007B1F2920858EB3009EA9F1 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					007B1F4120858EB6009EA9F1 = {
 						CreatedOnToolsVersion = 9.3;
@@ -879,6 +930,7 @@
 				00D324B2208598A7001EC82F /* STTimeUtil.m in Sources */,
 				005F7A8920901F0C003CA4CA /* MasonryPage.m in Sources */,
 				00D324B3208598A7001EC82F /* STPUtil.m in Sources */,
+				00812BC52091A14500E2E70B /* STConvertUtil.m in Sources */,
 				00D3249D208596ED001EC82F /* UILabel+ContentSize.m in Sources */,
 				00D324B1208598A7001EC82F /* STColorUtil.m in Sources */,
 				00D324D320873B14001EC82F /* RespondModel.m in Sources */,
@@ -1065,14 +1117,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = framework/framework.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB86U4DT8H;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/framework/threeparty",
-					"$(PROJECT_DIR)/framework/threeparty/ifly/New\\ Group",
 					"$(PROJECT_DIR)/framework/threeparty/ifly",
+					"$(PROJECT_DIR)/framework/threeparty/jpush",
 				);
 				GCC_PREFIX_HEADER = framework/macro/STPrefixHeader.pch;
 				INFOPLIST_FILE = framework/Info.plist;
@@ -1080,8 +1134,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sthl.framework;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/framework/threeparty/jpush",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.st.owner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1092,14 +1152,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = framework/framework.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB86U4DT8H;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/framework/threeparty",
-					"$(PROJECT_DIR)/framework/threeparty/ifly/New\\ Group",
 					"$(PROJECT_DIR)/framework/threeparty/ifly",
+					"$(PROJECT_DIR)/framework/threeparty/jpush",
 				);
 				GCC_PREFIX_HEADER = framework/macro/STPrefixHeader.pch;
 				INFOPLIST_FILE = framework/Info.plist;
@@ -1107,8 +1169,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sthl.framework;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/framework/threeparty/jpush",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.st.owner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
