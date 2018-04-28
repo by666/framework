@@ -14,8 +14,10 @@
 #import <iflyMSC/IFlyFaceSDK.h>
 #import "UserModel.h"
 #import "STUserDefaults.h"
+#import <WXApi.h>
+#import "STObserverManager.h"
 
-@interface AppDelegate ()<JPUSHRegisterDelegate>
+@interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>
 
 @end
 
@@ -33,6 +35,9 @@
     [self initIFly];
     [self initDB];
     [self initJPush:launchOptions];
+    [self initWechat];
+    
+    [[STObserverManager sharedSTObserverManager]setup];
     return YES;
 }
 
@@ -98,6 +103,15 @@
     }];
 }
 
+-(void)initWechat{
+    BOOL result = [WXApi registerApp:WECHAT_APPID];
+    if(result){
+        [STLog print:@"微信sdk注册成功"];
+    }
+}
+
+
+#pragma mark 系统自带回调
 - (void)applicationWillResignActive:(UIApplication *)application {
 }
 
@@ -172,6 +186,51 @@
         [STLog print:@"分享"];
     }
     
+}
+
+
+#pragma mark 微信回调
+-(void)onReq:(BaseReq *)req{
+    
+}
+
+-(void)onResp:(BaseResp *)resp{
+    //微信登录回调
+    if ([resp isKindOfClass:[SendAuthResp class]]) {
+        SendAuthResp *authResp = (SendAuthResp *)resp;
+        NSString *code =  authResp.code;
+        [STLog print:@"微信登录票据" content:code];
+        [[STObserverManager sharedSTObserverManager]sendMessage:Notify_WXLogin msg:code];
+//        [[NSNotificationCenter defaultCenter]postNotificationName:NOTIFY_WECAHT_CALLBACK object:nil];
+    }
+    //微信支付回调
+    if([resp isKindOfClass:[PayResp class]]){
+        switch (resp.errCode) {
+            case WXSuccess:
+//                [[NSNotificationCenter defaultCenter]postNotificationName:NOTIFY_WECAHT_PAY_SUCCESS object:nil];
+                break;
+            default:
+//                [[NSNotificationCenter defaultCenter]postNotificationName:NOTIFY_WECAHT_PAY_FAIL object:nil];
+                break;
+        }
+    }
+}
+
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    [WXApi handleOpenURL:url delegate:self];
+    return YES;
+}
+
+
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    NSString *host = url.host;
+    if([host isEqualToString:@"oauth"]){
+        [WXApi handleOpenURL:url delegate:self];
+    }else if([url.host isEqualToString:@"pay"]){
+        return  [WXApi handleOpenURL:url delegate:self];
+    }
+    return YES;
 }
 
 @end

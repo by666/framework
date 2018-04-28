@@ -11,4 +11,6 @@ pod 'FMDB', '~> 2.6'
 pod 'MJRefresh'
 pod 'Masonry'
 pod 'ReactiveCocoa', '~> 2.5'
+pod 'WechatOpenSDK'
+pod 'JPush', '3.0.9'
 end

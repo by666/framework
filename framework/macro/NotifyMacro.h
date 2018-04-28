@@ -10,5 +10,6 @@
 
 #pragma mark 定义通知相关
 
-#define Notify_UIUpdate @"ui_update"
+#define Notify_WXLogin @"wechat_login"
+
 

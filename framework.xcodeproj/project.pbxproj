@@ -45,6 +45,8 @@
 		0006DF9F208DBCAD005A4465 /* PermissionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF94208DBCAD005A4465 /* PermissionDetector.m */; };
 		0006DFA2208DC05B005A4465 /* SystemFacePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DFA1208DC05B005A4465 /* SystemFacePage.m */; };
 		0006DFA8208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DFA7208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m */; };
+		0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2820942ABD0044D92E /* STObserverManager.m */; };
+		0039FC2C20942BDF0044D92E /* STObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2B20942BDF0044D92E /* STObserver.m */; };
 		005F7A8920901F0C003CA4CA /* MasonryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F7A8820901F0C003CA4CA /* MasonryPage.m */; };
 		007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F2E20858EB3009EA9F1 /* AppDelegate.m */; };
 		007B1F3720858EB6009EA9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007B1F3620858EB6009EA9F1 /* Assets.xcassets */; };
@@ -52,9 +54,6 @@
 		007B1F4720858EB6009EA9F1 /* frameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F4620858EB6009EA9F1 /* frameworkTests.m */; };
 		007B1F5220858EB7009EA9F1 /* frameworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F5120858EB7009EA9F1 /* frameworkUITests.m */; };
 		00812BC52091A14500E2E70B /* STConvertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00812BC42091A14500E2E70B /* STConvertUtil.m */; };
-		00812BD02091BC4200E2E70B /* jcore-ios-1.1.9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BC82091BA2500E2E70B /* jcore-ios-1.1.9.a */; };
-		00812BD12091BC4200E2E70B /* jpush-extension-ios-1.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BC92091BA2500E2E70B /* jpush-extension-ios-1.1.1.a */; };
-		00812BD22091BC4200E2E70B /* jpush-ios-3.0.9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BCA2091BA2500E2E70B /* jpush-ios-3.0.9.a */; };
 		00812BD42091BCAA00E2E70B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BD32091BCAA00E2E70B /* libresolv.tbd */; };
 		00BBBD972091D0E300556B90 /* STFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BBBD962091D0E300556B90 /* STFileUtil.m */; };
 		00CCE9A8208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */; };
@@ -80,6 +79,18 @@
 		00D324E420874874001EC82F /* STRuntimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324E320874874001EC82F /* STRuntimeUtil.m */; };
 		F7CC18FEA014615A522B69A1 /* Pods_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD31C7F288F0669DDF6673 /* Pods_framework.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		003276B920941C0500EDE5F8 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.mig;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# mig\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		007B1F4320858EB6009EA9F1 /* PBXContainerItemProxy */ = {
@@ -160,6 +171,10 @@
 		0006DFA1208DC05B005A4465 /* SystemFacePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemFacePage.m; sourceTree = "<group>"; };
 		0006DFA6208DCB66005A4465 /* IFlyOnlineFaceDetectPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFlyOnlineFaceDetectPage.h; sourceTree = "<group>"; };
 		0006DFA7208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFlyOnlineFaceDetectPage.m; sourceTree = "<group>"; };
+		0039FC2720942ABD0044D92E /* STObserverManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObserverManager.h; sourceTree = "<group>"; };
+		0039FC2820942ABD0044D92E /* STObserverManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObserverManager.m; sourceTree = "<group>"; };
+		0039FC2A20942BDF0044D92E /* STObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObserver.h; sourceTree = "<group>"; };
+		0039FC2B20942BDF0044D92E /* STObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObserver.m; sourceTree = "<group>"; };
 		005F7A8720901F0C003CA4CA /* MasonryPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryPage.h; sourceTree = "<group>"; };
 		005F7A8820901F0C003CA4CA /* MasonryPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryPage.m; sourceTree = "<group>"; };
 		007B1F2A20858EB3009EA9F1 /* framework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = framework.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,9 +260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00812BD42091BCAA00E2E70B /* libresolv.tbd in Frameworks */,
-				00812BD02091BC4200E2E70B /* jcore-ios-1.1.9.a in Frameworks */,
-				00812BD12091BC4200E2E70B /* jpush-extension-ios-1.1.1.a in Frameworks */,
-				00812BD22091BC4200E2E70B /* jpush-ios-3.0.9.a in Frameworks */,
 				0006DF3C208DB949005A4465 /* libstdc++.tbd in Frameworks */,
 				0006DF38208DB15D005A4465 /* libc++.tbd in Frameworks */,
 				0006DF20208DB0B5005A4465 /* libz.tbd in Frameworks */,
@@ -515,6 +527,10 @@
 				00D324AF208598A7001EC82F /* Singleton.h */,
 				00CCE9AF208ECCDD00032B4A /* AccountManager.h */,
 				00CCE9B0208ECCDD00032B4A /* AccountManager.m */,
+				0039FC2720942ABD0044D92E /* STObserverManager.h */,
+				0039FC2820942ABD0044D92E /* STObserverManager.m */,
+				0039FC2A20942BDF0044D92E /* STObserver.h */,
+				0039FC2B20942BDF0044D92E /* STObserver.m */,
 			);
 			path = general;
 			sourceTree = "<group>";
@@ -749,6 +765,7 @@
 				E16904A781865EC1EDCA8D82 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
+				003276B920941C0500EDE5F8 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -928,6 +945,7 @@
 			files = (
 				00D3249C208596ED001EC82F /* UIView+Frame.m in Sources */,
 				0006DF79208DBC76005A4465 /* FaceRequestViewController.m in Sources */,
+				0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */,
 				0006DF75208DBC76005A4465 /* FaceDetectorViewController.m in Sources */,
 				00D324A020859778001EC82F /* BaseViewController.m in Sources */,
 				0006DF1C20898F70005A4465 /* TouchScrollView.m in Sources */,
@@ -963,6 +981,7 @@
 				00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */,
 				00D3249B208596ED001EC82F /* UILabel+StringFrame.m in Sources */,
 				00D32491208594F4001EC82F /* STLog.m in Sources */,
+				0039FC2C20942BDF0044D92E /* STObserver.m in Sources */,
 				0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */,
 				0006DF95208DBCAD005A4465 /* CalculatorTools.m in Sources */,
 				0006DF1820898BDE005A4465 /* STRefreshTableView.m in Sources */,
@@ -1132,7 +1151,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/framework/threeparty",
 					"$(PROJECT_DIR)/framework/threeparty/ifly",
-					"$(PROJECT_DIR)/framework/threeparty/jpush",
 				);
 				GCC_PREFIX_HEADER = framework/macro/STPrefixHeader.pch;
 				INFOPLIST_FILE = framework/Info.plist;
@@ -1144,7 +1162,41 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/framework/threeparty/jpush",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.st.owner;
+				OTHER_LDFLAGS = (
+					"-l\"WeChatSDK\"",
+					"-l\"c++\"",
+					"-l\"sqlite3.0\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"FMDB\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"ReactiveCocoa\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-ObjC",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.scrat.gogo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1167,7 +1219,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/framework/threeparty",
 					"$(PROJECT_DIR)/framework/threeparty/ifly",
-					"$(PROJECT_DIR)/framework/threeparty/jpush",
 				);
 				GCC_PREFIX_HEADER = framework/macro/STPrefixHeader.pch;
 				INFOPLIST_FILE = framework/Info.plist;
@@ -1179,7 +1230,41 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/framework/threeparty/jpush",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.st.owner;
+				OTHER_LDFLAGS = (
+					"-l\"WeChatSDK\"",
+					"-l\"c++\"",
+					"-l\"sqlite3.0\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"FMDB\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"ReactiveCocoa\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-ObjC",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.scrat.gogo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

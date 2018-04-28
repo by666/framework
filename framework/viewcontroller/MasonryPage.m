@@ -8,7 +8,9 @@
 
 #import "MasonryPage.h"
 #import "STPUtil.h"
-@interface MasonryPage ()
+#import <WXApi.h>
+#import "STObserverManager.h"
+@interface MasonryPage ()<STObserverProtocol>
 
 @property(strong,nonatomic)UILabel *phoneLabel;
 @property(strong,nonatomic)UILabel *verifyLabel;
@@ -16,6 +18,7 @@
 @property(strong,nonatomic)UITextField *phoneTF;
 @property(strong,nonatomic)UITextField *verifyTF;
 @property(strong,nonatomic)UIButton *loginBtn;
+@property(strong,nonatomic)UIButton *wechatBtn;
 
 @end
 
@@ -25,6 +28,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = c01;
     self.navigationItem.title = @"Massory";
+    [[STObserverManager sharedSTObserverManager]registerSTObsever:Notify_WXLogin delegate:self];
     [self initView];
 }
 
@@ -124,8 +128,43 @@
         make.height.equalTo(@(48));
     }];
     
+    
+    _wechatBtn= [[UIButton alloc]init];
+    [_wechatBtn setTitle:@"微信登录" forState:UIControlStateNormal];
+    _wechatBtn.backgroundColor = [STColorUtil colorWithHexString:@"63B8FF"];
+    _wechatBtn.layer.masksToBounds = YES;
+    _wechatBtn.layer.cornerRadius = 24;
+    [_wechatBtn addTarget:self action:@selector(doWechatLogin) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_wechatBtn];
+    
+    [_wechatBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.loginBtn.mas_bottom).offset(40);
+        make.left.mas_equalTo(self.loginBtn.mas_left);
+        make.right.mas_equalTo(self.loginBtn.mas_right);
+        make.height.equalTo(@(48));
+    }];
 }
 
 
+-(void)doWechatLogin{
+    if([WXApi isWXAppInstalled]){
+        SendAuthReq *req = [[SendAuthReq alloc] init];
+        req.scope = @"snsapi_userinfo";
+        req.state = @"App";
+        [WXApi sendReq:req];
+    }else{
+        [STLog print:@"请先安装微信"];
+    }
+}
+
+-(void)dealloc{
+    [[STObserverManager sharedSTObserverManager]removeSTObsever:Notify_WXLogin];
+}
+
+
+-(void)OnReciveResult:(NSString *)key msg:(NSString *)msg{
+    _phoneTF.text = key;
+    _verifyTF.text = msg;
+}
 
 @end

@@ -12,3 +12,4 @@
 
 #define IFLY_FACE_APPID @"5add784a"
 #define JPUSH_APPKEY @"49828a3f5529d51df648f0ad"
+#define WECHAT_APPID @"wx3349545f4d083130"
