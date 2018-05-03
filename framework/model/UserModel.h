@@ -10,6 +10,9 @@
 
 @interface UserModel : NSObject<NSCoding>
 
+@property(copy, nonatomic)NSString *access_token;
+@property(copy, nonatomic)NSString *refresh_token;
+
 @property (assign, nonatomic) long uid;
 @property (assign, nonatomic) int age;
 @property (copy, nonatomic) NSString *phoneNum;

@@ -10,8 +10,13 @@
 
 @interface STPUtil : NSObject
 
+//比例宽
 +(int)getActualWidth : (int)width;
 
+//比例高
 +(int)getActualHeight : (int)height;
+
+//APP版本
++(double)getAppVersion;
 
 @end

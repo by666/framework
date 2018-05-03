@@ -20,6 +20,7 @@
 //注意model必须实现NSCoding才可以使用
 +(Boolean)saveModel:(NSString *)key model:(id)model;
 +(id)getModel:(NSString *)key;
++(void)removeModel:(NSString *)key;
 
 
 

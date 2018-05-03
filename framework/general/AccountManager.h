@@ -11,6 +11,20 @@
 @interface AccountManager : NSObject
 SINGLETON_DECLARATION(AccountManager)
 
+//存储用户信息
 -(void)saveUserModel:(UserModel *)model;
+
+//获取用户信息
+-(UserModel *)getUserModel;
+
+//清除用户信息
+-(void)clearUserModel;
+
+//是否登录
+-(Boolean)isLogin;
+
+//刷新token
+-(void)refreshToken;
+
 
 @end

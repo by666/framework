@@ -56,5 +56,10 @@
 }
 
 
++(void)removeModel:(NSString *)key{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults removeObjectForKey:key];
+}
+
 
 @end

@@ -19,4 +19,10 @@
     return ScreenHeight * height / 1334;
 }
 
++(double)getAppVersion{
+    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString *currentVersion = [infoDict objectForKey:@"CFBundleVersion"];
+    return [currentVersion doubleValue];
+}
+
 @end

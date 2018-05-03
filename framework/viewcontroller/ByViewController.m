@@ -14,6 +14,7 @@
 #import "IFlyOfflineFaceDetectPage.h"
 #import "IFlyOfflineVedioDetectPage.h"
 #import "MasonryPage.h"
+#import "STObserverManager.h"
 
 
 @interface ByViewController ()<ByViewDelegate>
@@ -34,7 +35,6 @@
     [self.view setBackgroundColor:c01];
     [self initBodyView];
 }
-
 
 
 -(void)initBodyView{

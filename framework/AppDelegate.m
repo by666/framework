@@ -16,6 +16,8 @@
 #import "STUserDefaults.h"
 #import <WXApi.h>
 #import "STObserverManager.h"
+#import "AFNetworkActivityIndicatorManager.h"
+#import "STUpdateUtil.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>
 
@@ -31,13 +33,17 @@
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
-    
+
+    [[STObserverManager sharedSTObserverManager]setup];
     [self initIFly];
     [self initDB];
     [self initJPush:launchOptions];
     [self initWechat];
+    [self initNet];
+    [STUpdateUtil checkUpdate:^(NSString *appname, NSString *url, double version) {
+        [self showUpdateAlert:url version:version];
+    }];
     
-    [[STObserverManager sharedSTObserverManager]setup];
     return YES;
 }
 
@@ -110,6 +116,12 @@
     }
 }
 
+-(void)initNet{
+    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
+    [NSURLCache setSharedURLCache:URLCache];
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    
+}
 
 #pragma mark 系统自带回调
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -201,7 +213,6 @@
         NSString *code =  authResp.code;
         [STLog print:@"微信登录票据" content:code];
         [[STObserverManager sharedSTObserverManager]sendMessage:Notify_WXLogin msg:code];
-//        [[NSNotificationCenter defaultCenter]postNotificationName:NOTIFY_WECAHT_CALLBACK object:nil];
     }
     //微信支付回调
     if([resp isKindOfClass:[PayResp class]]){
@@ -231,6 +242,22 @@
         return  [WXApi handleOpenURL:url delegate:self];
     }
     return YES;
+}
+
+//打开更新对话框
+-(void)showUpdateAlert:(NSString *)downUrl version:(double)version{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"检测到新版本" message:[NSString stringWithFormat:@"是否更新到新版本v%.2f",version] preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+
+    }];
+    UIAlertAction *updateAction = [UIAlertAction actionWithTitle:@"更新" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+           [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124?mt=8&v0=WWW-GCCN-ITSTOP100-FREEAPPS&l=&ign-mpt=uo%3D4"]];
+
+    }];
+
+    [alertController addAction:cancelAction];
+    [alertController addAction:updateAction];
+    [_window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

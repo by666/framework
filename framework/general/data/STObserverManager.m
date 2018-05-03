@@ -26,12 +26,14 @@ SINGLETON_IMPLEMENTION(STObserverManager)
 
 
 -(void)registerSTObsever:(NSString *)key delegate:(id<STObserverProtocol>)delegate{
-    STObserver *observer = [[STObserver alloc]init];
-    observer.key = key;
-    observer.statu = Default;
-    observer.obseverDelegate = delegate;
-    [observer addObserver:self forKeyPath:@"statu" options:NSKeyValueObservingOptionNew || NSKeyValueChangeOldKey context:nil];
-    [_obeservers addObject:observer];
+   if(_obeservers){
+        STObserver *observer = [[STObserver alloc]init];
+        observer.key = key;
+        observer.statu = Default;
+        observer.obseverDelegate = delegate;
+        [observer addObserver:self forKeyPath:@"statu" options:NSKeyValueObservingOptionNew || NSKeyValueChangeOldKey context:nil];
+        [_obeservers addObject:observer];
+    }
 }
 
 -(void)removeSTObsever:(NSString *)key{

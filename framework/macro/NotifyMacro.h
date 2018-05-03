@@ -13,3 +13,8 @@
 #define Notify_WXLogin @"wechat_login"
 
 
+
+
+#pragma mark 定义UserDefaults相关
+
+#define UD_USERMODEL @"ud_usermodel"

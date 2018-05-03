@@ -7,11 +7,32 @@
 //
 
 #import "AccountManager.h"
+#import "STUserDefaults.h"
 
 @implementation AccountManager
 SINGLETON_IMPLEMENTION(AccountManager)
 
 
 -(void)saveUserModel:(UserModel *)model{
+    [STUserDefaults saveModel:UD_USERMODEL model:model];
  }
+
+-(UserModel *)getUserModel{
+    return [STUserDefaults getModel:UD_USERMODEL];
+}
+
+-(void)clearUserModel{
+    [STUserDefaults removeModel:UD_USERMODEL];
+}
+
+-(Boolean)isLogin{
+    //todo
+    return NO;
+}
+
+-(void)refreshToken{
+    //todo
+    
+}
+
 @end

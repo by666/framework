@@ -56,6 +56,7 @@
 		00812BC52091A14500E2E70B /* STConvertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00812BC42091A14500E2E70B /* STConvertUtil.m */; };
 		00812BD42091BCAA00E2E70B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BD32091BCAA00E2E70B /* libresolv.tbd */; };
 		00BBBD972091D0E300556B90 /* STFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BBBD962091D0E300556B90 /* STFileUtil.m */; };
+		00C2541E209AACDC00E8E306 /* STUpdateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C2541D209AACDC00E8E306 /* STUpdateUtil.m */; };
 		00CCE9A8208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */; };
 		00CCE9AB208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9AA208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m */; };
 		00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9AD208ECB9300032B4A /* UserModel.m */; };
@@ -202,6 +203,8 @@
 		00812BD32091BCAA00E2E70B /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		00BBBD952091D0E300556B90 /* STFileUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STFileUtil.h; sourceTree = "<group>"; };
 		00BBBD962091D0E300556B90 /* STFileUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STFileUtil.m; sourceTree = "<group>"; };
+		00C2541C209AACDC00E8E306 /* STUpdateUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STUpdateUtil.h; sourceTree = "<group>"; };
+		00C2541D209AACDC00E8E306 /* STUpdateUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STUpdateUtil.m; sourceTree = "<group>"; };
 		00CCE9A6208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFlyOfflineFaceDetectPage.h; sourceTree = "<group>"; };
 		00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFlyOfflineFaceDetectPage.m; sourceTree = "<group>"; };
 		00CCE9A9208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFlyOfflineVedioDetectPage.h; sourceTree = "<group>"; };
@@ -527,10 +530,6 @@
 				00D324AF208598A7001EC82F /* Singleton.h */,
 				00CCE9AF208ECCDD00032B4A /* AccountManager.h */,
 				00CCE9B0208ECCDD00032B4A /* AccountManager.m */,
-				0039FC2720942ABD0044D92E /* STObserverManager.h */,
-				0039FC2820942ABD0044D92E /* STObserverManager.m */,
-				0039FC2A20942BDF0044D92E /* STObserver.h */,
-				0039FC2B20942BDF0044D92E /* STObserver.m */,
 			);
 			path = general;
 			sourceTree = "<group>";
@@ -582,6 +581,10 @@
 		00812BC22091A10000E2E70B /* data */ = {
 			isa = PBXGroup;
 			children = (
+				0039FC2720942ABD0044D92E /* STObserverManager.h */,
+				0039FC2820942ABD0044D92E /* STObserverManager.m */,
+				0039FC2A20942BDF0044D92E /* STObserver.h */,
+				0039FC2B20942BDF0044D92E /* STObserver.m */,
 				00812BC32091A14500E2E70B /* STConvertUtil.h */,
 				00812BC42091A14500E2E70B /* STConvertUtil.m */,
 			);
@@ -642,6 +645,8 @@
 			children = (
 				00D324CB2087277E001EC82F /* STNetUtil.h */,
 				00D324CC2087277E001EC82F /* STNetUtil.m */,
+				00C2541C209AACDC00E8E306 /* STUpdateUtil.h */,
+				00C2541D209AACDC00E8E306 /* STUpdateUtil.m */,
 			);
 			path = http;
 			sourceTree = "<group>";
@@ -991,6 +996,7 @@
 				00D324CA2086E355001EC82F /* ByView.m in Sources */,
 				0006DF132089875E005A4465 /* ByViewController.m in Sources */,
 				00D324E0208742CC001EC82F /* STDataBaseUtil.m in Sources */,
+				00C2541E209AACDC00E8E306 /* STUpdateUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
