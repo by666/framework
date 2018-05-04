@@ -16,6 +16,7 @@
 -(void)goIFlyOfflineFaceDetectPage;
 -(void)goIFlyOfflineVedioDetectPage;
 -(void)goMasonryPage;
+-(void)goQRPage;
 
 @end
 

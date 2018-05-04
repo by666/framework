@@ -41,7 +41,7 @@
     [self initWechat];
     [self initNet];
     [STUpdateUtil checkUpdate:^(NSString *appname, NSString *url, double version) {
-        [self showUpdateAlert:url version:version];
+//        [self showUpdateAlert:url version:version];
     }];
     
     return YES;

@@ -15,6 +15,7 @@
 #import "IFlyOfflineVedioDetectPage.h"
 #import "MasonryPage.h"
 #import "STObserverManager.h"
+#import "QRCodePage.h"
 
 
 @interface ByViewController ()<ByViewDelegate>
@@ -66,8 +67,15 @@
 }
 
 -(void)goMasonryPage{
+    
     MasonryPage *page = [[MasonryPage alloc]init];
     [self pushPage:page];
 }
+
+-(void)goQRPage{
+    QRCodePage *vc = [QRCodePage new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 @end
