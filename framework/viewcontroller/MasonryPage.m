@@ -10,6 +10,8 @@
 #import "STPUtil.h"
 #import <WXApi.h>
 #import "STObserverManager.h"
+#import "STNetUtil.h"
+#import "STAlertUtil.h"
 @interface MasonryPage ()<STObserverProtocol>
 
 @property(strong,nonatomic)UILabel *phoneLabel;
@@ -120,6 +122,7 @@
     _loginBtn.layer.masksToBounds = YES;
     _loginBtn.layer.cornerRadius = 24;
     [self.view addSubview:_loginBtn];
+    [_loginBtn addTarget:self action:@selector(doLogin) forControlEvents:UIControlEventTouchUpInside];
     
     [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.verifyTF.mas_bottom).offset(40);
@@ -145,6 +148,25 @@
     }];
 }
 
+
+-(void)doLogin{
+    NSString *phoneNum = _phoneTF.text;
+    NSString *verifyCode   =_verifyTF.text;
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    dic[@"phonenum"]= phoneNum;
+    dic[@"verifyCode"] = verifyCode;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [STNetUtil get:@"http://192.168.0.115:9000/login" parameters:dic success:^(RespondModel *respondModel) {
+            if(respondModel.code == 200){
+                id result = respondModel.result;
+            }
+        } failure:^(NSError *error) {
+            
+        }
+         ];
+    });
+  
+}
 
 -(void)doWechatLogin{
     if([WXApi isWXAppInstalled]){

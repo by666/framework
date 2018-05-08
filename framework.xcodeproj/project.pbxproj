@@ -47,6 +47,8 @@
 		0006DFA8208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DFA7208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m */; };
 		0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2820942ABD0044D92E /* STObserverManager.m */; };
 		0039FC2C20942BDF0044D92E /* STObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2B20942BDF0044D92E /* STObserver.m */; };
+		004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51620A16DC400BA9602 /* STAlertUtil.m */; };
+		004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51920A1A37E00BA9602 /* STSheetModel.m */; };
 		005F7A8920901F0C003CA4CA /* MasonryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F7A8820901F0C003CA4CA /* MasonryPage.m */; };
 		007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F2E20858EB3009EA9F1 /* AppDelegate.m */; };
 		007B1F3720858EB6009EA9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007B1F3620858EB6009EA9F1 /* Assets.xcassets */; };
@@ -178,6 +180,10 @@
 		0039FC2820942ABD0044D92E /* STObserverManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObserverManager.m; sourceTree = "<group>"; };
 		0039FC2A20942BDF0044D92E /* STObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObserver.h; sourceTree = "<group>"; };
 		0039FC2B20942BDF0044D92E /* STObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObserver.m; sourceTree = "<group>"; };
+		004EF51520A16DC400BA9602 /* STAlertUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STAlertUtil.h; sourceTree = "<group>"; };
+		004EF51620A16DC400BA9602 /* STAlertUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAlertUtil.m; sourceTree = "<group>"; };
+		004EF51820A1A37E00BA9602 /* STSheetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSheetModel.h; sourceTree = "<group>"; };
+		004EF51920A1A37E00BA9602 /* STSheetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STSheetModel.m; sourceTree = "<group>"; };
 		005F7A8720901F0C003CA4CA /* MasonryPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryPage.h; sourceTree = "<group>"; };
 		005F7A8820901F0C003CA4CA /* MasonryPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryPage.m; sourceTree = "<group>"; };
 		007B1F2A20858EB3009EA9F1 /* framework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = framework.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -450,6 +456,17 @@
 			path = Permission;
 			sourceTree = "<group>";
 		};
+		004EF51B20A1A49500BA9602 /* alert */ = {
+			isa = PBXGroup;
+			children = (
+				004EF51820A1A37E00BA9602 /* STSheetModel.h */,
+				004EF51920A1A37E00BA9602 /* STSheetModel.m */,
+				004EF51520A16DC400BA9602 /* STAlertUtil.h */,
+				004EF51620A16DC400BA9602 /* STAlertUtil.m */,
+			);
+			path = alert;
+			sourceTree = "<group>";
+		};
 		007B1F2120858EB3009EA9F1 = {
 			isa = PBXGroup;
 			children = (
@@ -687,6 +704,7 @@
 		00D324D9208740CE001EC82F /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				004EF51B20A1A49500BA9602 /* alert */,
 				00D324AA208598A7001EC82F /* STColorUtil.h */,
 				00D324A9208598A6001EC82F /* STColorUtil.m */,
 				00D324AE208598A7001EC82F /* STPUtil.h */,
@@ -962,6 +980,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D3249C208596ED001EC82F /* UIView+Frame.m in Sources */,
+				004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */,
 				0006DF79208DBC76005A4465 /* FaceRequestViewController.m in Sources */,
 				0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */,
 				0006DF75208DBC76005A4465 /* FaceDetectorViewController.m in Sources */,
@@ -1002,6 +1021,7 @@
 				00D32491208594F4001EC82F /* STLog.m in Sources */,
 				0039FC2C20942BDF0044D92E /* STObserver.m in Sources */,
 				0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */,
+				004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */,
 				0006DF95208DBCAD005A4465 /* CalculatorTools.m in Sources */,
 				0006DF1820898BDE005A4465 /* STRefreshTableView.m in Sources */,
 				0006DF9C208DBCAD005A4465 /* IFlyFaceResultKeys.m in Sources */,

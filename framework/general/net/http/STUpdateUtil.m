@@ -17,18 +17,20 @@
     NSURLRequest *request =[NSURLRequest requestWithURL:url];
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *sessionDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingMutableLeaves) error:nil];
-        NSMutableArray *array = [dict mutableArrayValueForKey:@"results"];
-        if(!IS_NS_COLLECTION_EMPTY(array)){
-            NSDictionary *dataDic  = [array objectAtIndex:0];
-            NSString *downUrl = [dataDic objectForKey:@"trackViewUrl"];
-            NSString *appName = [dataDic objectForKey:@"trackName"];
-            double newVersion = [[dataDic objectForKey:@"version"] doubleValue];
-            double currentVersion =  [STPUtil getAppVersion];
-            if(newVersion > currentVersion){
-                block(appName,downUrl,newVersion);
-            }else{
-                [STLog print:@"当前app版本" content:[NSString stringWithFormat:@"%.2f",currentVersion]];
+        if(data){
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingMutableLeaves) error:nil];
+            NSMutableArray *array = [dict mutableArrayValueForKey:@"results"];
+            if(!IS_NS_COLLECTION_EMPTY(array)){
+                NSDictionary *dataDic  = [array objectAtIndex:0];
+                NSString *downUrl = [dataDic objectForKey:@"trackViewUrl"];
+                NSString *appName = [dataDic objectForKey:@"trackName"];
+                double newVersion = [[dataDic objectForKey:@"version"] doubleValue];
+                double currentVersion =  [STPUtil getAppVersion];
+                if(newVersion > currentVersion){
+                    block(appName,downUrl,newVersion);
+                }else{
+                    [STLog print:@"当前app版本" content:[NSString stringWithFormat:@"%.2f",currentVersion]];
+                }
             }
         }
     }];
