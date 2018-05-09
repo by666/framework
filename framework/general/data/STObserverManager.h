@@ -29,7 +29,7 @@ SINGLETON_DECLARATION(STObserverManager)
 -(NSMutableArray*)getAllObsever;
 
 //广播消息
--(void)sendMessage:(NSString *)key msg:(NSString *)message;
+-(void)sendMessage:(NSString *)key msg:(id)message;
 
 
 @end

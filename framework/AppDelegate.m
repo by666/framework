@@ -8,9 +8,8 @@
 
 #import "AppDelegate.h"
 #import "STDataBaseUtil.h"
-#import "ByModel.h"
 #import "STRuntimeUtil.h"
-#import "ByViewController.h"
+#import "LoginViewPage.h"
 #import <iflyMSC/IFlyFaceSDK.h>
 #import "UserModel.h"
 #import "STUserDefaults.h"
@@ -27,9 +26,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-    ByViewController *controller = [[ByViewController alloc]init];
+    LoginViewPage *controller = [[LoginViewPage alloc]init];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
@@ -68,7 +66,7 @@
 }
 
 -(void)initDB{
-    [[STDataBaseUtil sharedSTDataBaseUtil]createTable:@"by666" model:[ByModel class]];
+    [[STDataBaseUtil sharedSTDataBaseUtil]createTable:@"by666" model:[UserModel class]];
     
     UserModel *model = [[UserModel alloc]init];
     model.uid = 123124;

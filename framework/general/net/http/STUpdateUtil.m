@@ -8,7 +8,6 @@
 
 #import "STUpdateUtil.h"
 #import <AFNetworking/AFNetworking.h>
-#import "STPUtil.h"
 
 @implementation STUpdateUtil
 

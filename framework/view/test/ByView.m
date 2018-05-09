@@ -12,8 +12,6 @@
 
 @interface ByView()<TouchScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
-@property (strong, nonatomic)ByViewModel *mByViewModel;
-@property (strong, nonatomic)ByModel *mByModel;
 @property (strong, nonatomic)TouchScrollView *scrollView;
 @property (strong, nonatomic)UITableView *tableView;
 
@@ -23,10 +21,9 @@
     NSArray *titles;
 }
 
--(instancetype)initWithViewModel:(ByViewModel *)byViewModel{
+-(instancetype)init{
     if(self == [super init]){
         titles = [[NSArray alloc]initWithObjects:@"系统人脸识别",@"ifly在线图片识别",@"ify离线图片识别",@"ify离线视频识别",@"Massory测试",@"二维码识别",nil];
-        _mByViewModel = byViewModel;
         [self initView];
     }
     return self;
@@ -36,8 +33,6 @@
 -(void)initView{
     self.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     self.backgroundColor = c02;
-
-    _mByModel = [_mByViewModel requestData];
     
     _scrollView = [[TouchScrollView alloc]initWithParentView:self delegate:self];
     _scrollView.frame = CGRectMake(0, StatuBarHeight, ScreenWidth, ScreenHeight - StatuBarHeight);

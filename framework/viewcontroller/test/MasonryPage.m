@@ -7,7 +7,6 @@
 //
 
 #import "MasonryPage.h"
-#import "STPUtil.h"
 #import <WXApi.h>
 #import "STObserverManager.h"
 #import "STNetUtil.h"

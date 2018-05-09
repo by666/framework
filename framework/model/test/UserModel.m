@@ -14,7 +14,7 @@
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     if(self == [super init]){
         self.uid = [aDecoder decodeIntegerForKey:@"uid"];
-        self.age = [aDecoder decodeIntegerForKey:@"age"];
+        self.age = (int)[aDecoder decodeIntegerForKey:@"age"];
         self.phoneNum = [aDecoder decodeObjectForKey:@"phoneNum"];
         self.nickName = [aDecoder decodeObjectForKey:@"nickName"];
         self.gender = [aDecoder decodeObjectForKey:@"gender"];

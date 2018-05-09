@@ -15,6 +15,12 @@
 @implementation BaseViewController
 
 
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    [self hideNavigationBar:YES];
+    [self setStatuBarBackgroud:c02];
+}
+
 
 -(void)hideNavigationBar : (Boolean) hidden{
     self.navigationController.navigationBarHidden = hidden;

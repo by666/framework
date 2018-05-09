@@ -49,6 +49,13 @@
 		0039FC2C20942BDF0044D92E /* STObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2B20942BDF0044D92E /* STObserver.m */; };
 		004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51620A16DC400BA9602 /* STAlertUtil.m */; };
 		004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51920A1A37E00BA9602 /* STSheetModel.m */; };
+		004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF52120A2A23C00BA9602 /* LoginViewModel.m */; };
+		004EF52520A2A41500BA9602 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF52420A2A41500BA9602 /* LoginView.m */; };
+		004EF52820A2A42800BA9602 /* LoginViewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF52720A2A42800BA9602 /* LoginViewPage.m */; };
+		004EF52B20A2CD6200BA9602 /* UITextField+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF52A20A2CD6200BA9602 /* UITextField+Init.m */; };
+		004EF52E20A2D30800BA9602 /* UILabel+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF52D20A2D30800BA9602 /* UILabel+Init.m */; };
+		004EF53120A2D6AA00BA9602 /* UIButton+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF53020A2D6AA00BA9602 /* UIButton+Init.m */; };
+		004EF53420A2DDCB00BA9602 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF53320A2DDCB00BA9602 /* LoginModel.m */; };
 		005F7A8920901F0C003CA4CA /* MasonryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F7A8820901F0C003CA4CA /* MasonryPage.m */; };
 		007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F2E20858EB3009EA9F1 /* AppDelegate.m */; };
 		007B1F3720858EB6009EA9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007B1F3620858EB6009EA9F1 /* Assets.xcassets */; };
@@ -75,8 +82,6 @@
 		00D324B1208598A7001EC82F /* STColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324A9208598A6001EC82F /* STColorUtil.m */; };
 		00D324B2208598A7001EC82F /* STTimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324AC208598A7001EC82F /* STTimeUtil.m */; };
 		00D324B3208598A7001EC82F /* STPUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324AD208598A7001EC82F /* STPUtil.m */; };
-		00D324C42086E2E0001EC82F /* ByViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324C32086E2E0001EC82F /* ByViewModel.m */; };
-		00D324C72086E330001EC82F /* ByModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324C62086E330001EC82F /* ByModel.m */; };
 		00D324CA2086E355001EC82F /* ByView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324C92086E355001EC82F /* ByView.m */; };
 		00D324CD2087277E001EC82F /* STNetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324CC2087277E001EC82F /* STNetUtil.m */; };
 		00D324D320873B14001EC82F /* RespondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324D220873B14001EC82F /* RespondModel.m */; };
@@ -184,6 +189,20 @@
 		004EF51620A16DC400BA9602 /* STAlertUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAlertUtil.m; sourceTree = "<group>"; };
 		004EF51820A1A37E00BA9602 /* STSheetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSheetModel.h; sourceTree = "<group>"; };
 		004EF51920A1A37E00BA9602 /* STSheetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STSheetModel.m; sourceTree = "<group>"; };
+		004EF52020A2A23C00BA9602 /* LoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
+		004EF52120A2A23C00BA9602 /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
+		004EF52320A2A41500BA9602 /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		004EF52420A2A41500BA9602 /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		004EF52620A2A42800BA9602 /* LoginViewPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewPage.h; sourceTree = "<group>"; };
+		004EF52720A2A42800BA9602 /* LoginViewPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewPage.m; sourceTree = "<group>"; };
+		004EF52920A2CD6200BA9602 /* UITextField+Init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Init.h"; sourceTree = "<group>"; };
+		004EF52A20A2CD6200BA9602 /* UITextField+Init.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Init.m"; sourceTree = "<group>"; };
+		004EF52C20A2D30800BA9602 /* UILabel+Init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Init.h"; sourceTree = "<group>"; };
+		004EF52D20A2D30800BA9602 /* UILabel+Init.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Init.m"; sourceTree = "<group>"; };
+		004EF52F20A2D6AA00BA9602 /* UIButton+Init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Init.h"; sourceTree = "<group>"; };
+		004EF53020A2D6AA00BA9602 /* UIButton+Init.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Init.m"; sourceTree = "<group>"; };
+		004EF53220A2DDCB00BA9602 /* LoginModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		004EF53320A2DDCB00BA9602 /* LoginModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		005F7A8720901F0C003CA4CA /* MasonryPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryPage.h; sourceTree = "<group>"; };
 		005F7A8820901F0C003CA4CA /* MasonryPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryPage.m; sourceTree = "<group>"; };
 		007B1F2A20858EB3009EA9F1 /* framework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = framework.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,10 +268,6 @@
 		00D324AD208598A7001EC82F /* STPUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPUtil.m; sourceTree = "<group>"; };
 		00D324AE208598A7001EC82F /* STPUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPUtil.h; sourceTree = "<group>"; };
 		00D324AF208598A7001EC82F /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
-		00D324C22086E2E0001EC82F /* ByViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ByViewModel.h; sourceTree = "<group>"; };
-		00D324C32086E2E0001EC82F /* ByViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ByViewModel.m; sourceTree = "<group>"; };
-		00D324C52086E330001EC82F /* ByModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ByModel.h; sourceTree = "<group>"; };
-		00D324C62086E330001EC82F /* ByModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ByModel.m; sourceTree = "<group>"; };
 		00D324C82086E355001EC82F /* ByView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ByView.h; sourceTree = "<group>"; };
 		00D324C92086E355001EC82F /* ByView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ByView.m; sourceTree = "<group>"; };
 		00D324CB2087277E001EC82F /* STNetUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STNetUtil.h; sourceTree = "<group>"; };
@@ -322,6 +337,12 @@
 				00D32499208596ED001EC82F /* UILabel+ContentSize.m */,
 				00D3249A208596ED001EC82F /* UILabel+StringFrame.h */,
 				00D32495208596EC001EC82F /* UILabel+StringFrame.m */,
+				004EF52920A2CD6200BA9602 /* UITextField+Init.h */,
+				004EF52A20A2CD6200BA9602 /* UITextField+Init.m */,
+				004EF52C20A2D30800BA9602 /* UILabel+Init.h */,
+				004EF52D20A2D30800BA9602 /* UILabel+Init.m */,
+				004EF52F20A2D6AA00BA9602 /* UIButton+Init.h */,
+				004EF53020A2D6AA00BA9602 /* UIButton+Init.m */,
 			);
 			path = categories;
 			sourceTree = "<group>";
@@ -467,6 +488,43 @@
 			path = alert;
 			sourceTree = "<group>";
 		};
+		004EF51C20A2A1BA00BA9602 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				0006DF112089875E005A4465 /* ByViewController.h */,
+				0006DF122089875E005A4465 /* ByViewController.m */,
+				0006DFA0208DC05B005A4465 /* SystemFacePage.h */,
+				0006DFA1208DC05B005A4465 /* SystemFacePage.m */,
+				0006DFA6208DCB66005A4465 /* IFlyOnlineFaceDetectPage.h */,
+				0006DFA7208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m */,
+				00CCE9A6208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.h */,
+				00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */,
+				00CCE9A9208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.h */,
+				00CCE9AA208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m */,
+				005F7A8720901F0C003CA4CA /* MasonryPage.h */,
+				005F7A8820901F0C003CA4CA /* MasonryPage.m */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		004EF51D20A2A1CA00BA9602 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				00D324C82086E355001EC82F /* ByView.h */,
+				00D324C92086E355001EC82F /* ByView.m */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		004EF51E20A2A1D900BA9602 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				00CCE9AC208ECB9300032B4A /* UserModel.h */,
+				00CCE9AD208ECB9300032B4A /* UserModel.m */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 		007B1F2120858EB3009EA9F1 = {
 			isa = PBXGroup;
 			children = (
@@ -571,12 +629,11 @@
 		007B1F6220858F17009EA9F1 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				00D324C52086E330001EC82F /* ByModel.h */,
-				00D324C62086E330001EC82F /* ByModel.m */,
+				004EF51E20A2A1D900BA9602 /* test */,
 				00D324D120873B14001EC82F /* RespondModel.h */,
 				00D324D220873B14001EC82F /* RespondModel.m */,
-				00CCE9AC208ECB9300032B4A /* UserModel.h */,
-				00CCE9AD208ECB9300032B4A /* UserModel.m */,
+				004EF53220A2DDCB00BA9602 /* LoginModel.h */,
+				004EF53320A2DDCB00BA9602 /* LoginModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -584,8 +641,9 @@
 		007B1F6320858F1D009EA9F1 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				00D324C82086E355001EC82F /* ByView.h */,
-				00D324C92086E355001EC82F /* ByView.m */,
+				004EF51D20A2A1CA00BA9602 /* test */,
+				004EF52320A2A41500BA9602 /* LoginView.h */,
+				004EF52420A2A41500BA9602 /* LoginView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -631,8 +689,8 @@
 		00D324B42085EE25001EC82F /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
-				00D324C22086E2E0001EC82F /* ByViewModel.h */,
-				00D324C32086E2E0001EC82F /* ByViewModel.m */,
+				004EF52020A2A23C00BA9602 /* LoginViewModel.h */,
+				004EF52120A2A23C00BA9602 /* LoginViewModel.m */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -640,18 +698,9 @@
 		00D324B52085EE3F001EC82F /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
-				0006DF112089875E005A4465 /* ByViewController.h */,
-				0006DF122089875E005A4465 /* ByViewController.m */,
-				0006DFA0208DC05B005A4465 /* SystemFacePage.h */,
-				0006DFA1208DC05B005A4465 /* SystemFacePage.m */,
-				0006DFA6208DCB66005A4465 /* IFlyOnlineFaceDetectPage.h */,
-				0006DFA7208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m */,
-				00CCE9A6208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.h */,
-				00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */,
-				00CCE9A9208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.h */,
-				00CCE9AA208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m */,
-				005F7A8720901F0C003CA4CA /* MasonryPage.h */,
-				005F7A8820901F0C003CA4CA /* MasonryPage.m */,
+				004EF51C20A2A1BA00BA9602 /* test */,
+				004EF52620A2A42800BA9602 /* LoginViewPage.h */,
+				004EF52720A2A42800BA9602 /* LoginViewPage.m */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -998,6 +1047,7 @@
 				007B1F3D20858EB6009EA9F1 /* main.m in Sources */,
 				0006DF99208DBCAD005A4465 /* CaptureManager.m in Sources */,
 				0006DF78208DBC76005A4465 /* FaceRequestSettingViewController.m in Sources */,
+				004EF53120A2D6AA00BA9602 /* UIButton+Init.m in Sources */,
 				00C25427209B162A00E8E306 /* QRCodePage.m in Sources */,
 				0006DF9E208DBCAD005A4465 /* CanvasView.m in Sources */,
 				0006DF96208DBCAD005A4465 /* IFlyFaceImage.m in Sources */,
@@ -1006,28 +1056,32 @@
 				00CCE9B1208ECCDD00032B4A /* AccountManager.m in Sources */,
 				00D324E420874874001EC82F /* STRuntimeUtil.m in Sources */,
 				0006DF9F208DBCAD005A4465 /* PermissionDetector.m in Sources */,
-				00D324C42086E2E0001EC82F /* ByViewModel.m in Sources */,
+				004EF52B20A2CD6200BA9602 /* UITextField+Init.m in Sources */,
 				00D324CD2087277E001EC82F /* STNetUtil.m in Sources */,
 				00D324B0208598A7001EC82F /* STSoundUtil.m in Sources */,
-				00D324C72086E330001EC82F /* ByModel.m in Sources */,
+				004EF52520A2A41500BA9602 /* LoginView.m in Sources */,
 				0006DF76208DBC76005A4465 /* FaceStreamDetectorViewController.m in Sources */,
 				00CCE9A8208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m in Sources */,
 				0006DF9D208DBCAD005A4465 /* IFlyFaceResultTrack.m in Sources */,
+				004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */,
 				0006DFA8208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m in Sources */,
 				007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */,
 				0006DFA2208DC05B005A4465 /* SystemFacePage.m in Sources */,
 				00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */,
 				00D3249B208596ED001EC82F /* UILabel+StringFrame.m in Sources */,
+				004EF52820A2A42800BA9602 /* LoginViewPage.m in Sources */,
 				00D32491208594F4001EC82F /* STLog.m in Sources */,
 				0039FC2C20942BDF0044D92E /* STObserver.m in Sources */,
 				0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */,
 				004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */,
 				0006DF95208DBCAD005A4465 /* CalculatorTools.m in Sources */,
+				004EF52E20A2D30800BA9602 /* UILabel+Init.m in Sources */,
 				0006DF1820898BDE005A4465 /* STRefreshTableView.m in Sources */,
 				0006DF9C208DBCAD005A4465 /* IFlyFaceResultKeys.m in Sources */,
 				00CCE9AB208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m in Sources */,
 				0006DF9B208DBCAD005A4465 /* IFlyFaceResultDetector.m in Sources */,
 				00D324CA2086E355001EC82F /* ByView.m in Sources */,
+				004EF53420A2DDCB00BA9602 /* LoginModel.m in Sources */,
 				0006DF132089875E005A4465 /* ByViewController.m in Sources */,
 				00D324E0208742CC001EC82F /* STDataBaseUtil.m in Sources */,
 				00C2541E209AACDC00E8E306 /* STUpdateUtil.m in Sources */,

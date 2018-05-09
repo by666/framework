@@ -7,7 +7,6 @@
 //
 
 #import "ByViewController.h"
-#import "ByViewModel.h"
 #import "ByView.h"
 #import "SystemFacePage.h"
 #import "IFlyOnlineFaceDetectPage.h"
@@ -19,7 +18,6 @@
 
 
 @interface ByViewController ()<ByViewDelegate>
-@property (strong, nonatomic)ByViewModel *mByViewModel;
 
 @end
 
@@ -39,8 +37,7 @@
 
 
 -(void)initBodyView{
-    _mByViewModel = [[ByViewModel alloc]init];
-    ByView *byView = [[ByView alloc]initWithViewModel:_mByViewModel];
+    ByView *byView = [[ByView alloc]init];
     byView.byViewDelegate = self;
     [self.view addSubview:byView];
 }

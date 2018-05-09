@@ -11,6 +11,7 @@
 #pragma mark 定义通知相关
 
 #define Notify_WXLogin @"wechat_login"
+#define Notify_LoginViewModel @"login_view_model"
 
 
 

@@ -57,7 +57,7 @@ SINGLETON_IMPLEMENTION(STObserverManager)
 }
 
 
--(void)sendMessage:(NSString *)key msg:(NSString *)message{
+-(void)sendMessage:(NSString *)key msg:(id)message{
     if(!IS_NS_COLLECTION_EMPTY(_obeservers)){
         for(STObserver *observer in _obeservers){
             if([observer.key isEqualToString:key]){
