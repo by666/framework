@@ -10,6 +10,7 @@
 #import "LoginView.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "STObserverManager.h"
+#import "PhoneNumPage.h"
 @interface LoginViewPage ()<LoginDelegate,STObserverProtocol>
 
 @property(strong, nonatomic)LoginViewModel *mViewModel;
@@ -73,7 +74,8 @@
 -(void)OnReciveResult:(NSString *)key msg:(id)msg{
     if([Notify_WXLogin isEqualToString:key]){
         _mViewModel.loginModel.username = msg;
-        [_mLoginView updateView];
+        PhoneNumPage *page = [[PhoneNumPage alloc]init];
+        [self pushPage:page];
     }
 }
 

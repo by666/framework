@@ -36,9 +36,11 @@
     [self addSubview:_titleLabel];
     
     _phoneNumTF = [[UITextField alloc]initWithFont:STFont(36) textColor:[UIColor redColor] backgroundColor:[UIColor whiteColor] corner:STHeight(10) borderWidth:STWidth(2) borderColor:[UIColor redColor] padding:STWidth(20)];
+    _phoneNumTF.keyboardType = UIKeyboardTypePhonePad;
     [self addSubview:_phoneNumTF];
     
     _verifyCodeTF =  [[UITextField alloc]initWithFont:STFont(36) textColor:[UIColor redColor] backgroundColor:[UIColor whiteColor] corner:STHeight(10) borderWidth:STWidth(2) borderColor:[UIColor redColor] padding:STWidth(20)];
+    _verifyCodeTF.keyboardType = UIKeyboardTypeNumberPad;
     [self addSubview:_verifyCodeTF];
     
     _sendVerifyCodeBtn =  [[UIButton alloc]initWithFont:STFont(36) text:_mViewModel.loginModel.verifyStr textColor:[UIColor blueColor] backgroundColor:[UIColor cyanColor] corner:STHeight(10) borderWidth:STWidth(2) borderColor:[UIColor blueColor]];

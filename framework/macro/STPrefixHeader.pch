@@ -28,6 +28,7 @@
 #import "UILabel+Init.h"
 #import "UIButton+Init.h"
 #import "STAlertUtil.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 
 //JPush相光
