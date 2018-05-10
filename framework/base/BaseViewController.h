@@ -18,4 +18,6 @@
 //push viewcontroller
 -(void)pushPage : (BaseViewController *)targetPage;
 
+-(void)backLastPage;
+
 @end

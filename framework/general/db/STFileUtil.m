@@ -17,6 +17,8 @@
     if(statu){
         [STLog print:@"图片保存成功"];
         return imageFilePath;
+    }else{
+        [STLog print:@"图片保存失败"];
     }
     return nil;
 }

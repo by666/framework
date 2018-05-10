@@ -75,10 +75,10 @@ SINGLETON_IMPLEMENTION(STObserverManager)
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     if ([keyPath isEqualToString:@"statu"]) {
         STObserver *obsever = (STObserver *)object;
-        if(obsever && obsever.obseverDelegate && [obsever.obseverDelegate respondsToSelector:@selector(OnReciveResult:msg:)]){
+        if(obsever && obsever.obseverDelegate && [obsever.obseverDelegate respondsToSelector:@selector(onReciveResult:msg:)]){
             //消息接收完毕，状态变成接收完成
             if(obsever.statu == SendCompletion){
-                [obsever.obseverDelegate OnReciveResult:obsever.key msg:obsever.message];
+                [obsever.obseverDelegate onReciveResult:obsever.key msg:obsever.message];
                 obsever.statu = ReciveSendCompletion;
             }
         }

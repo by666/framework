@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "STColorUtil.h"
 
-#define c01 [STColorUtil colorWithHexString:@"#FF8247"]
-#define c02 [STColorUtil colorWithHexString:@"#FF8247" alpha:0.7f]
+#define c01 [STColorUtil colorWithHexString:@"#EE6363"]
+#define c02 [STColorUtil colorWithHexString:@"#EE6363"]
+#define c03 [STColorUtil colorWithHexString:@"#FF8247"]
 
 

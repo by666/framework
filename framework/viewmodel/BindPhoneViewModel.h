@@ -1,5 +1,5 @@
 //
-//  PhoneViewModel.h
+//  BindPhoneViewModel.h
 //  framework
 //
 //  Created by 黄成实 on 2018/5/9.
@@ -13,7 +13,7 @@
 -(void)OnBindPhoneNum:(Boolean)success msg:(NSString *)msg;
 
 @end
-@interface PhoneViewModel : NSObject
+@interface BindPhoneViewModel : NSObject
 
 @property(weak, nonatomic)id <PhoneDelegate>delegate;
 

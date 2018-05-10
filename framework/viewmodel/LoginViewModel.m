@@ -17,7 +17,7 @@
 -(instancetype)init{
     if(self == [super init]){
         _loginModel = [[LoginModel alloc]init];
-        _loginModel.username = @"by666";
+        _loginModel.username = @"登录";
         _loginModel.verifyStr = @"获取验证码";
 
     }
@@ -48,12 +48,12 @@
 -(void)sendVerifyCode:(NSString *)phoneNum{
     if(_delegate){
         if(![self isPhoneNumValid:phoneNum]){
-            [_delegate OnSendVerifyCode:NO msg:MSG_PHONENUM_ERROR];
+            [_delegate onSendVerifyCode:NO msg:MSG_PHONENUM_ERROR];
             return;
         }
         //todo:网络请求
         _loginModel.username = @"验证码成功";
-        [_delegate OnSendVerifyCode:YES msg:MSG_SUCCESS];
+        [_delegate onSendVerifyCode:YES msg:MSG_SUCCESS];
         [self startCountTime];
     }
 }
@@ -63,16 +63,16 @@
 -(void)doLogin:(NSString *)phoneNum verifyCode:(NSString *)verifyCode{
     if(_delegate){
         if(![self isPhoneNumValid:phoneNum]){
-            [_delegate OnLogin:NO msg:MSG_PHONENUM_ERROR];
+            [_delegate onLogin:NO msg:MSG_PHONENUM_ERROR];
             return;
         }
         if(![self isVerifyCodeValid:verifyCode]){
-            [_delegate OnLogin:NO msg:MSG_VERIFYCODE_ERROR];
+            [_delegate onLogin:NO msg:MSG_VERIFYCODE_ERROR];
             return;
         }
         //todo:网络请求
         _loginModel.username = @"登录成功";
-        [_delegate OnLogin:YES msg:MSG_SUCCESS];
+        [_delegate onLogin:YES msg:MSG_SUCCESS];
     }
 }
 
@@ -85,11 +85,17 @@
             req.state = @"App";
             [WXApi sendReq:req];
         }else{
-            [_delegate OnWechatLogin:NO msg:MSG_NOT_INSTALL_WECHAT];
+            [_delegate onWechatLogin:NO msg:MSG_NOT_INSTALL_WECHAT];
         }
     }
 }
 
+#pragma mark 人脸登录
+-(void)doFaceLogin{
+    if(_delegate){
+        [_delegate onFaceLogin];
+    }
+}
 #pragma mark 开始倒计时
 -(void)startCountTime{
     __block NSInteger second = TIMECOUNT;
@@ -104,11 +110,11 @@
                 dispatch_cancel(timer);
                 weakSelf.loginModel.verifyStr = @"获取验证码";
                 if(weakSelf.delegate){
-                    [weakSelf.delegate OnTimeCount:YES];
+                    [weakSelf.delegate onTimeCount:YES];
                 }
             } else {
                 weakSelf.loginModel.verifyStr = [NSString stringWithFormat:@"%ld秒后重新获取",second];
-                [weakSelf.delegate OnTimeCount:NO];
+                [weakSelf.delegate onTimeCount:NO];
                 second--;
             }
         });

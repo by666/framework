@@ -6,19 +6,20 @@
 //  Copyright © 2018年 黄成实. All rights reserved.
 //
 
-#import "LoginViewPage.h"
+#import "LoginPage.h"
 #import "LoginView.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "STObserverManager.h"
-#import "PhoneNumPage.h"
-@interface LoginViewPage ()<LoginDelegate,STObserverProtocol>
+#import "BindPhonePage.h"
+#import "FaceLoginPage.h"
+@interface LoginPage ()<LoginDelegate,STObserverProtocol>
 
 @property(strong, nonatomic)LoginViewModel *mViewModel;
 @property(strong, nonatomic)LoginView *mLoginView;
 
 @end
 
-@implementation LoginViewPage
+@implementation LoginPage
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,13 +37,12 @@
 
 -(void)initView{
     _mLoginView = [[LoginView alloc]initWithViewModel:_mViewModel];
-    _mLoginView.frame = CGRectMake(0, StatuBarHeight, ScreenWidth, ScreenHeight - StatuBarHeight);
+    _mLoginView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight - StatuBarHeight);
     _mLoginView.backgroundColor = c01;
     [self.view addSubview:_mLoginView];
 }
 
-
--(void)OnSendVerifyCode:(Boolean)success msg:(NSString *)msg{
+-(void)onSendVerifyCode:(Boolean)success msg:(NSString *)msg{
     [MBProgressHUD hideHUDForView:_mLoginView animated:YES];
     if(success){
         [_mLoginView updateView];
@@ -52,7 +52,7 @@
 }
 
 
--(void)OnLogin:(Boolean)success msg:(NSString *)msg{
+- (void)onLogin:(Boolean)success msg:(NSString *)msg{
     [MBProgressHUD hideHUDForView:_mLoginView animated:YES];
     if(success){
         [_mLoginView updateView];
@@ -61,20 +61,25 @@
     }
 }
 
--(void)OnWechatLogin:(Boolean)success msg:(NSString *)msg{
+-(void)onWechatLogin:(Boolean)success msg:(NSString *)msg{
     if(!success){
         [STAlertUtil showAlertController:@"提示" content:msg controller:self];
     }
 }
 
--(void)OnTimeCount:(Boolean)complete{
+-(void)onFaceLogin{
+    FaceLoginPage *page = [[FaceLoginPage alloc]init];
+    [self pushPage:page];
+}
+
+- (void)onTimeCount:(Boolean)complete{
     [_mLoginView updateVerifyBtn:complete];
 }
 
--(void)OnReciveResult:(NSString *)key msg:(id)msg{
+-(void)onReciveResult:(NSString *)key msg:(id)msg{
     if([Notify_WXLogin isEqualToString:key]){
         _mViewModel.loginModel.username = msg;
-        PhoneNumPage *page = [[PhoneNumPage alloc]init];
+        BindPhonePage *page = [[BindPhonePage alloc]init];
         [self pushPage:page];
     }
 }

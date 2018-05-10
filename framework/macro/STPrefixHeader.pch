@@ -39,6 +39,12 @@
 #import <UserNotifications/UserNotifications.h>
 #endif
 
+
+//比例宽高
+#define STWidth(width) ([STPUtil getActualWidth:width])
+#define STHeight(height) ([STPUtil getActualHeight:height])
+#define STFont(font) ([STPUtil getActualHeight:font])
+
 //获取当前屏幕的高度
 #define ScreenHeight ([[UIScreen mainScreen] bounds].size.height)
 //获取当前屏幕的宽度
@@ -46,7 +52,9 @@
 //状态栏高度
 #define StatuBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height)
 //导航栏高度
-#define NavigationBarHeight 48
+#define NavigationBarHeight STHeight(96)
+//导航栏和状态栏高度
+#define StatuNavHeight (StatuBarHeight + NavigationBarHeight)
 //除导航栏和状态栏剩余高度
 #define ContentHeight (ScreenHeight - StatuBarHeight - NavigationBarHeight)
 
@@ -78,7 +86,3 @@
 #endif /* STPrefixHeader_pch */
 
 
-//比例宽高
-#define STWidth(width) ([STPUtil getActualWidth:width])
-#define STHeight(height) ([STPUtil getActualHeight:height])
-#define STFont(font) ([STPUtil getActualHeight:font])

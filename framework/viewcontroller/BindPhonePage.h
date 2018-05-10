@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface PhoneNumPage : BaseViewController
+@interface BindPhonePage : BaseViewController
 
 @end

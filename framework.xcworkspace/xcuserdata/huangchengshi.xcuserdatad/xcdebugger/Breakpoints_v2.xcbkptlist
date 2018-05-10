@@ -26,7 +26,7 @@
                   moduleName = "framework"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huangchengshi/Desktop/master/framework/general/net/http/STNetUtil.m"
-                  timestampString = "547555346.7746561"
+                  timestampString = "547641601.034309"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -41,7 +41,7 @@
                   moduleName = "framework"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huangchengshi/Desktop/master/framework/general/net/http/STNetUtil.m"
-                  timestampString = "547555346.776226"
+                  timestampString = "547641601.036184"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "36"
@@ -80,6 +80,38 @@
             startingLineNumber = "43"
             endingLineNumber = "43"
             landmarkName = "+get:parameters:success:failure:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "framework/viewcontroller/FaceLoginPage.m"
+            timestampString = "547641600.9823329"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-OnBackBtnClicked"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "framework/custom/common/STNavigationView.m"
+            timestampString = "547641600.982397"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-OnBackBtnClick"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

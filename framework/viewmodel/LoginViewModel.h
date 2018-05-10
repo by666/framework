@@ -11,10 +11,11 @@
 
 @protocol LoginDelegate
 
--(void)OnSendVerifyCode:(Boolean)success msg:(NSString *)msg;
--(void)OnLogin:(Boolean)success msg:(NSString *)msg;
--(void)OnWechatLogin:(Boolean)success msg:(NSString *)msg;
--(void)OnTimeCount:(Boolean)complete;
+-(void)onSendVerifyCode:(Boolean)success msg:(NSString *)msg;
+-(void)onLogin:(Boolean)success msg:(NSString *)msg;
+-(void)onWechatLogin:(Boolean)success msg:(NSString *)msg;
+-(void)onTimeCount:(Boolean)complete;
+-(void)onFaceLogin;
 
 @end
 
@@ -28,6 +29,7 @@
 -(void)sendVerifyCode:(NSString *)phoneNum;
 -(void)doLogin:(NSString *)phoneNum verifyCode:(NSString *)verifyCode;
 -(void)doWechatLogin;
+-(void)doFaceLogin;
 -(void)startCountTime;
 
 @end

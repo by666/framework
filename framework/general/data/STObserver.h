@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger,ObserverStatu){
 
 @protocol STObserverProtocol
 
--(void)OnReciveResult:(NSString *)key msg:(id)msg;
+-(void)onReciveResult:(NSString *)key msg:(id)msg;
 
 @end
 

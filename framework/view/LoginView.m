@@ -8,6 +8,7 @@
 
 #import "LoginView.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "STNavigationView.h"
 @interface LoginView()
 
 @property(strong, nonatomic) LoginViewModel *mViewModel;
@@ -17,7 +18,8 @@
 @property(strong, nonatomic) UIButton *sendVerifyCodeBtn;
 @property(strong, nonatomic) UIButton *loginBtn;
 @property(strong, nonatomic) UIButton *wechatLoginBtn;
-@property(strong, nonatomic) UILabel *titleLabel;
+@property(strong, nonatomic) UIButton *faceLoginBtn;
+@property(strong, nonatomic) STNavigationView *mNavigationView;
 
 @end
 
@@ -32,8 +34,9 @@
 }
 
 -(void)initView{
-    _titleLabel = [[UILabel alloc]initWithFont:STFont(36) text:_mViewModel.loginModel.username textAlignment:NSTextAlignmentCenter textColor:[UIColor blackColor] backgroundColor:[UIColor whiteColor] multiLine:NO];
-    [self addSubview:_titleLabel];
+    
+    _mNavigationView = [[STNavigationView alloc]initWithTitle:_mViewModel.loginModel.username needBack:NO];
+    [self addSubview:_mNavigationView];
     
     _phoneNumTF = [[UITextField alloc]initWithFont:STFont(36) textColor:[UIColor redColor] backgroundColor:[UIColor whiteColor] corner:STHeight(10) borderWidth:STWidth(2) borderColor:[UIColor redColor] padding:STWidth(20)];
     _phoneNumTF.keyboardType = UIKeyboardTypePhonePad;
@@ -47,6 +50,10 @@
     [self addSubview:_sendVerifyCodeBtn];
     [_sendVerifyCodeBtn addTarget:self action:@selector(doSendVerifyCode) forControlEvents:UIControlEventTouchUpInside];
     
+    _faceLoginBtn = [[UIButton alloc]initWithFont:STFont(36) text:@"人脸登录" textColor:[UIColor blueColor] backgroundColor:[UIColor cyanColor] corner:STHeight(10) borderWidth:STWidth(2) borderColor:[UIColor blueColor]];
+    [self addSubview:_faceLoginBtn];
+    [_faceLoginBtn addTarget:self action:@selector(doFaceLogin) forControlEvents:UIControlEventTouchUpInside];
+
     _wechatLoginBtn =  [[UIButton alloc]initWithFont:STFont(36) text:@"微信登录" textColor:[UIColor blueColor] backgroundColor:[UIColor cyanColor] corner:STHeight(10) borderWidth:STWidth(2) borderColor:[UIColor blueColor]];
     [self addSubview:_wechatLoginBtn];
     [_wechatLoginBtn addTarget:self action:@selector(doWechatLogin) forControlEvents:UIControlEventTouchUpInside];
@@ -65,17 +72,12 @@
 -(void)initFrame{
     
     __weak LoginView *weakSelf = self;
-    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(ScreenWidth);
-        make.height.mas_equalTo(STHeight(80));
-        make.top.mas_equalTo(0);
 
-    }];
     
     [_phoneNumTF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(ScreenWidth - STWidth(80));
         make.height.mas_equalTo(STHeight(80));
-        make.top.mas_equalTo(weakSelf.titleLabel.mas_bottom).mas_offset(STHeight(30));
+        make.top.mas_equalTo(weakSelf.mNavigationView.mas_bottom).mas_offset(STHeight(30));
         make.left.mas_equalTo(STWidth(40));
     }];
     
@@ -90,6 +92,13 @@
         make.width.mas_equalTo(ScreenWidth - STWidth(80));
         make.height.mas_equalTo(STHeight(100));
         make.left.mas_equalTo(STWidth(40));
+        make.bottom.mas_equalTo(weakSelf.mas_bottom).offset(-STHeight(440));
+    }];
+    
+    [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(ScreenWidth - STWidth(80));
+        make.height.mas_equalTo(STHeight(100));
+        make.left.mas_equalTo(STWidth(40));
         make.bottom.mas_equalTo(weakSelf.mas_bottom).offset(-STHeight(320));
     }];
     
@@ -100,7 +109,8 @@
         make.bottom.mas_equalTo(weakSelf.mas_bottom).offset(-STHeight(200));
     }];
     
-    [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+    [_faceLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(ScreenWidth - STWidth(80));
         make.height.mas_equalTo(STHeight(100));
         make.left.mas_equalTo(STWidth(40));
@@ -112,6 +122,12 @@
     [MBProgressHUD showHUDAddedTo:self animated:YES];
     if(_mViewModel){
         [_mViewModel sendVerifyCode:_phoneNumTF.text];
+    }
+}
+
+-(void)doFaceLogin{
+    if(_mViewModel){
+        [_mViewModel doFaceLogin];
     }
 }
 
@@ -129,7 +145,7 @@
 }
 
 -(void)updateView{
-    _titleLabel.text = _mViewModel.loginModel.username;
+    [_mNavigationView setTitle:_mViewModel.loginModel.username];
 }
 
 -(void)updateVerifyBtn:(Boolean)complete{

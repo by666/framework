@@ -39,4 +39,8 @@
     [self.navigationController pushViewController:targetPage animated:YES];
 }
 
+-(void)backLastPage{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end

@@ -6,20 +6,20 @@
 //  Copyright © 2018年 黄成实. All rights reserved.
 //
 
-#import "PhoneNumView.h"
+#import "BindPhoneView.h"
 
-@interface PhoneNumView()
+@interface BindPhoneView()
 
-@property(strong, nonatomic) PhoneViewModel *mViewModel;
+@property(strong, nonatomic) BindPhoneViewModel *mViewModel;
 
 @property(strong, nonatomic) UITextField *phoneNumTF;
 @property(strong, nonatomic) UIButton *submitBtn;
 
 @end
 
-@implementation PhoneNumView
+@implementation BindPhoneView
 
--(instancetype)initWithViewModel:(PhoneViewModel *)viewModel{
+-(instancetype)initWithViewModel:(BindPhoneViewModel *)viewModel{
     if(self == [super init]){
         _mViewModel = viewModel;
         [self initView];
@@ -42,7 +42,7 @@
 
 -(void)initFrame{
     
-    __weak PhoneNumView *weakSelf = self;
+    __weak BindPhoneView *weakSelf = self;
     
     [_phoneNumTF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(ScreenWidth - STWidth(80));

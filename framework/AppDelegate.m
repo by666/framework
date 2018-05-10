@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "STDataBaseUtil.h"
 #import "STRuntimeUtil.h"
-#import "LoginViewPage.h"
+#import "LoginPage.h"
 #import <iflyMSC/IFlyFaceSDK.h>
 #import "UserModel.h"
 #import "STUserDefaults.h"
@@ -17,6 +17,7 @@
 #import "STObserverManager.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "STUpdateUtil.h"
+#import "MainPage.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>
 
@@ -27,7 +28,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-    LoginViewPage *controller = [[LoginViewPage alloc]init];
+//    MainPage *controller = [[MainPage alloc]init];
+    LoginPage *controller = [[LoginPage alloc]init];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];

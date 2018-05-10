@@ -183,7 +183,7 @@
 }
 
 
--(void)OnReciveResult:(NSString *)key msg:(NSString *)msg{
+-(void)onReciveResult:(NSString *)key msg:(NSString *)msg{
     _phoneTF.text = key;
     _verifyTF.text = msg;
 }

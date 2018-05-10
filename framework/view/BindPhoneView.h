@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PhoneViewModel.h"
+#import "BindPhoneViewModel.h"
 
-@interface PhoneNumView : UIView
+@interface BindPhoneView : UIView
 
--(instancetype)initWithViewModel:(PhoneViewModel *)viewModel;
+-(instancetype)initWithViewModel:(BindPhoneViewModel *)viewModel;
 -(void)updateView;
 
 @end
