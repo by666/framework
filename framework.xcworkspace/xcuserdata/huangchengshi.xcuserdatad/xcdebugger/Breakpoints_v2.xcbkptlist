@@ -26,7 +26,7 @@
                   moduleName = "framework"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huangchengshi/Desktop/master/framework/general/net/http/STNetUtil.m"
-                  timestampString = "547641601.034309"
+                  timestampString = "547728892.648869"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -41,7 +41,7 @@
                   moduleName = "framework"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huangchengshi/Desktop/master/framework/general/net/http/STNetUtil.m"
-                  timestampString = "547641601.036184"
+                  timestampString = "547728892.65037"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "36"
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/viewcontroller/FaceLoginPage.m"
-            timestampString = "547641600.9823329"
+            timestampString = "547729516.469165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "-OnBackBtnClicked"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,12 +106,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/custom/common/STNavigationView.m"
-            timestampString = "547641600.982397"
+            timestampString = "547729516.469288"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
             landmarkName = "-OnBackBtnClick"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "framework/view/FaceLoginView.m"
+            timestampString = "547729516.469365"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "-praseTrackResult:OrignImage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "framework/view/FaceLoginView.m"
+            timestampString = "547729516.469813"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "-praseDetect:OrignImage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

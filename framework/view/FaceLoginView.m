@@ -21,16 +21,20 @@
 #import "IFlyFaceImage.h"
 #import "IFlyFaceResultKeys.h"
 #import "STFileUtil.h"
+#import "STTimeUtil.h"
 
 @interface FaceLoginView()<CaptureManagerDelegate>
 
+@property (nonatomic, retain ) AVCaptureVideoPreviewLayer *previewLayer;
+@property (nonatomic, retain ) CaptureManager             *captureManager;
+
+@property (nonatomic, retain ) IFlyFaceDetector           *faceDetector;
+@property (nonatomic, strong ) CanvasView                 *viewCanvas;
+
 @property(strong, nonatomic)FaceLoginViewModel *mViewModel;
 
-@property (nonatomic, strong ) UIView *mPreviewView;
-@property (nonatomic, retain ) AVCaptureVideoPreviewLayer *previewLayer;
-@property (nonatomic, retain ) CaptureManager *captureManager;
-@property (nonatomic, strong ) CanvasView *viewCanvas;
-@property (nonatomic, retain ) IFlyFaceDetector *faceDetector;
+@property (nonatomic, strong) UIView *previewView;
+
 
 @end
 
@@ -48,16 +52,23 @@
 }
 
 -(void)initView{
+   
+    [self setupCamera];
+
+}
+
+
+-(void)setupCamera{
     CGFloat width = STWidth(500);
-    _mPreviewView = [[UIView alloc]init];
-    _mPreviewView.backgroundColor = [UIColor blackColor];
-    _mPreviewView.frame = CGRectMake((ScreenWidth - width)/2, STHeight(160), width, width);
-    _mPreviewView.layer.masksToBounds = YES;
-    _mPreviewView.layer.cornerRadius = width/2;
-    [self addSubview:_mPreviewView];
+    self.previewView = [[UIView alloc]init];
+    self.previewView.backgroundColor = [UIColor blackColor];
+    self.previewView.frame = CGRectMake((ScreenWidth - width)/2, STHeight(160), width, width);
+    self.previewView.layer.masksToBounds = YES;
+    self.previewView.layer.cornerRadius = width/2;
+    [self addSubview:self.previewView];
     
     self.faceDetector=[IFlyFaceDetector sharedInstance];
-//    return;
+    
     //初始化 CaptureSessionManager
     self.captureManager=[[CaptureManager alloc] init];
     self.captureManager.delegate=self;
@@ -65,34 +76,40 @@
     self.previewLayer=self.captureManager.previewLayer;
     
     self.captureManager.previewLayer.frame= CGRectMake(0, 0, width, width);
-//    self.captureManager.previewLayer.position=CGPointMake(ScreenWidth/2, ContentHeight/2);
     self.captureManager.previewLayer.videoGravity=AVLayerVideoGravityResizeAspectFill;
-    [_mPreviewView.layer addSublayer:self.captureManager.previewLayer];
+    [self.previewView.layer addSublayer:self.captureManager.previewLayer];
     
     
     self.viewCanvas = [[CanvasView alloc] initWithFrame:self.captureManager.previewLayer.frame] ;
-    [_mPreviewView addSubview:self.viewCanvas] ;   [self.faceDetector setParameter:@"1" forKey:@"detect"];
-    [self.faceDetector setParameter:@"1" forKey:@"align"];
+    [self.previewView addSubview:self.viewCanvas] ;
     self.viewCanvas.center=self.captureManager.previewLayer.position;
     self.viewCanvas.backgroundColor = [UIColor clearColor] ;
     
     [self.captureManager setup];
     [self.captureManager addObserver];
-
+    
     [self.faceDetector setParameter:@"1" forKey:@"detect"];
     [self.faceDetector setParameter:@"1" forKey:@"align"];
+    
+    
 }
 
+
+-(void)releaseCamera{
+    [self.captureManager removeObserver];
+    self.captureManager=nil;
+    self.viewCanvas=nil;
+}
 //- (void)viewDidDisappear:(BOOL)animated{
 //    [super viewDidDisappear:animated];
-//    
+//
 //    [self.captureManager removeObserver];
 //}
 //
 //-(void)dealloc{
 //    self.captureManager=nil;
 //    self.viewCanvas=nil;
-//    
+//
 //}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
@@ -279,8 +296,10 @@
 
 
 -(void)onOutputFaceImage:(IFlyFaceImage*)faceImg{
-    //人脸比对
-    NSString* strResult=[self.faceDetector trackFrame:faceImg.data withWidth:faceImg.width height:faceImg.height direction:(int)faceImg.direction];
+//    NSString *imageStr =  [NSString stringWithFormat:@"%@.jpg",[STTimeUtil getCurrentTimeStamp]];
+//    [STFileUtil saveImaqgeFile:imageStr image:[self fixOrientation:faceImg.image]];
+    NSString* strResult;
+//    NSString* strResult=[self.faceDetector trackFrame:faceImg.data withWidth:faceImg.width height:faceImg.height direction:(int)faceImg.direction];
 //    NSLog(@"result:%@",strResult);
     
     //此处清理图片数据，以防止因为不必要的图片数据的反复传递造成的内存卷积占用。
@@ -300,4 +319,83 @@
 
 
 
+- (UIImage *)fixOrientation:(UIImage *)aImage {
+    
+    // No-op if the orientation is already correct
+    if (aImage.imageOrientation == UIImageOrientationUp)
+        return aImage;
+    
+    // We need to calculate the proper transformation to make the image upright.
+    // We do it in 2 steps: Rotate if Left/Right/Down, and then flip if Mirrored.
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    
+    switch (aImage.imageOrientation) {
+        case UIImageOrientationDown:
+        case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, aImage.size.width, aImage.size.height);
+            transform = CGAffineTransformRotate(transform, M_PI);
+            break;
+            
+        case UIImageOrientationLeft:
+        case UIImageOrientationLeftMirrored:
+            transform = CGAffineTransformTranslate(transform, aImage.size.width, 0);
+            transform = CGAffineTransformRotate(transform, M_PI_2);
+            break;
+            
+        case UIImageOrientationRight:
+        case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform, 0, aImage.size.height);
+            transform = CGAffineTransformRotate(transform, -M_PI_2);
+            break;
+        default:
+            break;
+    }
+    
+    switch (aImage.imageOrientation) {
+        case UIImageOrientationUpMirrored:
+        case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, aImage.size.width, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+            
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform, aImage.size.height, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+        default:
+            break;
+    }
+    
+    // Now we draw the underlying CGImage into a new context, applying the transform
+    // calculated above.
+    CGContextRef ctx = CGBitmapContextCreate(NULL, aImage.size.width, aImage.size.height,
+                                             CGImageGetBitsPerComponent(aImage.CGImage), 0,
+                                             CGImageGetColorSpace(aImage.CGImage),
+                                             CGImageGetBitmapInfo(aImage.CGImage));
+    CGContextConcatCTM(ctx, transform);
+    switch (aImage.imageOrientation) {
+        case UIImageOrientationLeft:
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationRight:
+        case UIImageOrientationRightMirrored:
+            // Grr...
+            CGContextDrawImage(ctx, CGRectMake(0,0,aImage.size.height,aImage.size.width), aImage.CGImage);
+            break;
+            
+        default:
+            CGContextDrawImage(ctx, CGRectMake(0,0,aImage.size.width,aImage.size.height), aImage.CGImage);
+            break;
+    }
+    
+    // And now we just create a new UIImage from the drawing context
+    CGImageRef cgimg = CGBitmapContextCreateImage(ctx);
+    UIImage *img = [UIImage imageWithCGImage:cgimg];
+    CGContextRelease(ctx);
+    CGImageRelease(cgimg);
+    return img;
+}
+
+
 @end
+

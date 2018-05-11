@@ -72,8 +72,8 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
         [self setBackgroundRecordingID:UIBackgroundTaskInvalid];
         [self.session beginConfiguration];
         
-        if([session canSetSessionPreset:AVCaptureSessionPreset640x480]){
-            [session setSessionPreset:AVCaptureSessionPreset640x480];
+        if([self.session canSetSessionPreset:AVCaptureSessionPreset640x480]){
+            [self.session setSessionPreset:AVCaptureSessionPreset640x480];
         }
 
         NSError *error = nil;
@@ -84,8 +84,8 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
         if (error){
             NSLog(@"%@", error);
         }
-        if ([session canAddInput:videoDeviceInput]){
-            [session addInput:videoDeviceInput];
+        if ([self.session canAddInput:videoDeviceInput]){
+            [self.session addInput:videoDeviceInput];
             [self setVideoDeviceInput:videoDeviceInput];
         }
         
@@ -218,6 +218,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     faceImage.data= (__bridge_transfer NSData*)CGDataProviderCopyData(provider);
     faceImage.width=width;
     faceImage.height=height;
+    faceImage.image = [UIImage imageWithCGImage:cgImage];;
     faceImage.direction=faceOrientation;
     
     CGImageRelease(cgImage);

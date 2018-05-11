@@ -22,4 +22,6 @@
 #pragma mark 格式化时间（x秒前，x分前...）
 +(NSString *)formateTime : (NSString *)timestamp;
 
+#pragma mark 获取当前时间戳
++(NSString *)getCurrentTimeStamp;
 @end

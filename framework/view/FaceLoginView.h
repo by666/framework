@@ -12,5 +12,5 @@
 @interface FaceLoginView : UIView
 
 -(instancetype)initWithViewModel:(FaceLoginViewModel *)viewModel;
-
+-(void)releaseCamera;
 @end

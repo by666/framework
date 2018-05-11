@@ -76,4 +76,10 @@
     return [NSString stringWithFormat:@"%ld年前",years];
 }
 
++(NSString *)getCurrentTimeStamp{
+    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSTimeInterval a=[dat timeIntervalSince1970]*1000;
+    return [NSString stringWithFormat:@"%f", a];
+}
+
 @end

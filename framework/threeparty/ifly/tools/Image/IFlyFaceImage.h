@@ -42,4 +42,9 @@ typedef NS_ENUM(NSUInteger, IFlyFaceDirectionType) {
  */
 @property(nonatomic,assign)IFlyFaceDirectionType direction;
 
+/**
+  @brief 图片
+*/
+@property(nonatomic,retain)UIImage *image;
+
 @end

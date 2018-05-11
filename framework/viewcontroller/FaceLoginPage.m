@@ -39,6 +39,9 @@
 }
 
 
+-(void)dealloc{
+    [_mFaceLoginView releaseCamera];
+}
 -(void)OnBackBtnClicked{
     [self backLastPage];
 }
