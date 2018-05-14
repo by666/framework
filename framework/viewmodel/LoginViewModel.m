@@ -17,43 +17,28 @@
 -(instancetype)init{
     if(self == [super init]){
         _loginModel = [[LoginModel alloc]init];
-        _loginModel.username = @"登录";
-        _loginModel.verifyStr = @"获取验证码";
+        _loginModel.msgStr = @"";
+        _loginModel.verifyStr = MSG_GET_VERIFYCODE;
 
     }
     return self;
 }
 
 
-#pragma mark 手机号是否有效
--(Boolean)isPhoneNumValid:(NSString *)phoneNum{
-    if (IS_NS_STRING_EMPTY(phoneNum) ||  phoneNum.length != 11){
-        return NO;
-    }
-    NSString *regex = @"^1(3[0-9]|4[0-9]|5[0-9]|8[0-9]|7[0-9])\\d{8}$";
-    NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    return [regextestmobile evaluateWithObject:phoneNum];
-}
-
-#pragma mark 验证码是否有效
--(Boolean)isVerifyCodeValid:(NSString *)verifyCode{
-    if(!IS_NS_STRING_EMPTY(verifyCode) && verifyCode.length == 4){
-        return YES;
-    }
-    return NO;
-}
-
 
 #pragma mark 请求验证码
 -(void)sendVerifyCode:(NSString *)phoneNum{
     if(_delegate){
-        if(![self isPhoneNumValid:phoneNum]){
-            [_delegate onSendVerifyCode:NO msg:MSG_PHONENUM_ERROR];
+        if(![STPUtil isPhoneNumValid:phoneNum]){
+            _loginModel.msgStr = MSG_PHONENUM_ERROR;
+            _loginModel.msgColor = c07;
+            [_delegate onSendVerifyCode:NO];
             return;
         }
         //todo:网络请求
-        _loginModel.username = @"验证码成功";
-        [_delegate onSendVerifyCode:YES msg:MSG_SUCCESS];
+        _loginModel.msgStr = MSG_VERIFYCODE_SUCCESS;
+        _loginModel.msgColor = c06;
+        [_delegate onSendVerifyCode:YES];
         [self startCountTime];
     }
 }
@@ -62,17 +47,22 @@
 #pragma mark 请求登录
 -(void)doLogin:(NSString *)phoneNum verifyCode:(NSString *)verifyCode{
     if(_delegate){
-        if(![self isPhoneNumValid:phoneNum]){
-            [_delegate onLogin:NO msg:MSG_PHONENUM_ERROR];
+        if(![STPUtil isPhoneNumValid:phoneNum]){
+            _loginModel.msgStr = MSG_PHONENUM_ERROR;
+            _loginModel.msgColor = c07;
+            [_delegate onLogin:NO];
             return;
         }
-        if(![self isVerifyCodeValid:verifyCode]){
-            [_delegate onLogin:NO msg:MSG_VERIFYCODE_ERROR];
+        if(![STPUtil isVerifyCodeValid:verifyCode]){
+            _loginModel.msgStr = MSG_VERIFYCODE_ERROR;
+            _loginModel.msgColor = c07;
+            [_delegate onLogin:NO];
             return;
         }
         //todo:网络请求
-        _loginModel.username = @"登录成功";
-        [_delegate onLogin:YES msg:MSG_SUCCESS];
+        _loginModel.msgStr = MSG_LOGIN_SUCCESS;
+        _loginModel.msgColor = c06;
+        [_delegate onLogin:YES];
     }
 }
 
@@ -108,12 +98,12 @@
             if (second == 0) {
                 second = TIMECOUNT;
                 dispatch_cancel(timer);
-                weakSelf.loginModel.verifyStr = @"获取验证码";
+                weakSelf.loginModel.verifyStr = MSG_GET_VERIFYCODE;
                 if(weakSelf.delegate){
                     [weakSelf.delegate onTimeCount:YES];
                 }
             } else {
-                weakSelf.loginModel.verifyStr = [NSString stringWithFormat:@"%ld秒后重新获取",second];
+                weakSelf.loginModel.verifyStr = [NSString stringWithFormat:@"%lds",second];
                 [weakSelf.delegate onTimeCount:NO];
                 second--;
             }

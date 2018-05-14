@@ -26,7 +26,12 @@
     _mViewModel = [[LoginViewModel alloc]init];
     _mViewModel.delegate = self;
     [[STObserverManager sharedSTObserverManager]registerSTObsever:Notify_WXLogin delegate:self];
+    [STColorUtil setGradientColor:self.view startColor:c01 endColor:c02 director:Top];
     [self initView];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 
@@ -36,28 +41,20 @@
 
 
 -(void)initView{
-    _mLoginView = [[LoginView alloc]initWithViewModel:_mViewModel];
-    _mLoginView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight - StatuBarHeight);
-    _mLoginView.backgroundColor = c01;
+    _mLoginView = [[LoginView alloc]initWithViewModel:_mViewModel controller:self];
+    _mLoginView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     [self.view addSubview:_mLoginView];
 }
 
--(void)onSendVerifyCode:(Boolean)success msg:(NSString *)msg{
-    [MBProgressHUD hideHUDForView:_mLoginView animated:YES];
-    if(success){
-        [_mLoginView updateView];
-    }else{
-        [STAlertUtil showAlertController:@"提示" content:msg controller:self];
-    }
+-(void)onSendVerifyCode:(Boolean)success{
+    [_mLoginView updateView];
 }
 
 
-- (void)onLogin:(Boolean)success msg:(NSString *)msg{
-    [MBProgressHUD hideHUDForView:_mLoginView animated:YES];
+- (void)onLogin:(Boolean)success{
+    [_mLoginView updateView];
     if(success){
-        [_mLoginView updateView];
-    }else{
-        [STAlertUtil showAlertController:@"提示" content:msg controller:self];
+        //跳转到下一步
     }
 }
 
@@ -78,7 +75,7 @@
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
     if([Notify_WXLogin isEqualToString:key]){
-        _mViewModel.loginModel.username = msg;
+        _mViewModel.loginModel.msgStr = msg;
         BindPhonePage *page = [[BindPhonePage alloc]init];
         [self pushPage:page];
     }

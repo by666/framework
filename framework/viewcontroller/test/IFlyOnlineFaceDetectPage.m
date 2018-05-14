@@ -202,6 +202,10 @@ UIActionSheetDelegate>
     UIAlertAction *ocrAction = [UIAlertAction actionWithTitle:@"OCR识别" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         [self doOcrDetect];
     }];
+    
+    UIAlertAction *petAction = [UIAlertAction actionWithTitle:@"宠物检测" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        [self doDetectPet];
+    }];
 
     
     [alertController addAction:cancelAction];
@@ -210,6 +214,7 @@ UIActionSheetDelegate>
     [alertController addAction:faceAction];
     [alertController addAction:faceDetailAction];
     [alertController addAction:ocrAction];
+    [alertController addAction:petAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
@@ -718,7 +723,7 @@ UIActionSheetDelegate>
 
     
     NSData *imgData = UIImageJPEGRepresentation(_imgToUse.image, 1.0f);
-    NSString *imgStr = [imgData base64Encoding];
+    NSString *imgStr = [imgData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     [STLog print:imgStr];
 
     NSString *appcode = @"60a5718e77604a61befe69f65ff36d21";
@@ -758,6 +763,27 @@ UIActionSheetDelegate>
                                                    }];
     
     [task resume];
+    
+}
+
+
+-(void)doDetectPet{
+    [STAlertUtil showAlertController:@"ops~~~~~" content:@"接口审核中" controller:self];
+//    NSData *imgData = UIImageJPEGRepresentation(_imgToUse.image, 1.0f);
+//    NSString *imgStr = [imgData base64Encoding];
+//
+//    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+//    dic[@"modelId"]= @(6697);
+//    dic[@"type"] = @(1);
+//    dic[@"image"] = [NSString stringWithFormat:@"data:image/jpeg;base64,%@",imgStr];
+//    dic[@"method"] = @"model/verify";
+//
+//    NSString *jsonStr = [dic mj_JSONString];
+//    [STNetUtil post:@"https://aip.baidubce.com/rpc/2.0/ai_custom/v1/classification/pet" content:jsonStr success:^(RespondModel *resondModel) {
+//
+//    } failure:^(NSError *error) {
+//
+//    }];
     
 }
 

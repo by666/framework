@@ -7,16 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BindPhoneModel.h"
 
 @protocol PhoneDelegate
 
--(void)OnBindPhoneNum:(Boolean)success msg:(NSString *)msg;
+-(void)onSendVerifyCode:(Boolean)success;
+-(void)onBindPhone:(Boolean)success;
+-(void)onTimeCount:(Boolean)complete;
 
 @end
 @interface BindPhoneViewModel : NSObject
 
 @property(weak, nonatomic)id <PhoneDelegate>delegate;
 
--(void)doBindPhoneNum:(NSString *)phoneNum;
+
+@property(strong, nonatomic)BindPhoneModel *bindPhoneModel;
+
+-(void)sendVerifyCode:(NSString *)phoneNum;
+-(void)doBindPhone:(NSString *)phoneNum verifyCode:(NSString *)verifyCode;
+-(void)startCountTime;
 
 @end

@@ -12,6 +12,7 @@
 @interface BindPhoneView : UIView
 
 -(instancetype)initWithViewModel:(BindPhoneViewModel *)viewModel;
+-(void)updateVerifyBtn:(Boolean)complete;
 -(void)updateView;
 
 @end

@@ -18,6 +18,9 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import "STUpdateUtil.h"
 #import "MainPage.h"
+#import "ByViewController.h"
+#import "NextLoginPage.h"
+#import "AccountManager.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>
 
@@ -28,8 +31,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    id controller;
+    if([[AccountManager sharedAccountManager]isLogin]){
+        controller = [[NextLoginPage alloc]init];
+    }else{
+        controller = [[LoginPage alloc]init];
+    }
+//    ByViewController *controller = [[ByViewController alloc]init];
 //    MainPage *controller = [[MainPage alloc]init];
-    LoginPage *controller = [[LoginPage alloc]init];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
@@ -43,7 +52,19 @@
     [STUpdateUtil checkUpdate:^(NSString *appname, NSString *url, double version) {
 //        [self showUpdateAlert:url version:version];
     }];
-    
+    NSString *test =  [NSString stringWithFormat:@"%ld",(1UL << 0)];
+    NSString *test1 = [NSString stringWithFormat:@"%ld",(1UL << 1)];
+    NSString *test2 = [NSString stringWithFormat:@"%ld",(1UL << 2)];
+    NSString *test3 = [NSString stringWithFormat:@"%ld",(1UL << 3)];
+    NSString *test4 = [NSString stringWithFormat:@"%ld",(1UL << 4)];
+    NSString *test5 = [NSString stringWithFormat:@"%ld",(1UL << 5)];
+    [STLog print:test];
+    [STLog print:test1];
+    [STLog print:test2];
+    [STLog print:test3];
+    [STLog print:test4];
+    [STLog print:test5];
+
     return YES;
 }
 

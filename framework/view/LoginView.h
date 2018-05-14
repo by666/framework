@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginViewModel.h"
+#import "LoginPage.h"
 
 @interface LoginView : UIView
 
--(instancetype)initWithViewModel:(LoginViewModel *)viewModel;
--(void)updateView;
+-(instancetype)initWithViewModel:(LoginViewModel *)viewModel controller:(LoginPage *)page;
+
+//验证码按钮UI变化
 -(void)updateVerifyBtn:(Boolean)complete;
+//登录验证
+-(void)updateView;
+
 @end

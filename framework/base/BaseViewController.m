@@ -18,7 +18,6 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self hideNavigationBar:YES];
-    [self setStatuBarBackgroud:c02];
 }
 
 

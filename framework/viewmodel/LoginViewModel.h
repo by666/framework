@@ -11,8 +11,8 @@
 
 @protocol LoginDelegate
 
--(void)onSendVerifyCode:(Boolean)success msg:(NSString *)msg;
--(void)onLogin:(Boolean)success msg:(NSString *)msg;
+-(void)onSendVerifyCode:(Boolean)success;
+-(void)onLogin:(Boolean)success;
 -(void)onWechatLogin:(Boolean)success msg:(NSString *)msg;
 -(void)onTimeCount:(Boolean)complete;
 -(void)onFaceLogin;
@@ -24,12 +24,11 @@
 @property(weak, nonatomic)id <LoginDelegate>delegate;
 @property(strong, nonatomic)LoginModel *loginModel;
 
--(Boolean)isPhoneNumValid:(NSString *)phoneNum;
--(Boolean)isVerifyCodeValid:(NSString *)verifyCode;
 -(void)sendVerifyCode:(NSString *)phoneNum;
 -(void)doLogin:(NSString *)phoneNum verifyCode:(NSString *)verifyCode;
+-(void)startCountTime;
+
 -(void)doWechatLogin;
 -(void)doFaceLogin;
--(void)startCountTime;
 
 @end

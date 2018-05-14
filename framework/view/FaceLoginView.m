@@ -34,13 +34,14 @@
 @property(strong, nonatomic)FaceLoginViewModel *mViewModel;
 
 @property (nonatomic, strong) UIView *previewView;
+@property (nonatomic, strong) UIButton *saveBtn;
 
 
 @end
 
 
 @implementation FaceLoginView{
-    Boolean a;
+    Boolean isSaveAlbum;
 }
 
 -(instancetype)initWithViewModel:(FaceLoginViewModel *)viewModel{
@@ -53,6 +54,10 @@
 
 -(void)initView{
    
+    _saveBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"打开保存到相册" textColor:[UIColor blueColor] backgroundColor:[UIColor cyanColor] corner:0 borderWidth:0 borderColor:nil];
+    _saveBtn.frame = CGRectMake(0, ScreenHeight  - StatuBarHeight -  STHeight(200), ScreenWidth, STHeight(100));
+    [_saveBtn addTarget:self action:@selector(OnSave) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_saveBtn];
     [self setupCamera];
 
 }
@@ -296,8 +301,16 @@
 
 
 -(void)onOutputFaceImage:(IFlyFaceImage*)faceImg{
-//    NSString *imageStr =  [NSString stringWithFormat:@"%@.jpg",[STTimeUtil getCurrentTimeStamp]];
-//    [STFileUtil saveImaqgeFile:imageStr image:[self fixOrientation:faceImg.image]];
+    NSString *imageStr =  [NSString stringWithFormat:@"%@.jpg",[STTimeUtil getCurrentTimeStamp]];
+    if(isSaveAlbum){
+        __block ALAssetsLibrary *lib = [[ALAssetsLibrary alloc] init];
+        [lib writeImageToSavedPhotosAlbum:faceImg.image.CGImage metadata:nil completionBlock:^(NSURL *assetURL, NSError *error) {
+            NSLog(@"assetURL = %@, error = %@", assetURL, error);
+            lib = nil;
+        }];
+    }else{
+        [STFileUtil saveImageFile:imageStr image:[self fixOrientation:faceImg.image]];
+    }
     NSString* strResult;
 //    NSString* strResult=[self.faceDetector trackFrame:faceImg.data withWidth:faceImg.width height:faceImg.height direction:(int)faceImg.direction];
 //    NSLog(@"result:%@",strResult);
@@ -317,6 +330,15 @@
     faceImg=nil;
 }
 
+
+-(void)OnSave{
+    isSaveAlbum = !isSaveAlbum;
+    if(isSaveAlbum){
+        [_saveBtn setTitle:@"关闭保存到相册" forState:UIControlStateNormal];
+    }else{
+        [_saveBtn setTitle:@"打开保存到相册" forState:UIControlStateNormal];
+    }
+}
 
 
 - (UIImage *)fixOrientation:(UIImage *)aImage {

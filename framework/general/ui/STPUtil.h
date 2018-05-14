@@ -11,12 +11,18 @@
 @interface STPUtil : NSObject
 
 //比例宽
-+(int)getActualWidth : (int)width;
++(CGFloat)getActualWidth : (CGFloat)width;
 
 //比例高
-+(int)getActualHeight : (int)height;
++(CGFloat)getActualHeight : (CGFloat)height;
 
 //APP版本
 +(double)getAppVersion;
+
+//手机号是否有效
++(Boolean)isPhoneNumValid:(NSString *)phoneNum;
+
+//验证码是否有效
++(Boolean)isVerifyCodeValid:(NSString *)verifyCode;
 
 @end
