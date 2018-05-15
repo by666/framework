@@ -16,4 +16,15 @@
     
 }
 
+-(void)goMainPage{
+    if(_delegate){
+        [_delegate onGoMainPage];
+    }
+}
+
+-(void)detectOutOfTime{
+    if(_delegate){
+        [_delegate onDetectOutOfTime];
+    }
+}
 @end

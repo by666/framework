@@ -72,6 +72,8 @@
 		004EF56420A9B4C600BA9602 /* NextLoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF56320A9B4C600BA9602 /* NextLoginPage.m */; };
 		004EF56720A9B4E300BA9602 /* NextLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF56620A9B4E300BA9602 /* NextLoginView.m */; };
 		004EF56A20A9B7FF00BA9602 /* NextLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF56920A9B7FF00BA9602 /* NextLoginViewModel.m */; };
+		004EF56D20AA7DAF00BA9602 /* STLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF56C20AA7DAF00BA9602 /* STLayerView.m */; };
+		004EF57020AA8F1100BA9602 /* CircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF56E20AA8F1100BA9602 /* CircularProgressView.m */; };
 		005F7A8920901F0C003CA4CA /* MasonryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F7A8820901F0C003CA4CA /* MasonryPage.m */; };
 		007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F2E20858EB3009EA9F1 /* AppDelegate.m */; };
 		007B1F3720858EB6009EA9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007B1F3620858EB6009EA9F1 /* Assets.xcassets */; };
@@ -251,6 +253,10 @@
 		004EF56620A9B4E300BA9602 /* NextLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextLoginView.m; sourceTree = "<group>"; };
 		004EF56820A9B7FF00BA9602 /* NextLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextLoginViewModel.h; sourceTree = "<group>"; };
 		004EF56920A9B7FF00BA9602 /* NextLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextLoginViewModel.m; sourceTree = "<group>"; };
+		004EF56B20AA7DAF00BA9602 /* STLayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STLayerView.h; sourceTree = "<group>"; };
+		004EF56C20AA7DAF00BA9602 /* STLayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STLayerView.m; sourceTree = "<group>"; };
+		004EF56E20AA8F1100BA9602 /* CircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularProgressView.m; sourceTree = "<group>"; };
+		004EF56F20AA8F1100BA9602 /* CircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularProgressView.h; sourceTree = "<group>"; };
 		005F7A8720901F0C003CA4CA /* MasonryPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryPage.h; sourceTree = "<group>"; };
 		005F7A8820901F0C003CA4CA /* MasonryPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryPage.m; sourceTree = "<group>"; };
 		007B1F2A20858EB3009EA9F1 /* framework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = framework.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -398,6 +404,8 @@
 		0006DF1520898BC2005A4465 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				004EF56F20AA8F1100BA9602 /* CircularProgressView.h */,
+				004EF56E20AA8F1100BA9602 /* CircularProgressView.m */,
 				0006DF1A20898F70005A4465 /* TouchScrollView.h */,
 				0006DF1B20898F70005A4465 /* TouchScrollView.m */,
 				0006DF1620898BDE005A4465 /* STRefreshTableView.h */,
@@ -406,6 +414,8 @@
 				004EF54B20A3E27100BA9602 /* STNavigationView.m */,
 				004EF55620A92E9A00BA9602 /* STTableView.h */,
 				004EF55720A92E9A00BA9602 /* STTableView.m */,
+				004EF56B20AA7DAF00BA9602 /* STLayerView.h */,
+				004EF56C20AA7DAF00BA9602 /* STLayerView.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -1112,6 +1122,7 @@
 				004EF56120A9AD4A00BA9602 /* BindPhoneModel.m in Sources */,
 				004EF56420A9B4C600BA9602 /* NextLoginPage.m in Sources */,
 				004EF54320A3083500BA9602 /* MainPage.m in Sources */,
+				004EF57020AA8F1100BA9602 /* CircularProgressView.m in Sources */,
 				004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */,
 				0006DF79208DBC76005A4465 /* FaceRequestViewController.m in Sources */,
 				0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */,
@@ -1135,6 +1146,7 @@
 				0006DF78208DBC76005A4465 /* FaceRequestSettingViewController.m in Sources */,
 				004EF53120A2D6AA00BA9602 /* UIButton+Init.m in Sources */,
 				004EF54920A3088300BA9602 /* MainView.m in Sources */,
+				004EF56D20AA7DAF00BA9602 /* STLayerView.m in Sources */,
 				00C25427209B162A00E8E306 /* QRCodePage.m in Sources */,
 				0006DF9E208DBCAD005A4465 /* CanvasView.m in Sources */,
 				0006DF96208DBCAD005A4465 /* IFlyFaceImage.m in Sources */,

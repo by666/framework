@@ -9,6 +9,8 @@
 #import "LoginViewModel.h"
 #import "STObserverManager.h"
 #import <WXApi.h>
+#import "AccountManager.h"
+#import "UserModel.h"
 
 #define TIMECOUNT 60
 
@@ -62,6 +64,10 @@
         //todo:网络请求
         _loginModel.msgStr = MSG_LOGIN_SUCCESS;
         _loginModel.msgColor = c06;
+        UserModel *model = [[UserModel alloc]init];
+        model.phoneNum = phoneNum;
+        [[AccountManager sharedAccountManager]saveUserModel:model];
+
         [_delegate onLogin:YES];
     }
 }
@@ -110,6 +116,12 @@
         });
     });
     dispatch_resume(timer);
+}
+
+-(void)goback{
+    if(_delegate){
+        [_delegate onGoback];
+    }
 }
 
 @end

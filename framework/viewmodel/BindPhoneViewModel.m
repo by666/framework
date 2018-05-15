@@ -7,7 +7,8 @@
 //
 
 #import "BindPhoneViewModel.h"
-
+#import "UserModel.h"
+#import "AccountManager.h"
 #define TIMECOUNT 60
 
 @implementation BindPhoneViewModel
@@ -59,6 +60,9 @@
         //todo:网络请求
         _bindPhoneModel.msgStr = MSG_LOGIN_SUCCESS;
         _bindPhoneModel.msgColor = c06;
+        UserModel *model = [[UserModel alloc]init];
+        model.phoneNum = phoneNum;
+        [[AccountManager sharedAccountManager]saveUserModel:model];
         [_delegate onBindPhone:YES];
     }
 }

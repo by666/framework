@@ -20,3 +20,6 @@
 #define MSG_GET_VERIFYCODE @"获取验证码"
 #define MSG_FACE_LOGIN @"刷脸登录"
 #define MSG_VERIFYCODE_LOGIN @"验证码登录"
+#define MSG_FACE_TITLE @"请拿起手机，将脸移入框内"
+#define MSG_DETECT_OUTOFTIME @"验证超时"
+#define MSG_OUTOFTIME_CONTENT @"正对手机，刷脸更容易成功"

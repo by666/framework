@@ -11,6 +11,10 @@
 
 @interface FaceLoginView : UIView
 
+@property(assign, nonatomic)Boolean test;
+
 -(instancetype)initWithViewModel:(FaceLoginViewModel *)viewModel;
 -(void)releaseCamera;
+-(void)startDetect;
+
 @end

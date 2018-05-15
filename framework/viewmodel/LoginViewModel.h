@@ -16,6 +16,7 @@
 -(void)onWechatLogin:(Boolean)success msg:(NSString *)msg;
 -(void)onTimeCount:(Boolean)complete;
 -(void)onFaceLogin;
+-(void)onGoback;
 
 @end
 
@@ -30,5 +31,6 @@
 
 -(void)doWechatLogin;
 -(void)doFaceLogin;
+-(void)goback;
 
 @end

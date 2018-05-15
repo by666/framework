@@ -12,6 +12,9 @@
 #import "STObserverManager.h"
 #import "BindPhonePage.h"
 #import "FaceLoginPage.h"
+#import "UserModel.h"
+#import "AccountManager.h"
+#import "MainPage.h"
 @interface LoginPage ()<LoginDelegate,STObserverProtocol>
 
 @property(strong, nonatomic)LoginViewModel *mViewModel;
@@ -26,6 +29,7 @@
     _mViewModel = [[LoginViewModel alloc]init];
     _mViewModel.delegate = self;
     [[STObserverManager sharedSTObserverManager]registerSTObsever:Notify_WXLogin delegate:self];
+    [self setStatuBarBackgroud:[UIColor clearColor]];
     [STColorUtil setGradientColor:self.view startColor:c01 endColor:c02 director:Top];
     [self initView];
 }
@@ -44,6 +48,7 @@
     _mLoginView = [[LoginView alloc]initWithViewModel:_mViewModel controller:self];
     _mLoginView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     [self.view addSubview:_mLoginView];
+
 }
 
 -(void)onSendVerifyCode:(Boolean)success{
@@ -81,4 +86,12 @@
     }
 }
 
+-(void)onGoback{
+    if([[AccountManager sharedAccountManager] isLogin]){
+        [self backLastPage];
+    }else{
+        MainPage *page =[[MainPage alloc]init];
+        [self pushPage:page];
+    }
+}
 @end

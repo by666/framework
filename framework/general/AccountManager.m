@@ -26,7 +26,10 @@ SINGLETON_IMPLEMENTION(AccountManager)
 }
 
 -(Boolean)isLogin{
-    //todo
+    UserModel *model = [self getUserModel];
+    if(model && !IS_NS_STRING_EMPTY(model.phoneNum)){
+        return YES;
+    }
     return NO;
 }
 

@@ -22,30 +22,30 @@
 #import "IFlyFaceResultKeys.h"
 #import "STFileUtil.h"
 #import "STTimeUtil.h"
+#import "CircularProgressView.h"
 
 @interface FaceLoginView()<CaptureManagerDelegate>
 
-@property (nonatomic, retain ) AVCaptureVideoPreviewLayer *previewLayer;
-@property (nonatomic, retain ) CaptureManager             *captureManager;
-
-@property (nonatomic, retain ) IFlyFaceDetector           *faceDetector;
-@property (nonatomic, strong ) CanvasView                 *viewCanvas;
+@property(strong, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
+@property(strong, nonatomic) CaptureManager *captureManager;
+@property(strong, nonatomic) IFlyFaceDetector *faceDetector;
+@property(strong, nonatomic) CanvasView *viewCanvas;
 
 @property(strong, nonatomic)FaceLoginViewModel *mViewModel;
-
-@property (nonatomic, strong) UIView *previewView;
-@property (nonatomic, strong) UIButton *saveBtn;
+@property(strong, nonatomic) UIView *previewView;
+@property(strong, nonatomic) CircularProgressView *progressView;
+@property(assign, nonatomic) float progress;
 
 
 @end
 
 
 @implementation FaceLoginView{
-    Boolean isSaveAlbum;
 }
 
 -(instancetype)initWithViewModel:(FaceLoginViewModel *)viewModel{
     if(self == [super init]){
+        _progress = 0.0f;
         _mViewModel = viewModel;
         [self initView];
     }
@@ -54,20 +54,28 @@
 
 -(void)initView{
    
-    _saveBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"打开保存到相册" textColor:[UIColor blueColor] backgroundColor:[UIColor cyanColor] corner:0 borderWidth:0 borderColor:nil];
-    _saveBtn.frame = CGRectMake(0, ScreenHeight  - StatuBarHeight -  STHeight(200), ScreenWidth, STHeight(100));
-    [_saveBtn addTarget:self action:@selector(OnSave) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:_saveBtn];
     [self setupCamera];
 
 }
 
 
 -(void)setupCamera{
-    CGFloat width = STWidth(500);
+    
+    UILabel *titieLabel = [[UILabel alloc]initWithFont:STFont(14) text:MSG_FACE_TITLE textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
+    titieLabel.frame = CGRectMake(0, STHeight(36), ScreenWidth, STHeight(14));
+    [self addSubview:titieLabel];
+    
+    
+    CGFloat circlewidth = STWidth(217);
+    _progressView = [[CircularProgressView alloc]initWithFrame:CGRectMake((ScreenWidth - circlewidth)/2, STHeight(103), circlewidth, circlewidth) backColor:c14 progressColor:c13 lineWidth:STWidth(2) audioURL:nil];
+    _progressView.progress = _progress;
+    [self addSubview:_progressView];
+    [self startDetect];
+    
+    CGFloat width = STWidth(206);
     self.previewView = [[UIView alloc]init];
     self.previewView.backgroundColor = [UIColor blackColor];
-    self.previewView.frame = CGRectMake((ScreenWidth - width)/2, STHeight(160), width, width);
+    self.previewView.frame = CGRectMake((ScreenWidth - width)/2, STHeight(108.5), width, width);
     self.previewView.layer.masksToBounds = YES;
     self.previewView.layer.cornerRadius = width/2;
     [self addSubview:self.previewView];
@@ -99,23 +107,56 @@
     
 }
 
+-(void)startDetect{
+    _progress = 0.0f;
+    __weak FaceLoginView *weakSelf = self;
+    NSTimeInterval period = 0.3f; //设置时间间隔
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), period * NSEC_PER_SEC, 0); //每秒执行
+    dispatch_source_set_event_handler(_timer, ^{
+        if(!weakSelf.test){
+            if(weakSelf.progress == 0.5){
+                dispatch_source_cancel(_timer);
+                [weakSelf.mViewModel detectOutOfTime];
+                weakSelf.test = YES;
+            }else{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self handlProgress];
+                });
+            }
+        }
+        else{
+            if(weakSelf.progress >= 1){
+                dispatch_source_cancel(_timer);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf.mViewModel goMainPage];
+                });
+
+            }else{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self handlProgress];
+                });
+            }
+        }
+    });
+    
+    dispatch_resume(_timer);
+}
+
+-(void)handlProgress{
+    _progress += 0.1;
+    _progressView.progress = _progress;
+    [STLog print:[NSString stringWithFormat:@"%f",_progress]];
+}
+
 
 -(void)releaseCamera{
     [self.captureManager removeObserver];
     self.captureManager=nil;
     self.viewCanvas=nil;
 }
-//- (void)viewDidDisappear:(BOOL)animated{
-//    [super viewDidDisappear:animated];
-//
-//    [self.captureManager removeObserver];
-//}
-//
-//-(void)dealloc{
-//    self.captureManager=nil;
-//    self.viewCanvas=nil;
-//
-//}
+
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -125,7 +166,7 @@
 
 #pragma mark - Data Parser
 
-- (void) showFaceLandmarksAndFaceRectWithPersonsArray:(NSMutableArray *)arrPersons{
+- (void)showFaceLandmarksAndFaceRectWithPersonsArray:(NSMutableArray *)arrPersons{
     if (self.viewCanvas.hidden) {
         self.viewCanvas.hidden = NO ;
     }
@@ -133,7 +174,7 @@
     [self.viewCanvas setNeedsDisplay] ;
 }
 
-- (void) hideFace {
+- (void)hideFace {
     if (!self.viewCanvas.hidden) {
         self.viewCanvas.hidden = YES ;
     }
@@ -144,9 +185,7 @@
     if(!positionDic){
         return nil;
     }
-    
-    
-    
+
     // 判断摄像头方向
     BOOL isFrontCamera=self.captureManager.videoDeviceInput.device.position==AVCaptureDevicePositionFront;
     
@@ -302,15 +341,16 @@
 
 -(void)onOutputFaceImage:(IFlyFaceImage*)faceImg{
     NSString *imageStr =  [NSString stringWithFormat:@"%@.jpg",[STTimeUtil getCurrentTimeStamp]];
-    if(isSaveAlbum){
+//    if(isSaveAlbum){
         __block ALAssetsLibrary *lib = [[ALAssetsLibrary alloc] init];
+    
         [lib writeImageToSavedPhotosAlbum:faceImg.image.CGImage metadata:nil completionBlock:^(NSURL *assetURL, NSError *error) {
             NSLog(@"assetURL = %@, error = %@", assetURL, error);
             lib = nil;
         }];
-    }else{
-        [STFileUtil saveImageFile:imageStr image:[self fixOrientation:faceImg.image]];
-    }
+//    }else{
+//        [STFileUtil saveImageFile:imageStr image:[self fixOrientation:faceImg.image]];
+//    }
     NSString* strResult;
 //    NSString* strResult=[self.faceDetector trackFrame:faceImg.data withWidth:faceImg.width height:faceImg.height direction:(int)faceImg.direction];
 //    NSLog(@"result:%@",strResult);
@@ -330,15 +370,6 @@
     faceImg=nil;
 }
 
-
--(void)OnSave{
-    isSaveAlbum = !isSaveAlbum;
-    if(isSaveAlbum){
-        [_saveBtn setTitle:@"关闭保存到相册" forState:UIControlStateNormal];
-    }else{
-        [_saveBtn setTitle:@"打开保存到相册" forState:UIControlStateNormal];
-    }
-}
 
 
 - (UIImage *)fixOrientation:(UIImage *)aImage {

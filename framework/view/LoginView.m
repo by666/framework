@@ -13,7 +13,7 @@
 
 @property(strong, nonatomic) LoginViewModel *mViewModel;
 
-@property(strong, nonatomic) UIImageView *backImageView;
+@property(strong, nonatomic) UIButton *backBtn;
 @property(strong, nonatomic) UIButton *loginBtn;
 @property(strong, nonatomic) UIButton *wechatLoginBtn;
 
@@ -40,11 +40,12 @@
 
 -(void)initView{
     
-    _backImageView= [[UIImageView alloc]init];
-    _backImageView.backgroundColor = cwhite;
-    _backImageView.contentMode = UIViewContentModeScaleAspectFit;
-    _backImageView.frame = CGRectMake(STWidth(16), STHeight(23), STWidth(36), STWidth(36));
-    [self addSubview:_backImageView];
+    _backBtn= [[UIButton alloc]init];
+    UIImage *image = [UIImage imageNamed:@"ic_back"];
+    [_backBtn setImage:image forState:UIControlStateNormal];
+    _backBtn.frame = CGRectMake(STWidth(16), STHeight(23), STWidth(36), STWidth(36));
+    [_backBtn addTarget:self action:@selector(doBack) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_backBtn];
     
     UIImageView *logoImageView = [[UIImageView alloc]init];
     logoImageView.backgroundColor = cwhite;
@@ -165,6 +166,12 @@
     [MBProgressHUD hideHUDForView:self animated:YES];
     _tipLabel.text = _mViewModel.loginModel.msgStr;
     _tipLabel.textColor = _mViewModel.loginModel.msgColor;
+}
+
+-(void)doBack{
+    if(_mViewModel){
+        [_mViewModel goback];
+    }
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

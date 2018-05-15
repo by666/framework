@@ -19,6 +19,10 @@
 #define c08 [STColorUtil colorWithHexString:@"#8282FC"]
 #define c09 [STColorUtil colorWithHexString:@"#B3BFD0"]
 #define c10 [STColorUtil colorWithHexString:@"#262628"]
+#define c11 [STColorUtil colorWithHexString:@"#333537"]
+#define c12 [STColorUtil colorWithHexString:@"#8795A8"]
+#define c13 [STColorUtil colorWithHexString:@"#3AA7FF"]
+#define c14 [STColorUtil colorWithHexString:@"#92CEFF" alpha:0.2f]
 
 
 #define cwhite [STColorUtil colorWithHexString:@"#ffffff"]

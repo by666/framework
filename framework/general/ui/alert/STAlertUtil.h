@@ -15,8 +15,11 @@
 //对话框只有取消按钮
 +(void)showAlertController:(NSString *)title content:(NSString *)content controller:(UIViewController *)controller;
 
-//对话框有取消和确认按钮
+//对话框有取消和确认按钮，确认按钮有回调
 +(void)showAlertController:(NSString *)title content:(NSString *)content controller:(UIViewController *)controller confirm:(void (^)(void))click;
+
+//对话框有取消和确认按钮,都有回调
++(void)showAlertController:(NSString *)title content:(NSString *)content controller:(UIViewController *)controller confirm:(void (^)(void))confirmClick cancel:(void(^)(void))cancelClick;
 
 //sheet
 +(void)showSheetController:(NSString *)title content:(NSString *)content controller:(UIViewController *)controller sheetModels:(NSMutableArray *)sheetModels;
