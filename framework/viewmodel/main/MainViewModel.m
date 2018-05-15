@@ -10,4 +10,19 @@
 
 @implementation MainViewModel
 
+
+-(instancetype)init{
+    if(self == [super init]){
+        
+    }
+    return self;
+}
+
+
+-(void)goMinePage{
+    if(_delegate){
+        [_delegate onGoMinePage];
+    }
+}
+
 @end

@@ -131,6 +131,7 @@
                 dispatch_source_cancel(_timer);
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [weakSelf.mViewModel goMainPage];
+                    [self releaseCamera];
                 });
 
             }else{
@@ -340,20 +341,19 @@
 
 
 -(void)onOutputFaceImage:(IFlyFaceImage*)faceImg{
-    NSString *imageStr =  [NSString stringWithFormat:@"%@.jpg",[STTimeUtil getCurrentTimeStamp]];
+//    NSString *imageStr =  [NSString stringWithFormat:@"%@.jpg",[STTimeUtil getCurrentTimeStamp]];
 //    if(isSaveAlbum){
-        __block ALAssetsLibrary *lib = [[ALAssetsLibrary alloc] init];
-    
-        [lib writeImageToSavedPhotosAlbum:faceImg.image.CGImage metadata:nil completionBlock:^(NSURL *assetURL, NSError *error) {
-            NSLog(@"assetURL = %@, error = %@", assetURL, error);
-            lib = nil;
-        }];
+//        __block ALAssetsLibrary *lib = [[ALAssetsLibrary alloc] init];
+//
+//        [lib writeImageToSavedPhotosAlbum:faceImg.image.CGImage metadata:nil completionBlock:^(NSURL *assetURL, NSError *error) {
+//            NSLog(@"assetURL = %@, error = %@", assetURL, error);
+//            lib = nil;
+//        }];
 //    }else{
 //        [STFileUtil saveImageFile:imageStr image:[self fixOrientation:faceImg.image]];
 //    }
-    NSString* strResult;
-//    NSString* strResult=[self.faceDetector trackFrame:faceImg.data withWidth:faceImg.width height:faceImg.height direction:(int)faceImg.direction];
-//    NSLog(@"result:%@",strResult);
+    NSString* strResult=[self.faceDetector trackFrame:faceImg.data withWidth:faceImg.width height:faceImg.height direction:(int)faceImg.direction];
+    NSLog(@"result:%@",strResult);
     
     //此处清理图片数据，以防止因为不必要的图片数据的反复传递造成的内存卷积占用。
     faceImg.data=nil;

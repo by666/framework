@@ -47,8 +47,7 @@
     [_mBindPhoneView updateView];
     if(success){
         [_mBindPhoneView updateView];
-        MainPage *page = [[MainPage alloc]init];
-        [self pushPage:page];
+        [MainPage show:self];
     }
 }
 

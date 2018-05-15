@@ -59,7 +59,7 @@
 - (void)onLogin:(Boolean)success{
     [_mLoginView updateView];
     if(success){
-        //跳转到下一步
+        [MainPage show:self];
     }
 }
 
@@ -90,8 +90,7 @@
     if([[AccountManager sharedAccountManager] isLogin]){
         [self backLastPage];
     }else{
-        MainPage *page =[[MainPage alloc]init];
-        [self pushPage:page];
+        [MainPage show:self];
     }
 }
 @end

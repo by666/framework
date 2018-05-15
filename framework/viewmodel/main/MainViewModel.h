@@ -10,11 +10,14 @@
 
 @protocol MainViewDelegate
 
+-(void)onGoMinePage;
 
 @end
 
 @interface MainViewModel : NSObject
 
 @property(weak, nonatomic)id <MainViewDelegate>delegate;
+
+-(void)goMinePage;
 
 @end

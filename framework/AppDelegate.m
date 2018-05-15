@@ -32,13 +32,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     id controller;
-    if([[AccountManager sharedAccountManager]isLogin]){
-        controller = [[NextLoginPage alloc]init];
-    }else{
-        controller = [[LoginPage alloc]init];
-    }
-//    ByViewController *controller = [[ByViewController alloc]init];
-//    MainPage *controller = [[MainPage alloc]init];
+//    if([[AccountManager sharedAccountManager]isLogin]){
+//        controller = [[NextLoginPage alloc]init];
+//    }else{
+//        controller = [[LoginPage alloc]init];
+//    }
+    controller = [[MainPage alloc]init];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];

@@ -6,7 +6,7 @@
 //  Copyright © 2018年 黄成实. All rights reserved.
 //
 
-
+#import "STNavigationView.h"
 @interface BaseViewController : UIViewController
 
 //隐藏导航栏
@@ -19,5 +19,7 @@
 -(void)pushPage : (BaseViewController *)targetPage;
 
 -(void)backLastPage;
+
+-(void)showSTNavigationBar:(NSString *)title needback:(Boolean)needback;
 
 @end

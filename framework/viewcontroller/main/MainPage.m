@@ -10,6 +10,7 @@
 #import "MainViewModel.h"
 #import "MainView.h"
 #import "STNavigationView.h"
+#import "MinePage.h"
 
 @interface MainPage ()<MainViewDelegate>
 
@@ -21,11 +22,21 @@
 
 @implementation MainPage
 
++(void)show:(BaseViewController *)controller{
+    MainPage *page = [[MainPage alloc]init];
+    [controller pushPage:page];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setStatuBarBackgroud:cwhite];
     _mViewModel = [[MainViewModel alloc]init];
     _mViewModel.delegate = self;
     [self initView];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleDefault;
 }
 
 -(void)initView{
@@ -37,6 +48,10 @@
     _mMainView.frame = CGRectMake(0, StatuBarHeight+NavigationBarHeight, ScreenWidth, ScreenHeight - StatuBarHeight-NavigationBarHeight);
     _mMainView.backgroundColor = c01;
     [self.view addSubview:_mMainView];
+}
+
+-(void)onGoMinePage{
+    [MinePage show:self];
 }
 
 @end

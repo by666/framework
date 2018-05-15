@@ -50,8 +50,7 @@
 }
 
 -(void)onGoMainPage{
-   
-    [STAlertUtil showAlertController:@"验证通过" content:@"登录成功" controller:self];
+    [MainPage show:self];
 }
 
 -(void)onDetectOutOfTime{

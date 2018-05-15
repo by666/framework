@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface BaseViewController ()
+@interface BaseViewController ()<STNavigationViewDelegate>
 
 @end
 
@@ -42,4 +42,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+-(void)showSTNavigationBar:(NSString *)title needback:(Boolean)needback{
+    STNavigationView *navigationView = [[STNavigationView alloc]initWithTitle:title needBack:needback];
+    navigationView.delegate = self;
+    [self.view addSubview:navigationView];
+}
+
+-(void)OnBackBtnClicked{
+    [self backLastPage];
+}
 @end

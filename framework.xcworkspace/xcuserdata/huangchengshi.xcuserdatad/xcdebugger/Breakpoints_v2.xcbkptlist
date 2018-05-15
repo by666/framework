@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/general/net/http/STNetUtil.m"
-            timestampString = "548058639.62815"
+            timestampString = "548074736.711449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -26,7 +26,7 @@
                   moduleName = "framework"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huangchengshi/Desktop/master/framework/general/net/http/STNetUtil.m"
-                  timestampString = "548058682.749843"
+                  timestampString = "548074736.780911"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"
@@ -41,7 +41,7 @@
                   moduleName = "framework"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huangchengshi/Desktop/master/framework/general/net/http/STNetUtil.m"
-                  timestampString = "548058682.751421"
+                  timestampString = "548074736.784898"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/general/net/http/STNetUtil.m"
-            timestampString = "548058639.628273"
+            timestampString = "548074736.711567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/general/net/http/STNetUtil.m"
-            timestampString = "548058639.628347"
+            timestampString = "548074736.711642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -89,24 +89,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "framework/custom/common/STNavigationView.m"
-            timestampString = "548058639.628438"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "-OnBackBtnClick"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "framework/general/net/http/STNetUtil.m"
-            timestampString = "548058639.628535"
+            timestampString = "548074736.711733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -122,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/custom/common/STTableView.m"
-            timestampString = "548058639.6286401"
+            timestampString = "548062273.075737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -138,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/view/MainCell.m"
-            timestampString = "548058639.628739"
+            timestampString = "548062273.075834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -160,6 +144,22 @@
             startingLineNumber = "88"
             endingLineNumber = "88"
             landmarkName = "-fixOrientation"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "framework/view/mine/HabitantView.m"
+            timestampString = "548074736.712231"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
