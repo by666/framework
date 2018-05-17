@@ -35,10 +35,17 @@
 }
 
 +(Boolean)isVerifyCodeValid:(NSString *)verifyCode{
-    if(!IS_NS_STRING_EMPTY(verifyCode) && verifyCode.length == 4){
+    if(!IS_NS_STRING_EMPTY(verifyCode) && (verifyCode.length >= 4) && (verifyCode.length <=6)){
         return YES;
     }
     return NO;
 }
+
+
++(CGSize)textSize:(NSString *)text maxWidth:(CGFloat)maxWidth font:(CGFloat)font{
+   return [text boundingRectWithSize:CGSizeMake(maxWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
+}
+
+
 
 @end

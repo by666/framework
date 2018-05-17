@@ -17,6 +17,11 @@
 
 @implementation NextLoginPage
 
++(void)show:(BaseViewController *)controller{
+    NextLoginPage *page = [[NextLoginPage alloc]init];
+    [controller pushPage:page];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initView];

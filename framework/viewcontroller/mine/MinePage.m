@@ -22,7 +22,6 @@
 
 @interface MinePage ()<MineViewDelegate>
 
-//@property(strong, nonatomic)STNavigationView *mNavigationView;
 
 @end
 
@@ -34,15 +33,17 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self setStatuBarBackgroud:c01];
+    [self setStatuBarBackgroud:[UIColor clearColor]];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    _mNavigationView = [[STNavigationView alloc]initWithTitle:@"我的" needBack:NO];
-//    [self.view addSubview:_mNavigationView];
     
     
     MineViewModel *viewModel = [[MineViewModel alloc]init];

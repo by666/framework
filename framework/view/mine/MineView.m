@@ -7,15 +7,18 @@
 //
 
 #import "MineView.h"
+#import "MineCell.h"
 
 @interface MineView()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong, nonatomic)MineViewModel *mViewModel;
 @property(strong, nonatomic)UIView *topView;
 @property(strong, nonatomic)UIButton *avatarBtn;
+@property(strong, nonatomic)UIButton *settingBtn;
 @property(strong, nonatomic)UILabel *nameLabel;
 @property(strong, nonatomic)UILabel *districtLabel;
 @property(strong, nonatomic)UITableView *tableView;
+
 
 @end
 
@@ -36,30 +39,52 @@
 
 -(void)initTop{
     _topView = [[UIView alloc]init];
-    _topView.frame = CGRectMake(0, 0, ScreenWidth, STHeight(260));
-    _topView.backgroundColor = c01;
+    _topView.frame = CGRectMake(0, 0, ScreenWidth, STHeight(219.1));
     [self addSubview:_topView];
+    [STColorUtil setGradientColor:_topView startColor:c01 endColor:c02 director:Top];
+    
+    UILabel *mineTitleLabel = [[UILabel alloc]initWithFont:STFont(18) text:MSG_MINE_TITLE textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    mineTitleLabel.frame = CGRectMake(0, STHeight(32), ScreenWidth, STHeight(22));
+    [self addSubview:mineTitleLabel];
     
     _avatarBtn = [[UIButton alloc]init];
     _avatarBtn.backgroundColor = cblack;
-    _avatarBtn.frame = CGRectMake(STWidth(147.5), STHeight(70), STWidth(80), STWidth(80));
+    _avatarBtn.frame = CGRectMake(STWidth(156), STHeight(78), STWidth(62), STWidth(62));
     _avatarBtn.layer.masksToBounds = YES;
-    _avatarBtn.layer.cornerRadius = STWidth(40);
+    _avatarBtn.layer.cornerRadius = STWidth(31);
+    [_avatarBtn addTarget:self action:@selector(OnClickAvatarBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_avatarBtn];
     
-    _nameLabel = [[UILabel alloc]initWithFont:STFont(18) text:@"黄成实" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
-    _nameLabel.frame = CGRectMake(0, STHeight(170), ScreenWidth, STHeight(18));
+    UIImageView *editImageView = [[UIImageView alloc]init];
+    editImageView.frame = CGRectMake(STWidth(206), STHeight(81), STWidth(23), STWidth(23));
+    editImageView.backgroundColor = c01;
+    editImageView.userInteractionEnabled = NO;
+    [self addSubview:editImageView];
+    
+    _nameLabel = [[UILabel alloc]initWithFont:STFont(18) text:@"虚竹" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    _nameLabel.frame = CGRectMake(0, STHeight(154), ScreenWidth, STHeight(18));
     [self addSubview:_nameLabel];
     
-    _districtLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"上合花园" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
-    _districtLabel.frame = CGRectMake(0, STHeight(200), ScreenWidth, STHeight(14));
+    UIImageView *districtImageView = [[UIImageView alloc]init];
+    districtImageView.backgroundColor = c01;
+    districtImageView.frame = CGRectMake(STWidth(150), STHeight(180), STHeight(14), STHeight(14));
+    [self addSubview:districtImageView];
+    
+    _districtLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"缥缈峰" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    _districtLabel.frame = CGRectMake(STWidth(163), STHeight(180), STWidth(70), STHeight(14));
     [self addSubview:_districtLabel];
+    
+    _settingBtn = [[UIButton alloc]init];
+    _settingBtn.backgroundColor = c01;
+    _settingBtn.frame = CGRectMake(STWidth(342), STHeight(31.4), STWidth(20), STWidth(20));
+    [_settingBtn addTarget:self action:@selector(onClickSettingBtn) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_settingBtn];
 }
 
 -(void)initList{
     _tableView = [[UITableView alloc]init];
-    _tableView.frame = CGRectMake(0, STHeight(260), ScreenWidth, ScreenHeight - STHeight(260));
-    _tableView.backgroundColor = c09;
+    _tableView.frame = CGRectMake(0, STHeight(219.1), ScreenWidth, ScreenHeight - STHeight(219.1));
+    _tableView.backgroundColor = c15;
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.showsHorizontalScrollIndicator = NO;
     _tableView.delegate = self;
@@ -80,43 +105,44 @@
         case 2:
             rows = 2;
             break;
-        case 3:
-            rows = 1;
-            break;
     }
     return rows;
 }
 
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return STHeight(54);
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
+    return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return STHeight(20);
+    return STHeight(9.9);
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = [[UIView alloc]init];
-    view.frame = CGRectMake(0, 0, ScreenWidth, STHeight(20));
+    view.frame = CGRectMake(0, 0, ScreenWidth, STHeight(9.9));
     return view;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mine"];
+    MineCell *cell = [tableView dequeueReusableCellWithIdentifier:[MineCell identify]];
+    if(!cell){
+        cell = [[MineCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[MineCell identify]];
+    }
     NSInteger position = 0;
     if(indexPath.section == 0){
         position = indexPath.row;
     }else if(indexPath.section == 1){
         position = 3 + indexPath.row;
-    }else if(indexPath.section == 2){
-        position = 5 + indexPath.row;
     }else{
-        position = 7 + indexPath.row;
+        position = 5 + indexPath.row;
     }
-    cell.textLabel.text = [_mViewModel.titleArray objectAtIndex:position];
-    cell.imageView.image = [UIImage imageNamed:@"ic_back"];
+    [cell updateData:[_mViewModel.titleArray objectAtIndex:position]];
     return cell;
 }
 
@@ -145,7 +171,7 @@
                 [_mViewModel goCarHistoryPage];
                 break;
         }
-    }else if(section == 2){
+    }else{
         switch (indexPath.row) {
             case 0:
                 [_mViewModel goMessageSettingPage];
@@ -154,7 +180,19 @@
                 [_mViewModel goAccountManagePage];
                 break;
         }
-    }else{
+    }
+}
+
+#pragma mark 点击修改头像
+-(void)OnClickAvatarBtn{
+    if(_mViewModel){
+        [_mViewModel goProfilePage];
+    }
+}
+
+#pragma mark 点击设置
+-(void)onClickSettingBtn{
+    if(_mViewModel){
         [_mViewModel goSettingPage];
     }
 }

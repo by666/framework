@@ -7,6 +7,9 @@
 //
 
 #import "UITextField+Init.h"
+#import <objc/runtime.h>
+
+static char *hasValueChar = "hasValue";
 
 @implementation UITextField(Init)
 
@@ -32,6 +35,16 @@
         self.leftViewMode = UITextFieldViewModeAlways;
     }
     return self;
+}
+
+
+-(void)setHasValue:(NSString *)hasValue{
+    objc_setAssociatedObject(self, &hasValueChar, hasValue, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+-(NSString *)hasValue{
+    return objc_getAssociatedObject(self, &hasValueChar);
+
 }
 
 @end

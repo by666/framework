@@ -47,6 +47,11 @@
         [_backBtn addTarget:self action:@selector(OnBackBtnClick) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_backBtn];
     }
+    
+    UIView *lineView = [[UIView alloc]init];
+    lineView.frame = CGRectMake(0, NavigationBarHeight - STHeight(1), ScreenWidth, STHeight(1));
+    lineView.backgroundColor = c17;
+    [self addSubview:lineView];
 }
 
 

@@ -36,7 +36,7 @@
 -(void)initView{
     self.view.backgroundColor = cwhite;
     
-    _mBindPhoneView = [[BindPhoneView alloc]initWithViewModel:_mViewModel];
+    _mBindPhoneView = [[BindPhoneView alloc]initWithViewModel:_mViewModel title:MSG_WECHAT_TITLE];
     _mBindPhoneView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     _mBindPhoneView.backgroundColor = cwhite;
     [self.view addSubview:_mBindPhoneView];

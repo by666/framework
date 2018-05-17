@@ -37,6 +37,14 @@
     [_mViewModel requestDatas];
 }
 
+
+-(UIDatePicker *)picker{
+    UIDatePicker *picker = [[UIDatePicker alloc]init];
+    picker.frame = CGRectMake(0, ContentHeight - STHeight(200), ScreenWidth, STHeight(200));
+    picker.datePickerMode = UIDatePickerModeDate;
+    return picker;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_mViewModel.models count];
 }
@@ -58,6 +66,12 @@
         cell.textLabel.text = content;
     }
     return cell;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    [self addSubview:[self picker]];
 }
 
 

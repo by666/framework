@@ -12,6 +12,7 @@
 
 #define Notify_WXLogin @"wechat_login"
 #define Notify_LoginViewModel @"login_view_model"
+#define Notify_UpdateAvatar @"update_avatar"
 
 
 

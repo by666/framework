@@ -10,4 +10,5 @@
 
 @interface NextLoginPage : BaseViewController
 
++(void)show:(BaseViewController *)controller;
 @end

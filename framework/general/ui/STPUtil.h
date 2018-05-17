@@ -25,4 +25,7 @@
 //验证码是否有效
 +(Boolean)isVerifyCodeValid:(NSString *)verifyCode;
 
+//计算字符串宽度
++(CGSize)textSize:(NSString *)text maxWidth:(CGFloat)maxWidth font:(CGFloat)font;
+
 @end

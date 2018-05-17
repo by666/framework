@@ -20,11 +20,14 @@
 
 @end
 
-@implementation BindPhoneView
+@implementation BindPhoneView{
+    NSString *mTitle;
+}
 
--(instancetype)initWithViewModel:(BindPhoneViewModel *)viewModel{
+-(instancetype)initWithViewModel:(BindPhoneViewModel *)viewModel title:(NSString *)title{
     if(self == [super init]){
         _mViewModel = viewModel;
+        mTitle = title;
         [self initView];
     }
     return self;
@@ -32,8 +35,8 @@
 
 -(void)initView{
     
-    UILabel *titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_WECHAT_TITLE textAlignment:NSTextAlignmentCenter textColor:c08 backgroundColor:nil multiLine:NO];
-    titleLabel.frame = CGRectMake(0, STHeight(75), ScreenWidth, STHeight(22));
+    UILabel *titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:mTitle textAlignment:NSTextAlignmentCenter textColor:c08 backgroundColor:nil multiLine:YES];
+    titleLabel.frame = CGRectMake(STWidth(27), STHeight(75), ScreenWidth-STWidth(54), [STPUtil textSize:mTitle maxWidth:ScreenWidth-STWidth(54) font:STFont(16)].height);
     [self addSubview:titleLabel];
     
     
