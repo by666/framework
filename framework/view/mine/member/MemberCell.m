@@ -49,13 +49,18 @@
     _arrowImageView.frame = CGRectMake(STWidth(354), STHeight(21), STWidth(7), STHeight(11));
     [self.contentView addSubview:_arrowImageView];
     
+    UIView *lineView = [[UIView alloc]init];
+    lineView.frame = CGRectMake(0, STHeight(58.5), ScreenWidth, STHeight(1));
+    lineView.backgroundColor = c17;
+    [self.contentView addSubview:lineView];
 }
 
 
 -(void)updateData:(MemberModel *)model{
     
     _titleLabel.text = model.name;
-    _titleLabel.frame = CGRectMake(STWidth(60), STHeight(21.5),_titleLabel.contentSize.width , STHeight(16));
+//    [STPUtil textSize:model.name maxWidth:ScreenWidth font:STFont(16)].width
+    _titleLabel.frame = CGRectMake(STWidth(60), STHeight(21.5),[STPUtil textSize:model.name maxWidth:ScreenWidth font:STFont(16)].width , STHeight(16));
 
     if(!IS_NS_STRING_EMPTY(model.identify)){
         _idetifyLabel.hidden = NO;

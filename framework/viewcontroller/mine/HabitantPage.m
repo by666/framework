@@ -25,8 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = c01;
-    [self showSTNavigationBar:@"账号管理" needback:YES];
+    self.view.backgroundColor = c15;
+    [self showSTNavigationBar:MSG_HABITANT_TITLE needback:YES];
     [self initView];
 }
 
@@ -38,6 +38,7 @@
     HabitantViewModel *viewModel = [[HabitantViewModel alloc]initWithController:self];
     viewModel.delegate = self;
     _habitantView = [[HabitantView alloc]initWithViewModel:viewModel];
+    _habitantView.backgroundColor = c15;
     _habitantView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     [self.view addSubview:_habitantView];
 }

@@ -12,6 +12,8 @@
 @protocol AddMemberViewDelegate
 
 -(void)onAddMemberModel:(Boolean)success model:(MemberModel *)model;
+-(void)onDeleteMemberModel:(Boolean)success model:(MemberModel *)model;
+-(void)onDoTakePhoto;
 
 @end
 
@@ -21,6 +23,7 @@
 @property(strong, nonatomic)MemberModel *model;
 
 -(void)addMemberModel;
-
+-(void)deleteMemberModel:(MemberModel *)model;
+-(void)doTakePhoto;
 
 @end

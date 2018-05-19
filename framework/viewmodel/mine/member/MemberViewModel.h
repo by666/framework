@@ -12,6 +12,7 @@
 @protocol MemberViewDelegate
 
 -(void)onGoAddMemberView;
+-(void)onGoEditMemberView:(MemberModel *)model;
 -(void)onDeleteMember:(Boolean)success model:(MemberModel *)model;
 -(void)onGetMemberModels:(NSMutableArray *)datas;
 
@@ -23,7 +24,8 @@
 @property(strong, nonatomic)NSMutableArray *datas;
 
 -(void)getMemberModels;
--(void)goEditMemberView;
+-(void)goAddMemberView;
+-(void)goEditMemberView:(MemberModel *)model;
 -(void)deleteMember:(MemberModel *)model;
 
 @end

@@ -45,6 +45,18 @@
 		0006DF9F208DBCAD005A4465 /* PermissionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF94208DBCAD005A4465 /* PermissionDetector.m */; };
 		0006DFA2208DC05B005A4465 /* SystemFacePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DFA1208DC05B005A4465 /* SystemFacePage.m */; };
 		0006DFA8208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DFA7208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m */; };
+		002F942C20AEBA9000F84094 /* MessageSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F942B20AEBA9000F84094 /* MessageSettingView.m */; };
+		002F943020AEBABB00F84094 /* MessageSettingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F942F20AEBABB00F84094 /* MessageSettingViewModel.m */; };
+		002F943320AEC19500F84094 /* MessageSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F943220AEC19500F84094 /* MessageSettingCell.m */; };
+		002F943C20AED4FF00F84094 /* HabitantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F943B20AED4FF00F84094 /* HabitantCell.m */; };
+		002F944020AFF23F00F84094 /* CarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F943F20AFF23F00F84094 /* CarViewModel.m */; };
+		002F944320AFF2A200F84094 /* CarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F944220AFF2A200F84094 /* CarModel.m */; };
+		002F944720AFF6B600F84094 /* CarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F944620AFF6B600F84094 /* CarView.m */; };
+		002F944A20AFFAA600F84094 /* AddCarPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F944920AFFAA600F84094 /* AddCarPage.m */; };
+		002F944D20AFFBE000F84094 /* AddCarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F944C20AFFBE000F84094 /* AddCarView.m */; };
+		002F945020AFFBEF00F84094 /* AddCarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F944F20AFFBEF00F84094 /* AddCarViewModel.m */; };
+		002F945320B02B9E00F84094 /* CarViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F945220B02B9E00F84094 /* CarViewCell.m */; };
+		002F945620B038B300F84094 /* CarDetailPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F945520B038B300F84094 /* CarDetailPage.m */; };
 		0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2820942ABD0044D92E /* STObserverManager.m */; };
 		0039FC2C20942BDF0044D92E /* STObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2B20942BDF0044D92E /* STObserver.m */; };
 		004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51620A16DC400BA9602 /* STAlertUtil.m */; };
@@ -238,6 +250,30 @@
 		0006DFA1208DC05B005A4465 /* SystemFacePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemFacePage.m; sourceTree = "<group>"; };
 		0006DFA6208DCB66005A4465 /* IFlyOnlineFaceDetectPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFlyOnlineFaceDetectPage.h; sourceTree = "<group>"; };
 		0006DFA7208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFlyOnlineFaceDetectPage.m; sourceTree = "<group>"; };
+		002F942A20AEBA9000F84094 /* MessageSettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageSettingView.h; sourceTree = "<group>"; };
+		002F942B20AEBA9000F84094 /* MessageSettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageSettingView.m; sourceTree = "<group>"; };
+		002F942E20AEBABB00F84094 /* MessageSettingViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageSettingViewModel.h; sourceTree = "<group>"; };
+		002F942F20AEBABB00F84094 /* MessageSettingViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageSettingViewModel.m; sourceTree = "<group>"; };
+		002F943120AEC19500F84094 /* MessageSettingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageSettingCell.h; sourceTree = "<group>"; };
+		002F943220AEC19500F84094 /* MessageSettingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageSettingCell.m; sourceTree = "<group>"; };
+		002F943A20AED4FF00F84094 /* HabitantCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HabitantCell.h; sourceTree = "<group>"; };
+		002F943B20AED4FF00F84094 /* HabitantCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HabitantCell.m; sourceTree = "<group>"; };
+		002F943E20AFF23F00F84094 /* CarViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarViewModel.h; sourceTree = "<group>"; };
+		002F943F20AFF23F00F84094 /* CarViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarViewModel.m; sourceTree = "<group>"; };
+		002F944120AFF2A200F84094 /* CarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarModel.h; sourceTree = "<group>"; };
+		002F944220AFF2A200F84094 /* CarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarModel.m; sourceTree = "<group>"; };
+		002F944520AFF6B600F84094 /* CarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarView.h; sourceTree = "<group>"; };
+		002F944620AFF6B600F84094 /* CarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarView.m; sourceTree = "<group>"; };
+		002F944820AFFAA600F84094 /* AddCarPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddCarPage.h; sourceTree = "<group>"; };
+		002F944920AFFAA600F84094 /* AddCarPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddCarPage.m; sourceTree = "<group>"; };
+		002F944B20AFFBE000F84094 /* AddCarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddCarView.h; sourceTree = "<group>"; };
+		002F944C20AFFBE000F84094 /* AddCarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddCarView.m; sourceTree = "<group>"; };
+		002F944E20AFFBEF00F84094 /* AddCarViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddCarViewModel.h; sourceTree = "<group>"; };
+		002F944F20AFFBEF00F84094 /* AddCarViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddCarViewModel.m; sourceTree = "<group>"; };
+		002F945120B02B9E00F84094 /* CarViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarViewCell.h; sourceTree = "<group>"; };
+		002F945220B02B9E00F84094 /* CarViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarViewCell.m; sourceTree = "<group>"; };
+		002F945420B038B300F84094 /* CarDetailPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarDetailPage.h; sourceTree = "<group>"; };
+		002F945520B038B300F84094 /* CarDetailPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarDetailPage.m; sourceTree = "<group>"; };
 		0039FC2720942ABD0044D92E /* STObserverManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObserverManager.h; sourceTree = "<group>"; };
 		0039FC2820942ABD0044D92E /* STObserverManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObserverManager.m; sourceTree = "<group>"; };
 		0039FC2A20942BDF0044D92E /* STObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObserver.h; sourceTree = "<group>"; };
@@ -658,6 +694,119 @@
 			path = Permission;
 			sourceTree = "<group>";
 		};
+		002F942820AEBA5500F84094 /* messagesetting */ = {
+			isa = PBXGroup;
+			children = (
+				004EF59820AAD44600BA9602 /* MessageSettingPage.h */,
+				004EF59920AAD44600BA9602 /* MessageSettingPage.m */,
+			);
+			path = messagesetting;
+			sourceTree = "<group>";
+		};
+		002F942920AEBA7A00F84094 /* messagesetting */ = {
+			isa = PBXGroup;
+			children = (
+				002F942A20AEBA9000F84094 /* MessageSettingView.h */,
+				002F942B20AEBA9000F84094 /* MessageSettingView.m */,
+				002F943120AEC19500F84094 /* MessageSettingCell.h */,
+				002F943220AEC19500F84094 /* MessageSettingCell.m */,
+			);
+			path = messagesetting;
+			sourceTree = "<group>";
+		};
+		002F942D20AEBAA200F84094 /* messagesetting */ = {
+			isa = PBXGroup;
+			children = (
+				002F942E20AEBABB00F84094 /* MessageSettingViewModel.h */,
+				002F942F20AEBABB00F84094 /* MessageSettingViewModel.m */,
+			);
+			path = messagesetting;
+			sourceTree = "<group>";
+		};
+		002F943420AED2C000F84094 /* habitant */ = {
+			isa = PBXGroup;
+			children = (
+				004EF59B20AAD45200BA9602 /* HabitantPage.h */,
+				004EF59C20AAD45200BA9602 /* HabitantPage.m */,
+			);
+			name = habitant;
+			sourceTree = "<group>";
+		};
+		002F943520AED36100F84094 /* victor */ = {
+			isa = PBXGroup;
+			children = (
+				004EF58C20AAD40600BA9602 /* VictorPage.h */,
+				004EF58D20AAD40600BA9602 /* VictorPage.m */,
+			);
+			path = victor;
+			sourceTree = "<group>";
+		};
+		002F943620AED37A00F84094 /* victorhistory */ = {
+			isa = PBXGroup;
+			children = (
+				004EF58F20AAD41700BA9602 /* VictorHistoryPage.h */,
+				004EF59020AAD41700BA9602 /* VictorHistoryPage.m */,
+			);
+			path = victorhistory;
+			sourceTree = "<group>";
+		};
+		002F943720AED38800F84094 /* car */ = {
+			isa = PBXGroup;
+			children = (
+				004EF59220AAD42400BA9602 /* CarPage.h */,
+				004EF59320AAD42400BA9602 /* CarPage.m */,
+				002F944820AFFAA600F84094 /* AddCarPage.h */,
+				002F944920AFFAA600F84094 /* AddCarPage.m */,
+				002F945420B038B300F84094 /* CarDetailPage.h */,
+				002F945520B038B300F84094 /* CarDetailPage.m */,
+			);
+			path = car;
+			sourceTree = "<group>";
+		};
+		002F943820AED38F00F84094 /* carhistory */ = {
+			isa = PBXGroup;
+			children = (
+				004EF59520AAD43100BA9602 /* CarHistoryPage.h */,
+				004EF59620AAD43100BA9602 /* CarHistoryPage.m */,
+			);
+			path = carhistory;
+			sourceTree = "<group>";
+		};
+		002F943920AED46B00F84094 /* habitant */ = {
+			isa = PBXGroup;
+			children = (
+				004EF5A120AAEAC600BA9602 /* HabitantView.h */,
+				004EF5A220AAEAC600BA9602 /* HabitantView.m */,
+				002F943A20AED4FF00F84094 /* HabitantCell.h */,
+				002F943B20AED4FF00F84094 /* HabitantCell.m */,
+			);
+			path = habitant;
+			sourceTree = "<group>";
+		};
+		002F943D20AFF22900F84094 /* car */ = {
+			isa = PBXGroup;
+			children = (
+				002F943E20AFF23F00F84094 /* CarViewModel.h */,
+				002F943F20AFF23F00F84094 /* CarViewModel.m */,
+				002F944E20AFFBEF00F84094 /* AddCarViewModel.h */,
+				002F944F20AFFBEF00F84094 /* AddCarViewModel.m */,
+			);
+			path = car;
+			sourceTree = "<group>";
+		};
+		002F944420AFF6A500F84094 /* car */ = {
+			isa = PBXGroup;
+			children = (
+				002F944520AFF6B600F84094 /* CarView.h */,
+				002F944620AFF6B600F84094 /* CarView.m */,
+				002F945120B02B9E00F84094 /* CarViewCell.h */,
+				002F945220B02B9E00F84094 /* CarViewCell.m */,
+				002F944B20AFFBE000F84094 /* AddCarView.h */,
+				002F944C20AFFBE000F84094 /* AddCarView.m */,
+			);
+			path = car;
+			sourceTree = "<group>";
+		};
 		004EF51B20A1A49500BA9602 /* alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -782,22 +931,16 @@
 			isa = PBXGroup;
 			children = (
 				004EF5ED20AD69A600BA9602 /* member */,
+				002F943820AED38F00F84094 /* carhistory */,
+				002F943720AED38800F84094 /* car */,
+				002F943620AED37A00F84094 /* victorhistory */,
+				002F943520AED36100F84094 /* victor */,
+				002F943420AED2C000F84094 /* habitant */,
+				002F942820AEBA5500F84094 /* messagesetting */,
 				004EF5D620AC514500BA9602 /* profile */,
 				004EF5D520AC513A00BA9602 /* setting */,
 				004EF57B20AAC96900BA9602 /* MinePage.h */,
 				004EF57C20AAC96900BA9602 /* MinePage.m */,
-				004EF58C20AAD40600BA9602 /* VictorPage.h */,
-				004EF58D20AAD40600BA9602 /* VictorPage.m */,
-				004EF58F20AAD41700BA9602 /* VictorHistoryPage.h */,
-				004EF59020AAD41700BA9602 /* VictorHistoryPage.m */,
-				004EF59220AAD42400BA9602 /* CarPage.h */,
-				004EF59320AAD42400BA9602 /* CarPage.m */,
-				004EF59520AAD43100BA9602 /* CarHistoryPage.h */,
-				004EF59620AAD43100BA9602 /* CarHistoryPage.m */,
-				004EF59820AAD44600BA9602 /* MessageSettingPage.h */,
-				004EF59920AAD44600BA9602 /* MessageSettingPage.m */,
-				004EF59B20AAD45200BA9602 /* HabitantPage.h */,
-				004EF59C20AAD45200BA9602 /* HabitantPage.m */,
 			);
 			path = mine;
 			sourceTree = "<group>";
@@ -805,6 +948,9 @@
 		004EF57E20AAC97100BA9602 /* mine */ = {
 			isa = PBXGroup;
 			children = (
+				002F944420AFF6A500F84094 /* car */,
+				002F943920AED46B00F84094 /* habitant */,
+				002F942920AEBA7A00F84094 /* messagesetting */,
 				004EF5EE20AD69F000BA9602 /* member */,
 				004EF5D820AC517200BA9602 /* setting */,
 				004EF5D720AC516600BA9602 /* profile */,
@@ -812,8 +958,6 @@
 				004EF58020AAC98100BA9602 /* MineView.m */,
 				004EF5AB20ABDE6300BA9602 /* MineCell.h */,
 				004EF5AC20ABDE6300BA9602 /* MineCell.m */,
-				004EF5A120AAEAC600BA9602 /* HabitantView.h */,
-				004EF5A220AAEAC600BA9602 /* HabitantView.m */,
 			);
 			path = mine;
 			sourceTree = "<group>";
@@ -821,6 +965,8 @@
 		004EF58220AAC98E00BA9602 /* mine */ = {
 			isa = PBXGroup;
 			children = (
+				002F943D20AFF22900F84094 /* car */,
+				002F942D20AEBAA200F84094 /* messagesetting */,
 				004EF5F220AD6A0100BA9602 /* member */,
 				004EF5DA20AC51B500BA9602 /* setting */,
 				004EF5D920AC51A200BA9602 /* profile */,
@@ -841,6 +987,8 @@
 				004EF5A920AAEB4800BA9602 /* HabitantModel.m */,
 				004EF5F620AD762A00BA9602 /* MemberModel.h */,
 				004EF5F720AD762A00BA9602 /* MemberModel.m */,
+				002F944120AFF2A200F84094 /* CarModel.h */,
+				002F944220AFF2A200F84094 /* CarModel.m */,
 			);
 			path = mine;
 			sourceTree = "<group>";
@@ -1504,6 +1652,7 @@
 				0006DF1C20898F70005A4465 /* TouchScrollView.m in Sources */,
 				0006DF9A208DBCAD005A4465 /* CaptureSessionManager.m in Sources */,
 				004EF5A620AAEAE200BA9602 /* HabitantViewModel.m in Sources */,
+				002F945020AFFBEF00F84094 /* AddCarViewModel.m in Sources */,
 				004EF58B20AAD3F400BA9602 /* MemberPage.m in Sources */,
 				004EF59D20AAD45200BA9602 /* HabitantPage.m in Sources */,
 				004EF55220A4358400BA9602 /* FaceLoginViewModel.m in Sources */,
@@ -1520,6 +1669,7 @@
 				004EF5E920AD2A8E00BA9602 /* STCodeView.m in Sources */,
 				00D324B1208598A7001EC82F /* STColorUtil.m in Sources */,
 				00D324D320873B14001EC82F /* RespondModel.m in Sources */,
+				002F944D20AFFBE000F84094 /* AddCarView.m in Sources */,
 				007B1F3D20858EB6009EA9F1 /* main.m in Sources */,
 				004EF58E20AAD40600BA9602 /* VictorPage.m in Sources */,
 				004EF5B320ABFDF200BA9602 /* ProfileViewModel.m in Sources */,
@@ -1540,10 +1690,12 @@
 				004EF5D120AC48AA00BA9602 /* SettingCell.m in Sources */,
 				00CCE9B4208ECDD300032B4A /* STUserDefaults.m in Sources */,
 				00CCE9B1208ECCDD00032B4A /* AccountManager.m in Sources */,
+				002F944A20AFFAA600F84094 /* AddCarPage.m in Sources */,
 				00D324E420874874001EC82F /* STRuntimeUtil.m in Sources */,
 				004EF5F120AD69FB00BA9602 /* MemberView.m in Sources */,
 				0006DF9F208DBCAD005A4465 /* PermissionDetector.m in Sources */,
 				004EF59A20AAD44600BA9602 /* MessageSettingPage.m in Sources */,
+				002F943020AEBABB00F84094 /* MessageSettingViewModel.m in Sources */,
 				004EF5A020AAD45F00BA9602 /* SettingPage.m in Sources */,
 				004EF5E020AC525E00BA9602 /* AboutPage.m in Sources */,
 				004EF52B20A2CD6200BA9602 /* UITextField+Init.m in Sources */,
@@ -1554,6 +1706,7 @@
 				004EF52520A2A41500BA9602 /* LoginView.m in Sources */,
 				0006DF76208DBC76005A4465 /* FaceStreamDetectorViewController.m in Sources */,
 				004EF58820AAD32F00BA9602 /* ProfilePage.m in Sources */,
+				002F945320B02B9E00F84094 /* CarViewCell.m in Sources */,
 				00CCE9A8208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m in Sources */,
 				0006DF9D208DBCAD005A4465 /* IFlyFaceResultTrack.m in Sources */,
 				004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */,
@@ -1576,13 +1729,18 @@
 				0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */,
 				004EF56A20A9B7FF00BA9602 /* NextLoginViewModel.m in Sources */,
 				004EF5AA20AAEB4800BA9602 /* HabitantModel.m in Sources */,
+				002F944020AFF23F00F84094 /* CarViewModel.m in Sources */,
 				004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */,
 				004EF60120AD885A00BA9602 /* AddMemberView.m in Sources */,
 				004EF59120AAD41700BA9602 /* VictorHistoryPage.m in Sources */,
+				002F945620B038B300F84094 /* CarDetailPage.m in Sources */,
+				002F944320AFF2A200F84094 /* CarModel.m in Sources */,
 				004EF5F820AD762A00BA9602 /* MemberModel.m in Sources */,
+				002F943C20AED4FF00F84094 /* HabitantCell.m in Sources */,
 				0006DF95208DBCAD005A4465 /* CalculatorTools.m in Sources */,
 				004EF5CE20AC450900BA9602 /* SettingViewModel.m in Sources */,
 				004EF54F20A4316900BA9602 /* FaceLoginPage.m in Sources */,
+				002F942C20AEBA9000F84094 /* MessageSettingView.m in Sources */,
 				004EF52E20A2D30800BA9602 /* UILabel+Init.m in Sources */,
 				0006DF1820898BDE005A4465 /* STRefreshTableView.m in Sources */,
 				004EF5F520AD6A0D00BA9602 /* MemberViewModel.m in Sources */,
@@ -1596,10 +1754,12 @@
 				00D324CA2086E355001EC82F /* ByView.m in Sources */,
 				004EF59720AAD43100BA9602 /* CarHistoryPage.m in Sources */,
 				004EF5FE20AD863E00BA9602 /* STEdgeLabel.m in Sources */,
+				002F944720AFF6B600F84094 /* CarView.m in Sources */,
 				004EF53420A2DDCB00BA9602 /* LoginModel.m in Sources */,
 				0006DF132089875E005A4465 /* ByViewController.m in Sources */,
 				00D324E0208742CC001EC82F /* STDataBaseUtil.m in Sources */,
 				004EF5B920AC010700BA9602 /* ProfileCell.m in Sources */,
+				002F943320AEC19500F84094 /* MessageSettingCell.m in Sources */,
 				00C2541E209AACDC00E8E306 /* STUpdateUtil.m in Sources */,
 				004EF54C20A3E27100BA9602 /* STNavigationView.m in Sources */,
 				004EF5FB20AD812600BA9602 /* MemberCell.m in Sources */,

@@ -35,7 +35,46 @@
 }
 
 +(Boolean)isVerifyCodeValid:(NSString *)verifyCode{
-    if(!IS_NS_STRING_EMPTY(verifyCode) && (verifyCode.length >= 4) && (verifyCode.length <=6)){
+    if(!IS_NS_STRING_EMPTY(verifyCode) && (verifyCode.length >= 4) && (verifyCode.length <=8)){
+        return YES;
+    }
+    return NO;
+}
+
++(Boolean)isIdNumberValid:(NSString *)idNum{
+    if (idNum.length != 18) return NO;
+    NSString *regex = @"^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}([0-9]|X)$";
+    NSPredicate *identityStringPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    if(![identityStringPredicate evaluateWithObject:idNum]) return NO;
+    NSArray *idCardWiArray = @[@"7", @"9", @"10", @"5", @"8", @"4", @"2", @"1", @"6", @"3", @"7", @"9", @"10", @"5", @"8", @"4", @"2"];
+    NSArray *idCardYArray = @[@"1", @"0", @"10", @"9", @"8", @"7", @"6", @"5", @"4", @"3", @"2"];
+    NSInteger idCardWiSum = 0;
+    for(int i = 0;i < 17;i++) {
+        NSInteger subStrIndex = [[idNum substringWithRange:NSMakeRange(i, 1)] integerValue];
+        NSInteger idCardWiIndex = [[idCardWiArray objectAtIndex:i] integerValue];
+        idCardWiSum+= subStrIndex * idCardWiIndex;
+    }
+    NSInteger idCardMod=idCardWiSum % 11;
+    NSString *idCardLast= [idNum substringWithRange:NSMakeRange(17, 1)];
+    if(idCardMod==2) {
+        if(![idCardLast isEqualToString:@"X"]|| ![idCardLast isEqualToString:@"x"]) {
+            return NO;
+        }
+    }
+    else{
+        if(![idCardLast isEqualToString: [idCardYArray objectAtIndex:idCardMod]]) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+
++(Boolean)isCarNumberValid:(NSString *)carNum{
+    if(IS_NS_STRING_EMPTY(carNum)){
+        return NO;
+    }
+    if(carNum.length == 5 || carNum.length == 6){
         return YES;
     }
     return NO;

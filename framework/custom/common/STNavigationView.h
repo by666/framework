@@ -11,6 +11,7 @@
 @protocol STNavigationViewDelegate
 
 -(void)OnBackBtnClicked;
+-(void)onRightBtnClicked;
 
 @end
 
@@ -19,6 +20,8 @@
 @property(weak, nonatomic)id delegate;
 
 -(instancetype)initWithTitle:(NSString *)title needBack:(Boolean)needBack;
+
+-(instancetype)initWithTitle:(NSString *)title needBack:(Boolean)needBack rightBtn:(NSString *)rightStr;
 
 -(void)setTitle:(NSString *)title;
 

@@ -13,7 +13,7 @@
 
 -(instancetype)init{
     if(self == [super init]){
-        _titleArray = @[@"家庭成员",@"访客登记",@"访客通行记录",@"我的车辆",@"车辆通行记录",@"消息通知设置",@"账号管理",@"设置"];
+        _titleArray = @[MSG_MEMBER_TITLE,@"访客登记",@"访客通行记录",@"我的车辆",@"车辆通行记录",MSG_MESSAGESETTING_TITLE,MSG_HABITANT_TITLE,MSG_SETTING_TITLE];
     }
     return self;
 }

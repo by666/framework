@@ -25,6 +25,12 @@
 //验证码是否有效
 +(Boolean)isVerifyCodeValid:(NSString *)verifyCode;
 
+//身份证号码是否有效
++(Boolean)isIdNumberValid:(NSString *)idNum;
+
+//车牌号是否有效
++(Boolean)isCarNumberValid:(NSString *)carNum;
+
 //计算字符串宽度
 +(CGSize)textSize:(NSString *)text maxWidth:(CGFloat)maxWidth font:(CGFloat)font;
 

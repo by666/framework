@@ -21,6 +21,7 @@
 #import "ByViewController.h"
 #import "NextLoginPage.h"
 #import "AccountManager.h"
+#import "MinePage.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>
 
@@ -37,7 +38,7 @@
 //    }else{
 //        controller = [[LoginPage alloc]init];
 //    }
-    controller = [[MainPage alloc]init];
+    controller = [[MinePage alloc]init];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];

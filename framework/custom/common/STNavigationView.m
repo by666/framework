@@ -19,6 +19,8 @@
 @implementation STNavigationView{
     NSString *mTitle;
     Boolean mNeedBack;
+    NSString *mRightStr;
+
 }
 
 -(instancetype)initWithTitle:(NSString *)title needBack:(Boolean)needBack{
@@ -29,6 +31,17 @@
     }
     return self;
 }
+
+-(instancetype)initWithTitle:(NSString *)title needBack:(Boolean)needBack rightBtn:(NSString *)rightStr{
+    if(self == [super init]){
+        mTitle = title;
+        mNeedBack = needBack;
+        mRightStr = rightStr;
+        [self initView];
+    }
+    return self;
+}
+
 
 -(void)initView{
     self.backgroundColor = [[UIColor whiteColor]colorWithAlphaComponent:1.0];
@@ -52,6 +65,15 @@
     lineView.frame = CGRectMake(0, NavigationBarHeight - STHeight(1), ScreenWidth, STHeight(1));
     lineView.backgroundColor = c17;
     [self addSubview:lineView];
+    
+    if(!IS_NS_STRING_EMPTY(mRightStr)){
+        UIButton *button = [[UIButton alloc]initWithFont:STFont(14) text:mRightStr textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil];
+        button.frame = CGRectMake(ScreenWidth - button.titleLabel.contentSize.width - STWidth(20) , 0, button.titleLabel.contentSize.width + STWidth(20), NavigationBarHeight);
+        button.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [button addTarget:self action:@selector(onClickRightBtn) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:button];
+    }
+
 }
 
 
@@ -62,6 +84,12 @@
 -(void)OnBackBtnClick{
     if(_delegate && [_delegate respondsToSelector:@selector(OnBackBtnClicked)]){
         [_delegate OnBackBtnClicked];
+    }
+}
+
+-(void)onClickRightBtn{
+    if(_delegate && [_delegate respondsToSelector:@selector(onRightBtnClicked)]){
+        [_delegate onRightBtnClicked];
     }
 }
 

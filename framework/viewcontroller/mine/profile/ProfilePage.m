@@ -78,6 +78,10 @@
 
 #pragma mark 人脸录入
 -(void)doSelectFromPhoto{
+    if(![PermissionDetector isCapturePermissionGranted]){
+        [STLog print:@"没有相机权限"];
+        return;
+    }
     [FaceEnterPage show:self];
 }
 

@@ -10,6 +10,8 @@
 
 @interface BaseViewController ()<STNavigationViewDelegate>
 
+@property(copy,nonatomic)void(^onRightBtnClick)(void);
+
 @end
 
 @implementation BaseViewController
@@ -48,7 +50,19 @@
     [self.view addSubview:navigationView];
 }
 
+-(void)showSTNavigationBar:(NSString *)title needback:(Boolean)needback rightBtn:(NSString *)rightStr block:(void (^)(void))click{
+    _onRightBtnClick = click;
+    STNavigationView *navigationView = [[STNavigationView alloc]initWithTitle:title needBack:needback rightBtn:rightStr];
+    navigationView.delegate = self;
+    [self.view addSubview:navigationView];
+}
+
 -(void)OnBackBtnClicked{
     [self backLastPage];
 }
+
+-(void)onRightBtnClicked{
+    _onRightBtnClick();
+}
+
 @end

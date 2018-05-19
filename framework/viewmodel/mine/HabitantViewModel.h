@@ -21,7 +21,7 @@
 @interface HabitantViewModel : NSObject
 
 @property(weak, nonatomic)id delegate;
-@property(strong, nonatomic)NSMutableArray *models;
+@property(strong, nonatomic)NSMutableArray *datas;
 @property(strong, nonatomic)BaseViewController *controller;
 
 -(instancetype)initWithController:(BaseViewController *)controller;

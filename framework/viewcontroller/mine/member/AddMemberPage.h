@@ -7,9 +7,12 @@
 //
 
 #import "BaseViewController.h"
+#import "MemberModel.h"
 
 @interface AddMemberPage : BaseViewController
 
 +(void)show:(BaseViewController *)controller;
+
++(void)show:(BaseViewController *)controller model:(MemberModel *)model;
 
 @end

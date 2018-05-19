@@ -12,7 +12,7 @@
 
 @property(copy, nonatomic) NSString *avatarUrl;
 @property(copy, nonatomic) NSString *name;
-@property(copy, nonatomic) NSString *identity;
+@property(copy, nonatomic) NSString *identify;
 @property(copy, nonatomic) NSString *validDate;
 
 @end

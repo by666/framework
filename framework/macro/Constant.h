@@ -27,6 +27,14 @@
 #define MSG_VERIFYCODE_RESEND @"重发验证码"
 #define MSG_VERIFYCODE_OUROFTIME @"验证码超时，请点击重发验证码"
 #define MSG_VERIFYCODE_MUTIPLE @"验证码发送次数过多，请明天再试或采用人脸识别登陆"
+#define MSG_CANCEL @"取消"
+#define MSG_CONFIRM @"确定"
+#define MSG_DELETE @"删除"
+#define MSG_WARN @"警告"
+#define MSG_COMMIT @"提交"
+#define MSG_DATE_FORMAT @"YYYY年MM月dd日"
+
+
 #define MSG_MINE_TITLE @"我的"
 
 //个人主页
@@ -66,6 +74,19 @@
 #define MSG_ABOUT_TITLE @"关于"
 
 
+//消息设置
+#define MSG_MESSAGESETTING_TITLE @"消息通知设置"
+
+#define MSG_MESSAGESETTING_PUSH_TITLE @"访客呼叫通知设置"
+#define MSG_MESSAGESETTING_PUSH_APP @"App通知"
+#define MSG_MESSAGESETTING_PUSH_BELL @"门铃通知"
+#define MSG_MESSAGESETTING_PUSH_TV @"电视通知"
+#define MSG_MESSAGESETTING_PUSH_TIPS @"*说明：您可以设置接收访客请求的终端是否开启"
+
+#define MSG_MESSAGESETTING_EXPRESS_TITLE @"快递通知设置"
+#define MSG_MESSAGESETTING_EXPRESS_APP @"App通知"
+#define MSG_MESSAGESETTING_EXPRESS_SCREEN @"门禁屏幕通知"
+
 //家庭成员页面
 #define MSG_MEMBER_TITLE @"家庭成员"
 #define MSG_MEMBER_TIPS @"管理家庭成员人脸图像信息，用于门禁出入"
@@ -76,3 +97,35 @@
 #define MSG_ADDMEMBER_TAKEPHOTO @"+\n点击拍照"
 #define MSG_ADDMEMBER_TIPS @"人脸照片信息"
 #define MSG_ADDMEMBER_TIPS2 @"您的家庭成员信息"
+#define MSG_ADDMEMBER_NAME @"姓名或昵称"
+#define MSG_ADDMEMBER_IDNUM @"身份证号码（必填）"
+#define MSG_ADDMEMBER_SAVE @"保存"
+#define MSG_ADDMEMBER_DELETE @"删除"
+#define MSG_ADDMEMBER_NAME_ERROR @"请填写您的姓名或昵称"
+#define MSG_ADDMEMBER_IDNUM_ERROR @"请填写正确的身份证号码"
+#define MSG_ADDMEMBER_AVATAR_ERROR @"请上传人脸照片"
+
+//住户管理
+#define MSG_HABITANT_TITLE @"住户管理"
+#define MSG_HABITANT_FOREVER @"永久"
+#define MSG_HABITANT_TIPS @"请选择%@的有效期时间"
+
+//我的车辆
+#define MSG_CAR_TITLE @"我的车辆"
+#define MSG_CAR_NOCAR @"暂无车辆信息"
+#define MSG_CAR_ADDCAR @"+ 添加车辆"
+#define MSG_CAR_RIGHTBTN @"添加车辆"
+#define MSG_CAR_BIND @"%@已绑定"
+#define MSG_CAR_MYCAR @"我的车辆"
+#define MSG_CAR_FAMILYCAR @"家属的车辆"
+#define MSG_CAR_PAY @"续费"
+#define MSG_CAR_FAMILY_PAY @"为他/她续费"
+#define MSG_CAR_RECORD @"月卡缴费记录"
+
+
+//添加车辆
+#define MSG_ADDCAR_TITLE @"添加车辆"
+#define MSG_ADDCAR_CARNUM @"车牌号："
+#define MSG_ADDCAR_DEFAULT_HEAD @"粤B"
+#define MSG_ADDCAR_CARNUM_ERROR @"车牌号码位数有误，请重新填写"
+

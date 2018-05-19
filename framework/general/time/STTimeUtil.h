@@ -14,7 +14,7 @@
 +(NSString *)generateAll : (NSString *)timestamp;
 
 #pragma mark 格式化日期（MM月dd日）
-+(NSString *)generateData : (NSString *)timestamp;
++(NSString *)generateDate : (NSString *)timestamp;
 
 #pragma mark 格式化时间（HH:mm）
 +(NSString *)generateTime : (NSString *)timestamp;

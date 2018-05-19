@@ -23,5 +23,16 @@
     }
 }
 
+-(void)deleteMemberModel:(MemberModel *)model{
+    if(_delegate){
+        [_delegate onDeleteMemberModel:YES model:model];
+    }
+}
+
+-(void)doTakePhoto{
+    if(_delegate){
+        [_delegate onDoTakePhoto];
+    }
+}
 
 @end

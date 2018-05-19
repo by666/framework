@@ -21,11 +21,11 @@
     return dateStr;
 }
 
-+(NSString *)generateData : (NSString *)timestamp{
++(NSString *)generateDate : (NSString *)timestamp{
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
-    [formatter setDateFormat:@"MM月dd日"];
+    [formatter setDateFormat:@"YYYY年MM月dd日"];
     
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:[timestamp doubleValue]/ 1000.0];
     NSString* dateStr = [formatter stringFromDate:date];

@@ -22,4 +22,6 @@
 
 -(void)showSTNavigationBar:(NSString *)title needback:(Boolean)needback;
 
+-(void)showSTNavigationBar:(NSString *)title needback:(Boolean)needback rightBtn:(NSString *)rightStr block:(void (^)(void))click;
+
 @end
