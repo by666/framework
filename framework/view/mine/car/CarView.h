@@ -12,5 +12,6 @@
 @interface CarView : UIView
 
 -(instancetype)initWithViewModel:(CarViewModel *)viewModel;
+-(void)updateView;
 
 @end

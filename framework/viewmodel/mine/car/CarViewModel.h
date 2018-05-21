@@ -23,18 +23,16 @@
 @interface CarViewModel : NSObject
 
 @property(strong, nonatomic)NSMutableArray *datas;
+@property(strong, nonatomic)NSMutableArray *myCarDatas;
+@property(strong, nonatomic)NSMutableArray *familyCarDatas;
+
+
 @property(weak, nonatomic)id <CarViewDelegate> delegate;
 
 //获取所有车辆
 -(void)getCarDatas;
 
-//获取我名下所有车辆
--(NSMutableArray *)getMyCarDatas;
-
-//获取家属名下所有车辆
--(NSMutableArray *)getFamilyCarDatas;
-
-//删除车辆
+//删除我的车辆
 -(void)deleteCarModel:(CarModel *)model;
 
 //跳转到添加车辆页面

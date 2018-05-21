@@ -33,6 +33,5 @@
 #define c22 [STColorUtil colorWithHexString:@"#DEE9F7"]
 #define c23 [STColorUtil colorWithHexString:@"#FFA93A"]
 
-
 #define cwhite [STColorUtil colorWithHexString:@"#ffffff"]
 #define cblack [STColorUtil colorWithHexString:@"#000000"]

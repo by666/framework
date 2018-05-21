@@ -21,11 +21,7 @@
 
 @end
 
-@implementation CarView{
-    NSMutableArray *myCarDatas;
-    NSMutableArray *familyCarDatas;
-}
-
+@implementation CarView
 
 -(instancetype)initWithViewModel:(CarViewModel *)viewModel{
     if(self == [super init]){
@@ -38,8 +34,6 @@
 -(void)initView{
     //获取数据
     [_mViewModel getCarDatas];
-    myCarDatas = [_mViewModel getMyCarDatas];
-    familyCarDatas = [_mViewModel getFamilyCarDatas];
     [self initNoCarView];
     [self initCarView];
     if(IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
@@ -79,7 +73,7 @@
     [_carView addSubview:myCarTitle];
     
     
-    NSInteger height =  STHeight(60) * [myCarDatas count];
+    NSInteger height =  STHeight(60) * [_mViewModel.myCarDatas count];
     _myCarTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, STHeight(45), ScreenWidth, height)];
     _myCarTableView.backgroundColor = cwhite;
     _myCarTableView.showsVerticalScrollIndicator = NO;
@@ -94,7 +88,7 @@
     familyCarTitle.frame = CGRectMake(STWidth(15), STHeight(60) + height, ScreenWidth - STWidth(30), STHeight(14));
     [_carView addSubview:familyCarTitle];
     
-    _familyCarTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, STHeight(90) + height, ScreenWidth, STHeight(60) * [familyCarDatas count])];
+    _familyCarTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, STHeight(90) + height, ScreenWidth, STHeight(60) * [_mViewModel.familyCarDatas count])];
     _familyCarTableView.backgroundColor = cwhite;
     _familyCarTableView.showsVerticalScrollIndicator = NO;
     _familyCarTableView.showsHorizontalScrollIndicator = NO;
@@ -117,9 +111,9 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(tableView == _myCarTableView){
-        return [myCarDatas count];
+        return [_mViewModel.myCarDatas count];
     }else if(tableView == _familyCarTableView){
-        return [familyCarDatas count];
+        return [_mViewModel.familyCarDatas count];
     }
     return 0;
 }
@@ -141,18 +135,20 @@
         cell = [[CarViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[CarViewCell identify]];
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
     CarModel *model;
     if(tableView == _myCarTableView){
-        if(!IS_NS_COLLECTION_EMPTY(myCarDatas)){
-            model = [myCarDatas objectAtIndex:indexPath.row];
+        if(!IS_NS_COLLECTION_EMPTY(_mViewModel.myCarDatas)){
+            model = [_mViewModel.myCarDatas objectAtIndex:indexPath.row];
         }
     }else{
-        if(!IS_NS_COLLECTION_EMPTY(familyCarDatas)){
-            model = [familyCarDatas objectAtIndex:indexPath.row];
+        cell.paymentBtn.tag = indexPath.row;
+        if(!IS_NS_COLLECTION_EMPTY(_mViewModel.familyCarDatas)){
+            model = [_mViewModel.familyCarDatas objectAtIndex:indexPath.row];
         }
     }
-    
+    cell.paymentBtn.tag = indexPath.row;
+    cell.paymentBtn.tag2 = [NSString stringWithFormat:@"%ld",model.carIdentify];
+    [cell.paymentBtn addTarget:self action:@selector(OnClickPaymentBtn:) forControlEvents:UIControlEventTouchUpInside];
     [cell updateData:model];
     return cell;
 }
@@ -179,8 +175,19 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(tableView == _myCarTableView){
+        [_mViewModel.myCarDatas removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:indexPath.row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        [self updateView];
+    }
+}
 
-    
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(tableView == _myCarTableView){
+        if(_mViewModel && !IS_NS_COLLECTION_EMPTY(_mViewModel.myCarDatas)){
+            [_mViewModel goCarDetailPage:[_mViewModel.myCarDatas objectAtIndex:indexPath.row]];
+        }
+    }
 }
 
 
@@ -195,5 +202,29 @@
         [_mViewModel goAddCarPage];
     }
 }
+
+-(void)OnClickPaymentBtn:(id)sender{
+    UIButton *button = sender;
+    NSInteger row = button.tag;
+    NSInteger section = [button.tag2 integerValue];
+    if(section == 1){
+        if(!IS_NS_COLLECTION_EMPTY(_mViewModel.myCarDatas)){
+            [_mViewModel goPaymentPage:[_mViewModel.myCarDatas objectAtIndex:row]];
+        }
+    }else{
+        if(!IS_NS_COLLECTION_EMPTY(_mViewModel.familyCarDatas)){
+            CarModel *model = [_mViewModel.familyCarDatas objectAtIndex:row];
+            [STLog print:@"这是啥" content:model.carNum];
+            [_mViewModel goPaymentPage:[_mViewModel.familyCarDatas objectAtIndex:row]];
+        }
+    }
+
+}
+
+-(void)updateView{
+    NSInteger height =  STHeight(60) * [_mViewModel.myCarDatas count];
+    _myCarTableView.frame = CGRectMake(0, STHeight(45), ScreenWidth, height);
+}
+
 
 @end

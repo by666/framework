@@ -14,7 +14,6 @@
 
 @property(strong, nonatomic)UILabel *titleLabel;
 @property(strong, nonatomic)STEdgeLabel *idetifyLabel;
-@property(strong, nonatomic)UIButton *paymentBtn;
 
 @end
 
@@ -67,7 +66,6 @@
         _idetifyLabel.textColor = c13;
     }
     
-
     if(model.carIdentify == 1){
         [_paymentBtn setTitle:MSG_CAR_PAY forState:UIControlStateNormal];
         _paymentBtn.frame = CGRectMake(STWidth(312), STHeight(18), STWidth(51), STHeight(24));

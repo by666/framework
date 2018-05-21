@@ -7,6 +7,9 @@
 //
 
 #import "UIButton+Init.h"
+#import <objc/runtime.h>
+
+static char *tag2Value = "tag2Value";
 
 @implementation UIButton(Init)
 
@@ -31,5 +34,15 @@
     }
     return self;
 }
+
+
+-(void)setTag2:(NSString *)tag2{
+    objc_setAssociatedObject(self, &tag2Value, tag2, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+-(NSString *)tag2{
+    return objc_getAssociatedObject(self, &tag2Value);
+}
+
 
 @end

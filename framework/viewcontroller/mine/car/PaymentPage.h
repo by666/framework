@@ -1,17 +1,16 @@
 //
-//  CarDetailPage.h
+//  PaymentPage.h
 //  framework
 //
-//  Created by 黄成实 on 2018/5/19.
+//  Created by 黄成实 on 2018/5/21.
 //  Copyright © 2018年 黄成实. All rights reserved.
 //
 
 #import "BaseViewController.h"
-#import "CarDetailView.h"
+#import "CarModel.h"
 
-@interface CarDetailPage : BaseViewController
+@interface PaymentPage : BaseViewController
 
 +(void)show:(BaseViewController *)controller model:(CarModel *)model;
-
 
 @end

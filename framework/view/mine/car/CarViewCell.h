@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CarModel.h"
+#import "UIButton+Init.h"
 
 @interface CarViewCell : UITableViewCell
+
+@property(strong, nonatomic)UIButton *paymentBtn;
 
 -(void)updateData:(CarModel *)model;
 +(NSString *)identify;

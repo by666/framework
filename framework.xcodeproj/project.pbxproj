@@ -57,6 +57,16 @@
 		002F945020AFFBEF00F84094 /* AddCarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F944F20AFFBEF00F84094 /* AddCarViewModel.m */; };
 		002F945320B02B9E00F84094 /* CarViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F945220B02B9E00F84094 /* CarViewCell.m */; };
 		002F945620B038B300F84094 /* CarDetailPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F945520B038B300F84094 /* CarDetailPage.m */; };
+		002F945920B25E0B00F84094 /* CarDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F945820B25E0B00F84094 /* CarDetailView.m */; };
+		002F945C20B25E7C00F84094 /* CarDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F945B20B25E7C00F84094 /* CarDetailViewModel.m */; };
+		002F945F20B2713B00F84094 /* CarDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F945E20B2713B00F84094 /* CarDetailCell.m */; };
+		002F946520B296F900F84094 /* PaymentPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F946420B296F900F84094 /* PaymentPage.m */; };
+		002F946820B298EA00F84094 /* PaymentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F946720B298EA00F84094 /* PaymentView.m */; };
+		002F946B20B298FD00F84094 /* PaymentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F946A20B298FD00F84094 /* PaymentViewModel.m */; };
+		002F946E20B2B96900F84094 /* PaymentRecordPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F946D20B2B96900F84094 /* PaymentRecordPage.m */; };
+		002F947120B2BB8F00F84094 /* PaymentRecordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F947020B2BB8F00F84094 /* PaymentRecordViewModel.m */; };
+		002F947420B2C0CF00F84094 /* PaymentRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F947320B2C0CF00F84094 /* PaymentRecordView.m */; };
+		002F947720B2C6F300F84094 /* STSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F947620B2C6F300F84094 /* STSegmentView.m */; };
 		0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2820942ABD0044D92E /* STObserverManager.m */; };
 		0039FC2C20942BDF0044D92E /* STObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2B20942BDF0044D92E /* STObserver.m */; };
 		004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51620A16DC400BA9602 /* STAlertUtil.m */; };
@@ -274,6 +284,26 @@
 		002F945220B02B9E00F84094 /* CarViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarViewCell.m; sourceTree = "<group>"; };
 		002F945420B038B300F84094 /* CarDetailPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarDetailPage.h; sourceTree = "<group>"; };
 		002F945520B038B300F84094 /* CarDetailPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarDetailPage.m; sourceTree = "<group>"; };
+		002F945720B25E0B00F84094 /* CarDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarDetailView.h; sourceTree = "<group>"; };
+		002F945820B25E0B00F84094 /* CarDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarDetailView.m; sourceTree = "<group>"; };
+		002F945A20B25E7C00F84094 /* CarDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarDetailViewModel.h; sourceTree = "<group>"; };
+		002F945B20B25E7C00F84094 /* CarDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarDetailViewModel.m; sourceTree = "<group>"; };
+		002F945D20B2713B00F84094 /* CarDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarDetailCell.h; sourceTree = "<group>"; };
+		002F945E20B2713B00F84094 /* CarDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarDetailCell.m; sourceTree = "<group>"; };
+		002F946320B296F900F84094 /* PaymentPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentPage.h; sourceTree = "<group>"; };
+		002F946420B296F900F84094 /* PaymentPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentPage.m; sourceTree = "<group>"; };
+		002F946620B298EA00F84094 /* PaymentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentView.h; sourceTree = "<group>"; };
+		002F946720B298EA00F84094 /* PaymentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentView.m; sourceTree = "<group>"; };
+		002F946920B298FD00F84094 /* PaymentViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentViewModel.h; sourceTree = "<group>"; };
+		002F946A20B298FD00F84094 /* PaymentViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentViewModel.m; sourceTree = "<group>"; };
+		002F946C20B2B96900F84094 /* PaymentRecordPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentRecordPage.h; sourceTree = "<group>"; };
+		002F946D20B2B96900F84094 /* PaymentRecordPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentRecordPage.m; sourceTree = "<group>"; };
+		002F946F20B2BB8F00F84094 /* PaymentRecordViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentRecordViewModel.h; sourceTree = "<group>"; };
+		002F947020B2BB8F00F84094 /* PaymentRecordViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentRecordViewModel.m; sourceTree = "<group>"; };
+		002F947220B2C0CF00F84094 /* PaymentRecordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentRecordView.h; sourceTree = "<group>"; };
+		002F947320B2C0CF00F84094 /* PaymentRecordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentRecordView.m; sourceTree = "<group>"; };
+		002F947520B2C6F300F84094 /* STSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSegmentView.h; sourceTree = "<group>"; };
+		002F947620B2C6F300F84094 /* STSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STSegmentView.m; sourceTree = "<group>"; };
 		0039FC2720942ABD0044D92E /* STObserverManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObserverManager.h; sourceTree = "<group>"; };
 		0039FC2820942ABD0044D92E /* STObserverManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObserverManager.m; sourceTree = "<group>"; };
 		0039FC2A20942BDF0044D92E /* STObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObserver.h; sourceTree = "<group>"; };
@@ -571,6 +601,8 @@
 				004EF5E820AD2A8E00BA9602 /* STCodeView.m */,
 				004EF5FC20AD863E00BA9602 /* STEdgeLabel.h */,
 				004EF5FD20AD863E00BA9602 /* STEdgeLabel.m */,
+				002F947520B2C6F300F84094 /* STSegmentView.h */,
+				002F947620B2C6F300F84094 /* STSegmentView.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -759,6 +791,10 @@
 				002F944920AFFAA600F84094 /* AddCarPage.m */,
 				002F945420B038B300F84094 /* CarDetailPage.h */,
 				002F945520B038B300F84094 /* CarDetailPage.m */,
+				002F946320B296F900F84094 /* PaymentPage.h */,
+				002F946420B296F900F84094 /* PaymentPage.m */,
+				002F946C20B2B96900F84094 /* PaymentRecordPage.h */,
+				002F946D20B2B96900F84094 /* PaymentRecordPage.m */,
 			);
 			path = car;
 			sourceTree = "<group>";
@@ -790,6 +826,12 @@
 				002F943F20AFF23F00F84094 /* CarViewModel.m */,
 				002F944E20AFFBEF00F84094 /* AddCarViewModel.h */,
 				002F944F20AFFBEF00F84094 /* AddCarViewModel.m */,
+				002F945A20B25E7C00F84094 /* CarDetailViewModel.h */,
+				002F945B20B25E7C00F84094 /* CarDetailViewModel.m */,
+				002F946920B298FD00F84094 /* PaymentViewModel.h */,
+				002F946A20B298FD00F84094 /* PaymentViewModel.m */,
+				002F946F20B2BB8F00F84094 /* PaymentRecordViewModel.h */,
+				002F947020B2BB8F00F84094 /* PaymentRecordViewModel.m */,
 			);
 			path = car;
 			sourceTree = "<group>";
@@ -803,6 +845,14 @@
 				002F945220B02B9E00F84094 /* CarViewCell.m */,
 				002F944B20AFFBE000F84094 /* AddCarView.h */,
 				002F944C20AFFBE000F84094 /* AddCarView.m */,
+				002F945720B25E0B00F84094 /* CarDetailView.h */,
+				002F945820B25E0B00F84094 /* CarDetailView.m */,
+				002F945D20B2713B00F84094 /* CarDetailCell.h */,
+				002F945E20B2713B00F84094 /* CarDetailCell.m */,
+				002F946620B298EA00F84094 /* PaymentView.h */,
+				002F946720B298EA00F84094 /* PaymentView.m */,
+				002F947220B2C0CF00F84094 /* PaymentRecordView.h */,
+				002F947320B2C0CF00F84094 /* PaymentRecordView.m */,
 			);
 			path = car;
 			sourceTree = "<group>";
@@ -1643,6 +1693,7 @@
 				004EF56420A9B4C600BA9602 /* NextLoginPage.m in Sources */,
 				004EF54320A3083500BA9602 /* MainPage.m in Sources */,
 				004EF57020AA8F1100BA9602 /* CircularProgressView.m in Sources */,
+				002F945920B25E0B00F84094 /* CarDetailView.m in Sources */,
 				004EF60720AD892B00BA9602 /* AddMemberViewModel.m in Sources */,
 				004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */,
 				0006DF79208DBC76005A4465 /* FaceRequestViewController.m in Sources */,
@@ -1672,6 +1723,7 @@
 				002F944D20AFFBE000F84094 /* AddCarView.m in Sources */,
 				007B1F3D20858EB6009EA9F1 /* main.m in Sources */,
 				004EF58E20AAD40600BA9602 /* VictorPage.m in Sources */,
+				002F945C20B25E7C00F84094 /* CarDetailViewModel.m in Sources */,
 				004EF5B320ABFDF200BA9602 /* ProfileViewModel.m in Sources */,
 				0006DF99208DBCAD005A4465 /* CaptureManager.m in Sources */,
 				0006DF78208DBC76005A4465 /* FaceRequestSettingViewController.m in Sources */,
@@ -1686,15 +1738,18 @@
 				0006DF96208DBCAD005A4465 /* IFlyFaceImage.m in Sources */,
 				004EF58520AAC99A00BA9602 /* MineViewModel.m in Sources */,
 				004EF57D20AAC96900BA9602 /* MinePage.m in Sources */,
+				002F946520B296F900F84094 /* PaymentPage.m in Sources */,
 				0006DF98208DBCAD005A4465 /* UIImage+Extensions.m in Sources */,
 				004EF5D120AC48AA00BA9602 /* SettingCell.m in Sources */,
 				00CCE9B4208ECDD300032B4A /* STUserDefaults.m in Sources */,
 				00CCE9B1208ECCDD00032B4A /* AccountManager.m in Sources */,
 				002F944A20AFFAA600F84094 /* AddCarPage.m in Sources */,
 				00D324E420874874001EC82F /* STRuntimeUtil.m in Sources */,
+				002F947120B2BB8F00F84094 /* PaymentRecordViewModel.m in Sources */,
 				004EF5F120AD69FB00BA9602 /* MemberView.m in Sources */,
 				0006DF9F208DBCAD005A4465 /* PermissionDetector.m in Sources */,
 				004EF59A20AAD44600BA9602 /* MessageSettingPage.m in Sources */,
+				002F945F20B2713B00F84094 /* CarDetailCell.m in Sources */,
 				002F943020AEBABB00F84094 /* MessageSettingViewModel.m in Sources */,
 				004EF5A020AAD45F00BA9602 /* SettingPage.m in Sources */,
 				004EF5E020AC525E00BA9602 /* AboutPage.m in Sources */,
@@ -1729,6 +1784,7 @@
 				0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */,
 				004EF56A20A9B7FF00BA9602 /* NextLoginViewModel.m in Sources */,
 				004EF5AA20AAEB4800BA9602 /* HabitantModel.m in Sources */,
+				002F947420B2C0CF00F84094 /* PaymentRecordView.m in Sources */,
 				002F944020AFF23F00F84094 /* CarViewModel.m in Sources */,
 				004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */,
 				004EF60120AD885A00BA9602 /* AddMemberView.m in Sources */,
@@ -1740,7 +1796,9 @@
 				0006DF95208DBCAD005A4465 /* CalculatorTools.m in Sources */,
 				004EF5CE20AC450900BA9602 /* SettingViewModel.m in Sources */,
 				004EF54F20A4316900BA9602 /* FaceLoginPage.m in Sources */,
+				002F946B20B298FD00F84094 /* PaymentViewModel.m in Sources */,
 				002F942C20AEBA9000F84094 /* MessageSettingView.m in Sources */,
+				002F946E20B2B96900F84094 /* PaymentRecordPage.m in Sources */,
 				004EF52E20A2D30800BA9602 /* UILabel+Init.m in Sources */,
 				0006DF1820898BDE005A4465 /* STRefreshTableView.m in Sources */,
 				004EF5F520AD6A0D00BA9602 /* MemberViewModel.m in Sources */,
@@ -1748,9 +1806,11 @@
 				004EF5C220AC2C1800BA9602 /* FaceEnterPage.m in Sources */,
 				004EF5E620AC558A00BA9602 /* UpdatePhoneNumViewModel.m in Sources */,
 				0006DF9C208DBCAD005A4465 /* IFlyFaceResultKeys.m in Sources */,
+				002F947720B2C6F300F84094 /* STSegmentView.m in Sources */,
 				00CCE9AB208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m in Sources */,
 				0006DF9B208DBCAD005A4465 /* IFlyFaceResultDetector.m in Sources */,
 				004EF5E320AC557700BA9602 /* UpdatePhoneNumView.m in Sources */,
+				002F946820B298EA00F84094 /* PaymentView.m in Sources */,
 				00D324CA2086E355001EC82F /* ByView.m in Sources */,
 				004EF59720AAD43100BA9602 /* CarHistoryPage.m in Sources */,
 				004EF5FE20AD863E00BA9602 /* STEdgeLabel.m in Sources */,

@@ -23,5 +23,8 @@
 @property(copy, nonatomic)NSString *carType;
 //我或者家属（其他）人的车
 @property(assign, nonatomic)NSInteger carIdentify;
+//月卡价格
+@property(copy, nonatomic)NSString *price;
+
 
 @end

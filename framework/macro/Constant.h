@@ -120,7 +120,7 @@
 #define MSG_CAR_FAMILYCAR @"家属的车辆"
 #define MSG_CAR_PAY @"续费"
 #define MSG_CAR_FAMILY_PAY @"为他/她续费"
-#define MSG_CAR_RECORD @"月卡缴费记录"
+#define MSG_CAR_RECORD @"缴费记录"
 
 
 //添加车辆
@@ -129,3 +129,18 @@
 #define MSG_ADDCAR_DEFAULT_HEAD @"粤B"
 #define MSG_ADDCAR_CARNUM_ERROR @"车牌号码位数有误，请重新填写"
 
+//车辆详情
+#define MSG_CARDETAIL_TITLE @"车辆详情"
+#define MSG_CARDETAIL_PAYMENT @"月卡缴费"
+#define MSG_CARDETAIL_TIPS @"*车辆月卡办理与延长月卡有效期，可直接联系管理处0755-235273"
+
+//月卡缴费
+#define MSG_PAYMENT_TITLE @"月卡缴费"
+#define MSG_PAYMENT_PAY @"去支付"
+#define MSG_PAYMENT_SUCCEE_TIPS1 @"支付完成"
+#define MSG_PAYMENT_SUCCEE_TIPS2 @"月卡车辆可以无障碍通过"
+
+//缴费记录
+#define MSG_PAYMENTRECORD_TITLE @"缴费记录"
+#define MSG_PAYMENTRECORD_VISITOR_TAB @"代访客缴费记录"
+#define MSG_PAYMENTRECORD_MONTH_TAB @"月卡缴费记录"

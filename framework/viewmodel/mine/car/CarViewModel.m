@@ -40,6 +40,8 @@
     [_datas addObject:[self buildCarModel:@"4" carNum:@"4380DF" carType:@"临" carIdentify:0 carHead:@"粤B" name:@"小张"]];
     if(_delegate){
         [_delegate onGetCarDatas:YES datas:_datas];
+        _myCarDatas = [self getMyCarDatas];
+        _familyCarDatas = [self getFamilyCarDatas];
     }
 }
 
@@ -66,7 +68,15 @@
 
 -(void)deleteCarModel:(CarModel *)model{
     if(_delegate){
-        [_delegate onDeleteCarModel:YES model:model];
+        if(!IS_NS_COLLECTION_EMPTY(_myCarDatas)){
+            for(int i =0 ; i < [_myCarDatas count] ; i ++ ){
+                CarModel *tempModel = [_myCarDatas objectAtIndex:i];
+                if([tempModel.cid isEqualToString:model.cid]){
+                    [_myCarDatas removeObjectAtIndex:i];
+                    [_delegate onDeleteCarModel:YES model:model];
+                }
+            }
+        }
     }
 }
 
