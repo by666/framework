@@ -1,15 +1,15 @@
 //
-//  PaymentPage.m
+//  MonthPaymentPage.m
 //  framework
 //
 //  Created by 黄成实 on 2018/5/21.
 //  Copyright © 2018年 黄成实. All rights reserved.
 //
 
-#import "PaymentPage.h"
+#import "MonthPaymentPage.h"
 #import "PaymentView.h"
 
-@interface PaymentPage()<PaymentViewDelegate>
+@interface MonthPaymentPage()<PaymentViewDelegate>
 
 @property(strong, nonatomic)CarModel *model;
 @property(strong, nonatomic)PaymentViewModel *viewModel;
@@ -17,11 +17,11 @@
 
 @end
 
-@implementation PaymentPage
+@implementation MonthPaymentPage
 
 
 +(void)show:(BaseViewController *)controller model:(CarModel *)model{
-    PaymentPage *page = [[PaymentPage alloc]init];
+    MonthPaymentPage *page = [[MonthPaymentPage alloc]init];
     page.model = model;
     [controller pushPage:page];
 }

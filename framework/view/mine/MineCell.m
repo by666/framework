@@ -32,7 +32,6 @@
     [self.contentView addSubview:_iconImageView];
     
     _titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
-    _titleLabel.frame = CGRectMake(STWidth(58), STHeight(20),STWidth(100) , STHeight(16));
     [self.contentView addSubview:_titleLabel];
     
     _arrowImageView = [[UIImageView alloc]init];
@@ -45,6 +44,9 @@
 
 -(void)updateData:(NSString *)title{
     _titleLabel.text = title;
+    CGSize titleSize = [title sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    _titleLabel.frame = CGRectMake(STWidth(58), STHeight(20),titleSize.width , STHeight(16));
+
 }
 
 +(NSString*)identify{

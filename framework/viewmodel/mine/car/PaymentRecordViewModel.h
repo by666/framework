@@ -7,17 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
 @protocol PaymentRecordViewDelegate
 
+-(void)onGetMonthPaymentDatas:(Boolean)success;
+-(void)onGetVisitorPaymentDatas:(Boolean)success;
 
 @end
 
 @interface PaymentRecordViewModel : NSObject
 
 @property(weak, nonatomic)id<PaymentRecordViewDelegate> delegate;
+@property(strong, nonatomic)NSMutableArray *monthPaymentDatas;
+@property(strong, nonatomic)NSMutableArray *visitorPaymentDatas;
 
-
+-(void)getMonthPaymentDatas;
+-(void)getVisitorPaymentDatas;
 
 @end

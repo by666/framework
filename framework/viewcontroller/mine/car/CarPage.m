@@ -11,7 +11,7 @@
 #import "AddCarPage.h"
 #import "CarDetailPage.h"
 #import "STObserverManager.h"
-#import "PaymentPage.h"
+#import "MonthPaymentPage.h"
 #import "PaymentRecordPage.h"
 
 @interface CarPage ()<CarViewDelegate,STObserverProtocol>
@@ -72,7 +72,7 @@
 }
 
 -(void)onGoPaymentPage:(CarModel *)model{
-    [PaymentPage show:self model:model];
+    [MonthPaymentPage show:self model:model];
 }
 
 -(void)onGoAddCarPage{

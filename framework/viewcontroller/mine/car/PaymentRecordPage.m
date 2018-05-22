@@ -8,7 +8,7 @@
 
 #import "PaymentRecordPage.h"
 #import "PaymentRecordView.h"
-#import "STSegmentView.h"
+#import "MainPage.h"
 
 @interface PaymentRecordPage()<PaymentRecordViewDelegate>
 
@@ -39,15 +39,20 @@
     PaymentRecordViewModel *viewModel = [[PaymentRecordViewModel alloc]init];
     viewModel.delegate = self;
     
-    _paymentRecordView = [[PaymentRecordView alloc]initWithViewModel:viewModel];
+    _paymentRecordView = [[PaymentRecordView alloc]initWithViewModel:viewModel index:_mIndex];
     _paymentRecordView.backgroundColor = c15;
     _paymentRecordView.frame = CGRectMake(0 ,StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     [self.view addSubview:_paymentRecordView];
-    
-    
  
 }
 
 
+-(void)onGetVisitorPaymentDatas:(Boolean)success{
+    
+}
+
+-(void)onGetMonthPaymentDatas:(Boolean)success{
+    
+}
 
 @end

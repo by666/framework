@@ -1,5 +1,5 @@
 //
-//  VictorPage.h
+//  VisitorHistoryPage.h
 //  framework
 //
 //  Created by 黄成实 on 2018/5/15.
@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface VictorPage : BaseViewController
+@interface VisitorHistoryPage : BaseViewController
 
 +(void)show:(BaseViewController *)controller;
 

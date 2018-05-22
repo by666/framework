@@ -144,3 +144,22 @@
 #define MSG_PAYMENTRECORD_TITLE @"缴费记录"
 #define MSG_PAYMENTRECORD_VISITOR_TAB @"代访客缴费记录"
 #define MSG_PAYMENTRECORD_MONTH_TAB @"月卡缴费记录"
+
+//车辆缴费记录
+#define MSG_CARHISTORY_TITLE @"来访车辆通行记录"
+
+//车辆缴费
+#define MSG_ONEPAYMENT_TITLE @"车辆缴费"
+#define MSG_ONEPAYMENT_RIGHTBTN @"缴费记录"
+#define MSG_ONEPAYMENT_SUCCEE_TIPS1 @"支付完成"
+#define MSG_ONEPAYMENT_SUCCEE_TIPS2 @"访客车辆可直接通行"
+
+//访客登记
+#define MSG_VISITOR_TITLE @"来访登记"
+#define MSG_VISITOR_PEOPLE_BUTTON @"访客登记"
+#define MSG_VISITOR_CAR_BUTTON @"来访车辆登记"
+
+
+//访客通行记录
+#define MSG_VISITORHISTORY_TITLE @"来访通行记录"
+

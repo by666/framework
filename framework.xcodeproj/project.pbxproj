@@ -60,13 +60,28 @@
 		002F945920B25E0B00F84094 /* CarDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F945820B25E0B00F84094 /* CarDetailView.m */; };
 		002F945C20B25E7C00F84094 /* CarDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F945B20B25E7C00F84094 /* CarDetailViewModel.m */; };
 		002F945F20B2713B00F84094 /* CarDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F945E20B2713B00F84094 /* CarDetailCell.m */; };
-		002F946520B296F900F84094 /* PaymentPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F946420B296F900F84094 /* PaymentPage.m */; };
+		002F946520B296F900F84094 /* MonthPaymentPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F946420B296F900F84094 /* MonthPaymentPage.m */; };
 		002F946820B298EA00F84094 /* PaymentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F946720B298EA00F84094 /* PaymentView.m */; };
 		002F946B20B298FD00F84094 /* PaymentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F946A20B298FD00F84094 /* PaymentViewModel.m */; };
 		002F946E20B2B96900F84094 /* PaymentRecordPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F946D20B2B96900F84094 /* PaymentRecordPage.m */; };
 		002F947120B2BB8F00F84094 /* PaymentRecordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F947020B2BB8F00F84094 /* PaymentRecordViewModel.m */; };
 		002F947420B2C0CF00F84094 /* PaymentRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F947320B2C0CF00F84094 /* PaymentRecordView.m */; };
-		002F947720B2C6F300F84094 /* STSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F947620B2C6F300F84094 /* STSegmentView.m */; };
+		002F948420B3B79E00F84094 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F948320B3B79D00F84094 /* NSString+Extension.m */; };
+		002F948A20B3C87B00F84094 /* STTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F948820B3C87A00F84094 /* STTabBarView.m */; };
+		002F948E20B3E8A000F84094 /* VisitorPaymentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F948D20B3E8A000F84094 /* VisitorPaymentView.m */; };
+		002F949120B3E8C200F84094 /* MonthPaymentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F949020B3E8C200F84094 /* MonthPaymentView.m */; };
+		002F949420B3EA6B00F84094 /* MonthPaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F949320B3EA6B00F84094 /* MonthPaymentCell.m */; };
+		002F949720B3EAEB00F84094 /* MonthPaymentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F949620B3EAEB00F84094 /* MonthPaymentModel.m */; };
+		002F949A20B3F8C600F84094 /* VisitorPaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F949920B3F8C600F84094 /* VisitorPaymentCell.m */; };
+		002F949D20B3F8E700F84094 /* VisitorPaymentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F949C20B3F8E700F84094 /* VisitorPaymentModel.m */; };
+		002F94A120B406FD00F84094 /* CarHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F94A020B406FD00F84094 /* CarHistoryView.m */; };
+		002F94A420B4071200F84094 /* CarHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F94A320B4071200F84094 /* CarHistoryCell.m */; };
+		002F94A720B4072500F84094 /* CarHistoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F94A620B4072500F84094 /* CarHistoryViewModel.m */; };
+		002F94AA20B407C500F84094 /* CarHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F94A920B407C500F84094 /* CarHistoryModel.m */; };
+		002F94AD20B40E9100F84094 /* OnePaymentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F94AC20B40E9100F84094 /* OnePaymentView.m */; };
+		002F94B020B40ED500F84094 /* OnePaymentPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F94AF20B40ED500F84094 /* OnePaymentPage.m */; };
+		002F94B420B40F5400F84094 /* OnePaymentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F94B320B40F5400F84094 /* OnePaymentViewModel.m */; };
+		002F94BB20B42A8800F84094 /* VisitorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F94BA20B42A8800F84094 /* VisitorView.m */; };
 		0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2820942ABD0044D92E /* STObserverManager.m */; };
 		0039FC2C20942BDF0044D92E /* STObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2B20942BDF0044D92E /* STObserver.m */; };
 		004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51620A16DC400BA9602 /* STAlertUtil.m */; };
@@ -100,8 +115,8 @@
 		004EF58520AAC99A00BA9602 /* MineViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF58420AAC99A00BA9602 /* MineViewModel.m */; };
 		004EF58820AAD32F00BA9602 /* ProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF58720AAD32F00BA9602 /* ProfilePage.m */; };
 		004EF58B20AAD3F400BA9602 /* MemberPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF58A20AAD3F400BA9602 /* MemberPage.m */; };
-		004EF58E20AAD40600BA9602 /* VictorPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF58D20AAD40600BA9602 /* VictorPage.m */; };
-		004EF59120AAD41700BA9602 /* VictorHistoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF59020AAD41700BA9602 /* VictorHistoryPage.m */; };
+		004EF58E20AAD40600BA9602 /* VisitorPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF58D20AAD40600BA9602 /* VisitorPage.m */; };
+		004EF59120AAD41700BA9602 /* VisitorHistoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF59020AAD41700BA9602 /* VisitorHistoryPage.m */; };
 		004EF59420AAD42400BA9602 /* CarPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF59320AAD42400BA9602 /* CarPage.m */; };
 		004EF59720AAD43100BA9602 /* CarHistoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF59620AAD43100BA9602 /* CarHistoryPage.m */; };
 		004EF59A20AAD44600BA9602 /* MessageSettingPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF59920AAD44600BA9602 /* MessageSettingPage.m */; };
@@ -290,8 +305,8 @@
 		002F945B20B25E7C00F84094 /* CarDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarDetailViewModel.m; sourceTree = "<group>"; };
 		002F945D20B2713B00F84094 /* CarDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarDetailCell.h; sourceTree = "<group>"; };
 		002F945E20B2713B00F84094 /* CarDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarDetailCell.m; sourceTree = "<group>"; };
-		002F946320B296F900F84094 /* PaymentPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentPage.h; sourceTree = "<group>"; };
-		002F946420B296F900F84094 /* PaymentPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentPage.m; sourceTree = "<group>"; };
+		002F946320B296F900F84094 /* MonthPaymentPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthPaymentPage.h; sourceTree = "<group>"; };
+		002F946420B296F900F84094 /* MonthPaymentPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonthPaymentPage.m; sourceTree = "<group>"; };
 		002F946620B298EA00F84094 /* PaymentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentView.h; sourceTree = "<group>"; };
 		002F946720B298EA00F84094 /* PaymentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentView.m; sourceTree = "<group>"; };
 		002F946920B298FD00F84094 /* PaymentViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentViewModel.h; sourceTree = "<group>"; };
@@ -302,8 +317,38 @@
 		002F947020B2BB8F00F84094 /* PaymentRecordViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentRecordViewModel.m; sourceTree = "<group>"; };
 		002F947220B2C0CF00F84094 /* PaymentRecordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentRecordView.h; sourceTree = "<group>"; };
 		002F947320B2C0CF00F84094 /* PaymentRecordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentRecordView.m; sourceTree = "<group>"; };
-		002F947520B2C6F300F84094 /* STSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSegmentView.h; sourceTree = "<group>"; };
-		002F947620B2C6F300F84094 /* STSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STSegmentView.m; sourceTree = "<group>"; };
+		002F948220B3B79D00F84094 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		002F948320B3B79D00F84094 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		002F948820B3C87A00F84094 /* STTabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTabBarView.m; sourceTree = "<group>"; };
+		002F948920B3C87B00F84094 /* STTabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTabBarView.h; sourceTree = "<group>"; };
+		002F948C20B3E8A000F84094 /* VisitorPaymentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorPaymentView.h; sourceTree = "<group>"; };
+		002F948D20B3E8A000F84094 /* VisitorPaymentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorPaymentView.m; sourceTree = "<group>"; };
+		002F948F20B3E8C200F84094 /* MonthPaymentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthPaymentView.h; sourceTree = "<group>"; };
+		002F949020B3E8C200F84094 /* MonthPaymentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonthPaymentView.m; sourceTree = "<group>"; };
+		002F949220B3EA6B00F84094 /* MonthPaymentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthPaymentCell.h; sourceTree = "<group>"; };
+		002F949320B3EA6B00F84094 /* MonthPaymentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonthPaymentCell.m; sourceTree = "<group>"; };
+		002F949520B3EAEB00F84094 /* MonthPaymentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthPaymentModel.h; sourceTree = "<group>"; };
+		002F949620B3EAEB00F84094 /* MonthPaymentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonthPaymentModel.m; sourceTree = "<group>"; };
+		002F949820B3F8C600F84094 /* VisitorPaymentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorPaymentCell.h; sourceTree = "<group>"; };
+		002F949920B3F8C600F84094 /* VisitorPaymentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorPaymentCell.m; sourceTree = "<group>"; };
+		002F949B20B3F8E700F84094 /* VisitorPaymentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorPaymentModel.h; sourceTree = "<group>"; };
+		002F949C20B3F8E700F84094 /* VisitorPaymentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorPaymentModel.m; sourceTree = "<group>"; };
+		002F949F20B406FD00F84094 /* CarHistoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarHistoryView.h; sourceTree = "<group>"; };
+		002F94A020B406FD00F84094 /* CarHistoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarHistoryView.m; sourceTree = "<group>"; };
+		002F94A220B4071200F84094 /* CarHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarHistoryCell.h; sourceTree = "<group>"; };
+		002F94A320B4071200F84094 /* CarHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarHistoryCell.m; sourceTree = "<group>"; };
+		002F94A520B4072500F84094 /* CarHistoryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarHistoryViewModel.h; sourceTree = "<group>"; };
+		002F94A620B4072500F84094 /* CarHistoryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarHistoryViewModel.m; sourceTree = "<group>"; };
+		002F94A820B407C500F84094 /* CarHistoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarHistoryModel.h; sourceTree = "<group>"; };
+		002F94A920B407C500F84094 /* CarHistoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarHistoryModel.m; sourceTree = "<group>"; };
+		002F94AB20B40E9100F84094 /* OnePaymentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnePaymentView.h; sourceTree = "<group>"; };
+		002F94AC20B40E9100F84094 /* OnePaymentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnePaymentView.m; sourceTree = "<group>"; };
+		002F94AE20B40ED500F84094 /* OnePaymentPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnePaymentPage.h; sourceTree = "<group>"; };
+		002F94AF20B40ED500F84094 /* OnePaymentPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnePaymentPage.m; sourceTree = "<group>"; };
+		002F94B220B40F5400F84094 /* OnePaymentViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnePaymentViewModel.h; sourceTree = "<group>"; };
+		002F94B320B40F5400F84094 /* OnePaymentViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnePaymentViewModel.m; sourceTree = "<group>"; };
+		002F94B920B42A8800F84094 /* VisitorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorView.h; sourceTree = "<group>"; };
+		002F94BA20B42A8800F84094 /* VisitorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorView.m; sourceTree = "<group>"; };
 		0039FC2720942ABD0044D92E /* STObserverManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObserverManager.h; sourceTree = "<group>"; };
 		0039FC2820942ABD0044D92E /* STObserverManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObserverManager.m; sourceTree = "<group>"; };
 		0039FC2A20942BDF0044D92E /* STObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObserver.h; sourceTree = "<group>"; };
@@ -370,10 +415,10 @@
 		004EF58720AAD32F00BA9602 /* ProfilePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfilePage.m; sourceTree = "<group>"; };
 		004EF58920AAD3F400BA9602 /* MemberPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberPage.h; sourceTree = "<group>"; };
 		004EF58A20AAD3F400BA9602 /* MemberPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemberPage.m; sourceTree = "<group>"; };
-		004EF58C20AAD40600BA9602 /* VictorPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VictorPage.h; sourceTree = "<group>"; };
-		004EF58D20AAD40600BA9602 /* VictorPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VictorPage.m; sourceTree = "<group>"; };
-		004EF58F20AAD41700BA9602 /* VictorHistoryPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VictorHistoryPage.h; sourceTree = "<group>"; };
-		004EF59020AAD41700BA9602 /* VictorHistoryPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VictorHistoryPage.m; sourceTree = "<group>"; };
+		004EF58C20AAD40600BA9602 /* VisitorPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorPage.h; sourceTree = "<group>"; };
+		004EF58D20AAD40600BA9602 /* VisitorPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorPage.m; sourceTree = "<group>"; };
+		004EF58F20AAD41700BA9602 /* VisitorHistoryPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorHistoryPage.h; sourceTree = "<group>"; };
+		004EF59020AAD41700BA9602 /* VisitorHistoryPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorHistoryPage.m; sourceTree = "<group>"; };
 		004EF59220AAD42400BA9602 /* CarPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarPage.h; sourceTree = "<group>"; };
 		004EF59320AAD42400BA9602 /* CarPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarPage.m; sourceTree = "<group>"; };
 		004EF59520AAD43100BA9602 /* CarHistoryPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarHistoryPage.h; sourceTree = "<group>"; };
@@ -568,6 +613,8 @@
 		0006DF1420898BA9005A4465 /* categories */ = {
 			isa = PBXGroup;
 			children = (
+				002F948220B3B79D00F84094 /* NSString+Extension.h */,
+				002F948320B3B79D00F84094 /* NSString+Extension.m */,
 				00D32496208596EC001EC82F /* UIView+Frame.h */,
 				00D32497208596EC001EC82F /* UIView+Frame.m */,
 				00D32498208596EC001EC82F /* UILabel+ContentSize.h */,
@@ -587,6 +634,8 @@
 		0006DF1520898BC2005A4465 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				002F948920B3C87B00F84094 /* STTabBarView.h */,
+				002F948820B3C87A00F84094 /* STTabBarView.m */,
 				004EF56F20AA8F1100BA9602 /* CircularProgressView.h */,
 				004EF56E20AA8F1100BA9602 /* CircularProgressView.m */,
 				0006DF1A20898F70005A4465 /* TouchScrollView.h */,
@@ -601,8 +650,6 @@
 				004EF5E820AD2A8E00BA9602 /* STCodeView.m */,
 				004EF5FC20AD863E00BA9602 /* STEdgeLabel.h */,
 				004EF5FD20AD863E00BA9602 /* STEdgeLabel.m */,
-				002F947520B2C6F300F84094 /* STSegmentView.h */,
-				002F947620B2C6F300F84094 /* STSegmentView.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -764,22 +811,22 @@
 			name = habitant;
 			sourceTree = "<group>";
 		};
-		002F943520AED36100F84094 /* victor */ = {
+		002F943520AED36100F84094 /* visitor */ = {
 			isa = PBXGroup;
 			children = (
-				004EF58C20AAD40600BA9602 /* VictorPage.h */,
-				004EF58D20AAD40600BA9602 /* VictorPage.m */,
+				004EF58C20AAD40600BA9602 /* VisitorPage.h */,
+				004EF58D20AAD40600BA9602 /* VisitorPage.m */,
 			);
-			path = victor;
+			path = visitor;
 			sourceTree = "<group>";
 		};
-		002F943620AED37A00F84094 /* victorhistory */ = {
+		002F943620AED37A00F84094 /* visitorhistory */ = {
 			isa = PBXGroup;
 			children = (
-				004EF58F20AAD41700BA9602 /* VictorHistoryPage.h */,
-				004EF59020AAD41700BA9602 /* VictorHistoryPage.m */,
+				004EF58F20AAD41700BA9602 /* VisitorHistoryPage.h */,
+				004EF59020AAD41700BA9602 /* VisitorHistoryPage.m */,
 			);
-			path = victorhistory;
+			path = visitorhistory;
 			sourceTree = "<group>";
 		};
 		002F943720AED38800F84094 /* car */ = {
@@ -791,8 +838,8 @@
 				002F944920AFFAA600F84094 /* AddCarPage.m */,
 				002F945420B038B300F84094 /* CarDetailPage.h */,
 				002F945520B038B300F84094 /* CarDetailPage.m */,
-				002F946320B296F900F84094 /* PaymentPage.h */,
-				002F946420B296F900F84094 /* PaymentPage.m */,
+				002F946320B296F900F84094 /* MonthPaymentPage.h */,
+				002F946420B296F900F84094 /* MonthPaymentPage.m */,
 				002F946C20B2B96900F84094 /* PaymentRecordPage.h */,
 				002F946D20B2B96900F84094 /* PaymentRecordPage.m */,
 			);
@@ -804,6 +851,8 @@
 			children = (
 				004EF59520AAD43100BA9602 /* CarHistoryPage.h */,
 				004EF59620AAD43100BA9602 /* CarHistoryPage.m */,
+				002F94AE20B40ED500F84094 /* OnePaymentPage.h */,
+				002F94AF20B40ED500F84094 /* OnePaymentPage.m */,
 			);
 			path = carhistory;
 			sourceTree = "<group>";
@@ -851,10 +900,80 @@
 				002F945E20B2713B00F84094 /* CarDetailCell.m */,
 				002F946620B298EA00F84094 /* PaymentView.h */,
 				002F946720B298EA00F84094 /* PaymentView.m */,
-				002F947220B2C0CF00F84094 /* PaymentRecordView.h */,
-				002F947320B2C0CF00F84094 /* PaymentRecordView.m */,
+				002F948B20B3E87C00F84094 /* paymentrecord */,
 			);
 			path = car;
+			sourceTree = "<group>";
+		};
+		002F948B20B3E87C00F84094 /* paymentrecord */ = {
+			isa = PBXGroup;
+			children = (
+				002F947220B2C0CF00F84094 /* PaymentRecordView.h */,
+				002F947320B2C0CF00F84094 /* PaymentRecordView.m */,
+				002F948C20B3E8A000F84094 /* VisitorPaymentView.h */,
+				002F948D20B3E8A000F84094 /* VisitorPaymentView.m */,
+				002F949820B3F8C600F84094 /* VisitorPaymentCell.h */,
+				002F949920B3F8C600F84094 /* VisitorPaymentCell.m */,
+				002F948F20B3E8C200F84094 /* MonthPaymentView.h */,
+				002F949020B3E8C200F84094 /* MonthPaymentView.m */,
+				002F949220B3EA6B00F84094 /* MonthPaymentCell.h */,
+				002F949320B3EA6B00F84094 /* MonthPaymentCell.m */,
+			);
+			path = paymentrecord;
+			sourceTree = "<group>";
+		};
+		002F949E20B406EE00F84094 /* carhistory */ = {
+			isa = PBXGroup;
+			children = (
+				002F949F20B406FD00F84094 /* CarHistoryView.h */,
+				002F94A020B406FD00F84094 /* CarHistoryView.m */,
+				002F94A220B4071200F84094 /* CarHistoryCell.h */,
+				002F94A320B4071200F84094 /* CarHistoryCell.m */,
+				002F94AB20B40E9100F84094 /* OnePaymentView.h */,
+				002F94AC20B40E9100F84094 /* OnePaymentView.m */,
+			);
+			path = carhistory;
+			sourceTree = "<group>";
+		};
+		002F94B120B40F3800F84094 /* carhistory */ = {
+			isa = PBXGroup;
+			children = (
+				002F94A520B4072500F84094 /* CarHistoryViewModel.h */,
+				002F94A620B4072500F84094 /* CarHistoryViewModel.m */,
+				002F94B220B40F5400F84094 /* OnePaymentViewModel.h */,
+				002F94B320B40F5400F84094 /* OnePaymentViewModel.m */,
+			);
+			path = carhistory;
+			sourceTree = "<group>";
+		};
+		002F94B520B42A5200F84094 /* visitor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = visitor;
+			sourceTree = "<group>";
+		};
+		002F94B620B42A5800F84094 /* visitorhistory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = visitorhistory;
+			sourceTree = "<group>";
+		};
+		002F94B720B42A6D00F84094 /* visitor */ = {
+			isa = PBXGroup;
+			children = (
+				002F94B920B42A8800F84094 /* VisitorView.h */,
+				002F94BA20B42A8800F84094 /* VisitorView.m */,
+			);
+			path = visitor;
+			sourceTree = "<group>";
+		};
+		002F94B820B42A7600F84094 /* visitorhistory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = visitorhistory;
 			sourceTree = "<group>";
 		};
 		004EF51B20A1A49500BA9602 /* alert */ = {
@@ -983,8 +1102,8 @@
 				004EF5ED20AD69A600BA9602 /* member */,
 				002F943820AED38F00F84094 /* carhistory */,
 				002F943720AED38800F84094 /* car */,
-				002F943620AED37A00F84094 /* victorhistory */,
-				002F943520AED36100F84094 /* victor */,
+				002F943620AED37A00F84094 /* visitorhistory */,
+				002F943520AED36100F84094 /* visitor */,
 				002F943420AED2C000F84094 /* habitant */,
 				002F942820AEBA5500F84094 /* messagesetting */,
 				004EF5D620AC514500BA9602 /* profile */,
@@ -998,11 +1117,14 @@
 		004EF57E20AAC97100BA9602 /* mine */ = {
 			isa = PBXGroup;
 			children = (
+				002F94B820B42A7600F84094 /* visitorhistory */,
+				002F94B720B42A6D00F84094 /* visitor */,
+				002F949E20B406EE00F84094 /* carhistory */,
+				004EF5D820AC517200BA9602 /* setting */,
 				002F944420AFF6A500F84094 /* car */,
 				002F943920AED46B00F84094 /* habitant */,
 				002F942920AEBA7A00F84094 /* messagesetting */,
 				004EF5EE20AD69F000BA9602 /* member */,
-				004EF5D820AC517200BA9602 /* setting */,
 				004EF5D720AC516600BA9602 /* profile */,
 				004EF57F20AAC98100BA9602 /* MineView.h */,
 				004EF58020AAC98100BA9602 /* MineView.m */,
@@ -1015,6 +1137,9 @@
 		004EF58220AAC98E00BA9602 /* mine */ = {
 			isa = PBXGroup;
 			children = (
+				002F94B620B42A5800F84094 /* visitorhistory */,
+				002F94B520B42A5200F84094 /* visitor */,
+				002F94B120B40F3800F84094 /* carhistory */,
 				002F943D20AFF22900F84094 /* car */,
 				002F942D20AEBAA200F84094 /* messagesetting */,
 				004EF5F220AD6A0100BA9602 /* member */,
@@ -1039,6 +1164,12 @@
 				004EF5F720AD762A00BA9602 /* MemberModel.m */,
 				002F944120AFF2A200F84094 /* CarModel.h */,
 				002F944220AFF2A200F84094 /* CarModel.m */,
+				002F949520B3EAEB00F84094 /* MonthPaymentModel.h */,
+				002F949620B3EAEB00F84094 /* MonthPaymentModel.m */,
+				002F949B20B3F8E700F84094 /* VisitorPaymentModel.h */,
+				002F949C20B3F8E700F84094 /* VisitorPaymentModel.m */,
+				002F94A820B407C500F84094 /* CarHistoryModel.h */,
+				002F94A920B407C500F84094 /* CarHistoryModel.m */,
 			);
 			path = mine;
 			sourceTree = "<group>";
@@ -1691,6 +1822,7 @@
 				004EF56120A9AD4A00BA9602 /* BindPhoneModel.m in Sources */,
 				004EF57920AAC50900BA9602 /* MainModel.m in Sources */,
 				004EF56420A9B4C600BA9602 /* NextLoginPage.m in Sources */,
+				002F94A720B4072500F84094 /* CarHistoryViewModel.m in Sources */,
 				004EF54320A3083500BA9602 /* MainPage.m in Sources */,
 				004EF57020AA8F1100BA9602 /* CircularProgressView.m in Sources */,
 				002F945920B25E0B00F84094 /* CarDetailView.m in Sources */,
@@ -1712,6 +1844,7 @@
 				00BBBD972091D0E300556B90 /* STFileUtil.m in Sources */,
 				004EF58120AAC98100BA9602 /* MineView.m in Sources */,
 				00D324B3208598A7001EC82F /* STPUtil.m in Sources */,
+				002F94AD20B40E9100F84094 /* OnePaymentView.m in Sources */,
 				004EF60420AD887500BA9602 /* AddMemberPage.m in Sources */,
 				004EF54620A3085C00BA9602 /* MainViewModel.m in Sources */,
 				004EF53A20A2FDB200BA9602 /* BindPhonePage.m in Sources */,
@@ -1722,7 +1855,7 @@
 				00D324D320873B14001EC82F /* RespondModel.m in Sources */,
 				002F944D20AFFBE000F84094 /* AddCarView.m in Sources */,
 				007B1F3D20858EB6009EA9F1 /* main.m in Sources */,
-				004EF58E20AAD40600BA9602 /* VictorPage.m in Sources */,
+				004EF58E20AAD40600BA9602 /* VisitorPage.m in Sources */,
 				002F945C20B25E7C00F84094 /* CarDetailViewModel.m in Sources */,
 				004EF5B320ABFDF200BA9602 /* ProfileViewModel.m in Sources */,
 				0006DF99208DBCAD005A4465 /* CaptureManager.m in Sources */,
@@ -1737,8 +1870,10 @@
 				004EF5AD20ABDE6300BA9602 /* MineCell.m in Sources */,
 				0006DF96208DBCAD005A4465 /* IFlyFaceImage.m in Sources */,
 				004EF58520AAC99A00BA9602 /* MineViewModel.m in Sources */,
+				002F94B420B40F5400F84094 /* OnePaymentViewModel.m in Sources */,
 				004EF57D20AAC96900BA9602 /* MinePage.m in Sources */,
-				002F946520B296F900F84094 /* PaymentPage.m in Sources */,
+				002F946520B296F900F84094 /* MonthPaymentPage.m in Sources */,
+				002F948420B3B79E00F84094 /* NSString+Extension.m in Sources */,
 				0006DF98208DBCAD005A4465 /* UIImage+Extensions.m in Sources */,
 				004EF5D120AC48AA00BA9602 /* SettingCell.m in Sources */,
 				00CCE9B4208ECDD300032B4A /* STUserDefaults.m in Sources */,
@@ -1752,6 +1887,7 @@
 				002F945F20B2713B00F84094 /* CarDetailCell.m in Sources */,
 				002F943020AEBABB00F84094 /* MessageSettingViewModel.m in Sources */,
 				004EF5A020AAD45F00BA9602 /* SettingPage.m in Sources */,
+				002F948A20B3C87B00F84094 /* STTabBarView.m in Sources */,
 				004EF5E020AC525E00BA9602 /* AboutPage.m in Sources */,
 				004EF52B20A2CD6200BA9602 /* UITextField+Init.m in Sources */,
 				004EF5B020ABFD8900BA9602 /* ProfileView.m in Sources */,
@@ -1759,27 +1895,34 @@
 				004EF59420AAD42400BA9602 /* CarPage.m in Sources */,
 				00D324B0208598A7001EC82F /* STSoundUtil.m in Sources */,
 				004EF52520A2A41500BA9602 /* LoginView.m in Sources */,
+				002F949D20B3F8E700F84094 /* VisitorPaymentModel.m in Sources */,
 				0006DF76208DBC76005A4465 /* FaceStreamDetectorViewController.m in Sources */,
 				004EF58820AAD32F00BA9602 /* ProfilePage.m in Sources */,
 				002F945320B02B9E00F84094 /* CarViewCell.m in Sources */,
 				00CCE9A8208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m in Sources */,
 				0006DF9D208DBCAD005A4465 /* IFlyFaceResultTrack.m in Sources */,
+				002F949120B3E8C200F84094 /* MonthPaymentView.m in Sources */,
 				004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */,
+				002F949A20B3F8C600F84094 /* VisitorPaymentCell.m in Sources */,
 				004EF55520A4362400BA9602 /* FaceLoginView.m in Sources */,
 				004EF56720A9B4E300BA9602 /* NextLoginView.m in Sources */,
 				004EF5C520AC2C8500BA9602 /* FaceEnterView.m in Sources */,
 				004EF5BC20AC05D100BA9602 /* TitleContentModel.m in Sources */,
+				002F949420B3EA6B00F84094 /* MonthPaymentCell.m in Sources */,
 				0006DFA8208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m in Sources */,
 				007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */,
 				0006DFA2208DC05B005A4465 /* SystemFacePage.m in Sources */,
 				00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */,
 				004EF5C820AC2CD500BA9602 /* FaceEnterViewModel.m in Sources */,
 				004EF53D20A2FF8200BA9602 /* BindPhoneView.m in Sources */,
+				002F94A120B406FD00F84094 /* CarHistoryView.m in Sources */,
 				004EF5DD20AC51D600BA9602 /* UpdatePhoneNumPage.m in Sources */,
+				002F94BB20B42A8800F84094 /* VisitorView.m in Sources */,
 				00D3249B208596ED001EC82F /* UILabel+StringFrame.m in Sources */,
 				004EF52820A2A42800BA9602 /* LoginPage.m in Sources */,
 				00D32491208594F4001EC82F /* STLog.m in Sources */,
 				004EF54020A2FFA400BA9602 /* BindPhoneViewModel.m in Sources */,
+				002F94AA20B407C500F84094 /* CarHistoryModel.m in Sources */,
 				0039FC2C20942BDF0044D92E /* STObserver.m in Sources */,
 				0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */,
 				004EF56A20A9B7FF00BA9602 /* NextLoginViewModel.m in Sources */,
@@ -1788,12 +1931,13 @@
 				002F944020AFF23F00F84094 /* CarViewModel.m in Sources */,
 				004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */,
 				004EF60120AD885A00BA9602 /* AddMemberView.m in Sources */,
-				004EF59120AAD41700BA9602 /* VictorHistoryPage.m in Sources */,
+				004EF59120AAD41700BA9602 /* VisitorHistoryPage.m in Sources */,
 				002F945620B038B300F84094 /* CarDetailPage.m in Sources */,
 				002F944320AFF2A200F84094 /* CarModel.m in Sources */,
 				004EF5F820AD762A00BA9602 /* MemberModel.m in Sources */,
 				002F943C20AED4FF00F84094 /* HabitantCell.m in Sources */,
 				0006DF95208DBCAD005A4465 /* CalculatorTools.m in Sources */,
+				002F949720B3EAEB00F84094 /* MonthPaymentModel.m in Sources */,
 				004EF5CE20AC450900BA9602 /* SettingViewModel.m in Sources */,
 				004EF54F20A4316900BA9602 /* FaceLoginPage.m in Sources */,
 				002F946B20B298FD00F84094 /* PaymentViewModel.m in Sources */,
@@ -1802,11 +1946,12 @@
 				004EF52E20A2D30800BA9602 /* UILabel+Init.m in Sources */,
 				0006DF1820898BDE005A4465 /* STRefreshTableView.m in Sources */,
 				004EF5F520AD6A0D00BA9602 /* MemberViewModel.m in Sources */,
+				002F94B020B40ED500F84094 /* OnePaymentPage.m in Sources */,
 				004EF5CB20AC44F900BA9602 /* SettingView.m in Sources */,
 				004EF5C220AC2C1800BA9602 /* FaceEnterPage.m in Sources */,
 				004EF5E620AC558A00BA9602 /* UpdatePhoneNumViewModel.m in Sources */,
+				002F948E20B3E8A000F84094 /* VisitorPaymentView.m in Sources */,
 				0006DF9C208DBCAD005A4465 /* IFlyFaceResultKeys.m in Sources */,
-				002F947720B2C6F300F84094 /* STSegmentView.m in Sources */,
 				00CCE9AB208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m in Sources */,
 				0006DF9B208DBCAD005A4465 /* IFlyFaceResultDetector.m in Sources */,
 				004EF5E320AC557700BA9602 /* UpdatePhoneNumView.m in Sources */,
@@ -1816,6 +1961,7 @@
 				004EF5FE20AD863E00BA9602 /* STEdgeLabel.m in Sources */,
 				002F944720AFF6B600F84094 /* CarView.m in Sources */,
 				004EF53420A2DDCB00BA9602 /* LoginModel.m in Sources */,
+				002F94A420B4071200F84094 /* CarHistoryCell.m in Sources */,
 				0006DF132089875E005A4465 /* ByViewController.m in Sources */,
 				00D324E0208742CC001EC82F /* STDataBaseUtil.m in Sources */,
 				004EF5B920AC010700BA9602 /* ProfileCell.m in Sources */,

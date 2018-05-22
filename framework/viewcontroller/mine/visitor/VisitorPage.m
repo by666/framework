@@ -1,32 +1,31 @@
 //
-//  VictorHistoryPage.m
+//  VisitorPage.m
 //  framework
 //
 //  Created by 黄成实 on 2018/5/15.
 //  Copyright © 2018年 黄成实. All rights reserved.
 //
 
-#import "VictorHistoryPage.h"
+#import "VisitorPage.h"
 
-@interface VictorHistoryPage ()
+@interface VisitorPage ()
 
 @end
 
-@implementation VictorHistoryPage
+@implementation VisitorPage
 
 +(void)show:(BaseViewController *)controller{
-    VictorHistoryPage *page = [[VictorHistoryPage alloc]init];
+    VisitorPage *page = [[VisitorPage alloc]init];
     [controller pushPage:page];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = c01;
-    [self showSTNavigationBar:@"访客通行记录" needback:YES];
+    [self showSTNavigationBar:MSG_VISITOR_TITLE needback:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [self setStatuBarBackgroud:cwhite];
 }
-
 @end

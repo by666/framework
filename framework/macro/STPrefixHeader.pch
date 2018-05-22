@@ -29,6 +29,7 @@
 #import "UIButton+Init.h"
 #import "STAlertUtil.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "NSString+Extension.h"
 
 
 //JPush相光
@@ -81,6 +82,7 @@
 
 #define IS_NS_STRING_EMPTY(str) (str == nil || [str isEqualToString:@""])
 
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 
 #endif /* STPrefixHeader_pch */

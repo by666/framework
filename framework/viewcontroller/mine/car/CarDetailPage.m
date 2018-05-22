@@ -9,7 +9,7 @@
 
 #import "CarDetailPage.h"
 #import "STObserverManager.h"
-#import "PaymentPage.h"
+#import "MonthPaymentPage.h"
 
 @interface CarDetailPage()<CarDetailViewDelegate>
 
@@ -54,7 +54,7 @@
 
 
 -(void)onGoPaymentPage{
-    [PaymentPage show:self model:_model];
+    [MonthPaymentPage show:self model:_model];
 }
 
 -(void)onDeleteCarData{

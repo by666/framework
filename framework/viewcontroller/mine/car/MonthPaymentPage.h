@@ -1,5 +1,5 @@
 //
-//  PaymentPage.h
+//  MonthPaymentPage.h
 //  framework
 //
 //  Created by 黄成实 on 2018/5/21.
@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 #import "CarModel.h"
 
-@interface PaymentPage : BaseViewController
+@interface MonthPaymentPage : BaseViewController
 
 +(void)show:(BaseViewController *)controller model:(CarModel *)model;
 

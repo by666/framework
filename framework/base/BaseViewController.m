@@ -57,6 +57,13 @@
     [self.view addSubview:navigationView];
 }
 
+-(void)showSTNavigationBar:(NSString *)title needback:(Boolean)needback rightBtn:(NSString *)rightStr rightColor:(UIColor *)color block:(void (^)(void))click{
+    _onRightBtnClick = click;
+    STNavigationView *navigationView = [[STNavigationView alloc]initWithTitle:title needBack:needback rightBtn:rightStr rightColor:color];
+    navigationView.delegate = self;
+    [self.view addSubview:navigationView];
+}
+
 -(void)OnBackBtnClicked{
     [self backLastPage];
 }
