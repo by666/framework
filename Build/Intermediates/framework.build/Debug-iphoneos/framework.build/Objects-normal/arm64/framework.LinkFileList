@@ -49,6 +49,7 @@
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/HabitantView.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/CanvasView.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MineCell.o
+/Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/VisitorHistoryViewModel.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/IFlyFaceImage.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MineViewModel.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/OnePaymentViewModel.o
@@ -74,6 +75,7 @@
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/AboutPage.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/UITextField+Init.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/ProfileView.o
+/Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/VisitorHistoryModel.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STNetUtil.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/CarPage.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STSoundUtil.o
@@ -106,6 +108,7 @@
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/LoginPage.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STLog.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/BindPhoneViewModel.o
+/Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/VisitorHistoryView.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/CarHistoryModel.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STObserver.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/UIImage+compress.o
@@ -146,6 +149,7 @@
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/ByView.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/CarHistoryPage.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STEdgeLabel.o
+/Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/VisitorHistoryCell.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/CarView.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/LoginModel.o
 /Users/by.huang/Desktop/sthl/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/CarHistoryCell.o

@@ -20,6 +20,8 @@
 
 @property(assign, nonatomic)VisitorType mType;
 @property(strong, nonatomic)VisitorView *visitorView;
+@property(strong, nonatomic)VisitorModel *mData;
+
 @end
 
 @implementation VisitorPage
@@ -29,6 +31,14 @@
     page.mType = type;
     [controller pushPage:page];
 }
+
++(void)show:(BaseViewController *)controller type:(VisitorType)type model:(VisitorModel *)model{
+    VisitorPage *page = [[VisitorPage alloc]init];
+    page.mType = type;
+    page.mData = model;
+    [controller pushPage:page];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,7 +67,9 @@
 -(void)initView{
     VisitorViewModel *viewModel = [[VisitorViewModel alloc]init];
     viewModel.delegate = self;
-    
+    if(_mData != nil){
+        viewModel.data = _mData;
+    }
     _visitorView = [[VisitorView alloc]initWithViewModel:viewModel type:_mType];
     _visitorView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     _visitorView.backgroundColor = c15;

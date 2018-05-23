@@ -186,4 +186,6 @@
 
 //访客通行记录
 #define MSG_VISITORHISTORY_TITLE @"来访通行记录"
+#define MSG_VISITORHISTORY_RIGHTBTN @"访客登记"
+#define MSG_VISITORHISTORY_AUTH @"再次授权"
 

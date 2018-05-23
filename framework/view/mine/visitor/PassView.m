@@ -61,6 +61,9 @@
     if(!IS_NS_STRING_EMPTY(_mViewModel.data.imagePath)){
         UIImage *avatarImage = [UIImage imageWithContentsOfFile:_mViewModel.data.imagePath];
         avatarImageView.image = avatarImage;
+        avatarImageView.hidden = NO;
+    }else{
+        avatarImageView.hidden = YES;
     }
     
     NSString *nameStr = [NSString stringWithFormat:MSG_PASSVIEW_NAME,_mViewModel.data.name];

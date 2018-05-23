@@ -63,6 +63,7 @@
     _nameTextField = [[UITextField alloc]initWithFont:STFont(16) textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:0];
     _nameTextField.textAlignment = NSTextAlignmentRight;
     _nameTextField.frame = CGRectMake(STWidth(100), 0 , ScreenWidth - STWidth(115), STHeight(57));
+    _nameTextField.text = _mViewModel.data.name;
     [commonView addSubview:_nameTextField];
     
     NSString *dateStr = [STTimeUtil getTomorrowDate];

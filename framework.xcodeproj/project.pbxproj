@@ -181,6 +181,10 @@
 		00D324D320873B14001EC82F /* RespondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324D220873B14001EC82F /* RespondModel.m */; };
 		00D324E0208742CC001EC82F /* STDataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324DF208742CC001EC82F /* STDataBaseUtil.m */; };
 		00D324E420874874001EC82F /* STRuntimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324E320874874001EC82F /* STRuntimeUtil.m */; };
+		CF43E3CF20B57F7C0069AAFA /* VisitorHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF43E3CE20B57F7C0069AAFA /* VisitorHistoryView.m */; };
+		CF43E3D220B57F9B0069AAFA /* VisitorHistoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF43E3D120B57F9B0069AAFA /* VisitorHistoryViewModel.m */; };
+		CF43E3D520B5802B0069AAFA /* VisitorHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF43E3D420B5802B0069AAFA /* VisitorHistoryModel.m */; };
+		CF43E3D820B583040069AAFA /* VisitorHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF43E3D720B583040069AAFA /* VisitorHistoryCell.m */; };
 		CFB6D1A120B5343500A0863B /* VisitorViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6D1A020B5343500A0863B /* VisitorViewModel.m */; };
 		CFB6D1A520B5355700A0863B /* VisitorHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6D1A420B5355700A0863B /* VisitorHomeView.m */; };
 		CFB6D1A820B5358200A0863B /* VisitorHomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6D1A720B5358200A0863B /* VisitorHomePage.m */; };
@@ -571,6 +575,14 @@
 		44CB19A2824E78F5D9947AB8 /* Pods-framework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-framework.release.xcconfig"; path = "Pods/Target Support Files/Pods-framework/Pods-framework.release.xcconfig"; sourceTree = "<group>"; };
 		70AB2E3AF702425BEFAEA1B9 /* Pods-framework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-framework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-framework/Pods-framework.debug.xcconfig"; sourceTree = "<group>"; };
 		C7AD31C7F288F0669DDF6673 /* Pods_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF43E3CD20B57F7C0069AAFA /* VisitorHistoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorHistoryView.h; sourceTree = "<group>"; };
+		CF43E3CE20B57F7C0069AAFA /* VisitorHistoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorHistoryView.m; sourceTree = "<group>"; };
+		CF43E3D020B57F9B0069AAFA /* VisitorHistoryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorHistoryViewModel.h; sourceTree = "<group>"; };
+		CF43E3D120B57F9B0069AAFA /* VisitorHistoryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorHistoryViewModel.m; sourceTree = "<group>"; };
+		CF43E3D320B5802B0069AAFA /* VisitorHistoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorHistoryModel.h; sourceTree = "<group>"; };
+		CF43E3D420B5802B0069AAFA /* VisitorHistoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorHistoryModel.m; sourceTree = "<group>"; };
+		CF43E3D620B583040069AAFA /* VisitorHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorHistoryCell.h; sourceTree = "<group>"; };
+		CF43E3D720B583040069AAFA /* VisitorHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorHistoryCell.m; sourceTree = "<group>"; };
 		CFB6D19F20B5343500A0863B /* VisitorViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorViewModel.h; sourceTree = "<group>"; };
 		CFB6D1A020B5343500A0863B /* VisitorViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorViewModel.m; sourceTree = "<group>"; };
 		CFB6D1A320B5355700A0863B /* VisitorHomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorHomeView.h; sourceTree = "<group>"; };
@@ -1186,6 +1198,8 @@
 				002F94A920B407C500F84094 /* CarHistoryModel.m */,
 				CFB6D1B820B55DA200A0863B /* VisitorModel.h */,
 				CFB6D1B920B55DA200A0863B /* VisitorModel.m */,
+				CF43E3D320B5802B0069AAFA /* VisitorHistoryModel.h */,
+				CF43E3D420B5802B0069AAFA /* VisitorHistoryModel.m */,
 			);
 			path = mine;
 			sourceTree = "<group>";
@@ -1614,6 +1628,8 @@
 		CFB6D19E20B5342400A0863B /* visitorhistory */ = {
 			isa = PBXGroup;
 			children = (
+				CF43E3D020B57F9B0069AAFA /* VisitorHistoryViewModel.h */,
+				CF43E3D120B57F9B0069AAFA /* VisitorHistoryViewModel.m */,
 			);
 			path = visitorhistory;
 			sourceTree = "<group>";
@@ -1621,6 +1637,10 @@
 		CFB6D1A220B534FE00A0863B /* visitorhistory */ = {
 			isa = PBXGroup;
 			children = (
+				CF43E3CD20B57F7C0069AAFA /* VisitorHistoryView.h */,
+				CF43E3CE20B57F7C0069AAFA /* VisitorHistoryView.m */,
+				CF43E3D620B583040069AAFA /* VisitorHistoryCell.h */,
+				CF43E3D720B583040069AAFA /* VisitorHistoryCell.m */,
 			);
 			path = visitorhistory;
 			sourceTree = "<group>";
@@ -1911,6 +1931,7 @@
 				004EF5A320AAEAC600BA9602 /* HabitantView.m in Sources */,
 				0006DF9E208DBCAD005A4465 /* CanvasView.m in Sources */,
 				004EF5AD20ABDE6300BA9602 /* MineCell.m in Sources */,
+				CF43E3D220B57F9B0069AAFA /* VisitorHistoryViewModel.m in Sources */,
 				0006DF96208DBCAD005A4465 /* IFlyFaceImage.m in Sources */,
 				004EF58520AAC99A00BA9602 /* MineViewModel.m in Sources */,
 				002F94B420B40F5400F84094 /* OnePaymentViewModel.m in Sources */,
@@ -1936,6 +1957,7 @@
 				004EF5E020AC525E00BA9602 /* AboutPage.m in Sources */,
 				004EF52B20A2CD6200BA9602 /* UITextField+Init.m in Sources */,
 				004EF5B020ABFD8900BA9602 /* ProfileView.m in Sources */,
+				CF43E3D520B5802B0069AAFA /* VisitorHistoryModel.m in Sources */,
 				00D324CD2087277E001EC82F /* STNetUtil.m in Sources */,
 				004EF59420AAD42400BA9602 /* CarPage.m in Sources */,
 				00D324B0208598A7001EC82F /* STSoundUtil.m in Sources */,
@@ -1968,6 +1990,7 @@
 				004EF52820A2A42800BA9602 /* LoginPage.m in Sources */,
 				00D32491208594F4001EC82F /* STLog.m in Sources */,
 				004EF54020A2FFA400BA9602 /* BindPhoneViewModel.m in Sources */,
+				CF43E3CF20B57F7C0069AAFA /* VisitorHistoryView.m in Sources */,
 				002F94AA20B407C500F84094 /* CarHistoryModel.m in Sources */,
 				0039FC2C20942BDF0044D92E /* STObserver.m in Sources */,
 				0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */,
@@ -2008,6 +2031,7 @@
 				00D324CA2086E355001EC82F /* ByView.m in Sources */,
 				004EF59720AAD43100BA9602 /* CarHistoryPage.m in Sources */,
 				004EF5FE20AD863E00BA9602 /* STEdgeLabel.m in Sources */,
+				CF43E3D820B583040069AAFA /* VisitorHistoryCell.m in Sources */,
 				002F944720AFF6B600F84094 /* CarView.m in Sources */,
 				004EF53420A2DDCB00BA9602 /* LoginModel.m in Sources */,
 				002F94A420B4071200F84094 /* CarHistoryCell.m in Sources */,

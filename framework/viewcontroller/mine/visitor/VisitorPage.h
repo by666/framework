@@ -7,9 +7,12 @@
 //
 
 #import "BaseViewController.h"
+#import "VisitorModel.h"
 
 @interface VisitorPage : BaseViewController
 
 +(void)show:(BaseViewController *)controller type:(VisitorType)type;
+
++(void)show:(BaseViewController *)controller type:(VisitorType)type model:(VisitorModel *)model;
 
 @end
