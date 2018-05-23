@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VisitorViewModel.h"
+#import "VisitorModel.h"
 
 @interface VisitorView : UIView
 
+-(instancetype)initWithViewModel:(VisitorViewModel *)model type:(VisitorType)type;
+-(void)updateView:(NSString *)imagePath;
+-(void)updateTipLabel:(NSString *)errorMsg;
+-(void)showGeneratePass;
 
 @end

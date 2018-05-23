@@ -24,4 +24,8 @@
 
 #pragma mark 获取当前时间戳
 +(NSString *)getCurrentTimeStamp;
+
+#pragma mark 获取明天的日期
++(NSString *)getTomorrowDate;
+
 @end

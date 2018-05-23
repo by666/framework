@@ -33,6 +33,7 @@
 #define MSG_WARN @"警告"
 #define MSG_COMMIT @"提交"
 #define MSG_DATE_FORMAT @"YYYY年MM月dd日"
+#define MSG_DATE_FORMAT2 @"YYYY.MM.dd"
 
 
 #define MSG_MINE_TITLE @"我的"
@@ -154,10 +155,33 @@
 #define MSG_ONEPAYMENT_SUCCEE_TIPS1 @"支付完成"
 #define MSG_ONEPAYMENT_SUCCEE_TIPS2 @"访客车辆可直接通行"
 
-//访客登记
-#define MSG_VISITOR_TITLE @"来访登记"
-#define MSG_VISITOR_PEOPLE_BUTTON @"访客登记"
-#define MSG_VISITOR_CAR_BUTTON @"来访车辆登记"
+//访客登记主页
+#define MSG_VISITORHOME_TITLE @"来访登记"
+#define MSG_VISITORHOME_PEOPLE_BUTTON @"访客登记"
+#define MSG_VISITORHOME_CAR_BUTTON @"来访车辆登记"
+
+//来访人员和车辆登记
+#define MSG_VISITOR_PEOPLE_TITLE @"来访人员登记"
+#define MSG_VISITOR_CAR_TITLE @"来访车辆登记"
+
+#define MSG_VISITOR_NAME @"访客姓名"
+#define MSG_VISITOR_DATE @"预计来访日期"
+#define MSG_VISITOR_CARNUM @"车牌号码"
+#define MSG_VISITOR_FACEDECTED @"人脸自动开门"
+#define MSG_VISITOR_GENERATE_BTN @"生成临时通行证"
+#define MSG_VISITOR_ERROR_NONAME @"请输入访客姓名"
+#define MSG_VISITOR_ERROR_NODATE @"请选择访问日期"
+#define MSG_VISITOR_ERROR_NOCARNUM @"请输入车牌号"
+#define MSG_VISITOR_ERROR_NOFACEDETECT @"请上传人脸照片"
+#define MSG_VISITOR_TIPS @"开启后，访客可”刷脸“直接进入门禁"
+
+//临时通行证
+#define MSG_PASSVIEW_TITLE @"详细来访信息"
+#define MSG_PASSVIEW_NAME @"拜访人：%@"
+#define MSG_PASSVIEW_DATE @"预计来访时间：%@"
+#define MSG_PASSVIEW_LOCKCODE @"开锁码"
+#define MSG_PASSVIEW_TIPS @"访客（%@）可以人脸识别，或使用二维码（或开锁码）通过门禁"
+#define MSG_PASSVIEW_SHAREBTN @"微信分享给朋友"
 
 
 //访客通行记录

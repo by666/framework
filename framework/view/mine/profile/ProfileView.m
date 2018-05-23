@@ -39,7 +39,7 @@
     [self addSubview:_tableView];
     
 
-    _tipsLabel = [[UILabel alloc]initWithFont:STFont(14) text:MSG_PROFILE_VERIFY textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c18 multiLine:NO];
+    _tipsLabel = [[UILabel alloc]initWithFont:STFont(14) text:MSG_PROFILE_VERIFY textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c24 multiLine:NO];
     _tipsLabel.frame = CGRectMake(0, 0, ScreenWidth, STHeight(26));
     [self addSubview:_tipsLabel];
     

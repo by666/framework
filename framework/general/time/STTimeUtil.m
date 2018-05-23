@@ -43,6 +43,21 @@
     return timeString;
 }
 
++(NSString *)getTomorrowDate{
+    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSTimeInterval timeInterval=[dat timeIntervalSince1970]*1000;
+    timeInterval += 3600 * 24 * 1000;
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"YYYY.MM.dd"];
+    
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:timeInterval / 1000.0];
+    NSString* dateStr = [formatter stringFromDate:date];
+    return dateStr;
+}
+
 +(NSString *)formateTime : (NSString *)timestamp{
     NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
     NSTimeInterval createTime = [timestamp longLongValue]/1000;

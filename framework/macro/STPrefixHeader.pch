@@ -15,6 +15,7 @@
 #import "ColorMacro.h"
 #import "NotifyMacro.h"
 #import "ThreePartyMacro.h"
+#import "EnumMacro.h"
 #import "STLog.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "Singleton.h"
@@ -83,6 +84,7 @@
 #define IS_NS_STRING_EMPTY(str) (str == nil || [str isEqualToString:@""])
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
 
 
 #endif /* STPrefixHeader_pch */

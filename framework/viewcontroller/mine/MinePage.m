@@ -12,7 +12,7 @@
 #import "STNavigationView.h"
 #import "ProfilePage.h"
 #import "MemberPage.h"
-#import "VisitorPage.h"
+#import "VisitorHomePage.h"
 #import "VisitorHistoryPage.h"
 #import "CarPage.h"
 #import "CarHistoryPage.h"
@@ -65,7 +65,7 @@
 }
 
 -(void)onGoVictorPage{
-    [VisitorPage show:self];
+    [VisitorHomePage show:self];
 }
 
 -(void)onGoVictorHistoryPage{

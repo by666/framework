@@ -10,6 +10,6 @@
 
 @interface VisitorPage : BaseViewController
 
-+(void)show:(BaseViewController *)controller;
++(void)show:(BaseViewController *)controller type:(VisitorType)type;
 
 @end

@@ -1,0 +1,2549 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/AFNetworking/AFNetworking.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "AFAutoPurgingImageCache.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFHTTPSessionManager.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFImageDownloader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/UIKit+AFNetworking/AFImageDownloader.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFNetworkActivityIndicatorManager.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFNetworkReachabilityManager.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFNetworking-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/AFNetworking/AFNetworking.framework/Headers/AFNetworking-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFNetworking-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Target Support Files/AFNetworking/AFNetworking-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/AFNetworking/AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFSecurityPolicy.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFURLRequestSerialization.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFURLResponseSerialization.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFURLSessionManager.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/AFNetworking/AFURLSessionManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIActivityIndicatorView+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIButton+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImage+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/UIKit+AFNetworking/UIImage+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImageView+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIKit+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/UIKit+AFNetworking/UIKit+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIProgressView+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIRefreshControl+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIWebView+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/AFNetworking/AFNetworking.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Intermediates/Pods.build/Debug-iphoneos/AFNetworking.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/FMDB/FMDB.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "FMDB-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/FMDB/FMDB.framework/Headers/FMDB-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMDB-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Target Support Files/FMDB/FMDB-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMDB.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/FMDB/src/fmdb/FMDB.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMDatabase.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/FMDB/src/fmdb/FMDatabase.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMDatabaseAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/FMDB/src/fmdb/FMDatabaseAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMDatabasePool.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/FMDB/src/fmdb/FMDatabasePool.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMDatabaseQueue.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/FMDB/src/fmdb/FMDatabaseQueue.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMResultSet.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/FMDB/src/fmdb/FMResultSet.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/FMDB/FMDB.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Intermediates/Pods.build/Debug-iphoneos/FMDB.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/LBXScan/LBXScan.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "LBXScan-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/LBXScan/LBXScan.framework/Headers/LBXScan-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "LBXScan-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Target Support Files/LBXScan/LBXScan-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "LBXScanLineAnimation.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/UI/LBXScanLineAnimation.h"
+        },
+        {
+          'type': 'file',
+          'name': "LBXScanNative.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXNative/LBXScanNative.h"
+        },
+        {
+          'type': 'file',
+          'name': "LBXScanNetAnimation.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/UI/LBXScanNetAnimation.h"
+        },
+        {
+          'type': 'file',
+          'name': "LBXScanTypes.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXScanTypes.h"
+        },
+        {
+          'type': 'file',
+          'name': "LBXScanVideoZoomView.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/UI/LBXScanVideoZoomView.h"
+        },
+        {
+          'type': 'file',
+          'name': "LBXScanView.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/UI/LBXScanView.h"
+        },
+        {
+          'type': 'file',
+          'name': "LBXScanViewController.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/UI/LBXScanViewController.h"
+        },
+        {
+          'type': 'file',
+          'name': "LBXScanViewStyle.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/UI/LBXScanViewStyle.h"
+        },
+        {
+          'type': 'file',
+          'name': "LBXZBarWrapper.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZBar/LBXZBarWrapper.h"
+        },
+        {
+          'type': 'file',
+          'name': "LBXZXCapture.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/LBXZXCapture.h"
+        },
+        {
+          'type': 'file',
+          'name': "LBXZXCaptureDelegate.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/LBXZXCaptureDelegate.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAI013103decoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXAI013103decoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAI01320xDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXAI01320xDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAI01392xDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXAI01392xDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAI01393xDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXAI01393xDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAI013x0x1xDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXAI013x0x1xDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAI013x0xDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXAI013x0xDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAI01AndOtherAIs.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXAI01AndOtherAIs.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAI01decoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXAI01decoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAI01weightDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXAI01weightDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAbstractDoCoMoResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXAbstractDoCoMoResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAbstractExpandedDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXAbstractExpandedDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAbstractRSSReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/ZXAbstractRSSReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAddressBookAUResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXAddressBookAUResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAddressBookDoCoMoResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXAddressBookDoCoMoResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAddressBookParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXAddressBookParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAnyAIDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXAnyAIDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAztecBinaryShiftToken.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/aztec/encoder/ZXAztecBinaryShiftToken.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAztecCode.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/aztec/encoder/ZXAztecCode.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAztecDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/aztec/decoder/ZXAztecDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAztecDetector.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/aztec/detector/ZXAztecDetector.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAztecDetectorResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/aztec/ZXAztecDetectorResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAztecEncoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/aztec/encoder/ZXAztecEncoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAztecHighLevelEncoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/aztec/encoder/ZXAztecHighLevelEncoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAztecReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/aztec/ZXAztecReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAztecSimpleToken.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/aztec/encoder/ZXAztecSimpleToken.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAztecState.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/aztec/encoder/ZXAztecState.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAztecToken.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/aztec/encoder/ZXAztecToken.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXAztecWriter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/aztec/ZXAztecWriter.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXBarcodeFormat.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXBarcodeFormat.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXBinarizer.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXBinarizer.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXBinaryBitmap.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXBinaryBitmap.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXBitArray.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXBitArray.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXBitArrayBuilder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/ZXBitArrayBuilder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXBitMatrix.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXBitMatrix.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXBitSource.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXBitSource.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXBizcardResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXBizcardResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXBookmarkDoCoMoResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXBookmarkDoCoMoResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXBoolArray.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXBoolArray.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXByQuadrantReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/multi/ZXByQuadrantReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXByteArray.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXByteArray.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXByteMatrix.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXByteMatrix.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXCGImageLuminanceSource.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/ZXCGImageLuminanceSource.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXCalendarParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXCalendarParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXCapture.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/ZXCapture.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXCaptureDelegate.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/ZXCaptureDelegate.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXCharacterSetECI.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXCharacterSetECI.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXCodaBarReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXCodaBarReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXCodaBarWriter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXCodaBarWriter.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXCode128Reader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXCode128Reader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXCode128Writer.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXCode128Writer.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXCode39Reader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXCode39Reader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXCode39Writer.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXCode39Writer.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXCode93Reader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXCode93Reader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixASCIIEncoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/encoder/ZXDataMatrixASCIIEncoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixBase256Encoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/encoder/ZXDataMatrixBase256Encoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixBitMatrixParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/decoder/ZXDataMatrixBitMatrixParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixC40Encoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/encoder/ZXDataMatrixC40Encoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixDataBlock.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/decoder/ZXDataMatrixDataBlock.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixDecodedBitStreamParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/decoder/ZXDataMatrixDecodedBitStreamParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/decoder/ZXDataMatrixDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixDefaultPlacement.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/encoder/ZXDataMatrixDefaultPlacement.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixDetector.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/detector/ZXDataMatrixDetector.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixEdifactEncoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/encoder/ZXDataMatrixEdifactEncoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixEncoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/encoder/ZXDataMatrixEncoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixEncoderContext.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/encoder/ZXDataMatrixEncoderContext.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixErrorCorrection.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/encoder/ZXDataMatrixErrorCorrection.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixHighLevelEncoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/encoder/ZXDataMatrixHighLevelEncoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/ZXDataMatrixReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixSymbolInfo.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/encoder/ZXDataMatrixSymbolInfo.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixSymbolInfo144.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/encoder/ZXDataMatrixSymbolInfo144.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixTextEncoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/encoder/ZXDataMatrixTextEncoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixVersion.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/decoder/ZXDataMatrixVersion.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixWriter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/ZXDataMatrixWriter.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDataMatrixX12Encoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/encoder/ZXDataMatrixX12Encoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDecodeHints.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXDecodeHints.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDecoderResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXDecoderResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDefaultGridSampler.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXDefaultGridSampler.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDetectorResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXDetectorResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXDimension.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXDimension.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXEAN13Reader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXEAN13Reader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXEAN13Writer.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXEAN13Writer.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXEAN8Reader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXEAN8Reader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXEAN8Writer.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXEAN8Writer.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXEANManufacturerOrgSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXEANManufacturerOrgSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXEmailAddressParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXEmailAddressParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXEmailAddressResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXEmailAddressResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXEmailDoCoMoResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXEmailDoCoMoResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXEncodeHints.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXEncodeHints.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXErrors.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXErrors.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXExpandedProductParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXExpandedProductParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXExpandedProductResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXExpandedProductResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXGenericGF.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/reedsolomon/ZXGenericGF.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXGenericGFPoly.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/reedsolomon/ZXGenericGFPoly.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXGenericMultipleBarcodeReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/multi/ZXGenericMultipleBarcodeReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXGeoParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXGeoParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXGeoResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXGeoResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXGlobalHistogramBinarizer.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXGlobalHistogramBinarizer.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXGridSampler.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXGridSampler.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXHybridBinarizer.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXHybridBinarizer.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXISBNParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXISBNParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXISBNResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXISBNResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXITFReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXITFReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXITFWriter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXITFWriter.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXImage.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/ZXImage.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXIntArray.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXIntArray.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXInvertedLuminanceSource.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXInvertedLuminanceSource.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXLuminanceSource.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXLuminanceSource.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXMathUtils.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/detector/ZXMathUtils.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXMaxiCodeBitMatrixParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/maxicode/decoder/ZXMaxiCodeBitMatrixParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXMaxiCodeDecodedBitStreamParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/maxicode/decoder/ZXMaxiCodeDecodedBitStreamParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXMaxiCodeDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/maxicode/decoder/ZXMaxiCodeDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXMaxiCodeReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/maxicode/ZXMaxiCodeReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXModulusGF.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/decoder/ec/ZXModulusGF.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXModulusPoly.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/decoder/ec/ZXModulusPoly.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXMonochromeRectangleDetector.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/detector/ZXMonochromeRectangleDetector.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXMultiDetector.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/multi/detector/ZXMultiDetector.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXMultiFinderPatternFinder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/multi/detector/ZXMultiFinderPatternFinder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXMultiFormatOneDReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXMultiFormatOneDReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXMultiFormatReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/ZXMultiFormatReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXMultiFormatUPCEANReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXMultiFormatUPCEANReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXMultiFormatWriter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/ZXMultiFormatWriter.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXMultipleBarcodeReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/multi/ZXMultipleBarcodeReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXOneDReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXOneDReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXOneDimensionalCodeWriter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXOneDimensionalCodeWriter.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/encoder/ZXPDF417.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417BarcodeMatrix.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/encoder/ZXPDF417BarcodeMatrix.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417BarcodeMetadata.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/decoder/ZXPDF417BarcodeMetadata.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417BarcodeRow.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/encoder/ZXPDF417BarcodeRow.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417BarcodeValue.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/decoder/ZXPDF417BarcodeValue.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417BoundingBox.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/decoder/ZXPDF417BoundingBox.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417Codeword.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/decoder/ZXPDF417Codeword.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417CodewordDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/decoder/ZXPDF417CodewordDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417Common.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/ZXPDF417Common.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417DecodedBitStreamParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/decoder/ZXPDF417DecodedBitStreamParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417DetectionResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/decoder/ZXPDF417DetectionResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417DetectionResultColumn.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/decoder/ZXPDF417DetectionResultColumn.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417DetectionResultRowIndicatorColumn.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/decoder/ZXPDF417DetectionResultRowIndicatorColumn.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417Detector.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/detector/ZXPDF417Detector.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417DetectorResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/detector/ZXPDF417DetectorResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417Dimensions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/encoder/ZXPDF417Dimensions.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417ECErrorCorrection.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/decoder/ec/ZXPDF417ECErrorCorrection.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417ErrorCorrection.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/encoder/ZXPDF417ErrorCorrection.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417HighLevelEncoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/encoder/ZXPDF417HighLevelEncoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417Reader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/ZXPDF417Reader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417ResultMetadata.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/ZXPDF417ResultMetadata.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417ScanningDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/decoder/ZXPDF417ScanningDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPDF417Writer.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/ZXPDF417Writer.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXParsedResultType.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXParsedResultType.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPerspectiveTransform.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXPerspectiveTransform.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXPlanarYUVLuminanceSource.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXPlanarYUVLuminanceSource.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXProductParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXProductParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXProductResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXProductResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCode.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/encoder/ZXQRCode.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeAlignmentPattern.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/detector/ZXQRCodeAlignmentPattern.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeAlignmentPatternFinder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/detector/ZXQRCodeAlignmentPatternFinder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeBitMatrixParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/decoder/ZXQRCodeBitMatrixParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeBlockPair.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/encoder/ZXQRCodeBlockPair.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeDataBlock.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/decoder/ZXQRCodeDataBlock.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeDataMask.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/decoder/ZXQRCodeDataMask.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeDecodedBitStreamParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/decoder/ZXQRCodeDecodedBitStreamParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/decoder/ZXQRCodeDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeDecoderMetaData.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/decoder/ZXQRCodeDecoderMetaData.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeDetector.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/detector/ZXQRCodeDetector.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeEncoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/encoder/ZXQRCodeEncoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeErrorCorrectionLevel.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/decoder/ZXQRCodeErrorCorrectionLevel.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeFinderPattern.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/detector/ZXQRCodeFinderPattern.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeFinderPatternFinder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/detector/ZXQRCodeFinderPatternFinder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeFinderPatternInfo.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/detector/ZXQRCodeFinderPatternInfo.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeFormatInformation.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/decoder/ZXQRCodeFormatInformation.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeMaskUtil.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/encoder/ZXQRCodeMaskUtil.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeMatrixUtil.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/encoder/ZXQRCodeMatrixUtil.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeMode.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/decoder/ZXQRCodeMode.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeMultiReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/multi/ZXQRCodeMultiReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/ZXQRCodeReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeVersion.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/decoder/ZXQRCodeVersion.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXQRCodeWriter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/ZXQRCodeWriter.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRGBLuminanceSource.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXRGBLuminanceSource.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSS14Reader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/ZXRSS14Reader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSDataCharacter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/ZXRSSDataCharacter.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSExpandedBlockParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXRSSExpandedBlockParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSExpandedCurrentParsingState.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXRSSExpandedCurrentParsingState.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSExpandedDecodedChar.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXRSSExpandedDecodedChar.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSExpandedDecodedInformation.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXRSSExpandedDecodedInformation.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSExpandedDecodedNumeric.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXRSSExpandedDecodedNumeric.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSExpandedDecodedObject.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXRSSExpandedDecodedObject.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSExpandedFieldParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXRSSExpandedFieldParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSExpandedGeneralAppIdDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/decoders/ZXRSSExpandedGeneralAppIdDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSExpandedPair.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/ZXRSSExpandedPair.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSExpandedReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/ZXRSSExpandedReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSExpandedRow.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/expanded/ZXRSSExpandedRow.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSFinderPattern.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/ZXRSSFinderPattern.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSPair.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/ZXRSSPair.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXRSSUtils.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/rss/ZXRSSUtils.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXReedSolomonDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/reedsolomon/ZXReedSolomonDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXReedSolomonEncoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/reedsolomon/ZXReedSolomonEncoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXResultMetadataType.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXResultMetadataType.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXResultPoint.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXResultPoint.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXResultPointCallback.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXResultPointCallback.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXSMSMMSResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXSMSMMSResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXSMSParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXSMSParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXSMSTOMMSTOResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXSMSTOMMSTOResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXSMTPResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXSMTPResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXStringUtils.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/ZXStringUtils.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXTelParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXTelParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXTelResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXTelResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXTextParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXTextParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXUPCAReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXUPCAReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXUPCAWriter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXUPCAWriter.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXUPCEANExtension2Support.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXUPCEANExtension2Support.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXUPCEANExtension5Support.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXUPCEANExtension5Support.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXUPCEANExtensionSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXUPCEANExtensionSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXUPCEANReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXUPCEANReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXUPCEANWriter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXUPCEANWriter.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXUPCEReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXUPCEReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXURIParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXURIParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXURIResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXURIResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXURLTOResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXURLTOResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXVCardResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXVCardResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXVEventResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXVEventResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXVINParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXVINParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXVINResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXVINResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXWhiteRectangleDetector.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/common/detector/ZXWhiteRectangleDetector.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXWifiParsedResult.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXWifiParsedResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXWifiResultParser.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/client/result/ZXWifiResultParser.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXWriter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXWriter.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXingObjC.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/ZXingObjC.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXingObjCAztec.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/aztec/ZXingObjCAztec.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXingObjCCore.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/core/ZXingObjCCore.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXingObjCDataMatrix.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/datamatrix/ZXingObjCDataMatrix.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXingObjCMaxiCode.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/maxicode/ZXingObjCMaxiCode.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXingObjCOneD.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/oned/ZXingObjCOneD.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXingObjCPDF417.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/pdf417/ZXingObjCPDF417.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXingObjCQRCode.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingObjc/qrcode/ZXingObjCQRCode.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZXingWrapper.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/LBXScan/LBXScan/LBXZXing/ZXingWrapper.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/LBXScan/LBXScan.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Intermediates/Pods.build/Debug-iphoneos/LBXScan.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "MBProgressHUD-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "MBProgressHUD-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "MBProgressHUD.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MBProgressHUD/MBProgressHUD.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Intermediates/Pods.build/Debug-iphoneos/MBProgressHUD.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/MJExtension/MJExtension.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "MJExtension-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/MJExtension/MJExtension.framework/Headers/MJExtension-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJExtension-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Target Support Files/MJExtension/MJExtension-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJExtension.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJExtension/MJExtension/MJExtension.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJExtensionConst.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJExtension/MJExtension/MJExtensionConst.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJFoundation.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJExtension/MJExtension/MJFoundation.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJProperty.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJExtension/MJExtension/MJProperty.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJPropertyKey.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJExtension/MJExtension/MJPropertyKey.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJPropertyType.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJExtension/MJExtension/MJPropertyType.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+MJClass.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJExtension/MJExtension/NSObject+MJClass.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+MJCoding.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJExtension/MJExtension/NSObject+MJCoding.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+MJKeyValue.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJExtension/MJExtension/NSObject+MJKeyValue.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+MJProperty.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJExtension/MJExtension/NSObject+MJProperty.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSString+MJExtension.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJExtension/MJExtension/NSString+MJExtension.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/MJExtension/MJExtension.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Intermediates/Pods.build/Debug-iphoneos/MJExtension.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/MJRefresh/MJRefresh.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "MJRefresh-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/MJRefresh/MJRefresh.framework/Headers/MJRefresh-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefresh-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Target Support Files/MJRefresh/MJRefresh-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefresh.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/MJRefresh.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshAutoFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshAutoGifFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshAutoNormalFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshAutoStateFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshBackFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Base/MJRefreshBackFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshBackGifFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshBackNormalFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshBackStateFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshComponent.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Base/MJRefreshComponent.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshConst.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/MJRefreshConst.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Base/MJRefreshFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshGifHeader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshGifHeader.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshHeader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Base/MJRefreshHeader.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshNormalHeader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshNormalHeader.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshStateHeader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshStateHeader.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSBundle+MJRefresh.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/NSBundle+MJRefresh.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIScrollView+MJExtension.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/UIScrollView+MJExtension.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIScrollView+MJRefresh.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/UIScrollView+MJRefresh.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIView+MJExtension.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/MJRefresh/MJRefresh/UIView+MJExtension.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/MJRefresh/MJRefresh.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Intermediates/Pods.build/Debug-iphoneos/MJRefresh.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/Masonry/Masonry.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "MASCompositeConstraint.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/MASCompositeConstraint.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASConstraint+Private.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/MASConstraint+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASConstraint.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/MASConstraint.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASConstraintMaker.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/MASConstraintMaker.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASLayoutConstraint.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/MASLayoutConstraint.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASUtilities.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/MASUtilities.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASViewAttribute.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/MASViewAttribute.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASViewConstraint.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/MASViewConstraint.h"
+        },
+        {
+          'type': 'file',
+          'name': "Masonry-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/Masonry/Masonry.framework/Headers/Masonry-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "Masonry-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Target Support Files/Masonry/Masonry-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Masonry.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/Masonry.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSArray+MASAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/NSArray+MASAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSArray+MASShorthandAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/NSArray+MASShorthandAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSLayoutConstraint+MASDebugAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/NSLayoutConstraint+MASDebugAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "View+MASAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/View+MASAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "View+MASShorthandAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/View+MASShorthandAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "ViewController+MASAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Masonry/Masonry/ViewController+MASAdditions.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/Masonry/Masonry.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Intermediates/Pods.build/Debug-iphoneos/Masonry.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/Pods_framework.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-framework-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Target Support Files/Pods-framework/Pods-framework-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_framework-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/Pods_framework.framework/Headers/Pods_framework-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/Pods_framework.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Intermediates/Pods.build/Debug-iphoneos/Pods-framework.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/ReactiveCocoa/ReactiveCocoa.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "MKAnnotationView+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/MKAnnotationView+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSArray+RACSequenceAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSArray+RACSequenceAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSData+RACSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSData+RACSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSDictionary+RACSequenceAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSDictionary+RACSequenceAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSEnumerator+RACSequenceAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSEnumerator+RACSequenceAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSFileHandle+RACSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSFileHandle+RACSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSIndexSet+RACSequenceAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSIndexSet+RACSequenceAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSInvocation+RACTypeParsing.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSInvocation+RACTypeParsing.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSNotificationCenter+RACSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSNotificationCenter+RACSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+RACDeallocating.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSObject+RACDeallocating.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+RACDescription.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSObject+RACDescription.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+RACKVOWrapper.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSObject+RACKVOWrapper.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+RACLifting.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSObject+RACLifting.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+RACPropertySubscribing.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSObject+RACPropertySubscribing.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+RACSelectorSignal.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSObject+RACSelectorSignal.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSOrderedSet+RACSequenceAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSOrderedSet+RACSequenceAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSSet+RACSequenceAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSSet+RACSequenceAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSString+RACKeyPathUtilities.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSString+RACKeyPathUtilities.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSString+RACSequenceAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSString+RACSequenceAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSString+RACSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSString+RACSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSURLConnection+RACSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSURLConnection+RACSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSUserDefaults+RACSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/NSUserDefaults+RACSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACArraySequence.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACArraySequence.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACBehaviorSubject.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACBehaviorSubject.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACBlockTrampoline.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACBlockTrampoline.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACChannel.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACChannel.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACCommand.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACCommand.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACCompoundDisposable.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACCompoundDisposable.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACDelegateProxy.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACDelegateProxy.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACDisposable.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACDisposable.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACDynamicSequence.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACDynamicSequence.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACDynamicSignal.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACDynamicSignal.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACEXTKeyPathCoding.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/extobjc/RACEXTKeyPathCoding.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACEXTRuntimeExtensions.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/extobjc/RACEXTRuntimeExtensions.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACEXTScope.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/extobjc/RACEXTScope.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACEagerSequence.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACEagerSequence.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACEmptySequence.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACEmptySequence.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACEmptySignal.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACEmptySignal.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACErrorSignal.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACErrorSignal.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACEvent.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACEvent.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACGroupedSignal.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACGroupedSignal.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACImmediateScheduler.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACImmediateScheduler.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACIndexSetSequence.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACIndexSetSequence.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACKVOChannel.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACKVOChannel.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACKVOProxy.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACKVOProxy.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACKVOTrampoline.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACKVOTrampoline.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACMulticastConnection.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACMulticastConnection.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACObjCRuntime.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACObjCRuntime.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACPassthroughSubscriber.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACPassthroughSubscriber.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACQueueScheduler+Subclass.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACQueueScheduler+Subclass.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACQueueScheduler.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACQueueScheduler.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACReplaySubject.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACReplaySubject.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACReturnSignal.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACReturnSignal.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACScheduler+Subclass.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACScheduler+Subclass.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACScheduler.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACScheduler.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACScopedDisposable.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACScopedDisposable.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACSequence.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACSequence.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACSerialDisposable.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACSerialDisposable.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACSignal+Operations.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACSignal+Operations.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACSignal.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACSignal.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACSignalSequence.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACSignalSequence.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACStream.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACStream.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACStringSequence.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACStringSequence.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACSubject.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACSubject.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACSubscriber.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACSubscriber.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACSubscriptingAssignmentTrampoline.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACSubscriptingAssignmentTrampoline.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACSubscriptionScheduler.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACSubscriptionScheduler.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACTargetQueueScheduler.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACTargetQueueScheduler.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACTestScheduler.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACTestScheduler.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACTuple.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACTuple.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACTupleSequence.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACTupleSequence.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACUnarySequence.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACUnarySequence.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACUnit.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACUnit.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACValueTransformer.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACValueTransformer.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACmetamacros.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/extobjc/RACmetamacros.h"
+        },
+        {
+          'type': 'file',
+          'name': "ReactiveCocoa-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/ReactiveCocoa/ReactiveCocoa.framework/Headers/ReactiveCocoa-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "ReactiveCocoa-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "ReactiveCocoa.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/ReactiveCocoa.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIActionSheet+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UIActionSheet+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIAlertView+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UIAlertView+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIBarButtonItem+RACCommandSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UIBarButtonItem+RACCommandSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIButton+RACCommandSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UIButton+RACCommandSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UICollectionReusableView+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UICollectionReusableView+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIControl+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UIControl+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIControl+RACSignalSupportPrivate.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UIControl+RACSignalSupportPrivate.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIDatePicker+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UIDatePicker+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIGestureRecognizer+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UIGestureRecognizer+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImagePickerController+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UIImagePickerController+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIRefreshControl+RACCommandSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UIRefreshControl+RACCommandSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UISegmentedControl+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UISegmentedControl+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UISlider+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UISlider+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIStepper+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UIStepper+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UISwitch+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UISwitch+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UITableViewCell+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UITableViewCell+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UITableViewHeaderFooterView+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UITableViewHeaderFooterView+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UITextField+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UITextField+RACSignalSupport.h"
+        },
+        {
+          'type': 'file',
+          'name': "UITextView+RACSignalSupport.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/UITextView+RACSignalSupport.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/ReactiveCocoa/ReactiveCocoa.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Intermediates/Pods.build/Debug-iphoneos/ReactiveCocoa.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/ReactiveCocoa/ReactiveCocoa.framework/PrivateHeaders",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "RACMulticastConnection+Private.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACMulticastConnection+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACScheduler+Private.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACScheduler+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACStream+Private.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACStream+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "RACSubscriber+Private.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ReactiveCocoa/ReactiveCocoa/RACSubscriber+Private.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/SDWebImage/SDWebImage.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "NSData+ImageContentType.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/NSData+ImageContentType.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDImageCache.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/SDImageCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImage-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/SDWebImage/SDWebImage.framework/Headers/SDWebImage-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImage-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Target Support Files/SDWebImage/SDWebImage-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageCompat.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/SDWebImageCompat.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/SDWebImageDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageDownloader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/SDWebImageDownloader.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageDownloaderOperation.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageManager.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/SDWebImageManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageOperation.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/SDWebImageOperation.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImagePrefetcher.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIButton+WebCache.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/UIButton+WebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImage+GIF.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/UIImage+GIF.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImage+MultiFormat.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImageView+HighlightedWebCache.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImageView+WebCache.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIView+WebCacheOperation.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/SDWebImage/SDWebImage/UIView+WebCacheOperation.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/SDWebImage/SDWebImage.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Intermediates/Pods.build/Debug-iphoneos/SDWebImage.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/ZBarSDK/ZBarSDK.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "ZBarCVImage.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/iphone/ZBarCVImage.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZBarCameraSimulator.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/iphone/include/ZBarSDK/ZBarCameraSimulator.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZBarCaptureReader.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/iphone/include/ZBarSDK/ZBarCaptureReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZBarHelpController.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/iphone/include/ZBarSDK/ZBarHelpController.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZBarImage.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/iphone/include/ZBarSDK/ZBarImage.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZBarImageScanner.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/iphone/include/ZBarSDK/ZBarImageScanner.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZBarReaderController.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/iphone/include/ZBarSDK/ZBarReaderController.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZBarReaderView.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/iphone/include/ZBarSDK/ZBarReaderView.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZBarReaderViewController.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/iphone/include/ZBarSDK/ZBarReaderViewController.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZBarSDK-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/ZBarSDK/ZBarSDK.framework/Headers/ZBarSDK-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZBarSDK-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/Target Support Files/ZBarSDK/ZBarSDK-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZBarSDK.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/iphone/include/ZBarSDK/ZBarSDK.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZBarSymbol.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/iphone/include/ZBarSDK/ZBarSymbol.h"
+        },
+        {
+          'type': 'file',
+          'name': "config.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/iphone/include/config.h"
+        },
+        {
+          'type': 'file',
+          'name': "debug.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/iphone/debug.h"
+        },
+        {
+          'type': 'file',
+          'name': "zbar.h",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Pods/ZBarSDK/include/zbar.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/sthl/Build/Products/Debug-iphoneos/ZBarSDK/ZBarSDK.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/sthl/Build/Intermediates/Pods.build/Debug-iphoneos/ZBarSDK.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
