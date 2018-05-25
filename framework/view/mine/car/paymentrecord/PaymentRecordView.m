@@ -39,7 +39,7 @@
     NSArray *titles = @[MSG_PAYMENTRECORD_VISITOR_TAB,MSG_PAYMENTRECORD_MONTH_TAB];
     _tabBarView = [[STTabBarView alloc]initWithTitles:titles];
     [_tabBarView setData:c12 SelectColor:c19 Font:[UIFont systemFontOfSize:STFont(16)]];
-    [_tabBarView setLineHeight:STHeight(1)];
+    [_tabBarView setLineHeight:1];
     [self addSubview:_tabBarView];
     
     WS(weakSelf)

@@ -107,7 +107,8 @@
     
     
     _wechatLoginBtn =  [[UIButton alloc]init];
-    _wechatLoginBtn.backgroundColor = cwhite;
+    _wechatLoginBtn.imageView.contentMode = UIViewContentModeScaleToFill;
+    [_wechatLoginBtn setImage:[UIImage imageNamed:@"ic_wechat"] forState:UIControlStateNormal];
     _wechatLoginBtn.frame = CGRectMake(STWidth(172), STHeight(617), STWidth(31), STWidth(31));
     [self addSubview:_wechatLoginBtn];
     [_wechatLoginBtn addTarget:self action:@selector(doWechatLogin) forControlEvents:UIControlEventTouchUpInside];

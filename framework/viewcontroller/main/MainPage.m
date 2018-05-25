@@ -11,6 +11,7 @@
 #import "MainView.h"
 #import "STNavigationView.h"
 #import "MinePage.h"
+#import "AuthUserPage.h"
 
 @interface MainPage ()<MainViewDelegate>
 
@@ -48,6 +49,11 @@
     _mMainView.frame = CGRectMake(0, StatuBarHeight+NavigationBarHeight, ScreenWidth, ScreenHeight - StatuBarHeight-NavigationBarHeight);
     _mMainView.backgroundColor = c01;
     [self.view addSubview:_mMainView];
+    
+    WS(weakSelf)
+    [STAlertUtil showAlertController:@"" content:@"请先认证身份信息" controller:self confirm:^{
+        [AuthUserPage show:weakSelf];
+    }];
 }
 
 -(void)onGoMinePage{

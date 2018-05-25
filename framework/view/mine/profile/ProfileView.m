@@ -13,7 +13,7 @@
 
 @property(strong, nonatomic)ProfileViewModel *mViewModel;
 @property(strong, nonatomic)UITableView *tableView;
-@property(strong, nonatomic)UILabel *tipsLabel;
+@property(strong, nonatomic)UIButton *tipsBtn;
 
 @end
 
@@ -39,16 +39,17 @@
     [self addSubview:_tableView];
     
 
-    _tipsLabel = [[UILabel alloc]initWithFont:STFont(14) text:MSG_PROFILE_VERIFY textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c24 multiLine:NO];
-    _tipsLabel.frame = CGRectMake(0, 0, ScreenWidth, STHeight(26));
-    [self addSubview:_tipsLabel];
+    _tipsBtn = [[UIButton alloc]initWithFont:STFont(14) text:MSG_PROFILE_VERIFY textColor:cwhite backgroundColor:c24 corner:0 borderWidth:0 borderColor:nil];
+    _tipsBtn.frame = CGRectMake(0, 0, ScreenWidth, STHeight(26));
+    [_tipsBtn addTarget:self action:@selector(OnClickTipsBtn) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_tipsBtn];
     
     [self fillInData];
 }
 
 -(void)fillInData{
     ProfileModel *model = [[ProfileModel alloc]init];
-    model.name = @"虚竹";
+    model.name = @"张三丰";
     model.gender = @"男";
     model.birthday = @"11.11";
     model.idNum = @"36240219911110412";
@@ -123,6 +124,13 @@
         }
     }
 }
+
+-(void)OnClickTipsBtn{
+    if(_mViewModel){
+        [_mViewModel goAuthStatuPage];
+    }
+}
+
 
 -(void)updateTableView{
     [_tableView reloadData];

@@ -17,6 +17,7 @@
 @property(strong, nonatomic)UIView *carView;
 @property(strong, nonatomic)UITableView *myCarTableView;
 @property(strong, nonatomic)UITableView *familyCarTableView;
+@property(strong, nonatomic)UILabel *familyCarTitle;
 
 
 @end
@@ -84,9 +85,9 @@
     _myCarTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_carView addSubview:_myCarTableView];
     
-    UILabel *familyCarTitle = [[UILabel alloc]initWithFont:STFont(14) text:MSG_CAR_FAMILYCAR textAlignment:NSTextAlignmentLeft textColor:c12 backgroundColor:nil multiLine:NO];
-    familyCarTitle.frame = CGRectMake(STWidth(15), STHeight(60) + height, ScreenWidth - STWidth(30), STHeight(14));
-    [_carView addSubview:familyCarTitle];
+    _familyCarTitle = [[UILabel alloc]initWithFont:STFont(14) text:MSG_CAR_FAMILYCAR textAlignment:NSTextAlignmentLeft textColor:c12 backgroundColor:nil multiLine:NO];
+    _familyCarTitle.frame = CGRectMake(STWidth(15), STHeight(60) + height, ScreenWidth - STWidth(30), STHeight(14));
+    [_carView addSubview:_familyCarTitle];
     
     _familyCarTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, STHeight(90) + height, ScreenWidth, STHeight(60) * [_mViewModel.familyCarDatas count])];
     _familyCarTableView.backgroundColor = cwhite;
@@ -224,6 +225,11 @@
 -(void)updateView{
     NSInteger height =  STHeight(60) * [_mViewModel.myCarDatas count];
     _myCarTableView.frame = CGRectMake(0, STHeight(45), ScreenWidth, height);
+    [_myCarTableView reloadData];
+    
+    _familyCarTitle.frame = CGRectMake(STWidth(15), STHeight(60) + height, ScreenWidth - STWidth(30), STHeight(14));
+    _familyCarTableView.frame = CGRectMake(0, STHeight(90) + height, ScreenWidth, STHeight(60) * [_mViewModel.familyCarDatas count]);
+    [_familyCarTableView reloadData];
 }
 
 

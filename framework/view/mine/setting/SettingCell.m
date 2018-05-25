@@ -38,7 +38,7 @@
     [self.contentView addSubview:_contentLabel];
     
     _arrowImageView = [[UIImageView alloc]init];
-    _arrowImageView.backgroundColor = c01;
+    _arrowImageView.image = [UIImage imageNamed:@"ic_right_arrow"];
     _arrowImageView.frame = CGRectMake(STWidth(354), STHeight(21), STWidth(7), STHeight(11));
     [self.contentView addSubview:_arrowImageView];
     
@@ -49,7 +49,7 @@
     
     _lineView = [[UIView alloc]init];
     _lineView.backgroundColor = c17;
-    _lineView.frame = CGRectMake(STWidth(15), STHeight(53), ScreenWidth - STWidth(30), STHeight(1));
+    _lineView.frame = CGRectMake(STWidth(15), STHeight(53), ScreenWidth - STWidth(30), 1);
     [self.contentView addSubview:_lineView];
 }
 

@@ -26,6 +26,7 @@
 @interface MineViewModel : NSObject
 @property(weak, nonatomic) id<MineViewDelegate> delegate;
 @property(strong, nonatomic) NSArray *titleArray;
+@property(strong, nonatomic) NSArray *imageArray;
 
 
 //跳转到资料修改页

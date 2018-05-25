@@ -53,7 +53,7 @@
     [view addSubview:_exitTimeLabel];
     
     
-    _authBtn = [[UIButton alloc]initWithFont:STFont(12) text:MSG_VISITORHISTORY_AUTH textColor:c13 backgroundColor:nil corner:STHeight(5) borderWidth:STHeight(1) borderColor:c13];
+    _authBtn = [[UIButton alloc]initWithFont:STFont(12) text:MSG_VISITORHISTORY_AUTH textColor:c13 backgroundColor:nil corner:STHeight(5) borderWidth:1 borderColor:c13];
     _authBtn.frame = CGRectMake(STWidth(265), STHeight(15), STWidth(65), STHeight(20));
     _authBtn.userInteractionEnabled = NO;
     [view addSubview:_authBtn];

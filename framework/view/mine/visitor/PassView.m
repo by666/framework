@@ -46,7 +46,7 @@
     titleLabel.frame = CGRectMake(0, 0, cardView.width, STHeight(50));
     [cardView addSubview:titleLabel];
     
-    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(50), cardView.width, STHeight(1))];
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(50), cardView.width,1)];
     lineView.backgroundColor = c26;
     [cardView addSubview:lineView];
     

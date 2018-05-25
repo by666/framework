@@ -13,6 +13,7 @@
 
 -(void)onGetCarDatas:(Boolean)success datas:(NSMutableArray *)datas;
 -(void)onDeleteCarModel:(Boolean)succes model:(CarModel *)model;
+-(void)onAddCarModel:(Boolean)success model:(CarModel *)model;
 -(void)onGoAddCarPage;
 -(void)onGoPaymentPage:(CarModel *)model;
 -(void)onGoPaymentRecordsPage;
@@ -34,6 +35,9 @@
 
 //删除我的车辆
 -(void)deleteCarModel:(CarModel *)model;
+
+//添加我的车辆
+-(void)addCarModel:(CarModel *)model;
 
 //跳转到添加车辆页面
 -(void)goAddCarPage;

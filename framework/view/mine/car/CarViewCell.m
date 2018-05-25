@@ -32,7 +32,7 @@
     
     _idetifyLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"" textAlignment:NSTextAlignmentCenter textColor:c19 backgroundColor:nil multiLine:NO];
     _idetifyLabel.layer.borderColor = [c19 CGColor];
-    _idetifyLabel.layer.borderWidth = STHeight(1);
+    _idetifyLabel.layer.borderWidth = 1;
     _idetifyLabel.layer.masksToBounds = YES;
     _idetifyLabel.layer.cornerRadius = STHeight(9);
     [self.contentView addSubview:_idetifyLabel];
@@ -43,7 +43,7 @@
     
     
     UIView *lineView = [[UIView alloc]init];
-    lineView.frame = CGRectMake(0, STHeight(59), ScreenWidth, STHeight(1));
+    lineView.frame = CGRectMake(0, STHeight(59), ScreenWidth, 1);
     lineView.backgroundColor = c17;
     [self.contentView addSubview:lineView];
 }

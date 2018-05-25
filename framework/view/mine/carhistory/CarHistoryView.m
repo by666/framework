@@ -14,6 +14,7 @@
 
 @property(strong, nonatomic)CarHistoryViewModel *mViewModel;
 @property(strong, nonatomic)UITableView *tableView;
+@property(strong, nonatomic)UILabel *noHistoryLabel;
 
 @end
 
@@ -30,6 +31,11 @@
 -(void)initView{
     
     [_mViewModel getCarHistoryDatas];
+    
+    
+    _noHistoryLabel = [[UILabel alloc]initWithFont:STFont(18) text:MSG_CARHISTORY_NODATA textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
+    _noHistoryLabel.frame = CGRectMake(0, STHeight(125), ScreenWidth, STHeight(18));
+    [self addSubview:_noHistoryLabel];
 
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight)];
     _tableView.backgroundColor = c15;
@@ -40,6 +46,15 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.contentSize = CGSizeMake(ScreenWidth, STHeight(141)*[_mViewModel.datas count]);
     [self addSubview:_tableView];
+    
+    
+    if(IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
+        _noHistoryLabel.hidden = NO;
+        _tableView.hidden = YES;
+    }else{
+        _noHistoryLabel.hidden = YES;
+        _tableView.hidden = NO;
+    }
     
 }
 

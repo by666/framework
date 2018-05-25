@@ -27,7 +27,6 @@
 
 -(void)initView{
     _iconImageView = [[UIImageView alloc]init];
-    _iconImageView.backgroundColor = c01;
     _iconImageView.frame = CGRectMake(STWidth(20), STHeight(18), STHeight(18), STHeight(18));
     [self.contentView addSubview:_iconImageView];
     
@@ -35,17 +34,19 @@
     [self.contentView addSubview:_titleLabel];
     
     _arrowImageView = [[UIImageView alloc]init];
-    _arrowImageView.backgroundColor = c01;
+    _arrowImageView.image = [UIImage imageNamed:@"ic_right_arrow"];
     _arrowImageView.frame = CGRectMake(STWidth(354), STHeight(21), STWidth(7), STHeight(11));
     [self.contentView addSubview:_arrowImageView];
     
 }
 
 
--(void)updateData:(NSString *)title{
+-(void)updateData:(NSString *)title image:(UIImage *)image{
     _titleLabel.text = title;
     CGSize titleSize = [title sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     _titleLabel.frame = CGRectMake(STWidth(58), STHeight(20),titleSize.width , STHeight(16));
+    
+    _iconImageView.image = image;
 
 }
 

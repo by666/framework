@@ -14,6 +14,7 @@
 -(void)onUpdateProfile;
 -(void)onGoFaceEnterPage;
 -(void)onUploadHeadImage:(Boolean)success image:(NSString *)imagePath;
+-(void)onGoAuthStatuPage;
 
 @end
 
@@ -26,5 +27,6 @@
 -(void)updateProfile;
 -(void)goFaceEnterPage;
 -(void)uploadHeadImage:(NSString *)imagePath;
+-(void)goAuthStatuPage;
 
 @end

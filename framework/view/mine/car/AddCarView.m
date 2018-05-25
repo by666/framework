@@ -51,7 +51,7 @@
     
     UIView *lineView = [[UIView alloc]init];
     lineView.backgroundColor = c17;
-    lineView.frame = CGRectMake(0, STHeight(60),STWidth(ScreenWidth), STHeight(1));
+    lineView.frame = CGRectMake(0, STHeight(60),STWidth(ScreenWidth), 1);
     [contentView addSubview:lineView];
     
     UILabel *carNumLabel = [[UILabel alloc]initWithFont:STFont(18) text:MSG_ADDCAR_CARNUM textAlignment:NSTextAlignmentLeft textColor:c20 backgroundColor:nil multiLine:NO];
@@ -164,6 +164,8 @@
 }
 
 -(void)OnClickHeadBtn{
+    
+    [_numTextField resignFirstResponder];
     _layerView.hidden = NO;
 
     NSString *text =  _headBtn.titleLabel.text;
@@ -185,6 +187,7 @@
     }
     [_carNumPickerView selectRow:row1 inComponent:0 animated:YES];
     [_carNumPickerView selectRow:row2 inComponent:1 animated:YES];
+    
 
 }
 

@@ -52,30 +52,37 @@
     _avatarBtn.frame = CGRectMake(STWidth(156), STHeight(78), STWidth(62), STWidth(62));
     _avatarBtn.layer.masksToBounds = YES;
     _avatarBtn.layer.cornerRadius = STWidth(31);
+    _avatarBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [_avatarBtn setImage:[UIImage imageNamed:@"ic_test1"] forState:UIControlStateNormal];
     [_avatarBtn addTarget:self action:@selector(OnClickAvatarBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_avatarBtn];
     
     UIImageView *editImageView = [[UIImageView alloc]init];
     editImageView.frame = CGRectMake(STWidth(206), STHeight(81), STWidth(23), STWidth(23));
-    editImageView.backgroundColor = c01;
+    editImageView.backgroundColor = c07;
+    editImageView.layer.masksToBounds = YES;
+    editImageView.layer.cornerRadius = STWidth(11.5);
+    editImageView.image = [UIImage imageNamed:@"ic_edit"];
+    editImageView.contentMode = UIViewContentModeScaleAspectFit;
     editImageView.userInteractionEnabled = NO;
     [self addSubview:editImageView];
     
-    _nameLabel = [[UILabel alloc]initWithFont:STFont(18) text:@"虚竹" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    _nameLabel = [[UILabel alloc]initWithFont:STFont(18) text:@"张三丰" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
     _nameLabel.frame = CGRectMake(0, STHeight(154), ScreenWidth, STHeight(18));
     [self addSubview:_nameLabel];
     
     UIImageView *districtImageView = [[UIImageView alloc]init];
-    districtImageView.backgroundColor = c01;
+    districtImageView.image = [UIImage imageNamed:@"ic_building"];
+    districtImageView.contentMode = UIViewContentModeScaleAspectFill;
     districtImageView.frame = CGRectMake(STWidth(150), STHeight(180), STHeight(14), STHeight(14));
     [self addSubview:districtImageView];
     
-    _districtLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"缥缈峰" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    _districtLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"武当山" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
     _districtLabel.frame = CGRectMake(STWidth(163), STHeight(180), STWidth(70), STHeight(14));
     [self addSubview:_districtLabel];
     
     _settingBtn = [[UIButton alloc]init];
-    _settingBtn.backgroundColor = c01;
+    [_settingBtn setImage:[UIImage imageNamed:@"ic_setting"] forState:UIControlStateNormal];
     _settingBtn.frame = CGRectMake(STWidth(342), STHeight(31.4), STWidth(20), STWidth(20));
     [_settingBtn addTarget:self action:@selector(onClickSettingBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_settingBtn];
@@ -142,7 +149,8 @@
     }else{
         position = 5 + indexPath.row;
     }
-    [cell updateData:[_mViewModel.titleArray objectAtIndex:position]];
+    UIImage *image = [UIImage imageNamed:[_mViewModel.imageArray objectAtIndex:position]];
+    [cell updateData:[_mViewModel.titleArray objectAtIndex:position] image:image];
     return cell;
 }
 

@@ -80,6 +80,15 @@
     }
 }
 
+-(void)addCarModel:(CarModel *)model{
+    if(_delegate){
+        _myCarDatas = [self getMyCarDatas];
+        [_myCarDatas addObject:model];
+        _familyCarDatas = [self getFamilyCarDatas];
+        [_delegate onAddCarModel:YES model:model];
+    }
+}
+
 -(void)goAddCarPage{
     if(_delegate){
         [_delegate onGoAddCarPage];

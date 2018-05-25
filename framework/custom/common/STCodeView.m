@@ -29,7 +29,7 @@
     for(int i = 0 ; i < 6 ; i ++){
         UITextField *textField = [[UITextField alloc]init];
         textField.frame = CGRectMake(STWidth(43) + STWidth(50) * i, 0, STWidth(38), STHeight(50));
-        textField.layer.borderWidth = STHeight(1);
+        textField.layer.borderWidth = 1;
         textField.layer.borderColor = [c09 CGColor];
         textField.layer.masksToBounds = YES;
         textField.layer.cornerRadius = STHeight(2);

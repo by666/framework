@@ -84,6 +84,13 @@
 		002F94BB20B42A8800F84094 /* VisitorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F94BA20B42A8800F84094 /* VisitorView.m */; };
 		0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2820942ABD0044D92E /* STObserverManager.m */; };
 		0039FC2C20942BDF0044D92E /* STObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2B20942BDF0044D92E /* STObserver.m */; };
+		003EDA8320B7BF5D00CFCFE9 /* CommunityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDA8220B7BF5D00CFCFE9 /* CommunityView.m */; };
+		003EDA8620B7BF6800CFCFE9 /* CommunityViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDA8520B7BF6800CFCFE9 /* CommunityViewModel.m */; };
+		003EDA8920B7F5AD00CFCFE9 /* STBuildingLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDA8820B7F5AD00CFCFE9 /* STBuildingLayerView.m */; };
+		003EDA8B20B8005300CFCFE9 /* address.txt in Resources */ = {isa = PBXBuildFile; fileRef = 003EDA8A20B8005300CFCFE9 /* address.txt */; };
+		003EDA8F20B8011000CFCFE9 /* STAddressLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDA8E20B8011000CFCFE9 /* STAddressLayerView.m */; };
+		003EDA9B20B80BDD00CFCFE9 /* AddressLayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDA9A20B80BDD00CFCFE9 /* AddressLayerModel.m */; };
+		003EDA9D20B8260E00CFCFE9 /* building.txt in Resources */ = {isa = PBXBuildFile; fileRef = 003EDA9C20B8260E00CFCFE9 /* building.txt */; };
 		004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51620A16DC400BA9602 /* STAlertUtil.m */; };
 		004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51920A1A37E00BA9602 /* STSheetModel.m */; };
 		004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF52120A2A23C00BA9602 /* LoginViewModel.m */; };
@@ -150,6 +157,14 @@
 		004EF60120AD885A00BA9602 /* AddMemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF60020AD885900BA9602 /* AddMemberView.m */; };
 		004EF60420AD887500BA9602 /* AddMemberPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF60320AD887500BA9602 /* AddMemberPage.m */; };
 		004EF60720AD892B00BA9602 /* AddMemberViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF60620AD892B00BA9602 /* AddMemberViewModel.m */; };
+		00507FF820B6A8A100A976D9 /* AuthStatuPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00507FF720B6A8A100A976D9 /* AuthStatuPage.m */; };
+		00507FFC20B6ABDD00A976D9 /* AuthStatuViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00507FFB20B6ABDD00A976D9 /* AuthStatuViewModel.m */; };
+		0050800020B6AC8800A976D9 /* AuthStatuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00507FFF20B6AC8800A976D9 /* AuthStatuView.m */; };
+		0050800620B6B70500A976D9 /* STResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0050800520B6B70500A976D9 /* STResultView.m */; };
+		0050800920B6BAEE00A976D9 /* AuthUserPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0050800820B6BAEE00A976D9 /* AuthUserPage.m */; };
+		0050800C20B6BB1700A976D9 /* AuthUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0050800B20B6BB1700A976D9 /* AuthUserView.m */; };
+		0050800F20B6BB2600A976D9 /* AuthUserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0050800E20B6BB2600A976D9 /* AuthUserViewModel.m */; };
+		0050801320B6BC4900A976D9 /* UserAuthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0050801220B6BC4900A976D9 /* UserAuthModel.m */; };
 		005F7A8920901F0C003CA4CA /* MasonryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F7A8820901F0C003CA4CA /* MasonryPage.m */; };
 		007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F2E20858EB3009EA9F1 /* AppDelegate.m */; };
 		007B1F3720858EB6009EA9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007B1F3620858EB6009EA9F1 /* Assets.xcassets */; };
@@ -365,6 +380,18 @@
 		0039FC2820942ABD0044D92E /* STObserverManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObserverManager.m; sourceTree = "<group>"; };
 		0039FC2A20942BDF0044D92E /* STObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObserver.h; sourceTree = "<group>"; };
 		0039FC2B20942BDF0044D92E /* STObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObserver.m; sourceTree = "<group>"; };
+		003EDA8120B7BF5D00CFCFE9 /* CommunityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityView.h; sourceTree = "<group>"; };
+		003EDA8220B7BF5D00CFCFE9 /* CommunityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityView.m; sourceTree = "<group>"; };
+		003EDA8420B7BF6800CFCFE9 /* CommunityViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityViewModel.h; sourceTree = "<group>"; };
+		003EDA8520B7BF6800CFCFE9 /* CommunityViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityViewModel.m; sourceTree = "<group>"; };
+		003EDA8720B7F5AD00CFCFE9 /* STBuildingLayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBuildingLayerView.h; sourceTree = "<group>"; };
+		003EDA8820B7F5AD00CFCFE9 /* STBuildingLayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBuildingLayerView.m; sourceTree = "<group>"; };
+		003EDA8A20B8005300CFCFE9 /* address.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = address.txt; sourceTree = "<group>"; };
+		003EDA8D20B8011000CFCFE9 /* STAddressLayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STAddressLayerView.h; sourceTree = "<group>"; };
+		003EDA8E20B8011000CFCFE9 /* STAddressLayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAddressLayerView.m; sourceTree = "<group>"; };
+		003EDA9920B80BDD00CFCFE9 /* AddressLayerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressLayerModel.h; sourceTree = "<group>"; };
+		003EDA9A20B80BDD00CFCFE9 /* AddressLayerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressLayerModel.m; sourceTree = "<group>"; };
+		003EDA9C20B8260E00CFCFE9 /* building.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = building.txt; sourceTree = "<group>"; };
 		004EF51520A16DC400BA9602 /* STAlertUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STAlertUtil.h; sourceTree = "<group>"; };
 		004EF51620A16DC400BA9602 /* STAlertUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAlertUtil.m; sourceTree = "<group>"; };
 		004EF51820A1A37E00BA9602 /* STSheetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSheetModel.h; sourceTree = "<group>"; };
@@ -497,6 +524,22 @@
 		004EF60320AD887500BA9602 /* AddMemberPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddMemberPage.m; sourceTree = "<group>"; };
 		004EF60520AD892B00BA9602 /* AddMemberViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddMemberViewModel.h; sourceTree = "<group>"; };
 		004EF60620AD892B00BA9602 /* AddMemberViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddMemberViewModel.m; sourceTree = "<group>"; };
+		00507FF620B6A8A100A976D9 /* AuthStatuPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthStatuPage.h; sourceTree = "<group>"; };
+		00507FF720B6A8A100A976D9 /* AuthStatuPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthStatuPage.m; sourceTree = "<group>"; };
+		00507FFA20B6ABDD00A976D9 /* AuthStatuViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthStatuViewModel.h; sourceTree = "<group>"; };
+		00507FFB20B6ABDD00A976D9 /* AuthStatuViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthStatuViewModel.m; sourceTree = "<group>"; };
+		00507FFE20B6AC8800A976D9 /* AuthStatuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthStatuView.h; sourceTree = "<group>"; };
+		00507FFF20B6AC8800A976D9 /* AuthStatuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthStatuView.m; sourceTree = "<group>"; };
+		0050800420B6B70500A976D9 /* STResultView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STResultView.h; sourceTree = "<group>"; };
+		0050800520B6B70500A976D9 /* STResultView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STResultView.m; sourceTree = "<group>"; };
+		0050800720B6BAEE00A976D9 /* AuthUserPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthUserPage.h; sourceTree = "<group>"; };
+		0050800820B6BAEE00A976D9 /* AuthUserPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthUserPage.m; sourceTree = "<group>"; };
+		0050800A20B6BB1700A976D9 /* AuthUserView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthUserView.h; sourceTree = "<group>"; };
+		0050800B20B6BB1700A976D9 /* AuthUserView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthUserView.m; sourceTree = "<group>"; };
+		0050800D20B6BB2600A976D9 /* AuthUserViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthUserViewModel.h; sourceTree = "<group>"; };
+		0050800E20B6BB2600A976D9 /* AuthUserViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthUserViewModel.m; sourceTree = "<group>"; };
+		0050801120B6BC4900A976D9 /* UserAuthModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserAuthModel.h; sourceTree = "<group>"; };
+		0050801220B6BC4900A976D9 /* UserAuthModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserAuthModel.m; sourceTree = "<group>"; };
 		005F7A8720901F0C003CA4CA /* MasonryPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryPage.h; sourceTree = "<group>"; };
 		005F7A8820901F0C003CA4CA /* MasonryPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryPage.m; sourceTree = "<group>"; };
 		007B1F2A20858EB3009EA9F1 /* framework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = framework.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -671,6 +714,7 @@
 		0006DF1520898BC2005A4465 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				003EDA8C20B800F100CFCFE9 /* address */,
 				002F948920B3C87B00F84094 /* STTabBarView.h */,
 				002F948820B3C87A00F84094 /* STTabBarView.m */,
 				004EF56F20AA8F1100BA9602 /* CircularProgressView.h */,
@@ -691,6 +735,11 @@
 				CFB6D1B020B5405600A0863B /* STDateLayerView.m */,
 				CFB6D1B220B544BB00A0863B /* STCarNumLayerView.h */,
 				CFB6D1B320B544BB00A0863B /* STCarNumLayerView.m */,
+				0050800420B6B70500A976D9 /* STResultView.h */,
+				0050800520B6B70500A976D9 /* STResultView.m */,
+				003EDA8720B7F5AD00CFCFE9 /* STBuildingLayerView.h */,
+				003EDA8820B7F5AD00CFCFE9 /* STBuildingLayerView.m */,
+				003EDA9C20B8260E00CFCFE9 /* building.txt */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -1000,6 +1049,18 @@
 				CFB6D1B620B55D6B00A0863B /* PassView.m */,
 			);
 			path = visitor;
+			sourceTree = "<group>";
+		};
+		003EDA8C20B800F100CFCFE9 /* address */ = {
+			isa = PBXGroup;
+			children = (
+				003EDA8A20B8005300CFCFE9 /* address.txt */,
+				003EDA8D20B8011000CFCFE9 /* STAddressLayerView.h */,
+				003EDA8E20B8011000CFCFE9 /* STAddressLayerView.m */,
+				003EDA9920B80BDD00CFCFE9 /* AddressLayerModel.h */,
+				003EDA9A20B80BDD00CFCFE9 /* AddressLayerModel.m */,
+			);
+			path = address;
 			sourceTree = "<group>";
 		};
 		004EF51B20A1A49500BA9602 /* alert */ = {
@@ -1342,6 +1403,52 @@
 			path = member;
 			sourceTree = "<group>";
 		};
+		00507FF520B68AF700A976D9 /* auth */ = {
+			isa = PBXGroup;
+			children = (
+				00507FF620B6A8A100A976D9 /* AuthStatuPage.h */,
+				00507FF720B6A8A100A976D9 /* AuthStatuPage.m */,
+				0050800720B6BAEE00A976D9 /* AuthUserPage.h */,
+				0050800820B6BAEE00A976D9 /* AuthUserPage.m */,
+			);
+			path = auth;
+			sourceTree = "<group>";
+		};
+		00507FF920B6ABCC00A976D9 /* auth */ = {
+			isa = PBXGroup;
+			children = (
+				00507FFA20B6ABDD00A976D9 /* AuthStatuViewModel.h */,
+				00507FFB20B6ABDD00A976D9 /* AuthStatuViewModel.m */,
+				0050800D20B6BB2600A976D9 /* AuthUserViewModel.h */,
+				0050800E20B6BB2600A976D9 /* AuthUserViewModel.m */,
+				003EDA8420B7BF6800CFCFE9 /* CommunityViewModel.h */,
+				003EDA8520B7BF6800CFCFE9 /* CommunityViewModel.m */,
+			);
+			path = auth;
+			sourceTree = "<group>";
+		};
+		00507FFD20B6AC7D00A976D9 /* auth */ = {
+			isa = PBXGroup;
+			children = (
+				00507FFE20B6AC8800A976D9 /* AuthStatuView.h */,
+				00507FFF20B6AC8800A976D9 /* AuthStatuView.m */,
+				0050800A20B6BB1700A976D9 /* AuthUserView.h */,
+				0050800B20B6BB1700A976D9 /* AuthUserView.m */,
+				003EDA8120B7BF5D00CFCFE9 /* CommunityView.h */,
+				003EDA8220B7BF5D00CFCFE9 /* CommunityView.m */,
+			);
+			path = auth;
+			sourceTree = "<group>";
+		};
+		0050801020B6BC3200A976D9 /* auth */ = {
+			isa = PBXGroup;
+			children = (
+				0050801120B6BC4900A976D9 /* UserAuthModel.h */,
+				0050801220B6BC4900A976D9 /* UserAuthModel.m */,
+			);
+			path = auth;
+			sourceTree = "<group>";
+		};
 		007B1F2120858EB3009EA9F1 = {
 			isa = PBXGroup;
 			children = (
@@ -1446,6 +1553,7 @@
 		007B1F6220858F17009EA9F1 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				0050801020B6BC3200A976D9 /* auth */,
 				004EF5BF20AC05FA00BA9602 /* net */,
 				004EF5BE20AC05EE00BA9602 /* extra */,
 				004EF5BD20AC05E100BA9602 /* main */,
@@ -1458,6 +1566,7 @@
 		007B1F6320858F1D009EA9F1 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				00507FFD20B6AC7D00A976D9 /* auth */,
 				004EF57E20AAC97100BA9602 /* mine */,
 				004EF57420AAC4AB00BA9602 /* main */,
 				004EF57320AAC4A100BA9602 /* login */,
@@ -1508,6 +1617,7 @@
 		00D324B42085EE25001EC82F /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				00507FF920B6ABCC00A976D9 /* auth */,
 				004EF58220AAC98E00BA9602 /* mine */,
 				004EF57620AAC4F100BA9602 /* main */,
 				004EF57520AAC4E100BA9602 /* login */,
@@ -1518,6 +1628,7 @@
 		00D324B52085EE3F001EC82F /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				00507FF520B68AF700A976D9 /* auth */,
 				004EF57A20AAC95000BA9602 /* mine */,
 				004EF57220AAC49900BA9602 /* main */,
 				004EF57120AAC48600BA9602 /* login */,
@@ -1797,7 +1908,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003EDA9D20B8260E00CFCFE9 /* building.txt in Resources */,
 				007B1F3720858EB6009EA9F1 /* Assets.xcassets in Resources */,
+				003EDA8B20B8005300CFCFE9 /* address.txt in Resources */,
 				00C25444209BF5B200E8E306 /* CodeScan.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1900,6 +2013,7 @@
 				002F945020AFFBEF00F84094 /* AddCarViewModel.m in Sources */,
 				004EF58B20AAD3F400BA9602 /* MemberPage.m in Sources */,
 				004EF59D20AAD45200BA9602 /* HabitantPage.m in Sources */,
+				0050800020B6AC8800A976D9 /* AuthStatuView.m in Sources */,
 				004EF55220A4358400BA9602 /* FaceLoginViewModel.m in Sources */,
 				00D324B2208598A7001EC82F /* STTimeUtil.m in Sources */,
 				005F7A8920901F0C003CA4CA /* MasonryPage.m in Sources */,
@@ -1912,6 +2026,7 @@
 				004EF53A20A2FDB200BA9602 /* BindPhonePage.m in Sources */,
 				00812BC52091A14500E2E70B /* STConvertUtil.m in Sources */,
 				00D3249D208596ED001EC82F /* UILabel+ContentSize.m in Sources */,
+				00507FFC20B6ABDD00A976D9 /* AuthStatuViewModel.m in Sources */,
 				004EF5E920AD2A8E00BA9602 /* STCodeView.m in Sources */,
 				00D324B1208598A7001EC82F /* STColorUtil.m in Sources */,
 				00D324D320873B14001EC82F /* RespondModel.m in Sources */,
@@ -1931,6 +2046,7 @@
 				004EF5A320AAEAC600BA9602 /* HabitantView.m in Sources */,
 				0006DF9E208DBCAD005A4465 /* CanvasView.m in Sources */,
 				004EF5AD20ABDE6300BA9602 /* MineCell.m in Sources */,
+				003EDA8F20B8011000CFCFE9 /* STAddressLayerView.m in Sources */,
 				CF43E3D220B57F9B0069AAFA /* VisitorHistoryViewModel.m in Sources */,
 				0006DF96208DBCAD005A4465 /* IFlyFaceImage.m in Sources */,
 				004EF58520AAC99A00BA9602 /* MineViewModel.m in Sources */,
@@ -1976,14 +2092,17 @@
 				004EF5C520AC2C8500BA9602 /* FaceEnterView.m in Sources */,
 				004EF5BC20AC05D100BA9602 /* TitleContentModel.m in Sources */,
 				002F949420B3EA6B00F84094 /* MonthPaymentCell.m in Sources */,
+				003EDA8620B7BF6800CFCFE9 /* CommunityViewModel.m in Sources */,
 				0006DFA8208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m in Sources */,
 				007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */,
+				0050800C20B6BB1700A976D9 /* AuthUserView.m in Sources */,
 				0006DFA2208DC05B005A4465 /* SystemFacePage.m in Sources */,
 				00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */,
 				004EF5C820AC2CD500BA9602 /* FaceEnterViewModel.m in Sources */,
 				CFB6D1A820B5358200A0863B /* VisitorHomePage.m in Sources */,
 				004EF53D20A2FF8200BA9602 /* BindPhoneView.m in Sources */,
 				002F94A120B406FD00F84094 /* CarHistoryView.m in Sources */,
+				0050801320B6BC4900A976D9 /* UserAuthModel.m in Sources */,
 				004EF5DD20AC51D600BA9602 /* UpdatePhoneNumPage.m in Sources */,
 				002F94BB20B42A8800F84094 /* VisitorView.m in Sources */,
 				00D3249B208596ED001EC82F /* UILabel+StringFrame.m in Sources */,
@@ -1998,6 +2117,7 @@
 				004EF5AA20AAEB4800BA9602 /* HabitantModel.m in Sources */,
 				002F947420B2C0CF00F84094 /* PaymentRecordView.m in Sources */,
 				002F944020AFF23F00F84094 /* CarViewModel.m in Sources */,
+				00507FF820B6A8A100A976D9 /* AuthStatuPage.m in Sources */,
 				004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */,
 				004EF60120AD885A00BA9602 /* AddMemberView.m in Sources */,
 				004EF59120AAD41700BA9602 /* VisitorHistoryPage.m in Sources */,
@@ -2016,17 +2136,23 @@
 				002F946E20B2B96900F84094 /* PaymentRecordPage.m in Sources */,
 				004EF52E20A2D30800BA9602 /* UILabel+Init.m in Sources */,
 				CFB6D1B120B5405600A0863B /* STDateLayerView.m in Sources */,
+				0050800620B6B70500A976D9 /* STResultView.m in Sources */,
+				0050800F20B6BB2600A976D9 /* AuthUserViewModel.m in Sources */,
 				0006DF1820898BDE005A4465 /* STRefreshTableView.m in Sources */,
+				003EDA9B20B80BDD00CFCFE9 /* AddressLayerModel.m in Sources */,
 				004EF5F520AD6A0D00BA9602 /* MemberViewModel.m in Sources */,
 				002F94B020B40ED500F84094 /* OnePaymentPage.m in Sources */,
+				003EDA8320B7BF5D00CFCFE9 /* CommunityView.m in Sources */,
 				004EF5CB20AC44F900BA9602 /* SettingView.m in Sources */,
 				004EF5C220AC2C1800BA9602 /* FaceEnterPage.m in Sources */,
+				003EDA8920B7F5AD00CFCFE9 /* STBuildingLayerView.m in Sources */,
 				004EF5E620AC558A00BA9602 /* UpdatePhoneNumViewModel.m in Sources */,
 				002F948E20B3E8A000F84094 /* VisitorPaymentView.m in Sources */,
 				0006DF9C208DBCAD005A4465 /* IFlyFaceResultKeys.m in Sources */,
 				00CCE9AB208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m in Sources */,
 				0006DF9B208DBCAD005A4465 /* IFlyFaceResultDetector.m in Sources */,
 				004EF5E320AC557700BA9602 /* UpdatePhoneNumView.m in Sources */,
+				0050800920B6BAEE00A976D9 /* AuthUserPage.m in Sources */,
 				002F946820B298EA00F84094 /* PaymentView.m in Sources */,
 				00D324CA2086E355001EC82F /* ByView.m in Sources */,
 				004EF59720AAD43100BA9602 /* CarHistoryPage.m in Sources */,

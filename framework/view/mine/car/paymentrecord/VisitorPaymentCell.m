@@ -38,7 +38,7 @@
     
     STEdgeLabel *enterTitleLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"进" textAlignment:NSTextAlignmentCenter textColor:c19 backgroundColor:nil multiLine:NO];
     enterTitleLabel.layer.borderColor = [c19 CGColor];
-    enterTitleLabel.layer.borderWidth = STHeight(1);
+    enterTitleLabel.layer.borderWidth = 1;
     enterTitleLabel.layer.masksToBounds = YES;
     enterTitleLabel.layer.cornerRadius = STHeight(9);
     enterTitleLabel.frame = CGRectMake(STWidth(15), STHeight(69), STHeight(18), STHeight(18));
@@ -46,7 +46,7 @@
     
     STEdgeLabel *exitTitleLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"出" textAlignment:NSTextAlignmentCenter textColor:c19 backgroundColor:nil multiLine:NO];
     exitTitleLabel.layer.borderColor = [c19 CGColor];
-    exitTitleLabel.layer.borderWidth = STHeight(1);
+    exitTitleLabel.layer.borderWidth = 1;
     exitTitleLabel.layer.masksToBounds = YES;
     exitTitleLabel.layer.cornerRadius = STHeight(9);
     exitTitleLabel.frame = CGRectMake(STWidth(15), STHeight(96), STHeight(18), STHeight(18));
@@ -76,12 +76,12 @@
     [self.contentView addSubview:_amountLabel];
     
     UIView *lineView1 = [[UIView alloc]init];
-    lineView1.frame = CGRectMake(0, STHeight(48), ScreenWidth, STHeight(1));
+    lineView1.frame = CGRectMake(0, STHeight(48), ScreenWidth, 1);
     lineView1.backgroundColor = c17;
     [self.contentView addSubview:lineView1];
     
     UIView *lineView2= [[UIView alloc]init];
-    lineView2.frame = CGRectMake(0, STHeight(130), ScreenWidth, STHeight(1));
+    lineView2.frame = CGRectMake(0, STHeight(130), ScreenWidth,1);
     lineView2.backgroundColor = c17;
     [self.contentView addSubview:lineView2];
     

@@ -19,6 +19,7 @@
 @property(strong, nonatomic)CarView *carView;
 @property(strong, nonatomic)CarViewModel *viewModel;
 
+
 @end
 
 @implementation CarPage
@@ -31,13 +32,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = cwhite;
-    [self showSTNavigationBar:MSG_CAR_TITLE needback:YES ];
+    WS(weakSelf)
+    [self showSTNavigationBar:MSG_CAR_TITLE needback:YES rightBtn:MSG_CAR_ADD block:^{
+        [AddCarPage show:weakSelf];
+    }];
     [self initView];
     [[STObserverManager sharedSTObserverManager]registerSTObsever:Notify_DeleteCar delegate:self];
+    [[STObserverManager sharedSTObserverManager]registerSTObsever:Notify_AddCar delegate:self];
+
 }
 
 -(void)dealloc{
     [[STObserverManager sharedSTObserverManager]removeSTObsever:Notify_DeleteCar];
+    [[STObserverManager sharedSTObserverManager]removeSTObsever:Notify_AddCar];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -63,6 +70,10 @@
     [_carView updateView];
 }
 
+-(void)onAddCarModel:(Boolean)success model:(CarModel *)model{
+    [_carView updateView];
+}
+
 -(void)onGoCarDetailPage:(CarModel *)model{
     [CarDetailPage show:self model:model];
 }
@@ -84,6 +95,9 @@
     if([key isEqualToString:Notify_DeleteCar]){
         CarModel *model = msg;
         [_viewModel deleteCarModel:model];
+    }else if([key isEqualToString:Notify_AddCar]){
+        CarModel *model = msg;
+        [_viewModel addCarModel:model];
     }
 }
 

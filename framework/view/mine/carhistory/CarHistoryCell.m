@@ -39,7 +39,7 @@
     
     STEdgeLabel *enterTitleLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"进" textAlignment:NSTextAlignmentCenter textColor:c19 backgroundColor:nil multiLine:NO];
     enterTitleLabel.layer.borderColor = [c19 CGColor];
-    enterTitleLabel.layer.borderWidth = STHeight(1);
+    enterTitleLabel.layer.borderWidth = 1;
     enterTitleLabel.layer.masksToBounds = YES;
     enterTitleLabel.layer.cornerRadius = STHeight(9);
     enterTitleLabel.frame = CGRectMake(STWidth(15), STHeight(69), STHeight(18), STHeight(18));
@@ -47,7 +47,7 @@
     
     STEdgeLabel *exitTitleLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"出" textAlignment:NSTextAlignmentCenter textColor:c19 backgroundColor:nil multiLine:NO];
     exitTitleLabel.layer.borderColor = [c19 CGColor];
-    exitTitleLabel.layer.borderWidth = STHeight(1);
+    exitTitleLabel.layer.borderWidth = 1;
     exitTitleLabel.layer.masksToBounds = YES;
     exitTitleLabel.layer.cornerRadius = STHeight(9);
     exitTitleLabel.frame = CGRectMake(STWidth(15), STHeight(96), STHeight(18), STHeight(18));
@@ -60,13 +60,13 @@
     [self.contentView addSubview:_exitTimeLabel];
     
 
-    _payBtn = [[UIButton alloc]initWithFont:STFont(12) text:@"" textColor:c19 backgroundColor:nil corner:STHeight(12.5) borderWidth:STHeight(1) borderColor:c19];
+    _payBtn = [[UIButton alloc]initWithFont:STFont(12) text:@"" textColor:c19 backgroundColor:nil corner:STHeight(12.5) borderWidth:1 borderColor:c19];
     _payBtn.frame = CGRectMake(STWidth(261), STHeight(78), STWidth(95), 25);
     _payBtn.userInteractionEnabled = NO;
     [self.contentView addSubview:_payBtn];
     
     UIView *lineView = [[UIView alloc]init];
-    lineView.frame = CGRectMake(0, STHeight(48), ScreenWidth, STHeight(1));
+    lineView.frame = CGRectMake(0, STHeight(48), ScreenWidth, 1);
     lineView.backgroundColor = c17;
     [self.contentView addSubview:lineView];
 

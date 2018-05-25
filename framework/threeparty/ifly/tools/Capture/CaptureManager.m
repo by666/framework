@@ -55,14 +55,14 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     self.motionManager.gyroUpdateInterval = .2;
     
     [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue]
-                                        withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
-                                            if (!error) {
-                                                [self updateAccelertionData:accelerometerData.acceleration];
-                                            }
-                                            else{
-                                                NSLog(@"%@", error);
-                                            }
-                                        }];
+                                             withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
+                                                 if (!error) {
+                                                     [self updateAccelertionData:accelerometerData.acceleration];
+                                                 }
+                                                 else{
+                                                     NSLog(@"%@", error);
+                                                 }
+                                             }];
     
     // session
     dispatch_queue_t sessionQueue = dispatch_queue_create("session queue", DISPATCH_QUEUE_SERIAL);
@@ -75,7 +75,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
         if([self.session canSetSessionPreset:AVCaptureSessionPreset640x480]){
             [self.session setSessionPreset:AVCaptureSessionPreset640x480];
         }
-
+        
         NSError *error = nil;
         AVCaptureDevice *videoDevice = [CaptureManager deviceWithMediaType:AVMediaTypeVideo preferringPosition:AVCaptureDevicePositionFront];
         
@@ -89,7 +89,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
             [self setVideoDeviceInput:videoDeviceInput];
         }
         
-         //output device
+        //output device
         AVCaptureVideoDataOutput *videoDataOutput = [[AVCaptureVideoDataOutput alloc] init];
         if ([session canAddOutput:videoDataOutput]){
             [session addOutput:videoDataOutput];
@@ -105,7 +105,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
             
             // Configure your output.
             
-           self.videoDataOutputQueue = dispatch_queue_create("videoDataOutput", NULL);
+            self.videoDataOutputQueue = dispatch_queue_create("videoDataOutput", NULL);
             [videoDataOutput setSampleBufferDelegate:self queue:self.videoDataOutputQueue];
             // Specify the pixel format
             
@@ -203,7 +203,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     
     CGContextRef context=CGBitmapContextCreate(lumaBuffer, width, height, 8, bytesPerRow, grayColorSpace,0);
     CGImageRef cgImage = CGBitmapContextCreateImage(context);
-
+    
     CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
     
     IFlyFaceDirectionType faceOrientation=[self faceImageOrientation];
@@ -212,13 +212,14 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     if(!faceImage){
         return nil;
     }
-
+    
     CGDataProviderRef provider = CGImageGetDataProvider(cgImage);
     
     faceImage.data= (__bridge_transfer NSData*)CGDataProviderCopyData(provider);
     faceImage.width=width;
     faceImage.height=height;
-    faceImage.image = [UIImage imageWithCGImage:cgImage];;
+//    faceImage.image = [UIImage imageWithCGImage:cgImage];
+    faceImage.image = [self getRGBImage:sampleBuffer];
     faceImage.direction=faceOrientation;
     
     CGImageRelease(cgImage);
@@ -229,6 +230,62 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     
     return faceImage;
     
+}
+
+#define clamp(a) (a>255?255:(a<0?0:a))
+
+-(UIImage *)getRGBImage:(CMSampleBufferRef) sampleBuffer{
+    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+    CVPixelBufferLockBaseAddress(imageBuffer,0);
+    
+    size_t width = CVPixelBufferGetWidth(imageBuffer);
+    size_t height = CVPixelBufferGetHeight(imageBuffer);
+    uint8_t *yBuffer = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);
+    size_t yPitch = CVPixelBufferGetBytesPerRowOfPlane(imageBuffer, 0);
+    uint8_t *cbCrBuffer = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 1);
+    size_t cbCrPitch = CVPixelBufferGetBytesPerRowOfPlane(imageBuffer, 1);
+    
+    int bytesPerPixel = 4;
+    uint8_t *rgbBuffer = malloc(width * height * bytesPerPixel);
+    
+    for(int y = 0; y < height; y++) {
+        uint8_t *rgbBufferLine = &rgbBuffer[y * width * bytesPerPixel];
+        uint8_t *yBufferLine = &yBuffer[y * yPitch];
+        uint8_t *cbCrBufferLine = &cbCrBuffer[(y >> 1) * cbCrPitch];
+        
+        for(int x = 0; x < width; x++) {
+            int16_t y = yBufferLine[x];
+            int16_t cb = cbCrBufferLine[x & ~1] - 128;
+            int16_t cr = cbCrBufferLine[x | 1] - 128;
+            
+            uint8_t *rgbOutput = &rgbBufferLine[x*bytesPerPixel];
+            
+            int16_t r = (int16_t)roundf( y + cr *  1.4 );
+            int16_t g = (int16_t)roundf( y + cb * -0.343 + cr * -0.711 );
+            int16_t b = (int16_t)roundf( y + cb *  1.765);
+            
+            rgbOutput[0] = 0xff;
+            rgbOutput[1] = clamp(b);
+            rgbOutput[2] = clamp(g);
+            rgbOutput[3] = clamp(r);
+        }
+    }
+    
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(rgbBuffer, width, height, 8, width * bytesPerPixel, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipLast);
+    CGImageRef quartzImage = CGBitmapContextCreateImage(context);
+    //    UIImage *image = [UIImage imageWithCGImage:quartzImage];
+    UIImage *image = [UIImage imageWithCGImage:quartzImage scale:1.0 orientation:UIImageOrientationLeftMirrored];
+
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
+    CGImageRelease(quartzImage);
+    free(rgbBuffer);
+    
+    CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+    
+    return image;
+  
 }
 
 + (AVCaptureVideoOrientation)interfaceOrientationToVideoOrientation:(UIInterfaceOrientation)orientation {

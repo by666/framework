@@ -49,5 +49,11 @@
     }
 }
 
+-(void)goAuthStatuPage{
+    if(_delegate){
+        [_delegate onGoAuthStatuPage];
+    }
+}
+
 
 @end

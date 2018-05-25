@@ -47,7 +47,7 @@
 #define MSG_PROFILE_IDNUM @"身份证号"
 #define MSG_PROFILE_IDENTIFY @"居住身份"
 #define MSG_PROFILE_PHONENUM @"手机号"
-#define MSG_PROFILE_VERIFY @"您的认证信息正在审核中"
+#define MSG_PROFILE_VERIFY @"您的认证信息正在审核中 >>>"
 #define MSG_PROFILE_PHOTO @"拍照上传"
 #define MSG_PROFILE_ALBUM @"相册选择"
 
@@ -121,7 +121,8 @@
 #define MSG_CAR_FAMILYCAR @"家属的车辆"
 #define MSG_CAR_PAY @"续费"
 #define MSG_CAR_FAMILY_PAY @"为他/她续费"
-#define MSG_CAR_RECORD @"缴费记录"
+#define MSG_CAR_RECORD @"月卡缴费记录"
+#define MSG_CAR_ADD @"添加车辆"
 
 
 //添加车辆
@@ -148,6 +149,7 @@
 
 //车辆缴费记录
 #define MSG_CARHISTORY_TITLE @"来访车辆通行记录"
+#define MSG_CARHISTORY_NODATA @"暂无车辆来访记录"
 
 //车辆缴费
 #define MSG_ONEPAYMENT_TITLE @"车辆缴费"
@@ -188,4 +190,37 @@
 #define MSG_VISITORHISTORY_TITLE @"来访通行记录"
 #define MSG_VISITORHISTORY_RIGHTBTN @"访客登记"
 #define MSG_VISITORHISTORY_AUTH @"再次授权"
+
+//信息审核
+#define MSG_AUTHSTATU_TITLE @"信息审核"
+#define MSG_AUTHSTATU_SUBMIT_SUCCESS @"信息提交成功"
+#define MSG_AUTHSTATU_SUBMIT_TIPS @"您的信息正在审核，可能需要1-2个工作日，请耐心等待"
+#define MSG_AUTHSTATU_STATU_SUBMIT @"提交成功"
+#define MSG_AUTHSTATU_STATU_AUTHING @"审核中"
+#define MSG_AUTHSTATU_STATU_SUCCESS @"审核成功"
+#define MSG_AUTHSTATU_STATU_TIPS @"正在审核中，请耐心等待..."
+#define MSG_AUTHSTATU_STATU_TIPS2 @"您的信息提交成功，已催物业加急协助审核，请稍后"
+#define MSG_AUTHSTATU_HURRYBTN @"我要催办"
+#define MSG_AUTHSTATU_HURRYBTN_CLICKED @"已催办物管"
+#define MSG_AUTHSTATU_HURRY_TIPS @"*您可以联系业主为您加快审核，也可以联系物业催办"
+
+//用户认证
+#define MSG_AUTHUSER_TITLE @"用户认证"
+
+#define MSG_AUTHUSER_PART1_TITLE @"请填写您的住所信息"
+#define MSG_AUTHUSER_PART1_COMMUNITY @"您的社区："
+#define MSG_AUTHUSER_PART1_COMMUNITY_HINT @"请选择您的社区"
+#define MSG_AUTHUSER_PART1_BUILDING @"楼栋："
+#define MSG_AUTHUSER_PART1_BUILDING_HINT @"请选择"
+#define MSG_AUTHUSER_PART1_DOORNUM @"门牌："
+#define MSG_AUTHUSER_PART1_DOORNUM_HINT @"如1008"
+
+#define MSG_AUTHUSER_PART2_TITLE @"请填写您的身份信息"
+#define MSG_AUTHUSER_PART2_NAME @"您的姓名："
+#define MSG_AUTHUSER_PART2_NAME_HINT @"请输入您的名字"
+#define MSG_AUTHUSER_PART2_IDENTIFY @"居住身份："
+#define MSG_AUTHUSER_PART2_IDNUM @"身份证号码："
+#define MSG_AUTHUSER_PART2_IDNUM_HINT @"请输入您的身份证号码"
+
+#define MSG_AUTHUSER_BTN @"下一步"
 

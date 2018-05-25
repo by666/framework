@@ -59,7 +59,7 @@
     
     for(int i = 1 ; i <= 3 ; i ++) {
         UIView *line1View = [[UIView alloc]init];
-        line1View.frame = CGRectMake(0, STHeight(48) * i, ScreenWidth, STHeight(1));
+        line1View.frame = CGRectMake(0, STHeight(48) * i, ScreenWidth, 1);
         line1View.backgroundColor = c17;
         [self.contentView addSubview:line1View];
     }

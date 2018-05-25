@@ -39,18 +39,18 @@
     
     _idetifyLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"" textAlignment:NSTextAlignmentCenter textColor:c19 backgroundColor:nil multiLine:NO];
     _idetifyLabel.layer.borderColor = [c19 CGColor];
-    _idetifyLabel.layer.borderWidth = STHeight(1);
+    _idetifyLabel.layer.borderWidth = 1;
     _idetifyLabel.layer.masksToBounds = YES;
     _idetifyLabel.layer.cornerRadius = STHeight(9);
     [self.contentView addSubview:_idetifyLabel];
     
     _arrowImageView = [[UIImageView alloc]init];
-    _arrowImageView.backgroundColor = c01;
+    [_arrowImageView setImage:[UIImage imageNamed:@"ic_right_arrow"]];
     _arrowImageView.frame = CGRectMake(STWidth(354), STHeight(21), STWidth(7), STHeight(11));
     [self.contentView addSubview:_arrowImageView];
     
     UIView *lineView = [[UIView alloc]init];
-    lineView.frame = CGRectMake(0, STHeight(58.5), ScreenWidth, STHeight(1));
+    lineView.frame = CGRectMake(0, STHeight(58.5), ScreenWidth,1);
     lineView.backgroundColor = c17;
     [self.contentView addSubview:lineView];
 }

@@ -34,9 +34,6 @@
 }
 
 -(void)initView{
-
-
-    
     [self.view addSubview:[self updatePhoneNumView]];
 }
 
@@ -55,7 +52,7 @@
         BindPhoneViewModel *viewModel = [[BindPhoneViewModel alloc]init];
         viewModel.delegate = self;
         _bindPhoneView = [[BindPhoneView alloc]initWithViewModel:viewModel title:MSG_UPDATEPHONENUM_TIPS3];
-        _bindPhoneView.frame = CGRectMake(0, 0, ScreenWidth, ContentHeight);
+        _bindPhoneView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     }
     return _bindPhoneView;
 }
@@ -87,7 +84,6 @@
 - (void)onTimeCount:(Boolean)complete {
     [_bindPhoneView updateVerifyBtn:complete];
 }
-
 
 
 

@@ -22,6 +22,7 @@
 #import "NextLoginPage.h"
 #import "AccountManager.h"
 #import "MinePage.h"
+#import "AuthUserPage.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>
 
@@ -38,7 +39,8 @@
 //    }else{
 //        controller = [[LoginPage alloc]init];
 //    }
-    controller = [[MinePage alloc]init];
+
+    controller = [[AuthUserPage alloc]init];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
@@ -64,6 +66,7 @@
     [STLog print:test3];
     [STLog print:test4];
     [STLog print:test5];
+    
 
     return YES;
 }
@@ -280,5 +283,7 @@
     [alertController addAction:updateAction];
     [_window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
+
+
 
 @end

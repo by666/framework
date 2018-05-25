@@ -78,7 +78,7 @@
     imageView.frame = CGRectMake(ScreenWidth - STWidth(26), STHeight(83), STWidth(11), STHeight(7));
     [commonView addSubview:imageView];
     
-    UIView *lineView =[[UIView alloc]initWithFrame:CGRectMake(STWidth(15), STHeight(56.5), ScreenWidth - STWidth(30), STHeight(1))];
+    UIView *lineView =[[UIView alloc]initWithFrame:CGRectMake(STWidth(15), STHeight(57.5) - 1, ScreenWidth - STWidth(30),1 )];
     lineView.backgroundColor = c17;
     [commonView addSubview:lineView];
     
@@ -162,11 +162,11 @@
     [_funcSwitch addTarget:self action:@selector(OnClickSwitch) forControlEvents:UIControlEventTouchUpInside];
     [_faceView addSubview:_funcSwitch];
     
-    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(57), ScreenWidth, STHeight(1))];
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(57), ScreenWidth, 1)];
     lineView.backgroundColor = c17;
     [_faceView addSubview:lineView];
     
-    _imageBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"+" textColor:c12 backgroundColor:c15 corner:STHeight(9) borderWidth:STHeight(1) borderColor:c12];
+    _imageBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"+" textColor:c12 backgroundColor:c15 corner:STHeight(9) borderWidth:1 borderColor:c12];
     _imageBtn.frame = CGRectMake(STWidth(108), STHeight(75), 0, 0);
     _imageBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [_imageBtn addTarget:self action:@selector(onClickImageBtn) forControlEvents:UIControlEventTouchUpInside];

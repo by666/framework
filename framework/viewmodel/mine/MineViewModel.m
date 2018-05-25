@@ -14,6 +14,7 @@
 -(instancetype)init{
     if(self == [super init]){
         _titleArray = @[MSG_MEMBER_TITLE,MSG_VISITORHOME_TITLE,MSG_VISITORHISTORY_TITLE,MSG_CAR_TITLE,MSG_CARHISTORY_TITLE,MSG_MESSAGESETTING_TITLE,MSG_HABITANT_TITLE,MSG_SETTING_TITLE];
+        _imageArray = @[@"ic_member",@"ic_visitor",@"ic_visitor_history",@"ic_car",@"ic_car_history",@"ic_message",@"ic_manage"];
     }
     return self;
 }

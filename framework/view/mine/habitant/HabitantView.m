@@ -117,7 +117,7 @@
     if(!cell){
         cell = [[HabitantCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[HabitantCell identify]];
     }
-    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     if(_mViewModel && !IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
         [cell updateData:[_mViewModel.datas objectAtIndex:indexPath.row]];
     }

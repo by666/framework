@@ -8,6 +8,7 @@
 
 #import "AddCarPage.h"
 #import "AddCarView.h"
+#import "STObserverManager.h"
 
 @interface AddCarPage()<AddCarViewDelegate>
 
@@ -48,6 +49,9 @@
 
 -(void)onAddCarDatas:(Boolean)success data:(CarModel *)data{
     if(success){
+        data.carType = @"临";
+        data.carIdentify = 1;
+        [[STObserverManager sharedSTObserverManager]sendMessage:Notify_AddCar msg:data];
         [self backLastPage];
     }else{
         [STAlertUtil showAlertController:@"" content:MSG_ADDCAR_CARNUM_ERROR controller:self];

@@ -66,15 +66,15 @@
     editView.userInteractionEnabled = YES;
     [self addSubview:editView];
     
-    UIView *topLine = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, STHeight(1))];
+    UIView *topLine = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 1)];
     topLine.backgroundColor = c17;
     [editView addSubview:topLine];
     
-    UIView *bottomLine = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(113), ScreenWidth, STHeight(1))];
+    UIView *bottomLine = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(113), ScreenWidth,1)];
     bottomLine.backgroundColor = c17;
     [editView addSubview:bottomLine];
     
-    UIView *centerLine = [[UIView alloc]initWithFrame:CGRectMake(STWidth(15), STHeight(57), ScreenWidth - STWidth(30), STHeight(1))];
+    UIView *centerLine = [[UIView alloc]initWithFrame:CGRectMake(STWidth(15), STHeight(57), ScreenWidth - STWidth(30), 1)];
     centerLine.backgroundColor = c17;
     [editView addSubview:centerLine];
     

@@ -15,6 +15,7 @@
 #import "STFileUtil.h"
 #import "FaceEnterPage.h"
 #import "STObserverManager.h"
+#import "AuthStatuPage.h"
 
 @interface ProfilePage ()<ProfileViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,STObserverProtocol>
 
@@ -85,6 +86,8 @@
     [FaceEnterPage show:self];
 }
 
+
+
 #pragma mark 回调
 -(void)onUpdateProfile{
     [_profileView updateTableView];
@@ -143,4 +146,8 @@
     [_mViewModel updateProfile];
 }
 
+
+-(void)onGoAuthStatuPage{
+    [AuthStatuPage show:self];
+}
 @end

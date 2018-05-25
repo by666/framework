@@ -8,13 +8,13 @@
 
 #import "PaymentView.h"
 #import "CarDetailCell.h"
-
+#import "STResultView.h"
 @interface PaymentView()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong, nonatomic)PaymentViewModel *mViewModel;
 @property(strong, nonatomic)UITableView *tableView;
 @property(strong, nonatomic)UIView *payView;
-@property(strong, nonatomic)UIView *successView;
+@property(strong, nonatomic)STResultView  *successView;
 @end
 
 @implementation PaymentView
@@ -64,23 +64,9 @@
     [payView addSubview:dateLabel];
     
     
-    _successView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight)];
-    _successView.backgroundColor = cwhite;
+    _successView = [[STResultView alloc]initWithTips:MSG_PAYMENT_SUCCEE_TIPS1 tips2:MSG_PAYMENT_SUCCEE_TIPS2];
     _successView.hidden = YES;
     [self addSubview:_successView];
-    
-    UIImageView *succesImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(158), STHeight(54), STWidth(60), STWidth(60))];
-    succesImageView.image = [UIImage imageNamed:@"ic_pay_success"];
-    [_successView addSubview:succesImageView];
-    
-    UILabel *tips1Label = [[UILabel alloc]initWithFont:STFont(18) text:MSG_PAYMENT_SUCCEE_TIPS1 textAlignment:NSTextAlignmentCenter textColor:c20 backgroundColor:nil multiLine:YES];
-    tips1Label.frame = CGRectMake(0, STHeight(142), ScreenWidth, STHeight(18));
-    [_successView addSubview:tips1Label];
-    
-    UILabel *tips2Label = [[UILabel alloc]initWithFont:STFont(14) text:MSG_PAYMENT_SUCCEE_TIPS2 textAlignment:NSTextAlignmentCenter textColor:c20 backgroundColor:nil multiLine:YES];
-    tips2Label.frame = CGRectMake(0, STHeight(170), ScreenWidth, STHeight(14));
-    [_successView addSubview:tips2Label];
-    
     
 }
 

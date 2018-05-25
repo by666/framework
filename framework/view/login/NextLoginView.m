@@ -31,9 +31,11 @@
     avatarImageView.frame= CGRectMake(STWidth(157), STHeight(79), STWidth(62), STWidth(62));
     avatarImageView.layer.masksToBounds = YES;
     avatarImageView.layer.cornerRadius = STWidth(31);
+    avatarImageView.image = [UIImage imageNamed:@"ic_test1"];
+    avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:avatarImageView];
     
-    UILabel *phoneLabel = [[UILabel alloc]initWithFont:STFont(15) text:@"186xxxx6420" textAlignment:NSTextAlignmentCenter textColor:c10 backgroundColor:nil multiLine:NO];
+    UILabel *phoneLabel = [[UILabel alloc]initWithFont:STFont(15) text:@"186****6420" textAlignment:NSTextAlignmentCenter textColor:c10 backgroundColor:nil multiLine:NO];
     phoneLabel.frame = CGRectMake(0, STHeight(157), ScreenWidth, STHeight(15));
     [self addSubview:phoneLabel];
     

@@ -10,7 +10,7 @@
 
 @interface MineCell : UITableViewCell
 
--(void)updateData:(NSString *)title;
+-(void)updateData:(NSString *)title image:(UIImage *)image;
 +(NSString*)identify;
 
 @end
