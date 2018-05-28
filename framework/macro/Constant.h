@@ -219,8 +219,30 @@
 #define MSG_AUTHUSER_PART2_NAME @"您的姓名："
 #define MSG_AUTHUSER_PART2_NAME_HINT @"请输入您的名字"
 #define MSG_AUTHUSER_PART2_IDENTIFY @"居住身份："
+#define MSG_AUTHUSER_PART2_IDENTIFY_DEFAULT @"业主"
+#define MSG_AUTHUSER_PART2_IDENTIFY_MEMBER @"家属"
+#define MSG_AUTHUSER_PART2_IDENTIFY_RENTER @"租客"
 #define MSG_AUTHUSER_PART2_IDNUM @"身份证号码："
 #define MSG_AUTHUSER_PART2_IDNUM_HINT @"请输入您的身份证号码"
 
 #define MSG_AUTHUSER_BTN @"下一步"
+
+#define MSG_AUTHUSER_ERROR_NOCOMMUNITY @"请选择您的社区"
+#define MSG_AUTHUSER_ERROR_NOBUILDING @"请选择您的楼栋"
+#define MSG_AUTHUSER_ERROR_NODOORNUM @"请输入您的门牌号"
+#define MSG_AUTHUSER_ERROR_NONAME @"请输入您的姓名"
+#define MSG_AUTHUSER_ERROR_NOIDNUM @"请输入您的身份证号"
+
+
+//社区选择
+#define MSG_COMMUNITY_TITLE @"社区信息"
+
+
+//人脸认证
+#define MSG_AUTHFACE_TITLE @"人脸认证"
+#define MSG_AUTHFACE_MAIN_CONTENT @"人脸信息"
+#define MSG_AUTHFACE_SUB_CONTENT @"您的照片将被用于门禁出入身份识别，为保证门禁安全，请勿使用他人图片，请勿上传使用PS等手段处理后的图片。"
+#define MSG_AUTHFACE_TAKEPHOTO @"立即拍照上传"
+#define MSG_AUTHFACE_ALBUM @"相册选择"
+
 

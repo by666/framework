@@ -255,6 +255,8 @@
     mImagePath = imagePath;
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     [_imageBtn setImage:image forState:UIControlStateNormal];
+    [_imageBtn setImage:image forState:UIControlStateHighlighted];
+
 }
 
 -(void)showGeneratePass{

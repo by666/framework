@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/viewcontroller/mine/member/MemberPage.m"
-            timestampString = "548675008.159695"
+            timestampString = "549192690.3742059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/threeparty/ifly/tools/Capture/CaptureManager.m"
-            timestampString = "548908755.997028"
+            timestampString = "549196834.801053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "223"
@@ -265,13 +265,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "framework/view/auth/AuthUserView.m"
-            timestampString = "548938442.22111"
+            filePath = "framework/custom/common/building/STBuildingLayerView.m"
+            timestampString = "549198857.502256"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
-            landmarkName = "-OnClickBuildingBtn"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-OnClickLayerView"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "framework/custom/common/building/STBuildingLayerView.m"
+            timestampString = "549198857.502316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-OnClickConfirmBtn"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

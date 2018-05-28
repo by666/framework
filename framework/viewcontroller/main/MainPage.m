@@ -54,6 +54,7 @@
     [STAlertUtil showAlertController:@"" content:@"请先认证身份信息" controller:self confirm:^{
         [AuthUserPage show:weakSelf];
     }];
+    
 }
 
 -(void)onGoMinePage{

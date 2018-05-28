@@ -25,14 +25,16 @@
     NSInteger provinceIndex;
     NSInteger cityIndex;
     NSInteger districtIndex;
+    NSInteger mColumn;
 }
 
 
--(instancetype)init{
+-(instancetype)initWithColumn:(NSInteger)column{
     if(self == [super init]){
         _provinceDatas = [[NSMutableArray alloc]init];
         _cityDatas = [[NSMutableArray alloc]init];
         _districtDatas = [[NSMutableArray alloc]init];
+        mColumn = column;
         provinceIndex = 0;
         cityIndex = 0;
         districtIndex = 0;
@@ -44,19 +46,25 @@
 
 
 -(void)initView{
-    self.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
+    self.frame = CGRectMake(0, 0, ScreenWidth, ContentHeight);
     self.backgroundColor = [cblack colorWithAlphaComponent:0.8];
     self.hidden = NO;
-    [self addSubview:[self provincePickerView]];
-    [self addSubview:[self cityPickerView]];
-    [self addSubview:[self districtPickerView]];
+    if(mColumn > 0){
+        [self addSubview:[self provincePickerView]];
+    }
+    if(mColumn > 1){
+        [self addSubview:[self cityPickerView]];
+    }
+    if(mColumn > 2){
+        [self addSubview:[self districtPickerView]];
+    }
 
 }
 
 
 -(UIPickerView *)provincePickerView{
     if(_provincePickerView == nil){
-        _provincePickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, ContentHeight - STHeight(300), ScreenWidth /3, STHeight(300 ))];
+        _provincePickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, ContentHeight - STHeight(200), ScreenWidth /mColumn, STHeight(200))];
         _provincePickerView.showsSelectionIndicator = YES;
         _provincePickerView.backgroundColor = cwhite;
         _provincePickerView.delegate = self;
@@ -67,7 +75,7 @@
 
 -(UIPickerView *)cityPickerView{
     if(_cityPickerView == nil){
-        _cityPickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(ScreenWidth/3, ContentHeight - STHeight(300), ScreenWidth /3, STHeight(300))];
+        _cityPickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(ScreenWidth/mColumn, ContentHeight - STHeight(200), ScreenWidth /mColumn, STHeight(200))];
         _cityPickerView.showsSelectionIndicator = YES;
         _cityPickerView.backgroundColor = cwhite;
         _cityPickerView.delegate = self;
@@ -78,7 +86,7 @@
 
 -(UIPickerView *)districtPickerView{
     if(_districtPickerView == nil){
-        _districtPickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(ScreenWidth * 2/3, ContentHeight - STHeight(300), ScreenWidth /3, STHeight(300))];
+        _districtPickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(ScreenWidth * 2/mColumn, ContentHeight - STHeight(200), ScreenWidth /mColumn, STHeight(200))];
         _districtPickerView.showsSelectionIndicator = YES;
         _districtPickerView.backgroundColor = cwhite;
         _districtPickerView.delegate = self;
@@ -88,6 +96,9 @@
 }
 
 
+-(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return STHeight(40);
+}
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
 }
@@ -178,22 +189,29 @@
 
 //初始化数据
 -(void)setupDatas{
-    NSString *addressStr = [self getAddressJsonStr];
-    NSMutableArray *provinceArray = [AddressLayerModel mj_objectArrayWithKeyValuesArray:addressStr];
-    for(AddressLayerModel *model in provinceArray){
-        [_provinceDatas addObject:model];
+    
+    if(mColumn > 0){
+        NSString *addressStr = [self getAddressJsonStr];
+        NSMutableArray *provinceArray = [AddressLayerModel mj_objectArrayWithKeyValuesArray:addressStr];
+        for(AddressLayerModel *model in provinceArray){
+            [_provinceDatas addObject:model];
+        }
     }
     
-    AddressLayerModel *provinceModel = [_provinceDatas objectAtIndex:provinceIndex];
-    NSMutableArray *cityArray =  [AddressLayerModel mj_objectArrayWithKeyValuesArray:provinceModel.sub];
-    for(AddressLayerModel *model in cityArray){
-        [_cityDatas addObject:model];
+    if(mColumn > 1){
+        AddressLayerModel *provinceModel = [_provinceDatas objectAtIndex:provinceIndex];
+        NSMutableArray *cityArray =  [AddressLayerModel mj_objectArrayWithKeyValuesArray:provinceModel.sub];
+        for(AddressLayerModel *model in cityArray){
+            [_cityDatas addObject:model];
+        }
     }
     
-    AddressLayerModel *cityModel = [_cityDatas objectAtIndex:cityIndex];
-    NSMutableArray *districtArray = [AddressLayerModel mj_objectArrayWithKeyValuesArray:cityModel.sub];
-    for(AddressLayerModel *model in districtArray){
-        [_districtDatas addObject:model];
+    if(mColumn > 2){
+        AddressLayerModel *cityModel = [_cityDatas objectAtIndex:cityIndex];
+        NSMutableArray *districtArray = [AddressLayerModel mj_objectArrayWithKeyValuesArray:cityModel.sub];
+        for(AddressLayerModel *model in districtArray){
+            [_districtDatas addObject:model];
+        }
     }
 
 }

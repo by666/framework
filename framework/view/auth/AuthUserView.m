@@ -8,8 +8,9 @@
 
 #import "AuthUserView.h"
 #import "STBuildingLayerView.h"
+#import "STSinglePickerLayerView.h"
 
-@interface AuthUserView()
+@interface AuthUserView()<STBuildingLayerViewDelegate,STSinglePickerLayerViewDelegate>
 
 @property(strong, nonatomic)AuthUserViewModel *mViewModel;
 @property(strong, nonatomic)UITextField *doorTF;
@@ -17,6 +18,11 @@
 @property(strong, nonatomic)UIButton *communityBtn;
 @property(strong, nonatomic)UITextField *nameTF;
 @property(strong, nonatomic)UITextField *idNumTF;
+@property(strong, nonatomic)STBuildingLayerView *buildingLayerView;
+@property(strong, nonatomic)UIButton *identifyBtn;
+@property(strong, nonatomic)STSinglePickerLayerView *identifyLayerView;
+@property(strong, nonatomic)UILabel *tipsLabel;
+
 
 @end
 
@@ -38,6 +44,14 @@
     nextBtn.frame = CGRectMake(STWidth(50), STHeight(513), STWidth(276), STHeight(50));
     [nextBtn addTarget:self action:@selector(onClickNextBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:nextBtn];
+    
+    _tipsLabel = [[UILabel alloc]initWithFont:STFont(12) text:@"" textAlignment:NSTextAlignmentLeft textColor:c18 backgroundColor:nil multiLine:NO];
+    _tipsLabel.frame = CGRectMake(STWidth(15), STHeight(450), ScreenWidth - STWidth(30), STHeight(12));
+    [self addSubview:_tipsLabel];
+    
+    [self addSubview:[self buildingLayerView]];
+    [self addSubview:[self identifyLayerView]];
+
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onKeyboardShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onKeyboardHidden:) name:UIKeyboardWillHideNotification object:nil];
@@ -144,13 +158,51 @@
     [view addSubview:_nameTF];
     
     
+    _mViewModel.data.identify = MSG_AUTHUSER_PART2_IDENTIFY_DEFAULT;
+    _identifyBtn = [[UIButton alloc]initWithFont:STFont(16) text:_mViewModel.data.identify textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil];
+    CGSize buildingSize = [MSG_AUTHUSER_PART1_BUILDING_HINT sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    _identifyBtn.frame = CGRectMake(ScreenWidth - STWidth(36) - buildingSize.width, STHeight(57),buildingSize.width, STHeight(57));
+    [_identifyBtn addTarget:self action:@selector(OnClickIdentifyBtn) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:_identifyBtn];
+    
+    UIImageView *identifyImageView = [[UIImageView alloc]init];
+    identifyImageView.image = [UIImage imageNamed:@"ic_bottom_arrow"];
+    identifyImageView.contentMode = UIViewContentModeScaleAspectFill;
+    identifyImageView.frame = CGRectMake(ScreenWidth - STWidth(15)-STWidth(11), STHeight(82), STWidth(11), STHeight(11));
+    identifyImageView.userInteractionEnabled = NO;
+    [view addSubview:identifyImageView];
+    
+    
     _idNumTF = [[UITextField alloc]initWithFont:STFont(16) textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:0];
     _idNumTF.placeholder = MSG_AUTHUSER_PART2_IDNUM_HINT;
     _idNumTF.textAlignment = NSTextAlignmentRight;
     _idNumTF.frame = CGRectMake(ScreenWidth - STWidth(215), STHeight(114), STWidth(200),  STHeight(57));
     [view addSubview:_idNumTF];
+    
 }
 
+
+-(STBuildingLayerView *)buildingLayerView{
+    if(_buildingLayerView == nil){
+        _buildingLayerView = [[STBuildingLayerView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight) datas:nil];
+        _buildingLayerView.delegate = self;
+        _buildingLayerView.hidden = YES;
+    }
+    return _buildingLayerView;
+}
+
+-(STSinglePickerLayerView *)identifyLayerView{
+    if(_identifyLayerView == nil){
+        NSMutableArray *datas = [[NSMutableArray alloc]init];
+        [datas addObject:MSG_AUTHUSER_PART2_IDENTIFY_DEFAULT];
+        [datas addObject:MSG_AUTHUSER_PART2_IDENTIFY_MEMBER];
+        [datas addObject:MSG_AUTHUSER_PART2_IDENTIFY_RENTER];
+        _identifyLayerView = [[STSinglePickerLayerView alloc]initWithDatas:datas];
+        _identifyLayerView.delegate = self;
+        _identifyLayerView.hidden = YES;
+    }
+    return _identifyLayerView;
+}
 
 -(void)OnClickCommunityBtn{
     if(_mViewModel){
@@ -159,12 +211,21 @@
 }
 
 -(void)OnClickBuildingBtn{
-    STBuildingLayerView *layerView = [[STBuildingLayerView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight) datas:nil];
-    [self addSubview:layerView];
+    _buildingLayerView.hidden = NO;
+    [_buildingLayerView setData:_mViewModel.data.building];
+}
+
+-(void)OnClickIdentifyBtn{
+    _identifyLayerView.hidden = NO;
+    [_identifyLayerView setData:_mViewModel.data.identify];
 }
 
 -(void)onClickNextBtn{
     if(_mViewModel){
+        _mViewModel.data.doorNum = _doorTF.text;
+        _mViewModel.data.name = _nameTF.text;
+        _mViewModel.data.idNum = _idNumTF.text;
+        _mViewModel.data.communityName = @"光明顶";
         [_mViewModel submitUserInfo];
     }
 }
@@ -198,4 +259,26 @@
     [_idNumTF resignFirstResponder];
 }
 
+-(void)OnBuildingSelectResult:(NSString *)result{
+    _mViewModel.data.building = result;
+    CGSize buildingSize = [result sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    _buildingBtn.frame = CGRectMake(ScreenWidth - STWidth(36) - buildingSize.width, STHeight(57),buildingSize.width, STHeight(57));
+    [_buildingBtn setTitle:result forState:UIControlStateNormal];
+}
+
+-(void)onSelectResult:(NSString *)result{
+    _mViewModel.data.identify = result;
+    CGSize buildingSize = [MSG_AUTHUSER_PART1_BUILDING_HINT sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    _identifyBtn.frame = CGRectMake(ScreenWidth - STWidth(36) - buildingSize.width, STHeight(57),buildingSize.width, STHeight(57));
+    [_identifyBtn setTitle:result forState:UIControlStateNormal];
+
+}
+
+-(void)onSubmitResult:(Boolean)success errorMsg:(NSString *)errorMsg{
+    if(success){
+        _tipsLabel.text = @"";
+    }else{
+        _tipsLabel.text = errorMsg;
+    }
+}
 @end

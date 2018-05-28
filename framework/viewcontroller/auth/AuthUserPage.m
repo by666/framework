@@ -8,6 +8,8 @@
 
 #import "AuthUserPage.h"
 #import "AuthUserView.h"
+#import "CommunityPage.h"
+#import "AuthFacePage.h"
 
 @interface AuthUserPage ()<AuthUserViewDelegate>
 
@@ -52,12 +54,15 @@
 
 
 -(void)onGoCommunity{
-
+    [CommunityPage show:self];
 }
 
 
 -(void)submitUserInfo:(Boolean)success msg:(NSString *)errorMsg{
-    
+    [_authUserView onSubmitResult:success errorMsg:errorMsg];
+    if(success){
+        [AuthFacePage show:self];
+    }
 }
 
 

@@ -10,4 +10,7 @@
 
 @interface STAddressLayerView : UIView
 
+//注：最大支持省，市，区（column = 2,省和市）
+-(instancetype)initWithColumn:(NSInteger)column;
+
 @end

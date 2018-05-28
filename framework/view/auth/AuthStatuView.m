@@ -14,7 +14,6 @@
 @property(strong, nonatomic)AuthStatuViewModel *mViewModel;
 @property(strong, nonatomic)UILabel *hurryTipsLabel;
 @property(strong, nonatomic)UIButton *hurryBtn;
-@property(strong, nonatomic)STResultView *resultView;
 
 @end
 
@@ -73,9 +72,6 @@
     tipsLabel.frame = CGRectMake(STWidth(25), STHeight(537), ScreenWidth - STWidth(50), tipsSize.height);
     [self addSubview:tipsLabel];
     
-    _resultView = [[STResultView alloc]initWithTips:MSG_AUTHSTATU_SUBMIT_SUCCESS tips2:MSG_AUTHSTATU_SUBMIT_TIPS];
-    _resultView.hidden = YES;
-    [self addSubview:_resultView];
 }
 
 
@@ -95,10 +91,7 @@
         CGSize hurrySize = [MSG_AUTHSTATU_STATU_TIPS2 sizeWithMaxWidth:ScreenWidth - STWidth(54) font:[UIFont systemFontOfSize:STFont(14)]];
         _hurryTipsLabel.frame = CGRectMake(STWidth(27), STHeight(108), ScreenWidth - STWidth(54), hurrySize.height);
         
-        WS(weakSelf)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            weakSelf.resultView.hidden = NO;
-        });
+      
     }
 }
 

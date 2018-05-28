@@ -10,14 +10,17 @@
 
 @protocol STBuildingLayerViewDelegate
 
--(void)OnSelectResult:(NSArray *)array;
+-(void)OnBuildingSelectResult:(NSString *)result;
 
 @end
 
+
+//注：最大支持3列
 @interface STBuildingLayerView : UIView
 
 @property(weak, nonatomic)id<STBuildingLayerViewDelegate> delegate;
 
--(instancetype)initWithFrame:(CGRect)frame datas:(NSMutableDictionary *)datas;
+-(instancetype)initWithFrame:(CGRect)frame datas:(NSMutableArray *)datas;
 
+-(void)setData:(NSString *)dataStr;
 @end
