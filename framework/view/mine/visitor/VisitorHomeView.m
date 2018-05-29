@@ -29,6 +29,7 @@
     UIButton *peopleVisitorBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_VISITORHOME_PEOPLE_BUTTON textColor:cwhite backgroundColor:c19 corner:STHeight(25) borderWidth:0 borderColor:nil];
     peopleVisitorBtn.frame = CGRectMake(STWidth(50), STHeight(179), STWidth(276), STHeight(50));
     [peopleVisitorBtn addTarget:self action:@selector(onClickPeopleBtn) forControlEvents:UIControlEventTouchUpInside];
+    [peopleVisitorBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
     [self addSubview:peopleVisitorBtn];
     
     UIButton *carVisitorBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_VISITORHOME_CAR_BUTTON textColor:cwhite backgroundColor:c13 corner:STHeight(25) borderWidth:0 borderColor:nil];

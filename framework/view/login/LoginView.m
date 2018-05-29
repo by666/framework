@@ -86,8 +86,9 @@
     [self addSubview:_tipLabel];
     
     
-    _loginBtn = [[UIButton alloc]initWithFont:STFont(18) text:@"登录" textColor:c04 backgroundColor:c03 corner:STHeight(25) borderWidth:0 borderColor:nil];
+    _loginBtn = [[UIButton alloc]initWithFont:STFont(18) text:@"登录" textColor:c04 backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
     _loginBtn.frame = CGRectMake(STWidth(27), STHeight(414), STWidth(320), STWidth(50));
+    [_loginBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [self addSubview:_loginBtn];
     [_loginBtn addTarget:self action:@selector(doLogin) forControlEvents:UIControlEventTouchUpInside];
 

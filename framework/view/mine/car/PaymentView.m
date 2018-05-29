@@ -47,6 +47,7 @@
     UIButton *paymentBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_PAYMENT_PAY textColor:cwhite backgroundColor:c19 corner:0 borderWidth:0 borderColor:nil];
     paymentBtn.frame = CGRectMake(ScreenWidth -  STWidth(114),0, STWidth(114), STHeight(50));
     [paymentBtn addTarget:self action:@selector(doPay) forControlEvents:UIControlEventTouchUpInside];
+    [paymentBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
     [payView addSubview:paymentBtn];
     
     UILabel *moneyLabel = [[UILabel alloc]initWithFont:STFont(18) text:@"¥ 300" textAlignment:NSTextAlignmentLeft textColor:cwhite backgroundColor:nil multiLine:YES];

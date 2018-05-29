@@ -7,8 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CommunityModel.h"
+
+@protocol CommunityViewDelegate
+
+-(void)onSearchCommunity:(Boolean)success datas:(NSMutableArray *)datas errorMsg:(NSString *)errorMsg;
+-(void)onBackLastPage;
+
+@end
 
 @interface CommunityViewModel : NSObject
+
+@property(weak, nonatomic)id<CommunityViewDelegate> delegate;
+@property(strong, nonatomic)NSMutableArray *datas;
+
+-(void)searchCommunity:(NSString *)keyStr;
+-(void)backLastPage;
 
 
 @end

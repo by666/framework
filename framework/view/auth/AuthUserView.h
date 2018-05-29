@@ -14,4 +14,5 @@
 -(instancetype)initWithViewModel:(AuthUserViewModel *)viewModel;
 -(void)removeView;
 -(void)onSubmitResult:(Boolean)success errorMsg:(NSString *)errorMsg;
+-(void)updateAddress:(NSString *)addressStr;
 @end

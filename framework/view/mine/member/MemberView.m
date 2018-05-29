@@ -36,6 +36,7 @@
     _addMemberBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_MEMBER_ADDBTN textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
     _addMemberBtn.frame = CGRectMake(STWidth(49), STHeight(503), STWidth(276), STHeight(50));
     [_addMemberBtn addTarget:self action:@selector(onClickAddMemberBtn) forControlEvents:UIControlEventTouchUpInside];
+    [_addMemberBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [self addSubview:_addMemberBtn];
     
     _tableView = [[UITableView alloc]init];

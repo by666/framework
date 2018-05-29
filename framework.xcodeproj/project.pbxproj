@@ -99,6 +99,14 @@
 		003EDAB320BBEB6200CFCFE9 /* AuthFacePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAB220BBEB6200CFCFE9 /* AuthFacePage.m */; };
 		003EDAB620BBEC6800CFCFE9 /* AuthFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAB520BBEC6800CFCFE9 /* AuthFaceView.m */; };
 		003EDAB920BBEC8300CFCFE9 /* AuthFaceViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAB820BBEC8300CFCFE9 /* AuthFaceViewModel.m */; };
+		003EDABC20BCF5A100CFCFE9 /* STRecognizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDABB20BCF5A100CFCFE9 /* STRecognizeView.m */; };
+		003EDAC020BCF95300CFCFE9 /* RecognizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDABF20BCF95300CFCFE9 /* RecognizeCell.m */; };
+		003EDAC320BCF9A500CFCFE9 /* RecognizeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAC220BCF9A500CFCFE9 /* RecognizeModel.m */; };
+		003EDAC620BD276A00CFCFE9 /* CommunityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAC520BD276A00CFCFE9 /* CommunityModel.m */; };
+		003EDAC920BD4C6300CFCFE9 /* CommunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAC820BD4C6300CFCFE9 /* CommunityCell.m */; };
+		003EDACD20BD5A6100CFCFE9 /* MessagePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDACC20BD5A6100CFCFE9 /* MessagePage.m */; };
+		003EDAD120BD5A7300CFCFE9 /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAD020BD5A7300CFCFE9 /* MessageView.m */; };
+		003EDAD520BD5A8400CFCFE9 /* MessageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAD420BD5A8400CFCFE9 /* MessageViewModel.m */; };
 		004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51620A16DC400BA9602 /* STAlertUtil.m */; };
 		004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51920A1A37E00BA9602 /* STSheetModel.m */; };
 		004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF52120A2A23C00BA9602 /* LoginViewModel.m */; };
@@ -414,6 +422,22 @@
 		003EDAB520BBEC6800CFCFE9 /* AuthFaceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthFaceView.m; sourceTree = "<group>"; };
 		003EDAB720BBEC8300CFCFE9 /* AuthFaceViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthFaceViewModel.h; sourceTree = "<group>"; };
 		003EDAB820BBEC8300CFCFE9 /* AuthFaceViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthFaceViewModel.m; sourceTree = "<group>"; };
+		003EDABA20BCF5A100CFCFE9 /* STRecognizeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STRecognizeView.h; sourceTree = "<group>"; };
+		003EDABB20BCF5A100CFCFE9 /* STRecognizeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STRecognizeView.m; sourceTree = "<group>"; };
+		003EDABE20BCF95300CFCFE9 /* RecognizeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecognizeCell.h; sourceTree = "<group>"; };
+		003EDABF20BCF95300CFCFE9 /* RecognizeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecognizeCell.m; sourceTree = "<group>"; };
+		003EDAC120BCF9A500CFCFE9 /* RecognizeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecognizeModel.h; sourceTree = "<group>"; };
+		003EDAC220BCF9A500CFCFE9 /* RecognizeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecognizeModel.m; sourceTree = "<group>"; };
+		003EDAC420BD276A00CFCFE9 /* CommunityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityModel.h; sourceTree = "<group>"; };
+		003EDAC520BD276A00CFCFE9 /* CommunityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityModel.m; sourceTree = "<group>"; };
+		003EDAC720BD4C6300CFCFE9 /* CommunityCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityCell.h; sourceTree = "<group>"; };
+		003EDAC820BD4C6300CFCFE9 /* CommunityCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityCell.m; sourceTree = "<group>"; };
+		003EDACB20BD5A6100CFCFE9 /* MessagePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagePage.h; sourceTree = "<group>"; };
+		003EDACC20BD5A6100CFCFE9 /* MessagePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagePage.m; sourceTree = "<group>"; };
+		003EDACF20BD5A7300CFCFE9 /* MessageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageView.h; sourceTree = "<group>"; };
+		003EDAD020BD5A7300CFCFE9 /* MessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageView.m; sourceTree = "<group>"; };
+		003EDAD320BD5A8400CFCFE9 /* MessageViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewModel.h; sourceTree = "<group>"; };
+		003EDAD420BD5A8400CFCFE9 /* MessageViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewModel.m; sourceTree = "<group>"; };
 		004EF51520A16DC400BA9602 /* STAlertUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STAlertUtil.h; sourceTree = "<group>"; };
 		004EF51620A16DC400BA9602 /* STAlertUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAlertUtil.m; sourceTree = "<group>"; };
 		004EF51820A1A37E00BA9602 /* STSheetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSheetModel.h; sourceTree = "<group>"; };
@@ -736,6 +760,7 @@
 		0006DF1520898BC2005A4465 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				003EDABD20BCF92E00CFCFE9 /* recognize */,
 				003EDA9E20BB984E00CFCFE9 /* building */,
 				003EDA8C20B800F100CFCFE9 /* address */,
 				002F948920B3C87B00F84094 /* STTabBarView.h */,
@@ -1097,6 +1122,46 @@
 				003EDAA020BB991D00CFCFE9 /* BuildingLayerModel.m */,
 			);
 			path = building;
+			sourceTree = "<group>";
+		};
+		003EDABD20BCF92E00CFCFE9 /* recognize */ = {
+			isa = PBXGroup;
+			children = (
+				003EDABA20BCF5A100CFCFE9 /* STRecognizeView.h */,
+				003EDABB20BCF5A100CFCFE9 /* STRecognizeView.m */,
+				003EDABE20BCF95300CFCFE9 /* RecognizeCell.h */,
+				003EDABF20BCF95300CFCFE9 /* RecognizeCell.m */,
+				003EDAC120BCF9A500CFCFE9 /* RecognizeModel.h */,
+				003EDAC220BCF9A500CFCFE9 /* RecognizeModel.m */,
+			);
+			path = recognize;
+			sourceTree = "<group>";
+		};
+		003EDACA20BD5A4B00CFCFE9 /* msg */ = {
+			isa = PBXGroup;
+			children = (
+				003EDACB20BD5A6100CFCFE9 /* MessagePage.h */,
+				003EDACC20BD5A6100CFCFE9 /* MessagePage.m */,
+			);
+			path = msg;
+			sourceTree = "<group>";
+		};
+		003EDACE20BD5A6700CFCFE9 /* msg */ = {
+			isa = PBXGroup;
+			children = (
+				003EDACF20BD5A7300CFCFE9 /* MessageView.h */,
+				003EDAD020BD5A7300CFCFE9 /* MessageView.m */,
+			);
+			path = msg;
+			sourceTree = "<group>";
+		};
+		003EDAD220BD5A7A00CFCFE9 /* msg */ = {
+			isa = PBXGroup;
+			children = (
+				003EDAD320BD5A8400CFCFE9 /* MessageViewModel.h */,
+				003EDAD420BD5A8400CFCFE9 /* MessageViewModel.m */,
+			);
+			path = msg;
 			sourceTree = "<group>";
 		};
 		004EF51B20A1A49500BA9602 /* alert */ = {
@@ -1480,6 +1545,8 @@
 				003EDA8220B7BF5D00CFCFE9 /* CommunityView.m */,
 				003EDAB420BBEC6800CFCFE9 /* AuthFaceView.h */,
 				003EDAB520BBEC6800CFCFE9 /* AuthFaceView.m */,
+				003EDAC720BD4C6300CFCFE9 /* CommunityCell.h */,
+				003EDAC820BD4C6300CFCFE9 /* CommunityCell.m */,
 			);
 			path = auth;
 			sourceTree = "<group>";
@@ -1489,6 +1556,8 @@
 			children = (
 				0050801120B6BC4900A976D9 /* UserAuthModel.h */,
 				0050801220B6BC4900A976D9 /* UserAuthModel.m */,
+				003EDAC420BD276A00CFCFE9 /* CommunityModel.h */,
+				003EDAC520BD276A00CFCFE9 /* CommunityModel.m */,
 			);
 			path = auth;
 			sourceTree = "<group>";
@@ -1610,6 +1679,7 @@
 		007B1F6320858F1D009EA9F1 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				003EDACE20BD5A6700CFCFE9 /* msg */,
 				00507FFD20B6AC7D00A976D9 /* auth */,
 				004EF57E20AAC97100BA9602 /* mine */,
 				004EF57420AAC4AB00BA9602 /* main */,
@@ -1661,6 +1731,7 @@
 		00D324B42085EE25001EC82F /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				003EDAD220BD5A7A00CFCFE9 /* msg */,
 				00507FF920B6ABCC00A976D9 /* auth */,
 				004EF58220AAC98E00BA9602 /* mine */,
 				004EF57620AAC4F100BA9602 /* main */,
@@ -1672,6 +1743,7 @@
 		00D324B52085EE3F001EC82F /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				003EDACA20BD5A4B00CFCFE9 /* msg */,
 				00507FF520B68AF700A976D9 /* auth */,
 				004EF57A20AAC95000BA9602 /* mine */,
 				004EF57220AAC49900BA9602 /* main */,
@@ -2047,6 +2119,7 @@
 				004EF54320A3083500BA9602 /* MainPage.m in Sources */,
 				004EF57020AA8F1100BA9602 /* CircularProgressView.m in Sources */,
 				002F945920B25E0B00F84094 /* CarDetailView.m in Sources */,
+				003EDAD520BD5A8400CFCFE9 /* MessageViewModel.m in Sources */,
 				004EF60720AD892B00BA9602 /* AddMemberViewModel.m in Sources */,
 				004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */,
 				0006DF79208DBC76005A4465 /* FaceRequestViewController.m in Sources */,
@@ -2068,6 +2141,7 @@
 				00D324B3208598A7001EC82F /* STPUtil.m in Sources */,
 				002F94AD20B40E9100F84094 /* OnePaymentView.m in Sources */,
 				004EF60420AD887500BA9602 /* AddMemberPage.m in Sources */,
+				003EDABC20BCF5A100CFCFE9 /* STRecognizeView.m in Sources */,
 				004EF54620A3085C00BA9602 /* MainViewModel.m in Sources */,
 				004EF53A20A2FDB200BA9602 /* BindPhonePage.m in Sources */,
 				00812BC52091A14500E2E70B /* STConvertUtil.m in Sources */,
@@ -2100,6 +2174,7 @@
 				002F94B420B40F5400F84094 /* OnePaymentViewModel.m in Sources */,
 				004EF57D20AAC96900BA9602 /* MinePage.m in Sources */,
 				002F946520B296F900F84094 /* MonthPaymentPage.m in Sources */,
+				003EDACD20BD5A6100CFCFE9 /* MessagePage.m in Sources */,
 				002F948420B3B79E00F84094 /* NSString+Extension.m in Sources */,
 				0006DF98208DBCAD005A4465 /* UIImage+Extensions.m in Sources */,
 				004EF5D120AC48AA00BA9602 /* SettingCell.m in Sources */,
@@ -2118,6 +2193,7 @@
 				002F948A20B3C87B00F84094 /* STTabBarView.m in Sources */,
 				CFB6D1BA20B55DA200A0863B /* VisitorModel.m in Sources */,
 				004EF5E020AC525E00BA9602 /* AboutPage.m in Sources */,
+				003EDAD120BD5A7300CFCFE9 /* MessageView.m in Sources */,
 				004EF52B20A2CD6200BA9602 /* UITextField+Init.m in Sources */,
 				004EF5B020ABFD8900BA9602 /* ProfileView.m in Sources */,
 				CF43E3D520B5802B0069AAFA /* VisitorHistoryModel.m in Sources */,
@@ -2142,6 +2218,7 @@
 				004EF5BC20AC05D100BA9602 /* TitleContentModel.m in Sources */,
 				003EDAB920BBEC8300CFCFE9 /* AuthFaceViewModel.m in Sources */,
 				002F949420B3EA6B00F84094 /* MonthPaymentCell.m in Sources */,
+				003EDAC320BCF9A500CFCFE9 /* RecognizeModel.m in Sources */,
 				003EDA8620B7BF6800CFCFE9 /* CommunityViewModel.m in Sources */,
 				0006DFA8208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m in Sources */,
 				007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */,
@@ -2166,6 +2243,7 @@
 				0039FC2C20942BDF0044D92E /* STObserver.m in Sources */,
 				0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */,
 				004EF56A20A9B7FF00BA9602 /* NextLoginViewModel.m in Sources */,
+				003EDAC020BCF95300CFCFE9 /* RecognizeCell.m in Sources */,
 				004EF5AA20AAEB4800BA9602 /* HabitantModel.m in Sources */,
 				002F947420B2C0CF00F84094 /* PaymentRecordView.m in Sources */,
 				002F944020AFF23F00F84094 /* CarViewModel.m in Sources */,
@@ -2187,6 +2265,7 @@
 				002F942C20AEBA9000F84094 /* MessageSettingView.m in Sources */,
 				002F946E20B2B96900F84094 /* PaymentRecordPage.m in Sources */,
 				004EF52E20A2D30800BA9602 /* UILabel+Init.m in Sources */,
+				003EDAC620BD276A00CFCFE9 /* CommunityModel.m in Sources */,
 				CFB6D1B120B5405600A0863B /* STDateLayerView.m in Sources */,
 				0050800620B6B70500A976D9 /* STResultView.m in Sources */,
 				0050800F20B6BB2600A976D9 /* AuthUserViewModel.m in Sources */,
@@ -2220,6 +2299,7 @@
 				002F943320AEC19500F84094 /* MessageSettingCell.m in Sources */,
 				00C2541E209AACDC00E8E306 /* STUpdateUtil.m in Sources */,
 				004EF54C20A3E27100BA9602 /* STNavigationView.m in Sources */,
+				003EDAC920BD4C6300CFCFE9 /* CommunityCell.m in Sources */,
 				004EF5FB20AD812600BA9602 /* MemberCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

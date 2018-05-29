@@ -12,6 +12,7 @@
 
 @property(strong, nonatomic) MainViewModel *mViewModel;
 @property(strong, nonatomic) UIButton *mineBtn;
+@property(strong, nonatomic) UIButton *msgBtn;
 
 @end
 
@@ -30,11 +31,19 @@
     _mineBtn.frame = CGRectMake(0, STHeight(100), ScreenWidth, STHeight(60));
     [_mineBtn addTarget:self action:@selector(clickMineBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_mineBtn];
+    
+    _msgBtn = [[UIButton alloc]initWithFont:STFont(20) text:@"消息主页" textColor:c01 backgroundColor:cwhite corner:0 borderWidth:0 borderColor:nil];
+    _msgBtn.frame = CGRectMake(0, STHeight(200), ScreenWidth, STHeight(60));
+    [_msgBtn addTarget:self action:@selector(clickMsgBtn) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_msgBtn];
 }
 
 -(void)clickMineBtn{
     [_mViewModel goMinePage];
 }
 
+-(void)clickMsgBtn{
+    [_mViewModel goMessagePage];
+}
 
 @end

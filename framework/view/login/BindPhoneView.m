@@ -65,6 +65,7 @@
     
     
     _sendVerifyCodeBtn =  [[UIButton alloc]initWithFont:STFont(14) text:_mViewModel.bindPhoneModel.verifyStr textColor:c08 backgroundColor:[UIColor clearColor] corner:0 borderWidth:0 borderColor:nil];
+    [_sendVerifyCodeBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     _sendVerifyCodeBtn.frame = CGRectMake(STWidth(252), STHeight(188), STWidth(80), STHeight(60));
     _sendVerifyCodeBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_sendVerifyCodeBtn];
@@ -79,6 +80,7 @@
     
     _submitBtn = [[UIButton alloc]initWithFont:STFont(18) text:@"提交" textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
     _submitBtn.frame = CGRectMake(STWidth(27), STHeight(313), STWidth(320), STWidth(50));
+    [_submitBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [self addSubview:_submitBtn];
     [_submitBtn addTarget:self action:@selector(doBindPhone) forControlEvents:UIControlEventTouchUpInside];
     

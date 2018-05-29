@@ -18,6 +18,7 @@
 #define Notify_UpdateMember @"update_member"
 #define Notify_DeleteCar @"delete_car"
 #define Notify_AddCar @"add_car"
+#define Notify_UpdateAddress @"update_address"
 
 
 

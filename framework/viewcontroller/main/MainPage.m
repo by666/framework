@@ -12,6 +12,7 @@
 #import "STNavigationView.h"
 #import "MinePage.h"
 #import "AuthUserPage.h"
+#import "MessagePage.h"
 
 @interface MainPage ()<MainViewDelegate>
 
@@ -59,6 +60,10 @@
 
 -(void)onGoMinePage{
     [MinePage show:self];
+}
+
+-(void)onGoMessagePage{
+    [MessagePage show:self];
 }
 
 @end

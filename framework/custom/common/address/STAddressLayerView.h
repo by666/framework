@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol AddressLayerViewDelegate
+
+-(void)onSelectAddressResult:(NSString *)city;
+
+@end
+
 @interface STAddressLayerView : UIView
+
+@property(weak, nonatomic)id<AddressLayerViewDelegate> delegate;
 
 //注：最大支持省，市，区（column = 2,省和市）
 -(instancetype)initWithColumn:(NSInteger)column;

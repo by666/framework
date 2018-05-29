@@ -11,6 +11,7 @@
 @protocol MainViewDelegate
 
 -(void)onGoMinePage;
+-(void)onGoMessagePage;
 
 @end
 
@@ -19,5 +20,6 @@
 @property(weak, nonatomic)id <MainViewDelegate>delegate;
 
 -(void)goMinePage;
+-(void)goMessagePage;
 
 @end

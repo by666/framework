@@ -44,8 +44,9 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:_tableView];
     
-    _paymentBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_CARDETAIL_PAYMENT textColor:cwhite backgroundColor:c21 corner:STHeight(25) borderWidth:0 borderColor:nil];
+    _paymentBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_CARDETAIL_PAYMENT textColor:cwhite backgroundColor:c19 corner:STHeight(25) borderWidth:0 borderColor:nil];
     _paymentBtn.frame = CGRectMake(STWidth(50), STHeight(419), STWidth(276), STHeight(50));
+    [_paymentBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
     [_paymentBtn addTarget:self action:@selector(goPaymentPage) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_paymentBtn];
     

@@ -41,8 +41,9 @@
     _codeView.delegate = self;
     [self addSubview:_codeView];
     
-    _sendVerifyBtn = [[UIButton alloc]initWithFont:STFont(14) text:@"发送验证码" textColor:cwhite backgroundColor:c21 corner:STHeight(22.5) borderWidth:0 borderColor:nil];
+    _sendVerifyBtn = [[UIButton alloc]initWithFont:STFont(14) text:@"发送验证码" textColor:cwhite backgroundColor:c19 corner:STHeight(22.5) borderWidth:0 borderColor:nil];
     _sendVerifyBtn.frame = CGRectMake(STWidth(112), STHeight(211), STWidth(151), STHeight(45));
+    [_sendVerifyBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
     [_sendVerifyBtn addTarget:self action:@selector(OnClickSendVerifyBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_sendVerifyBtn];
     
@@ -68,7 +69,7 @@
         }
     }else{
         [_sendVerifyBtn setTitleColor:cwhite forState:UIControlStateNormal];
-        _sendVerifyBtn.backgroundColor = c21;
+        _sendVerifyBtn.backgroundColor = c19;
     }
 }
 

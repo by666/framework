@@ -16,6 +16,7 @@
 @property(strong, nonatomic)STResultView *resultView;
 @property(strong, nonatomic)MBProgressHUD *hud;
 @property(assign, nonatomic)NSInteger time;
+@property(strong, nonatomic)UIButton *nextBtn;
 
 @end
 
@@ -40,17 +41,18 @@
     subContent.frame = CGRectMake(STWidth(32), STHeight(62), ScreenWidth - STWidth(64), subSize.height);
     [self addSubview:subContent];
     
-    NSInteger width = ScreenWidth - STWidth(100);
-    _addPhotoBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"+" textColor:c12 backgroundColor:c15 corner:STHeight(9) borderWidth:1 borderColor:c12];
-    _addPhotoBtn.frame = CGRectMake(STWidth(50), STHeight(160), width, width);
+    _addPhotoBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"+" textColor:c12 backgroundColor:c15 corner:STHeight(70) borderWidth:3.25f borderColor:c22];
+    _addPhotoBtn.frame = CGRectMake(STWidth(118), STHeight(161), STWidth(140), STWidth(140));
     _addPhotoBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [_addPhotoBtn addTarget:self action:@selector(onClickAddPhotoBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_addPhotoBtn];
     
-    UIButton *nextBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_AUTHUSER_BTN textColor:cwhite backgroundColor:c19 corner:STHeight(25) borderWidth:0 borderColor:nil];
-    nextBtn.frame = CGRectMake(STWidth(50), STHeight(513), STWidth(276), STHeight(50));
-    [nextBtn addTarget:self action:@selector(onClickNextBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:nextBtn];
+    _nextBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_AUTHFACE_UPLOAD textColor:cwhite backgroundColor:c19 corner:STHeight(25) borderWidth:0 borderColor:nil];
+    _nextBtn.frame = CGRectMake(STWidth(50), STHeight(513), STWidth(276), STHeight(50));
+    _nextBtn.hidden = YES;
+    [_nextBtn addTarget:self action:@selector(onClickNextBtn) forControlEvents:UIControlEventTouchUpInside];
+    [_nextBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
+    [self addSubview:_nextBtn];
     
     _resultView = [[STResultView alloc]initWithTips:MSG_AUTHSTATU_SUBMIT_SUCCESS tips2:MSG_AUTHSTATU_SUBMIT_TIPS];
     _resultView.hidden = YES;
@@ -74,6 +76,7 @@
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     [_addPhotoBtn setImage:image forState:UIControlStateNormal];
     [_addPhotoBtn setImage:image forState:UIControlStateHighlighted];
+    _nextBtn.hidden = NO;
 }
 
 -(void)onCommitStart{

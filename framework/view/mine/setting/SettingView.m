@@ -42,6 +42,7 @@
     _logoutBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_SETTING_LOGOUT textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
     [_logoutBtn addTarget:self action:@selector(onClickLogoutBtn) forControlEvents:UIControlEventTouchUpInside];
     _logoutBtn.frame = CGRectMake(STWidth(50), STHeight(513), STHeight(276), STHeight(50));
+    [_logoutBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [self addSubview:_logoutBtn];
 }
 

@@ -7,8 +7,11 @@
 //
 
 #import "CommunityPage.h"
+#import "CommunityView.h"
 
-@interface CommunityPage ()
+@interface CommunityPage()<CommunityViewDelegate>
+
+@property(strong, nonatomic)CommunityView *communityView;
 
 @end
 
@@ -33,7 +36,21 @@
 }
 
 -(void)initView{
+    CommunityViewModel *viewModel = [[CommunityViewModel alloc]init];
+    viewModel.delegate = self;
     
+    _communityView = [[CommunityView alloc]initWithViewModel:viewModel];
+    _communityView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
+    _communityView.backgroundColor = c15;
+    [self.view addSubview:_communityView];
+}
+
+-(void)onSearchCommunity:(Boolean)success datas:(NSMutableArray *)datas errorMsg:(NSString *)errorMsg{
+    [_communityView updateView];
+}
+
+-(void)onBackLastPage{
+    [self backLastPage];
 }
 
 @end

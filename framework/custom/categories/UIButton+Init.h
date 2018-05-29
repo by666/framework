@@ -14,4 +14,6 @@
 
 -(instancetype)initWithFont:(CGFloat)fontSize text:(NSString *)text textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 
+- (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state;
+
 @end

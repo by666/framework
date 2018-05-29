@@ -92,6 +92,7 @@
     _generateBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_VISITOR_GENERATE_BTN textColor:cwhite backgroundColor:c19 corner:STHeight(25) borderWidth:0 borderColor:nil];
     _generateBtn.frame = CGRectMake(STWidth(50), STHeight(513), ScreenWidth - STWidth(100), STHeight(50));
     [_generateBtn addTarget:self action:@selector(onClickGenerateBtn) forControlEvents:UIControlEventTouchUpInside];
+    [_generateBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
     [self addSubview:_generateBtn];
     
     _dateLayerView = [[STDateLayerView alloc]initWithTitle:nil frame:CGRectMake(0, 0, ScreenWidth, ContentHeight)];

@@ -25,4 +25,9 @@
     }
 }
 
+-(void)goMessagePage{
+    if(_delegate){
+        [_delegate onGoMessagePage];
+    }
+}
 @end

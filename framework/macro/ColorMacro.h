@@ -17,6 +17,8 @@
 #define c06 [STColorUtil colorWithHexString:@"#44CCB1"]
 #define c07 [STColorUtil colorWithHexString:@"#F19EFD"]
 #define c08 [STColorUtil colorWithHexString:@"#8282FC"]
+#define c08a [STColorUtil colorWithHexString:@"#2B2BCB"]
+#define c08b [STColorUtil colorWithHexString:@"#8282FC" alpha:0.5f]
 #define c09 [STColorUtil colorWithHexString:@"#B3BFD0"]
 #define c10 [STColorUtil colorWithHexString:@"#262628"]
 #define c11 [STColorUtil colorWithHexString:@"#333537"]
@@ -28,14 +30,27 @@
 #define c17 [STColorUtil colorWithHexString:@"#D3DFEF"]
 #define c18 [STColorUtil colorWithHexString:@"#FF6457"]
 #define c19 [STColorUtil colorWithHexString:@"#4777FA"]
+#define c19a [STColorUtil colorWithHexString:@"#184CD1"]
+#define c19b [STColorUtil colorWithHexString:@"#4777FA" alpha:0.5f]
 #define c20 [STColorUtil colorWithHexString:@"#515F71"]
 #define c21 [STColorUtil colorWithHexString:@"#566BEE"]
 #define c22 [STColorUtil colorWithHexString:@"#DEE9F7"]
 #define c23 [STColorUtil colorWithHexString:@"#FFA93A"]
+#define c23a [STColorUtil colorWithHexString:@"#C8770E"]
+#define c23b [STColorUtil colorWithHexString:@"#FFA93A" alpha:0.5f]
 #define c24 [STColorUtil colorWithHexString:@"#FF6457" alpha:0.7f]
 #define c25 [STColorUtil colorWithHexString:@"#2970FB"]
 #define c26 [STColorUtil colorWithHexString:@"#0760A8"]
-#define c27 [STColorUtil colorWithHexString:@"#FFA93A"alpha:0.5f]
+#define c27 [STColorUtil colorWithHexString:@"#FFA93A" alpha:0.5f]
+#define c28 [STColorUtil colorWithHexString:@"#EEF2F9"]
+#define c29 [STColorUtil colorWithHexString:@"#120000"]
+
+
+
+
+
+
+
 
 
 #define cwhite [STColorUtil colorWithHexString:@"#ffffff"]

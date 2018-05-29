@@ -10,4 +10,27 @@
 
 @implementation CommunityViewModel
 
+-(instancetype)init{
+    if(self == [super init]){
+        _datas = [[NSMutableArray alloc]init];
+    }
+    return self;
+}
+
+-(void)searchCommunity:(NSString *)keyStr{
+    if(_delegate){
+        if(IS_NS_STRING_EMPTY(keyStr)){
+            [_delegate onSearchCommunity:NO datas:nil errorMsg:MSG_COMMUNITY_KEYISEMPTY];
+            return;
+        }
+        _datas = [CommunityModel getTestDatas];
+        [_delegate onSearchCommunity:YES datas:_datas errorMsg:MSG_SUCCESS];
+    }
+}
+
+-(void)backLastPage{
+    if(_delegate){
+        [_delegate onBackLastPage];
+    }
+}
 @end

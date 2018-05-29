@@ -59,6 +59,7 @@
     UIButton *noCarBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_CAR_ADDCAR textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:0];
     noCarBtn.frame = CGRectMake(STWidth(49), STHeight(263), STWidth(276), STHeight(50));
     [noCarBtn addTarget:self action:@selector(OnClickAddCarBtn) forControlEvents:UIControlEventTouchUpInside];
+    [noCarBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [_noCarView addSubview:noCarBtn];
 }
 

@@ -9,8 +9,10 @@
 #import "AuthUserView.h"
 #import "STBuildingLayerView.h"
 #import "STSinglePickerLayerView.h"
+#import "STRecognizeView.h"
+#import "RecognizeModel.h"
 
-@interface AuthUserView()<STBuildingLayerViewDelegate,STSinglePickerLayerViewDelegate>
+@interface AuthUserView()<STBuildingLayerViewDelegate,STSinglePickerLayerViewDelegate,UITextFieldDelegate,STRecognizeViewDelegate>
 
 @property(strong, nonatomic)AuthUserViewModel *mViewModel;
 @property(strong, nonatomic)UITextField *doorTF;
@@ -22,6 +24,7 @@
 @property(strong, nonatomic)UIButton *identifyBtn;
 @property(strong, nonatomic)STSinglePickerLayerView *identifyLayerView;
 @property(strong, nonatomic)UILabel *tipsLabel;
+@property(strong, nonatomic)STRecognizeView *recognizeView;
 
 
 @end
@@ -43,6 +46,7 @@
     UIButton *nextBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_AUTHUSER_BTN textColor:cwhite backgroundColor:c19 corner:STHeight(25) borderWidth:0 borderColor:nil];
     nextBtn.frame = CGRectMake(STWidth(50), STHeight(513), STWidth(276), STHeight(50));
     [nextBtn addTarget:self action:@selector(onClickNextBtn) forControlEvents:UIControlEventTouchUpInside];
+    [nextBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
     [self addSubview:nextBtn];
     
     _tipsLabel = [[UILabel alloc]initWithFont:STFont(12) text:@"" textAlignment:NSTextAlignmentLeft textColor:c18 backgroundColor:nil multiLine:NO];
@@ -52,6 +56,10 @@
     [self addSubview:[self buildingLayerView]];
     [self addSubview:[self identifyLayerView]];
 
+    _recognizeView = [[STRecognizeView alloc]initWithTitle:MSG_AUTHUSER_RECOGNIZE_TITLE datas:nil];
+    _recognizeView.delegate = self;
+    _recognizeView.hidden = YES;
+    [self addSubview:_recognizeView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onKeyboardShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onKeyboardHidden:) name:UIKeyboardWillHideNotification object:nil];
@@ -90,7 +98,7 @@
     }
     
     
-    NSString *communitysStr = @"光明顶";
+    NSString *communitysStr = @"少林寺";
     _communityBtn = [[UIButton alloc]initWithFont:STFont(16) text:communitysStr textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil];
     CGSize communitySize = [communitysStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     _communityBtn.frame = CGRectMake(ScreenWidth - STWidth(36) - communitySize.width, 0,communitySize.width, STHeight(57));
@@ -120,7 +128,9 @@
     _doorTF = [[UITextField alloc]initWithFont:STFont(16) textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:0];
     _doorTF.placeholder = MSG_AUTHUSER_PART1_DOORNUM_HINT;
     _doorTF.textAlignment = NSTextAlignmentRight;
+    _doorTF.keyboardType = UIKeyboardTypeNumberPad;
     _doorTF.frame = CGRectMake(ScreenWidth - STWidth(215), STHeight(114), STWidth(200),  STHeight(57));
+    _doorTF.delegate = self;
     [view addSubview:_doorTF];
 
 }
@@ -281,4 +291,26 @@
         _tipsLabel.text = errorMsg;
     }
 }
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    if(textField == _doorTF){
+        if(IS_NS_STRING_EMPTY(textField.text)){
+            return;
+        }
+        [_recognizeView setData:[RecognizeModel getTestDatas:textField.text]];
+        _recognizeView.hidden = NO;
+    }
+}
+
+-(void)onSelectRecognizeResult:(NSString *)result{
+    _doorTF.text = result;
+}
+
+-(void)updateAddress:(NSString *)addressStr{
+    [_communityBtn setTitle:addressStr forState:UIControlStateNormal];
+    CGSize communitySize = [addressStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    _communityBtn.frame = CGRectMake(ScreenWidth - STWidth(36) - communitySize.width, 0,communitySize.width, STHeight(57));
+}
+
+
 @end

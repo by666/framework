@@ -19,6 +19,9 @@
 @property(strong, nonatomic)NSMutableArray *cityDatas;
 @property(strong, nonatomic)NSMutableArray *districtDatas;
 
+@property(strong, nonatomic)UIButton *cancelBtn;
+@property(strong, nonatomic)UIButton *confirmBtn;
+
 @end
 
 @implementation STAddressLayerView{
@@ -46,9 +49,14 @@
 
 
 -(void)initView{
+    
+    
     self.frame = CGRectMake(0, 0, ScreenWidth, ContentHeight);
     self.backgroundColor = [cblack colorWithAlphaComponent:0.8];
     self.hidden = NO;
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(OnClickLayerView)];
+    [self addGestureRecognizer:recognizer];
+    
     if(mColumn > 0){
         [self addSubview:[self provincePickerView]];
     }
@@ -58,6 +66,9 @@
     if(mColumn > 2){
         [self addSubview:[self districtPickerView]];
     }
+    
+    [self addSubview:[self cancelBtn]];
+    [self addSubview:[self confirmBtn]];
 
 }
 
@@ -94,6 +105,27 @@
     }
     return _districtPickerView;
 }
+
+-(UIButton *)cancelBtn{
+    if(_cancelBtn == nil){
+        _cancelBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_CANCEL textColor:c12 backgroundColor:c15 corner:0 borderWidth:0 borderColor:nil];
+        _cancelBtn.frame = CGRectMake(0, ContentHeight - STHeight(250), ScreenWidth/2, STHeight(50));
+        [_cancelBtn addTarget:self action:@selector(OnClickCancelBtn) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _cancelBtn;
+}
+
+
+-(UIButton *)confirmBtn{
+    if(_confirmBtn == nil){
+        _confirmBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_CONFIRM textColor:c20 backgroundColor:c15 corner:0 borderWidth:0 borderColor:nil];
+        _confirmBtn.frame = CGRectMake(ScreenWidth/2, ContentHeight - STHeight(250), ScreenWidth/2, STHeight(50));
+        [_confirmBtn addTarget:self action:@selector(OnClickConfirmBtn) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    return _confirmBtn;
+}
+
 
 
 -(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
@@ -229,5 +261,25 @@
 }
 
 
+-(void)OnClickLayerView{
+    self.hidden = YES;
+}
+
+-(void)OnClickCancelBtn{
+    self.hidden = YES;
+    
+}
+
+-(void)OnClickConfirmBtn{
+    self.hidden = YES;
+    if(_delegate){
+        NSString *result = @"";
+        if(!IS_NS_COLLECTION_EMPTY(_cityDatas)){
+            AddressLayerModel *model = [_cityDatas objectAtIndex:cityIndex];
+            result = model.name;
+        }
+        [_delegate onSelectAddressResult:result];
+    }
+}
 
 @end

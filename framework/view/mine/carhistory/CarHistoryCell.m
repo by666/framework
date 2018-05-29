@@ -63,6 +63,7 @@
     _payBtn = [[UIButton alloc]initWithFont:STFont(12) text:@"" textColor:c19 backgroundColor:nil corner:STHeight(12.5) borderWidth:1 borderColor:c19];
     _payBtn.frame = CGRectMake(STWidth(261), STHeight(78), STWidth(95), 25);
     _payBtn.userInteractionEnabled = NO;
+    [_payBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
     [self.contentView addSubview:_payBtn];
     
     UIView *lineView = [[UIView alloc]init];

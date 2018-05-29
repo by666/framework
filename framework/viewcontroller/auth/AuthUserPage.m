@@ -10,8 +10,9 @@
 #import "AuthUserView.h"
 #import "CommunityPage.h"
 #import "AuthFacePage.h"
+#import "STObserverManager.h"
 
-@interface AuthUserPage ()<AuthUserViewDelegate>
+@interface AuthUserPage ()<AuthUserViewDelegate,STObserverProtocol>
 
 @property(strong, nonatomic)AuthUserView *authUserView;
 @end
@@ -29,6 +30,7 @@
     self.view.backgroundColor = c15;
     [self initView];
     [self showSTNavigationBar:MSG_AUTHUSER_TITLE needback:YES];
+    [[STObserverManager sharedSTObserverManager]registerSTObsever:Notify_UpdateAddress delegate:self];
 }
 
 
@@ -37,6 +39,7 @@
 }
 
 -(void)dealloc{
+    [[STObserverManager sharedSTObserverManager]removeSTObsever:Notify_UpdateAddress];
     if(_authUserView){
         [_authUserView removeView];
     }
@@ -66,5 +69,10 @@
 }
 
 
+-(void)onReciveResult:(NSString *)key msg:(id)msg{
+    if([key isEqualToString:Notify_UpdateAddress]){
+        [_authUserView updateAddress:msg];
+    }
+}
 
 @end

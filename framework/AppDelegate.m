@@ -23,6 +23,7 @@
 #import "AccountManager.h"
 #import "MinePage.h"
 #import "AuthUserPage.h"
+#import "CommunityPage.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>
 

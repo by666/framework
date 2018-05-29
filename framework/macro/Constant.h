@@ -32,6 +32,7 @@
 #define MSG_DELETE @"删除"
 #define MSG_WARN @"警告"
 #define MSG_COMMIT @"提交"
+#define MSG_SEARCH @"搜索"
 #define MSG_DATE_FORMAT @"YYYY年MM月dd日"
 #define MSG_DATE_FORMAT2 @"YYYY.MM.dd"
 
@@ -225,6 +226,9 @@
 #define MSG_AUTHUSER_PART2_IDNUM @"身份证号码："
 #define MSG_AUTHUSER_PART2_IDNUM_HINT @"请输入您的身份证号码"
 
+#define MSG_AUTHUSER_RECOGNIZE_TITLE @"输入房号不存在，是否为"
+
+
 #define MSG_AUTHUSER_BTN @"下一步"
 
 #define MSG_AUTHUSER_ERROR_NOCOMMUNITY @"请选择您的社区"
@@ -236,6 +240,9 @@
 
 //社区选择
 #define MSG_COMMUNITY_TITLE @"社区信息"
+#define MSG_COMMUNITY_KEYISEMPTY @"请输入搜索关键字"
+#define MSG_COMMUNITY_CURRENTPOSITION @"当前自动定位"
+#define MSG_COMMUNITY_LISTTITLE @"附近小区"
 
 
 //人脸认证
@@ -244,5 +251,10 @@
 #define MSG_AUTHFACE_SUB_CONTENT @"您的照片将被用于门禁出入身份识别，为保证门禁安全，请勿使用他人图片，请勿上传使用PS等手段处理后的图片。"
 #define MSG_AUTHFACE_TAKEPHOTO @"立即拍照上传"
 #define MSG_AUTHFACE_ALBUM @"相册选择"
+#define MSG_AUTHFACE_UPLOAD @"立即上传"
+
+
+//消息主页
+#define MSG_MESSAGE_TITLE @"消息主页"
 
 

@@ -12,4 +12,5 @@
 @interface CommunityView : UIView
 
 -(instancetype)initWithViewModel:(CommunityViewModel *)viewModel;
+-(void)updateView;
 @end
