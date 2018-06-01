@@ -107,6 +107,26 @@
 		003EDACD20BD5A6100CFCFE9 /* MessagePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDACC20BD5A6100CFCFE9 /* MessagePage.m */; };
 		003EDAD120BD5A7300CFCFE9 /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAD020BD5A7300CFCFE9 /* MessageView.m */; };
 		003EDAD520BD5A8400CFCFE9 /* MessageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAD420BD5A8400CFCFE9 /* MessageViewModel.m */; };
+		003EDAD920BE439700CFCFE9 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAD820BE439700CFCFE9 /* MessageModel.m */; };
+		003EDADC20BE733300CFCFE9 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDADB20BE733300CFCFE9 /* MessageCell.m */; };
+		003EDADF20BE810A00CFCFE9 /* EnterAuthPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDADE20BE810A00CFCFE9 /* EnterAuthPage.m */; };
+		003EDAE220BE849A00CFCFE9 /* VerificateUserPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAE120BE849A00CFCFE9 /* VerificateUserPage.m */; };
+		003EDAE520BE88D700CFCFE9 /* EnterAuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAE420BE88D700CFCFE9 /* EnterAuthView.m */; };
+		003EDAE820BE88E800CFCFE9 /* EnterAuthViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAE720BE88E800CFCFE9 /* EnterAuthViewModel.m */; };
+		003EDAEB20BE94A000CFCFE9 /* EnterAuthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAEA20BE94A000CFCFE9 /* EnterAuthCell.m */; };
+		003EDAEE20BF9CF300CFCFE9 /* VerificateUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAED20BF9CF300CFCFE9 /* VerificateUserView.m */; };
+		003EDAF120BF9D0600CFCFE9 /* VerificateViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAF020BF9D0600CFCFE9 /* VerificateViewModel.m */; };
+		003EDAF420BFA34B00CFCFE9 /* VerificateViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAF320BFA34B00CFCFE9 /* VerificateViewCell.m */; };
+		003EDAF720C116E600CFCFE9 /* SystemMsgPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAF620C116E600CFCFE9 /* SystemMsgPage.m */; };
+		003EDAFA20C116F900CFCFE9 /* PropertyMsgPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAF920C116F900CFCFE9 /* PropertyMsgPage.m */; };
+		003EDAFD20C117F700CFCFE9 /* SystemMsgViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAFC20C117F700CFCFE9 /* SystemMsgViewModel.m */; };
+		003EDB0020C1180400CFCFE9 /* PropertyMsgViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDAFF20C1180400CFCFE9 /* PropertyMsgViewModel.m */; };
+		003EDB0320C1181600CFCFE9 /* SystemMsgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB0220C1181600CFCFE9 /* SystemMsgView.m */; };
+		003EDB0620C1182000CFCFE9 /* PropertyMsgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB0520C1182000CFCFE9 /* PropertyMsgView.m */; };
+		003EDB0920C1184800CFCFE9 /* SystemMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB0820C1184800CFCFE9 /* SystemMsgModel.m */; };
+		003EDB0C20C1185000CFCFE9 /* PropertyMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB0B20C1185000CFCFE9 /* PropertyMsgModel.m */; };
+		003EDB0F20C1263800CFCFE9 /* SystemMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB0E20C1263800CFCFE9 /* SystemMsgCell.m */; };
+		003EDB1220C147E400CFCFE9 /* PropertyMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB1120C147E400CFCFE9 /* PropertyMsgCell.m */; };
 		004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51620A16DC400BA9602 /* STAlertUtil.m */; };
 		004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51920A1A37E00BA9602 /* STSheetModel.m */; };
 		004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF52120A2A23C00BA9602 /* LoginViewModel.m */; };
@@ -438,6 +458,46 @@
 		003EDAD020BD5A7300CFCFE9 /* MessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageView.m; sourceTree = "<group>"; };
 		003EDAD320BD5A8400CFCFE9 /* MessageViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewModel.h; sourceTree = "<group>"; };
 		003EDAD420BD5A8400CFCFE9 /* MessageViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewModel.m; sourceTree = "<group>"; };
+		003EDAD720BE439700CFCFE9 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		003EDAD820BE439700CFCFE9 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		003EDADA20BE733300CFCFE9 /* MessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		003EDADB20BE733300CFCFE9 /* MessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		003EDADD20BE810A00CFCFE9 /* EnterAuthPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterAuthPage.h; sourceTree = "<group>"; };
+		003EDADE20BE810A00CFCFE9 /* EnterAuthPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterAuthPage.m; sourceTree = "<group>"; };
+		003EDAE020BE849A00CFCFE9 /* VerificateUserPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificateUserPage.h; sourceTree = "<group>"; };
+		003EDAE120BE849A00CFCFE9 /* VerificateUserPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificateUserPage.m; sourceTree = "<group>"; };
+		003EDAE320BE88D700CFCFE9 /* EnterAuthView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterAuthView.h; sourceTree = "<group>"; };
+		003EDAE420BE88D700CFCFE9 /* EnterAuthView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterAuthView.m; sourceTree = "<group>"; };
+		003EDAE620BE88E800CFCFE9 /* EnterAuthViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterAuthViewModel.h; sourceTree = "<group>"; };
+		003EDAE720BE88E800CFCFE9 /* EnterAuthViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterAuthViewModel.m; sourceTree = "<group>"; };
+		003EDAE920BE94A000CFCFE9 /* EnterAuthCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterAuthCell.h; sourceTree = "<group>"; };
+		003EDAEA20BE94A000CFCFE9 /* EnterAuthCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterAuthCell.m; sourceTree = "<group>"; };
+		003EDAEC20BF9CF300CFCFE9 /* VerificateUserView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificateUserView.h; sourceTree = "<group>"; };
+		003EDAED20BF9CF300CFCFE9 /* VerificateUserView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificateUserView.m; sourceTree = "<group>"; };
+		003EDAEF20BF9D0600CFCFE9 /* VerificateViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificateViewModel.h; sourceTree = "<group>"; };
+		003EDAF020BF9D0600CFCFE9 /* VerificateViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificateViewModel.m; sourceTree = "<group>"; };
+		003EDAF220BFA34B00CFCFE9 /* VerificateViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificateViewCell.h; sourceTree = "<group>"; };
+		003EDAF320BFA34B00CFCFE9 /* VerificateViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificateViewCell.m; sourceTree = "<group>"; };
+		003EDAF520C116E600CFCFE9 /* SystemMsgPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemMsgPage.h; sourceTree = "<group>"; };
+		003EDAF620C116E600CFCFE9 /* SystemMsgPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemMsgPage.m; sourceTree = "<group>"; };
+		003EDAF820C116F900CFCFE9 /* PropertyMsgPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PropertyMsgPage.h; sourceTree = "<group>"; };
+		003EDAF920C116F900CFCFE9 /* PropertyMsgPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PropertyMsgPage.m; sourceTree = "<group>"; };
+		003EDAFB20C117F700CFCFE9 /* SystemMsgViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemMsgViewModel.h; sourceTree = "<group>"; };
+		003EDAFC20C117F700CFCFE9 /* SystemMsgViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemMsgViewModel.m; sourceTree = "<group>"; };
+		003EDAFE20C1180400CFCFE9 /* PropertyMsgViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PropertyMsgViewModel.h; sourceTree = "<group>"; };
+		003EDAFF20C1180400CFCFE9 /* PropertyMsgViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PropertyMsgViewModel.m; sourceTree = "<group>"; };
+		003EDB0120C1181600CFCFE9 /* SystemMsgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemMsgView.h; sourceTree = "<group>"; };
+		003EDB0220C1181600CFCFE9 /* SystemMsgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemMsgView.m; sourceTree = "<group>"; };
+		003EDB0420C1182000CFCFE9 /* PropertyMsgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PropertyMsgView.h; sourceTree = "<group>"; };
+		003EDB0520C1182000CFCFE9 /* PropertyMsgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PropertyMsgView.m; sourceTree = "<group>"; };
+		003EDB0720C1184800CFCFE9 /* SystemMsgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemMsgModel.h; sourceTree = "<group>"; };
+		003EDB0820C1184800CFCFE9 /* SystemMsgModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemMsgModel.m; sourceTree = "<group>"; };
+		003EDB0A20C1185000CFCFE9 /* PropertyMsgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PropertyMsgModel.h; sourceTree = "<group>"; };
+		003EDB0B20C1185000CFCFE9 /* PropertyMsgModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PropertyMsgModel.m; sourceTree = "<group>"; };
+		003EDB0D20C1263800CFCFE9 /* SystemMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemMsgCell.h; sourceTree = "<group>"; };
+		003EDB0E20C1263800CFCFE9 /* SystemMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemMsgCell.m; sourceTree = "<group>"; };
+		003EDB1020C147E400CFCFE9 /* PropertyMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PropertyMsgCell.h; sourceTree = "<group>"; };
+		003EDB1120C147E400CFCFE9 /* PropertyMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PropertyMsgCell.m; sourceTree = "<group>"; };
 		004EF51520A16DC400BA9602 /* STAlertUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STAlertUtil.h; sourceTree = "<group>"; };
 		004EF51620A16DC400BA9602 /* STAlertUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAlertUtil.m; sourceTree = "<group>"; };
 		004EF51820A1A37E00BA9602 /* STSheetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSheetModel.h; sourceTree = "<group>"; };
@@ -1142,6 +1202,14 @@
 			children = (
 				003EDACB20BD5A6100CFCFE9 /* MessagePage.h */,
 				003EDACC20BD5A6100CFCFE9 /* MessagePage.m */,
+				003EDADD20BE810A00CFCFE9 /* EnterAuthPage.h */,
+				003EDADE20BE810A00CFCFE9 /* EnterAuthPage.m */,
+				003EDAE020BE849A00CFCFE9 /* VerificateUserPage.h */,
+				003EDAE120BE849A00CFCFE9 /* VerificateUserPage.m */,
+				003EDAF520C116E600CFCFE9 /* SystemMsgPage.h */,
+				003EDAF620C116E600CFCFE9 /* SystemMsgPage.m */,
+				003EDAF820C116F900CFCFE9 /* PropertyMsgPage.h */,
+				003EDAF920C116F900CFCFE9 /* PropertyMsgPage.m */,
 			);
 			path = msg;
 			sourceTree = "<group>";
@@ -1149,8 +1217,26 @@
 		003EDACE20BD5A6700CFCFE9 /* msg */ = {
 			isa = PBXGroup;
 			children = (
+				003EDAE320BE88D700CFCFE9 /* EnterAuthView.h */,
+				003EDAE420BE88D700CFCFE9 /* EnterAuthView.m */,
+				003EDAE920BE94A000CFCFE9 /* EnterAuthCell.h */,
+				003EDAEA20BE94A000CFCFE9 /* EnterAuthCell.m */,
 				003EDACF20BD5A7300CFCFE9 /* MessageView.h */,
 				003EDAD020BD5A7300CFCFE9 /* MessageView.m */,
+				003EDADA20BE733300CFCFE9 /* MessageCell.h */,
+				003EDADB20BE733300CFCFE9 /* MessageCell.m */,
+				003EDAEC20BF9CF300CFCFE9 /* VerificateUserView.h */,
+				003EDAED20BF9CF300CFCFE9 /* VerificateUserView.m */,
+				003EDAF220BFA34B00CFCFE9 /* VerificateViewCell.h */,
+				003EDAF320BFA34B00CFCFE9 /* VerificateViewCell.m */,
+				003EDB0120C1181600CFCFE9 /* SystemMsgView.h */,
+				003EDB0220C1181600CFCFE9 /* SystemMsgView.m */,
+				003EDB0D20C1263800CFCFE9 /* SystemMsgCell.h */,
+				003EDB0E20C1263800CFCFE9 /* SystemMsgCell.m */,
+				003EDB0420C1182000CFCFE9 /* PropertyMsgView.h */,
+				003EDB0520C1182000CFCFE9 /* PropertyMsgView.m */,
+				003EDB1020C147E400CFCFE9 /* PropertyMsgCell.h */,
+				003EDB1120C147E400CFCFE9 /* PropertyMsgCell.m */,
 			);
 			path = msg;
 			sourceTree = "<group>";
@@ -1160,6 +1246,27 @@
 			children = (
 				003EDAD320BD5A8400CFCFE9 /* MessageViewModel.h */,
 				003EDAD420BD5A8400CFCFE9 /* MessageViewModel.m */,
+				003EDAE620BE88E800CFCFE9 /* EnterAuthViewModel.h */,
+				003EDAE720BE88E800CFCFE9 /* EnterAuthViewModel.m */,
+				003EDAEF20BF9D0600CFCFE9 /* VerificateViewModel.h */,
+				003EDAF020BF9D0600CFCFE9 /* VerificateViewModel.m */,
+				003EDAFB20C117F700CFCFE9 /* SystemMsgViewModel.h */,
+				003EDAFC20C117F700CFCFE9 /* SystemMsgViewModel.m */,
+				003EDAFE20C1180400CFCFE9 /* PropertyMsgViewModel.h */,
+				003EDAFF20C1180400CFCFE9 /* PropertyMsgViewModel.m */,
+			);
+			path = msg;
+			sourceTree = "<group>";
+		};
+		003EDAD620BE438800CFCFE9 /* msg */ = {
+			isa = PBXGroup;
+			children = (
+				003EDAD720BE439700CFCFE9 /* MessageModel.h */,
+				003EDAD820BE439700CFCFE9 /* MessageModel.m */,
+				003EDB0720C1184800CFCFE9 /* SystemMsgModel.h */,
+				003EDB0820C1184800CFCFE9 /* SystemMsgModel.m */,
+				003EDB0A20C1185000CFCFE9 /* PropertyMsgModel.h */,
+				003EDB0B20C1185000CFCFE9 /* PropertyMsgModel.m */,
 			);
 			path = msg;
 			sourceTree = "<group>";
@@ -1666,6 +1773,7 @@
 		007B1F6220858F17009EA9F1 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				003EDAD620BE438800CFCFE9 /* msg */,
 				0050801020B6BC3200A976D9 /* auth */,
 				004EF5BF20AC05FA00BA9602 /* net */,
 				004EF5BE20AC05EE00BA9602 /* extra */,
@@ -2121,6 +2229,7 @@
 				002F945920B25E0B00F84094 /* CarDetailView.m in Sources */,
 				003EDAD520BD5A8400CFCFE9 /* MessageViewModel.m in Sources */,
 				004EF60720AD892B00BA9602 /* AddMemberViewModel.m in Sources */,
+				003EDB1220C147E400CFCFE9 /* PropertyMsgCell.m in Sources */,
 				004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */,
 				0006DF79208DBC76005A4465 /* FaceRequestViewController.m in Sources */,
 				0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */,
@@ -2152,10 +2261,13 @@
 				00D324D320873B14001EC82F /* RespondModel.m in Sources */,
 				002F944D20AFFBE000F84094 /* AddCarView.m in Sources */,
 				007B1F3D20858EB6009EA9F1 /* main.m in Sources */,
+				003EDB0920C1184800CFCFE9 /* SystemMsgModel.m in Sources */,
+				003EDAE520BE88D700CFCFE9 /* EnterAuthView.m in Sources */,
 				004EF58E20AAD40600BA9602 /* VisitorPage.m in Sources */,
 				002F945C20B25E7C00F84094 /* CarDetailViewModel.m in Sources */,
 				004EF5B320ABFDF200BA9602 /* ProfileViewModel.m in Sources */,
 				0006DF99208DBCAD005A4465 /* CaptureManager.m in Sources */,
+				003EDADC20BE733300CFCFE9 /* MessageCell.m in Sources */,
 				003EDAAD20BBD9CF00CFCFE9 /* STSinglePickerLayerView.m in Sources */,
 				0006DF78208DBC76005A4465 /* FaceRequestSettingViewController.m in Sources */,
 				004EF53120A2D6AA00BA9602 /* UIButton+Init.m in Sources */,
@@ -2169,6 +2281,7 @@
 				004EF5AD20ABDE6300BA9602 /* MineCell.m in Sources */,
 				003EDA8F20B8011000CFCFE9 /* STAddressLayerView.m in Sources */,
 				CF43E3D220B57F9B0069AAFA /* VisitorHistoryViewModel.m in Sources */,
+				003EDAFD20C117F700CFCFE9 /* SystemMsgViewModel.m in Sources */,
 				0006DF96208DBCAD005A4465 /* IFlyFaceImage.m in Sources */,
 				004EF58520AAC99A00BA9602 /* MineViewModel.m in Sources */,
 				002F94B420B40F5400F84094 /* OnePaymentViewModel.m in Sources */,
@@ -2193,6 +2306,7 @@
 				002F948A20B3C87B00F84094 /* STTabBarView.m in Sources */,
 				CFB6D1BA20B55DA200A0863B /* VisitorModel.m in Sources */,
 				004EF5E020AC525E00BA9602 /* AboutPage.m in Sources */,
+				003EDAF420BFA34B00CFCFE9 /* VerificateViewCell.m in Sources */,
 				003EDAD120BD5A7300CFCFE9 /* MessageView.m in Sources */,
 				004EF52B20A2CD6200BA9602 /* UITextField+Init.m in Sources */,
 				004EF5B020ABFD8900BA9602 /* ProfileView.m in Sources */,
@@ -2212,10 +2326,12 @@
 				004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */,
 				002F949A20B3F8C600F84094 /* VisitorPaymentCell.m in Sources */,
 				004EF55520A4362400BA9602 /* FaceLoginView.m in Sources */,
+				003EDB0C20C1185000CFCFE9 /* PropertyMsgModel.m in Sources */,
 				004EF56720A9B4E300BA9602 /* NextLoginView.m in Sources */,
 				004EF5C520AC2C8500BA9602 /* FaceEnterView.m in Sources */,
 				003EDAB320BBEB6200CFCFE9 /* AuthFacePage.m in Sources */,
 				004EF5BC20AC05D100BA9602 /* TitleContentModel.m in Sources */,
+				003EDB0020C1180400CFCFE9 /* PropertyMsgViewModel.m in Sources */,
 				003EDAB920BBEC8300CFCFE9 /* AuthFaceViewModel.m in Sources */,
 				002F949420B3EA6B00F84094 /* MonthPaymentCell.m in Sources */,
 				003EDAC320BCF9A500CFCFE9 /* RecognizeModel.m in Sources */,
@@ -2241,15 +2357,19 @@
 				CF43E3CF20B57F7C0069AAFA /* VisitorHistoryView.m in Sources */,
 				002F94AA20B407C500F84094 /* CarHistoryModel.m in Sources */,
 				0039FC2C20942BDF0044D92E /* STObserver.m in Sources */,
+				003EDAD920BE439700CFCFE9 /* MessageModel.m in Sources */,
 				0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */,
 				004EF56A20A9B7FF00BA9602 /* NextLoginViewModel.m in Sources */,
+				003EDAE820BE88E800CFCFE9 /* EnterAuthViewModel.m in Sources */,
 				003EDAC020BCF95300CFCFE9 /* RecognizeCell.m in Sources */,
 				004EF5AA20AAEB4800BA9602 /* HabitantModel.m in Sources */,
 				002F947420B2C0CF00F84094 /* PaymentRecordView.m in Sources */,
 				002F944020AFF23F00F84094 /* CarViewModel.m in Sources */,
 				00507FF820B6A8A100A976D9 /* AuthStatuPage.m in Sources */,
+				003EDAE220BE849A00CFCFE9 /* VerificateUserPage.m in Sources */,
 				004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */,
 				004EF60120AD885A00BA9602 /* AddMemberView.m in Sources */,
+				003EDAFA20C116F900CFCFE9 /* PropertyMsgPage.m in Sources */,
 				004EF59120AAD41700BA9602 /* VisitorHistoryPage.m in Sources */,
 				CFB6D1A520B5355700A0863B /* VisitorHomeView.m in Sources */,
 				002F945620B038B300F84094 /* CarDetailPage.m in Sources */,
@@ -2258,15 +2378,19 @@
 				004EF5F820AD762A00BA9602 /* MemberModel.m in Sources */,
 				002F943C20AED4FF00F84094 /* HabitantCell.m in Sources */,
 				0006DF95208DBCAD005A4465 /* CalculatorTools.m in Sources */,
+				003EDB0320C1181600CFCFE9 /* SystemMsgView.m in Sources */,
 				002F949720B3EAEB00F84094 /* MonthPaymentModel.m in Sources */,
 				004EF5CE20AC450900BA9602 /* SettingViewModel.m in Sources */,
 				004EF54F20A4316900BA9602 /* FaceLoginPage.m in Sources */,
 				002F946B20B298FD00F84094 /* PaymentViewModel.m in Sources */,
 				002F942C20AEBA9000F84094 /* MessageSettingView.m in Sources */,
+				003EDADF20BE810A00CFCFE9 /* EnterAuthPage.m in Sources */,
+				003EDB0620C1182000CFCFE9 /* PropertyMsgView.m in Sources */,
 				002F946E20B2B96900F84094 /* PaymentRecordPage.m in Sources */,
 				004EF52E20A2D30800BA9602 /* UILabel+Init.m in Sources */,
 				003EDAC620BD276A00CFCFE9 /* CommunityModel.m in Sources */,
 				CFB6D1B120B5405600A0863B /* STDateLayerView.m in Sources */,
+				003EDAF720C116E600CFCFE9 /* SystemMsgPage.m in Sources */,
 				0050800620B6B70500A976D9 /* STResultView.m in Sources */,
 				0050800F20B6BB2600A976D9 /* AuthUserViewModel.m in Sources */,
 				0006DF1820898BDE005A4465 /* STRefreshTableView.m in Sources */,
@@ -2277,17 +2401,20 @@
 				004EF5CB20AC44F900BA9602 /* SettingView.m in Sources */,
 				004EF5C220AC2C1800BA9602 /* FaceEnterPage.m in Sources */,
 				003EDA8920B7F5AD00CFCFE9 /* STBuildingLayerView.m in Sources */,
+				003EDB0F20C1263800CFCFE9 /* SystemMsgCell.m in Sources */,
 				004EF5E620AC558A00BA9602 /* UpdatePhoneNumViewModel.m in Sources */,
 				002F948E20B3E8A000F84094 /* VisitorPaymentView.m in Sources */,
 				0006DF9C208DBCAD005A4465 /* IFlyFaceResultKeys.m in Sources */,
 				00CCE9AB208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m in Sources */,
 				0006DF9B208DBCAD005A4465 /* IFlyFaceResultDetector.m in Sources */,
+				003EDAEB20BE94A000CFCFE9 /* EnterAuthCell.m in Sources */,
 				004EF5E320AC557700BA9602 /* UpdatePhoneNumView.m in Sources */,
 				0050800920B6BAEE00A976D9 /* AuthUserPage.m in Sources */,
 				002F946820B298EA00F84094 /* PaymentView.m in Sources */,
 				00D324CA2086E355001EC82F /* ByView.m in Sources */,
 				004EF59720AAD43100BA9602 /* CarHistoryPage.m in Sources */,
 				004EF5FE20AD863E00BA9602 /* STEdgeLabel.m in Sources */,
+				003EDAF120BF9D0600CFCFE9 /* VerificateViewModel.m in Sources */,
 				CF43E3D820B583040069AAFA /* VisitorHistoryCell.m in Sources */,
 				002F944720AFF6B600F84094 /* CarView.m in Sources */,
 				004EF53420A2DDCB00BA9602 /* LoginModel.m in Sources */,
@@ -2301,6 +2428,7 @@
 				004EF54C20A3E27100BA9602 /* STNavigationView.m in Sources */,
 				003EDAC920BD4C6300CFCFE9 /* CommunityCell.m in Sources */,
 				004EF5FB20AD812600BA9602 /* MemberCell.m in Sources */,
+				003EDAEE20BF9CF300CFCFE9 /* VerificateUserView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

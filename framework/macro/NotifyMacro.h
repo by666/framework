@@ -20,6 +20,9 @@
 #define Notify_AddCar @"add_car"
 #define Notify_UpdateAddress @"update_address"
 
+#define Notify_MESSAGE_AGREE @"msg_agree"
+#define Notify_MESSAGE_REJECT @"msg_reject"
+
 
 
 

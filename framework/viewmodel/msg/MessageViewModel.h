@@ -7,8 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MessageModel.h"
+
+@protocol MessageViewDelegate
+
+-(void)onGoPropertyPage;
+-(void)onGoSystemPage;
+-(void)onGoMessageDetailPage:(MessageModel *)model;
+-(void)onDataChange;
+
+@end
 
 @interface MessageViewModel : NSObject
 
+@property(weak, nonatomic)id<MessageViewDelegate> delegate;
+@property(strong, nonatomic)NSMutableArray *datas;
+
+-(void)goPropertyPage;
+-(void)goSystemPage;
+-(void)goMessageDetailPage:(MessageModel *)model;
+-(void)doReject:(MessageModel *)model;
+-(void)doAgree:(MessageModel *)model;
 
 @end

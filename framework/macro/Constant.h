@@ -256,5 +256,44 @@
 
 //消息主页
 #define MSG_MESSAGE_TITLE @"消息主页"
+#define MSG_MESSAGE_PROPERTY_BTN @"物业消息"
+#define MSG_MESSAGE_SYSTEM_BTN @"系统消息"
+
+//进禁/车闸
+#define MSG_ENTERAUTH_VISITOR_TITLE @"访客授权"
+#define MSG_ENTERAUTH_CAR_TITLE @"来访车辆授权"
+#define MSG_ENTERAUTH_VISITOR @"拜访人："
+#define MSG_ENTERAUTH_CARNUM @"车牌号："
+#define MSG_ENTERAUTH_TIME @"拜访时间："
+#define MSG_ENTERAUTH_POSITION @"当前位置："
+#define MSG_ENTERAUTH_AGREE_BTN @"同意"
+#define MSG_ENTERAUTH_REJECT_BTN @"忽略"
+
+
+//用户认证
+#define MSG_VERIFICATE_USER_TITLE @"用户认证"
+#define MSG_VERIFICATE_HEAD @"头像"
+#define MSG_VERIFICATE_NAME @"姓名"
+#define MSG_VERIFICATE_IDENTIFY @"居住身份"
+#define MSG_VERIFICATE_IDNUM @"身份证号码"
+#define MSG_VERIFICATE_PHONENUM @"联系电话"
+#define MSG_VERIFICATE_VALIDDATE @"认证有效期"
+
+#define MSG_VERIFICATE_DATE_YEAR @"一年"
+#define MSG_VERIFICATE_DATE_QUATERYEAD @"三个月"
+#define MSG_VERIFICATE_DATE_HALF @"半年"
+#define MSG_VERIFICATE_DATE_FOREVER @"永久"
+
+#define MSG_VERIFICATE_AGREE @"认证通过"
+#define MSG_VERIFICATE_REJECT @"退回申请"
+
+
+//系统消息页
+#define MSG_SYSTEMMSG_TITLE @"系统消息"
+
+//物业消息
+#define MSG_PROPERTYMSG_TITLE @"物业消息"
+#define MSG_PROPERTYMSG_DETAIL @"查看详情"
+
 
 

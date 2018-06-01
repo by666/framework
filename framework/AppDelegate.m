@@ -24,6 +24,7 @@
 #import "MinePage.h"
 #import "AuthUserPage.h"
 #import "CommunityPage.h"
+#import "MessagePage.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>
 
@@ -41,7 +42,7 @@
 //        controller = [[LoginPage alloc]init];
 //    }
 
-    controller = [[MainPage alloc]init];
+    controller = [[MessagePage alloc]init];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];

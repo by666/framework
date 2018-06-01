@@ -68,7 +68,7 @@
         _backBtn = [[UIButton alloc]init];
         UIImage *image = [UIImage imageNamed:@"ic_back"];
         [_backBtn setImage:image forState:UIControlStateNormal];
-        _backBtn.frame = CGRectMake(STWidth(17), (NavigationBarHeight - image.size.height)/2, image.size.width, image.size.height);
+        _backBtn.frame = CGRectMake(0, 0, STWidth(30) + image.size.width,NavigationBarHeight);
         [_backBtn addTarget:self action:@selector(OnBackBtnClick) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_backBtn];
     }

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MessageViewModel.h"
 @interface MessageView : UIView
+
+
+-(instancetype)initWithViewModel:(MessageViewModel *)viewModel;
+-(void)onAgreeCallback:(MessageModel *)model;
+-(void)onRejectCallback:(MessageModel *)model;
+-(void)updateView;
 
 @end
