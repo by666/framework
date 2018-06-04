@@ -11,8 +11,9 @@
 #import "STDateLayerView.h"
 #import "STCarNumLayerView.h"
 #import "PassView.h"
+#import "STSwitchView.h"
 
-@interface VisitorView()<STDateLayerViewDelegate,STCarNumLayerViewDelegate>
+@interface VisitorView()<STDateLayerViewDelegate,STCarNumLayerViewDelegate,STSwitchViewDelegate>
 
 @property(strong, nonatomic)VisitorViewModel *mViewModel;
 @property(assign, nonatomic)VisitorType mType;
@@ -23,7 +24,7 @@
 @property(strong, nonatomic)UIButton *headBtn;
 @property(strong, nonatomic)UITextField *numberTextField;
 @property(strong, nonatomic)STCarNumLayerView *carNumLayerView;
-@property(strong, nonatomic)UISwitch *funcSwitch;
+@property(strong, nonatomic)STSwitchView *funcSwitch;
 @property(strong, nonatomic)UIView *faceView;
 @property(strong, nonatomic)UIButton *generateBtn;
 @property(strong, nonatomic)UIButton *imageBtn;
@@ -64,6 +65,7 @@
     _nameTextField.textAlignment = NSTextAlignmentRight;
     _nameTextField.frame = CGRectMake(STWidth(100), 0 , ScreenWidth - STWidth(115), STHeight(57));
     _nameTextField.text = _mViewModel.data.name;
+    [_nameTextField setPlaceholder:MSG_VISITOR_NAME_TIPS color:c17 fontSize:STFont(16)];
     [commonView addSubview:_nameTextField];
     
     NSString *dateStr = [STTimeUtil getTomorrowDate];
@@ -74,7 +76,7 @@
     [commonView addSubview:_dateBtn];
     
     UIImageView *imageView = [[UIImageView alloc]init];
-    imageView.image = [UIImage imageNamed:@"ic_bottom_arrow"];
+    imageView.image = [UIImage imageNamed:@"ic_arrow_bottom"];
     imageView.frame = CGRectMake(ScreenWidth - STWidth(26), STHeight(83), STWidth(11), STHeight(7));
     [commonView addSubview:imageView];
     
@@ -132,13 +134,15 @@
     [view addSubview:_headBtn];
     
     UIImageView *imageView = [[UIImageView alloc]init];
-    imageView.image = [UIImage imageNamed:@"ic_bottom_arrow"];
+    imageView.image = [UIImage imageNamed:@"ic_arrow_bottom"];
     imageView.frame = CGRectMake(STWidth(262), STHeight(27), STWidth(11), STHeight(7));
     [view addSubview:imageView];
     
     _numberTextField =  [[UITextField alloc]initWithFont:STFont(16) textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:0];
     _numberTextField.textAlignment = NSTextAlignmentRight;
     _numberTextField.frame = CGRectMake(STWidth(273), 0 , STWidth(90), STHeight(57));
+    [_numberTextField setPlaceholder:MSG_VISITOR_CARNUM_TIPS color:c17 fontSize:STFont(16)];
+
     [view addSubview:_numberTextField];
     
 }
@@ -157,21 +161,26 @@
     label.frame = CGRectMake(STWidth(15), STHeight(20.5), labelSize.width, STHeight(16));
     [_faceView addSubview:label];
     
-    _funcSwitch = [[UISwitch alloc]init];
+    _funcSwitch = [[STSwitchView alloc]init];
     _funcSwitch.frame = CGRectMake(STWidth(318), STHeight(17), STWidth(42), STHeight(26));
     _funcSwitch.on = NO;
-    [_funcSwitch addTarget:self action:@selector(OnClickSwitch) forControlEvents:UIControlEventTouchUpInside];
+    _funcSwitch.delegate = self;
     [_faceView addSubview:_funcSwitch];
     
-    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(57), ScreenWidth, 1)];
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(57), ScreenWidth, LineHeight)];
     lineView.backgroundColor = c17;
     [_faceView addSubview:lineView];
     
-    _imageBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"+" textColor:c12 backgroundColor:c15 corner:STHeight(9) borderWidth:1 borderColor:c12];
-    _imageBtn.frame = CGRectMake(STWidth(108), STHeight(75), 0, 0);
+    _imageBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"" textColor:c12 backgroundColor:c15 corner:STHeight(70) borderWidth:3.25f borderColor:c22];
+    _imageBtn.frame = CGRectMake(STWidth(118), STHeight(85), 0, 0);
     _imageBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [_imageBtn addTarget:self action:@selector(onClickImageBtn) forControlEvents:UIControlEventTouchUpInside];
     [_faceView addSubview:_imageBtn];
+    
+    UILabel *layerLabel= [[UILabel alloc]initWithFont:STFont(17) text:@"+" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:[c13 colorWithAlphaComponent:0.6f] multiLine:NO];
+    layerLabel.frame = CGRectMake(0, STHeight(101), STWidth(140), STHeight(39));
+    [_imageBtn addSubview:layerLabel];
+    _imageBtn.clipsToBounds = YES;
     
     _tipsLabel = [[UILabel alloc]initWithFont:STFont(12) text:MSG_VISITOR_TIPS textAlignment:NSTextAlignmentLeft textColor:c12 backgroundColor:nil multiLine:NO];
     _tipsLabel.frame = CGRectMake(STWidth(15), STHeight(67), ScreenWidth - STWidth(30), STHeight(12));
@@ -209,7 +218,7 @@
     [_headBtn setTitle:carNumStr forState:UIControlStateNormal];
 }
 
--(void)OnClickSwitch{
+-(void)onSwitchStatuChange:(Boolean)on{
     WS(weakSelf)
     CGFloat height = STHeight(135);
     if(Car == _mType){
@@ -218,14 +227,14 @@
     if(_funcSwitch.on){
         [UIView animateWithDuration:0.3F animations:^{
             weakSelf.faceView.frame = CGRectMake(0, height, ScreenWidth, STHeight(252));
-            weakSelf.imageBtn.frame = CGRectMake(STWidth(108), STHeight(75), ScreenWidth - STHeight(216), STWidth(160));
+            weakSelf.imageBtn.frame = CGRectMake(STWidth(118), STHeight(85), STWidth(140), STWidth(140));
             weakSelf.tipsLabel.frame = CGRectMake(STWidth(15), STHeight(262), ScreenWidth - STWidth(30), STHeight(12));
 
         }];
     }else{
         [UIView animateWithDuration:0.3F animations:^{
             weakSelf.faceView.frame = CGRectMake(0, height, ScreenWidth, STHeight(57));
-            weakSelf.imageBtn.frame = CGRectMake(STWidth(108), STHeight(75),0, 0);
+            weakSelf.imageBtn.frame = CGRectMake(STWidth(118), STHeight(85),0, 0);
             weakSelf.tipsLabel.frame = CGRectMake(STWidth(15), STHeight(67), ScreenWidth - STWidth(30), STHeight(12));
 
         }];

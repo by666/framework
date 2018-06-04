@@ -52,7 +52,7 @@
     
     _arrowImageView = [[UIImageView alloc]init];
     _arrowImageView.frame = CGRectMake(STWidth(350), STHeight(41), STHeight(11), STHeight(11));
-    _arrowImageView.image = [UIImage imageNamed:@"ic_right_arrow"];
+    _arrowImageView.image = [UIImage imageNamed:@"ic_arrow_right"];
     _arrowImageView.hidden = YES;
     [self.contentView addSubview:_arrowImageView];
     
@@ -65,7 +65,7 @@
     _contentLabel.frame = CGRectMake(ScreenWidth - STWidth(14) - _contentLabel.contentSize.width, STHeight(19),_contentLabel.contentSize.width , STHeight(16));
 
     if(position == 0){
-        _lineView.frame = CGRectMake(STWidth(15), STHeight(89), ScreenWidth - STWidth(30), 1);
+        _lineView.frame = CGRectMake(STWidth(15), STHeight(89), ScreenWidth - STWidth(30), LineHeight);
         _titleLabel.frame = CGRectMake(STWidth(15), STHeight(37),STWidth(100) , STHeight(16));
         _headImageView.hidden = NO;
         _arrowImageView.hidden = NO;
@@ -76,7 +76,7 @@
         _contentLabel.hidden = YES;
 
     }else{
-        _lineView.frame = CGRectMake(STWidth(15), STHeight(53), ScreenWidth - STWidth(30), 1);
+        _lineView.frame = CGRectMake(STWidth(15), STHeight(53), ScreenWidth - STWidth(30), LineHeight);
         _titleLabel.frame = CGRectMake(STWidth(15), STHeight(19),STWidth(100) , STHeight(16));
         _headImageView.hidden = YES;
         _arrowImageView.hidden = YES;

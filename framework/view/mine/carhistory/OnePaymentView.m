@@ -82,7 +82,7 @@
     [self addSubview:_successView];
     
     UIImageView *succesImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(158), STHeight(54), STWidth(60), STWidth(60))];
-    succesImageView.image = [UIImage imageNamed:@"ic_pay_success"];
+    succesImageView.image = [UIImage imageNamed:@"ic_success"];
     [_successView addSubview:succesImageView];
     
     UILabel *tips1Label = [[UILabel alloc]initWithFont:STFont(18) text:MSG_ONEPAYMENT_SUCCEE_TIPS1 textAlignment:NSTextAlignmentCenter textColor:c20 backgroundColor:nil multiLine:YES];

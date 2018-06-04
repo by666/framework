@@ -58,7 +58,7 @@
     [_bodyView addSubview:detailLabel];
     
     UIImageView *arrowImageView = [[UIImageView alloc]initWithFrame:CGRectMake(ScreenWidth - STWidth(60) , STHeight(230),STWidth(7), STHeight(11))];
-    arrowImageView.image = [UIImage imageNamed:@"ic_right_arrow"];
+    arrowImageView.image = [UIImage imageNamed:@"ic_arrow_right"];
     arrowImageView.contentMode = UIViewContentModeScaleAspectFill;
     [_bodyView addSubview:arrowImageView];
 

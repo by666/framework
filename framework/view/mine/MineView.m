@@ -38,6 +38,7 @@
 }
 
 -(void)initTop{
+    
     _topView = [[UIView alloc]init];
     _topView.frame = CGRectMake(0, 0, ScreenWidth, STHeight(219.1));
     [self addSubview:_topView];
@@ -62,7 +63,7 @@
     editImageView.backgroundColor = c07;
     editImageView.layer.masksToBounds = YES;
     editImageView.layer.cornerRadius = STWidth(11.5);
-    editImageView.image = [UIImage imageNamed:@"ic_edit"];
+    editImageView.image = [UIImage imageNamed:@"ic_edit_head"];
     editImageView.contentMode = UIViewContentModeScaleAspectFit;
     editImageView.userInteractionEnabled = NO;
     [self addSubview:editImageView];
@@ -84,6 +85,7 @@
     _settingBtn = [[UIButton alloc]init];
     [_settingBtn setImage:[UIImage imageNamed:@"ic_setting"] forState:UIControlStateNormal];
     _settingBtn.frame = CGRectMake(STWidth(342), STHeight(31.4), STWidth(20), STWidth(20));
+    _settingBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [_settingBtn addTarget:self action:@selector(onClickSettingBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_settingBtn];
 }
@@ -96,6 +98,7 @@
     _tableView.showsHorizontalScrollIndicator = NO;
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:_tableView];
 }
 
@@ -149,8 +152,13 @@
     }else{
         position = 5 + indexPath.row;
     }
+    [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     UIImage *image = [UIImage imageNamed:[_mViewModel.imageArray objectAtIndex:position]];
-    [cell updateData:[_mViewModel.titleArray objectAtIndex:position] image:image];
+    if(position == 2 || position == 4 || position == 6){
+        [cell updateData:[_mViewModel.titleArray objectAtIndex:position] image:image hidden:YES];
+    }else{
+        [cell updateData:[_mViewModel.titleArray objectAtIndex:position] image:image hidden:NO];
+    }
     return cell;
 }
 

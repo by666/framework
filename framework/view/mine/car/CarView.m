@@ -57,7 +57,7 @@
     [_noCarView addSubview:noCarLabel];
     
     UIButton *noCarBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_CAR_ADDCAR textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:0];
-    noCarBtn.frame = CGRectMake(STWidth(49), STHeight(263), STWidth(276), STHeight(50));
+    noCarBtn.frame = CGRectMake(STWidth(50), STHeight(263), STWidth(276), STHeight(50));
     [noCarBtn addTarget:self action:@selector(OnClickAddCarBtn) forControlEvents:UIControlEventTouchUpInside];
     [noCarBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [_noCarView addSubview:noCarBtn];
@@ -101,11 +101,12 @@
     [_carView addSubview:_familyCarTableView];
     
     
-    UIButton *recordBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_CAR_RECORD textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil
+    UIButton *addCarBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_CAR_ADD textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil
                            ];
-    recordBtn.frame = CGRectMake(STWidth(130),STHeight(540), STWidth(115), STHeight(22));
-    [recordBtn addTarget:self action:@selector(onClickRecordBtn) forControlEvents:UIControlEventTouchUpInside];
-    [_carView addSubview:recordBtn];
+    [addCarBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
+    addCarBtn.frame = CGRectMake(STWidth(50),STHeight(513), STWidth(276), STHeight(50));
+    [addCarBtn addTarget:self action:@selector(OnClickAddCarBtn) forControlEvents:UIControlEventTouchUpInside];
+    [_carView addSubview:addCarBtn];
     
 }
 
@@ -178,9 +179,9 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if(tableView == _myCarTableView){
-        [_mViewModel.myCarDatas removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:indexPath.row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
-        [self updateView];
+        if(_mViewModel){
+            [_mViewModel showDeletePrompt:[_mViewModel.myCarDatas objectAtIndex:indexPath.row]];
+        }
     }
 }
 
@@ -205,6 +206,12 @@
     }
 }
 
+-(void)onDeleteCar:(CarModel *)model row:(NSInteger)row{
+    [_myCarTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationRight];
+    [self updateView];
+}
+
+
 -(void)OnClickPaymentBtn:(id)sender{
     UIButton *button = sender;
     NSInteger row = button.tag;
@@ -216,8 +223,7 @@
     }else{
         if(!IS_NS_COLLECTION_EMPTY(_mViewModel.familyCarDatas)){
             CarModel *model = [_mViewModel.familyCarDatas objectAtIndex:row];
-            [STLog print:@"这是啥" content:model.carNum];
-            [_mViewModel goPaymentPage:[_mViewModel.familyCarDatas objectAtIndex:row]];
+            [_mViewModel goPaymentPage:model];
         }
     }
 

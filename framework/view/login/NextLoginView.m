@@ -39,7 +39,7 @@
     phoneLabel.frame = CGRectMake(0, STHeight(157), ScreenWidth, STHeight(15));
     [self addSubview:phoneLabel];
     
-    UIButton *faceLoginBtn = [[UIButton alloc]initWithFont:STFont(15) text:MSG_FACE_LOGIN textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
+    UIButton *faceLoginBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_FACE_LOGIN textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
     faceLoginBtn.frame = CGRectMake(STWidth(50), STHeight(209), STWidth(276), STHeight(50));
     [faceLoginBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [faceLoginBtn addTarget:self action:@selector(goFaceLogin) forControlEvents:UIControlEventTouchUpInside];

@@ -63,11 +63,11 @@
     validView.backgroundColor = cwhite;
     [self addSubview:validView];
     
-    UIView *topLineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 1)];
+    UIView *topLineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, LineHeight)];
     topLineView.backgroundColor = c17;
     [validView addSubview:topLineView];
     
-    UIView *bottomLineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(60)-1, ScreenWidth, 1)];
+    UIView *bottomLineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(60)-LineHeight, ScreenWidth, LineHeight)];
     bottomLineView.backgroundColor = c17;
     [validView addSubview:bottomLineView];
     
@@ -77,7 +77,7 @@
     
     
     UIImageView *imageView = [[UIImageView alloc]init];
-    imageView.image = [UIImage imageNamed:@"ic_bottom_arrow"];
+    imageView.image = [UIImage imageNamed:@"ic_arrow_bottom"];
     imageView.frame = CGRectMake(ScreenWidth - STWidth(26), STHeight(26.5), STWidth(11), STHeight(7));
     [validView addSubview:imageView];
     

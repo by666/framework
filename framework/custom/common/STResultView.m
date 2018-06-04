@@ -32,7 +32,7 @@
     self.backgroundColor = cwhite;
 
     UIImageView *succesImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(158), STHeight(54), STWidth(60), STWidth(60))];
-    succesImageView.image = [UIImage imageNamed:@"ic_pay_success"];
+    succesImageView.image = [UIImage imageNamed:@"ic_success"];
     [self addSubview:succesImageView];
     
     UILabel *tips1Label = [[UILabel alloc]initWithFont:STFont(18) text:_mTips1 textAlignment:NSTextAlignmentCenter textColor:c20 backgroundColor:nil multiLine:YES];

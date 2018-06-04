@@ -46,6 +46,7 @@
 #define c29 [STColorUtil colorWithHexString:@"#120000"]
 #define c30 [STColorUtil colorWithHexString:@"#3023AE"]
 #define c31 [STColorUtil colorWithHexString:@"#C86DD7"]
+#define c32 [STColorUtil colorWithHexString:@"#5FCEFF"]
 
 
 

@@ -41,19 +41,24 @@
 -(void)initView{
     
     _backBtn= [[UIButton alloc]init];
-    UIImage *image = [UIImage imageNamed:@"ic_back"];
-    [_backBtn setImage:image forState:UIControlStateNormal];
-    _backBtn.frame = CGRectMake(STWidth(16), STHeight(23), STWidth(36), STWidth(36));
+    _backBtn.frame = CGRectMake(0, STHeight(18), STWidth(45), STWidth(45));
     [_backBtn addTarget:self action:@selector(doBack) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_backBtn];
     
+    UIImageView *backImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(17), STHeight(18), STWidth(11), STHeight(11))];
+    UIImage *image = [UIImage imageNamed:@"ic_arrow_back_white"];
+    backImageView.image = image;
+    [_backBtn addSubview:backImageView];
+    
     UIImageView *logoImageView = [[UIImageView alloc]init];
-    logoImageView.backgroundColor = cwhite;
+    logoImageView.image = [UIImage imageNamed:@"ic_cellos_icon"];
+    logoImageView.contentMode = UIViewContentModeScaleAspectFill;
     logoImageView.frame = CGRectMake(STWidth(161), STHeight(86), STWidth(54), STWidth(54));
     [self addSubview:logoImageView];
     
     UIImageView *nameImageView = [[UIImageView alloc]init];
-    nameImageView.backgroundColor = cwhite;
+    nameImageView.image = [UIImage imageNamed:@"ic_cellos_text"];
+    nameImageView.contentMode = UIViewContentModeScaleAspectFill;
     nameImageView.frame = CGRectMake(STWidth(127), STHeight(171), STWidth(122), STHeight(25));
     [self addSubview:nameImageView];
     
@@ -61,24 +66,31 @@
     _phoneNumTF = [[UITextField alloc]initWithFont:STFont(16) textColor:cwhite backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:STWidth(2)];
     _phoneNumTF.frame =  CGRectMake(STWidth(47), STHeight(256), STWidth(280), STHeight(41));
     _phoneNumTF.keyboardType = UIKeyboardTypePhonePad;
-    [_phoneNumTF setPlaceholder:@"请输入手机号"];
-
+    NSAttributedString *phoneNumStr = [[NSAttributedString alloc] initWithString:MSG_LOGIN_PHONENUM_HINT attributes:
+                                      @{NSForegroundColorAttributeName:[cwhite colorWithAlphaComponent:0.5f],
+                                        NSFontAttributeName:_phoneNumTF.font
+                                        }];
+    _phoneNumTF.attributedPlaceholder = phoneNumStr;
     [self addSubview:_phoneNumTF];
     
     UIView *phoneLine = [[UIView alloc]init];
     phoneLine.backgroundColor = cwhite;
-    phoneLine.frame = CGRectMake(STWidth(47), STHeight(297), STWidth(280), STHeight(0.5f));
+    phoneLine.frame = CGRectMake(STWidth(47), STHeight(297), STWidth(280), 0.5f);
     [self addSubview:phoneLine];
     
     _verifyCodeTF = [[UITextField alloc]initWithFont:STFont(16) textColor:cwhite backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:STWidth(2)];
     _verifyCodeTF.frame =  CGRectMake(STWidth(47), STHeight(313), STWidth(280), STHeight(41));
     _verifyCodeTF.keyboardType = UIKeyboardTypeNumberPad;
-    [_verifyCodeTF setPlaceholder:@"验证码"];
+    NSAttributedString *verifyCodeStr = [[NSAttributedString alloc] initWithString:MSG_LOGIN_VERIFYCODE_HINT attributes:
+                                       @{NSForegroundColorAttributeName:[cwhite colorWithAlphaComponent:0.5f],
+                                         NSFontAttributeName:_verifyCodeTF.font
+                                         }];
+    _verifyCodeTF.attributedPlaceholder = verifyCodeStr;
     [self addSubview:_verifyCodeTF];
     
     UIView *verifyLine = [[UIView alloc]init];
     verifyLine.backgroundColor = cwhite;
-    verifyLine.frame = CGRectMake(STWidth(47), STHeight(357), STWidth(280), STHeight(0.5f));
+    verifyLine.frame = CGRectMake(STWidth(47), STHeight(357), STWidth(280), 0.5f);
     [self addSubview:verifyLine];
     
     _tipLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:c06 backgroundColor:nil multiLine:NO];
@@ -86,30 +98,30 @@
     [self addSubview:_tipLabel];
     
     
-    _loginBtn = [[UIButton alloc]initWithFont:STFont(18) text:@"登录" textColor:c04 backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
+    _loginBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_LOGIN_BTN_LOGIN textColor:c04 backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
     _loginBtn.frame = CGRectMake(STWidth(27), STHeight(414), STWidth(320), STWidth(50));
     [_loginBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [self addSubview:_loginBtn];
     [_loginBtn addTarget:self action:@selector(doLogin) forControlEvents:UIControlEventTouchUpInside];
 
     
-    UIView *leftView = [[UIView alloc]initWithFrame:CGRectMake(STWidth(114), STHeight(583), STWidth(26), STHeight(2))];
+    UIView *leftView = [[UIView alloc]initWithFrame:CGRectMake(STWidth(114), STHeight(583), STWidth(26), 0.5f)];
     leftView.backgroundColor = c05;
     [self addSubview:leftView];
     
     
-    UIView *rightView = [[UIView alloc]initWithFrame:CGRectMake(STWidth(236), STHeight(583), STWidth(26), STHeight(2))];
+    UIView *rightView = [[UIView alloc]initWithFrame:CGRectMake(STWidth(236), STHeight(583), STWidth(26), 0.5f)];
     rightView.backgroundColor = c05;
     [self addSubview:rightView];
     
-    UILabel *thirdLabel = [[UILabel alloc]initWithFont:STFont(15) text:@"第三方登录" textAlignment:NSTextAlignmentCenter textColor:c05 backgroundColor:nil multiLine:NO];
+    UILabel *thirdLabel = [[UILabel alloc]initWithFont:STFont(15) text:MSG_LOGIN_THIRD_LOGIN textAlignment:NSTextAlignmentCenter textColor:c05 backgroundColor:nil multiLine:NO];
     thirdLabel.frame = CGRectMake(0, STHeight(577), ScreenWidth, STHeight(15));
     [self addSubview:thirdLabel];
     
     
     _wechatLoginBtn =  [[UIButton alloc]init];
-    _wechatLoginBtn.imageView.contentMode = UIViewContentModeScaleToFill;
     [_wechatLoginBtn setImage:[UIImage imageNamed:@"ic_wechat"] forState:UIControlStateNormal];
+    _wechatLoginBtn.imageView.contentMode = UIViewContentModeScaleToFill;
     _wechatLoginBtn.frame = CGRectMake(STWidth(172), STHeight(617), STWidth(31), STWidth(31));
     [self addSubview:_wechatLoginBtn];
     [_wechatLoginBtn addTarget:self action:@selector(doWechatLogin) forControlEvents:UIControlEventTouchUpInside];

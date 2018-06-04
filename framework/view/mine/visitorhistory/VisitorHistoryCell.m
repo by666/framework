@@ -39,6 +39,8 @@
     _avatarImageView.backgroundColor = cblack;
     _avatarImageView.layer.masksToBounds =YES;
     _avatarImageView.layer.cornerRadius = STHeight(30);
+    _avatarImageView.image = [UIImage imageNamed:@"ic_test1"];
+    _avatarImageView.contentMode =UIViewContentModeScaleAspectFill;
     [view addSubview:_avatarImageView];
     
     
@@ -69,12 +71,14 @@
     CGSize nameSize = [model.name sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     _nameLabel.frame = CGRectMake(STWidth(89), STHeight(20), nameSize.width, STHeight(16));
     
-    _enterTimeLabel.text = model.enterTime;
-    CGSize enterTimeSize = [model.enterTime sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(12)]];
+    NSString *enterStr = [NSString stringWithFormat:MSG_VISITORHOME_ENTER_TIME,model.enterTime];
+    _enterTimeLabel.text = enterStr;
+    CGSize enterTimeSize = [enterStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(12)]];
     _enterTimeLabel.frame = CGRectMake(STWidth(89), STHeight(44), enterTimeSize.width, STHeight(12));
     
-    _exitTimeLabel.text = model.exitTime;
-    CGSize exitTimeSize = [model.exitTime sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(12)]];
+    NSString *exitStr = [NSString stringWithFormat:MSG_VISITORHOME_EXIT_TIME,model.exitTime];
+    _exitTimeLabel.text = exitStr;
+    CGSize exitTimeSize = [exitStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(12)]];
     _exitTimeLabel.frame = CGRectMake(STWidth(89), STHeight(63), exitTimeSize.width, STHeight(12));
     
     

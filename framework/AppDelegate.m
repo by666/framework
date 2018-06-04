@@ -42,7 +42,7 @@
 //        controller = [[LoginPage alloc]init];
 //    }
 
-    controller = [[MessagePage alloc]init];
+    controller = [[MainPage alloc]init];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];

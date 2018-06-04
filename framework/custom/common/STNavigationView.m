@@ -66,7 +66,7 @@
 
     if(mNeedBack){
         _backBtn = [[UIButton alloc]init];
-        UIImage *image = [UIImage imageNamed:@"ic_back"];
+        UIImage *image = [UIImage imageNamed:@"ic_arrow_back_grey"];
         [_backBtn setImage:image forState:UIControlStateNormal];
         _backBtn.frame = CGRectMake(0, 0, STWidth(30) + image.size.width,NavigationBarHeight);
         [_backBtn addTarget:self action:@selector(OnBackBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -74,7 +74,7 @@
     }
     
     UIView *lineView = [[UIView alloc]init];
-    lineView.frame = CGRectMake(0, NavigationBarHeight - 1, ScreenWidth, 1);
+    lineView.frame = CGRectMake(0, NavigationBarHeight - LineHeight, ScreenWidth, LineHeight);
     lineView.backgroundColor = c17;
     [self addSubview:lineView];
     

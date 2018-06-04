@@ -35,15 +35,15 @@
     _headImageView.frame = CGRectMake(STWidth(15), STHeight(15), STHeight(30), STHeight(30));
     _headImageView.layer.masksToBounds = YES;
     _headImageView.layer.cornerRadius = STHeight(15);
+    _headImageView.image = [UIImage imageNamed:@"ic_test1"];
+    _headImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:_headImageView];
     
     _titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
     _titleLabel.frame = CGRectMake(STWidth(55), STHeight(21), STWidth(100), STHeight(16));
     [self.contentView addSubview:_titleLabel];
     
-    _idetifyLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"" textAlignment:NSTextAlignmentCenter textColor:c19 backgroundColor:nil multiLine:NO];
-    _idetifyLabel.layer.borderColor = [c19 CGColor];
-    _idetifyLabel.layer.borderWidth = 1;
+    _idetifyLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
     _idetifyLabel.layer.masksToBounds = YES;
     _idetifyLabel.layer.cornerRadius = STHeight(9);
     [self.contentView addSubview:_idetifyLabel];
@@ -53,16 +53,16 @@
     [self.contentView addSubview:_validDateTitleLabel];
     
     
-    _validDateLabel  = [[UILabel alloc]initWithFont:STFont(12) text:@"" textAlignment:NSTextAlignmentLeft textColor:c12 backgroundColor:nil multiLine:NO];
+    _validDateLabel  = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:c12 backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_validDateLabel];
     
     _arrowImageView = [[UIImageView alloc]init];
-    [_arrowImageView setImage:[UIImage imageNamed:@"ic_right_arrow"]];
+    [_arrowImageView setImage:[UIImage imageNamed:@"ic_arrow_right"]];
     _arrowImageView.frame = CGRectMake(STWidth(354), STHeight(21), STWidth(7), STHeight(11));
     [self.contentView addSubview:_arrowImageView];
     
     UIView *lineView = [[UIView alloc]init];
-    lineView.frame = CGRectMake(0, STHeight(59), ScreenWidth,1);
+    lineView.frame = CGRectMake(0, STHeight(59), ScreenWidth,LineHeight);
     lineView.backgroundColor = c17;
     [self.contentView addSubview:lineView];
 }
@@ -72,15 +72,15 @@
 
     _titleLabel.text = model.name;
     _validDateLabel.text = model.validDate;
-    CGSize size = [STPUtil textSize:model.validDate maxWidth:ScreenWidth font:STFont(12)];
-    _validDateLabel.frame = CGRectMake(ScreenWidth - STWidth(26) -size.width, STHeight(32), size.width, STHeight(12));
-
-    if(!IS_NS_STRING_EMPTY(model.identify)){
-        _idetifyLabel.hidden = NO;
-        _idetifyLabel.text = model.identify;
-        _idetifyLabel.frame = CGRectMake(_titleLabel.contentSize.width + STWidth(55 + 12), STHeight(21),_idetifyLabel.contentSize.width + STWidth(8), STHeight(18));
+    CGSize size = [STPUtil textSize:model.validDate maxWidth:ScreenWidth font:STFont(14)];
+    _validDateLabel.frame = CGRectMake(ScreenWidth - STWidth(26) -size.width, STHeight(32), size.width, STHeight(14));
+    
+    _idetifyLabel.text = model.identify;
+    _idetifyLabel.frame = CGRectMake(_titleLabel.contentSize.width + STWidth(55 + 12), STHeight(21),_idetifyLabel.contentSize.width + STWidth(14), STHeight(18));
+    if([model.identify isEqualToString:@"家属"]){
+        _idetifyLabel.backgroundColor = c19;
     }else{
-        _idetifyLabel.hidden = YES;
+        _idetifyLabel.backgroundColor = c13;
     }
     
 }

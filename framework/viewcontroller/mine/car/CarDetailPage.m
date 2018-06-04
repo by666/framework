@@ -32,9 +32,9 @@
     self.view.backgroundColor = c15;
     [self initView];
     
-    __weak CarDetailPage *weakSelf = self;
+    WS(weakSelf)
     [self showSTNavigationBar:MSG_CARDETAIL_TITLE needback:YES rightBtn:MSG_DELETE block:^{
-        [weakSelf.viewModel deleteCarData];
+        [weakSelf deleteCar];
     }];
 }
 
@@ -52,6 +52,14 @@
     [self.view addSubview:_carDetailView];
 }
 
+ -(void)deleteCar{
+     WS(weakSelf)
+     [STAlertUtil showAlertController:MSG_WARN content:MSG_CAR_DELETE_TIPS controller:self confirm:^{
+         if(weakSelf.viewModel){
+             [weakSelf.viewModel deleteCarData];
+         }
+     }];
+ }
 
 -(void)onGoPaymentPage{
     [MonthPaymentPage show:self model:_model];
@@ -61,5 +69,7 @@
     [[STObserverManager sharedSTObserverManager] sendMessage:Notify_DeleteCar msg:_model];
     [self backLastPage];
 }
+     
+     
 
 @end

@@ -59,7 +59,7 @@
     _contentLabel.frame = CGRectMake(ScreenWidth - STWidth(14) - _contentLabel.contentSize.width, STHeight(22),_contentLabel.contentSize.width , STHeight(16));
     
     if(position == 0){
-        _lineView.frame = CGRectMake(0, STHeight(95)-1, ScreenWidth, 1);
+        _lineView.frame = CGRectMake(0, STHeight(95)- LineHeight, ScreenWidth, LineHeight);
         _titleLabel.frame = CGRectMake(STWidth(15), STHeight(39),STWidth(100) , STHeight(16));
         _headImageView.hidden = NO;
         if(!IS_NS_STRING_EMPTY(model.content)){
@@ -69,7 +69,7 @@
         _contentLabel.hidden = YES;
         
     }else{
-        _lineView.frame = CGRectMake(0, STHeight(60)-1, ScreenWidth, 1);
+        _lineView.frame = CGRectMake(0, STHeight(60)-LineHeight, ScreenWidth, LineHeight);
         _titleLabel.frame = CGRectMake(STWidth(15), STHeight(19),STWidth(100) , STHeight(16));
         _headImageView.hidden = YES;
         _contentLabel.hidden = NO;

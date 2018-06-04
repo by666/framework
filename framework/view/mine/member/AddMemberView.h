@@ -18,4 +18,6 @@
 -(void)saveMember;
 -(void)deleteMember;
 -(MemberModel *)getCurrentModel;
+
+-(void)removeView;
 @end

@@ -41,10 +41,10 @@
         [self addSubview:label];
         
         if(i == 2){
-            imageView.image = [UIImage imageNamed:@"ic_uncompelete"];
+            imageView.image = [UIImage imageNamed:@"ic_verify_wait"];
             label.textColor = c12;
         }else{
-            imageView.image = [UIImage imageNamed:@"ic_compeleted"];
+            imageView.image = [UIImage imageNamed:@"ic_verify_success"];
             label.textColor = c19;
         }
     }

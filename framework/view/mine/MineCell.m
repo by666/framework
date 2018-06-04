@@ -13,6 +13,7 @@
 @property(strong, nonatomic)UIImageView *iconImageView;
 @property(strong, nonatomic)UILabel *titleLabel;
 @property(strong, nonatomic)UIImageView *arrowImageView;
+@property(strong, nonatomic)UIView *lineView;
 
 @end
 
@@ -34,19 +35,25 @@
     [self.contentView addSubview:_titleLabel];
     
     _arrowImageView = [[UIImageView alloc]init];
-    _arrowImageView.image = [UIImage imageNamed:@"ic_right_arrow"];
+    _arrowImageView.image = [UIImage imageNamed:@"ic_arrow_right"];
     _arrowImageView.frame = CGRectMake(STWidth(354), STHeight(21), STWidth(7), STHeight(11));
     [self.contentView addSubview:_arrowImageView];
+    
+    _lineView = [[UIView alloc]init];
+    _lineView.frame = CGRectMake(STWidth(20), STHeight(54) - LineHeight, ScreenWidth-STWidth(35), LineHeight);
+    _lineView.backgroundColor = c17;
+    [self.contentView addSubview:_lineView];
     
 }
 
 
--(void)updateData:(NSString *)title image:(UIImage *)image{
+-(void)updateData:(NSString *)title image:(UIImage *)image hidden:(Boolean)hidden{
     _titleLabel.text = title;
     CGSize titleSize = [title sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     _titleLabel.frame = CGRectMake(STWidth(58), STHeight(20),titleSize.width , STHeight(16));
     
     _iconImageView.image = image;
+    _lineView.hidden  = hidden;
 
 }
 

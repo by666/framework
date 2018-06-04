@@ -46,6 +46,7 @@
     _pushTableView.showsHorizontalScrollIndicator = NO;
     _pushTableView.delegate = self;
     _pushTableView.dataSource = self;
+    _pushTableView.scrollEnabled = NO;
     _pushTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:_pushTableView];
     
@@ -56,6 +57,7 @@
     _expreeTableView.showsHorizontalScrollIndicator = NO;
     _expreeTableView.delegate = self;
     _expreeTableView.dataSource = self;
+    _expreeTableView.scrollEnabled = NO;
     _expreeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:_expreeTableView];
     

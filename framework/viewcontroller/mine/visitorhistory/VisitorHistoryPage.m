@@ -24,7 +24,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = c15;
     WS(weakSelf)
-    [self showSTNavigationBar:MSG_VISITORHISTORY_TITLE needback:YES rightBtn:MSG_VISITORHISTORY_RIGHTBTN block:^{
+    [self showSTNavigationBar:MSG_VISITORHISTORY_TITLE needback:YES rightBtn:MSG_VISITORHISTORY_RIGHTBTN  rightColor:c13 block:^{
         [VisitorPage show:self type:People];
     }];
     [self initView];

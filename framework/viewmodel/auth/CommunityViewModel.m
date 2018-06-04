@@ -20,6 +20,7 @@
 -(void)searchCommunity:(NSString *)keyStr{
     if(_delegate){
         if(IS_NS_STRING_EMPTY(keyStr)){
+            [_datas removeAllObjects];
             [_delegate onSearchCommunity:NO datas:nil errorMsg:MSG_COMMUNITY_KEYISEMPTY];
             return;
         }

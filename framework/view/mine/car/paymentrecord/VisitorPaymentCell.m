@@ -36,17 +36,13 @@
     _nameLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentRight textColor:c11 backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_nameLabel];
     
-    STEdgeLabel *enterTitleLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"进" textAlignment:NSTextAlignmentCenter textColor:c19 backgroundColor:nil multiLine:NO];
-    enterTitleLabel.layer.borderColor = [c19 CGColor];
-    enterTitleLabel.layer.borderWidth = 1;
+    STEdgeLabel *enterTitleLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"进" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c32 multiLine:NO];
     enterTitleLabel.layer.masksToBounds = YES;
     enterTitleLabel.layer.cornerRadius = STHeight(9);
     enterTitleLabel.frame = CGRectMake(STWidth(15), STHeight(69), STHeight(18), STHeight(18));
     [self.contentView addSubview:enterTitleLabel];
     
-    STEdgeLabel *exitTitleLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"出" textAlignment:NSTextAlignmentCenter textColor:c19 backgroundColor:nil multiLine:NO];
-    exitTitleLabel.layer.borderColor = [c19 CGColor];
-    exitTitleLabel.layer.borderWidth = 1;
+    STEdgeLabel *exitTitleLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"出" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c19 multiLine:NO];
     exitTitleLabel.layer.masksToBounds = YES;
     exitTitleLabel.layer.cornerRadius = STHeight(9);
     exitTitleLabel.frame = CGRectMake(STWidth(15), STHeight(96), STHeight(18), STHeight(18));
@@ -76,12 +72,12 @@
     [self.contentView addSubview:_amountLabel];
     
     UIView *lineView1 = [[UIView alloc]init];
-    lineView1.frame = CGRectMake(0, STHeight(48), ScreenWidth, 1);
+    lineView1.frame = CGRectMake(0, STHeight(48), ScreenWidth, LineHeight);
     lineView1.backgroundColor = c17;
     [self.contentView addSubview:lineView1];
     
     UIView *lineView2= [[UIView alloc]init];
-    lineView2.frame = CGRectMake(0, STHeight(130), ScreenWidth,1);
+    lineView2.frame = CGRectMake(0, STHeight(130), ScreenWidth,LineHeight);
     lineView2.backgroundColor = c17;
     [self.contentView addSubview:lineView2];
     
@@ -93,7 +89,7 @@
     CGSize carNumSize = [model.carNum sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     _carNumLabel.frame = CGRectMake(STWidth(15), STHeight(16), carNumSize.width, STHeight(16));
     
-    NSString *nameStr = [NSString stringWithFormat:@"车主：%@",model.name];
+    NSString *nameStr = [NSString stringWithFormat:@"访客：%@",model.name];
     _nameLabel.text = nameStr;
     CGSize nameSize = [nameStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     _nameLabel.frame = CGRectMake(ScreenWidth - STWidth(15) - nameSize.width, STHeight(16), nameSize.width, STHeight(16));

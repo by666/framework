@@ -15,4 +15,6 @@
 
 -(void)updateView;
 
+-(void)onDeleteMember:(MemberModel *)model row:(NSInteger)row;
+
 @end

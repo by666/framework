@@ -61,7 +61,22 @@
 
 -(void)deleteMember:(MemberModel *)model{
     if(_delegate){
-        [_delegate onDeleteMember:YES model:model];
+        if(!IS_NS_COLLECTION_EMPTY(_datas)){
+            for(int i = 0 ; i < [_datas count] ; i++){
+                MemberModel *tempModel = [_datas objectAtIndex:i];
+                if([tempModel.name isEqualToString:model.name]){
+                    [_datas removeObjectAtIndex:i];
+                    [_delegate onDeleteMember:YES model:model row:i];
+                    break;
+                }
+            }
+        }
+    }
+}
+
+-(void)showWarnPrompt:(MemberModel *)model{
+    if(_delegate){
+        [_delegate onShowWarnPrompt:model];
     }
 }
 

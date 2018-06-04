@@ -83,14 +83,22 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
+        return;
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     MemberModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
-    [_mViewModel goEditMemberView:model];
-   
+    if(![model.identify isEqualToString:@"管理员"]){
+        [_mViewModel goEditMemberView:model];
+    }
 }
 
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    MemberModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
+    if([model.identify isEqualToString:@"管理员"]){
+        return NO;
+    }
     return YES;
 }
 
@@ -108,12 +116,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    MemberModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
-    [_mViewModel.datas removeObjectAtIndex:indexPath.row];
-    [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:indexPath.row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
-    
+    if(_mViewModel && !IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
+        [_mViewModel showWarnPrompt:[_mViewModel.datas objectAtIndex:indexPath.row]];
+    }
 }
 
+-(void)onDeleteMember:(MemberModel *)model row:(NSInteger)row{
+    [_tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+}
 
 
 -(void)updateView{
@@ -126,6 +136,8 @@
         [_mViewModel goAddMemberView];
     }
 }
+
+
 
 
 

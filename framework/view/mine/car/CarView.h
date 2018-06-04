@@ -13,5 +13,6 @@
 
 -(instancetype)initWithViewModel:(CarViewModel *)viewModel;
 -(void)updateView;
+-(void)onDeleteCar:(CarModel *)model row:(NSInteger)row;
 
 @end

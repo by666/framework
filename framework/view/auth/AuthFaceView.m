@@ -41,11 +41,16 @@
     subContent.frame = CGRectMake(STWidth(32), STHeight(62), ScreenWidth - STWidth(64), subSize.height);
     [self addSubview:subContent];
     
-    _addPhotoBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"+" textColor:c12 backgroundColor:c15 corner:STHeight(70) borderWidth:3.25f borderColor:c22];
+    _addPhotoBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"" textColor:c12 backgroundColor:c15 corner:STHeight(70) borderWidth:3.25f borderColor:c22];
     _addPhotoBtn.frame = CGRectMake(STWidth(118), STHeight(161), STWidth(140), STWidth(140));
     _addPhotoBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [_addPhotoBtn addTarget:self action:@selector(onClickAddPhotoBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_addPhotoBtn];
+    
+    UILabel *layerLabel= [[UILabel alloc]initWithFont:STFont(17) text:@"+" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:[c13 colorWithAlphaComponent:0.6f] multiLine:NO];
+    layerLabel.frame = CGRectMake(0, STHeight(101), STWidth(140), STHeight(39));
+    [_addPhotoBtn addSubview:layerLabel];
+    _addPhotoBtn.clipsToBounds = YES;
     
     _nextBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_AUTHFACE_UPLOAD textColor:cwhite backgroundColor:c19 corner:STHeight(25) borderWidth:0 borderColor:nil];
     _nextBtn.frame = CGRectMake(STWidth(50), STHeight(513), STWidth(276), STHeight(50));

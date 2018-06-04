@@ -66,14 +66,21 @@
     return datas;
 }
 
+-(void)showDeletePrompt:(CarModel *)model{
+    if(_delegate){
+        [_delegate onShowDeletePrompt:model];
+    }
+}
+
 -(void)deleteCarModel:(CarModel *)model{
     if(_delegate){
         if(!IS_NS_COLLECTION_EMPTY(_myCarDatas)){
-            for(int i =0 ; i < [_myCarDatas count] ; i ++ ){
+            for(int i = 0 ; i < [_myCarDatas count] ; i++){
                 CarModel *tempModel = [_myCarDatas objectAtIndex:i];
-                if([tempModel.cid isEqualToString:model.cid]){
+                if([tempModel.carNum isEqualToString:model.carNum]){
                     [_myCarDatas removeObjectAtIndex:i];
-                    [_delegate onDeleteCarModel:YES model:model];
+                    [_delegate onDeleteCarModel:YES model:model row:i];
+                    break;
                 }
             }
         }
@@ -82,7 +89,7 @@
 
 -(void)addCarModel:(CarModel *)model{
     if(_delegate){
-        _myCarDatas = [self getMyCarDatas];
+//        _myCarDatas = [self getMyCarDatas];
         [_myCarDatas addObject:model];
         _familyCarDatas = [self getFamilyCarDatas];
         [_delegate onAddCarModel:YES model:model];

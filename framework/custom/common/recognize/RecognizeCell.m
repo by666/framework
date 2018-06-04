@@ -31,7 +31,7 @@
     [self.contentView addSubview:_selectImageView];
     
     
-    _titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"12321" textAlignment:NSTextAlignmentLeft textColor:c20 backgroundColor:nil multiLine:NO];
+    _titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c20 backgroundColor:nil multiLine:NO];
     _titleLabel.frame = CGRectMake(STWidth(127), STHeight(12), self.contentView.width - STWidth(127), STHeight(16));
     [self.contentView addSubview:_titleLabel];
 
@@ -43,9 +43,9 @@
     _titleLabel.frame =  CGRectMake(STWidth(75), STHeight(12), titleSize.width, STHeight(16));
     
     if(model.selected){
-        _selectImageView.image = [UIImage imageNamed:@"ic_compeleted"];
+        _selectImageView.image = [UIImage imageNamed:@"ic_verify_success"];
     }else{
-        _selectImageView.image = [UIImage imageNamed:@"ic_uncompelete"];
+        _selectImageView.image = [UIImage imageNamed:@"ic_verify_wait"];
     }
 }
 

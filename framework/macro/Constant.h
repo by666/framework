@@ -11,6 +11,18 @@
 #define APP_NAME @"三泰互联"
 #define MSG_SUCCESS @"请求成功"
 #define MSG_ERROR @"网络出错了，请稍后重试"
+#define MSG_CANCEL @"取消"
+#define MSG_CONFIRM @"确定"
+#define MSG_DELETE @"删除"
+#define MSG_WARN @"警告"
+#define MSG_PROMPT @"提示"
+#define MSG_COMMIT @"提交"
+#define MSG_SEARCH @"搜索"
+#define MSG_DATE_FORMAT @"YYYY年MM月dd日"
+#define MSG_DATE_FORMAT2 @"YYYY.MM.dd"
+
+
+//登录
 #define MSG_PHONENUM_ERROR @"手机号码错误"
 #define MSG_VERIFYCODE_ERROR @"验证码错误"
 #define MSG_NOT_INSTALL_WECHAT @"请先安装微信客户端"
@@ -27,19 +39,15 @@
 #define MSG_VERIFYCODE_RESEND @"重发验证码"
 #define MSG_VERIFYCODE_OUROFTIME @"验证码超时，请点击重发验证码"
 #define MSG_VERIFYCODE_MUTIPLE @"验证码发送次数过多，请明天再试或采用人脸识别登陆"
-#define MSG_CANCEL @"取消"
-#define MSG_CONFIRM @"确定"
-#define MSG_DELETE @"删除"
-#define MSG_WARN @"警告"
-#define MSG_COMMIT @"提交"
-#define MSG_SEARCH @"搜索"
-#define MSG_DATE_FORMAT @"YYYY年MM月dd日"
-#define MSG_DATE_FORMAT2 @"YYYY.MM.dd"
-
-
-#define MSG_MINE_TITLE @"我的"
+#define MSG_LOGIN_PHONENUM_HINT @"请输入手机号"
+#define MSG_LOGIN_VERIFYCODE_HINT @"验证码"
+#define MSG_LOGIN_BTN_LOGIN @"登录"
+#define MSG_LOGIN_THIRD_LOGIN @"第三方登录"
 
 //个人主页
+#define MSG_MINE_TITLE @"我的"
+
+//个人信息页
 #define MSG_PROFILE_TITLE @"个人主页"
 #define MSG_PROFILE_AVATAR @"头像"
 #define MSG_PROFILE_NAME @"姓名"
@@ -48,7 +56,7 @@
 #define MSG_PROFILE_IDNUM @"身份证号"
 #define MSG_PROFILE_IDENTIFY @"居住身份"
 #define MSG_PROFILE_PHONENUM @"手机号"
-#define MSG_PROFILE_VERIFY @"您的认证信息正在审核中 >>>"
+#define MSG_PROFILE_VERIFY @"您的认证信息正在审核中>>"
 #define MSG_PROFILE_PHOTO @"拍照上传"
 #define MSG_PROFILE_ALBUM @"相册选择"
 
@@ -93,6 +101,7 @@
 #define MSG_MEMBER_TITLE @"家庭成员"
 #define MSG_MEMBER_TIPS @"管理家庭成员人脸图像信息，用于门禁出入"
 #define MSG_MEMBER_ADDBTN @"+ 添加家庭成员"
+#define MSG_MEMBER_DELETE_TIPS @"此操作将会删除和该成员绑定的一切信息，是否确定删除？"
 
 //添加家庭成员页面
 #define MSG_ADDMEMBER_TITLE @"添加家庭成员"
@@ -106,6 +115,8 @@
 #define MSG_ADDMEMBER_NAME_ERROR @"请填写您的姓名或昵称"
 #define MSG_ADDMEMBER_IDNUM_ERROR @"请填写正确的身份证号码"
 #define MSG_ADDMEMBER_AVATAR_ERROR @"请上传人脸照片"
+#define MSG_ADDMEMBER_NAME_TIPS @"请填写您的姓名"
+#define MSG_ADDMEMBER_IDNUM_TIPS @"请填写您的身份证号"
 
 //住户管理
 #define MSG_HABITANT_TITLE @"住户管理"
@@ -121,16 +132,18 @@
 #define MSG_CAR_MYCAR @"我的车辆"
 #define MSG_CAR_FAMILYCAR @"家属的车辆"
 #define MSG_CAR_PAY @"续费"
-#define MSG_CAR_FAMILY_PAY @"为他/她续费"
-#define MSG_CAR_RECORD @"月卡缴费记录"
-#define MSG_CAR_ADD @"添加车辆"
+#define MSG_CAR_FAMILY_PAY @"为TA续费"
+#define MSG_CAR_RECORD @"缴费记录"
+#define MSG_CAR_ADD @"+ 添加车辆"
+#define MSG_CAR_DELETE_TIPS @"此操作将会删除和车辆绑定的一切信息，是否确定删除？"
 
 
 //添加车辆
 #define MSG_ADDCAR_TITLE @"添加车辆"
-#define MSG_ADDCAR_CARNUM @"车牌号："
+#define MSG_ADDCAR_CARNUM @"车牌号"
 #define MSG_ADDCAR_DEFAULT_HEAD @"粤B"
 #define MSG_ADDCAR_CARNUM_ERROR @"车牌号码位数有误，请重新填写"
+#define MSG_ADDCAR_HINT @"如:88888"
 
 //车辆详情
 #define MSG_CARDETAIL_TITLE @"车辆详情"
@@ -162,14 +175,18 @@
 #define MSG_VISITORHOME_TITLE @"来访登记"
 #define MSG_VISITORHOME_PEOPLE_BUTTON @"访客登记"
 #define MSG_VISITORHOME_CAR_BUTTON @"来访车辆登记"
+#define MSG_VISITORHOME_ENTER_TIME @"进入时间：%@"
+#define MSG_VISITORHOME_EXIT_TIME @"离开时间：%@"
 
 //来访人员和车辆登记
 #define MSG_VISITOR_PEOPLE_TITLE @"来访人员登记"
 #define MSG_VISITOR_CAR_TITLE @"来访车辆登记"
 
 #define MSG_VISITOR_NAME @"访客姓名"
+#define MSG_VISITOR_NAME_TIPS @"请输入访客姓名"
 #define MSG_VISITOR_DATE @"预计来访日期"
 #define MSG_VISITOR_CARNUM @"车牌号码"
+#define MSG_VISITOR_CARNUM_TIPS @"如:88888"
 #define MSG_VISITOR_FACEDECTED @"人脸自动开门"
 #define MSG_VISITOR_GENERATE_BTN @"生成临时通行证"
 #define MSG_VISITOR_ERROR_NONAME @"请输入访客姓名"
@@ -258,6 +275,8 @@
 #define MSG_MESSAGE_TITLE @"消息主页"
 #define MSG_MESSAGE_PROPERTY_BTN @"物业消息"
 #define MSG_MESSAGE_SYSTEM_BTN @"系统消息"
+#define MSG_MESSAGE_NO_DATAS @"暂无任何消息"
+
 
 //进禁/车闸
 #define MSG_ENTERAUTH_VISITOR_TITLE @"访客授权"
@@ -294,6 +313,8 @@
 //物业消息
 #define MSG_PROPERTYMSG_TITLE @"物业消息"
 #define MSG_PROPERTYMSG_DETAIL @"查看详情"
+
+
 
 
 

@@ -59,6 +59,8 @@
 #define StatuNavHeight (StatuBarHeight + NavigationBarHeight)
 //除导航栏和状态栏剩余高度
 #define ContentHeight (ScreenHeight - StatuBarHeight - NavigationBarHeight)
+//键盘高度
+#define KeyBorodHeight STHeight(303)
 
 
 //手机型号
@@ -85,7 +87,7 @@
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
-
+#define LineHeight 0.5
 
 #endif /* STPrefixHeader_pch */
 

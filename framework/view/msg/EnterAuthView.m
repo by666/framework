@@ -52,9 +52,14 @@
     [self addSubview:topView];
     
     _avatarImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(120), STHeight(10), STHeight(90), STHeight(90))];
-    _avatarImageView.backgroundColor = c30;
-    _avatarImageView.layer.masksToBounds = YES;
-    _avatarImageView.layer.cornerRadius = STHeight(45);
+    _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
+    if(_mViewModel.model.messageType == CarEnter){
+        _avatarImageView.image = [UIImage imageNamed:@"ic_nohead_msg"];
+    }else{
+        _avatarImageView.layer.masksToBounds = YES;
+        _avatarImageView.image = [UIImage imageNamed:@"ic_test1"];
+        _avatarImageView.layer.cornerRadius = STHeight(45);
+    }
     [topView addSubview:_avatarImageView];
     
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, STHeight(129), ScreenWidth, STHeight(275-129))];

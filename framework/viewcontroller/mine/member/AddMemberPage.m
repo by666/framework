@@ -40,20 +40,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = c15;
+    [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_UpdateAvatar delegate:self];
+    [self initView];
     __weak AddMemberPage *weakSelf = self;
     
     if(_memberModel == nil){
-        [self showSTNavigationBar:MSG_ADDMEMBER_TITLE needback:YES rightBtn:MSG_ADDMEMBER_SAVE block:^{
+        [self showSTNavigationBar:MSG_ADDMEMBER_TITLE needback:YES rightBtn:MSG_COMMIT rightColor:c13 block:^{
             [weakSelf.addMemberView saveMember];
         }];
     }else{
+        WS(weakSelf)
         [self showSTNavigationBar:MSG_ADDMEMBER_TITLE needback:YES rightBtn:MSG_ADDMEMBER_DELETE block:^{
-            [weakSelf.addMemberView deleteMember];
+            [STAlertUtil showAlertController:MSG_WARN content:MSG_MEMBER_DELETE_TIPS controller:weakSelf confirm:^{
+                [weakSelf.addMemberView deleteMember];
+            }];
         }];
     }
-
-    [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_UpdateAvatar delegate:self];
-    [self initView];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -62,6 +64,9 @@
 
 -(void)dealloc{
     [[STObserverManager sharedSTObserverManager]removeSTObsever:Notify_UpdateAvatar];
+    if(_addMemberView){
+        [_addMemberView removeView];
+    }
 }
 
 

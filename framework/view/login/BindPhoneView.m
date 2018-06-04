@@ -43,24 +43,31 @@
     _phoneNumTF = [[UITextField alloc]initWithFont:STFont(16) textColor:cblack backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:STWidth(2)];
     _phoneNumTF.frame =  CGRectMake(STWidth(47), STHeight(147), STWidth(280), STHeight(41));
     _phoneNumTF.keyboardType = UIKeyboardTypePhonePad;
-    [_phoneNumTF setPlaceholder:@"请输入手机号"];
-    
+    NSAttributedString *phoneNumStr = [[NSAttributedString alloc] initWithString:MSG_LOGIN_PHONENUM_HINT attributes:
+                                       @{NSForegroundColorAttributeName:[c09 colorWithAlphaComponent:0.5f],
+                                         NSFontAttributeName:_phoneNumTF.font
+                                         }];
+    _phoneNumTF.attributedPlaceholder = phoneNumStr;
     [self addSubview:_phoneNumTF];
     
     UIView *phoneLine = [[UIView alloc]init];
     phoneLine.backgroundColor = c09;
-    phoneLine.frame = CGRectMake(STWidth(47), STHeight(188), STWidth(280), STHeight(0.5f));
+    phoneLine.frame = CGRectMake(STWidth(47), STHeight(188), STWidth(280), 0.5f);
     [self addSubview:phoneLine];
     
     _verifyCodeTF = [[UITextField alloc]initWithFont:STFont(16) textColor:cblack backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:STWidth(2)];
     _verifyCodeTF.frame =  CGRectMake(STWidth(47), STHeight(207), STWidth(280), STHeight(41));
     _verifyCodeTF.keyboardType = UIKeyboardTypeNumberPad;
-    [_verifyCodeTF setPlaceholder:@"验证码"];
+    NSAttributedString *verifyCodeStr = [[NSAttributedString alloc] initWithString:MSG_LOGIN_VERIFYCODE_HINT attributes:
+                                         @{NSForegroundColorAttributeName:[c09 colorWithAlphaComponent:0.5f],
+                                           NSFontAttributeName:_verifyCodeTF.font
+                                           }];
+    _verifyCodeTF.attributedPlaceholder = verifyCodeStr;
     [self addSubview:_verifyCodeTF];
     
     UIView *verifyLine = [[UIView alloc]init];
     verifyLine.backgroundColor = c09;
-    verifyLine.frame = CGRectMake(STWidth(47), STHeight(248), STWidth(280), STHeight(0.5f));
+    verifyLine.frame = CGRectMake(STWidth(47), STHeight(248), STWidth(280), 0.5f);
     [self addSubview:verifyLine];
     
     

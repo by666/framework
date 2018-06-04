@@ -8,11 +8,12 @@
 
 #import "CarPage.h"
 #import "CarView.h"
-#import "AddCarPage.h"
+#import "CarHistoryPage.h"
 #import "CarDetailPage.h"
 #import "STObserverManager.h"
 #import "MonthPaymentPage.h"
 #import "PaymentRecordPage.h"
+#import "AddCarPage.h"
 
 @interface CarPage ()<CarViewDelegate,STObserverProtocol>
 
@@ -33,8 +34,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = cwhite;
     WS(weakSelf)
-    [self showSTNavigationBar:MSG_CAR_TITLE needback:YES rightBtn:MSG_CAR_ADD block:^{
-        [AddCarPage show:weakSelf];
+    [self showSTNavigationBar:MSG_CAR_TITLE needback:YES rightBtn:MSG_CAR_RECORD rightColor:c13 block:^{
+        [PaymentRecordPage show:weakSelf index:1];
     }];
     [self initView];
     [[STObserverManager sharedSTObserverManager]registerSTObsever:Notify_DeleteCar delegate:self];
@@ -66,8 +67,17 @@
     
 }
 
--(void)onDeleteCarModel:(Boolean)succes model:(CarModel *)model{
-    [_carView updateView];
+
+-(void)onShowDeletePrompt:(CarModel *)model{
+    WS(weakSelf)
+    [STAlertUtil showAlertController:MSG_PROMPT content:MSG_CAR_DELETE_TIPS controller:self confirm:^{
+        [weakSelf.viewModel deleteCarModel:model];
+    }];
+}
+-(void)onDeleteCarModel:(Boolean)succes model:(CarModel *)model row:(NSInteger)row{
+    if(_carView){
+        [_carView onDeleteCar:model row:row];
+    }
 }
 
 -(void)onAddCarModel:(Boolean)success model:(CarModel *)model{

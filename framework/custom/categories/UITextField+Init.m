@@ -47,4 +47,14 @@ static char *hasValueChar = "hasValue";
 
 }
 
+
+-(void)setPlaceholder:(NSString *)placeholder color:(UIColor *)color fontSize:(CGFloat)fontSize{
+    NSAttributedString *placeholderStr = [[NSAttributedString alloc] initWithString:placeholder attributes:
+                                         @{NSForegroundColorAttributeName:color,
+                                           NSFontAttributeName:[UIFont systemFontOfSize:fontSize]
+                                           }];
+    self.attributedPlaceholder = placeholderStr;
+}
+
+
 @end

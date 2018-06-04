@@ -49,7 +49,7 @@
 
 -(UIPickerView *)carNumPickerView{
     if(_carNumPickerView == nil){
-        _carNumPickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, ContentHeight - STHeight(129), ScreenWidth, STHeight(129))];
+        _carNumPickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, ContentHeight - STHeight(150), ScreenWidth, STHeight(150))];
         _carNumPickerView.showsSelectionIndicator = YES;
         _carNumPickerView.backgroundColor = cwhite;
         _carNumPickerView.delegate = self;
@@ -62,7 +62,7 @@
 -(UIButton *)cancelBtn{
     if(_cancelBtn == nil){
         _cancelBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_CANCEL textColor:c12 backgroundColor:c15 corner:0 borderWidth:0 borderColor:nil];
-        _cancelBtn.frame = CGRectMake(0, ContentHeight - STHeight(179), ScreenWidth/2, STHeight(50));
+        _cancelBtn.frame = CGRectMake(0, ContentHeight - STHeight(200), ScreenWidth/2, STHeight(50));
         [_cancelBtn addTarget:self action:@selector(OnClickCancelBtn) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelBtn;
@@ -71,7 +71,7 @@
 -(UIButton *)confirmBtn{
     if(_confirmBtn == nil){
         _confirmBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_CONFIRM textColor:c20 backgroundColor:c15 corner:0 borderWidth:0 borderColor:nil];
-        _confirmBtn.frame = CGRectMake(ScreenWidth/2, ContentHeight - STHeight(179), ScreenWidth/2, STHeight(50));
+        _confirmBtn.frame = CGRectMake(ScreenWidth/2, ContentHeight - STHeight(200), ScreenWidth/2, STHeight(50));
         [_confirmBtn addTarget:self action:@selector(OnClickConfirmBtn) forControlEvents:UIControlEventTouchUpInside];
         
     }
@@ -79,6 +79,9 @@
 }
 
 
+-(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return STHeight(50);
+}
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 2;

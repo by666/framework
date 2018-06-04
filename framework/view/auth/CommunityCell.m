@@ -34,7 +34,7 @@
     _addressLabel.frame = CGRectMake(STWidth(36), STHeight(34), ScreenWidth - STWidth(72), STHeight(12));
     [self.contentView addSubview:_addressLabel];
     
-    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(STWidth(15), 0, ScreenWidth - STWidth(30), 1)];
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(STWidth(15), 0, ScreenWidth - STWidth(30), LineHeight)];
     lineView.backgroundColor = c17;
     [self.contentView addSubview:lineView];
 }

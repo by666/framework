@@ -66,12 +66,13 @@
     [view addSubview:_cityBtn];
     
     _arrowImageview = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(48)+citySize.width, STHeight(23), STWidth(11), STHeight(7))];
-    _arrowImageview.image = [UIImage imageNamed:@"ic_bottom_arrow"];
+    _arrowImageview.image = [UIImage imageNamed:@"ic_arrow_bottom"];
     [view addSubview:_arrowImageview];
     
     _addressTF = [[UITextField alloc]initWithFont:STFont(16) textColor:c16 backgroundColor:c28 corner:2 borderWidth:0 borderColor:nil padding:STWidth(43)];
     _addressTF.frame = CGRectMake(STWidth(70)+citySize.width, STHeight(8), STWidth(211), STHeight(34));
     _addressTF.clearButtonMode = UITextFieldViewModeWhileEditing;
+    [_addressTF addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [view addSubview:_addressTF];
     
     UIImageView *searchImageView  =[[UIImageView alloc]init];
@@ -102,7 +103,7 @@
     [view addSubview:locationLabel];
     
     
-    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(50), ScreenWidth, 1)];
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(50), ScreenWidth, LineHeight)];
     lineView.backgroundColor = c17;
     [view addSubview:lineView];
 }
@@ -189,6 +190,18 @@
     if(_mViewModel){
         [_mViewModel searchCommunity:_addressTF.text];
     }
+}
+
+
+- (void)textFieldDidChange:(UITextField *)textField{
+    if(_mViewModel){
+        [_mViewModel searchCommunity:textField.text];
+    }
+}
+
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [_addressTF resignFirstResponder];
 }
 
 -(void)onSelectAddressResult:(NSString *)city{

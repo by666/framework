@@ -76,7 +76,7 @@
     [AddMemberPage show:self model:model];
 }
 
--(void)onDeleteMember:(Boolean)success model:(MemberModel *)model{
+-(void)onDeleteMember:(Boolean)success model:(MemberModel *)model row:(NSInteger)row{
     if(_memberView){
         [_memberView updateView];
     }
@@ -108,6 +108,13 @@
     [_memberView updateView];
 }
 
+
+-(void)onShowWarnPrompt:(MemberModel *)model{
+    WS(weakSelf)
+    [STAlertUtil showAlertController:MSG_WARN content:MSG_MEMBER_DELETE_TIPS controller:self confirm:^{
+        [weakSelf.viewModel deleteMember:model];
+    }];
+}
 
 
 @end

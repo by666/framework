@@ -41,14 +41,18 @@
     tipsLabel.frame = CGRectMake(0, STHeight(28), ScreenWidth, STHeight(14));
     [self addSubview:tipsLabel];
     
-    _takePhotoBTN = [[UIButton alloc]initWithFont:STFont(14) text:MSG_ADDMEMBER_TAKEPHOTO textColor:c12 backgroundColor:cwhite corner:STHeight(57) borderWidth:0 borderColor:nil];
-    _takePhotoBTN.frame = CGRectMake(STWidth(131), STHeight(70), STHeight(114), STHeight(114));
-    _takePhotoBTN.titleLabel.numberOfLines = 0;
-    _takePhotoBTN.titleLabel.lineBreakMode = NSLineBreakByCharWrapping;
-    _takePhotoBTN.titleLabel.textAlignment = NSTextAlignmentCenter;
+    
+    _takePhotoBTN = [[UIButton alloc]initWithFont:STFont(30) text:@"" textColor:c12 backgroundColor:c15 corner:STHeight(70) borderWidth:3.25f borderColor:c22];
+    _takePhotoBTN.frame = CGRectMake(STWidth(118), STHeight(82), STHeight(140), STHeight(140));
     _takePhotoBTN.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [_takePhotoBTN addTarget:self action:@selector(OnClickTakePhotoBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_takePhotoBTN];
+    
+    UILabel *layerLabel= [[UILabel alloc]initWithFont:STFont(17) text:@"+" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:[c13 colorWithAlphaComponent:0.6f] multiLine:NO];
+    layerLabel.frame = CGRectMake(0, STHeight(101), STWidth(140), STHeight(39));
+    [_takePhotoBTN addSubview:layerLabel];
+    _takePhotoBTN.clipsToBounds = YES;
+    
     
     if(_memeberModel && !IS_NS_STRING_EMPTY(_memeberModel.avatarUrl)){
         UIImage *image = [UIImage imageWithContentsOfFile:_memeberModel.avatarUrl];
@@ -56,25 +60,25 @@
     }
     
     UILabel *tips2Label = [[UILabel alloc]initWithFont:STFont(14) text:MSG_ADDMEMBER_TIPS2 textAlignment:NSTextAlignmentLeft textColor:c20 backgroundColor:nil multiLine:NO];
-    tips2Label.frame = CGRectMake(STWidth(15), STHeight(237), ScreenWidth - STWidth(30), STHeight(14));
+    tips2Label.frame = CGRectMake(STWidth(15), STHeight(277), ScreenWidth - STWidth(30), STHeight(14));
     [self addSubview:tips2Label];
 
     
     UIView *editView=  [[UIView alloc]init];
-    editView.frame = CGRectMake(0, STHeight(268), ScreenWidth, STHeight(114));
+    editView.frame = CGRectMake(0, STHeight(308), ScreenWidth, STHeight(114));
     editView.backgroundColor = cwhite;
     editView.userInteractionEnabled = YES;
     [self addSubview:editView];
     
-    UIView *topLine = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 1)];
+    UIView *topLine = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, LineHeight)];
     topLine.backgroundColor = c17;
     [editView addSubview:topLine];
     
-    UIView *bottomLine = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(113), ScreenWidth,1)];
+    UIView *bottomLine = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(114) - LineHeight, ScreenWidth,LineHeight)];
     bottomLine.backgroundColor = c17;
     [editView addSubview:bottomLine];
     
-    UIView *centerLine = [[UIView alloc]initWithFrame:CGRectMake(STWidth(15), STHeight(57), ScreenWidth - STWidth(30), 1)];
+    UIView *centerLine = [[UIView alloc]initWithFrame:CGRectMake(STWidth(15), STHeight(57), ScreenWidth - STWidth(30), LineHeight)];
     centerLine.backgroundColor = c17;
     [editView addSubview:centerLine];
     
@@ -90,6 +94,7 @@
     _nameTextField = [[UITextField alloc]init];
     _nameTextField.font = [UIFont systemFontOfSize:STFont(16)];
     _nameTextField.textColor = c12;
+    [_nameTextField setPlaceholder:MSG_ADDMEMBER_NAME_TIPS color:c17 fontSize:STFont(16)];
     _nameTextField.frame = CGRectMake(STWidth(175), 0  ,ScreenWidth - STWidth(190), STHeight(57));
     _nameTextField.textAlignment = NSTextAlignmentRight;
     [_nameTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
@@ -104,6 +109,7 @@
     _idNumTextField.textColor = c12;
     _idNumTextField.frame = CGRectMake(STWidth(175), STHeight(57),  ScreenWidth - STWidth(190), STHeight(57));
     _idNumTextField.textAlignment = NSTextAlignmentRight;
+    [_idNumTextField setPlaceholder:MSG_ADDMEMBER_IDNUM_TIPS color:c17 fontSize:STFont(16)];
     [_idNumTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [editView addSubview:_idNumTextField];
     
@@ -112,9 +118,21 @@
     }
     
     _errorLabel = [[UILabel alloc]initWithFont:STFont(12) text:@"" textAlignment:NSTextAlignmentLeft textColor:c18 backgroundColor:nil multiLine:NO];
-    _errorLabel.frame = CGRectMake(STWidth(15), STHeight(392), ScreenWidth - STWidth(30), STHeight(12));
+    _errorLabel.frame = CGRectMake(STWidth(15), STHeight(442), ScreenWidth - STWidth(30), STHeight(12));
     [self addSubview:_errorLabel];
+
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onKeyboardShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onKeyboardHidden:) name:UIKeyboardWillHideNotification object:nil];
+    
 }
+
+-(void)removeView{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
 
 -(void)OnClickTakePhotoBtn{
     if(_mViewModel){
@@ -146,6 +164,8 @@
 
 
 -(void)saveMember{
+    [_idNumTextField resignFirstResponder];
+    [_nameTextField resignFirstResponder];
     if(IS_NS_STRING_EMPTY(_nameTextField.text)){
         _errorLabel.text = MSG_ADDMEMBER_NAME_ERROR;
         return;
@@ -188,5 +208,24 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [_idNumTextField resignFirstResponder];
     [_nameTextField resignFirstResponder];
+}
+
+- (void)onKeyboardShow:(NSNotification*)notification{
+    NSDictionary *info = [notification userInfo];
+    CGFloat duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    WS(weakSelf)
+    [UIView animateWithDuration:duration animations:^{
+        weakSelf.frame = CGRectMake(0,  ScreenHeight - STHeight(424)  -  KeyBorodHeight, ScreenWidth, ContentHeight);
+    }];
+
+}
+
+- (void)onKeyboardHidden:(NSNotification*)notification{
+    NSDictionary *info = [notification userInfo];
+    CGFloat duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    WS(weakSelf)
+    [UIView animateWithDuration:duration animations:^{
+        weakSelf.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
+    }];
 }
 @end

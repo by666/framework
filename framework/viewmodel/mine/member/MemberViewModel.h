@@ -13,8 +13,9 @@
 
 -(void)onGoAddMemberView;
 -(void)onGoEditMemberView:(MemberModel *)model;
--(void)onDeleteMember:(Boolean)success model:(MemberModel *)model;
+-(void)onDeleteMember:(Boolean)success model:(MemberModel *)model row:(NSInteger)row;
 -(void)onGetMemberModels:(NSMutableArray *)datas;
+-(void)onShowWarnPrompt:(MemberModel *)model;
 
 @end
 
@@ -27,5 +28,6 @@
 -(void)goAddMemberView;
 -(void)goEditMemberView:(MemberModel *)model;
 -(void)deleteMember:(MemberModel *)model;
+-(void)showWarnPrompt:(MemberModel *)model;
 
 @end

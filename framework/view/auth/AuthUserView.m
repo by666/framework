@@ -92,7 +92,7 @@
     }
     
     for(int i = 0 ; i < [titieArray count] - 1 ; i ++){
-        UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(57) * (i+1), ScreenWidth, 1)];
+        UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(57) * (i+1), ScreenWidth, LineHeight)];
         lineView.backgroundColor = c17;
         [view addSubview:lineView];
     }
@@ -119,7 +119,7 @@
     [view addSubview:_buildingBtn];
     
     UIImageView *buildingImageView = [[UIImageView alloc]init];
-    buildingImageView.image = [UIImage imageNamed:@"ic_bottom_arrow"];
+    buildingImageView.image = [UIImage imageNamed:@"ic_arrow_bottom"];
     buildingImageView.contentMode = UIViewContentModeScaleAspectFill;
     buildingImageView.frame = CGRectMake(ScreenWidth - STWidth(15)-STWidth(11), STHeight(82), STWidth(11), STHeight(11));
     buildingImageView.userInteractionEnabled = NO;
@@ -156,7 +156,7 @@
     }
     
     for(int i = 0 ; i < [titieArray count] - 1 ; i ++){
-        UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(57) * (i+1), ScreenWidth, 1)];
+        UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(57) * (i+1), ScreenWidth, LineHeight)];
         lineView.backgroundColor = c17;
         [view addSubview:lineView];
     }
@@ -176,7 +176,7 @@
     [view addSubview:_identifyBtn];
     
     UIImageView *identifyImageView = [[UIImageView alloc]init];
-    identifyImageView.image = [UIImage imageNamed:@"ic_bottom_arrow"];
+    identifyImageView.image = [UIImage imageNamed:@"ic_arrow_bottom"];
     identifyImageView.contentMode = UIViewContentModeScaleAspectFill;
     identifyImageView.frame = CGRectMake(ScreenWidth - STWidth(15)-STWidth(11), STHeight(82), STWidth(11), STHeight(11));
     identifyImageView.userInteractionEnabled = NO;

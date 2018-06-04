@@ -127,6 +127,7 @@
 		003EDB0C20C1185000CFCFE9 /* PropertyMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB0B20C1185000CFCFE9 /* PropertyMsgModel.m */; };
 		003EDB0F20C1263800CFCFE9 /* SystemMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB0E20C1263800CFCFE9 /* SystemMsgCell.m */; };
 		003EDB1220C147E400CFCFE9 /* PropertyMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB1120C147E400CFCFE9 /* PropertyMsgCell.m */; };
+		003EDB1520C5249800CFCFE9 /* STSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB1420C5249800CFCFE9 /* STSwitchView.m */; };
 		004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51620A16DC400BA9602 /* STAlertUtil.m */; };
 		004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51920A1A37E00BA9602 /* STSheetModel.m */; };
 		004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF52120A2A23C00BA9602 /* LoginViewModel.m */; };
@@ -498,6 +499,8 @@
 		003EDB0E20C1263800CFCFE9 /* SystemMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemMsgCell.m; sourceTree = "<group>"; };
 		003EDB1020C147E400CFCFE9 /* PropertyMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PropertyMsgCell.h; sourceTree = "<group>"; };
 		003EDB1120C147E400CFCFE9 /* PropertyMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PropertyMsgCell.m; sourceTree = "<group>"; };
+		003EDB1320C5249800CFCFE9 /* STSwitchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSwitchView.h; sourceTree = "<group>"; };
+		003EDB1420C5249800CFCFE9 /* STSwitchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STSwitchView.m; sourceTree = "<group>"; };
 		004EF51520A16DC400BA9602 /* STAlertUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STAlertUtil.h; sourceTree = "<group>"; };
 		004EF51620A16DC400BA9602 /* STAlertUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAlertUtil.m; sourceTree = "<group>"; };
 		004EF51820A1A37E00BA9602 /* STSheetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSheetModel.h; sourceTree = "<group>"; };
@@ -847,6 +850,8 @@
 				CFB6D1B320B544BB00A0863B /* STCarNumLayerView.m */,
 				003EDAAB20BBD9CF00CFCFE9 /* STSinglePickerLayerView.h */,
 				003EDAAC20BBD9CF00CFCFE9 /* STSinglePickerLayerView.m */,
+				003EDB1320C5249800CFCFE9 /* STSwitchView.h */,
+				003EDB1420C5249800CFCFE9 /* STSwitchView.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -1271,6 +1276,15 @@
 			path = msg;
 			sourceTree = "<group>";
 		};
+		003EDB1620C52AEE00CFCFE9 /* habitant */ = {
+			isa = PBXGroup;
+			children = (
+				004EF5A420AAEAE200BA9602 /* HabitantViewModel.h */,
+				004EF5A520AAEAE200BA9602 /* HabitantViewModel.m */,
+			);
+			path = habitant;
+			sourceTree = "<group>";
+		};
 		004EF51B20A1A49500BA9602 /* alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -1432,6 +1446,7 @@
 		004EF58220AAC98E00BA9602 /* mine */ = {
 			isa = PBXGroup;
 			children = (
+				003EDB1620C52AEE00CFCFE9 /* habitant */,
 				CFB6D19E20B5342400A0863B /* visitorhistory */,
 				CFB6D19D20B5341F00A0863B /* visitor */,
 				002F94B120B40F3800F84094 /* carhistory */,
@@ -1442,8 +1457,6 @@
 				004EF5D920AC51A200BA9602 /* profile */,
 				004EF58320AAC99A00BA9602 /* MineViewModel.h */,
 				004EF58420AAC99A00BA9602 /* MineViewModel.m */,
-				004EF5A420AAEAE200BA9602 /* HabitantViewModel.h */,
-				004EF5A520AAEAE200BA9602 /* HabitantViewModel.m */,
 			);
 			path = mine;
 			sourceTree = "<group>";
@@ -2338,6 +2351,7 @@
 				003EDA8620B7BF6800CFCFE9 /* CommunityViewModel.m in Sources */,
 				0006DFA8208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m in Sources */,
 				007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */,
+				003EDB1520C5249800CFCFE9 /* STSwitchView.m in Sources */,
 				003EDAB620BBEC6800CFCFE9 /* AuthFaceView.m in Sources */,
 				0050800C20B6BB1700A976D9 /* AuthUserView.m in Sources */,
 				0006DFA2208DC05B005A4465 /* SystemFacePage.m in Sources */,

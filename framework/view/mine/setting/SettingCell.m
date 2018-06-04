@@ -7,6 +7,7 @@
 //
 
 #import "SettingCell.h"
+#import "STSwitchView.h"
 
 #define LAST_POSITION 3
 @interface SettingCell()
@@ -14,7 +15,7 @@
 @property(strong, nonatomic)UILabel *titleLabel;
 @property(strong, nonatomic)UILabel *contentLabel;
 @property(strong, nonatomic)UIImageView *arrowImageView;
-@property(strong, nonatomic)UISwitch *funcSwitch;
+@property(strong, nonatomic)STSwitchView *funcSwitch;
 @property(strong, nonatomic)UIView *lineView;
 
 @end
@@ -38,18 +39,18 @@
     [self.contentView addSubview:_contentLabel];
     
     _arrowImageView = [[UIImageView alloc]init];
-    _arrowImageView.image = [UIImage imageNamed:@"ic_right_arrow"];
+    _arrowImageView.image = [UIImage imageNamed:@"ic_arrow_right"];
     _arrowImageView.frame = CGRectMake(STWidth(354), STHeight(21), STWidth(7), STHeight(11));
     [self.contentView addSubview:_arrowImageView];
     
-    _funcSwitch = [[UISwitch alloc]init];
+    _funcSwitch = [[STSwitchView alloc]init];
     _funcSwitch.frame = CGRectMake(STWidth(318), STHeight(15), STWidth(42), STHeight(26));
     _funcSwitch.on = YES;
     [self.contentView addSubview:_funcSwitch];
     
     _lineView = [[UIView alloc]init];
     _lineView.backgroundColor = c17;
-    _lineView.frame = CGRectMake(STWidth(15), STHeight(53), ScreenWidth - STWidth(30), 1);
+    _lineView.frame = CGRectMake(STWidth(15), STHeight(54) - LineHeight, ScreenWidth - STWidth(30), LineHeight);
     [self.contentView addSubview:_lineView];
 }
 

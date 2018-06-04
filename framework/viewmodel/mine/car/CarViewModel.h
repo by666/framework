@@ -12,7 +12,8 @@
 @protocol CarViewDelegate
 
 -(void)onGetCarDatas:(Boolean)success datas:(NSMutableArray *)datas;
--(void)onDeleteCarModel:(Boolean)succes model:(CarModel *)model;
+-(void)onShowDeletePrompt:(CarModel *)model;
+-(void)onDeleteCarModel:(Boolean)succes model:(CarModel *)model row:(NSInteger)row;
 -(void)onAddCarModel:(Boolean)success model:(CarModel *)model;
 -(void)onGoAddCarPage;
 -(void)onGoPaymentPage:(CarModel *)model;
@@ -32,6 +33,9 @@
 
 //获取所有车辆
 -(void)getCarDatas;
+
+//显示删除提醒
+-(void)showDeletePrompt:(CarModel *)model;
 
 //删除我的车辆
 -(void)deleteCarModel:(CarModel *)model;

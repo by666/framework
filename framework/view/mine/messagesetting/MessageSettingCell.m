@@ -7,12 +7,13 @@
 //
 
 #import "MessageSettingCell.h"
+#import "STSwitchView.h"
 
 
 @interface MessageSettingCell()
 
 @property(strong, nonatomic)UILabel *titleLabel;
-@property(strong, nonatomic)UISwitch *funcSwitch;
+@property(strong, nonatomic)STSwitchView *funcSwitch;
 @property(strong, nonatomic)UIView *lineView;
 
 @end
@@ -32,14 +33,14 @@
     _titleLabel.frame = CGRectMake(STWidth(15), STHeight(20),STWidth(100) , STHeight(16));
     [self.contentView addSubview:_titleLabel];
     
-    _funcSwitch = [[UISwitch alloc]init];
+    _funcSwitch = [[STSwitchView alloc]init];
     _funcSwitch.frame = CGRectMake(STWidth(318), STHeight(15), STWidth(42), STHeight(26));
     _funcSwitch.on = YES;
     [self.contentView addSubview:_funcSwitch];
     
     _lineView = [[UIView alloc]init];
     _lineView.backgroundColor = c17;
-    _lineView.frame = CGRectMake(STWidth(15), STHeight(56), ScreenWidth - STWidth(30), 1);
+    _lineView.frame = CGRectMake(STWidth(15), STHeight(56), ScreenWidth - STWidth(30), LineHeight);
     [self.contentView addSubview:_lineView];
 }
 
