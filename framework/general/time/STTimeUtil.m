@@ -32,6 +32,17 @@
     return dateStr;
 }
 
++(NSString *)generateDate2 : (NSString *)timestamp{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"YYYY.MM.dd"];
+    
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[timestamp doubleValue]/ 1000.0];
+    NSString* dateStr = [formatter stringFromDate:date];
+    return dateStr;
+}
+
 +(NSString *)generateTime : (NSString *)timestamp{
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
@@ -97,4 +108,38 @@
     return [NSString stringWithFormat:@"%f", a];
 }
 
++(NSString *)getTimeStampWithDays:(int)days{
+    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSTimeInterval a=[dat timeIntervalSince1970]*1000;
+    a += 3600 * 24 * 1000 * days;
+    return [NSString stringWithFormat:@"%f", a];
+}
+
+
++(NSString *)getCurrentWeek:(NSDate *)date{
+    NSDateFormatter *dataFormatter = [[NSDateFormatter alloc] init];
+    [dataFormatter setDateFormat:@"YYYY年MM月dd日"];
+    NSDateComponents *componets = [[NSCalendar autoupdatingCurrentCalendar] components:NSCalendarUnitWeekday fromDate:date];
+    NSInteger weekday = [componets weekday];
+    NSArray *weekArray = @[@"周日",@"周一",@"周二",@"周三",@"周四",@"周五",@"周六"];
+    return weekArray[weekday-1];
+}
+
+
++(NSMutableArray *)getOneWeeks{
+    NSMutableArray *datas =[[NSMutableArray alloc]init];
+    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSTimeInterval timeInterval=[dat timeIntervalSince1970]*1000;
+    for(int i = 0 ; i < 7 ; i ++){
+        timeInterval += 3600 * 24 * 1000;
+        NSDate* date = [NSDate dateWithTimeIntervalSince1970:timeInterval / 1000.0];
+        NSString *dateStr = [self generateDate:[NSString stringWithFormat:@"%.f",timeInterval]];
+        NSString *weakStr = [self getCurrentWeek:date];
+        dateStr = [dateStr substringWithRange:NSMakeRange(5, dateStr.length - 5)];
+        NSString *result = [NSString stringWithFormat:@"%@ %@",dateStr,weakStr];
+        [datas addObject:result];
+        [STLog print:result];
+    }
+    return datas;
+}
 @end

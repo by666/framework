@@ -92,4 +92,8 @@
     [SettingPage show:self];
 }
 
+-(void)onGoBack{
+    [self backLastPage];
+}
+
 @end

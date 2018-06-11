@@ -13,6 +13,12 @@
 #import "MinePage.h"
 #import "AuthUserPage.h"
 #import "MessagePage.h"
+#import "OpendoorPage.h"
+#import "ReportFixPage.h"
+#import "CarHistoryPage.h"
+#import "VisitorHomePage.h"
+#import "VisitorHistoryPage.h"
+#import "DeviceSharePage.h"
 
 @interface MainPage ()<MainViewDelegate>
 
@@ -31,7 +37,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setStatuBarBackgroud:cwhite];
     _mViewModel = [[MainViewModel alloc]init];
     _mViewModel.delegate = self;
     [self initView];
@@ -41,29 +46,72 @@
     return UIStatusBarStyleDefault;
 }
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self setStatuBarBackgroud:cwhite];
+}
+
 -(void)initView{
     
-    _mNavigationView = [[STNavigationView alloc]initWithTitle:@"首页" needBack:NO];
+    _mNavigationView = [[STNavigationView alloc]initWithTitle:@"" needBack:NO];
     [self.view addSubview:_mNavigationView];
     
+    UIImageView *positionImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(19), STHeight(12), STWidth(14), STHeight(18))];
+    positionImageView.contentMode = UIViewContentModeScaleAspectFill;
+    positionImageView.image = [UIImage imageNamed:@"ic_building"];
+    [_mNavigationView addSubview:positionImageView];
+    
+    UILabel *positionLabel = [[UILabel alloc]initWithFont:STFont(17) text:@"武当山" textAlignment:NSTextAlignmentCenter textColor:c11 backgroundColor:nil multiLine:NO];
+    CGSize labelSize = [@"武当山" sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(17)]];
+    positionLabel.frame = CGRectMake(STWidth(52), 0, labelSize.width, NavigationBarHeight);
+    [_mNavigationView addSubview:positionLabel];
+    
     _mMainView = [[MainView alloc]initWithViewModel:_mViewModel];
-    _mMainView.frame = CGRectMake(0, StatuBarHeight+NavigationBarHeight, ScreenWidth, ScreenHeight - StatuBarHeight-NavigationBarHeight);
-    _mMainView.backgroundColor = c01;
+    _mMainView.frame = CGRectMake(0, StatuBarHeight+NavigationBarHeight, ScreenWidth, ContentHeight);
+    _mMainView.backgroundColor = c15;
     [self.view addSubview:_mMainView];
     
-    WS(weakSelf)
-    [STAlertUtil showAlertController:@"" content:@"请先认证身份信息" controller:self confirm:^{
-        [AuthUserPage show:weakSelf];
-    }];
+//    WS(weakSelf)
+//    [STAlertUtil showAlertController:@"" content:@"请先认证身份信息" controller:self confirm:^{
+//        [AuthUserPage show:weakSelf];
+//    }];
     
 }
 
--(void)onGoMinePage{
-    [MinePage show:self];
+-(void)onGoOpendoorPage{
+    [OpendoorPage show:self];
+}
+
+-(void)onGoCarPage{
+    [CarHistoryPage show:self];
+}
+
+-(void)onGoVisitorPage{
+    [VisitorHomePage show:self];
+}
+
+-(void)onGoVisitorHistoryPage{
+    [VisitorHistoryPage show:self];
+}
+
+-(void)onGoReportFixPage{
+    [ReportFixPage show:self];
+}
+
+-(void)onGoDeviceSharePage{
+    [DeviceSharePage show:self];
+}
+
+-(void)onDoCallProperty{
+    NSURL *url = [NSURL URLWithString:@"tel://0755-80123456"];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 -(void)onGoMessagePage{
     [MessagePage show:self];
 }
 
+-(void)onGoMinePage{
+    [MinePage show:self];
+}
 @end

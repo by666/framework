@@ -18,8 +18,11 @@
 #define MSG_PROMPT @"提示"
 #define MSG_COMMIT @"提交"
 #define MSG_SEARCH @"搜索"
+#define MSG_MORE @"更多"
 #define MSG_DATE_FORMAT @"YYYY年MM月dd日"
 #define MSG_DATE_FORMAT2 @"YYYY.MM.dd"
+#define MSG_CHOOSE @"请选择"
+#define MSG_KOWN @"知道了"
 
 
 //登录
@@ -43,6 +46,12 @@
 #define MSG_LOGIN_VERIFYCODE_HINT @"验证码"
 #define MSG_LOGIN_BTN_LOGIN @"登录"
 #define MSG_LOGIN_THIRD_LOGIN @"第三方登录"
+
+
+//首页
+#define MSG_MAIN_PROPERTY @"物业消息"
+#define MSG_MAIN_TITLE_ARRAY @"手机开门|访客车辆缴费|访客登记|最近来访|室内报修|设备共享|呼叫物管|消息通知|我的"
+#define MSG_MAIN_PROPERTY @"物业消息"
 
 //个人主页
 #define MSG_MINE_TITLE @"我的"
@@ -315,6 +324,46 @@
 #define MSG_PROPERTYMSG_DETAIL @"查看详情"
 
 
+//扫码开门
+#define MSG_OPENDOOR_TITLE @"扫码开门"
+#define MSG_OPENDOOR_TIPS @"*生成开锁码和二维码，仅当日有效"
+#define MSG_OPENDOOR_BTN @"临时开锁"
+
+#define MSG_OPENDOOR_LOCKCODE @"开锁码"
+#define MSG_OPENDOOR_SHAREBTN @"微信分享给朋友"
+#define MSG_OPENDOOR_LOCKCODE_TIPS @"*使用二维码扫码开门，也可输入开锁码（4位数字）开门。该开锁码仅当日有效。"
 
 
+//室内报修
+#define MSG_REPORTFIX_TITLE @"室内报修"
+#define MSG_REPORTFIX_RIGHT_BTN @"我的报修记录"
+#define MSG_REPORTFIX_CATEGORY @"服务分类"
+#define MSG_REPORTFIX_SERVETIME @"预约上门时间"
+#define MSG_REPORTFIX_DETAIL @"障碍说明"
+#define MSG_REPORTFIX_DETAIL_TIPS @"请简单描述障碍问题哦~"
+#define MSG_REPORTFIX_CATEGORY_ARRAY @"门窗类|电器类|家具类|电路类|水管类|灯具类|其他"
+#define MSG_REPORTFIX_RESULT_TIPS @"信息提交成功"
+#define MSG_REPORTFIX_RESULT_TIPS2 @"已为您通知物管人员，将会在预约时间内为您服务。"
 
+//报修历史记录
+#define MSG_FIXHISTORY_TITLE @"报修记录"
+#define MSG_FIXHISTORY_TITLE_ARRAY @"报修时间|服务分类|预约上门时间|障碍说明"
+
+//设备共享
+#define MSG_DEVICESHARE_TITLE @"共享设备"
+#define MSG_DEVICESHARE_RIGHT_BTN @"我的租用订单"
+#define MSG_DEVICESHARE_RENT @"租用"
+
+//设备共享支付页
+#define MSG_DEVICESHAREORDER_TITLE @"共享设备"
+#define MSG_DEVICESHAREORDER_NAME @"设备名称"
+#define MSG_DEVICESHAREORDER_DAYS @"预计租用天数"
+#define MSG_DEVICESHAREORDER_PRICE @"租赁价格"
+#define MSG_DEVICESHAREORDER_MORTAGAGE @"押金类型"
+#define MSG_DEVICESHAREORDER_PAYSUCCESS @"支付成功"
+#define MSG_DEVICESHAREORDER_CODE @"物品提取码：%@"
+
+
+//设备共享订单页
+#define MSG_DEVICESHAREHISTORY_TITLE @"设备租用订单"
+#define MSG_DEVICESHAREHISTORY_ORDERTITLE @"订单编号"

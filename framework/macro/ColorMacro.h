@@ -53,3 +53,4 @@
 #define cwhite [STColorUtil colorWithHexString:@"#ffffff"]
 #define cblack [STColorUtil colorWithHexString:@"#000000"]
 #define cclear [STColorUtil colorWithHexString:@"#00000000"]
+#define cline  [STColorUtil colorWithHexString:@"#D3DFEF"]

@@ -19,15 +19,57 @@
 }
 
 
--(void)goMinePage{
+-(void)goOpendoorPage{
     if(_delegate){
-        [_delegate onGoMinePage];
+        [_delegate onGoOpendoorPage];
+    }
+}
+
+-(void)goCarPage{
+    if(_delegate){
+        [_delegate onGoCarPage];
+    }
+}
+
+-(void)goVisitorPage{
+    if(_delegate){
+        [_delegate onGoVisitorPage];
+    }
+}
+
+-(void)goVisitorHistoryPage{
+    if(_delegate){
+        [_delegate onGoVisitorHistoryPage];
+    }
+}
+
+-(void)goReportFixPage{
+    if(_delegate){
+        [_delegate onGoReportFixPage];
+    }
+}
+
+-(void)goDeviceSharePage{
+    if(_delegate){
+        [_delegate onGoDeviceSharePage];
+    }
+}
+
+-(void)doCallProperty{
+    if(_delegate){
+        [_delegate onDoCallProperty];
     }
 }
 
 -(void)goMessagePage{
     if(_delegate){
         [_delegate onGoMessagePage];
+    }
+}
+
+-(void)goMinePage{
+    if(_delegate){
+        [_delegate onGoMinePage];
     }
 }
 @end

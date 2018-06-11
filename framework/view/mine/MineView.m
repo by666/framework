@@ -14,6 +14,7 @@
 @property(strong, nonatomic)MineViewModel *mViewModel;
 @property(strong, nonatomic)UIView *topView;
 @property(strong, nonatomic)UIButton *avatarBtn;
+@property(strong, nonatomic)UIButton *backBtn;
 @property(strong, nonatomic)UIButton *settingBtn;
 @property(strong, nonatomic)UILabel *nameLabel;
 @property(strong, nonatomic)UILabel *districtLabel;
@@ -88,6 +89,13 @@
     _settingBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [_settingBtn addTarget:self action:@selector(onClickSettingBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_settingBtn];
+    
+    _backBtn = [[UIButton alloc]init];
+    [_backBtn setImage:[UIImage imageNamed:@"ic_arrow_back_white"] forState:UIControlStateNormal];
+    _backBtn.frame = CGRectMake(STWidth(15), STHeight(31.4), STWidth(20), STWidth(20));
+    _backBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [_backBtn addTarget:self action:@selector(onClickBackBtn) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_backBtn];
 }
 
 -(void)initList{
@@ -213,5 +221,12 @@
     }
 }
 
+
+#pragma mark 点击返回
+-(void)onClickBackBtn{
+    if(_mViewModel){
+        [_mViewModel goBack];
+    }
+}
 
 @end

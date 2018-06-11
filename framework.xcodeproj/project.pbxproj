@@ -82,6 +82,38 @@
 		002F94B020B40ED500F84094 /* OnePaymentPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F94AF20B40ED500F84094 /* OnePaymentPage.m */; };
 		002F94B420B40F5400F84094 /* OnePaymentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F94B320B40F5400F84094 /* OnePaymentViewModel.m */; };
 		002F94BB20B42A8800F84094 /* VisitorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F94BA20B42A8800F84094 /* VisitorView.m */; };
+		0038F0CF20C7C0A800094EB9 /* OpendoorPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0CE20C7C0A800094EB9 /* OpendoorPage.m */; };
+		0038F0D320C7C0C400094EB9 /* OpendoorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0D220C7C0C400094EB9 /* OpendoorView.m */; };
+		0038F0D720C7C0DB00094EB9 /* OpendoorViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0D620C7C0DB00094EB9 /* OpendoorViewModel.m */; };
+		0038F0DD20C7D64100094EB9 /* ReportFixPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0DC20C7D64100094EB9 /* ReportFixPage.m */; };
+		0038F0E020C7D6B300094EB9 /* ReportFixViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0DF20C7D6B300094EB9 /* ReportFixViewModel.m */; };
+		0038F0E320C7D8E800094EB9 /* ReportFixView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0E220C7D8E800094EB9 /* ReportFixView.m */; };
+		0038F0E620C7DF7400094EB9 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0E520C7DF7400094EB9 /* UITextView+Placeholder.m */; };
+		0038F0E920C7E31D00094EB9 /* STSelectLayerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0E820C7E31D00094EB9 /* STSelectLayerButton.m */; };
+		0038F0EC20C8E01000094EB9 /* MainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0EB20C8E01000094EB9 /* MainCell.m */; };
+		0038F0F020C90D2C00094EB9 /* DeviceSharePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0EF20C90D2C00094EB9 /* DeviceSharePage.m */; };
+		0038F0F320C918BE00094EB9 /* STCircleLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0F220C918BE00094EB9 /* STCircleLabelView.m */; };
+		0038F0F620C92CD300094EB9 /* STOrderTimeLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0F520C92CD300094EB9 /* STOrderTimeLayerView.m */; };
+		0038F0F920CA298200094EB9 /* FixHistroyPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0F820CA298200094EB9 /* FixHistroyPage.m */; };
+		0038F0FC20CA2A9000094EB9 /* FixHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0FB20CA2A9000094EB9 /* FixHistoryView.m */; };
+		0038F0FF20CA2AA300094EB9 /* FixHistoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F0FE20CA2AA300094EB9 /* FixHistoryViewModel.m */; };
+		0038F10320CA2EA900094EB9 /* FixModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F10220CA2EA900094EB9 /* FixModel.m */; };
+		0038F10620CA30C500094EB9 /* FixHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F10520CA30C500094EB9 /* FixHistoryCell.m */; };
+		0038F10B20CA655E00094EB9 /* DeviceShareViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F10A20CA655E00094EB9 /* DeviceShareViewModel.m */; };
+		0038F10E20CA66FA00094EB9 /* DeviceShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F10D20CA66FA00094EB9 /* DeviceShareModel.m */; };
+		0038F11220CA690200094EB9 /* DeviceShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F11120CA690200094EB9 /* DeviceShareView.m */; };
+		0038F11520CA6AEC00094EB9 /* DeviceShareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F11420CA6AEC00094EB9 /* DeviceShareCell.m */; };
+		0038F11820CA6FAE00094EB9 /* DeviceShareOrderPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F11720CA6FAE00094EB9 /* DeviceShareOrderPage.m */; };
+		0038F11C20CA6FC200094EB9 /* DeviceShareHistoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F11B20CA6FC200094EB9 /* DeviceShareHistoryPage.m */; };
+		0038F11F20CA726600094EB9 /* STDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F11E20CA726600094EB9 /* STDetailView.m */; };
+		0038F12520CA78E800094EB9 /* DeviceShareOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F12420CA78E800094EB9 /* DeviceShareOrderView.m */; };
+		0038F12820CA811900094EB9 /* DeviceShareOrderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F12720CA811900094EB9 /* DeviceShareOrderViewModel.m */; };
+		0038F12B20CA81F000094EB9 /* DeviceShareOrderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F12A20CA81F000094EB9 /* DeviceShareOrderViewCell.m */; };
+		0038F1AD20CE455200094EB9 /* DeviceShareHistoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F1AC20CE455200094EB9 /* DeviceShareHistoryViewModel.m */; };
+		0038F1B020CE45E000094EB9 /* DeviceShareHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F1AF20CE45E000094EB9 /* DeviceShareHistoryModel.m */; };
+		0038F1B320CE47F900094EB9 /* DeviceShareHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F1B220CE47F900094EB9 /* DeviceShareHistoryView.m */; };
+		0038F1B620CE48A700094EB9 /* DeviceShareHistotyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F1B520CE48A700094EB9 /* DeviceShareHistotyViewCell.m */; };
+		0038F1B920CE5D0400094EB9 /* UITableView+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F1B820CE5D0400094EB9 /* UITableView+Init.m */; };
 		0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2820942ABD0044D92E /* STObserverManager.m */; };
 		0039FC2C20942BDF0044D92E /* STObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2B20942BDF0044D92E /* STObserver.m */; };
 		003EDA8320B7BF5D00CFCFE9 /* CommunityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDA8220B7BF5D00CFCFE9 /* CommunityView.m */; };
@@ -413,6 +445,70 @@
 		002F94B320B40F5400F84094 /* OnePaymentViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnePaymentViewModel.m; sourceTree = "<group>"; };
 		002F94B920B42A8800F84094 /* VisitorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorView.h; sourceTree = "<group>"; };
 		002F94BA20B42A8800F84094 /* VisitorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorView.m; sourceTree = "<group>"; };
+		0038F0CD20C7C0A800094EB9 /* OpendoorPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpendoorPage.h; sourceTree = "<group>"; };
+		0038F0CE20C7C0A800094EB9 /* OpendoorPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpendoorPage.m; sourceTree = "<group>"; };
+		0038F0D120C7C0C400094EB9 /* OpendoorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpendoorView.h; sourceTree = "<group>"; };
+		0038F0D220C7C0C400094EB9 /* OpendoorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpendoorView.m; sourceTree = "<group>"; };
+		0038F0D520C7C0DB00094EB9 /* OpendoorViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpendoorViewModel.h; sourceTree = "<group>"; };
+		0038F0D620C7C0DB00094EB9 /* OpendoorViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpendoorViewModel.m; sourceTree = "<group>"; };
+		0038F0DB20C7D64100094EB9 /* ReportFixPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportFixPage.h; sourceTree = "<group>"; };
+		0038F0DC20C7D64100094EB9 /* ReportFixPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportFixPage.m; sourceTree = "<group>"; };
+		0038F0DE20C7D6B300094EB9 /* ReportFixViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportFixViewModel.h; sourceTree = "<group>"; };
+		0038F0DF20C7D6B300094EB9 /* ReportFixViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportFixViewModel.m; sourceTree = "<group>"; };
+		0038F0E120C7D8E800094EB9 /* ReportFixView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportFixView.h; sourceTree = "<group>"; };
+		0038F0E220C7D8E800094EB9 /* ReportFixView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportFixView.m; sourceTree = "<group>"; };
+		0038F0E420C7DF7400094EB9 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		0038F0E520C7DF7400094EB9 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
+		0038F0E720C7E31D00094EB9 /* STSelectLayerButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSelectLayerButton.h; sourceTree = "<group>"; };
+		0038F0E820C7E31D00094EB9 /* STSelectLayerButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STSelectLayerButton.m; sourceTree = "<group>"; };
+		0038F0EA20C8E01000094EB9 /* MainCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainCell.h; sourceTree = "<group>"; };
+		0038F0EB20C8E01000094EB9 /* MainCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainCell.m; sourceTree = "<group>"; };
+		0038F0EE20C90D2C00094EB9 /* DeviceSharePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceSharePage.h; sourceTree = "<group>"; };
+		0038F0EF20C90D2C00094EB9 /* DeviceSharePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceSharePage.m; sourceTree = "<group>"; };
+		0038F0F120C918BE00094EB9 /* STCircleLabelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STCircleLabelView.h; sourceTree = "<group>"; };
+		0038F0F220C918BE00094EB9 /* STCircleLabelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STCircleLabelView.m; sourceTree = "<group>"; };
+		0038F0F420C92CD300094EB9 /* STOrderTimeLayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STOrderTimeLayerView.h; sourceTree = "<group>"; };
+		0038F0F520C92CD300094EB9 /* STOrderTimeLayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STOrderTimeLayerView.m; sourceTree = "<group>"; };
+		0038F0F720CA298200094EB9 /* FixHistroyPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FixHistroyPage.h; sourceTree = "<group>"; };
+		0038F0F820CA298200094EB9 /* FixHistroyPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FixHistroyPage.m; sourceTree = "<group>"; };
+		0038F0FA20CA2A9000094EB9 /* FixHistoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FixHistoryView.h; sourceTree = "<group>"; };
+		0038F0FB20CA2A9000094EB9 /* FixHistoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FixHistoryView.m; sourceTree = "<group>"; };
+		0038F0FD20CA2AA300094EB9 /* FixHistoryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FixHistoryViewModel.h; sourceTree = "<group>"; };
+		0038F0FE20CA2AA300094EB9 /* FixHistoryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FixHistoryViewModel.m; sourceTree = "<group>"; };
+		0038F10120CA2EA900094EB9 /* FixModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FixModel.h; sourceTree = "<group>"; };
+		0038F10220CA2EA900094EB9 /* FixModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FixModel.m; sourceTree = "<group>"; };
+		0038F10420CA30C500094EB9 /* FixHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FixHistoryCell.h; sourceTree = "<group>"; };
+		0038F10520CA30C500094EB9 /* FixHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FixHistoryCell.m; sourceTree = "<group>"; };
+		0038F10920CA655E00094EB9 /* DeviceShareViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareViewModel.h; sourceTree = "<group>"; };
+		0038F10A20CA655E00094EB9 /* DeviceShareViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareViewModel.m; sourceTree = "<group>"; };
+		0038F10C20CA66FA00094EB9 /* DeviceShareModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareModel.h; sourceTree = "<group>"; };
+		0038F10D20CA66FA00094EB9 /* DeviceShareModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareModel.m; sourceTree = "<group>"; };
+		0038F11020CA690200094EB9 /* DeviceShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareView.h; sourceTree = "<group>"; };
+		0038F11120CA690200094EB9 /* DeviceShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareView.m; sourceTree = "<group>"; };
+		0038F11320CA6AEC00094EB9 /* DeviceShareCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareCell.h; sourceTree = "<group>"; };
+		0038F11420CA6AEC00094EB9 /* DeviceShareCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareCell.m; sourceTree = "<group>"; };
+		0038F11620CA6FAE00094EB9 /* DeviceShareOrderPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareOrderPage.h; sourceTree = "<group>"; };
+		0038F11720CA6FAE00094EB9 /* DeviceShareOrderPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareOrderPage.m; sourceTree = "<group>"; };
+		0038F11A20CA6FC200094EB9 /* DeviceShareHistoryPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareHistoryPage.h; sourceTree = "<group>"; };
+		0038F11B20CA6FC200094EB9 /* DeviceShareHistoryPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareHistoryPage.m; sourceTree = "<group>"; };
+		0038F11D20CA726600094EB9 /* STDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STDetailView.h; sourceTree = "<group>"; };
+		0038F11E20CA726600094EB9 /* STDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDetailView.m; sourceTree = "<group>"; };
+		0038F12320CA78E800094EB9 /* DeviceShareOrderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareOrderView.h; sourceTree = "<group>"; };
+		0038F12420CA78E800094EB9 /* DeviceShareOrderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareOrderView.m; sourceTree = "<group>"; };
+		0038F12620CA811900094EB9 /* DeviceShareOrderViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareOrderViewModel.h; sourceTree = "<group>"; };
+		0038F12720CA811900094EB9 /* DeviceShareOrderViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareOrderViewModel.m; sourceTree = "<group>"; };
+		0038F12920CA81F000094EB9 /* DeviceShareOrderViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareOrderViewCell.h; sourceTree = "<group>"; };
+		0038F12A20CA81F000094EB9 /* DeviceShareOrderViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareOrderViewCell.m; sourceTree = "<group>"; };
+		0038F1AB20CE455200094EB9 /* DeviceShareHistoryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareHistoryViewModel.h; sourceTree = "<group>"; };
+		0038F1AC20CE455200094EB9 /* DeviceShareHistoryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareHistoryViewModel.m; sourceTree = "<group>"; };
+		0038F1AE20CE45E000094EB9 /* DeviceShareHistoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareHistoryModel.h; sourceTree = "<group>"; };
+		0038F1AF20CE45E000094EB9 /* DeviceShareHistoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareHistoryModel.m; sourceTree = "<group>"; };
+		0038F1B120CE47F900094EB9 /* DeviceShareHistoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareHistoryView.h; sourceTree = "<group>"; };
+		0038F1B220CE47F900094EB9 /* DeviceShareHistoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareHistoryView.m; sourceTree = "<group>"; };
+		0038F1B420CE48A700094EB9 /* DeviceShareHistotyViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareHistotyViewCell.h; sourceTree = "<group>"; };
+		0038F1B520CE48A700094EB9 /* DeviceShareHistotyViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareHistotyViewCell.m; sourceTree = "<group>"; };
+		0038F1B720CE5D0400094EB9 /* UITableView+Init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+Init.h"; sourceTree = "<group>"; };
+		0038F1B820CE5D0400094EB9 /* UITableView+Init.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Init.m"; sourceTree = "<group>"; };
 		0039FC2720942ABD0044D92E /* STObserverManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObserverManager.h; sourceTree = "<group>"; };
 		0039FC2820942ABD0044D92E /* STObserverManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObserverManager.m; sourceTree = "<group>"; };
 		0039FC2A20942BDF0044D92E /* STObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObserver.h; sourceTree = "<group>"; };
@@ -816,6 +912,10 @@
 				004EF52D20A2D30800BA9602 /* UILabel+Init.m */,
 				004EF52F20A2D6AA00BA9602 /* UIButton+Init.h */,
 				004EF53020A2D6AA00BA9602 /* UIButton+Init.m */,
+				0038F0E420C7DF7400094EB9 /* UITextView+Placeholder.h */,
+				0038F0E520C7DF7400094EB9 /* UITextView+Placeholder.m */,
+				0038F1B720CE5D0400094EB9 /* UITableView+Init.h */,
+				0038F1B820CE5D0400094EB9 /* UITableView+Init.m */,
 			);
 			path = categories;
 			sourceTree = "<group>";
@@ -852,6 +952,14 @@
 				003EDAAC20BBD9CF00CFCFE9 /* STSinglePickerLayerView.m */,
 				003EDB1320C5249800CFCFE9 /* STSwitchView.h */,
 				003EDB1420C5249800CFCFE9 /* STSwitchView.m */,
+				0038F0E720C7E31D00094EB9 /* STSelectLayerButton.h */,
+				0038F0E820C7E31D00094EB9 /* STSelectLayerButton.m */,
+				0038F0F120C918BE00094EB9 /* STCircleLabelView.h */,
+				0038F0F220C918BE00094EB9 /* STCircleLabelView.m */,
+				0038F0F420C92CD300094EB9 /* STOrderTimeLayerView.h */,
+				0038F0F520C92CD300094EB9 /* STOrderTimeLayerView.m */,
+				0038F11D20CA726600094EB9 /* STDetailView.h */,
+				0038F11E20CA726600094EB9 /* STDetailView.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -1163,6 +1271,133 @@
 			path = visitor;
 			sourceTree = "<group>";
 		};
+		0038F0CC20C7C07F00094EB9 /* opendoor */ = {
+			isa = PBXGroup;
+			children = (
+				0038F0CD20C7C0A800094EB9 /* OpendoorPage.h */,
+				0038F0CE20C7C0A800094EB9 /* OpendoorPage.m */,
+			);
+			path = opendoor;
+			sourceTree = "<group>";
+		};
+		0038F0D020C7C0B000094EB9 /* opendoor */ = {
+			isa = PBXGroup;
+			children = (
+				0038F0D120C7C0C400094EB9 /* OpendoorView.h */,
+				0038F0D220C7C0C400094EB9 /* OpendoorView.m */,
+			);
+			path = opendoor;
+			sourceTree = "<group>";
+		};
+		0038F0D420C7C0CC00094EB9 /* opendoor */ = {
+			isa = PBXGroup;
+			children = (
+				0038F0D520C7C0DB00094EB9 /* OpendoorViewModel.h */,
+				0038F0D620C7C0DB00094EB9 /* OpendoorViewModel.m */,
+			);
+			path = opendoor;
+			sourceTree = "<group>";
+		};
+		0038F0D820C7D59F00094EB9 /* reportfix */ = {
+			isa = PBXGroup;
+			children = (
+				0038F0DB20C7D64100094EB9 /* ReportFixPage.h */,
+				0038F0DC20C7D64100094EB9 /* ReportFixPage.m */,
+				0038F0F720CA298200094EB9 /* FixHistroyPage.h */,
+				0038F0F820CA298200094EB9 /* FixHistroyPage.m */,
+			);
+			path = reportfix;
+			sourceTree = "<group>";
+		};
+		0038F0D920C7D5C300094EB9 /* reportfix */ = {
+			isa = PBXGroup;
+			children = (
+				0038F0E120C7D8E800094EB9 /* ReportFixView.h */,
+				0038F0E220C7D8E800094EB9 /* ReportFixView.m */,
+				0038F0FA20CA2A9000094EB9 /* FixHistoryView.h */,
+				0038F0FB20CA2A9000094EB9 /* FixHistoryView.m */,
+				0038F10420CA30C500094EB9 /* FixHistoryCell.h */,
+				0038F10520CA30C500094EB9 /* FixHistoryCell.m */,
+			);
+			path = reportfix;
+			sourceTree = "<group>";
+		};
+		0038F0DA20C7D5CC00094EB9 /* reportfix */ = {
+			isa = PBXGroup;
+			children = (
+				0038F0DE20C7D6B300094EB9 /* ReportFixViewModel.h */,
+				0038F0DF20C7D6B300094EB9 /* ReportFixViewModel.m */,
+				0038F0FD20CA2AA300094EB9 /* FixHistoryViewModel.h */,
+				0038F0FE20CA2AA300094EB9 /* FixHistoryViewModel.m */,
+			);
+			path = reportfix;
+			sourceTree = "<group>";
+		};
+		0038F0ED20C90D0100094EB9 /* deviceshare */ = {
+			isa = PBXGroup;
+			children = (
+				0038F0EE20C90D2C00094EB9 /* DeviceSharePage.h */,
+				0038F0EF20C90D2C00094EB9 /* DeviceSharePage.m */,
+				0038F11620CA6FAE00094EB9 /* DeviceShareOrderPage.h */,
+				0038F11720CA6FAE00094EB9 /* DeviceShareOrderPage.m */,
+				0038F11A20CA6FC200094EB9 /* DeviceShareHistoryPage.h */,
+				0038F11B20CA6FC200094EB9 /* DeviceShareHistoryPage.m */,
+			);
+			path = deviceshare;
+			sourceTree = "<group>";
+		};
+		0038F10020CA2E9C00094EB9 /* reportfix */ = {
+			isa = PBXGroup;
+			children = (
+				0038F10120CA2EA900094EB9 /* FixModel.h */,
+				0038F10220CA2EA900094EB9 /* FixModel.m */,
+			);
+			path = reportfix;
+			sourceTree = "<group>";
+		};
+		0038F10720CA654600094EB9 /* deviceshare */ = {
+			isa = PBXGroup;
+			children = (
+				0038F10C20CA66FA00094EB9 /* DeviceShareModel.h */,
+				0038F10D20CA66FA00094EB9 /* DeviceShareModel.m */,
+				0038F1AE20CE45E000094EB9 /* DeviceShareHistoryModel.h */,
+				0038F1AF20CE45E000094EB9 /* DeviceShareHistoryModel.m */,
+			);
+			path = deviceshare;
+			sourceTree = "<group>";
+		};
+		0038F10820CA654D00094EB9 /* deviceshare */ = {
+			isa = PBXGroup;
+			children = (
+				0038F10920CA655E00094EB9 /* DeviceShareViewModel.h */,
+				0038F10A20CA655E00094EB9 /* DeviceShareViewModel.m */,
+				0038F12620CA811900094EB9 /* DeviceShareOrderViewModel.h */,
+				0038F12720CA811900094EB9 /* DeviceShareOrderViewModel.m */,
+				0038F1AB20CE455200094EB9 /* DeviceShareHistoryViewModel.h */,
+				0038F1AC20CE455200094EB9 /* DeviceShareHistoryViewModel.m */,
+			);
+			path = deviceshare;
+			sourceTree = "<group>";
+		};
+		0038F10F20CA68F300094EB9 /* deviceshare */ = {
+			isa = PBXGroup;
+			children = (
+				0038F11020CA690200094EB9 /* DeviceShareView.h */,
+				0038F11120CA690200094EB9 /* DeviceShareView.m */,
+				0038F11320CA6AEC00094EB9 /* DeviceShareCell.h */,
+				0038F11420CA6AEC00094EB9 /* DeviceShareCell.m */,
+				0038F12320CA78E800094EB9 /* DeviceShareOrderView.h */,
+				0038F12420CA78E800094EB9 /* DeviceShareOrderView.m */,
+				0038F12920CA81F000094EB9 /* DeviceShareOrderViewCell.h */,
+				0038F12A20CA81F000094EB9 /* DeviceShareOrderViewCell.m */,
+				0038F1B120CE47F900094EB9 /* DeviceShareHistoryView.h */,
+				0038F1B220CE47F900094EB9 /* DeviceShareHistoryView.m */,
+				0038F1B420CE48A700094EB9 /* DeviceShareHistotyViewCell.h */,
+				0038F1B520CE48A700094EB9 /* DeviceShareHistotyViewCell.m */,
+			);
+			path = deviceshare;
+			sourceTree = "<group>";
+		};
 		003EDA8C20B800F100CFCFE9 /* address */ = {
 			isa = PBXGroup;
 			children = (
@@ -1377,6 +1612,8 @@
 			children = (
 				004EF54720A3088300BA9602 /* MainView.h */,
 				004EF54820A3088300BA9602 /* MainView.m */,
+				0038F0EA20C8E01000094EB9 /* MainCell.h */,
+				0038F0EB20C8E01000094EB9 /* MainCell.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -1786,6 +2023,8 @@
 		007B1F6220858F17009EA9F1 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				0038F10720CA654600094EB9 /* deviceshare */,
+				0038F10020CA2E9C00094EB9 /* reportfix */,
 				003EDAD620BE438800CFCFE9 /* msg */,
 				0050801020B6BC3200A976D9 /* auth */,
 				004EF5BF20AC05FA00BA9602 /* net */,
@@ -1800,6 +2039,9 @@
 		007B1F6320858F1D009EA9F1 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				0038F10F20CA68F300094EB9 /* deviceshare */,
+				0038F0D920C7D5C300094EB9 /* reportfix */,
+				0038F0D020C7C0B000094EB9 /* opendoor */,
 				003EDACE20BD5A6700CFCFE9 /* msg */,
 				00507FFD20B6AC7D00A976D9 /* auth */,
 				004EF57E20AAC97100BA9602 /* mine */,
@@ -1852,6 +2094,9 @@
 		00D324B42085EE25001EC82F /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				0038F10820CA654D00094EB9 /* deviceshare */,
+				0038F0DA20C7D5CC00094EB9 /* reportfix */,
+				0038F0D420C7C0CC00094EB9 /* opendoor */,
 				003EDAD220BD5A7A00CFCFE9 /* msg */,
 				00507FF920B6ABCC00A976D9 /* auth */,
 				004EF58220AAC98E00BA9602 /* mine */,
@@ -1864,6 +2109,9 @@
 		00D324B52085EE3F001EC82F /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				0038F0ED20C90D0100094EB9 /* deviceshare */,
+				0038F0D820C7D59F00094EB9 /* reportfix */,
+				0038F0CC20C7C07F00094EB9 /* opendoor */,
 				003EDACA20BD5A4B00CFCFE9 /* msg */,
 				00507FF520B68AF700A976D9 /* auth */,
 				004EF57A20AAC95000BA9602 /* mine */,
@@ -2235,6 +2483,7 @@
 				00D3249C208596ED001EC82F /* UIView+Frame.m in Sources */,
 				004EF56120A9AD4A00BA9602 /* BindPhoneModel.m in Sources */,
 				004EF57920AAC50900BA9602 /* MainModel.m in Sources */,
+				0038F1B620CE48A700094EB9 /* DeviceShareHistotyViewCell.m in Sources */,
 				004EF56420A9B4C600BA9602 /* NextLoginPage.m in Sources */,
 				002F94A720B4072500F84094 /* CarHistoryViewModel.m in Sources */,
 				004EF54320A3083500BA9602 /* MainPage.m in Sources */,
@@ -2246,6 +2495,7 @@
 				004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */,
 				0006DF79208DBC76005A4465 /* FaceRequestViewController.m in Sources */,
 				0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */,
+				0038F0E020C7D6B300094EB9 /* ReportFixViewModel.m in Sources */,
 				0006DF75208DBC76005A4465 /* FaceDetectorViewController.m in Sources */,
 				00D324A020859778001EC82F /* BaseViewController.m in Sources */,
 				0006DF1C20898F70005A4465 /* TouchScrollView.m in Sources */,
@@ -2260,10 +2510,13 @@
 				005F7A8920901F0C003CA4CA /* MasonryPage.m in Sources */,
 				00BBBD972091D0E300556B90 /* STFileUtil.m in Sources */,
 				004EF58120AAC98100BA9602 /* MineView.m in Sources */,
+				0038F0F020C90D2C00094EB9 /* DeviceSharePage.m in Sources */,
 				00D324B3208598A7001EC82F /* STPUtil.m in Sources */,
 				002F94AD20B40E9100F84094 /* OnePaymentView.m in Sources */,
 				004EF60420AD887500BA9602 /* AddMemberPage.m in Sources */,
+				0038F0F920CA298200094EB9 /* FixHistroyPage.m in Sources */,
 				003EDABC20BCF5A100CFCFE9 /* STRecognizeView.m in Sources */,
+				0038F1AD20CE455200094EB9 /* DeviceShareHistoryViewModel.m in Sources */,
 				004EF54620A3085C00BA9602 /* MainViewModel.m in Sources */,
 				004EF53A20A2FDB200BA9602 /* BindPhonePage.m in Sources */,
 				00812BC52091A14500E2E70B /* STConvertUtil.m in Sources */,
@@ -2273,6 +2526,9 @@
 				00D324B1208598A7001EC82F /* STColorUtil.m in Sources */,
 				00D324D320873B14001EC82F /* RespondModel.m in Sources */,
 				002F944D20AFFBE000F84094 /* AddCarView.m in Sources */,
+				0038F10B20CA655E00094EB9 /* DeviceShareViewModel.m in Sources */,
+				0038F11C20CA6FC200094EB9 /* DeviceShareHistoryPage.m in Sources */,
+				0038F10E20CA66FA00094EB9 /* DeviceShareModel.m in Sources */,
 				007B1F3D20858EB6009EA9F1 /* main.m in Sources */,
 				003EDB0920C1184800CFCFE9 /* SystemMsgModel.m in Sources */,
 				003EDAE520BE88D700CFCFE9 /* EnterAuthView.m in Sources */,
@@ -2294,7 +2550,9 @@
 				004EF5AD20ABDE6300BA9602 /* MineCell.m in Sources */,
 				003EDA8F20B8011000CFCFE9 /* STAddressLayerView.m in Sources */,
 				CF43E3D220B57F9B0069AAFA /* VisitorHistoryViewModel.m in Sources */,
+				0038F0FF20CA2AA300094EB9 /* FixHistoryViewModel.m in Sources */,
 				003EDAFD20C117F700CFCFE9 /* SystemMsgViewModel.m in Sources */,
+				0038F0E320C7D8E800094EB9 /* ReportFixView.m in Sources */,
 				0006DF96208DBCAD005A4465 /* IFlyFaceImage.m in Sources */,
 				004EF58520AAC99A00BA9602 /* MineViewModel.m in Sources */,
 				002F94B420B40F5400F84094 /* OnePaymentViewModel.m in Sources */,
@@ -2307,6 +2565,7 @@
 				00CCE9B4208ECDD300032B4A /* STUserDefaults.m in Sources */,
 				00CCE9B1208ECCDD00032B4A /* AccountManager.m in Sources */,
 				002F944A20AFFAA600F84094 /* AddCarPage.m in Sources */,
+				0038F1B320CE47F900094EB9 /* DeviceShareHistoryView.m in Sources */,
 				00D324E420874874001EC82F /* STRuntimeUtil.m in Sources */,
 				002F947120B2BB8F00F84094 /* PaymentRecordViewModel.m in Sources */,
 				004EF5F120AD69FB00BA9602 /* MemberView.m in Sources */,
@@ -2320,6 +2579,7 @@
 				CFB6D1BA20B55DA200A0863B /* VisitorModel.m in Sources */,
 				004EF5E020AC525E00BA9602 /* AboutPage.m in Sources */,
 				003EDAF420BFA34B00CFCFE9 /* VerificateViewCell.m in Sources */,
+				0038F11520CA6AEC00094EB9 /* DeviceShareCell.m in Sources */,
 				003EDAD120BD5A7300CFCFE9 /* MessageView.m in Sources */,
 				004EF52B20A2CD6200BA9602 /* UITextField+Init.m in Sources */,
 				004EF5B020ABFD8900BA9602 /* ProfileView.m in Sources */,
@@ -2332,6 +2592,7 @@
 				002F949D20B3F8E700F84094 /* VisitorPaymentModel.m in Sources */,
 				0006DF76208DBC76005A4465 /* FaceStreamDetectorViewController.m in Sources */,
 				004EF58820AAD32F00BA9602 /* ProfilePage.m in Sources */,
+				0038F12B20CA81F000094EB9 /* DeviceShareOrderViewCell.m in Sources */,
 				002F945320B02B9E00F84094 /* CarViewCell.m in Sources */,
 				00CCE9A8208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m in Sources */,
 				0006DF9D208DBCAD005A4465 /* IFlyFaceResultTrack.m in Sources */,
@@ -2339,15 +2600,19 @@
 				004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */,
 				002F949A20B3F8C600F84094 /* VisitorPaymentCell.m in Sources */,
 				004EF55520A4362400BA9602 /* FaceLoginView.m in Sources */,
+				0038F1B920CE5D0400094EB9 /* UITableView+Init.m in Sources */,
 				003EDB0C20C1185000CFCFE9 /* PropertyMsgModel.m in Sources */,
 				004EF56720A9B4E300BA9602 /* NextLoginView.m in Sources */,
+				0038F10320CA2EA900094EB9 /* FixModel.m in Sources */,
 				004EF5C520AC2C8500BA9602 /* FaceEnterView.m in Sources */,
 				003EDAB320BBEB6200CFCFE9 /* AuthFacePage.m in Sources */,
 				004EF5BC20AC05D100BA9602 /* TitleContentModel.m in Sources */,
 				003EDB0020C1180400CFCFE9 /* PropertyMsgViewModel.m in Sources */,
+				0038F11F20CA726600094EB9 /* STDetailView.m in Sources */,
 				003EDAB920BBEC8300CFCFE9 /* AuthFaceViewModel.m in Sources */,
 				002F949420B3EA6B00F84094 /* MonthPaymentCell.m in Sources */,
 				003EDAC320BCF9A500CFCFE9 /* RecognizeModel.m in Sources */,
+				0038F0D720C7C0DB00094EB9 /* OpendoorViewModel.m in Sources */,
 				003EDA8620B7BF6800CFCFE9 /* CommunityViewModel.m in Sources */,
 				0006DFA8208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m in Sources */,
 				007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */,
@@ -2355,6 +2620,7 @@
 				003EDAB620BBEC6800CFCFE9 /* AuthFaceView.m in Sources */,
 				0050800C20B6BB1700A976D9 /* AuthUserView.m in Sources */,
 				0006DFA2208DC05B005A4465 /* SystemFacePage.m in Sources */,
+				0038F11220CA690200094EB9 /* DeviceShareView.m in Sources */,
 				00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */,
 				004EF5C820AC2CD500BA9602 /* FaceEnterViewModel.m in Sources */,
 				CFB6D1A820B5358200A0863B /* VisitorHomePage.m in Sources */,
@@ -2366,10 +2632,12 @@
 				00D3249B208596ED001EC82F /* UILabel+StringFrame.m in Sources */,
 				004EF52820A2A42800BA9602 /* LoginPage.m in Sources */,
 				003EDAB020BBE70B00CFCFE9 /* CommunityPage.m in Sources */,
+				0038F0F320C918BE00094EB9 /* STCircleLabelView.m in Sources */,
 				00D32491208594F4001EC82F /* STLog.m in Sources */,
 				004EF54020A2FFA400BA9602 /* BindPhoneViewModel.m in Sources */,
 				CF43E3CF20B57F7C0069AAFA /* VisitorHistoryView.m in Sources */,
 				002F94AA20B407C500F84094 /* CarHistoryModel.m in Sources */,
+				0038F1B020CE45E000094EB9 /* DeviceShareHistoryModel.m in Sources */,
 				0039FC2C20942BDF0044D92E /* STObserver.m in Sources */,
 				003EDAD920BE439700CFCFE9 /* MessageModel.m in Sources */,
 				0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */,
@@ -2380,6 +2648,7 @@
 				002F947420B2C0CF00F84094 /* PaymentRecordView.m in Sources */,
 				002F944020AFF23F00F84094 /* CarViewModel.m in Sources */,
 				00507FF820B6A8A100A976D9 /* AuthStatuPage.m in Sources */,
+				0038F10620CA30C500094EB9 /* FixHistoryCell.m in Sources */,
 				003EDAE220BE849A00CFCFE9 /* VerificateUserPage.m in Sources */,
 				004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */,
 				004EF60120AD885A00BA9602 /* AddMemberView.m in Sources */,
@@ -2404,6 +2673,7 @@
 				004EF52E20A2D30800BA9602 /* UILabel+Init.m in Sources */,
 				003EDAC620BD276A00CFCFE9 /* CommunityModel.m in Sources */,
 				CFB6D1B120B5405600A0863B /* STDateLayerView.m in Sources */,
+				0038F0E920C7E31D00094EB9 /* STSelectLayerButton.m in Sources */,
 				003EDAF720C116E600CFCFE9 /* SystemMsgPage.m in Sources */,
 				0050800620B6B70500A976D9 /* STResultView.m in Sources */,
 				0050800F20B6BB2600A976D9 /* AuthUserViewModel.m in Sources */,
@@ -2411,6 +2681,7 @@
 				003EDA9B20B80BDD00CFCFE9 /* AddressLayerModel.m in Sources */,
 				004EF5F520AD6A0D00BA9602 /* MemberViewModel.m in Sources */,
 				002F94B020B40ED500F84094 /* OnePaymentPage.m in Sources */,
+				0038F0FC20CA2A9000094EB9 /* FixHistoryView.m in Sources */,
 				003EDA8320B7BF5D00CFCFE9 /* CommunityView.m in Sources */,
 				004EF5CB20AC44F900BA9602 /* SettingView.m in Sources */,
 				004EF5C220AC2C1800BA9602 /* FaceEnterPage.m in Sources */,
@@ -2418,6 +2689,7 @@
 				003EDB0F20C1263800CFCFE9 /* SystemMsgCell.m in Sources */,
 				004EF5E620AC558A00BA9602 /* UpdatePhoneNumViewModel.m in Sources */,
 				002F948E20B3E8A000F84094 /* VisitorPaymentView.m in Sources */,
+				0038F12520CA78E800094EB9 /* DeviceShareOrderView.m in Sources */,
 				0006DF9C208DBCAD005A4465 /* IFlyFaceResultKeys.m in Sources */,
 				00CCE9AB208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m in Sources */,
 				0006DF9B208DBCAD005A4465 /* IFlyFaceResultDetector.m in Sources */,
@@ -2425,9 +2697,13 @@
 				004EF5E320AC557700BA9602 /* UpdatePhoneNumView.m in Sources */,
 				0050800920B6BAEE00A976D9 /* AuthUserPage.m in Sources */,
 				002F946820B298EA00F84094 /* PaymentView.m in Sources */,
+				0038F0D320C7C0C400094EB9 /* OpendoorView.m in Sources */,
+				0038F0F620C92CD300094EB9 /* STOrderTimeLayerView.m in Sources */,
 				00D324CA2086E355001EC82F /* ByView.m in Sources */,
+				0038F12820CA811900094EB9 /* DeviceShareOrderViewModel.m in Sources */,
 				004EF59720AAD43100BA9602 /* CarHistoryPage.m in Sources */,
 				004EF5FE20AD863E00BA9602 /* STEdgeLabel.m in Sources */,
+				0038F0CF20C7C0A800094EB9 /* OpendoorPage.m in Sources */,
 				003EDAF120BF9D0600CFCFE9 /* VerificateViewModel.m in Sources */,
 				CF43E3D820B583040069AAFA /* VisitorHistoryCell.m in Sources */,
 				002F944720AFF6B600F84094 /* CarView.m in Sources */,
@@ -2436,13 +2712,17 @@
 				0006DF132089875E005A4465 /* ByViewController.m in Sources */,
 				CFB6D1A120B5343500A0863B /* VisitorViewModel.m in Sources */,
 				00D324E0208742CC001EC82F /* STDataBaseUtil.m in Sources */,
+				0038F0EC20C8E01000094EB9 /* MainCell.m in Sources */,
 				004EF5B920AC010700BA9602 /* ProfileCell.m in Sources */,
 				002F943320AEC19500F84094 /* MessageSettingCell.m in Sources */,
+				0038F0E620C7DF7400094EB9 /* UITextView+Placeholder.m in Sources */,
 				00C2541E209AACDC00E8E306 /* STUpdateUtil.m in Sources */,
 				004EF54C20A3E27100BA9602 /* STNavigationView.m in Sources */,
 				003EDAC920BD4C6300CFCFE9 /* CommunityCell.m in Sources */,
 				004EF5FB20AD812600BA9602 /* MemberCell.m in Sources */,
 				003EDAEE20BF9CF300CFCFE9 /* VerificateUserView.m in Sources */,
+				0038F0DD20C7D64100094EB9 /* ReportFixPage.m in Sources */,
+				0038F11820CA6FAE00094EB9 /* DeviceShareOrderPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

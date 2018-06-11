@@ -20,6 +20,7 @@
 -(void)onGoMessageSettingPage;
 -(void)onGoAccountManagePage;
 -(void)onGoSettingPage;
+-(void)onGoBack;
 
 @end
 
@@ -55,5 +56,7 @@
 
 //跳转到设置页面
 -(void)goSettingPage;
+
+-(void)goBack;
 
 @end

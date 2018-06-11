@@ -55,5 +55,8 @@
     if(_delegate){[_delegate onGoSettingPage];}
 }
 
+-(void)goBack{
+    if(_delegate){[_delegate onGoBack];}
+}
 
 @end

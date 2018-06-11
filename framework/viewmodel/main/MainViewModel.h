@@ -9,9 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @protocol MainViewDelegate
-
--(void)onGoMinePage;
+-(void)onGoOpendoorPage;
+-(void)onGoCarPage;
+-(void)onGoVisitorPage;
+-(void)onGoVisitorHistoryPage;
+-(void)onGoReportFixPage;
+-(void)onGoDeviceSharePage;
+-(void)onDoCallProperty;
 -(void)onGoMessagePage;
+-(void)onGoMinePage;
 
 @end
 
@@ -19,7 +25,23 @@
 
 @property(weak, nonatomic)id <MainViewDelegate>delegate;
 
--(void)goMinePage;
+
+-(void)goOpendoorPage;
+
+-(void)goCarPage;
+
+-(void)goVisitorPage;
+
+-(void)goVisitorHistoryPage;
+
+-(void)goReportFixPage;
+
+-(void)goDeviceSharePage;
+
+-(void)doCallProperty;
+
 -(void)goMessagePage;
+
+-(void)goMinePage;
 
 @end

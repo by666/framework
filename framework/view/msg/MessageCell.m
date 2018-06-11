@@ -80,7 +80,7 @@
         _headImageView.image = [UIImage imageNamed:@"ic_visitor_msg"];
     }
     
-    if(model.messageStatu == Reject){
+    if(model.messageStatu == Expired){
         self.contentView.backgroundColor = c15;
     }else{
         self.contentView.backgroundColor = cwhite;

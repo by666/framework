@@ -27,6 +27,7 @@
 #import "STPUtil.h"
 #import "UITextField+Init.h"
 #import "UILabel+Init.h"
+#import "UITableView+Init.h"
 #import "UIButton+Init.h"
 #import "STAlertUtil.h"
 #import <MBProgressHUD/MBProgressHUD.h>
