@@ -44,6 +44,7 @@
     bannerImageView.clipsToBounds = YES;
     [self addSubview:bannerImageView];
     
+    
     UIView *msgView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(176), ScreenWidth, STHeight(32))];
     msgView.backgroundColor = cwhite;
     [self addSubview:msgView];
@@ -166,5 +167,8 @@
         [_mViewModel goMessagePage];
     }
 }
+
+
+
 
 @end

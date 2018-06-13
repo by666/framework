@@ -58,9 +58,8 @@
 
 -(void)updateData:(MemberModel *)model{
     
-    _titleLabel.text = model.name;
-//    [STPUtil textSize:model.name maxWidth:ScreenWidth font:STFont(16)].width
-    _titleLabel.frame = CGRectMake(STWidth(60), STHeight(21.5),[STPUtil textSize:model.name maxWidth:ScreenWidth font:STFont(16)].width , STHeight(16));
+    _titleLabel.text = model.nickname;
+    _titleLabel.frame = CGRectMake(STWidth(60), STHeight(21.5),[STPUtil textSize:model.nickname maxWidth:ScreenWidth font:STFont(16)].width , STHeight(16));
 
     if(!IS_NS_STRING_EMPTY(model.identify)){
         _idetifyLabel.hidden = NO;

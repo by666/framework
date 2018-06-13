@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "LoginModel.h"
 
-@protocol LoginDelegate
+@protocol LoginDelegate<BaseRequestDelegate>
 
--(void)onSendVerifyCode:(Boolean)success;
+-(void)onGetTestCode:(NSString *)code;
 -(void)onLogin:(Boolean)success;
 -(void)onWechatLogin:(Boolean)success msg:(NSString *)msg;
 -(void)onTimeCount:(Boolean)complete;
@@ -26,6 +26,7 @@
 @property(strong, nonatomic)LoginModel *loginModel;
 
 -(void)sendVerifyCode:(NSString *)phoneNum;
+-(void)getTestCode:(NSString *)phoneNum;
 -(void)doLogin:(NSString *)phoneNum verifyCode:(NSString *)verifyCode;
 -(void)startCountTime;
 

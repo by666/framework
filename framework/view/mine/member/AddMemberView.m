@@ -13,7 +13,6 @@
 @interface AddMemberView()
 
 @property(strong, nonatomic) AddMemberViewModel *mViewModel;
-@property(strong, nonatomic)MemberModel *memeberModel;
 @property(strong, nonatomic) UIButton *takePhotoBTN;
 @property(strong, nonatomic) UITextField *nameTextField;
 @property(strong, nonatomic) UITextField *idNumTextField;
@@ -22,12 +21,13 @@
 
 @end
 
-@implementation AddMemberView
+@implementation AddMemberView{
+    
+}
 
--(instancetype)initWithViewModel:(AddMemberViewModel *)viewModel memberModel:(MemberModel *)memberModel{
+-(instancetype)initWithViewModel:(AddMemberViewModel *)viewModel{
     if(self == [super init]){
         _mViewModel = viewModel;
-        _memeberModel = memberModel;
         [self initView];
     }
     return self;
@@ -54,8 +54,8 @@
     _takePhotoBTN.clipsToBounds = YES;
     
     
-    if(_memeberModel && !IS_NS_STRING_EMPTY(_memeberModel.avatarUrl)){
-        UIImage *image = [UIImage imageWithContentsOfFile:_memeberModel.avatarUrl];
+    if(_mViewModel.model && !IS_NS_STRING_EMPTY(_mViewModel.model.faceUrl)){
+        UIImage *image = [UIImage imageWithContentsOfFile:_mViewModel.model.faceUrl];
         [_takePhotoBTN setImage:image forState:UIControlStateNormal];
     }
     
@@ -99,8 +99,8 @@
     _nameTextField.textAlignment = NSTextAlignmentRight;
     [_nameTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [editView addSubview:_nameTextField];
-    if(_memeberModel && !IS_NS_STRING_EMPTY(_memeberModel.name)){
-        _nameTextField.text = _memeberModel.name;
+    if(_mViewModel.model && !IS_NS_STRING_EMPTY(_mViewModel.model.nickname)){
+        _nameTextField.text = _mViewModel.model.nickname;
     }
     
     
@@ -113,8 +113,8 @@
     [_idNumTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [editView addSubview:_idNumTextField];
     
-    if(_memeberModel && !IS_NS_STRING_EMPTY(_memeberModel.idNum)){
-        _idNumTextField.text = _memeberModel.idNum;
+    if(_mViewModel.model && !IS_NS_STRING_EMPTY(_mViewModel.model.creid)){
+        _idNumTextField.text = _mViewModel.model.creid;
     }
     
     _errorLabel = [[UILabel alloc]initWithFont:STFont(12) text:@"" textAlignment:NSTextAlignmentLeft textColor:c18 backgroundColor:nil multiLine:NO];
@@ -178,31 +178,24 @@
         _errorLabel.text = MSG_ADDMEMBER_AVATAR_ERROR;
         return;
     }
-    _mViewModel.model.name = _nameTextField.text;
-    _mViewModel.model.idNum = _idNumTextField.text;
-    _mViewModel.model.uid = [STTimeUtil getCurrentTimeStamp];
+    _mViewModel.model.nickname = _nameTextField.text;
+    _mViewModel.model.creid = _idNumTextField.text;
+    _mViewModel.model.userUid = [STTimeUtil getCurrentTimeStamp];
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *imageFilePath = [path stringByAppendingPathComponent:@"head.jpg"];
-    _mViewModel.model.avatarUrl = imageFilePath;
+    _mViewModel.model.faceUrl = imageFilePath;
     
     _errorLabel.text = @"";
-    [MBProgressHUD showHUDAddedTo:self animated:YES];
     [_mViewModel addMemberModel];
 }
 
--(void)deleteMember{
-    [MBProgressHUD showHUDAddedTo:self animated:YES];
-    [_mViewModel deleteMemberModel:_memeberModel];
-
-}
-
 -(MemberModel *)getCurrentModel{
-    _memeberModel.name = _nameTextField.text;
-    _memeberModel.idNum = _idNumTextField.text;
+    _mViewModel.model.nickname = _nameTextField.text;
+    _mViewModel.model.creid = _idNumTextField.text;
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *imageFilePath = [path stringByAppendingPathComponent:@"head.jpg"];
-    _memeberModel.avatarUrl = imageFilePath;
-    return _memeberModel;
+    _mViewModel.model.faceUrl = imageFilePath;
+    return _mViewModel.model;
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

@@ -51,18 +51,38 @@
 
 }
 
--(void)onSendVerifyCode:(Boolean)success{
-    [_mLoginView updateView];
+
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    });
 }
 
-
-- (void)onLogin:(Boolean)success{
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [_mLoginView updateView];
-    if(success){
-        [MainPage show:self];
+    if([respondModel.requestUrl isEqualToString:URL_GETVERIFYCODE]){
+        NSString *phoneNum = data;
+        [_mViewModel getTestCode:phoneNum];
+    }else if([respondModel.requestUrl isEqualToString:URL_LOGIN]){
+         [MainPage show:self];
     }
 }
 
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [_mLoginView updateView];
+}
+
+
+////////测试验证码代码
+-(void)onGetTestCode:(NSString *)code{
+    [_mLoginView blankCode:code];
+}
+
+
+////////
 -(void)onWechatLogin:(Boolean)success msg:(NSString *)msg{
     if(!success){
         [STAlertUtil showAlertController:@"提示" content:msg controller:self];

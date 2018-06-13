@@ -32,7 +32,8 @@
 #import "STAlertUtil.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "NSString+Extension.h"
-
+#import "BaseRequestDelegate.h"
+#import "STToastUtil.h"
 
 //JPush相光
 // 引入JPush功能所需头文件
@@ -91,5 +92,10 @@
 #define LineHeight 0.5
 
 #endif /* STPrefixHeader_pch */
+
+//主线程同步队列
+#define dispatch_main_sync_safe(block)   dispatch_sync(dispatch_get_main_queue(), block);
+//主线程异步队列
+#define dispatch_main_async_safe(block)  dispatch_async(dispatch_get_main_queue(), block);
 
 

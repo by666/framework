@@ -13,23 +13,27 @@
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     if(self == [super init]){
-        self.uid = [aDecoder decodeIntegerForKey:@"uid"];
-        self.age = (int)[aDecoder decodeIntegerForKey:@"age"];
+        self.cretype = (int)[aDecoder decodeIntegerForKey:@"cretype"];
+        self.creid = [aDecoder decodeObjectForKey:@"creid"];
         self.phoneNum = [aDecoder decodeObjectForKey:@"phoneNum"];
-        self.nickName = [aDecoder decodeObjectForKey:@"nickName"];
-        self.gender = [aDecoder decodeObjectForKey:@"gender"];
-        self.avatarUrl = [aDecoder decodeObjectForKey:@"avatarUrl"];
+        self.headUrl = [aDecoder decodeObjectForKey:@"headUrl"];
+        self.userName = [aDecoder decodeObjectForKey:@"userName"];
+        self.userUid = [aDecoder decodeObjectForKey:@"userUid"];
+        self.token = [aDecoder decodeObjectForKey:@"token"];
+
     }
     return self;
 }
 
 -(void)encodeWithCoder:(NSCoder *)aCoder{
-    [aCoder encodeInteger:self.uid forKey:@"uid"];
-    [aCoder encodeInteger:self.age  forKey:@"age"];
+    [aCoder encodeInteger:self.cretype forKey:@"cretype"];
+    [aCoder encodeObject:self.creid  forKey:@"creid"];
     [aCoder encodeObject:self.phoneNum forKey:@"phoneNum"];
-    [aCoder encodeObject:self.nickName forKey:@"nickName"];
-    [aCoder encodeObject:self.gender forKey:@"gender"];
-    [aCoder encodeObject:self.avatarUrl forKey:@"avatarUrl"];
+    [aCoder encodeObject:self.headUrl forKey:@"headUrl"];
+    [aCoder encodeObject:self.userName forKey:@"userName"];
+    [aCoder encodeObject:self.userUid forKey:@"userUid"];
+    [aCoder encodeObject:self.token forKey:@"token"];
+
 }
 
 @end

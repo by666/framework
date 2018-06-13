@@ -9,8 +9,9 @@
 #import "LoginViewModel.h"
 #import "STObserverManager.h"
 #import <WXApi.h>
-#import "AccountManager.h"
 #import "UserModel.h"
+#import "STNetUtil.h"
+#import "AccountManager.h"
 
 #define TIMECOUNT 60
 
@@ -34,17 +35,52 @@
         if(![STPUtil isPhoneNumValid:phoneNum]){
             _loginModel.msgStr = MSG_PHONENUM_ERROR;
             _loginModel.msgColor = c07;
-            [_delegate onSendVerifyCode:NO];
+            [_delegate onRequestFail:MSG_PHONENUM_ERROR];
             return;
         }
-        //todo:网络请求
-        _loginModel.msgStr = MSG_VERIFYCODE_SUCCESS;
-        _loginModel.msgColor = c06;
-        [_delegate onSendVerifyCode:YES];
-        [self startCountTime];
+        [_delegate onRequestBegin];
+        WS(weakSelf)
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        dic[@"mobile"] = phoneNum;
+        [STNetUtil get:URL_GETVERIFYCODE parameters:dic success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                weakSelf.loginModel.msgStr = MSG_VERIFYCODE_SUCCESS;
+                weakSelf.loginModel.msgColor = c06;
+                [weakSelf.delegate onRequestSuccess:respondModel data:phoneNum];
+                [self startCountTime];
+            }else{
+                weakSelf.loginModel.msgStr = respondModel.msg;
+                weakSelf.loginModel.msgColor = c07;
+                [weakSelf.delegate onRequestFail:respondModel.msg];
+            }
+            
+        } failure:^(int errorCode) {
+            weakSelf.loginModel.msgStr = MSG_PHONENUM_ERROR;
+            weakSelf.loginModel.msgColor = c07;
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        }];
     }
 }
 
+
+//获取测试验证码
+-(void)getTestCode:(NSString *)phoneNum{
+    if(_delegate){
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        dic[@"mobile"] = phoneNum;
+        WS(weakSelf)
+        [STNetUtil get:URL_TESTCODE parameters:dic success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                if(weakSelf.delegate){
+                    [weakSelf.delegate onGetTestCode:respondModel.data];
+                }
+            }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        }];
+        
+    }
+}
 
 #pragma mark 请求登录
 -(void)doLogin:(NSString *)phoneNum verifyCode:(NSString *)verifyCode{
@@ -52,23 +88,44 @@
         if(![STPUtil isPhoneNumValid:phoneNum]){
             _loginModel.msgStr = MSG_PHONENUM_ERROR;
             _loginModel.msgColor = c07;
-            [_delegate onLogin:NO];
+            [_delegate onRequestFail:MSG_PHONENUM_ERROR];
             return;
         }
         if(![STPUtil isVerifyCodeValid:verifyCode]){
             _loginModel.msgStr = MSG_VERIFYCODE_ERROR;
             _loginModel.msgColor = c07;
-            [_delegate onLogin:NO];
+            [_delegate onRequestFail:MSG_VERIFYCODE_ERROR];
             return;
         }
         //todo:网络请求
-        _loginModel.msgStr = MSG_LOGIN_SUCCESS;
-        _loginModel.msgColor = c06;
-        UserModel *model = [[UserModel alloc]init];
-        model.phoneNum = phoneNum;
-        [[AccountManager sharedAccountManager]saveUserModel:model];
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        dic[@"mobile"] = phoneNum;
+        dic[@"validateCode"] = verifyCode;
+        NSString *jsonStr = [dic mj_JSONString];
+        WS(weakSelf)
+        [STNetUtil post:URL_LOGIN content:jsonStr success:^(RespondModel *repondModel) {
+            if([repondModel.status isEqualToString:STATU_SUCCESS]){
+                UserModel *model = [[AccountManager sharedAccountManager]getUserModel];
+                model.phoneNum = phoneNum;
+                model.token = [repondModel.data objectForKey:@"token"];
+                model.userUid = [repondModel.data objectForKey:@"userUid"];
+                [[AccountManager sharedAccountManager]saveUserModel:model];
+                weakSelf.loginModel.msgStr = MSG_LOGIN_SUCCESS;
+                weakSelf.loginModel.msgColor = c06;
+                [weakSelf.delegate onRequestSuccess:repondModel data:model];
+            }else{
+                weakSelf.loginModel.msgStr = repondModel.msg;
+                weakSelf.loginModel.msgColor = c07;
+                [weakSelf.delegate onRequestFail:repondModel.msg];
 
-        [_delegate onLogin:YES];
+            }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        }];
+        
+
+
+
     }
 }
 

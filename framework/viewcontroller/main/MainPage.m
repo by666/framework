@@ -71,10 +71,9 @@
     _mMainView.backgroundColor = c15;
     [self.view addSubview:_mMainView];
     
-//    WS(weakSelf)
-//    [STAlertUtil showAlertController:@"" content:@"请先认证身份信息" controller:self confirm:^{
-//        [AuthUserPage show:weakSelf];
-//    }];
+    
+    [_mViewModel getUserInfo];
+    [_mViewModel getLiveInfo];
     
 }
 
@@ -114,4 +113,23 @@
 -(void)onGoMinePage{
     [MinePage show:self];
 }
+
+-(void)onRequestBegin{
+    
+}
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    //信息未录入
+    if([msg isEqualToString:STATU_LIVEINFO_NULL]){
+        WS(weakSelf)
+        [STAlertUtil showAlertController:@"" content:@"请先认证身份信息" controller:self confirm:^{
+            [AuthUserPage show:weakSelf];
+        }];
+    }
+}
+
 @end

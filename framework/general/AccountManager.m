@@ -18,7 +18,10 @@ SINGLETON_IMPLEMENTION(AccountManager)
  }
 
 -(UserModel *)getUserModel{
-    return [STUserDefaults getModel:UD_USERMODEL];
+    if([STUserDefaults getModel:UD_USERMODEL]){
+        return [STUserDefaults getModel:UD_USERMODEL];
+    }
+    return [UserModel new];
 }
 
 -(void)clearUserModel{
@@ -27,7 +30,7 @@ SINGLETON_IMPLEMENTION(AccountManager)
 
 -(Boolean)isLogin{
     UserModel *model = [self getUserModel];
-    if(model && !IS_NS_STRING_EMPTY(model.phoneNum)){
+    if(model && !IS_NS_STRING_EMPTY(model.token) && !IS_NS_STRING_EMPTY(model.userUid)){
         return YES;
     }
     return NO;

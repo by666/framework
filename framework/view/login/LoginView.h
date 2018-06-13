@@ -19,4 +19,8 @@
 //登录验证
 -(void)updateView;
 
+
+//测试验证码
+-(void)blankCode:(NSString *)code;
+
 @end

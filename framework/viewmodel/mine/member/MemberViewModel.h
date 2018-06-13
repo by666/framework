@@ -9,12 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "MemberModel.h"
 
-@protocol MemberViewDelegate
+@protocol MemberViewDelegate<BaseRequestDelegate>
 
 -(void)onGoAddMemberView;
 -(void)onGoEditMemberView:(MemberModel *)model;
 -(void)onDeleteMember:(Boolean)success model:(MemberModel *)model row:(NSInteger)row;
--(void)onGetMemberModels:(NSMutableArray *)datas;
 -(void)onShowWarnPrompt:(MemberModel *)model;
 
 @end
@@ -24,7 +23,7 @@
 @property(weak, nonatomic)id<MemberViewDelegate> delegate;
 @property(strong, nonatomic)NSMutableArray *datas;
 
--(void)getMemberModels;
+-(void)requestMemberDatas;
 -(void)goAddMemberView;
 -(void)goEditMemberView:(MemberModel *)model;
 -(void)deleteMember:(MemberModel *)model;

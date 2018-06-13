@@ -13,5 +13,8 @@
 @property(copy, nonatomic)NSString *name;
 @property(strong, nonatomic)NSMutableArray *sub;
 
+@property(copy, nonatomic)NSString *layerName;
+@property(copy, nonatomic)NSString *layerLocator;
+@property(assign, nonatomic)int levelNum;
 
 @end

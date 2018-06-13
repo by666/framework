@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "MemberModel.h"
 
-@protocol AddMemberViewDelegate
+@protocol AddMemberViewDelegate<BaseRequestDelegate>
 
--(void)onAddMemberModel:(Boolean)success model:(MemberModel *)model;
--(void)onDeleteMemberModel:(Boolean)success model:(MemberModel *)model;
 -(void)onDoTakePhoto;
+-(void)onGoLastPage;
+-(void)onCheckUpdate:(MemberModel *)model;
 
 @end
 
@@ -22,8 +22,12 @@
 @property(weak, nonatomic)id<AddMemberViewDelegate> delegate;
 @property(strong, nonatomic)MemberModel *model;
 
+-(instancetype)initWithData:(MemberModel *)model;
 -(void)addMemberModel;
 -(void)deleteMemberModel:(MemberModel *)model;
+-(void)checkUpdateMemberModel:(MemberModel *)model;
+-(void)updateMemberModel:(MemberModel *)model;
+-(void)goLastPage;
 -(void)doTakePhoto;
 
 @end

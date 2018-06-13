@@ -53,6 +53,8 @@
     _authUserView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     _authUserView.backgroundColor = c15;
     [self.view addSubview:_authUserView];
+    
+    [viewModel getCommunityPosition:66.66 latitude:88.88];
 }
 
 
@@ -73,6 +75,30 @@
     if([key isEqualToString:Notify_UpdateAddress]){
         [_authUserView updateAddress:msg];
     }
+}
+
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    });
+}
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    if([respondModel.requestUrl isEqualToString:URL_GETCOMMUNITYPOSITION]){
+        CommunityPositionModel *model = data;
+        if(_authUserView){
+            [_authUserView updateAddress:model.districtName];
+        }
+    }else if([respondModel.requestUrl isEqualToString:URL_GETCOMMUNITYLAYER]){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }
+
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [STToastUtil showTips:msg];
 }
 
 @end

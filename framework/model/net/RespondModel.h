@@ -10,8 +10,11 @@
 
 @interface RespondModel : NSObject
 
-@property(assign,nonatomic) int code;
+@property(copy, nonatomic)NSString *status;
 @property(copy, nonatomic)NSString *msg;
-@property(strong, nonatomic)id result;
+@property(strong, nonatomic)id data;
+@property(assign, nonatomic)BOOL success;
+@property(copy, nonatomic)NSString *requestUrl;
+
 
 @end

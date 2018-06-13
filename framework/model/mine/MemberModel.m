@@ -12,4 +12,16 @@
 
 
 
++(MemberModel *)buildModel:(NSString *)nickname homeLocator:(NSString *)homeLocator cretype:(int)cretype creid:(NSString *)creid faceUrl:(NSString *)faceUrl districtUid:(NSString *)districtUid userUid:(NSString *)userUid{
+    MemberModel *model = [[MemberModel alloc]init];
+    model.nickname = nickname;
+    model.homeLocator = homeLocator;
+    model.cretype = cretype;
+    model.creid = creid;
+    model.faceUrl = faceUrl;
+    model.districtUid = districtUid;
+    model.userUid = userUid;
+    return model;
+}
+
 @end

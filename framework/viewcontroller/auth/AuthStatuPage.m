@@ -42,6 +42,7 @@
     _authStatuView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     _authStatuView.backgroundColor = cwhite;
     [self.view addSubview:_authStatuView];
+    
 }
 
 -(void)onHurryRequest:(Boolean)success{

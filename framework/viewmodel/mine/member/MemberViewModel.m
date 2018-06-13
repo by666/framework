@@ -7,41 +7,37 @@
 //
 
 #import "MemberViewModel.h"
+#import "STNetUtil.h"
+
 
 @implementation MemberViewModel
 
 
 -(instancetype)init{
     if(self == [super init]){
-        
-        NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString *imageFilePath = [path stringByAppendingPathComponent:@"head.jpg"];
-        
         _datas = [[NSMutableArray alloc]init];
-        [_datas addObject:[self buildModel:@"张三丰" identify:@"管理员" idNum:@"362402199104190515" avatarUrl:imageFilePath uid:@"1"]];
-        [_datas addObject:[self buildModel:@"张翠山" identify:@"" idNum:@"362402199104190515" avatarUrl:imageFilePath uid:@"2"]];
-        [_datas addObject:[self buildModel:@"张无忌" identify:@"" idNum:@"362402199104190515" avatarUrl:imageFilePath uid:@"3"]];
-        [_datas addObject:[self buildModel:@"张小泉" identify:@"" idNum:@"362402199104190515" avatarUrl:imageFilePath uid:@"4"]];
-
     }
     return self;
 }
 
 
--(MemberModel *)buildModel:(NSString *)name identify:(NSString *)identify idNum:(NSString *)idNum avatarUrl:(NSString *)avatarUrl uid:(NSString *)uid{
-    MemberModel *model = [[MemberModel alloc]init];
-    model.name = name;
-    model.identify = identify;
-    model.idNum = idNum;
-    model.avatarUrl = avatarUrl;
-    model.uid = uid;
-    return model;
-}
-
-
--(void)getMemberModels{
+-(void)requestMemberDatas{
     if(_delegate){
-        [_delegate onGetMemberModels:_datas];
+        WS(weakSelf)
+        [_delegate onRequestBegin];
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        dic[@"districtUid"] = @"1";
+        dic[@"homeLocator"] = @"1.0.1";
+        [STNetUtil get:URL_GETFAMILY_MEMBER parameters:dic success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                weakSelf.datas = [MemberModel mj_objectArrayWithKeyValuesArray:respondModel.data];
+                [weakSelf.delegate onRequestSuccess:respondModel data:weakSelf.datas];
+            }else{
+                [weakSelf.delegate onRequestFail:respondModel.msg];
+            }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        }];
     }
 }
 
@@ -64,7 +60,7 @@
         if(!IS_NS_COLLECTION_EMPTY(_datas)){
             for(int i = 0 ; i < [_datas count] ; i++){
                 MemberModel *tempModel = [_datas objectAtIndex:i];
-                if([tempModel.name isEqualToString:model.name]){
+                if([tempModel.creid isEqualToString:model.creid]){
                     [_datas removeObjectAtIndex:i];
                     [_delegate onDeleteMember:YES model:model row:i];
                     break;
@@ -79,5 +75,7 @@
         [_delegate onShowWarnPrompt:model];
     }
 }
+
+
 
 @end

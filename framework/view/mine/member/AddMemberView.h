@@ -12,11 +12,10 @@
 @interface AddMemberView : UILabel
 
 
--(instancetype)initWithViewModel:(AddMemberViewModel *)viewModel memberModel:(MemberModel *)memberModel;
+-(instancetype)initWithViewModel:(AddMemberViewModel *)viewModel;
 
 -(void)updateView:(NSString *)imagePath;
 -(void)saveMember;
--(void)deleteMember;
 -(MemberModel *)getCurrentModel;
 
 -(void)removeView;

@@ -7,6 +7,8 @@
 //
 
 #import "MainViewModel.h"
+#import "STNetUtil.h"
+#import "AccountManager.h"
 
 @implementation MainViewModel
 
@@ -71,5 +73,39 @@
     if(_delegate){
         [_delegate onGoMinePage];
     }
+}
+
+-(void)getUserInfo{
+    WS(weakSelf)
+    [STNetUtil get:URL_GETUSERINFO parameters:nil success:^(RespondModel *respondModel) {
+        if([respondModel.status isEqualToString:STATU_SUCCESS]){
+            if(weakSelf.delegate){
+                UserModel *data = [[AccountManager sharedAccountManager]getUserModel];
+                data.cretype = [[respondModel.data objectForKey:@"cretype"] intValue];
+                data.creid = [respondModel.data valueForKey:@"creid"];
+                data.headUrl = [respondModel.data valueForKey:@"headUrl"];
+                data.userName = [respondModel.data valueForKey:@"userName"];
+                [weakSelf.delegate onRequestSuccess:respondModel data:data];
+            }else{
+                [weakSelf.delegate onRequestFail:respondModel.msg];
+            }
+        }
+    } failure:^(int errorCode) {
+        [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+    }];
+}
+
+
+-(void)getLiveInfo{
+    WS(weakSelf)
+   [STNetUtil post:URL_GETLIVEINFO parameters:nil success:^(RespondModel *respondModel) {
+       if([respondModel.status isEqualToString:STATU_SUCCESS]){
+           [weakSelf.delegate onRequestSuccess:respondModel data:respondModel.data];
+       }else{
+           [weakSelf.delegate onRequestFail:respondModel.status];
+       }
+   } failure:^(int errorCode) {
+       [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+   }];
 }
 @end

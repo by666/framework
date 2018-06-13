@@ -61,8 +61,21 @@
 }
 
 
-//回调
--(void)onGetMemberModels:(NSMutableArray *)datas{
+
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    });
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [STToastUtil showFailureAlertSheet:msg];
+}
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     if(_memberView){
         [_memberView updateView];
     }
@@ -83,29 +96,11 @@
 }
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
-    if([key isEqualToString:Notify_AddMember]){
-        MemberModel *model = msg;
+    if([key isEqualToString:Notify_AddMember] || [key isEqualToString:Notify_DeleteMember] || [key isEqualToString:Notify_UpdateMember]){
         if(_viewModel){
-            [_viewModel.datas addObject:model];
+            [_viewModel requestMemberDatas];
         }
     }
-    else if([key isEqualToString:Notify_DeleteMember]){
-        MemberModel *model = msg;
-        if(_viewModel){
-            [_viewModel.datas removeObject:model];
-        }
-    }else if([key isEqualToString:Notify_UpdateMember]){
-        MemberModel *model = msg;
-        if(_viewModel){
-            for(int i = 0 ; i < [_viewModel.datas count] ; i ++ ){
-                MemberModel *temp = [_viewModel.datas objectAtIndex:i];
-                if([temp.uid isEqualToString:model.uid]){
-                    [_viewModel.datas replaceObjectAtIndex:i withObject:model];
-                }
-            }
-        }
-    }
-    [_memberView updateView];
 }
 
 

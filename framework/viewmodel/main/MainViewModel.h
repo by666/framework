@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol MainViewDelegate
+@protocol MainViewDelegate<BaseRequestDelegate>
 -(void)onGoOpendoorPage;
 -(void)onGoCarPage;
 -(void)onGoVisitorPage;
@@ -43,5 +43,9 @@
 -(void)goMessagePage;
 
 -(void)goMinePage;
+
+-(void)getUserInfo;
+
+-(void)getLiveInfo;
 
 @end

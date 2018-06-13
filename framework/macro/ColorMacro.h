@@ -54,3 +54,6 @@
 #define cblack [STColorUtil colorWithHexString:@"#000000"]
 #define cclear [STColorUtil colorWithHexString:@"#00000000"]
 #define cline  [STColorUtil colorWithHexString:@"#D3DFEF"]
+
+
+#define cwarn [UIColor colorWithRed:0xFF/255.0 green:0x54/255.0 blue:0x54/255.0 alpha:1.0]

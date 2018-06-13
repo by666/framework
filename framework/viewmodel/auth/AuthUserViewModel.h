@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "UserAuthModel.h"
+#import "CommunityPositionModel.h"
 
-@protocol AuthUserViewDelegate
+@protocol AuthUserViewDelegate<BaseRequestDelegate>
 
 -(void)onGoCommunity;
 -(void)submitUserInfo:(Boolean)success msg:(NSString *)errorMsg;
@@ -24,5 +25,6 @@
 
 -(void)goCommunityPage;
 -(void)submitUserInfo;
+-(void)getCommunityPosition:(CGFloat)longtitude latitude:(CGFloat)latitude;
 
 @end

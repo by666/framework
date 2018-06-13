@@ -36,13 +36,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     id controller;
-//    if([[AccountManager sharedAccountManager]isLogin]){
-//        controller = [[NextLoginPage alloc]init];
-//    }else{
-//        controller = [[LoginPage alloc]init];
-//    }
-
-    controller = [[MainPage alloc]init];
+    if([[AccountManager sharedAccountManager]isLogin]){
+        controller = [[MainPage alloc]init];
+    }else{
+        controller = [[LoginPage alloc]init];
+    }
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
@@ -94,22 +92,8 @@
 }
 
 -(void)initDB{
-    [[STDataBaseUtil sharedSTDataBaseUtil]createTable:@"by666" model:[UserModel class]];
-    
-    UserModel *model = [[UserModel alloc]init];
-    model.uid = 123124;
-    model.age = 12;
-    model.nickName = @"by";
-    model.gender = @"male";
-    model.avatarUrl = @"http://www.baidu.com";
-    model.phoneNum = @"18680686420";
-    [STUserDefaults saveModel:@"usermodel" model:model];
-    
-    UserModel *testModel = [STUserDefaults getModel:@"usermodel"];
-    
-    UIImage *image = [UIImage imageNamed:@"test"];
-    [STUserDefaults saveImage:@"testImg" image:image];
-    
+    [[STDataBaseUtil sharedSTDataBaseUtil]createTable:@"sthl" model:[UserModel class]];
+    [[AccountManager sharedAccountManager]getUserModel];
 }
 
 -(void)initJPush:(NSDictionary *)launchOptions {

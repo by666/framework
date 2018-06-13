@@ -10,7 +10,7 @@
 
 #define APP_NAME @"三泰互联"
 #define MSG_SUCCESS @"请求成功"
-#define MSG_ERROR @"网络出错了，请稍后重试"
+#define MSG_ERROR @"网络错误码:%d"
 #define MSG_CANCEL @"取消"
 #define MSG_CONFIRM @"确定"
 #define MSG_DELETE @"删除"
@@ -23,6 +23,10 @@
 #define MSG_DATE_FORMAT2 @"YYYY.MM.dd"
 #define MSG_CHOOSE @"请选择"
 #define MSG_KOWN @"知道了"
+#define MSG_ADD_SUCCESS @"添加成功"
+#define MSG_DELETE_SUCCESS @"删除成功"
+#define MSG_UPDATE_SUCCESS @"修改成功"
+#define MSG_OTHER @"其他"
 
 
 //登录
@@ -126,6 +130,7 @@
 #define MSG_ADDMEMBER_AVATAR_ERROR @"请上传人脸照片"
 #define MSG_ADDMEMBER_NAME_TIPS @"请填写您的姓名"
 #define MSG_ADDMEMBER_IDNUM_TIPS @"请填写您的身份证号"
+#define MSG_ADDMEMBER_UPDATE_TIPS @"用户信息发生变动，确认修改吗？"
 
 //住户管理
 #define MSG_HABITANT_TITLE @"住户管理"

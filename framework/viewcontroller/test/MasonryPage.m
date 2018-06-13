@@ -156,13 +156,11 @@
     dic[@"verifyCode"] = verifyCode;
     dispatch_async(dispatch_get_main_queue(), ^{
         [STNetUtil get:@"http://192.168.0.115:9000/login" parameters:dic success:^(RespondModel *respondModel) {
-            if(respondModel.code == 200){
-                id result = respondModel.result;
-            }
-        } failure:^(NSError *error) {
-            
-        }
-         ];
+//            if(respondModel.status == 200){
+//                id result = respondModel.result;
+//            }
+        } failure:^(int errorCode) {
+        }];
     });
   
 }

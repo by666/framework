@@ -49,7 +49,7 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:_tableView];
     
-    [_mViewModel getMemberModels];
+    [_mViewModel requestMemberDatas];
 }
 
 

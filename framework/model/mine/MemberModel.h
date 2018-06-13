@@ -8,12 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MemberModel : NSObject
+@interface MemberModel : NSObject<NSCopying>
 
-@property(copy, nonatomic)NSString *uid;
-@property(copy, nonatomic)NSString *avatarUrl;
-@property(copy, nonatomic)NSString *name;
 @property(copy, nonatomic)NSString *identify;
-@property(copy, nonatomic)NSString *idNum;
+
+//用户ID
+@property(copy, nonatomic)NSString *userUid;
+//称呼
+@property(copy, nonatomic)NSString *nickname;
+//房子id
+@property(copy, nonatomic)NSString *homeLocator;
+//证件类型,0为身份证
+@property(assign, nonatomic)int cretype;
+//证件号码
+@property(copy, nonatomic)NSString *creid;
+//人脸地址
+@property(copy, nonatomic)NSString *faceUrl;
+//小区ID
+@property(copy, nonatomic)NSString *districtUid;
+
++(MemberModel *)buildModel:(NSString *)nickname homeLocator:(NSString *)homeLocator cretype:(int)cretype creid:(NSString *)creid faceUrl:(NSString *)faceUrl districtUid:(NSString *)districtUid userUid:(NSString *)userUid;
 
 @end

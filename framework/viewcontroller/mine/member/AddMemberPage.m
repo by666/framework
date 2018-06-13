@@ -15,11 +15,13 @@
 #import "STFileUtil.h"
 #import "FaceEnterPage.h"
 #import "STObserverManager.h"
+#import "AccountManager.h"
 
 @interface AddMemberPage ()<AddMemberViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,STObserverProtocol>
 
 @property(strong, nonatomic)AddMemberView *addMemberView;
 @property(strong, nonatomic)MemberModel *memberModel;
+@property(strong, nonatomic)AddMemberViewModel *viewModel;
 
 @end
 
@@ -42,17 +44,16 @@
     self.view.backgroundColor = c15;
     [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_UpdateAvatar delegate:self];
     [self initView];
-    __weak AddMemberPage *weakSelf = self;
-    
-    if(_memberModel == nil){
+
+    WS(weakSelf)
+    if(IS_NS_STRING_EMPTY(_memberModel.nickname)){
         [self showSTNavigationBar:MSG_ADDMEMBER_TITLE needback:YES rightBtn:MSG_COMMIT rightColor:c13 block:^{
             [weakSelf.addMemberView saveMember];
         }];
     }else{
-        WS(weakSelf)
         [self showSTNavigationBar:MSG_ADDMEMBER_TITLE needback:YES rightBtn:MSG_ADDMEMBER_DELETE block:^{
             [STAlertUtil showAlertController:MSG_WARN content:MSG_MEMBER_DELETE_TIPS controller:weakSelf confirm:^{
-                [weakSelf.addMemberView deleteMember];
+                [weakSelf.viewModel deleteMemberModel:weakSelf.viewModel.model];
             }];
         }];
     }
@@ -71,38 +72,81 @@
 
 
 
--(UIView *)addMemberView{
-    if(_addMemberView == nil){
-        AddMemberViewModel *viewModel = [[AddMemberViewModel alloc]init];
-        viewModel.delegate = self;
-        _addMemberView = [[AddMemberView alloc]initWithViewModel:viewModel memberModel:_memberModel];
-        _addMemberView.backgroundColor = c15;
-        _addMemberView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
-    }
-    return _addMemberView;
-}
-
 -(void)initView{
-    [self.view addSubview:[self addMemberView]];
+    
+    if(_memberModel == nil){
+        _memberModel = [[MemberModel alloc]init];
+        UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
+        _memberModel.userUid = userModel.userUid;
+        _memberModel.districtUid = @"1";
+        _memberModel.homeLocator = @"1.0.1";
+    }
+    _viewModel = [[AddMemberViewModel alloc]initWithData:_memberModel];
+    _viewModel.delegate = self;
+    
+    _addMemberView = [[AddMemberView alloc]initWithViewModel:_viewModel];
+    _addMemberView.backgroundColor = c15;
+    _addMemberView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
+    
+    [self.view addSubview:_addMemberView];
 }
 
--(void)onAddMemberModel:(Boolean)success model:(MemberModel *)model{
-    [MBProgressHUD hideHUDForView:_addMemberView animated:YES];
-    [[STObserverManager sharedSTObserverManager] sendMessage:Notify_AddMember msg:model];
-    [self backLastPage];
+
+
+#pragma mark 网络请求回调
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    });
 }
 
--(void)onDeleteMemberModel:(Boolean)success model:(MemberModel *)model{
-    [MBProgressHUD hideHUDForView:_addMemberView animated:YES];
-    [[STObserverManager sharedSTObserverManager] sendMessage:Notify_DeleteMember msg:model];
-    [self backLastPage];
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if([respondModel.requestUrl isEqualToString:URL_DELFAMILY_MEMBER]){
+        [STToastUtil showSuccessTips:MSG_DELETE_SUCCESS];
+        [[STObserverManager sharedSTObserverManager] sendMessage:Notify_DeleteMember msg:data];
+    }
+    else if([respondModel.requestUrl isEqualToString:URL_ADDFAMILY_MEMBER]){
+        [STToastUtil showSuccessTips:MSG_ADD_SUCCESS];
+        [[STObserverManager sharedSTObserverManager] sendMessage:Notify_AddMember msg:data];
+    }
+    else if([respondModel.requestUrl isEqualToString:URL_UPDATEFAMILY_MEMBER]){
+        [STToastUtil showSuccessTips:MSG_UPDATE_SUCCESS];
+        [[STObserverManager sharedSTObserverManager] sendMessage:Notify_UpdateMember msg:data];
+    }
+    [self onGoLastPage];
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [STToastUtil showFailureAlertSheet:msg];
+}
+
+
+-(void)onCheckUpdate:(MemberModel *)model{
+    WS(weakSelf)
+    [STAlertUtil showAlertController:MSG_PROMPT content:MSG_ADDMEMBER_UPDATE_TIPS controller:self confirm:^{
+        if(weakSelf.viewModel){
+            [weakSelf.viewModel updateMemberModel:model];
+        }
+    } cancel:^{
+        [weakSelf onGoLastPage];
+    }];
+}
+
+-(void)onGoLastPage{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)backLastPage{
-    MemberModel *model = [_addMemberView getCurrentModel];
-    [[STObserverManager sharedSTObserverManager] sendMessage:Notify_UpdateMember msg:model];
-    [self.navigationController popViewControllerAnimated:YES];
-
+    if(IS_NS_STRING_EMPTY(_viewModel.model.nickname)){
+        [self onGoLastPage];
+        return;
+    }
+    if(_viewModel){
+        [_viewModel checkUpdateMemberModel:[_addMemberView getCurrentModel]];
+    }
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -133,6 +177,9 @@
     
     [STAlertUtil showSheetController:nil content:nil controller:self sheetModels:models];
 }
+
+
+
 
 #pragma mark 相册选择
 -(void)doSelectFromAblum{
@@ -174,5 +221,6 @@
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
     [_addMemberView updateView:msg];
 }
+
 
 @end
