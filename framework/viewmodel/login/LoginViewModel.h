@@ -12,7 +12,6 @@
 @protocol LoginDelegate<BaseRequestDelegate>
 
 -(void)onGetTestCode:(NSString *)code;
--(void)onLogin:(Boolean)success;
 -(void)onWechatLogin:(Boolean)success msg:(NSString *)msg;
 -(void)onTimeCount:(Boolean)complete;
 -(void)onFaceLogin;

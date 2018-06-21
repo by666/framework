@@ -10,6 +10,7 @@
 
 @interface STFileUtil : NSObject
 
++(NSString *)saveImageFile:(UIImage *)image;
 +(NSString *)saveImageFile:(NSString *)filePath image:(UIImage *)image;
 
 

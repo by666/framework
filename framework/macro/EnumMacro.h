@@ -31,3 +31,18 @@ typedef NS_ENUM(NSInteger,MessageStatu){
     Reject           //已拒绝
     
 };
+
+typedef NS_ENUM(NSInteger,LIVEATRR){
+    Live_Owner = 1, //业主
+    Live_Member = 2,//家属
+    Live_Renter = 3 //租客
+};
+
+
+typedef NS_ENUM(NSUInteger,WarningStatus){
+    CommonStatus,
+    PoseStatus,
+    occlusionStatus
+};
+
+

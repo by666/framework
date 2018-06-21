@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol SettingViewDelegate
+@protocol SettingViewDelegate<BaseRequestDelegate>
 
--(void)onLogout:(Boolean)success;
 -(void)onGoUpdatePhoneNumPage;
 -(void)onGoAboutPage;
 

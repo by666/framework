@@ -7,8 +7,15 @@
 //
 
 #import "STFileUtil.h"
+#import "STTimeUtil.h"
 
 @implementation STFileUtil
+
+
++(NSString *)saveImageFile:(UIImage *)image{
+    NSString *name = [NSString stringWithFormat:@"%@.jpg",[STTimeUtil getCurrentTimeStamp]];
+    return [self saveImageFile:name image:image];
+}
 
 +(NSString *)saveImageFile:(NSString *)filePath image:(UIImage *)image{
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];

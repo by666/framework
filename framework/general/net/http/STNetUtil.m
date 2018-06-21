@@ -12,6 +12,7 @@
 #import <MJExtension/MJExtension.h>
 #import "AccountManager.h"
 #import "STConvertUtil.h"
+#import "STObserverManager.h"
 @implementation STNetUtil
 
 
@@ -115,7 +116,26 @@
 }
 
 
+#pragma mark 上传
++(void)upload:(UIImage *)image url:(NSString *)url success:(void (^)(RespondModel *))success failure:(void (^)(int))errorCode{
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
+    NSData *data = UIImageJPEGRepresentation(image,1.0);
+    [manager POST:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        [formData appendPartWithFileData:data name:@"file" fileName:@"upload.png" mimeType:@"image/png"];
+    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self handleSuccess:responseObject success:success url:url];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self handleFail:task.response failure:errorCode url:url];
+  }];
+    
+
+}
 #pragma mark 下载
 +(void)download : (NSString *)url callback : (ByDownloadCallback) callback{
     
@@ -136,13 +156,19 @@
 
 
 #pragma mark 成功处理
-+(void)handleSuccess:(id)responseObject  success:(void (^)(RespondModel *))success url:(NSString *)url{
++(void)handleSuccess:(id)responseObject success:(void (^)(RespondModel *))success url:(NSString *)url{
     RespondModel *model = [RespondModel mj_objectWithKeyValues:responseObject];
     model.requestUrl = url;
     dispatch_main_async_safe((^{
         if([model.status isEqualToString:STATU_SUCCESS]){
-            NSString *jsonStr = [NSString stringWithFormat:@"\n------------------------------------\n***请求成功:%@\n%@\n------------------------------------",url,[STConvertUtil dataToString:responseObject]];
-            [STLog print:jsonStr];
+            if([responseObject isKindOfClass:[NSDictionary class]]){
+                NSDictionary *dic = responseObject;
+                NSString *jsonStr = [NSString stringWithFormat:@"\n------------------------------------\n***请求成功:%@\n%@\n------------------------------------",url,[dic mj_JSONString]];
+                [STLog print:jsonStr];
+            }else{
+                NSString *jsonStr = [NSString stringWithFormat:@"\n------------------------------------\n***请求成功:%@\n%@\n------------------------------------",url,[STConvertUtil dataToString:responseObject]];
+                [STLog print:jsonStr];
+            }
             
         }else{
             [self printErrorInfo:model url:url];
@@ -157,6 +183,9 @@
 +(void)handleFail : (NSURLResponse *)response failure:(void (^)(int))failure url:(NSString *)url{
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
     NSInteger errorCode = httpResponse.statusCode;
+    if(errorCode == STATU_USERAUTH_FAIL){
+        [[STObserverManager sharedSTObserverManager]sendMessage:Notify_AUTHFAIL msg:nil];
+    }
     NSString *errorInfo = [NSString stringWithFormat:@"\n------------------------------------\n***url:%@\n***网络错误码:%ld\n------------------------------------",url,errorCode];
     [STLog print:errorInfo];
     dispatch_main_async_safe(^{
@@ -171,5 +200,25 @@
     NSString *errorInfo = [NSString stringWithFormat:@"\n------------------------------------\n***url:%@ \n***请求错误码:%@ \n***错误信息:%@\n------------------------------------",url,model.status,model.msg];
     [STLog print:errorInfo];
 }
+
+
+
+#pragma mark 监听网络状态
++(void)startListenNetWork{
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if (status == AFNetworkReachabilityStatusUnknown) {
+            NSLog(@"当前网络：未知网络");
+        } else if (status == AFNetworkReachabilityStatusNotReachable) {
+            NSLog(@"当前网络：没有网络");
+        } else if (status == AFNetworkReachabilityStatusReachableViaWWAN) {
+            NSLog(@"当前网络：手机流量");
+        } else if (status == AFNetworkReachabilityStatusReachableViaWiFi) {
+            NSLog(@"当前网络：WiFi");
+        }
+    }];
+    [manager startMonitoring];
+}
+
 
 @end

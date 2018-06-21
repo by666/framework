@@ -16,6 +16,8 @@
 #import "FaceEnterPage.h"
 #import "STObserverManager.h"
 #import "AuthStatuPage.h"
+#import "STNetUtil.h"
+#import "FaceEnterPage2.h"
 
 @interface ProfilePage ()<ProfileViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,STObserverProtocol>
 
@@ -83,7 +85,7 @@
         [STLog print:@"没有相机权限"];
         return;
     }
-    [FaceEnterPage show:self];
+    [FaceEnterPage2 show:self];
 }
 
 
@@ -117,9 +119,8 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    //压缩
-//    UIImage *compressImage = [[image fixOrientation] compressedImage];
-    NSString *imagePath = [STFileUtil saveImageFile:@"head.jpg" image:image];
+    
+    NSString *imagePath = [STFileUtil saveImageFile:image];
     if(_mViewModel){
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [self performSelector:@selector(test:) withObject:imagePath afterDelay:1.0f];

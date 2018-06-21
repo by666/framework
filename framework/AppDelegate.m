@@ -25,6 +25,8 @@
 #import "AuthUserPage.h"
 #import "CommunityPage.h"
 #import "MessagePage.h"
+#import "IDLFaceSDK/IDLFaceSDK.h"
+#import "FaceParameterConfig.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>
 
@@ -51,6 +53,7 @@
     [self initJPush:launchOptions];
     [self initWechat];
     [self initNet];
+    [self initBaidu];
     [STUpdateUtil checkUpdate:^(NSString *appname, NSString *url, double version) {
 //        [self showUpdateAlert:url version:version];
     }];
@@ -131,6 +134,13 @@
     [NSURLCache setSharedURLCache:URLCache];
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
+}
+
+-(void)initBaidu{
+    if ([[FaceSDKManager sharedInstance] canWork]) {
+        NSString* licensePath = [[NSBundle mainBundle] pathForResource:FACE_LICENSE_NAME ofType:FACE_LICENSE_SUFFIX];
+        [[FaceSDKManager sharedInstance] setLicenseID:FACE_LICENSE_ID andLocalLicenceFile:licensePath];
+    }
 }
 
 #pragma mark 系统自带回调

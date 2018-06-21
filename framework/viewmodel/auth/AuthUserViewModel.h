@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "UserAuthModel.h"
 #import "CommunityPositionModel.h"
+#import "UserCommitModel.h"
 
 @protocol AuthUserViewDelegate<BaseRequestDelegate>
 
@@ -21,10 +22,18 @@
 
 @property(strong, nonatomic)UserAuthModel *data;
 @property(weak, nonatomic)id<AuthUserViewDelegate> delegate;
+@property(copy, nonatomic)NSString *districtUid;
+@property(copy, nonatomic)NSString *fatherLocator;
+@property(strong, nonatomic)UserCommitModel *userCommitModel;
 
+
+
+-(void)getCommunityPosition:(CGFloat)longtitude latitude:(CGFloat)latitude;
+-(void)getCommunityLayer:(CommunityPositionModel *)model;
+-(void)getCommunityDoor:(NSString *)queryString;
+-(void)submitUserInfo;
 
 -(void)goCommunityPage;
--(void)submitUserInfo;
--(void)getCommunityPosition:(CGFloat)longtitude latitude:(CGFloat)latitude;
+
 
 @end

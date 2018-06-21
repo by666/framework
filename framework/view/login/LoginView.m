@@ -24,15 +24,18 @@
 @property(strong, nonatomic) UILabel *tipLabel;
 @property(strong, nonatomic) LoginPage *page;
 
+@property(assign, nonatomic) Boolean needBack;
+
 
 @end
 
 @implementation LoginView
 
--(instancetype)initWithViewModel:(LoginViewModel *)viewModel controller:(LoginPage *)page{
+-(instancetype)initWithViewModel:(LoginViewModel *)viewModel controller:(LoginPage *)page needBack:(Boolean)needBack{
     if(self == [super init]){
         _mViewModel = viewModel;
         _page = page;
+        _needBack = needBack;
         [self initView];
     }
     return self;
@@ -49,6 +52,9 @@
     UIImage *image = [UIImage imageNamed:@"ic_arrow_back_white"];
     backImageView.image = image;
     [_backBtn addSubview:backImageView];
+    
+    _needBack ? (_backBtn.hidden = NO) :(_backBtn.hidden = YES);
+
     
     UIImageView *logoImageView = [[UIImageView alloc]init];
     logoImageView.image = [UIImage imageNamed:@"ic_cellos_icon"];

@@ -8,6 +8,8 @@
 
 #import "SettingViewModel.h"
 #import "TitleContentModel.h"
+#import "STNetUtil.h"
+#import "AccountManager.h"
 @implementation SettingViewModel
 
 -(instancetype)init{
@@ -34,9 +36,22 @@
 }
 
 -(void)logout{
-    //todo 网络请求
     if(_delegate){
-        [_delegate onLogout:YES];
+        [_delegate onRequestBegin];
+        
+        WS(weakSelf)
+        [STNetUtil post:URL_LOGOUT content:@"" success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                [[AccountManager sharedAccountManager] clearUserModel];
+                [[AccountManager sharedAccountManager] clearLiveModel];
+                [[AccountManager sharedAccountManager] clearMainModel];
+                [weakSelf.delegate onRequestSuccess:respondModel data:nil];
+            }else{
+                [weakSelf.delegate onRequestFail:respondModel.msg];
+            }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:@"%d",errorCode]];
+        }];
     }
     
 }

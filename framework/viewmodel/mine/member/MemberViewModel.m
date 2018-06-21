@@ -8,7 +8,7 @@
 
 #import "MemberViewModel.h"
 #import "STNetUtil.h"
-
+#import "AccountManager.h"
 
 @implementation MemberViewModel
 
@@ -25,9 +25,10 @@
     if(_delegate){
         WS(weakSelf)
         [_delegate onRequestBegin];
+        LiveModel *model =  [[AccountManager sharedAccountManager]getLiveModel];
         NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-        dic[@"districtUid"] = @"1";
-        dic[@"homeLocator"] = @"1.0.1";
+        dic[@"districtUid"] = model.districtUid;
+        dic[@"homeLocator"] = model.homeLocator;
         [STNetUtil get:URL_GETFAMILY_MEMBER parameters:dic success:^(RespondModel *respondModel) {
             if([respondModel.status isEqualToString:STATU_SUCCESS]){
                 weakSelf.datas = [MemberModel mj_objectArrayWithKeyValuesArray:respondModel.data];

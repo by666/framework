@@ -9,6 +9,7 @@
 #import "AddMemberView.h"
 #import "AddMemberViewModel.h"
 #import "STTimeUtil.h"
+#import "AccountManager.h"
 
 @interface AddMemberView()
 
@@ -141,6 +142,7 @@
 }
 
 -(void)updateView:(NSString *)imagePath{
+    _mViewModel.model.faceUrl = imagePath;
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     [_takePhotoBTN setImage:image forState:UIControlStateNormal];
 }
@@ -180,10 +182,7 @@
     }
     _mViewModel.model.nickname = _nameTextField.text;
     _mViewModel.model.creid = _idNumTextField.text;
-    _mViewModel.model.userUid = [STTimeUtil getCurrentTimeStamp];
-    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *imageFilePath = [path stringByAppendingPathComponent:@"head.jpg"];
-    _mViewModel.model.faceUrl = imageFilePath;
+    _mViewModel.model.userUid = [[AccountManager sharedAccountManager]getUserModel].userUid;
     
     _errorLabel.text = @"";
     [_mViewModel addMemberModel];
@@ -192,9 +191,6 @@
 -(MemberModel *)getCurrentModel{
     _mViewModel.model.nickname = _nameTextField.text;
     _mViewModel.model.creid = _idNumTextField.text;
-    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *imageFilePath = [path stringByAppendingPathComponent:@"head.jpg"];
-    _mViewModel.model.faceUrl = imageFilePath;
     return _mViewModel.model;
 }
 

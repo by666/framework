@@ -7,13 +7,25 @@
 //
 
 #import "AuthStatuViewModel.h"
+#import "STNetUtil.h"
 
 @implementation AuthStatuViewModel
 
 
 -(void)doHurryRequest{
     if(_delegate){
-        [_delegate onHurryRequest:YES];
+        [_delegate onRequestBegin];
+        WS(weakSelf)
+        [STNetUtil post:URL_REMIND content:@"" success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                [weakSelf.delegate onRequestSuccess:respondModel data:nil];
+            }else{
+                [weakSelf.delegate onRequestFail:respondModel.msg];
+            }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:@"%d",errorCode]];
+        }];
     }
 }
+
 @end

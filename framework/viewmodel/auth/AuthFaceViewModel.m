@@ -7,12 +7,19 @@
 //
 
 #import "AuthFaceViewModel.h"
+#import "STNetUtil.h"
 @interface AuthFaceViewModel()
 
-@property(assign, nonatomic)float progress;
 @end
 
 @implementation AuthFaceViewModel
+
+-(instancetype)initWithModel:(UserCommitModel *)model{
+    if(self == [super init]){
+        _userCommitModel = model;
+    }
+    return self;
+}
 
 -(void)addPhoto{
     if(_delegate){
@@ -22,25 +29,38 @@
 
 -(void)commitUserInfo{
     if(_delegate){
-        if(_progress == 0.0f){
-            [_delegate onCommitStart];
-        }
-        if(_progress >= 1){
-            [_delegate onCommitEnd];
-        }else{
-            [self doProgress];
-        }
+        [_delegate onRequestBegin];
+        UIImage *image = [UIImage imageWithContentsOfFile:_userCommitModel.faceUrl];
+        WS(weakSelf)
+        [STNetUtil upload:image url:URL_UPLOAD_IMAGE success:^(RespondModel *respondModel) {
+            weakSelf.userCommitModel.faceUrl = [respondModel.data objectForKey:@"path"];
+            [self upload];
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        }];
+    }
+
+}
+
+
+-(void)upload{
+    if(_delegate){
+        NSString *jsonStr = [self buildCommitInfoStr];
+        [STLog print:@"提交的用户数据" content:jsonStr];
+        WS(weakSelf)
+        [STNetUtil post:URL_UPLOADUSERINFO content:jsonStr success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                [weakSelf.delegate onRequestSuccess:respondModel data:nil];
+            }else{
+                [weakSelf.delegate onRequestFail:respondModel.msg];
+            }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        }];
     }
 }
 
--(void)doProgress{
-    _progress +=0.1f;
-    WS(weakSelf)
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [weakSelf.delegate onCommitProgress:weakSelf.progress];
-        [self commitUserInfo];
-    });
-}
+
 
 -(void)goMainPage{
     if(_delegate){
@@ -48,4 +68,24 @@
     }
 }
 
+-(NSString *)buildCommitInfoStr{
+    
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    dic[@"faceUrl"] = _userCommitModel.faceUrl;
+    
+    NSMutableDictionary *liveDic = [[NSMutableDictionary alloc]init];
+    liveDic[@"districtUid"] = _userCommitModel.districtUid;
+    liveDic[@"homeLocator"] = _userCommitModel.homeLocator;
+    liveDic[@"liveAttr"] = _userCommitModel.liveAttr;
+    
+    NSMutableDictionary *userDic = [[NSMutableDictionary alloc]init];
+    userDic[@"creid"] = _userCommitModel.creid;
+    userDic[@"cretype"] = _userCommitModel.cretype;
+    userDic[@"userName"] = _userCommitModel.userName;
+    
+    dic[@"liveUserInfo"] = liveDic;
+    dic[@"userInfo"]  = userDic;
+    
+    return [dic mj_JSONString];
+}
 @end

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CommunityModel.h"
 
-@protocol CommunityViewDelegate
+@protocol CommunityViewDelegate<BaseRequestDelegate>
 
 -(void)onSearchCommunity:(Boolean)success datas:(NSMutableArray *)datas errorMsg:(NSString *)errorMsg;
 -(void)onBackLastPage;
@@ -23,6 +23,7 @@
 
 -(void)searchCommunity:(NSString *)keyStr;
 -(void)backLastPage;
+-(void)getCommunityPosition:(CGFloat)longtitude latitude:(CGFloat)latitude;
 
 
 @end

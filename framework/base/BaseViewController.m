@@ -7,8 +7,9 @@
 //
 
 #import "BaseViewController.h"
-
-@interface BaseViewController ()<STNavigationViewDelegate>
+#import "STObserverManager.h"
+#import "NextLoginPage.h"
+@interface BaseViewController ()<STNavigationViewDelegate,STObserverProtocol>
 
 @property(copy,nonatomic)void(^onRightBtnClick)(void);
 
@@ -20,8 +21,19 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self hideNavigationBar:YES];
+//    [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_AUTHFAIL delegate:self];
 }
 
+//-(void)dealloc{
+//    [[STObserverManager sharedSTObserverManager] removeSTObsever:Notify_AUTHFAIL];
+//}
+
+//-(void)onReciveResult:(NSString *)key msg:(id)msg{
+//
+//    [self.navigationController popToRootViewControllerAnimated:YES];
+//    NSLog(@"跳转到登录");
+//    [NextLoginPage show:self];
+//}
 
 -(void)hideNavigationBar : (Boolean) hidden{
     self.navigationController.navigationBarHidden = hidden;
@@ -71,5 +83,6 @@
 -(void)onRightBtnClicked{
     _onRightBtnClick();
 }
+
 
 @end

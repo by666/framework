@@ -10,17 +10,15 @@
 
 @protocol STBuildingLayerViewDelegate
 
--(void)OnBuildingSelectResult:(NSString *)result;
+-(void)OnBuildingSelectResult:(NSString *)result fatherLocator:(NSString *)fatherLocator;
 
 @end
 
 
-//注：最大支持3列
 @interface STBuildingLayerView : UIView
 
 @property(weak, nonatomic)id<STBuildingLayerViewDelegate> delegate;
 
--(instancetype)initWithFrame:(CGRect)frame datas:(NSMutableArray *)datas;
+-(instancetype)initWithFrame:(CGRect)frame data:(id)data level:(int)level;
 
--(void)setData:(NSString *)dataStr;
 @end

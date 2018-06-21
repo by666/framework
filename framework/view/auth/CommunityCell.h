@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CommunityModel.h"
+#import "CommunityPositionModel.h"
 
 @interface CommunityCell : UITableViewCell
 
--(void)updateData:(CommunityModel *)model key:(NSString *)keyStr;
+-(void)updateData:(CommunityPositionModel *)model key:(NSString *)keyStr;
 +(NSString*)identify;
 
 @end

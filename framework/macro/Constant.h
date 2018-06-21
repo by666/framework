@@ -76,6 +76,7 @@
 //人脸录制页面
 #define MSG_FACEENTER_TITLE @"该照片用于门禁出入的人脸识别"
 #define MSG_FACEENTER_SUBTITLE @"请摆正位置，使您的头像被准确捕捉"
+#define MSG_FACEDETECT_FAIL @"未检测到人脸，请重新上传"
 
 
 //设置页面
@@ -267,6 +268,8 @@
 #define MSG_AUTHUSER_ERROR_NODOORNUM @"请输入您的门牌号"
 #define MSG_AUTHUSER_ERROR_NONAME @"请输入您的姓名"
 #define MSG_AUTHUSER_ERROR_NOIDNUM @"请输入您的身份证号"
+#define MSG_AUTHUSER_POSITION_ERROR @"定位失败"
+#define MSG_AUTHUSER_ERROR_ERRORIDNUM @"请填写正确的身份证号码"
 
 
 //社区选择

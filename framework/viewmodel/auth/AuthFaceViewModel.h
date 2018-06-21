@@ -7,20 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@protocol AuthFaceViewModelDelegate
+#import "UserCommitModel.h"
+@protocol AuthFaceViewModelDelegate<BaseRequestDelegate>
 
 -(void)onAddPhoto;
--(void)onCommitStart;
--(void)onCommitProgress:(float)progress;
--(void)onCommitEnd;
 -(void)onGoMainPage;
 
 @end
 
 @interface AuthFaceViewModel : NSObject
-
 @property(weak, nonatomic)id<AuthFaceViewModelDelegate> delegate;
+@property(strong, nonatomic)UserCommitModel *userCommitModel;
+-(instancetype)initWithModel:(UserCommitModel *)model;
 
 -(void)addPhoto;
 -(void)commitUserInfo;

@@ -166,7 +166,7 @@ UIActionSheetDelegate>
     UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
     //压缩图片
     _imgToUse.image = [[image fixOrientation] compressedImage];
-    imagePath = [STFileUtil saveImageFile:@"st" image:image];
+    imagePath = [STFileUtil saveImageFile:image];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

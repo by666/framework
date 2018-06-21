@@ -22,6 +22,8 @@
     model.districtUid = districtUid;
     model.userUid = userUid;
     return model;
+    
+    
 }
 
 @end

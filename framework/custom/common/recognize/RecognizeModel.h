@@ -10,10 +10,8 @@
 
 @interface RecognizeModel : NSObject
 
-@property(copy,nonatomic)NSString *title;
+@property(copy,nonatomic)NSString *homeName;
 @property(assign, nonatomic)Boolean selected;
-
-
-+(NSMutableArray *)getTestDatas:(NSString *)str;
+@property(copy,nonatomic)NSString *homeLocator;
 
 @end

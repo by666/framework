@@ -13,5 +13,8 @@
 @property(copy, nonatomic)NSString *districtName;
 @property(copy, nonatomic)NSString *districtUid;
 @property(assign, nonatomic)int layerLevel;
+@property(copy, nonatomic)NSString *detailAddr;
+@property(copy, nonatomic)NSString *addrStr;
+
 
 @end

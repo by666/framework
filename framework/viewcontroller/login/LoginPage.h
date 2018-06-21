@@ -10,4 +10,6 @@
 
 @interface LoginPage : BaseViewController
 
++(void)show:(BaseViewController *)controller needBack:(Boolean)needBack;
+
 @end

@@ -104,7 +104,7 @@
         
         [_tableView reloadData];
         if(_delegate){
-            [_delegate onSelectRecognizeResult:model.title];
+            [_delegate onSelectRecognizeResult:model];
             self.hidden = YES;
         }
     }

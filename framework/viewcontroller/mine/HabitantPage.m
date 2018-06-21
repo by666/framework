@@ -43,13 +43,24 @@
     [self.view addSubview:_habitantView];
 }
 
--(void)onRequestSuccess:(NSMutableArray *)datas{
-    [_habitantView updateView];
+
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    });
 }
 
--(void)onRequestFail:(int)code error:(NSString *)msg{
-    [_habitantView updateView];
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [STToastUtil showFailureAlertSheet:msg];
 }
 
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if(_habitantView){
+        [_habitantView updateView];
+    }
+}
 
 @end

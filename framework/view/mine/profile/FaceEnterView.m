@@ -90,7 +90,7 @@
     dispatch_sync(dispatch_get_main_queue(), ^(){
         if(weakSelf.progress >= 1){
             [STLog print:@"识别成功"];
-            NSString *imagePath = [STFileUtil saveImageFile:@"head.jpg" image:image];
+            NSString *imagePath = [STFileUtil saveImageFile:image];
             [[STObserverManager sharedSTObserverManager] sendMessage:Notify_UpdateAvatar msg:imagePath];
             [weakSelf.mViewModel releaseCamera];
             [weakSelf.mViewModel goBack];

@@ -20,6 +20,8 @@ typedef void(^ByDownloadCallback)(id respondObj);
 
 +(void)post:(NSString *)url content:(NSString *)content success:(void (^)(RespondModel *))success failure:(void (^)(int))errorCode;
 
++(void)upload:(UIImage *)image url:(NSString *)url success:(void (^)(RespondModel *))success failure:(void (^)(int))errorCode;
+
 +(void)download : (NSString *)url callback : (ByDownloadCallback) callback;
 
 @end

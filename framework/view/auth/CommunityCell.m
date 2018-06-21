@@ -40,15 +40,15 @@
 }
 
 
--(void)updateData:(CommunityModel *)model key:(NSString *)keyStr{
-    _nameLabel.text = model.name;
-    _addressLabel.text = model.address;
+-(void)updateData:(CommunityPositionModel *)model key:(NSString *)keyStr{
+    _nameLabel.text = model.districtName;
+    _addressLabel.text = [NSString stringWithFormat:@"%@ %@",model.addrStr,model.detailAddr];
     if(!IS_NS_STRING_EMPTY(keyStr)){
-        NSMutableAttributedString *nameStr=[[NSMutableAttributedString alloc]initWithString:model.name];
+        NSMutableAttributedString *nameStr=[[NSMutableAttributedString alloc]initWithString:model.districtName];
         @synchronized(self) {
             for(int i = 0 ; i < keyStr.length ; i++){
                 NSString *temp = [keyStr substringWithRange:NSMakeRange(i, 1)];
-                if([model.name containsString:temp]){
+                if([model.districtName containsString:temp]){
                     NSRange range=[[nameStr string]rangeOfString:temp];
                     [nameStr addAttribute:NSForegroundColorAttributeName value:c18 range:range];
                 }

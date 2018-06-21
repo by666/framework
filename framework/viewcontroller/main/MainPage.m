@@ -19,12 +19,16 @@
 #import "VisitorHomePage.h"
 #import "VisitorHistoryPage.h"
 #import "DeviceSharePage.h"
+#import "AccountManager.h"
+#import "FaceEnterPage2.h"
+#import "IDLFaceSDK/IDLFaceSDK.h" 
 
 @interface MainPage ()<MainViewDelegate>
 
 @property(strong, nonatomic)MainViewModel *mViewModel;
 @property(strong, nonatomic)MainView *mMainView;
 @property(strong, nonatomic)STNavigationView *mNavigationView;
+@property(strong, nonatomic)UILabel *positionLabel;
 
 @end
 
@@ -61,10 +65,8 @@
     positionImageView.image = [UIImage imageNamed:@"ic_building"];
     [_mNavigationView addSubview:positionImageView];
     
-    UILabel *positionLabel = [[UILabel alloc]initWithFont:STFont(17) text:@"武当山" textAlignment:NSTextAlignmentCenter textColor:c11 backgroundColor:nil multiLine:NO];
-    CGSize labelSize = [@"武当山" sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(17)]];
-    positionLabel.frame = CGRectMake(STWidth(52), 0, labelSize.width, NavigationBarHeight);
-    [_mNavigationView addSubview:positionLabel];
+    _positionLabel = [[UILabel alloc]initWithFont:STFont(17) text:@"" textAlignment:NSTextAlignmentCenter textColor:c11 backgroundColor:nil multiLine:NO];
+    [_mNavigationView addSubview:_positionLabel];
     
     _mMainView = [[MainView alloc]initWithViewModel:_mViewModel];
     _mMainView.frame = CGRectMake(0, StatuBarHeight+NavigationBarHeight, ScreenWidth, ContentHeight);
@@ -102,7 +104,8 @@
 }
 
 -(void)onDoCallProperty{
-    NSURL *url = [NSURL URLWithString:@"tel://0755-80123456"];
+    MainModel *model = [[AccountManager sharedAccountManager]getMainModel];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",model.tel]];
     [[UIApplication sharedApplication] openURL:url];
 }
 
@@ -119,7 +122,16 @@
 }
 
 -(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
-    
+    if([respondModel.requestUrl isEqualToString:URL_GETMAININFO]){
+        if(_mMainView){
+            [_mMainView updateView];
+            MainModel *model = data;
+            _positionLabel.text = model.detailAddr;
+            CGSize labelSize = [model.detailAddr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(17)]];
+            _positionLabel.frame = CGRectMake(STWidth(52), 0, labelSize.width, NavigationBarHeight);
+
+        }
+    }
 }
 
 -(void)onRequestFail:(NSString *)msg{

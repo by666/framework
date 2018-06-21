@@ -8,17 +8,37 @@
 
 #import <Foundation/Foundation.h>
 #import "UserModel.h"
+#import "LiveModel.h"
+#import "MainModel.h"
 @interface AccountManager : NSObject
 SINGLETON_DECLARATION(AccountManager)
 
-//存储用户信息
+//存储用户账户信息
 -(void)saveUserModel:(UserModel *)model;
 
-//获取用户信息
+//获取用户账户信息
 -(UserModel *)getUserModel;
 
-//清除用户信息
+//清除用户账户信息
 -(void)clearUserModel;
+
+//存储用户居住信息
+-(void)saveLiveModel:(LiveModel *)model;
+
+//获取用户居住信息
+-(LiveModel *)getLiveModel;
+
+//清除用户居住信息
+-(void)clearLiveModel;
+
+//存储主页信息
+-(void)saveMainModel:(MainModel *)model;
+
+//获取主页信息
+-(MainModel *)getMainModel;
+
+//清除主页信息
+-(void)clearMainModel;
 
 //是否登录
 -(Boolean)isLogin;

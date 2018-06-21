@@ -11,6 +11,8 @@
 #import "STAddressLayerView.h"
 #import "CommunityCell.h"
 #import "STObserverManager.h"
+#import "STLocationManager.h"
+#import "CommunityPositionModel.h"
 @interface CommunityView()<AddressLayerViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property(strong, nonatomic)CommunityViewModel *mViewModel;
@@ -21,6 +23,7 @@
 @property(strong, nonatomic)UIButton *searchBtn;
 @property(strong, nonatomic)UILabel *currentLabel;
 @property(strong, nonatomic)UITableView *tableView;
+@property(assign, nonatomic)Boolean once;
 
 @end
 
@@ -30,6 +33,15 @@
     if(self == [super init]){
         _mViewModel = viewModel;
         [self initView];
+        WS(weakSelf)
+        [[STLocationManager sharedSTLocationManager]getMoLocationWithSuccess:^(double lat, double lng) {
+            if(!weakSelf.once){
+                weakSelf.once = YES;
+                [viewModel getCommunityPosition:lng latitude:lat];
+            }
+        } Failure:^(NSError *error) {
+            
+        }];
     }
     return self;
 }
@@ -81,14 +93,11 @@
     [_addressTF addSubview:searchImageView];
     
     _searchBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_SEARCH textColor:c19 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil];
-    _searchBtn.frame = CGRectMake(ScreenWidth -  STWidth(50), STHeight(18),STWidth(40) ,STHeight(15));
-    [_searchBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
+    _searchBtn.frame = CGRectMake(ScreenWidth -  STWidth(50), 0,STWidth(40) ,STHeight(50));
     [_searchBtn addTarget:self action:@selector(onClickSearchBtn) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:_searchBtn];
     
-    _currentLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"光明顶" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
-    CGSize currentSize = [@"光明顶" sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
-    _currentLabel.frame = CGRectMake(STWidth(19), STHeight(67), currentSize.width, STHeight(16));
+    _currentLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
     [view addSubview:_currentLabel];
     
     UIImageView *locationImageView = [[UIImageView alloc]init];
@@ -128,12 +137,10 @@
     
     
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, STHeight(40), ScreenWidth, ContentHeight -  STHeight(160))];
+    [_tableView useDefaultProperty];
     _tableView.backgroundColor = cwhite;
-    _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.showsHorizontalScrollIndicator = NO;
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [view addSubview:_tableView];
     
 }
@@ -159,7 +166,7 @@
         cell = [[CommunityCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[CommunityCell identify]];
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    CommunityModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
+    CommunityPositionModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
     [cell updateData:model key:_addressTF.text];
     return cell;
 }
@@ -169,8 +176,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(!IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
-        CommunityModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
-        [[STObserverManager sharedSTObserverManager]sendMessage:Notify_UpdateAddress msg:model.name];
+        CommunityPositionModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
+        [[STObserverManager sharedSTObserverManager]sendMessage:Notify_UpdateAddress msg:model];
         if(_mViewModel){
             [_mViewModel backLastPage];
         }
@@ -195,7 +202,7 @@
 
 - (void)textFieldDidChange:(UITextField *)textField{
     if(_mViewModel){
-        [_mViewModel searchCommunity:textField.text];
+        [_tableView reloadData];
     }
 }
 
@@ -219,8 +226,15 @@
 }
 
 -(void)updateView{
-    _tableView.contentSize = CGSizeMake(ScreenWidth, STHeight(58)*[_mViewModel.datas count]);
+    _tableView.frame = CGRectMake(0, STHeight(40), ScreenWidth, STHeight(58)*[_mViewModel.datas count]);
     [_tableView reloadData];
+    
+    if(!IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
+        CommunityPositionModel *model = [_mViewModel.datas objectAtIndex:1];
+        _currentLabel.text = model.districtName;
+        CGSize currentSize = [model.districtName sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+        _currentLabel.frame = CGRectMake(STWidth(19), STHeight(67), currentSize.width, STHeight(16));
+    }
 }
 
 @end

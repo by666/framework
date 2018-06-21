@@ -38,8 +38,8 @@
 }
 
 -(void)updateData:(RecognizeModel *)model{
-    _titleLabel.text = model.title;
-    CGSize titleSize = [model.title sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    _titleLabel.text = model.homeName;
+    CGSize titleSize = [model.homeName sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     _titleLabel.frame =  CGRectMake(STWidth(75), STHeight(12), titleSize.width, STHeight(16));
     
     if(model.selected){

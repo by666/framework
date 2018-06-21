@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MainModel.h"
 
 @protocol MainViewDelegate<BaseRequestDelegate>
 -(void)onGoOpendoorPage;
@@ -24,7 +25,7 @@
 @interface MainViewModel : NSObject
 
 @property(weak, nonatomic)id <MainViewDelegate>delegate;
-
+@property(strong, nonatomic)MainModel *model;
 
 -(void)goOpendoorPage;
 

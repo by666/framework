@@ -7,6 +7,8 @@
 //
 
 #import "HabitantViewModel.h"
+#import "STNetUtil.h"
+#import "AccountManager.h"
 
 @implementation HabitantViewModel
 
@@ -29,14 +31,24 @@
 
 
 -(void)requestDatas{
-    //todo 网络请求
-    [_datas addObject:[self buildModel:@"张三丰" identify:@"家属" validDate:@"永久"]];
-    [_datas addObject:[self buildModel:@"杨过" identify:@"租客" validDate:@"2018年12月31日"]];
-    [_datas addObject:[self buildModel:@"乔峰" identify:@"租客" validDate:@"2019年12月31日"]];
-    [_datas addObject:[self buildModel:@"扫地僧" identify:@"租客" validDate:@"永久"]];
     if(_delegate){
-        [_delegate onRequestSuccess:_datas];
+        [_delegate onRequestBegin];
     }
+    LiveModel *liveModel = [[AccountManager sharedAccountManager]getLiveModel];
+    WS(weakSelf)
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    dic[@"homeLocator"] = liveModel.homeLocator;
+    dic[@"districtUid"] = liveModel.districtUid;
+    [STNetUtil get:URL_GET_HABITANT parameters:dic success:^(RespondModel *respondModel) {
+        if([respondModel.status isEqualToString:STATU_SUCCESS]){
+            [weakSelf.delegate onRequestSuccess:respondModel data:nil];
+        }else{
+            [weakSelf.delegate onRequestFail:respondModel.msg];
+        }
+    } failure:^(int errorCode) {
+        [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+    }];
+    
 
 }
 

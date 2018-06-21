@@ -13,8 +13,6 @@
 
 -(instancetype)initWithViewModel:(AuthFaceViewModel *)viewModel;
 -(void)updateView:(NSString *)imagePath;
--(void)onCommitStart;
 -(void)onCommitFinish;
--(void)onCommitProgress:(float)progress;
 
 @end

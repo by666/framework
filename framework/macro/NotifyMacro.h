@@ -24,8 +24,13 @@
 #define Notify_MESSAGE_REJECT @"msg_reject"
 
 
+#define Notify_AUTHFAIL @"auth_fail"
+
+
 
 
 #pragma mark 定义UserDefaults相关
 
 #define UD_USERMODEL @"ud_usermodel"
+#define UD_LIVEMODEL @"ud_livemodel"
+#define UD_MAINMODEL @"ud_mainmodel"

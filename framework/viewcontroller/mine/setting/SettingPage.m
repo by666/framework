@@ -10,7 +10,7 @@
 #import "SettingView.h"
 #import "UpdatePhoneNumPage.h"
 #import "AboutPage.h"
-#import "NextLoginPage.h"
+#import "LoginPage.h"
 
 @interface SettingPage ()<SettingViewDelegate>
 
@@ -51,8 +51,22 @@
     [AboutPage show:self];
 }
 
--(void)onLogout:(Boolean)success{
-    [NextLoginPage show:self];
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    });
 }
+
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+
+}
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [LoginPage show:self needBack:NO];
+}
+
 
 @end

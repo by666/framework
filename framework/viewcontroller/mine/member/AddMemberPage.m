@@ -13,7 +13,7 @@
 #import "UIImage+Extensions.h"
 #import "UIImage+compress.h"
 #import "STFileUtil.h"
-#import "FaceEnterPage.h"
+#import "FaceEnterPage2.h"
 #import "STObserverManager.h"
 #import "AccountManager.h"
 
@@ -76,10 +76,10 @@
     
     if(_memberModel == nil){
         _memberModel = [[MemberModel alloc]init];
-        UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
-        _memberModel.userUid = userModel.userUid;
-        _memberModel.districtUid = @"1";
-        _memberModel.homeLocator = @"1.0.1";
+        LiveModel *liveModel = [[AccountManager sharedAccountManager]getLiveModel];
+        _memberModel.userUid = liveModel.userUid;
+        _memberModel.districtUid = liveModel.districtUid;
+        _memberModel.homeLocator = liveModel.homeLocator;
     }
     _viewModel = [[AddMemberViewModel alloc]initWithData:_memberModel];
     _viewModel.delegate = self;
@@ -144,9 +144,9 @@
         [self onGoLastPage];
         return;
     }
-    if(_viewModel){
-        [_viewModel checkUpdateMemberModel:[_addMemberView getCurrentModel]];
-    }
+//    if(_viewModel){
+//        [_viewModel checkUpdateMemberModel:[_addMemberView getCurrentModel]];
+//    }
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -203,7 +203,7 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    NSString *imagePath = [STFileUtil saveImageFile:@"head.jpg" image:image];
+    NSString *imagePath = [STFileUtil saveImageFile:image];
     [_addMemberView updateView:imagePath];
 }
 
@@ -213,8 +213,8 @@
 
 
 #pragma mark 人脸录入
--(void)doSelectFromPhoto{
-    [FaceEnterPage show:self];
+-(void)doSelectFromPhoto{ 
+    [FaceEnterPage2 show:self];
 }
 
 

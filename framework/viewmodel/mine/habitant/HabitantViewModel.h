@@ -10,10 +10,8 @@
 #import "HabitantModel.h"
 #import "BaseViewController.h"
 
-@protocol HabitantViewDelegate
+@protocol HabitantViewDelegate<BaseRequestDelegate>
 
--(void)onRequestSuccess:(NSMutableArray *)datas;
--(void)onRequestFail:(int)code error:(NSString *)msg;
 
 @end
 

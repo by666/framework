@@ -45,10 +45,29 @@
     
 }
 
--(void)onHurryRequest:(Boolean)success{
+
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    });
+}
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     if(_authStatuView){
-        [_authStatuView onHurryRequest:success];
+        [_authStatuView onHurryRequest:YES];
     }
 }
+
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [STToastUtil showWarnTips:msg];
+    if(_authStatuView){
+        [_authStatuView onHurryRequest:YES];
+    }
+}
+
+
 
 @end

@@ -27,8 +27,22 @@
 
 -(void)addMemberModel{
     if(_delegate){
-        WS(weakSelf)
         [_delegate onRequestBegin];
+        UIImage *image = [UIImage imageWithContentsOfFile:_model.faceUrl];
+        WS(weakSelf)
+        [STNetUtil upload:image url:URL_UPLOAD_IMAGE success:^(RespondModel *respondModel) {
+            weakSelf.model.faceUrl = [respondModel.data objectForKey:@"path"];
+            [self uploadMember];
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        }];
+    }
+
+}
+
+-(void)uploadMember{
+    if(_delegate){
+        WS(weakSelf)
         MemberModel *model = [MemberModel buildModel:_model.nickname homeLocator:_model.homeLocator cretype:0 creid:_model.creid faceUrl:_model.faceUrl districtUid:_model.districtUid userUid:_model.userUid];
         NSString *jsonStr = [model mj_JSONString];
         [STNetUtil post:URL_ADDFAMILY_MEMBER content:jsonStr success:^(RespondModel *respondModel) {

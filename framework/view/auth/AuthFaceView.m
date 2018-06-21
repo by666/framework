@@ -78,30 +78,23 @@
 }
 
 -(void)updateView:(NSString *)imagePath{
+    _mViewModel.userCommitModel.faceUrl = imagePath;
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     [_addPhotoBtn setImage:image forState:UIControlStateNormal];
     [_addPhotoBtn setImage:image forState:UIControlStateHighlighted];
     _nextBtn.hidden = NO;
 }
 
--(void)onCommitStart{
-    _hud = [[MBProgressHUD alloc]initWithView:self];
-    _hud.labelText = @"正在提交用户信息，请稍后";
-    _hud.mode = MBProgressHUDModeDeterminate;
-    _hud.delegate = self;
-    [self addSubview:_hud];
-    [_hud show:YES];
-}
 
--(void)onCommitProgress:(float)progress{
-    _hud.progress = progress;
-}
+
 
 -(void)onCommitFinish{
     _time = 5;
     _resultView.hidden = NO;
+    _hud = [[MBProgressHUD alloc]initWithView:self];
     _hud.mode = MBProgressHUDModeCustomView;
     _hud.customView =  [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ic_finish"]];
+    [_hud show:YES];
     [self startTime];
 
 }

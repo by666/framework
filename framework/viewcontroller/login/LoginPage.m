@@ -19,20 +19,32 @@
 
 @property(strong, nonatomic)LoginViewModel *mViewModel;
 @property(strong, nonatomic)LoginView *mLoginView;
-
+@property(assign, nonatomic)Boolean needBack;
 @end
 
 @implementation LoginPage
+
++(void)show:(BaseViewController *)controller needBack:(Boolean)needBack{
+    LoginPage *page = [[LoginPage alloc]init];
+    page.needBack = needBack;
+    [controller pushPage:page];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     _mViewModel = [[LoginViewModel alloc]init];
     _mViewModel.delegate = self;
     [[STObserverManager sharedSTObserverManager]registerSTObsever:Notify_WXLogin delegate:self];
-    [self setStatuBarBackgroud:[UIColor clearColor]];
     [STColorUtil setGradientColor:self.view startColor:c01 endColor:c02 director:Top];
     [self initView];
 }
+
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self setStatuBarBackgroud:[UIColor clearColor]];
+}
+
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
@@ -45,7 +57,7 @@
 
 
 -(void)initView{
-    _mLoginView = [[LoginView alloc]initWithViewModel:_mViewModel controller:self];
+    _mLoginView = [[LoginView alloc]initWithViewModel:_mViewModel controller:self needBack:_needBack];
     _mLoginView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     [self.view addSubview:_mLoginView];
 
@@ -113,4 +125,7 @@
         [MainPage show:self];
     }
 }
+
+
+
 @end

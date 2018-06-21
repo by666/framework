@@ -26,6 +26,7 @@
 @property(strong, nonatomic)UILabel *tipsLabel;
 @property(strong, nonatomic)STRecognizeView *recognizeView;
 
+@property(strong, nonatomic)UIView *part2View;
 
 @end
 
@@ -53,7 +54,6 @@
     _tipsLabel.frame = CGRectMake(STWidth(15), STHeight(450), ScreenWidth - STWidth(30), STHeight(12));
     [self addSubview:_tipsLabel];
     
-    [self addSubview:[self buildingLayerView]];
     [self addSubview:[self identifyLayerView]];
 
     _recognizeView = [[STRecognizeView alloc]initWithTitle:MSG_AUTHUSER_RECOGNIZE_TITLE datas:nil];
@@ -98,9 +98,8 @@
     }
     
     
-    NSString *communitysStr = @"少林寺";
-    _communityBtn = [[UIButton alloc]initWithFont:STFont(16) text:communitysStr textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil];
-    CGSize communitySize = [communitysStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    _communityBtn = [[UIButton alloc]initWithFont:STFont(16) text:@"" textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil];
+    CGSize communitySize = [@""  sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     _communityBtn.frame = CGRectMake(ScreenWidth - STWidth(36) - communitySize.width, 0,communitySize.width, STHeight(57));
     [_communityBtn addTarget:self action:@selector(OnClickCommunityBtn) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:_communityBtn];
@@ -126,7 +125,7 @@
     [view addSubview:buildingImageView];
     
     _doorTF = [[UITextField alloc]initWithFont:STFont(16) textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:0];
-    _doorTF.placeholder = MSG_AUTHUSER_PART1_DOORNUM_HINT;
+    [_doorTF setPlaceholder:MSG_AUTHUSER_PART1_DOORNUM_HINT color:c17 fontSize:STFont(16)];
     _doorTF.textAlignment = NSTextAlignmentRight;
     _doorTF.keyboardType = UIKeyboardTypeNumberPad;
     _doorTF.frame = CGRectMake(ScreenWidth - STWidth(215), STHeight(114), STWidth(200),  STHeight(57));
@@ -137,14 +136,18 @@
 
 -(void)initPart2{
     
-    UILabel *titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_AUTHUSER_PART2_TITLE textAlignment:NSTextAlignmentLeft textColor:c11 backgroundColor:nil multiLine:NO];
-    CGSize titleSize = [MSG_AUTHUSER_PART1_TITLE sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
-    titleLabel.frame = CGRectMake(STWidth(15), STHeight(234),titleSize.width , STHeight(16));
-    [self addSubview:titleLabel];
+    _part2View = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(218 - 57 * 2), ScreenWidth, ContentHeight-STHeight(218))];
+    _part2View.backgroundColor = c15;
+    [self addSubview:_part2View];
     
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(265), ScreenWidth, STHeight(171))];
+    UILabel *titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_AUTHUSER_PART2_TITLE textAlignment:NSTextAlignmentCenter textColor:c11 backgroundColor:nil multiLine:NO];
+    CGSize titleSize = [MSG_AUTHUSER_PART1_TITLE sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    titleLabel.frame = CGRectMake(STWidth(15),0,titleSize.width , STHeight(47));
+    [_part2View addSubview:titleLabel];
+    
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(47), ScreenWidth, STHeight(171))];
     view.backgroundColor = cwhite;
-    [self addSubview:view];
+    [_part2View addSubview:view];
     
     NSArray *titieArray = @[MSG_AUTHUSER_PART2_NAME,MSG_AUTHUSER_PART2_IDENTIFY,MSG_AUTHUSER_PART2_IDNUM];
     for(int i = 0 ; i < [titieArray count] ; i++){
@@ -162,7 +165,7 @@
     }
     
     _nameTF = [[UITextField alloc]initWithFont:STFont(16) textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:0];
-    _nameTF.placeholder = MSG_AUTHUSER_PART2_NAME_HINT;
+    [_nameTF setPlaceholder:MSG_AUTHUSER_PART2_NAME_HINT color:c17 fontSize:STFont(16)];
     _nameTF.textAlignment = NSTextAlignmentRight;
     _nameTF.frame = CGRectMake(ScreenWidth - STWidth(215), 0, STWidth(200),  STHeight(57));
     [view addSubview:_nameTF];
@@ -184,7 +187,7 @@
     
     
     _idNumTF = [[UITextField alloc]initWithFont:STFont(16) textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:0];
-    _idNumTF.placeholder = MSG_AUTHUSER_PART2_IDNUM_HINT;
+    [_idNumTF setPlaceholder:MSG_AUTHUSER_PART2_IDNUM_HINT color:c17 fontSize:STFont(16)];
     _idNumTF.textAlignment = NSTextAlignmentRight;
     _idNumTF.frame = CGRectMake(ScreenWidth - STWidth(215), STHeight(114), STWidth(200),  STHeight(57));
     [view addSubview:_idNumTF];
@@ -192,9 +195,9 @@
 }
 
 
--(STBuildingLayerView *)buildingLayerView{
+-(STBuildingLayerView *)buildingLayerView:(id)data level:(int)level{
     if(_buildingLayerView == nil){
-        _buildingLayerView = [[STBuildingLayerView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight) datas:nil];
+        _buildingLayerView = [[STBuildingLayerView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight) data:data level:level];
         _buildingLayerView.delegate = self;
         _buildingLayerView.hidden = YES;
     }
@@ -218,16 +221,18 @@
     if(_mViewModel){
         [_mViewModel goCommunityPage];
     }
+    [self hideKeyboard];
 }
 
 -(void)OnClickBuildingBtn{
     _buildingLayerView.hidden = NO;
-    [_buildingLayerView setData:_mViewModel.data.building];
+    [self hideKeyboard];
 }
 
 -(void)OnClickIdentifyBtn{
     _identifyLayerView.hidden = NO;
     [_identifyLayerView setData:_mViewModel.data.identify];
+    [self hideKeyboard];
 }
 
 -(void)onClickNextBtn{
@@ -235,9 +240,15 @@
         _mViewModel.data.doorNum = _doorTF.text;
         _mViewModel.data.name = _nameTF.text;
         _mViewModel.data.idNum = _idNumTF.text;
-        _mViewModel.data.communityName = @"光明顶";
+        NSString *communityName = _communityBtn.titleLabel.text;
+        if([communityName isEqualToString:MSG_AUTHUSER_POSITION_ERROR] || IS_NS_STRING_EMPTY(communityName)){
+            _mViewModel.data.communityName = @"";
+        }else{
+            _mViewModel.data.communityName = _communityBtn.titleLabel.text;
+        }
         [_mViewModel submitUserInfo];
     }
+    [self hideKeyboard];
 }
 
 
@@ -262,21 +273,25 @@
 }
 
 
-
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+-(void)hideKeyboard{
     [_doorTF resignFirstResponder];
     [_nameTF resignFirstResponder];
     [_idNumTF resignFirstResponder];
 }
 
--(void)OnBuildingSelectResult:(NSString *)result{
-    _mViewModel.data.building = result;
-    CGSize buildingSize = [result sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
-    _buildingBtn.frame = CGRectMake(ScreenWidth - STWidth(36) - buildingSize.width, STHeight(57),buildingSize.width, STHeight(57));
-    [_buildingBtn setTitle:result forState:UIControlStateNormal];
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self hideKeyboard];
 }
 
+
 -(void)onSelectResult:(NSString *)result{
+    if ([result isEqualToString:MSG_AUTHUSER_PART2_IDENTIFY_DEFAULT]) {
+        _mViewModel.userCommitModel.liveAttr = [NSString stringWithFormat:@"%ld",Live_Owner];
+    }else if([result isEqualToString:MSG_AUTHUSER_PART2_IDENTIFY_MEMBER]){
+        _mViewModel.userCommitModel.liveAttr = [NSString stringWithFormat:@"%ld",Live_Member];
+    }else if([result isEqualToString:MSG_AUTHUSER_PART2_IDENTIFY_RENTER]){
+        _mViewModel.userCommitModel.liveAttr = [NSString stringWithFormat:@"%ld",Live_Renter];
+    }
     _mViewModel.data.identify = result;
     CGSize buildingSize = [MSG_AUTHUSER_PART1_BUILDING_HINT sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     _identifyBtn.frame = CGRectMake(ScreenWidth - STWidth(36) - buildingSize.width, STHeight(57),buildingSize.width, STHeight(57));
@@ -297,20 +312,64 @@
         if(IS_NS_STRING_EMPTY(textField.text)){
             return;
         }
-        [_recognizeView setData:[RecognizeModel getTestDatas:textField.text]];
-        _recognizeView.hidden = NO;
+        if(_mViewModel){
+            [_mViewModel getCommunityDoor:textField.text];
+        }
+     
     }
 }
 
--(void)onSelectRecognizeResult:(NSString *)result{
-    _doorTF.text = result;
+
+-(void)updateDoorDatas:(NSMutableArray *)datas{
+    [_recognizeView setData:datas];
+    _recognizeView.hidden = NO;
+}
+
+-(void)onSelectRecognizeResult:(RecognizeModel *)result{
+    _doorTF.text = result.homeName;
+    _mViewModel.userCommitModel.homeLocator = result.homeLocator;
 }
 
 -(void)updateAddress:(NSString *)addressStr{
     [_communityBtn setTitle:addressStr forState:UIControlStateNormal];
     CGSize communitySize = [addressStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     _communityBtn.frame = CGRectMake(ScreenWidth - STWidth(36) - communitySize.width, 0,communitySize.width, STHeight(57));
+    
+    if([addressStr isEqualToString:MSG_AUTHUSER_POSITION_ERROR]){
+        WS(weakSelf)
+        [UIView animateWithDuration:0.3f animations:^{
+            weakSelf.part2View.frame = CGRectMake(0, STHeight(218 - 57 * 2), ScreenWidth, ContentHeight-STHeight(218));
+        }];
+    }else{
+        WS(weakSelf)
+        [UIView animateWithDuration:0.3f animations:^{
+            weakSelf.part2View.frame = CGRectMake(0, STHeight(218 - 57), ScreenWidth, ContentHeight-STHeight(218));
+        }];
+    }
 }
 
+
+-(void)updateBuildLayerView:(id)data level:(int)level{
+    [_buildingBtn setTitle:MSG_AUTHUSER_PART1_BUILDING_HINT forState:UIControlStateNormal];
+    CGSize buildingSize = [MSG_AUTHUSER_PART1_BUILDING_HINT sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    _buildingBtn.frame = CGRectMake(ScreenWidth - STWidth(36) - buildingSize.width, STHeight(57),buildingSize.width, STHeight(57));
+    
+    [_buildingLayerView removeFromSuperview];
+    _buildingLayerView = nil;
+    [self addSubview: [self buildingLayerView:data level:level]];
+}
+
+-(void)OnBuildingSelectResult:(NSString *)result fatherLocator:(NSString *)fatherLocator{
+    _mViewModel.data.building = result;
+    _mViewModel.fatherLocator = fatherLocator;
+    CGSize buildingSize = [result sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    _buildingBtn.frame = CGRectMake(ScreenWidth - STWidth(36) - buildingSize.width, STHeight(57),buildingSize.width, STHeight(57));
+    [_buildingBtn setTitle:result forState:UIControlStateNormal];
+    
+    WS(weakSelf)
+    [UIView animateWithDuration:0.3f animations:^{
+        weakSelf.part2View.frame = CGRectMake(0, STHeight(218), ScreenWidth, ContentHeight-STHeight(218));
+    }];
+}
 
 @end

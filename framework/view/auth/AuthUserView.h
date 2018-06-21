@@ -15,4 +15,7 @@
 -(void)removeView;
 -(void)onSubmitResult:(Boolean)success errorMsg:(NSString *)errorMsg;
 -(void)updateAddress:(NSString *)addressStr;
+-(void)updateBuildLayerView:(id)data level:(int)level;
+-(void)updateDoorDatas:(NSMutableArray *)datas;
+
 @end

@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol AuthStatuViewDelegate
+@protocol AuthStatuViewDelegate<BaseRequestDelegate>
 
--(void)onHurryRequest:(Boolean)success;
 
 @end
 

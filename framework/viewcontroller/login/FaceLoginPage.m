@@ -11,7 +11,7 @@
 #import "FaceLoginView.h"
 #import "STNavigationView.h"
 #import "MainPage.h"
-@interface FaceLoginPage ()<FaceLoginDelegate,STNavigationViewDelegate>
+@interface FaceLoginPage ()<FaceLoginDelegate>
 
 @property(strong, nonatomic)FaceLoginView *mFaceLoginView;
 @property(strong, nonatomic)FaceLoginViewModel *mViewModel;
@@ -24,6 +24,10 @@
     [super viewDidLoad];
     [self initView];
     
+}
+
+
+-(void)viewWillAppear:(BOOL)animated{
     [self setStatuBarBackgroud:cwhite];
 }
 

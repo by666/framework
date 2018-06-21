@@ -8,6 +8,7 @@
 
 #import "MineView.h"
 #import "MineCell.h"
+#import "AccountManager.h"
 
 @interface MineView()<UITableViewDelegate,UITableViewDataSource>
 
@@ -69,18 +70,22 @@
     editImageView.userInteractionEnabled = NO;
     [self addSubview:editImageView];
     
-    _nameLabel = [[UILabel alloc]initWithFont:STFont(18) text:@"张三丰" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    
+    UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
+    _nameLabel = [[UILabel alloc]initWithFont:STFont(18) text:userModel.userName textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
     _nameLabel.frame = CGRectMake(0, STHeight(154), ScreenWidth, STHeight(18));
     [self addSubview:_nameLabel];
     
     UIImageView *districtImageView = [[UIImageView alloc]init];
-    districtImageView.image = [UIImage imageNamed:@"ic_building"];
+    districtImageView.image = [UIImage imageNamed:@"ic_building_white"];
     districtImageView.contentMode = UIViewContentModeScaleAspectFill;
     districtImageView.frame = CGRectMake(STWidth(150), STHeight(180), STHeight(14), STHeight(14));
     [self addSubview:districtImageView];
     
-    _districtLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"武当山" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
-    _districtLabel.frame = CGRectMake(STWidth(163), STHeight(180), STWidth(70), STHeight(14));
+    MainModel *mainModel = [[AccountManager sharedAccountManager]getMainModel];
+    _districtLabel = [[UILabel alloc]initWithFont:STFont(14) text:mainModel.detailAddr textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    CGSize districtSize = [mainModel.detailAddr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
+    _districtLabel.frame = CGRectMake(STWidth(170), STHeight(180),districtSize.width, STHeight(14));
     [self addSubview:_districtLabel];
     
     _settingBtn = [[UIButton alloc]init];

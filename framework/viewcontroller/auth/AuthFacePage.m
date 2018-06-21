@@ -8,7 +8,7 @@
 
 #import "AuthFacePage.h"
 #import "AuthFaceView.h"
-#import "FaceEnterPage.h"
+#import "FaceEnterPage2.h"
 #import "PermissionDetector.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "UIImage+Extensions.h"
@@ -17,17 +17,22 @@
 #import "FaceEnterPage.h"
 #import "STObserverManager.h"
 #import "MainPage.h"
+#import "STTimeUtil.h"
+#import <IDLFaceSDK/IDLFaceSDK.h>
 
 @interface AuthFacePage ()<AuthFaceViewModelDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,STObserverProtocol>
 
 @property(strong, nonatomic)AuthFaceView *authFaceView;
+@property(strong, nonatomic)UserCommitModel *userCommitModel;
+@property(strong, nonatomic)AuthFaceViewModel *viewModel;
 
 @end
 
 @implementation AuthFacePage
 
-+(void)show:(BaseViewController *)controller{
++(void)show:(BaseViewController *)controller model:(UserCommitModel *)model{
     AuthFacePage *page = [[AuthFacePage alloc]init];
+    page.userCommitModel = model;
     [controller pushPage:page];
 }
 
@@ -52,10 +57,10 @@
 
 
 -(void)initView{
-    AuthFaceViewModel *viewModel = [[AuthFaceViewModel alloc]init];
-    viewModel.delegate = self;
+    _viewModel = [[AuthFaceViewModel alloc]initWithModel:_userCommitModel];
+    _viewModel.delegate = self;
     
-    _authFaceView = [[AuthFaceView alloc]initWithViewModel:viewModel];
+    _authFaceView = [[AuthFaceView alloc]initWithViewModel:_viewModel];
     _authFaceView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     [self.view addSubview:_authFaceView];
     
@@ -65,23 +70,26 @@
     [self onDoTakePhoto];
 }
 
--(void)onCommitStart{
-    if(_authFaceView){
-        [_authFaceView onCommitStart];
-    }
+
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    });
 }
 
--(void)onCommitProgress:(float)progress{
-    if(_authFaceView){
-        [_authFaceView onCommitProgress:progress];
-    }
-}
 
--(void)onCommitEnd{
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     if(_authFaceView){
         [_authFaceView onCommitFinish];
     }
 }
+
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+
 
 -(void)onGoMainPage{
     [MainPage show:self];
@@ -119,7 +127,7 @@
     }
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     picker.modalPresentationStyle = UIModalPresentationCurrentContext;
     if([UIImagePickerController isSourceTypeAvailable: picker.sourceType ]) {
         picker.mediaTypes = @[(NSString*)kUTTypeImage];
@@ -133,8 +141,17 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    NSString *imagePath = [STFileUtil saveImageFile:@"head.jpg" image:image];
-    [_authFaceView updateView:imagePath];
+    NSString *imagePath = [STFileUtil saveImageFile:image];
+    WS(weakSelf)
+    
+    CGRect previewRect;
+    [[IDLFaceDetectionManager sharedInstance] detectStratrgyWithImage:image previewRect:previewRect detectRect:previewRect completionHandler:^(NSDictionary *images, DetectRemindCode remindCode){
+        if(remindCode == DetectRemindCodeOK){
+            [weakSelf.authFaceView updateView:imagePath];
+        }else{
+            [STToastUtil showFailureAlertSheet:MSG_FACEDETECT_FAIL];
+        }
+    }];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
@@ -144,13 +161,14 @@
 
 #pragma mark 人脸录入
 -(void)doSelectFromPhoto{
-    [FaceEnterPage show:self];
+    [FaceEnterPage2 show:self];
 }
 
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
     [_authFaceView updateView:msg];
 }
+
 
 
 @end

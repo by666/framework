@@ -12,7 +12,7 @@
 
 @interface LoginView : UIView
 
--(instancetype)initWithViewModel:(LoginViewModel *)viewModel controller:(LoginPage *)page;
+-(instancetype)initWithViewModel:(LoginViewModel *)viewModel controller:(LoginPage *)page needBack:(Boolean)needBack;
 
 //验证码按钮UI变化
 -(void)updateVerifyBtn:(Boolean)complete;

@@ -9,6 +9,7 @@
 #import "MainViewModel.h"
 #import "STNetUtil.h"
 #import "AccountManager.h"
+#import "MainModel.h"
 
 @implementation MainViewModel
 
@@ -85,6 +86,7 @@
                 data.creid = [respondModel.data valueForKey:@"creid"];
                 data.headUrl = [respondModel.data valueForKey:@"headUrl"];
                 data.userName = [respondModel.data valueForKey:@"userName"];
+                [[AccountManager sharedAccountManager]saveUserModel:data];
                 [weakSelf.delegate onRequestSuccess:respondModel data:data];
             }else{
                 [weakSelf.delegate onRequestFail:respondModel.msg];
@@ -98,14 +100,34 @@
 
 -(void)getLiveInfo{
     WS(weakSelf)
-   [STNetUtil post:URL_GETLIVEINFO parameters:nil success:^(RespondModel *respondModel) {
+   [STNetUtil get:URL_GETLIVEINFO parameters:nil success:^(RespondModel *respondModel) {
        if([respondModel.status isEqualToString:STATU_SUCCESS]){
+           LiveModel *model = [LiveModel mj_objectWithKeyValues:respondModel.data];
+           [[AccountManager sharedAccountManager]saveLiveModel:model];
            [weakSelf.delegate onRequestSuccess:respondModel data:respondModel.data];
+           [self getMainInfo:model.districtUid];
        }else{
            [weakSelf.delegate onRequestFail:respondModel.status];
        }
    } failure:^(int errorCode) {
        [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
    }];
+}
+
+-(void)getMainInfo:(NSString *)districtUid{
+    WS(weakSelf)
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    dic[@"districtUid"] = districtUid;
+    [STNetUtil get:URL_GETMAININFO parameters:dic success:^(RespondModel *respondModel) {
+        if([respondModel.status isEqualToString:STATU_SUCCESS]){
+            weakSelf.model = [MainModel mj_objectWithKeyValues:respondModel.data];
+            [[AccountManager sharedAccountManager]saveMainModel:weakSelf.model];
+            [weakSelf.delegate onRequestSuccess:respondModel data:weakSelf.model];
+        }else{
+            [weakSelf.delegate onRequestFail:respondModel.status];
+        }
+    } failure:^(int errorCode) {
+        [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+    }];
 }
 @end

@@ -8,7 +8,7 @@
 
 #import "VisitorPage.h"
 #import "VisitorView.h"
-#import "FaceEnterPage.h"
+#import "FaceEnterPage2.h"
 #import "PermissionDetector.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "UIImage+Extensions.h"
@@ -128,7 +128,7 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    NSString *imagePath = [STFileUtil saveImageFile:@"head.jpg" image:image];
+    NSString *imagePath = [STFileUtil saveImageFile:image];
     [_visitorView updateView:imagePath];
 }
 
@@ -139,7 +139,7 @@
 
 #pragma mark 人脸录入
 -(void)doSelectFromPhoto{
-    [FaceEnterPage show:self];
+    [FaceEnterPage2 show:self];
 }
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{

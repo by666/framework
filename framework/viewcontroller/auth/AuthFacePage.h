@@ -7,9 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "UserCommitModel.h"
 
 @interface AuthFacePage : BaseViewController
 
-+(void)show:(BaseViewController *)controller;
++(void)show:(BaseViewController *)controller model:(UserCommitModel *)model;
 
 @end

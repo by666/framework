@@ -27,6 +27,8 @@
     [self initView];
 }
 
+
+
 -(void)initView{
     
     self.view.backgroundColor = cwhite;
@@ -46,8 +48,7 @@
 }
 
 -(void)onGoLoginPage{
-    LoginPage *page = [[LoginPage alloc]init];
-    [self pushPage:page];
+    [LoginPage show:self needBack:YES];
 }
 
 

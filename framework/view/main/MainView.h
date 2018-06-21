@@ -12,5 +12,6 @@
 @interface MainView : UIView
 
 -(instancetype)initWithViewModel:(MainViewModel *)viewModel;
+-(void)updateView;
 
 @end

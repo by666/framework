@@ -13,6 +13,7 @@
 SINGLETON_IMPLEMENTION(AccountManager)
 
 
+///
 -(void)saveUserModel:(UserModel *)model{
     [STUserDefaults saveModel:UD_USERMODEL model:model];
  }
@@ -27,6 +28,41 @@ SINGLETON_IMPLEMENTION(AccountManager)
 -(void)clearUserModel{
     [STUserDefaults removeModel:UD_USERMODEL];
 }
+
+///
+-(void)saveLiveModel:(LiveModel *)model{
+    [STUserDefaults saveModel:UD_LIVEMODEL model:model];
+}
+
+-(LiveModel *)getLiveModel{
+    if([STUserDefaults getModel:UD_LIVEMODEL]){
+        return [STUserDefaults getModel:UD_LIVEMODEL];
+    }
+    return [LiveModel new];
+}
+
+-(void)clearLiveModel{
+    [STUserDefaults removeModel:UD_LIVEMODEL];
+}
+
+
+///
+-(void)saveMainModel:(MainModel *)model{
+    [STUserDefaults saveModel:UD_MAINMODEL model:model];
+}
+
+-(MainModel *)getMainModel{
+    if([STUserDefaults getModel:UD_MAINMODEL]){
+        return [STUserDefaults getModel:UD_MAINMODEL];
+    }
+    return [MainModel new];
+}
+
+-(void)clearMainModel{
+    [STUserDefaults removeModel:UD_MAINMODEL];
+}
+
+
 
 -(Boolean)isLogin{
     UserModel *model = [self getUserModel];
