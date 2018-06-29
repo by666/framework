@@ -14,4 +14,6 @@ pod 'ReactiveCocoa', '~> 2.5'
 pod 'WechatOpenSDK'
 pod 'JPush', '3.0.9'
 pod 'LBXScan', '~> 2.3'
+pod 'AliyunOSSiOS'
+
 end

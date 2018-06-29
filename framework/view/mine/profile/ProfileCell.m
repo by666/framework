@@ -7,7 +7,7 @@
 //
 
 #import "ProfileCell.h"
-
+#import "AccountManager.h"
 @interface ProfileCell()
 
 @property(strong, nonatomic)UILabel *titleLabel;
@@ -70,8 +70,9 @@
         _headImageView.hidden = NO;
         _arrowImageView.hidden = NO;
         if(!IS_NS_STRING_EMPTY(model.content)){
-            UIImage *image=[[UIImage alloc]initWithContentsOfFile:model.content];
-            _headImageView.image = image;
+            UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
+            NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:userModel.headUrl];
+            [_headImageView sd_setImageWithURL:url];
         }
         _contentLabel.hidden = YES;
 

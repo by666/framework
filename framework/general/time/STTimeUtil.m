@@ -142,4 +142,16 @@
     }
     return datas;
 }
+
+
++(long)getTimeStamp:(NSString *)dateStr format:(NSString *)format{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:format];
+    NSDate* date = [formatter dateFromString:dateStr];
+    NSInteger timeSp = [[NSNumber numberWithDouble:[date timeIntervalSince1970]] integerValue];
+    return (long)timeSp;
+}
+
 @end

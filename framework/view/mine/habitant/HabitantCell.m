@@ -35,7 +35,6 @@
     _headImageView.frame = CGRectMake(STWidth(15), STHeight(15), STHeight(30), STHeight(30));
     _headImageView.layer.masksToBounds = YES;
     _headImageView.layer.cornerRadius = STHeight(15);
-    _headImageView.image = [UIImage imageNamed:@"ic_test1"];
     _headImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:_headImageView];
     
@@ -69,19 +68,31 @@
 
 
 -(void)updateData:(HabitantModel *)model{
-
-    _titleLabel.text = model.name;
-    _validDateLabel.text = model.validDate;
-    CGSize size = [STPUtil textSize:model.validDate maxWidth:ScreenWidth font:STFont(14)];
-    _validDateLabel.frame = CGRectMake(ScreenWidth - STWidth(26) -size.width, STHeight(32), size.width, STHeight(14));
     
-    _idetifyLabel.text = model.identify;
+    if(!IS_NS_STRING_EMPTY(model.headUrl)){
+        NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil]getRealUrl:model.headUrl];
+        [_headImageView sd_setImageWithURL:url];
+    }
+
+    _titleLabel.text = model.userName;
+    
+    _idetifyLabel.text = [STPUtil getLiveAttr:model.liveAttr];
     _idetifyLabel.frame = CGRectMake(_titleLabel.contentSize.width + STWidth(55 + 12), STHeight(21),_idetifyLabel.contentSize.width + STWidth(14), STHeight(18));
-    if([model.identify isEqualToString:@"家属"]){
+    if([_idetifyLabel.text isEqualToString:MSG_AUTHUSER_PART2_IDENTIFY_MEMBER]){
         _idetifyLabel.backgroundColor = c19;
     }else{
         _idetifyLabel.backgroundColor = c13;
     }
+    
+    if(model.liveAttr == Live_Member || model.liveAttr == Live_Owner){
+        _arrowImageView.hidden = YES;
+        _validDateLabel.text  = MSG_HABITANT_FOREVER;
+    }else{
+        _arrowImageView.hidden = NO;
+        _validDateLabel.text = model.overdue;
+    }
+    CGSize size = [STPUtil textSize:_validDateLabel.text maxWidth:ScreenWidth font:STFont(14)];
+    _validDateLabel.frame = CGRectMake(ScreenWidth - STWidth(26) -size.width, STHeight(32), size.width, STHeight(14));
     
 }
 

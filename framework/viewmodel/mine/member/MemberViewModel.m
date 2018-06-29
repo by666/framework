@@ -26,12 +26,16 @@
         WS(weakSelf)
         [_delegate onRequestBegin];
         LiveModel *model =  [[AccountManager sharedAccountManager]getLiveModel];
+        UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
         NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
         dic[@"districtUid"] = model.districtUid;
         dic[@"homeLocator"] = model.homeLocator;
         [STNetUtil get:URL_GETFAMILY_MEMBER parameters:dic success:^(RespondModel *respondModel) {
             if([respondModel.status isEqualToString:STATU_SUCCESS]){
                 weakSelf.datas = [MemberModel mj_objectArrayWithKeyValuesArray:respondModel.data];
+                MemberModel *memberModel = [MemberModel buildModel:userModel.userName homeLocator:model.homeLocator cretype:userModel.cretype creid:userModel.creid faceUrl:userModel.headUrl districtUid:model.districtUid userUid:model.userUid];
+                memberModel.identify = MSG_MEMBER_ROOT;
+                [weakSelf.datas insertObject:memberModel atIndex:0];
                 [weakSelf.delegate onRequestSuccess:respondModel data:weakSelf.datas];
             }else{
                 [weakSelf.delegate onRequestFail:respondModel.msg];
@@ -58,17 +62,24 @@
 
 -(void)deleteMember:(MemberModel *)model{
     if(_delegate){
-        if(!IS_NS_COLLECTION_EMPTY(_datas)){
-            for(int i = 0 ; i < [_datas count] ; i++){
-                MemberModel *tempModel = [_datas objectAtIndex:i];
-                if([tempModel.creid isEqualToString:model.creid]){
-                    [_datas removeObjectAtIndex:i];
-                    [_delegate onDeleteMember:YES model:model row:i];
-                    break;
-                }
+        WS(weakSelf)
+        [_delegate onRequestBegin];
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        dic[@"userUid"] = model.userUid;
+        dic[@"homeLocator"] = model.homeLocator;
+        dic[@"districtUid"] = model.districtUid;
+        [STNetUtil get:URL_DELFAMILY_MEMBER parameters:dic success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                [weakSelf.datas removeObject:model];
+                [weakSelf.delegate onRequestSuccess:respondModel data:model];
+            }else{
+                [weakSelf.delegate onRequestFail:respondModel.msg];
             }
-        }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        }];
     }
+    
 }
 
 -(void)showWarnPrompt:(MemberModel *)model{

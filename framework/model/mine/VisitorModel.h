@@ -10,9 +10,11 @@
 
 @interface VisitorModel : NSObject
 
-@property(copy, nonatomic)NSString *imagePath;
+@property(copy, nonatomic)NSString *faceUrl;
 @property(copy, nonatomic)NSString *name;
 @property(copy, nonatomic)NSString *visitDate;
 @property(copy, nonatomic)NSString *carNum;
+
+
 
 @end

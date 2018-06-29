@@ -9,11 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "ProfileModel.h"
 
-@protocol ProfileViewDelegate
+@protocol ProfileViewDelegate<BaseRequestDelegate>
 
 -(void)onUpdateProfile;
 -(void)onGoFaceEnterPage;
--(void)onUploadHeadImage:(Boolean)success image:(NSString *)imagePath;
 -(void)onGoAuthStatuPage;
 
 @end

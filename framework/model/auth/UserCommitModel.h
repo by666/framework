@@ -17,6 +17,7 @@
 @property(copy, nonatomic)NSString *creid;
 @property(copy, nonatomic)NSString *cretype;
 @property(copy, nonatomic)NSString *userName;
+@property(copy, nonatomic)NSString *facePath;
 
 
 

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface LiveModel : NSObject<NSCoding>
 
 @property(copy, nonatomic)NSString *districtUid;
@@ -22,6 +23,9 @@
 @property(assign, nonatomic)int delState;
 @property(copy, nonatomic)NSString *createTime;
 @property(copy, nonatomic)NSString *modifyTime;
+
+//状态
+@property(assign, nonatomic)int statu;
 
 
 @end

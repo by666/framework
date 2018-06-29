@@ -26,16 +26,33 @@
 
 -(void)initView{
     
-    UIButton *peopleVisitorBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_VISITORHOME_PEOPLE_BUTTON textColor:cwhite backgroundColor:c19 corner:STHeight(25) borderWidth:0 borderColor:nil];
-    peopleVisitorBtn.frame = CGRectMake(STWidth(50), STHeight(179), STWidth(276), STHeight(50));
+    UIButton *peopleVisitorBtn = [[UIButton alloc]initWithFont:STFont(18) text:@"" textColor:cwhite backgroundColor:c13 corner:STHeight(5) borderWidth:0 borderColor:nil];
+    peopleVisitorBtn.frame = CGRectMake(STWidth(15), STHeight(30), ScreenWidth - STWidth(30), STHeight(174));
     [peopleVisitorBtn addTarget:self action:@selector(onClickPeopleBtn) forControlEvents:UIControlEventTouchUpInside];
-    [peopleVisitorBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
     [self addSubview:peopleVisitorBtn];
     
-    UIButton *carVisitorBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_VISITORHOME_CAR_BUTTON textColor:cwhite backgroundColor:c13 corner:STHeight(25) borderWidth:0 borderColor:nil];
-    carVisitorBtn.frame = CGRectMake(STWidth(50), STHeight(239), STWidth(276), STHeight(50));
+    [self buildBtnContent:peopleVisitorBtn title:MSG_VISITORHOME_PEOPLE_BUTTON imageStr:@"ic_people_visit"];
+    
+    UIButton *carVisitorBtn = [[UIButton alloc]initWithFont:STFont(18) text:@"" textColor:cwhite backgroundColor:c08 corner:STHeight(5) borderWidth:0 borderColor:nil];
+    carVisitorBtn.frame = CGRectMake(STWidth(15), STHeight(227), ScreenWidth - STWidth(30), STHeight(174));
     [carVisitorBtn addTarget:self action:@selector(onClickCarBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:carVisitorBtn];
+    
+    [self buildBtnContent:carVisitorBtn title:MSG_VISITORHOME_CAR_BUTTON imageStr:@"ic_car_visit"];
+
+}
+
+-(void)buildBtnContent:(UIButton *)button title:(NSString *)title imageStr:(NSString *)imageStr{
+    
+    UIImageView *imageView = [[UIImageView alloc]init];
+    imageView.image = [UIImage imageNamed:imageStr];
+    imageView.frame = CGRectMake((ScreenWidth - STWidth(60))/2, STHeight(54), STWidth(30), STWidth(30));
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [button addSubview:imageView];
+    
+    UILabel *label = [[UILabel alloc]initWithFont:STFont(24) text:title textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    label.frame = CGRectMake(0, STHeight(95), ScreenWidth - STWidth(30), STHeight(24));
+    [button addSubview:label];
 }
 
 -(void)onClickPeopleBtn{

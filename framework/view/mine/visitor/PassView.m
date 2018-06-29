@@ -10,111 +10,148 @@
 #import <ZBarSDK/ZBarSDK.h>
 #import "LBXScanViewStyle.h"
 #import "LBXScanViewController.h"
+#import "AccountManager.h"
+#import "STTimeUtil.h"
+#import "VisitorPage.h"
 
 @interface PassView()
 
-@property(strong, nonatomic)VisitorViewModel *mViewModel;
+@property(strong, nonatomic)PassViewModel *mViewModel;
 
 @end
 
 @implementation PassView
 
--(instancetype)initWithFrame:(CGRect)frame model:(VisitorViewModel *)model{
-    if(self ==[super initWithFrame:frame]){
-        _mViewModel = model;
-        self.frame = frame;
+-(instancetype)initWithViewModel:(PassViewModel *)viewModel{
+    if(self ==[super init]){
+        _mViewModel = viewModel;
         [self initView];
     }
     return self;
 }
 
 -(void)initView{
-    self.backgroundColor = [cblack colorWithAlphaComponent:0.65];
+    self.backgroundColor = cwhite;
     
-    UIView *cardView = [[UIView alloc]init];
-    cardView.frame = CGRectMake(STWidth(28), STHeight(26), ScreenWidth - STWidth(56), STHeight(508));
-    cardView.backgroundColor = cwhite;
-    cardView.layer.masksToBounds = YES;
-    cardView.layer.cornerRadius = STHeight(4);
-    [self addSubview:cardView];
-    
-    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, cardView.width, STHeight(139))];
+    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, STHeight(137))];
     topView.backgroundColor = c25;
-    [cardView addSubview:topView];
+    [self addSubview:topView];
     
-    UILabel *titleLabel = [[UILabel alloc]initWithFont:STFont(18) text:MSG_PASSVIEW_TITLE textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
-    titleLabel.frame = CGRectMake(0, 0, cardView.width, STHeight(50));
-    [cardView addSubview:titleLabel];
-    
-    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(50), cardView.width,LineHeight)];
-    lineView.backgroundColor = c26;
-    [cardView addSubview:lineView];
-    
+
     UIImageView *avatarImageView = [[UIImageView alloc]init];
-    avatarImageView.frame = CGRectMake(STWidth(30), STHeight(65), STWidth(60), STHeight(60));
+    avatarImageView.frame = CGRectMake(STWidth(280), STHeight(38), STWidth(60), STHeight(60));
     avatarImageView.backgroundColor = cwhite;
     avatarImageView.layer.masksToBounds = YES;
     avatarImageView.layer.cornerRadius = STHeight(8);
     avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [cardView addSubview:avatarImageView];
+    [self addSubview:avatarImageView];
     
-    if(!IS_NS_STRING_EMPTY(_mViewModel.data.imagePath)){
-        UIImage *avatarImage = [UIImage imageWithContentsOfFile:_mViewModel.data.imagePath];
-        avatarImageView.image = avatarImage;
+    if(!IS_NS_STRING_EMPTY(_mViewModel.mVisitorModel.faceUrl)){
+        NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil]getRealUrl:_mViewModel.mVisitorModel.faceUrl];
+        [avatarImageView sd_setImageWithURL:url];
         avatarImageView.hidden = NO;
     }else{
         avatarImageView.hidden = YES;
     }
     
-    NSString *nameStr = [NSString stringWithFormat:MSG_PASSVIEW_NAME,_mViewModel.data.name];
-    UILabel *nameLabel = [[UILabel alloc]initWithFont:STFont(14) text:nameStr textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
-    CGSize nameSize = [nameStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
-    nameLabel.frame = CGRectMake(cardView.width - nameSize.width - STWidth(21), STHeight(69), nameSize.width, STHeight(14));
-    [cardView addSubview:nameLabel];
+    NSString *nameStr = [NSString stringWithFormat:MSG_PASSVIEW_NAME,_mViewModel.mVisitorModel.name];
+    UILabel *nameLabel = [[UILabel alloc]initWithFont:STFont(24) text:nameStr textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    CGSize nameSize = [nameStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(24)]];
+    nameLabel.frame = CGRectMake(STWidth(35), STHeight(33), nameSize.width, STHeight(24));
+    [self addSubview:nameLabel];
     
-    NSString *dateStr = [NSString stringWithFormat:MSG_PASSVIEW_DATE,_mViewModel.data.visitDate];
+    NSString *dateStr = [NSString stringWithFormat:MSG_PASSVIEW_DATE,_mViewModel.mVisitorModel.visitDate];
     UILabel *dateLabel = [[UILabel alloc]initWithFont:STFont(14) text:dateStr textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
     CGSize dateSize = [dateStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
-    dateLabel.frame = CGRectMake(cardView.width - dateSize.width - STWidth(21), STHeight(94), dateSize.width, STHeight(14));
-    [cardView addSubview:dateLabel];
+    dateLabel.frame = CGRectMake(STWidth(35), STHeight(69), dateSize.width, STHeight(14));
+    [self addSubview:dateLabel];
+    
+
+    if(!IS_NS_STRING_EMPTY(_mViewModel.mVisitorModel.carNum)){
+        NSString *carNumStr = [NSString stringWithFormat:MSG_PASSVIEW_CARNUM,_mViewModel.mVisitorModel.carNum];
+        UILabel *carNumLabel = [[UILabel alloc]initWithFont:STFont(14) text:carNumStr textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+        CGSize carNumSize = [carNumStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
+        carNumLabel.frame = CGRectMake(STWidth(35), STHeight(89), carNumSize.width, STHeight(14));
+        [self addSubview:carNumLabel];
+    }
     
     
-    NSString *qrCodeStr = [NSString stringWithFormat:@"%@|%@|%@",_mViewModel.data.name,_mViewModel.data.visitDate,_mViewModel.data.imagePath];
+    UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
+    NSString *qrCodeStr = [NSString stringWithFormat:@"%@&%@",userModel.userUid,_mViewModel.mPassModel.userUid];
     UIImage *qrCodeImage = [LBXScanNative createQRWithString:qrCodeStr QRSize:CGSizeMake(1024,1024)];
     UIImageView *qrCodeImageView = [[UIImageView alloc]init];
-    qrCodeImageView.frame = CGRectMake(STWidth(70), STHeight(155), STWidth(178), STHeight(178));
+    qrCodeImageView.frame = CGRectMake(STWidth(99), STHeight(181), STWidth(178), STHeight(178));
     qrCodeImageView.backgroundColor = cwhite;
     qrCodeImageView.image = qrCodeImage;
     qrCodeImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [cardView addSubview:qrCodeImageView];
+    [self addSubview:qrCodeImageView];
     
     
     UILabel *lockCodeLabel = [[UILabel alloc]initWithFont:STFont(18) text:MSG_PASSVIEW_LOCKCODE textAlignment:NSTextAlignmentCenter textColor:c20 backgroundColor:nil multiLine:NO];
-    lockCodeLabel.frame = CGRectMake(0, STHeight(342), cardView.width, STHeight(18));
-    [cardView addSubview:lockCodeLabel];
+    lockCodeLabel.frame = CGRectMake(0, STHeight(368), ScreenWidth, STHeight(18));
+    [self addSubview:lockCodeLabel];
     
     
-    NSString *codeStr = [NSString stringWithFormat:@"%d %d %d %d",arc4random() % 5,arc4random() % 5,arc4random() % 5,arc4random() % 5];
+    NSString *codeStr = @"";
+    for(int i = 0 ; i < _mViewModel.mPassModel.password.length ; i++){
+        NSString *codeChar = [_mViewModel.mPassModel.password substringWithRange:NSMakeRange(i, 1)];
+        codeStr = [codeStr stringByAppendingString:codeChar];
+        codeStr = [codeStr stringByAppendingString:@" "];
+    }
+    codeStr = [codeStr substringWithRange:NSMakeRange(0, codeStr.length - 1)];
     UILabel *codeLabel = [[UILabel alloc]initWithFont:STFont(18) text:codeStr textAlignment:NSTextAlignmentCenter textColor:c25 backgroundColor:nil multiLine:NO];
-    codeLabel.frame = CGRectMake(0, STHeight(370), cardView.width, STHeight(18));
+    codeLabel.frame = CGRectMake(0, STHeight(396), ScreenWidth, STHeight(18));
     [codeLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:STFont(18)]];
-    [cardView addSubview:codeLabel];
+    [self addSubview:codeLabel];
     
-    NSString *tipsStr = [NSString stringWithFormat:MSG_PASSVIEW_TIPS,_mViewModel.data.name];
+    NSString *tipsStr = [NSString stringWithFormat:MSG_PASSVIEW_TIPS,_mViewModel.mVisitorModel.name];
     UILabel *tipsLabel = [[UILabel alloc]initWithFont:STFont(12) text:tipsStr textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:YES];
-    CGSize tipSize = [tipsStr sizeWithMaxWidth:cardView.width - STWidth(82) font:[UIFont systemFontOfSize:STFont(12)]];
-    tipsLabel.frame = CGRectMake(STWidth(41), STHeight(401), cardView.width - STWidth(82), tipSize.height);
-    [cardView addSubview:tipsLabel];
+    CGSize tipSize = [tipsStr sizeWithMaxWidth:ScreenWidth - STWidth(138) font:[UIFont systemFontOfSize:STFont(12)]];
+    tipsLabel.frame = CGRectMake(STWidth(69), STHeight(427), ScreenWidth - STWidth(138), tipSize.height);
+    [self addSubview:tipsLabel];
     
     
-    UIButton *shareBtn = [[UIButton alloc]initWithFont:STFont(14) text:MSG_PASSVIEW_SHAREBTN textColor:cwhite backgroundColor:c23 corner:STHeight(8) borderWidth:0 borderColor:nil];
-    shareBtn.frame = CGRectMake(STWidth(98.5), STHeight(452), cardView.width - STWidth(98.5 * 2), STHeight(38));
-    [shareBtn addTarget:self action:@selector(onClickShareBtn) forControlEvents:UIControlEventTouchUpInside];
-    [cardView addSubview:shareBtn];
+    if([self isVaildDate]){
+        UIButton *shareBtn = [[UIButton alloc]initWithFont:STFont(14) text:MSG_PASSVIEW_SHAREBTN textColor:cwhite backgroundColor:c23 corner:STHeight(8) borderWidth:0 borderColor:nil];
+        shareBtn.frame = CGRectMake(STWidth(127), STHeight(478), ScreenWidth- STWidth(254), STHeight(38));
+        [shareBtn addTarget:self action:@selector(onClickShareBtn) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:shareBtn];
+    }else{
+        
+        UILabel *invalidLabel = [[UILabel alloc]initWithFont:STFont(14) text:MSG_PASSVIEW_INVAILD textAlignment:NSTextAlignmentCenter textColor:c18 backgroundColor:nil multiLine:NO];
+        invalidLabel.frame = CGRectMake(0, STHeight(475), ScreenWidth, STHeight(14));
+        [self addSubview:invalidLabel];
+        
+        UIButton *reGenerateBtn = [[UIButton alloc]initWithFont:STFont(14) text:MSG_PASSVIEW_REGENERATEBTN textColor:cwhite backgroundColor:c21 corner:STHeight(8) borderWidth:0 borderColor:nil];
+        reGenerateBtn.frame = CGRectMake(STWidth(127), STHeight(504), ScreenWidth- STWidth(254), STHeight(38));
+        [reGenerateBtn addTarget:self action:@selector(onClickGenerateBtn) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:reGenerateBtn];
+        
+        lockCodeLabel.textColor = [c20 colorWithAlphaComponent:0.33f];
+        codeLabel.textColor = [c20 colorWithAlphaComponent:0.33f];
+    }
+    
+}
+
+
+-(Boolean)isVaildDate{
+    long nowTimeStamp = [[STTimeUtil getCurrentTimeStamp] longLongValue] / 1000;
+    NSString *formatDateStr = [NSString stringWithFormat:@"%@ 23:59:59",_mViewModel.mVisitorModel.visitDate];
+    long visitTimeStamp = [STTimeUtil getTimeStamp:formatDateStr format:@"yyyy.MM.dd HH:mm:ss"];
+    if(visitTimeStamp - nowTimeStamp >= 0){
+        return YES;
+    }
+    return NO;
 }
 
 -(void)onClickShareBtn{
     
+}
+
+-(void)onClickGenerateBtn{
+    if(_mViewModel){
+        [_mViewModel goVisitorPage];
+    }
 }
 
 @end

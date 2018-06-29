@@ -13,7 +13,7 @@
 #pragma mark 定义API相关
 
 #define RootUrl @"https://www.baidu.com"
-#define TestUrl @"http://192.168.0.5:8081/cellos-appserver"
+#define TestUrl @"http://192.168.0.5:8081/cellos-appserver/userApp"
 
 
 #pragma mark 登录
@@ -35,6 +35,8 @@
 #define URL_GETLIVEINFO         [TestUrl stringByAppendingString:@"/user/getLiveInfo"]
 //获取主页信息
 #define URL_GETMAININFO         [TestUrl stringByAppendingString:@"/userMainPage/getDistrictDetailInfo"]
+//更新自己的人脸
+#define URL_UPDATEFACE          [TestUrl stringByAppendingString:@"/user/updateFaceUrl"]
 
 #pragma mark 完善用户信息
 
@@ -73,21 +75,164 @@
 #define URL_UPDATE_HABITANT      [TestUrl stringByAppendingString:@"/liveuserManagement/updateLiveuserWithOverdue"]
 
 
+#pragma mark 访客/车辆登记
+
+//预登记访客/车辆
+#define URL_PRECHECKIN         [TestUrl stringByAppendingString:@"/usercheckIn/preCheckIn"]
+//查询预登记访客/车辆
+#define URL_PRECHECKIN_HISTORY [TestUrl stringByAppendingString:@"/usercheckIn/getCheckIn"]
+//删除预登记访客/车辆
+#define URL_DELETE_PRECHECKIN  [TestUrl stringByAppendingString:@"/usercheckIn/delCheckIn"]
 
 #pragma mark 上传图片
 #define URL_UPLOAD_IMAGE @"http://192.168.0.4:9090/upload"
 
 
-#pragma mark 通用码
-//请求成功
-#define STATU_SUCCESS @"0"
+
+#pragma mark 修改手机号
+//旧手机发短信
+#define URL_SENDMSG_TO_OLD [TestUrl stringByAppendingString:@"/user/sendSmsCodeToNewMobile"]
+//新绑定手机发短信
+#define URL_SENDMSG_TO_NEW [TestUrl stringByAppendingString:@"/user/sendSmsCodeToOldMobile"]
+//验证旧手机短信
+#define URL_VERIFYMSG_TO_OLD  [TestUrl stringByAppendingString:@"/user/validateOldMobile"]
+//验证新手机短信
+#define URL_VERIFYMSG_TO_NEW  [TestUrl stringByAppendingString:@"/user/validateNewMobile"]
+
+
+
+/*------------------------------------------------------------------------*/
+
+
+#pragma mark 网络错误码
+
 //用户鉴权失败
 #define STATU_USERAUTH_FAIL  401
-//用户未认证
-#define STATU_LIVEINFO_NULL @"101010301"
-//正在审核中
-#define STATU_LIVEINFO_AUTHING @"101010302"
+
+
+#pragma mark 通用码
+
+//请求成功
+#define STATU_SUCCESS @"0"
+//未知错误
+#define STATU_UNKONOW @"1"
+//参数错误
+#define STATU_PARAMEROOR @"2"
+
+
+#pragma mark 用户注册登录
+/**手机验证码**/
+
+//频率被限制
+#define STATU_VRIFY_SEND_LIMIT @"10001001003"
+//手机号格式有误
+#define STATU_VRIFY_PHONE_FORMAT_EROOR @"10001001002"
+//发送过快
+#define STATU_VRIFY_SEND_TOOFAST @"10001001003"
+
+
+/**登录**/
+
+//验证码错误
+#define STATU_LOGIN_VERIFYCODE_ERROR @"10001002001"
+//手机格式错误
+#define STATU_LOGIN_PHONE_FORMAT_EROOR @"10001002002"
+
+/**人脸登录**/
+
+//用户没有录入图片
+#define STATU_FACELOGIN_NO_HEAD @"10001015001"
+
+
+#pragma mark 用户信息
+/**长住信息**/
+
+//无长住和审核信息
+#define STATU_LIVEINFO_NO_INFO @"10001003001"
+//仅有审核信息
+#define STATU_LIVEINFO_HAS_REVIEW_INFO @"10001003002"
+
+/**小区信息**/
+
+//小区信息不存在
+#define STATU_DISTRICT_NO_INFO @"10006001001"
+
+
+/**催办**/
+
+//已经审核过
+#define STATU_APPLY_HAS_REVIEW @"10001004001"
+//已经催办过
+#define STATU_APPLY_HAS_APPLY @"10001004002"
+//没有审核记录
+#define STATU_APPLY_NO_RECORD @"10001004003"
+
+
+
+#pragma mark 录入信息
+
+/**录入个人信息**/
+
+//定位房子错误
+#define STATU_CHECKIN_POSITION_ERROR @"10001007001"
+//已经在房屋有记录错误
+#define STATU_CHECKIN_HAS_RECORD @"10001007002"
+//业主与预留信息不符
+#define STATU_CHECKIN_DIFF_OWNNER_INFO @"10001007003"
+//此房已经有业主
+#define STATU_CHECKIN_HAS_OWNNER @"10001007004"
+//已经申请过该房子
+#define STATU_CHECKIN_HAS_APPLY @"10001007005"
+//身份证重复
+#define STATU_CHECKIN_COMMON_IDNUM @"10001007006"
 //房屋门牌号没有完全匹配
-#define STATU_DOOR_NULL @"10001010003"
+#define STATU_CHECKIN_DOOR_NULL @"10001010003"
+
+
+/**小区楼栋房屋模糊查询**/
+
+//小区不存在错误
+#define STATU_BUILDING_NOT_EXIT @"10001010001"
+//参数格式错误
+#define STATU_BUILDING_PARAM_ERROR @"10001012002"
+//没有完全匹配错误
+#define STATU_BUILDING_NO_MATCH @"10001012003"
+
+
+/**小区房屋层级查询**/
+
+//小区不存在错误
+#define STATU_LAYER_NOT_EXIT @"10001010001"
+
+
+#pragma mark 修改手机号
+
+
+/**修改手机号**/
+
+//验证码错误
+#define STATU_UPDATEPHONE_VERIFYCODE_ERROR     @"10001013001"
+//旧手机没验证通过
+#define STATU_UPDATEPHONE_OLDPHONE_ERROR       @"10001013002"
+//验证码过期或没发
+#define STATU_UPDATEPHONE_NOVERIY_OR_INVALID   @"10001013003"
+
+
+
+
+
+#pragma mark 家庭成员管理
+
+/**家庭成员**/
+
+//已添加此家庭成员
+#define STATU_MEMBER_HAS_ADDED @"10002001001"
+//在该房屋无记录
+#define STATU_MEMBER_NO_RECORD @"10002001002"
+
+/**预登记访客/车辆**/
+
+//用户没有权限
+#define STATU_VISITOR_USER_NO_POWER @"10005001001"
 
 

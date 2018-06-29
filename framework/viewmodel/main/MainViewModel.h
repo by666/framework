@@ -19,13 +19,15 @@
 -(void)onDoCallProperty;
 -(void)onGoMessagePage;
 -(void)onGoMinePage;
-
+-(void)onOpenCheckInfoAlert;
+-(void)onGoAuthStatuPage;
 @end
 
 @interface MainViewModel : NSObject
 
 @property(weak, nonatomic)id <MainViewDelegate>delegate;
 @property(strong, nonatomic)MainModel *model;
+@property(copy, nonatomic)NSString *statu;
 
 -(void)goOpendoorPage;
 
@@ -48,5 +50,9 @@
 -(void)getUserInfo;
 
 -(void)getLiveInfo;
+
+-(void)openCheckInfoAlert;
+
+-(void)goAuthStatuPage;
 
 @end

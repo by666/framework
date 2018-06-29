@@ -9,6 +9,7 @@
 #import "VisitorHomePage.h"
 #import "VisitorHomeView.h"
 #import "VisitorPage.h"
+#import "PassHistoryPage.h"
 
 @interface VisitorHomePage ()<VisitorHomeViewDelegate>
 
@@ -25,7 +26,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = cwhite;
-    [self showSTNavigationBar:MSG_VISITORHOME_TITLE needback:YES];
+    WS(weakSelf)
+    [self showSTNavigationBar:MSG_VISITORHOME_TITLE needback:YES rightBtn:MSG_VISITORHOME_RIGHTBTN rightColor:c13 block:^{
+        [PassHistoryPage show:weakSelf];
+    }];
     [self initView];
 }
 
@@ -39,6 +43,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
 }
 

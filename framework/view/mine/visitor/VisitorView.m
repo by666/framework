@@ -29,7 +29,6 @@
 @property(strong, nonatomic)UIButton *generateBtn;
 @property(strong, nonatomic)UIButton *imageBtn;
 @property(strong, nonatomic)UILabel *tipsLabel;
-@property(strong, nonatomic)PassView *passView;
 
 @end
 
@@ -141,9 +140,14 @@
     _numberTextField =  [[UITextField alloc]initWithFont:STFont(16) textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:0];
     _numberTextField.textAlignment = NSTextAlignmentRight;
     _numberTextField.frame = CGRectMake(STWidth(273), 0 , STWidth(90), STHeight(57));
+    [_numberTextField setMaxLength:@"6"];
     [_numberTextField setPlaceholder:MSG_VISITOR_CARNUM_TIPS color:c17 fontSize:STFont(16)];
 
     [view addSubview:_numberTextField];
+    
+    if(!IS_NS_STRING_EMPTY(_mViewModel.data.carNum)){
+        _numberTextField.text = _mViewModel.data.carNum;
+    }
     
 }
 
@@ -186,6 +190,12 @@
     _tipsLabel.frame = CGRectMake(STWidth(15), STHeight(67), ScreenWidth - STWidth(30), STHeight(12));
     [_faceView addSubview:_tipsLabel];
     
+    if(!IS_NS_STRING_EMPTY(_mViewModel.data.faceUrl)){
+        [_funcSwitch setOn:YES];
+        [self onSwitchStatuChange:YES];
+        NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil]getRealUrl:_mViewModel.data.faceUrl];
+        [_imageBtn sd_setImageWithURL:url forState:UIControlStateNormal];
+    }
 
 
 }
@@ -197,6 +207,8 @@
 
 
 -(void)OnClickDateBtn{
+    [_nameTextField resignFirstResponder];
+    [_numberTextField resignFirstResponder];
     _dateLayerView.hidden = NO;
 }
 
@@ -250,8 +262,11 @@
         }
         NSString *nameStr = _nameTextField.text;
         NSString *dateStr = _dateBtn.titleLabel.text;
-        NSString *carStr = [NSString stringWithFormat:@"%@%@",_headBtn.titleLabel.text,_numberTextField.text];
-        [_mViewModel generatePass:nameStr date:dateStr carNum:carStr on:_funcSwitch.on imagePath:mImagePath type:_mType];
+        NSString *carStr = @"";
+        if(_mType == Car){
+            carStr = [NSString stringWithFormat:@"%@%@",_headBtn.titleLabel.text,_numberTextField.text];
+        }
+        [_mViewModel generatePass:nameStr date:dateStr carNum:carStr on:_funcSwitch.on imagePath:mImagePath type:_mType imageUrl:_mViewModel.data.faceUrl];
     }
 }
 
@@ -261,6 +276,8 @@
     }
 }
 
+
+
 -(void)updateView:(NSString *)imagePath{
     mImagePath = imagePath;
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
@@ -269,12 +286,12 @@
 
 }
 
--(void)showGeneratePass{
+-(void)showGeneratePass:(PassModel *)passModel{
     _tipsLabel.textColor = c12;
     _tipsLabel.text = @"";
-    
-    _passView = [[PassView alloc]initWithFrame:CGRectMake(0,0, ScreenWidth, ContentHeight) model:_mViewModel];
-    [self addSubview:_passView];
+    if(_mViewModel){
+        [_mViewModel goPassPage:_mViewModel.data passModel:passModel];
+    }
 
 }
 

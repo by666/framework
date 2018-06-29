@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "VisitorViewModel.h"
 #import "VisitorModel.h"
+#import "PassModel.h"
 
 @interface VisitorView : UIView
 
 -(instancetype)initWithViewModel:(VisitorViewModel *)model type:(VisitorType)type;
 -(void)updateView:(NSString *)imagePath;
 -(void)updateTipLabel:(NSString *)errorMsg;
--(void)showGeneratePass;
+-(void)showGeneratePass:(PassModel *)passModel;
 
 @end

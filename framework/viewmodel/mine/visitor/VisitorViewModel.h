@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "VisitorModel.h"
-@protocol VisitorViewDelegate
+#import "PassModel.h"
+@protocol VisitorViewDelegate<BaseRequestDelegate>
 
--(void)onGeneratePass:(Boolean)success msg:(NSString *)errorMsg;
+-(void)onGeneratePassFail:(NSString *)errorMsg;
 -(void)onDoTakePhoto;
+-(void)onGoPassPage:(VisitorModel *)visitorModel passModel:(PassModel *)passModel;
 
 @end
 
@@ -19,7 +21,9 @@
 @property(weak, nonatomic)id<VisitorViewDelegate> delegate;
 @property(strong, nonatomic)VisitorModel *data;
 //生成通行证
--(void)generatePass:(NSString *)name date:(NSString *)date carNum:(NSString *)carNum on:(Boolean)on imagePath:(NSString *)imagePath type:(VisitorType)type;
+-(void)generatePass:(NSString *)name date:(NSString *)date carNum:(NSString *)carNum on:(Boolean)on imagePath:(NSString *)imagePath type:(VisitorType)type imageUrl:(NSString *)imageUrl;
+
+-(void)goPassPage:(VisitorModel *)visitorModel passModel:(PassModel *)passModel;
 
 -(void)doTakePhoto;
 

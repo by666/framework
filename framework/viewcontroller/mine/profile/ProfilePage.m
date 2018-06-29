@@ -18,6 +18,7 @@
 #import "AuthStatuPage.h"
 #import "STNetUtil.h"
 #import "FaceEnterPage2.h"
+#import "STUploadImageUtil.h"
 
 @interface ProfilePage ()<ProfileViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,STObserverProtocol>
 
@@ -51,6 +52,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
 }
 
@@ -119,32 +121,41 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    
     NSString *imagePath = [STFileUtil saveImageFile:image];
     if(_mViewModel){
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [self performSelector:@selector(test:) withObject:imagePath afterDelay:1.0f];
+        [_mViewModel uploadHeadImage:imagePath];
     }
 }
 
--(void)test :(NSString *)imagePath{
-    [_mViewModel uploadHeadImage:imagePath];
-}
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)onUploadHeadImage:(Boolean)success image:(NSString *)imagePath{
-    _mViewModel.model.avatarUrl = imagePath;
-    [_mViewModel updateProfile];
+
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    });
+}
+
+-(void)onRequestFail:(NSString *)msg{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if(_mViewModel){
+        [_mViewModel updateProfile];
+    }
 }
 
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
-    _mViewModel.model.avatarUrl = msg;
-    [_mViewModel updateProfile];
+    if(_mViewModel){
+        [_mViewModel uploadHeadImage:msg];
+    }
 }
 
 

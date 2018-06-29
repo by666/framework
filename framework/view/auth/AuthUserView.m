@@ -190,9 +190,12 @@
     [_idNumTF setPlaceholder:MSG_AUTHUSER_PART2_IDNUM_HINT color:c17 fontSize:STFont(16)];
     _idNumTF.textAlignment = NSTextAlignmentRight;
     _idNumTF.frame = CGRectMake(ScreenWidth - STWidth(215), STHeight(114), STWidth(200),  STHeight(57));
+    [_idNumTF setMaxLength:@"18"];
     [view addSubview:_idNumTF];
     
 }
+
+
 
 
 -(STBuildingLayerView *)buildingLayerView:(id)data level:(int)level{
@@ -321,8 +324,13 @@
 
 
 -(void)updateDoorDatas:(NSMutableArray *)datas{
-    [_recognizeView setData:datas];
-    _recognizeView.hidden = NO;
+    if(!IS_NS_COLLECTION_EMPTY(datas)){
+        [_recognizeView setData:datas];
+        _recognizeView.hidden = NO;
+    }else{
+        [STToastUtil showFailureAlertSheet:@"该楼栋下无门牌录入信息"];
+    }
+
 }
 
 -(void)onSelectRecognizeResult:(RecognizeModel *)result{

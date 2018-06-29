@@ -41,6 +41,9 @@
 
 -(void)initTop{
     
+    UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
+    MainModel *mainModel = [[AccountManager sharedAccountManager]getMainModel];
+
     _topView = [[UIView alloc]init];
     _topView.frame = CGRectMake(0, 0, ScreenWidth, STHeight(219.1));
     [self addSubview:_topView];
@@ -50,13 +53,18 @@
     mineTitleLabel.frame = CGRectMake(0, STHeight(32), ScreenWidth, STHeight(22));
     [self addSubview:mineTitleLabel];
     
+    
+
     _avatarBtn = [[UIButton alloc]init];
     _avatarBtn.backgroundColor = cblack;
     _avatarBtn.frame = CGRectMake(STWidth(156), STHeight(78), STWidth(62), STWidth(62));
     _avatarBtn.layer.masksToBounds = YES;
     _avatarBtn.layer.cornerRadius = STWidth(31);
     _avatarBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    [_avatarBtn setImage:[UIImage imageNamed:@"ic_test1"] forState:UIControlStateNormal];
+    if(!IS_NS_STRING_EMPTY(userModel.headUrl)){
+        NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:userModel.headUrl];
+        [_avatarBtn sd_setImageWithURL:url forState:UIControlStateNormal];
+    }
     [_avatarBtn addTarget:self action:@selector(OnClickAvatarBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_avatarBtn];
     
@@ -71,21 +79,22 @@
     [self addSubview:editImageView];
     
     
-    UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
     _nameLabel = [[UILabel alloc]initWithFont:STFont(18) text:userModel.userName textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
     _nameLabel.frame = CGRectMake(0, STHeight(154), ScreenWidth, STHeight(18));
     [self addSubview:_nameLabel];
     
+
+    CGSize districtSize = [mainModel.detailAddr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
+    CGFloat districtWidth  =   STWidth(20)+ districtSize.width;
+
     UIImageView *districtImageView = [[UIImageView alloc]init];
     districtImageView.image = [UIImage imageNamed:@"ic_building_white"];
     districtImageView.contentMode = UIViewContentModeScaleAspectFill;
-    districtImageView.frame = CGRectMake(STWidth(150), STHeight(180), STHeight(14), STHeight(14));
+    districtImageView.frame = CGRectMake((ScreenWidth - districtWidth)/2, STHeight(180), STWidth(14), STHeight(14));
     [self addSubview:districtImageView];
     
-    MainModel *mainModel = [[AccountManager sharedAccountManager]getMainModel];
     _districtLabel = [[UILabel alloc]initWithFont:STFont(14) text:mainModel.detailAddr textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
-    CGSize districtSize = [mainModel.detailAddr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
-    _districtLabel.frame = CGRectMake(STWidth(170), STHeight(180),districtSize.width, STHeight(14));
+    _districtLabel.frame = CGRectMake((ScreenWidth - districtWidth)/2 + STWidth(20), STHeight(180),districtSize.width, STHeight(14));
     [self addSubview:_districtLabel];
     
     _settingBtn = [[UIButton alloc]init];
@@ -234,4 +243,13 @@
     }
 }
 
+
+//更新头像
+-(void)updateFace{
+    UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
+    if(!IS_NS_STRING_EMPTY(userModel.headUrl)){
+        NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:userModel.headUrl];
+        [_avatarBtn sd_setImageWithURL:url forState:UIControlStateNormal];
+    }
+}
 @end

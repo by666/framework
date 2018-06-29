@@ -133,7 +133,7 @@
     NSString *content = [dic mj_JSONString];
     WS(weakSelf)
     [STNetUtil post:URL_GETCOMMUNITYDOOR content:content success:^(RespondModel *respondModel) {
-        if([respondModel.status isEqualToString:STATU_SUCCESS] || [respondModel.status isEqualToString:STATU_DOOR_NULL]){
+        if([respondModel.status isEqualToString:STATU_SUCCESS] || [respondModel.status isEqualToString:STATU_CHECKIN_DOOR_NULL]){
             NSMutableArray *datas = [RecognizeModel mj_objectArrayWithKeyValuesArray:respondModel.data];
             [weakSelf.delegate onRequestSuccess:respondModel data:datas];
         }else{

@@ -221,7 +221,6 @@
 }
 
 -(void)warningStatus:(WarningStatus)statu warning:(NSString *)warningStr image:(UIImage *)image{
-    [STLog print:@"测试:" content:warningStr];
     if(_delegate){
         if(image != nil){
             [_delegate onDetectFaceResult:YES image:image tips:warningStr];

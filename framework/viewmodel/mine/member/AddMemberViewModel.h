@@ -13,7 +13,7 @@
 
 -(void)onDoTakePhoto;
 -(void)onGoLastPage;
--(void)onCheckUpdate:(MemberModel *)model;
+-(void)onCheckUpdate:(MemberModel *)model changePhoto:(Boolean)changePhoto;
 
 @end
 
@@ -25,8 +25,8 @@
 -(instancetype)initWithData:(MemberModel *)model;
 -(void)addMemberModel;
 -(void)deleteMemberModel:(MemberModel *)model;
--(void)checkUpdateMemberModel:(MemberModel *)model;
--(void)updateMemberModel:(MemberModel *)model;
+-(void)checkUpdateMemberModel:(MemberModel *)model changePhoto:(Boolean)changePhoto;
+-(void)updateMemberModel:(MemberModel *)model changePhoto:(Boolean)changePhoto;
 -(void)goLastPage;
 -(void)doTakePhoto;
 

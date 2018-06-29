@@ -32,7 +32,6 @@
     _headImageView.frame = CGRectMake(STWidth(15), STHeight(14.5), STHeight(30), STHeight(30));
     _headImageView.layer.masksToBounds = YES;
     _headImageView.layer.cornerRadius = STHeight(15);
-    _headImageView.image = [UIImage imageNamed:@"ic_test1"];
     _headImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:_headImageView];
     
@@ -59,17 +58,20 @@
 -(void)updateData:(MemberModel *)model{
     
     _titleLabel.text = model.nickname;
-    _titleLabel.frame = CGRectMake(STWidth(60), STHeight(21.5),[STPUtil textSize:model.nickname maxWidth:ScreenWidth font:STFont(16)].width , STHeight(16));
+    CGSize titleSize = [STPUtil textSize:model.nickname maxWidth:ScreenWidth font:STFont(16)];
+    _titleLabel.frame = CGRectMake(STWidth(60), STHeight(21.5),titleSize.width , STHeight(16));
 
     if(!IS_NS_STRING_EMPTY(model.identify)){
         _idetifyLabel.hidden = NO;
         _idetifyLabel.text = model.identify;
-        _idetifyLabel.frame = CGRectMake(STWidth(120), STHeight(20.5),_idetifyLabel.contentSize.width + STWidth(8), STHeight(18));
+        _idetifyLabel.frame = CGRectMake(STWidth(75) + titleSize.width, STHeight(20.5),_idetifyLabel.contentSize.width + STWidth(8), STHeight(18));
         _arrowImageView.hidden = YES;
     }else{
         _idetifyLabel.hidden = YES;
         _arrowImageView.hidden = NO;
     }
+    
+    [_headImageView sd_setImageWithURL:[[STUploadImageUtil sharedSTUploadImageUtil]getRealUrl:model.faceUrl]];
  
 }
 

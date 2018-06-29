@@ -10,7 +10,7 @@
 #import "AddMemberViewModel.h"
 #import "STTimeUtil.h"
 #import "AccountManager.h"
-
+#import <SDWebImage/UIButton+WebCache.h>
 @interface AddMemberView()
 
 @property(strong, nonatomic) AddMemberViewModel *mViewModel;
@@ -56,8 +56,8 @@
     
     
     if(_mViewModel.model && !IS_NS_STRING_EMPTY(_mViewModel.model.faceUrl)){
-        UIImage *image = [UIImage imageWithContentsOfFile:_mViewModel.model.faceUrl];
-        [_takePhotoBTN setImage:image forState:UIControlStateNormal];
+        NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:_mViewModel.model.faceUrl];
+        [_takePhotoBTN sd_setImageWithURL:url forState:UIControlStateNormal];
     }
     
     UILabel *tips2Label = [[UILabel alloc]initWithFont:STFont(14) text:MSG_ADDMEMBER_TIPS2 textAlignment:NSTextAlignmentLeft textColor:c20 backgroundColor:nil multiLine:NO];
@@ -98,7 +98,7 @@
     [_nameTextField setPlaceholder:MSG_ADDMEMBER_NAME_TIPS color:c17 fontSize:STFont(16)];
     _nameTextField.frame = CGRectMake(STWidth(175), 0  ,ScreenWidth - STWidth(190), STHeight(57));
     _nameTextField.textAlignment = NSTextAlignmentRight;
-    [_nameTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [_nameTextField setMaxLength:@"20"];
     [editView addSubview:_nameTextField];
     if(_mViewModel.model && !IS_NS_STRING_EMPTY(_mViewModel.model.nickname)){
         _nameTextField.text = _mViewModel.model.nickname;
@@ -111,7 +111,7 @@
     _idNumTextField.frame = CGRectMake(STWidth(175), STHeight(57),  ScreenWidth - STWidth(190), STHeight(57));
     _idNumTextField.textAlignment = NSTextAlignmentRight;
     [_idNumTextField setPlaceholder:MSG_ADDMEMBER_IDNUM_TIPS color:c17 fontSize:STFont(16)];
-    [_idNumTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [_idNumTextField setMaxLength:@"18"];
     [editView addSubview:_idNumTextField];
     
     if(_mViewModel.model && !IS_NS_STRING_EMPTY(_mViewModel.model.creid)){
@@ -142,26 +142,9 @@
 }
 
 -(void)updateView:(NSString *)imagePath{
-    _mViewModel.model.faceUrl = imagePath;
+    _mViewModel.model.facePath = imagePath;
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     [_takePhotoBTN setImage:image forState:UIControlStateNormal];
-}
-
-- (void)textFieldDidChange:(UITextField *)textField{
-    UITextRange * selectedRange = textField.markedTextRange;
-    if(selectedRange == nil || selectedRange.empty){
-        NSInteger maxLength = 0;
-        if(textField == _nameTextField){
-            maxLength = 20;
-        }
-        if(textField == _idNumTextField){
-            maxLength = 18;
-        }
-        NSString *text = textField.text;
-        if(text.length >= maxLength){
-            textField.text = [text substringWithRange: NSMakeRange(0, maxLength)];
-        }
-    }
 }
 
 
@@ -183,7 +166,6 @@
     _mViewModel.model.nickname = _nameTextField.text;
     _mViewModel.model.creid = _idNumTextField.text;
     _mViewModel.model.userUid = [[AccountManager sharedAccountManager]getUserModel].userUid;
-    
     _errorLabel.text = @"";
     [_mViewModel addMemberModel];
 }

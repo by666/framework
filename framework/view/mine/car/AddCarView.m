@@ -79,7 +79,7 @@
     _numTextField.frame = CGRectMake(ScreenWidth - STWidth(117), 0, STWidth(107), STHeight(60));
     _numTextField.textAlignment = NSTextAlignmentLeft;
     _numTextField.placeholder = MSG_ADDCAR_HINT;
-    [_numTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [_numTextField setMaxLength:@"6"];
     [_numTextField becomeFirstResponder];
     [contentView addSubview:_numTextField];
     
@@ -96,16 +96,6 @@
 
 
 
-- (void)textFieldDidChange:(UITextField *)textField{
-    UITextRange * selectedRange = textField.markedTextRange;
-    if(selectedRange == nil || selectedRange.empty){
-        NSInteger maxLength = 6;
-        NSString *text = textField.text;
-        if(text.length >= maxLength){
-            textField.text = [text substringWithRange: NSMakeRange(0, maxLength)];
-        }
-    }
-}
 
 -(void)OnClickHeadBtn{
     

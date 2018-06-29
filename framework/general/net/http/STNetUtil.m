@@ -13,6 +13,7 @@
 #import "AccountManager.h"
 #import "STConvertUtil.h"
 #import "STObserverManager.h"
+
 @implementation STNetUtil
 
 
@@ -197,7 +198,15 @@
 
 #pragma mark 打印请求错误信息
 +(void)printErrorInfo:(RespondModel *)model url:(NSString *)url{
-    NSString *errorInfo = [NSString stringWithFormat:@"\n------------------------------------\n***url:%@ \n***请求错误码:%@ \n***错误信息:%@\n------------------------------------",url,model.status,model.msg];
+    NSString *body = @"";
+    if([model.data isKindOfClass:[NSData class]]){
+        body = [STConvertUtil dataToString:model.data];
+    }
+    if([model.data isKindOfClass:[NSDictionary class]]){
+        body = [model.data mj_JSONString];
+    }
+    NSString *errorInfo = [NSString stringWithFormat:@"\n------------------------------------\n***url:%@ \n***请求错误码:%@ \n***错误信息:%@\n------------------------------------\n%@",url,model.status,model.msg,body];
+    
     [STLog print:errorInfo];
 }
 

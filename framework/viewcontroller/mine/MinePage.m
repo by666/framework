@@ -19,9 +19,11 @@
 #import "MessageSettingPage.h"
 #import "HabitantPage.h"
 #import "SettingPage.h"
+#import "STObserverManager.h"
 
-@interface MinePage ()<MineViewDelegate>
+@interface MinePage ()<MineViewDelegate,STObserverProtocol>
 
+@property(strong, nonatomic)MineView *mineView;
 
 @end
 
@@ -33,6 +35,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setStatuBarBackgroud:[UIColor clearColor]];
 }
 
@@ -49,10 +52,17 @@
     MineViewModel *viewModel = [[MineViewModel alloc]init];
     viewModel.delegate = self;
     
-    MineView *mineView = [[MineView alloc]initWithViewModel:viewModel];
-    mineView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
-    mineView.backgroundColor = cwhite;
-    [self.view addSubview:mineView];
+    _mineView = [[MineView alloc]initWithViewModel:viewModel];
+    _mineView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+    _mineView.backgroundColor = cwhite;
+    [self.view addSubview:_mineView];
+    
+    [[STObserverManager sharedSTObserverManager]registerSTObsever:Notify_Update_User_Face delegate:self];
+}
+
+
+-(void)dealloc{
+    [[STObserverManager sharedSTObserverManager] removeSTObsever:Notify_Update_User_Face];
 }
 
 
@@ -94,6 +104,12 @@
 
 -(void)onGoBack{
     [self backLastPage];
+}
+
+-(void)onReciveResult:(NSString *)key msg:(id)msg{
+    if(_mineView){
+        [_mineView updateFace];
+    }
 }
 
 @end

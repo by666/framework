@@ -12,6 +12,7 @@
 
 @property(copy, nonatomic)NSString *mTips1;
 @property(copy, nonatomic)NSString *mTips2;
+@property(strong, nonatomic)UILabel *tips1Label;
 
 @end
 
@@ -35,10 +36,10 @@
     succesImageView.image = [UIImage imageNamed:@"ic_success"];
     [self addSubview:succesImageView];
     
-    UILabel *tips1Label = [[UILabel alloc]initWithFont:STFont(18) text:_mTips1 textAlignment:NSTextAlignmentCenter textColor:c20 backgroundColor:nil multiLine:YES];
+    _tips1Label = [[UILabel alloc]initWithFont:STFont(18) text:_mTips1 textAlignment:NSTextAlignmentCenter textColor:c20 backgroundColor:nil multiLine:YES];
     CGSize tip1Size = [_mTips1 sizeWithMaxWidth:ScreenWidth - STWidth(60) font:[UIFont systemFontOfSize:STFont(18)]];
-    tips1Label.frame = CGRectMake(STWidth(30), STHeight(142), ScreenWidth - STWidth(60), tip1Size.height);
-    [self addSubview:tips1Label];
+    _tips1Label.frame = CGRectMake(STWidth(30), STHeight(142), ScreenWidth - STWidth(60), tip1Size.height);
+    [self addSubview:_tips1Label];
     
     UILabel *tips2Label = [[UILabel alloc]initWithFont:STFont(14) text:_mTips2 textAlignment:NSTextAlignmentCenter textColor:c20 backgroundColor:nil multiLine:YES];
     CGSize tip2Size = [_mTips2 sizeWithMaxWidth:ScreenWidth - STWidth(60) font:[UIFont systemFontOfSize:STFont(14)]];
@@ -46,4 +47,8 @@
     [self addSubview:tips2Label];
 }
 
+
+-(void)setTips1Text:(NSString *)text{
+    _tips1Label.text = text;
+}
 @end

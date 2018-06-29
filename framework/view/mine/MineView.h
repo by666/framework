@@ -12,5 +12,5 @@
 @interface MineView : UIView
 
 -(instancetype)initWithViewModel:(MineViewModel *)viewModel;
-
+-(void)updateFace;
 @end

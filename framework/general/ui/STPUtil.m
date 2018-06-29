@@ -42,6 +42,8 @@
 }
 
 +(Boolean)isIdNumberValid:(NSString *)idNum{
+    //测试修改
+    return YES;
     if (idNum.length != 18) return NO;
     NSString *regex = @"^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}([0-9]|X)$";
     NSPredicate *identityStringPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
@@ -86,5 +88,55 @@
 }
 
 
+
++(NSString *)getLiveAttr:(int)liveAttr{
+    NSString *result = @"";
+    switch (liveAttr) {
+        case Live_Owner:
+            result = MSG_AUTHUSER_PART2_IDENTIFY_DEFAULT;
+            break;
+        case Live_Member:
+            result = MSG_AUTHUSER_PART2_IDENTIFY_MEMBER;
+            break;
+        case Live_Renter:
+            result = MSG_AUTHUSER_PART2_IDENTIFY_RENTER;
+            break;
+        default:
+            break;
+    }
+    return result;
+}
+
+
++(NSString *)getBirthdayFromIdNum:(NSString *)idNum{
+    if(!IS_NS_STRING_EMPTY(idNum) && (idNum.length == 15 || idNum.length == 18)){
+        NSString *month = [idNum substringWithRange:NSMakeRange(10, 2)];
+        NSString *day = [idNum substringWithRange:NSMakeRange(12,2)];
+        return [NSString stringWithFormat:@"%@.%@",month,day];
+    }
+    return @"";
+}
+
+
++(NSString *)getGenderfromIdNum:(NSString *)numberStr{
+    NSString *sex = @"";
+    if (numberStr.length==18){
+        int sexInt=[[numberStr substringWithRange:NSMakeRange(16,1)] intValue];
+        if(sexInt%2!=0){
+            sex = @"男";
+        }else{
+            sex = @"女";
+        }
+    }
+    if (numberStr.length==15){
+        int sexInt=[[numberStr substringWithRange:NSMakeRange(14,1)] intValue];
+        if(sexInt%2!=0){
+            sex = @"男";
+        }else{
+            sex = @"女";
+        }
+    }
+    return sex;
+}
 
 @end

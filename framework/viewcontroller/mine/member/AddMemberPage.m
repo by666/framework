@@ -25,7 +25,9 @@
 
 @end
 
-@implementation AddMemberPage
+@implementation AddMemberPage{
+    Boolean changePhoto;
+}
 
 +(void)show:(BaseViewController *)controller{
     AddMemberPage *page = [[AddMemberPage alloc]init];
@@ -60,6 +62,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
 }
 
@@ -124,13 +127,14 @@
 }
 
 
--(void)onCheckUpdate:(MemberModel *)model{
+-(void)onCheckUpdate:(MemberModel *)model changePhoto:(Boolean)changePhoto{
     WS(weakSelf)
     [STAlertUtil showAlertController:MSG_PROMPT content:MSG_ADDMEMBER_UPDATE_TIPS controller:self confirm:^{
         if(weakSelf.viewModel){
-            [weakSelf.viewModel updateMemberModel:model];
+            [weakSelf.viewModel updateMemberModel:model changePhoto:(Boolean)changePhoto];
         }
     } cancel:^{
+        [[STObserverManager sharedSTObserverManager]sendMessage: Notify_UpdateMember msg:nil];
         [weakSelf onGoLastPage];
     }];
 }
@@ -144,9 +148,9 @@
         [self onGoLastPage];
         return;
     }
-//    if(_viewModel){
-//        [_viewModel checkUpdateMemberModel:[_addMemberView getCurrentModel]];
-//    }
+    if(_viewModel){
+        [_viewModel checkUpdateMemberModel:[_addMemberView getCurrentModel] changePhoto:changePhoto];
+    }
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -205,6 +209,7 @@
     UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
     NSString *imagePath = [STFileUtil saveImageFile:image];
     [_addMemberView updateView:imagePath];
+    changePhoto = YES;
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
@@ -220,6 +225,7 @@
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
     [_addMemberView updateView:msg];
+    changePhoto = YES;
 }
 
 

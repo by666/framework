@@ -32,10 +32,14 @@ typedef NS_ENUM(NSInteger,MessageStatu){
     
 };
 
+
+//申请类型:0,业主申请; 1:家属申请; 2:租客申请; 3:访客门禁申请
+
 typedef NS_ENUM(NSInteger,LIVEATRR){
-    Live_Owner = 1, //业主
-    Live_Member = 2,//家属
-    Live_Renter = 3 //租客
+    Live_Owner = 0, //业主
+    Live_Member = 1,//家属
+    Live_Renter = 2, //租客
+    Live_Door = 3
 };
 
 
@@ -44,5 +48,6 @@ typedef NS_ENUM(NSUInteger,WarningStatus){
     PoseStatus,
     occlusionStatus
 };
+
 
 

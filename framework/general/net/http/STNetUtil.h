@@ -24,4 +24,5 @@ typedef void(^ByDownloadCallback)(id respondObj);
 
 +(void)download : (NSString *)url callback : (ByDownloadCallback) callback;
 
++(void)startListenNetWork;
 @end

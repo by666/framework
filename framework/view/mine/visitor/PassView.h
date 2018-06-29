@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VisitorViewModel.h"
+#import "PassModel.h"
+#import "PassViewModel.h"
 
 @interface PassView : UIView
 
--(instancetype)initWithFrame:(CGRect)frame model:(VisitorViewModel *)model;
+-(instancetype)initWithViewModel:(PassViewModel *)viewModel;
 
 @end

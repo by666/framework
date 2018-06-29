@@ -62,7 +62,7 @@
 
 -(UILabel *)tipsLabel{
     if(_tipsLabel == nil){
-        NSString *text = [NSString stringWithFormat:MSG_HABITANT_TIPS,_currentModel.name];
+        NSString *text = [NSString stringWithFormat:MSG_HABITANT_TIPS,_currentModel.userName];
         _tipsLabel = [[UILabel alloc]initWithFont:STFont(14) text:text textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c19 multiLine:NO];
         _tipsLabel.frame = CGRectMake(0, ContentHeight - STHeight(290), ScreenWidth, STHeight(40));
     }
@@ -128,20 +128,29 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     _currentModel = [_mViewModel.datas objectAtIndex:indexPath.row];
+    //家属业主不可点击
+    if(_currentModel.liveAttr == Live_Member || _currentModel.liveAttr == Live_Owner){
+        return;
+    }
     NSString *dateStr = [STTimeUtil generateDate:[STTimeUtil getCurrentTimeStamp]];
-    if(![_currentModel.validDate isEqualToString:MSG_HABITANT_FOREVER]){
-        dateStr = _currentModel.validDate;
+    if(![_currentModel.overdue isEqualToString:MSG_HABITANT_FOREVER]){
+        dateStr = _currentModel.overdue;
     }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:MSG_DATE_FORMAT];
+    [dateFormatter setDateFormat:MSG_DATE_FORMAT_ZH];
     NSDate *date = [dateFormatter dateFromString:dateStr];
     [_picker setDate:date];
-    _tipsLabel.text =  [NSString stringWithFormat:MSG_HABITANT_TIPS,_currentModel.name];
+    _tipsLabel.text =  [NSString stringWithFormat:MSG_HABITANT_TIPS,_currentModel.userName];
     _layerView.hidden = NO;
 }
 
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    HabitantModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
+    //家属业主不可点击
+    if(model.liveAttr == Live_Member || model.liveAttr == Live_Owner){
+        return NO;
+    }
     return YES;
 }
 
@@ -160,10 +169,14 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     HabitantModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
-    __weak HabitantView *weakSelf = self;
-    [STAlertUtil showAlertController:MSG_WARN content:[NSString stringWithFormat:@"删除\"%@\"后,将会删除其账号全部信息，请慎重",model.name] controller:weakSelf.mViewModel.controller confirm:^{
-        [weakSelf.mViewModel.datas removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:indexPath.row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+    WS(weakSelf)
+    [STAlertUtil showAlertController:MSG_WARN content:[NSString stringWithFormat:@"删除\"%@\"后,将会删除其账号全部信息，请慎重",model.userName] controller:weakSelf.mViewModel.controller confirm:^{
+        
+        if(weakSelf.mViewModel){
+            [weakSelf.mViewModel deleteHabitant:model];
+        }
+//        [weakSelf.mViewModel.datas removeObjectAtIndex:indexPath.row];
+//        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:indexPath.row inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
     }];
  
 }
@@ -182,17 +195,20 @@
     
     NSDate *date = _picker.date;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = MSG_DATE_FORMAT;
+    dateFormatter.dateFormat = MSG_DATE_FORMAT_ZH;
 
     for(int i = 0 ; i < [_mViewModel.datas count] ; i++){
         HabitantModel *model = [[_mViewModel datas]objectAtIndex:i];
-        if([_currentModel.name isEqualToString: model.name]){
-            _currentModel.validDate = [dateFormatter stringFromDate:date];
+        if([_currentModel.userUid isEqualToString: model.userUid]){
+            _currentModel.overdue = [dateFormatter stringFromDate:date];
             [_mViewModel.datas replaceObjectAtIndex:i withObject:_currentModel];
         }
     }
     
-    [self updateView];
+    if(_mViewModel){
+        [_mViewModel updateHabitant:_currentModel];
+    }
+        
 }
 
 -(void)updateView{

@@ -125,6 +125,14 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if([_mViewModel.statu isEqualToString:STATU_LIVEINFO_NO_INFO]){
+        [_mViewModel openCheckInfoAlert];
+        return;
+    }else if([_mViewModel.statu isEqualToString:STATU_LIVEINFO_HAS_REVIEW_INFO]){
+        [_mViewModel goAuthStatuPage];
+        return;
+    }
     if(_mViewModel){
         switch (indexPath.row) {
             case 0:
@@ -163,6 +171,13 @@
 
 
 -(void)onClickMoreBtn{
+    if([_mViewModel.statu isEqualToString:STATU_LIVEINFO_NO_INFO]){
+        [_mViewModel openCheckInfoAlert];
+        return;
+    }else if([_mViewModel.statu isEqualToString:STATU_LIVEINFO_HAS_REVIEW_INFO]){
+        [_mViewModel goAuthStatuPage];
+        return;
+    }
     if(_mViewModel){
         [_mViewModel goMessagePage];
     }

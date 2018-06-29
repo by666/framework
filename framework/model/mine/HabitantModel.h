@@ -10,9 +10,10 @@
 
 @interface HabitantModel : NSObject
 
-@property(copy, nonatomic) NSString *avatarUrl;
-@property(copy, nonatomic) NSString *name;
-@property(copy, nonatomic) NSString *identify;
-@property(copy, nonatomic) NSString *validDate;
+@property(copy, nonatomic) NSString *userName;
+@property(copy, nonatomic) NSString *userUid;
+@property(copy, nonatomic) NSString *overdue;
+@property(copy, nonatomic) NSString *headUrl;
+@property(assign, nonatomic) int liveAttr;
 
 @end

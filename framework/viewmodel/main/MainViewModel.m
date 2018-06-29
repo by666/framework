@@ -22,6 +22,7 @@
 }
 
 
+
 -(void)goOpendoorPage{
     if(_delegate){
         [_delegate onGoOpendoorPage];
@@ -76,7 +77,19 @@
     }
 }
 
--(void)getUserInfo{
+-(void)openCheckInfoAlert{
+    if(_delegate){
+        [_delegate onOpenCheckInfoAlert];
+    }
+}
+
+-(void)goAuthStatuPage{
+    if(_delegate){
+        [_delegate onGoAuthStatuPage];
+    }
+}
+
+-(void)getUserInfo{ 
     WS(weakSelf)
     [STNetUtil get:URL_GETUSERINFO parameters:nil success:^(RespondModel *respondModel) {
         if([respondModel.status isEqualToString:STATU_SUCCESS]){
@@ -85,6 +98,9 @@
                 data.cretype = [[respondModel.data objectForKey:@"cretype"] intValue];
                 data.creid = [respondModel.data valueForKey:@"creid"];
                 data.headUrl = [respondModel.data valueForKey:@"headUrl"];
+                if(IS_NS_STRING_EMPTY(data.headUrl)){
+                    data.headUrl = @"";
+                }
                 data.userName = [respondModel.data valueForKey:@"userName"];
                 [[AccountManager sharedAccountManager]saveUserModel:data];
                 [weakSelf.delegate onRequestSuccess:respondModel data:data];
@@ -110,7 +126,7 @@
            [weakSelf.delegate onRequestFail:respondModel.status];
        }
    } failure:^(int errorCode) {
-       [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+       [weakSelf.delegate onRequestFail:[NSString stringWithFormat:@"%d",errorCode]];
    }];
 }
 

@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "STObserverManager.h"
 #import "NextLoginPage.h"
+#import "PageManager.h"
 @interface BaseViewController ()<STNavigationViewDelegate,STObserverProtocol>
 
 @property(copy,nonatomic)void(^onRightBtnClick)(void);
@@ -21,19 +22,25 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self hideNavigationBar:YES];
-//    [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_AUTHFAIL delegate:self];
+    [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_AUTHFAIL delegate:self];
 }
 
-//-(void)dealloc{
-//    [[STObserverManager sharedSTObserverManager] removeSTObsever:Notify_AUTHFAIL];
-//}
+-(void)dealloc{
+    [[STObserverManager sharedSTObserverManager] removeSTObsever:Notify_AUTHFAIL];
+}
 
-//-(void)onReciveResult:(NSString *)key msg:(id)msg{
-//
-//    [self.navigationController popToRootViewControllerAnimated:YES];
-//    NSLog(@"跳转到登录");
-//    [NextLoginPage show:self];
-//}
+-(void)onReciveResult:(NSString *)key msg:(id)msg{
+    NSLog(@"跳转到登录");
+    [[PageManager sharedPageManager]popToLoginPage:self];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [[PageManager sharedPageManager] pageAppear:self];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [[PageManager sharedPageManager] pageDisappear:self];
+}
 
 -(void)hideNavigationBar : (Boolean) hidden{
     self.navigationController.navigationBarHidden = hidden;

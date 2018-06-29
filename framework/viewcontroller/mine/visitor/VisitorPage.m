@@ -14,6 +14,7 @@
 #import "UIImage+Extensions.h"
 #import "UIImage+compress.h"
 #import "STFileUtil.h"
+#import "PassPage.h"
 #import "STObserverManager.h"
 
 @interface VisitorPage ()<VisitorViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,STObserverProtocol>
@@ -55,6 +56,7 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
 }
 
@@ -77,14 +79,27 @@
 }
 
 
--(void)onGeneratePass:(Boolean)success msg:(NSString *)errorMsg{
-    if(!success){
-        [_visitorView updateTipLabel:errorMsg];
-    }else{
-        [_visitorView showGeneratePass];
-    }
+-(void)onGeneratePassFail:(NSString *)errorMsg{
+    [_visitorView updateTipLabel:errorMsg];
 }
 
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    })
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [STToastUtil showFailureAlertSheet:msg];
+}
+
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [_visitorView showGeneratePass:data];
+}
 //人脸选择
 -(void)onDoTakePhoto{
     STSheetModel *model = [[STSheetModel alloc]init];
@@ -148,5 +163,8 @@
     }
 }
 
+-(void)onGoPassPage:(VisitorModel *)visitorModel passModel:(PassModel *)passModel{
+    [PassPage show:self passModel:passModel visitorModel:visitorModel needDelete:NO];
+}
 
 @end

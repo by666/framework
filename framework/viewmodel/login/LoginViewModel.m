@@ -55,7 +55,7 @@
             }
             
         } failure:^(int errorCode) {
-            weakSelf.loginModel.msgStr = MSG_PHONENUM_ERROR;
+            weakSelf.loginModel.msgStr = [NSString stringWithFormat:MSG_ERROR,errorCode];
             weakSelf.loginModel.msgColor = c07;
             [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
         }];

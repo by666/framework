@@ -9,12 +9,11 @@
 #import "AuthFaceView.h"
 #import "STResultView.h"
 
-@interface AuthFaceView()<MBProgressHUDDelegate>
+@interface AuthFaceView()
 
 @property(strong, nonatomic)AuthFaceViewModel *mViewModel;
 @property(strong, nonatomic)UIButton *addPhotoBtn;
 @property(strong, nonatomic)STResultView *resultView;
-@property(strong, nonatomic)MBProgressHUD *hud;
 @property(assign, nonatomic)NSInteger time;
 @property(strong, nonatomic)UIButton *nextBtn;
 
@@ -78,7 +77,7 @@
 }
 
 -(void)updateView:(NSString *)imagePath{
-    _mViewModel.userCommitModel.faceUrl = imagePath;
+    _mViewModel.userCommitModel.facePath = imagePath;
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     [_addPhotoBtn setImage:image forState:UIControlStateNormal];
     [_addPhotoBtn setImage:image forState:UIControlStateHighlighted];
@@ -91,10 +90,6 @@
 -(void)onCommitFinish{
     _time = 5;
     _resultView.hidden = NO;
-    _hud = [[MBProgressHUD alloc]initWithView:self];
-    _hud.mode = MBProgressHUDModeCustomView;
-    _hud.customView =  [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ic_finish"]];
-    [_hud show:YES];
     [self startTime];
 
 }
@@ -102,14 +97,13 @@
 
 -(void)startTime{
     if(_time <= 0){
-        [_hud hide:YES];
-        [_hud removeFromSuperview];
+        [_resultView setTips1Text:MSG_AUTHSTATU_SUBMIT_SUCCESS];
         if(_mViewModel){
             [_mViewModel goMainPage];
         }
         return;
     }
-    _hud.labelText = [NSString stringWithFormat:@"提交信息成功！%ld秒后进入主页",_time];
+    [_resultView setTips1Text:[NSString stringWithFormat:@"提交信息成功！%ld秒后进入主页",_time]];
     _time --;
     WS(weakSelf)
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

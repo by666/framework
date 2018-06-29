@@ -20,45 +20,98 @@
     return self;
 }
 
--(HabitantModel *)buildModel:(NSString *)name identify:(NSString *)identify validDate:(NSString *)validDate{
-    HabitantModel *model = [[HabitantModel alloc]init];
-    model.name = name;
-    model.identify = identify;
-    model.validDate = validDate;
-    return model;
-}
 
 
 
 -(void)requestDatas{
     if(_delegate){
         [_delegate onRequestBegin];
-    }
-    LiveModel *liveModel = [[AccountManager sharedAccountManager]getLiveModel];
-    WS(weakSelf)
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    dic[@"homeLocator"] = liveModel.homeLocator;
-    dic[@"districtUid"] = liveModel.districtUid;
-    [STNetUtil get:URL_GET_HABITANT parameters:dic success:^(RespondModel *respondModel) {
-        if([respondModel.status isEqualToString:STATU_SUCCESS]){
-            [weakSelf.delegate onRequestSuccess:respondModel data:nil];
-        }else{
-            [weakSelf.delegate onRequestFail:respondModel.msg];
-        }
-    } failure:^(int errorCode) {
-        [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
-    }];
-    
 
+        LiveModel *liveModel = [[AccountManager sharedAccountManager]getLiveModel];
+        WS(weakSelf)
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        dic[@"homeLocator"] = liveModel.homeLocator;
+        dic[@"districtUid"] = liveModel.districtUid;
+        [STNetUtil get:URL_GET_HABITANT parameters:dic success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                weakSelf.datas = [HabitantModel mj_objectArrayWithKeyValuesArray:respondModel.data];
+                [weakSelf formatDates];
+                [weakSelf.delegate onRequestSuccess:respondModel data:weakSelf.datas];
+            }else{
+                [weakSelf.delegate onRequestFail:respondModel.msg];
+            }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        }];
+      }
+    
+}
+
+-(void)formatDates{
+    if(!IS_NS_COLLECTION_EMPTY(_datas)){
+        @synchronized(self){
+            for(HabitantModel *model in _datas){
+                NSString *year = [model.overdue substringWithRange:NSMakeRange(0, 4)];
+                NSString *month = [model.overdue substringWithRange:NSMakeRange(5, 2)];
+                NSString *day = [model.overdue substringWithRange:NSMakeRange(8, 2)];
+                model.overdue = [NSString stringWithFormat:@"%@年%@月%@日",year,month,day];
+            }
+        }
+    }
 }
 
 
 -(void)deleteHabitant:(HabitantModel *)model{
-    
+    if(_delegate){
+        [_delegate onRequestBegin];
+        LiveModel *liveModel = [[AccountManager sharedAccountManager]getLiveModel];
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        dic[@"districtUid"] = liveModel.districtUid;
+        dic[@"homeLocator"] = liveModel.homeLocator;
+        dic[@"userUid"] = model.userUid;
+        NSString *overdue = [model.overdue stringByReplacingOccurrencesOfString:@"年" withString:@"-"];
+        overdue = [overdue stringByReplacingOccurrencesOfString:@"月" withString:@"-"];
+        overdue = [overdue stringByReplacingOccurrencesOfString:@"日" withString:@""];
+        dic[@"overdue"] = overdue;
+        WS(weakSelf)
+        [STNetUtil post:URL_DELETE_HABITANT content:dic.mj_JSONString success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                [weakSelf.datas removeObject:model];
+                [weakSelf.delegate onRequestSuccess:respondModel data:respondModel.data];
+            }else{
+                [weakSelf.delegate onRequestFail:respondModel.msg];
+            }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+            
+        }];
+    }
 }
 
 -(void)updateHabitant:(HabitantModel *)model{
-    
+    if(_delegate){
+        [_delegate onRequestBegin];
+        LiveModel *liveModel = [[AccountManager sharedAccountManager]getLiveModel];
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        dic[@"districtUid"] = liveModel.districtUid;
+        dic[@"homeLocator"] = liveModel.homeLocator;
+        dic[@"userUid"] = model.userUid;
+        NSString *overdue = [model.overdue stringByReplacingOccurrencesOfString:@"年" withString:@"-"];
+        overdue = [overdue stringByReplacingOccurrencesOfString:@"月" withString:@"-"];
+        overdue = [overdue stringByReplacingOccurrencesOfString:@"日" withString:@""];
+        dic[@"overdue"] = overdue;
+        WS(weakSelf)
+        [STNetUtil post:URL_UPDATE_HABITANT content:dic.mj_JSONString success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                [weakSelf.delegate onRequestSuccess:respondModel data:respondModel.data];
+            }else{
+                [weakSelf.delegate onRequestFail:respondModel.msg];
+            }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+
+        }];
+    }
 }
 
 @end

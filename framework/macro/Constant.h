@@ -19,8 +19,10 @@
 #define MSG_COMMIT @"提交"
 #define MSG_SEARCH @"搜索"
 #define MSG_MORE @"更多"
-#define MSG_DATE_FORMAT @"YYYY年MM月dd日"
-#define MSG_DATE_FORMAT2 @"YYYY.MM.dd"
+#define MSG_DATE_FORMAT_ZH @"YYYY年MM月dd日"
+#define MSG_DATE_FORMAT_POINT @"YYYY.MM.dd"
+#define MSG_DATE_FORMAT_ALL @"YYYY-MM-dd HH:mm:ss"
+
 #define MSG_CHOOSE @"请选择"
 #define MSG_KOWN @"知道了"
 #define MSG_ADD_SUCCESS @"添加成功"
@@ -56,6 +58,7 @@
 #define MSG_MAIN_PROPERTY @"物业消息"
 #define MSG_MAIN_TITLE_ARRAY @"手机开门|访客车辆缴费|访客登记|最近来访|室内报修|设备共享|呼叫物管|消息通知|我的"
 #define MSG_MAIN_PROPERTY @"物业消息"
+#define MSG_MAIN_CHECKIN @"请先认证身份信息"
 
 //个人主页
 #define MSG_MINE_TITLE @"我的"
@@ -116,6 +119,7 @@
 #define MSG_MEMBER_TIPS @"管理家庭成员人脸图像信息，用于门禁出入"
 #define MSG_MEMBER_ADDBTN @"+ 添加家庭成员"
 #define MSG_MEMBER_DELETE_TIPS @"此操作将会删除和该成员绑定的一切信息，是否确定删除？"
+#define MSG_MEMBER_ROOT @"管理员"
 
 //添加家庭成员页面
 #define MSG_ADDMEMBER_TITLE @"添加家庭成员"
@@ -188,6 +192,7 @@
 
 //访客登记主页
 #define MSG_VISITORHOME_TITLE @"来访登记"
+#define MSG_VISITORHOME_RIGHTBTN @"登记记录"
 #define MSG_VISITORHOME_PEOPLE_BUTTON @"访客登记"
 #define MSG_VISITORHOME_CAR_BUTTON @"来访车辆登记"
 #define MSG_VISITORHOME_ENTER_TIME @"进入时间：%@"
@@ -203,26 +208,42 @@
 #define MSG_VISITOR_CARNUM @"车牌号码"
 #define MSG_VISITOR_CARNUM_TIPS @"如:88888"
 #define MSG_VISITOR_FACEDECTED @"人脸自动开门"
-#define MSG_VISITOR_GENERATE_BTN @"生成临时通行证"
+#define MSG_VISITOR_GENERATE_BTN @"生成临时开锁码"
 #define MSG_VISITOR_ERROR_NONAME @"请输入访客姓名"
 #define MSG_VISITOR_ERROR_NODATE @"请选择访问日期"
 #define MSG_VISITOR_ERROR_NOCARNUM @"请输入车牌号"
 #define MSG_VISITOR_ERROR_NOFACEDETECT @"请上传人脸照片"
 #define MSG_VISITOR_TIPS @"开启后，访客可”刷脸“直接进入门禁"
 
-//临时通行证
+//临时开锁码
 #define MSG_PASSVIEW_TITLE @"详细来访信息"
 #define MSG_PASSVIEW_NAME @"拜访人：%@"
 #define MSG_PASSVIEW_DATE @"预计来访时间：%@"
+#define MSG_PASSVIEW_CARNUM @"车牌号码：%@"
 #define MSG_PASSVIEW_LOCKCODE @"开锁码"
 #define MSG_PASSVIEW_TIPS @"访客（%@）可以人脸识别，或使用二维码（或开锁码）通过门禁"
 #define MSG_PASSVIEW_SHAREBTN @"微信分享给朋友"
+#define MSG_PASSPAGE_TITLE @"临时开锁码"
+#define MSG_PASSVIEW_REGENERATEBTN @"再次生成开锁码"
+#define MSG_PASSVIEW_INVAILD @"超过预约来访时间，开锁码已失效"
+#define MSG_PASSPAGE_DELETE_TIPS @"删除开锁码将导致二维码失效，是否确定删除？"
+
+//开锁码历史
+#define MSG_PASSHISTORY_TITLE @"访客登记记录"
+#define MSG_PASSHISTORY_NAME @"访客姓名：%@"
+#define MSG_PASSHISTORY_CARNUM @"车牌号码：%@"
+#define MSG_PASSHISTORY_VISITTIME @"来访时间：%@"
+#define MSG_PASSHISTORY_CHECKTIME @"登记时间：%@"
+#define MSG_PASSHISTORY_PASSBTN @"查看开锁码"
+
 
 
 //访客通行记录
 #define MSG_VISITORHISTORY_TITLE @"来访通行记录"
 #define MSG_VISITORHISTORY_RIGHTBTN @"访客登记"
 #define MSG_VISITORHISTORY_AUTH @"再次授权"
+
+
 
 //信息审核
 #define MSG_AUTHSTATU_TITLE @"信息审核"

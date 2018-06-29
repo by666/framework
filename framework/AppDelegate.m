@@ -27,6 +27,9 @@
 #import "MessagePage.h"
 #import "IDLFaceSDK/IDLFaceSDK.h"
 #import "FaceParameterConfig.h"
+#import "PageManager.h"
+#import "STNetUtil.h"
+#import "STUploadImageUtil.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>
 
@@ -57,19 +60,11 @@
     [STUpdateUtil checkUpdate:^(NSString *appname, NSString *url, double version) {
 //        [self showUpdateAlert:url version:version];
     }];
-    NSString *test =  [NSString stringWithFormat:@"%ld",(1UL << 0)];
-    NSString *test1 = [NSString stringWithFormat:@"%ld",(1UL << 1)];
-    NSString *test2 = [NSString stringWithFormat:@"%ld",(1UL << 2)];
-    NSString *test3 = [NSString stringWithFormat:@"%ld",(1UL << 3)];
-    NSString *test4 = [NSString stringWithFormat:@"%ld",(1UL << 4)];
-    NSString *test5 = [NSString stringWithFormat:@"%ld",(1UL << 5)];
-    [STLog print:test];
-    [STLog print:test1];
-    [STLog print:test2];
-    [STLog print:test3];
-    [STLog print:test4];
-    [STLog print:test5];
     
+    [[PageManager sharedPageManager]initManager];
+    
+    [STNetUtil startListenNetWork];
+    [[STUploadImageUtil sharedSTUploadImageUtil]initOSS];
 
     return YES;
 }
@@ -142,6 +137,8 @@
         [[FaceSDKManager sharedInstance] setLicenseID:FACE_LICENSE_ID andLocalLicenceFile:licensePath];
     }
 }
+
+
 
 #pragma mark 系统自带回调
 - (void)applicationWillResignActive:(UIApplication *)application {

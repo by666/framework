@@ -25,7 +25,7 @@
     self.view.backgroundColor = c15;
     WS(weakSelf)
     [self showSTNavigationBar:MSG_VISITORHISTORY_TITLE needback:YES rightBtn:MSG_VISITORHISTORY_RIGHTBTN  rightColor:c13 block:^{
-        [VisitorPage show:self type:People];
+        [VisitorPage show:weakSelf type:People];
     }];
     [self initView];
 }
@@ -42,6 +42,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
 }
 

@@ -34,7 +34,9 @@
 #import "NSString+Extension.h"
 #import "BaseRequestDelegate.h"
 #import "STToastUtil.h"
-
+#import "UIImageView+WebCache.h"
+#import <SDWebImage/UIButton+WebCache.h>
+#import "STUploadImageUtil.h"
 //JPush相光
 // 引入JPush功能所需头文件
 #import "JPUSHService.h"
@@ -85,17 +87,12 @@
 
 #define IS_NS_COLLECTION_EMPTY(collection) (collection == nil || [collection count] == 0)
 
-#define IS_NS_STRING_EMPTY(str) (str == nil || [str isEqualToString:@""])
+#define IS_NS_STRING_EMPTY(str) ([str isEqual:[NSNull null]] || [str isKindOfClass:[NSNull class]]  || str == nil || [str isEqualToString:@""])
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 #define LineHeight 0.5
 
 #endif /* STPrefixHeader_pch */
-
-//主线程同步队列
-#define dispatch_main_sync_safe(block)   dispatch_sync(dispatch_get_main_queue(), block);
-//主线程异步队列
-#define dispatch_main_async_safe(block)  dispatch_async(dispatch_get_main_queue(), block);
 
 

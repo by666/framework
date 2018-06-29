@@ -77,6 +77,7 @@
                                       @{NSForegroundColorAttributeName:[cwhite colorWithAlphaComponent:0.5f],
                                         NSFontAttributeName:_phoneNumTF.font
                                         }];
+    [_phoneNumTF setMaxLength:@"11"];
     _phoneNumTF.attributedPlaceholder = phoneNumStr;
     [self addSubview:_phoneNumTF];
     
@@ -92,6 +93,7 @@
                                        @{NSForegroundColorAttributeName:[cwhite colorWithAlphaComponent:0.5f],
                                          NSFontAttributeName:_verifyCodeTF.font
                                          }];
+    [_verifyCodeTF setMaxLength:@"6"];
     _verifyCodeTF.attributedPlaceholder = verifyCodeStr;
     [self addSubview:_verifyCodeTF];
     

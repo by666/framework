@@ -34,4 +34,13 @@
 //计算字符串宽度
 +(CGSize)textSize:(NSString *)text maxWidth:(CGFloat)maxWidth font:(CGFloat)font;
 
+//身份转换
++(NSString *)getLiveAttr:(int)liveAttr;
+
+//通过身份证号获取生日
++(NSString *)getBirthdayFromIdNum:(NSString *)idNum;
+
+//通过身份证号获取性别
++(NSString *)getGenderfromIdNum:(NSString *)numberStr;
+
 @end

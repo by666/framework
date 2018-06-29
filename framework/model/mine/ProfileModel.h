@@ -12,7 +12,7 @@
 
 
 @property(strong, nonatomic)UIImage *image;
-@property(copy, nonatomic)NSString *avatarUrl;
+@property(copy, nonatomic)NSString *headUrl;
 @property(copy, nonatomic)NSString *name;
 @property(copy, nonatomic)NSString *gender;
 @property(copy, nonatomic)NSString *birthday;

@@ -41,6 +41,7 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
 }
 
@@ -123,7 +124,7 @@
                 _viewModel.userCommitModel.homeLocator = model.homeLocator;
             }
         }
-        if([respondModel.status isEqualToString:STATU_DOOR_NULL]){
+        if([respondModel.status isEqualToString:STATU_CHECKIN_DOOR_NULL]){
             if(_authUserView){
                 [_authUserView updateDoorDatas:data];
             }

@@ -52,6 +52,7 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
 }
 
@@ -88,6 +89,12 @@
 
 -(void)onRequestFail:(NSString *)msg{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [STToastUtil showFailureAlertSheet:msg];
+    if([msg isEqualToString:STATU_CHECKIN_DIFF_OWNNER_INFO] || [msg isEqualToString:STATU_CHECKIN_HAS_APPLY]){
+        if(_authFaceView){
+            [_authFaceView onCommitFinish];
+        }
+    }
 }
 
 

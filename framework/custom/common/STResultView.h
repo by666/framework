@@ -11,5 +11,5 @@
 @interface STResultView : UIView
 
 -(instancetype)initWithTips:(NSString *)tips1 tips2:(NSString *)tips2;
-
+-(void)setTips1Text:(NSString *)text;
 @end

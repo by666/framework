@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MemberModel : NSObject<NSCopying>
+@interface MemberModel : NSObject
 
 @property(copy, nonatomic)NSString *identify;
 
@@ -26,6 +26,8 @@
 @property(copy, nonatomic)NSString *faceUrl;
 //小区ID
 @property(copy, nonatomic)NSString *districtUid;
+//人脸本地路径
+@property(copy, nonatomic)NSString *facePath;
 
 +(MemberModel *)buildModel:(NSString *)nickname homeLocator:(NSString *)homeLocator cretype:(int)cretype creid:(NSString *)creid faceUrl:(NSString *)faceUrl districtUid:(NSString *)districtUid userUid:(NSString *)userUid;
 

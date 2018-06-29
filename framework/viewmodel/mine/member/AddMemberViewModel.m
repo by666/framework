@@ -8,7 +8,7 @@
 
 #import "AddMemberViewModel.h"
 #import "STNetUtil.h"
-
+#import "STUploadImageUtil.h"
 @interface AddMemberViewModel()
 
 @property(strong, nonatomic)MemberModel *originModel;
@@ -25,22 +25,32 @@
     return self;
 }
 
+
+//上传添加成员头像
 -(void)addMemberModel{
     if(_delegate){
         [_delegate onRequestBegin];
-        UIImage *image = [UIImage imageWithContentsOfFile:_model.faceUrl];
+//        UIImage *image = [UIImage imageWithContentsOfFile:_model.faceUrl];
+//        WS(weakSelf)
+//        [STNetUtil upload:image url:URL_UPLOAD_IMAGE success:^(RespondModel *respondModel) {
+//            weakSelf.model.faceUrl = [respondModel.data objectForKey:@"path"];
+//            [self uploadAddMember];
+//        } failure:^(int errorCode) {
+//            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+//        }];
         WS(weakSelf)
-        [STNetUtil upload:image url:URL_UPLOAD_IMAGE success:^(RespondModel *respondModel) {
-            weakSelf.model.faceUrl = [respondModel.data objectForKey:@"path"];
-            [self uploadMember];
-        } failure:^(int errorCode) {
-            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        [[STUploadImageUtil sharedSTUploadImageUtil]uploadImageForOSS:_model.facePath success:^(NSString *imageUrl) {
+            weakSelf.model.faceUrl = imageUrl;
+            [self uploadAddMember];
+        } failure:^(NSString *errorStr) {
+            [weakSelf.delegate onRequestFail:errorStr];
         }];
     }
 
 }
 
--(void)uploadMember{
+//添加成员
+-(void)uploadAddMember{
     if(_delegate){
         WS(weakSelf)
         MemberModel *model = [MemberModel buildModel:_model.nickname homeLocator:_model.homeLocator cretype:0 creid:_model.creid faceUrl:_model.faceUrl districtUid:_model.districtUid userUid:_model.userUid];
@@ -78,32 +88,62 @@
 }
 
 
--(void)checkUpdateMemberModel:(MemberModel *)model{
+-(void)checkUpdateMemberModel:(MemberModel *)model changePhoto:(Boolean)changePhoto{
     Boolean nickEqual = [_originModel.nickname isEqualToString:model.nickname];
-//    Boolean imageEqual = [_originModel.faceUrl isEqualToString:_model.faceUrl];
     Boolean idNumEqual = [_originModel.creid isEqualToString:model.creid];
     if(_delegate){
-        if(nickEqual && idNumEqual){
+        if(nickEqual && idNumEqual && !changePhoto){
             [self goLastPage];
         }else{
-            [_delegate onCheckUpdate:model];
+            [_delegate onCheckUpdate:model changePhoto:changePhoto];
         }
     }
 }
 
--(void)updateMemberModel:(MemberModel *)model{
-    WS(weakSelf)
-    [_delegate onRequestBegin];
-    NSString *jsonStr = [model mj_JSONString];
-    [STNetUtil post:URL_UPDATEFAMILY_MEMBER content:jsonStr success:^(RespondModel *respondModel) {
-        if([respondModel.status isEqualToString:STATU_SUCCESS]){
-            [weakSelf.delegate onRequestSuccess:respondModel data:model];
+-(void)updateMemberModel:(MemberModel *)model changePhoto:(Boolean)changePhoto{
+    if(_delegate){
+        [_delegate onRequestBegin];
+        if(changePhoto){
+//            UIImage *image = [UIImage imageWithContentsOfFile:model.faceUrl];
+//            WS(weakSelf)
+//            [STNetUtil upload:image url:URL_UPLOAD_IMAGE success:^(RespondModel *respondModel) {
+//                model.faceUrl = [respondModel.data objectForKey:@"path"];
+//                [weakSelf uploadUpdateMemberModel:model];
+//            } failure:^(int errorCode) {
+//                [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+//            }];
+            WS(weakSelf)
+            [[STUploadImageUtil sharedSTUploadImageUtil] uploadImageForOSS:model.facePath success:^(NSString *imageUrl) {
+                model.faceUrl = imageUrl;
+                [weakSelf uploadUpdateMemberModel:model];
+            } failure:^(NSString *errorStr) {
+                [weakSelf.delegate onRequestFail:errorStr];
+            }];
+            
         }else{
-            [weakSelf.delegate onRequestFail:respondModel.msg];
+            [self uploadUpdateMemberModel:model];
         }
-    } failure:^(int errorCode) {
-        [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
-    }];
+        
+    }
+
+}
+
+
+-(void)uploadUpdateMemberModel:(MemberModel *)model{
+    if(_delegate){
+        WS(weakSelf)
+//        [_delegate onRequestBegin];
+        NSString *jsonStr = [model mj_JSONString];
+        [STNetUtil post:URL_UPDATEFAMILY_MEMBER content:jsonStr success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                [weakSelf.delegate onRequestSuccess:respondModel data:model];
+            }else{
+                [weakSelf.delegate onRequestFail:respondModel.msg];
+            }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        }];
+    }
 }
 
 

@@ -35,6 +35,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
 }
 
@@ -58,15 +59,15 @@
 
 -(void)initView{
     [self.view addSubview:[self memberView]];
+    if(_viewModel){
+        [_viewModel requestMemberDatas];
+    }
 }
 
 
 
 -(void)onRequestBegin{
-    WS(weakSelf)
-    dispatch_main_async_safe(^{
-        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
-    });
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
 -(void)onRequestFail:(NSString *)msg{
@@ -89,11 +90,7 @@
     [AddMemberPage show:self model:model];
 }
 
--(void)onDeleteMember:(Boolean)success model:(MemberModel *)model row:(NSInteger)row{
-    if(_memberView){
-        [_memberView updateView];
-    }
-}
+
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
     if([key isEqualToString:Notify_AddMember] || [key isEqualToString:Notify_DeleteMember] || [key isEqualToString:Notify_UpdateMember]){

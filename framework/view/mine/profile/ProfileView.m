@@ -8,6 +8,7 @@
 
 #import "ProfileView.h"
 #import "ProfileCell.h"
+#import "AccountManager.h"
 
 @interface ProfileView()<UITableViewDelegate,UITableViewDataSource>
 
@@ -37,7 +38,7 @@
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:_tableView];
-    
+
 
     _tipsBtn = [[UIButton alloc]initWithFont:STFont(14) text:MSG_PROFILE_VERIFY textColor:cwhite backgroundColor:c24 corner:0 borderWidth:0 borderColor:nil];
     _tipsBtn.frame = CGRectMake(0, 0, ScreenWidth, STHeight(26));
@@ -48,16 +49,24 @@
 }
 
 -(void)fillInData{
+    
+    UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
+    LiveModel *liveModel = [[AccountManager sharedAccountManager] getLiveModel];
     ProfileModel *model = [[ProfileModel alloc]init];
-    model.name = @"张三丰";
-    model.gender = @"男";
-    model.birthday = @"11.11";
-    model.idNum = @"36240219911110412";
-    model.identify = @"业主";
-    model.phoneNum = @"186****6420";
+    model.name = userModel.userName;
+    model.gender = [STPUtil getGenderfromIdNum:userModel.creid];
+    model.birthday = [STPUtil getBirthdayFromIdNum:userModel.creid];
+    model.idNum = userModel.creid;
+    model.identify = [STPUtil getLiveAttr:liveModel.liveAttr];
+    model.phoneNum = userModel.phoneNum;
+    model.headUrl = userModel.headUrl;
     
     _mViewModel.model = model;
     [_mViewModel updateProfile];
+    
+    if(liveModel.delState == 1){
+        _tipsBtn.hidden = YES;
+    }
 
 }
 

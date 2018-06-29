@@ -48,7 +48,7 @@
 
 -(void)setDate:(NSString *)dateStr{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:MSG_DATE_FORMAT2];
+    [dateFormatter setDateFormat:MSG_DATE_FORMAT_POINT];
     NSDate *date = [dateFormatter dateFromString:dateStr];
     [_picker setDate:date];
 }
@@ -106,7 +106,7 @@
     
     NSDate *date = _picker.date;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = MSG_DATE_FORMAT2;
+    dateFormatter.dateFormat = MSG_DATE_FORMAT_POINT;
     
     if(_delegate){
         [_delegate OnDateSelectResult:[dateFormatter stringFromDate:date]];

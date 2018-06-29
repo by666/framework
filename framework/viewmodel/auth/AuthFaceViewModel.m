@@ -8,6 +8,7 @@
 
 #import "AuthFaceViewModel.h"
 #import "STNetUtil.h"
+#import "STUploadImageUtil.h"
 @interface AuthFaceViewModel()
 
 @end
@@ -29,14 +30,23 @@
 
 -(void)commitUserInfo{
     if(_delegate){
+//        [_delegate onRequestBegin];
+//        UIImage *image = [UIImage imageWithContentsOfFile:_userCommitModel.facePath];
+//        WS(weakSelf)
+//        [STNetUtil upload:image url:URL_UPLOAD_IMAGE success:^(RespondModel *respondModel) {
+//            weakSelf.userCommitModel.faceUrl = [respondModel.data objectForKey:@"path"];
+//            [self upload];
+//        } failure:^(int errorCode) {
+//            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+//        }];
+        
         [_delegate onRequestBegin];
-        UIImage *image = [UIImage imageWithContentsOfFile:_userCommitModel.faceUrl];
         WS(weakSelf)
-        [STNetUtil upload:image url:URL_UPLOAD_IMAGE success:^(RespondModel *respondModel) {
-            weakSelf.userCommitModel.faceUrl = [respondModel.data objectForKey:@"path"];
+        [[STUploadImageUtil sharedSTUploadImageUtil]uploadImageForOSS:_userCommitModel.facePath success:^(NSString *imageUrl) {
+            weakSelf.userCommitModel.faceUrl = imageUrl;
             [self upload];
-        } failure:^(int errorCode) {
-            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        } failure:^(NSString *errorStr) {
+            [weakSelf.delegate onRequestFail:errorStr];
         }];
     }
 
@@ -52,7 +62,7 @@
             if([respondModel.status isEqualToString:STATU_SUCCESS]){
                 [weakSelf.delegate onRequestSuccess:respondModel data:nil];
             }else{
-                [weakSelf.delegate onRequestFail:respondModel.msg];
+                [weakSelf.delegate onRequestFail:respondModel.status];
             }
         } failure:^(int errorCode) {
             [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
@@ -82,7 +92,8 @@
     userDic[@"creid"] = _userCommitModel.creid;
     userDic[@"cretype"] = _userCommitModel.cretype;
     userDic[@"userName"] = _userCommitModel.userName;
-    
+    userDic[@"headUrl"] = _userCommitModel.faceUrl;
+
     dic[@"liveUserInfo"] = liveDic;
     dic[@"userInfo"]  = userDic;
     

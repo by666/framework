@@ -21,7 +21,8 @@
 #import "DeviceSharePage.h"
 #import "AccountManager.h"
 #import "FaceEnterPage2.h"
-#import "IDLFaceSDK/IDLFaceSDK.h" 
+#import "IDLFaceSDK/IDLFaceSDK.h"
+#import "AuthStatuPage.h"
 
 @interface MainPage ()<MainViewDelegate>
 
@@ -52,6 +53,7 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
 }
 
@@ -131,17 +133,31 @@
             _positionLabel.frame = CGRectMake(STWidth(52), 0, labelSize.width, NavigationBarHeight);
 
         }
+    }else if([respondModel.requestUrl isEqualToString:URL_GETLIVEINFO]){
+        if(_mViewModel){
+            _mViewModel.statu = STATU_SUCCESS;
+        }
     }
 }
 
 -(void)onRequestFail:(NSString *)msg{
-    //信息未录入
-    if([msg isEqualToString:STATU_LIVEINFO_NULL]){
-        WS(weakSelf)
-        [STAlertUtil showAlertController:@"" content:@"请先认证身份信息" controller:self confirm:^{
-            [AuthUserPage show:weakSelf];
-        }];
+    if([msg isEqualToString:STATU_LIVEINFO_NO_INFO]){
+        [self onOpenCheckInfoAlert];
     }
+    _mViewModel.statu = msg;
+}
+
+
+-(void)onOpenCheckInfoAlert{
+    WS(weakSelf)
+    [STAlertUtil showAlertController:@"" content:MSG_MAIN_CHECKIN controller:self confirm:^{
+        [AuthUserPage show:weakSelf];
+    }];
+}
+
+
+-(void)onGoAuthStatuPage{
+    [AuthStatuPage show:self];
 }
 
 @end

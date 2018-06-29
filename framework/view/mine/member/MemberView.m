@@ -49,7 +49,6 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:_tableView];
     
-    [_mViewModel requestMemberDatas];
 }
 
 
@@ -88,7 +87,7 @@
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     MemberModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
-    if(![model.identify isEqualToString:@"管理员"]){
+    if(![model.identify isEqualToString:MSG_MEMBER_ROOT]){
         [_mViewModel goEditMemberView:model];
     }
 }
@@ -96,7 +95,7 @@
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     MemberModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
-    if([model.identify isEqualToString:@"管理员"]){
+    if([model.identify isEqualToString:MSG_MEMBER_ROOT]){
         return NO;
     }
     return YES;
@@ -108,7 +107,7 @@
 
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return @"删除";
+    return MSG_DELETE;
 }
 
 - (BOOL)tableView: (UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -19,9 +19,12 @@
 #define Notify_DeleteCar @"delete_car"
 #define Notify_AddCar @"add_car"
 #define Notify_UpdateAddress @"update_address"
+#define Notify_DeleteCheck @"delete_check"
 
 #define Notify_MESSAGE_AGREE @"msg_agree"
 #define Notify_MESSAGE_REJECT @"msg_reject"
+
+#define Notify_Update_User_Face @"update_user_face"
 
 
 #define Notify_AUTHFAIL @"auth_fail"
