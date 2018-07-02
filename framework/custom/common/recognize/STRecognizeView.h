@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "RecognizeModel.h"
 
 @protocol STRecognizeViewDelegate
 
--(void)onSelectRecognizeResult:(NSString *)result;
+-(void)onSelectRecognizeResult:(RecognizeModel *)result;
+-(void)onCloseRecongnizeResult;
 
 @end
 

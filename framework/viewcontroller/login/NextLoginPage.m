@@ -43,8 +43,7 @@
 }
 
 -(void)onGoFaceLoginPage{
-    FaceLoginPage *page = [[FaceLoginPage alloc]init];
-    [self pushPage:page];
+    [FaceLoginPage show:self];
 }
 
 -(void)onGoLoginPage{

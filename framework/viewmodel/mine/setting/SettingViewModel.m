@@ -21,9 +21,11 @@
 }
 
 -(void)initData{
+    
+    UserModel *model = [[AccountManager sharedAccountManager]getUserModel];
     [_datas addObject:[TitleContentModel buildModel:MSG_SETTING_PUSH content:nil isSwitch:YES]];
     [_datas addObject:[TitleContentModel buildModel:MSG_SETTING_FACELOGIN content:nil isSwitch:YES]];
-    [_datas addObject:[TitleContentModel buildModel:MSG_SETTING_UPDATE_PHONENUM content:@"186****6420" isSwitch:NO]];
+    [_datas addObject:[TitleContentModel buildModel:MSG_SETTING_UPDATE_PHONENUM content:[STPUtil getSecretPhoneNum:model.phoneNum] isSwitch:NO]];
     [_datas addObject:[TitleContentModel buildModel:MSG_SETTING_ABOUT content:@"v1.0" isSwitch:NO]];
 }
 

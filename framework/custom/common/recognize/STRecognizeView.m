@@ -122,6 +122,9 @@
 
 -(void)OnClickLayerView{
     self.hidden = YES;
+    if(_delegate){
+        [_delegate onCloseRecongnizeResult];
+    }
 }
 
 -(void)setData : (NSMutableArray *)datas{

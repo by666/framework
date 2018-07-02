@@ -153,6 +153,7 @@
     [STAlertUtil showAlertController:@"" content:MSG_MAIN_CHECKIN controller:self confirm:^{
         [AuthUserPage show:weakSelf];
     }];
+
 }
 
 

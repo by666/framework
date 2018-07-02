@@ -328,7 +328,8 @@
         [_recognizeView setData:datas];
         _recognizeView.hidden = NO;
     }else{
-        [STToastUtil showFailureAlertSheet:@"该楼栋下无门牌录入信息"];
+        [STToastUtil showFailureAlertSheet:@"输入的门牌号有误，请重新输入"];
+        _doorTF.text = @"";
     }
 
 }
@@ -336,6 +337,10 @@
 -(void)onSelectRecognizeResult:(RecognizeModel *)result{
     _doorTF.text = result.homeName;
     _mViewModel.userCommitModel.homeLocator = result.homeLocator;
+}
+
+-(void)onCloseRecongnizeResult{
+    _doorTF.text = @"";
 }
 
 -(void)updateAddress:(NSString *)addressStr{
@@ -368,6 +373,7 @@
 }
 
 -(void)OnBuildingSelectResult:(NSString *)result fatherLocator:(NSString *)fatherLocator{
+    _doorTF.text = @"";
     _mViewModel.data.building = result;
     _mViewModel.fatherLocator = fatherLocator;
     CGSize buildingSize = [result sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];

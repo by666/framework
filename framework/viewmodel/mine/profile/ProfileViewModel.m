@@ -72,7 +72,7 @@
     [_datas addObject:[TitleContentModel buildModel:MSG_PROFILE_BIRTHDAY content:_model.birthday]];
     [_datas addObject:[TitleContentModel buildModel:MSG_PROFILE_IDNUM content:_model.idNum]];
     [_datas addObject:[TitleContentModel buildModel:MSG_PROFILE_IDENTIFY content:_model.identify]];
-    [_datas addObject:[TitleContentModel buildModel:MSG_PROFILE_PHONENUM content:_model.phoneNum]];
+    [_datas addObject:[TitleContentModel buildModel:MSG_PROFILE_PHONENUM content:[STPUtil getSecretPhoneNum:_model.phoneNum]]];
     if(_delegate){
         [_delegate onUpdateProfile];
     }

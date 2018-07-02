@@ -8,6 +8,7 @@
 
 #import "AuthStatuViewModel.h"
 #import "STNetUtil.h"
+#import "AccountManager.h"
 
 @implementation AuthStatuViewModel
 
@@ -26,6 +27,28 @@
             [weakSelf.delegate onRequestFail:[NSString stringWithFormat:@"%d",errorCode]];
         }];
     }
+}
+
+-(void)verifyUser{
+    UserModel *userModel = [[AccountManager sharedAccountManager] getUserModel];
+    LiveModel *liveModel = [[AccountManager sharedAccountManager] getLiveModel];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    dic[@"applyId"] = @(liveModel.verifyId);
+    if(liveModel.liveAttr == Live_Renter){
+        dic[@"overdue"] = @"1546075507000";
+    }else{
+        dic[@"overdue"] = @"";
+    }
+    WS(weakSelf)
+    [STNetUtil get:URL_VERIFY_USER parameters:dic success:^(RespondModel *repondModel) {
+        if([repondModel.status isEqualToString:STATU_SUCCESS]){
+            [weakSelf.delegate onRequestSuccess:repondModel data:repondModel.data];
+        }else{
+            [weakSelf.delegate onRequestFail:repondModel.msg];
+        }
+    } failure:^(int errorCode) {
+        [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+    }];
 }
 
 @end

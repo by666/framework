@@ -77,7 +77,8 @@
 
 -(void)OnClickHurryBtn{
     if(_mViewModel){
-        [_mViewModel doHurryRequest];
+        [_mViewModel verifyUser];
+//        [_mViewModel doHurryRequest];
     }
 }
 

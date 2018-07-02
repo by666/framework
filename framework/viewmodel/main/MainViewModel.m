@@ -123,6 +123,8 @@
            [weakSelf.delegate onRequestSuccess:respondModel data:respondModel.data];
            [self getMainInfo:model.districtUid];
        }else{
+           LiveModel *model = [LiveModel mj_objectWithKeyValues:respondModel.data];
+           [[AccountManager sharedAccountManager]saveLiveModel:model];
            [weakSelf.delegate onRequestFail:respondModel.status];
        }
    } failure:^(int errorCode) {
@@ -146,4 +148,7 @@
         [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
     }];
 }
+
+
+
 @end

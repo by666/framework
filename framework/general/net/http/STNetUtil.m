@@ -107,7 +107,11 @@
     
     
     //post
-    [[manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error){
+    [[manager dataTaskWithRequest:request uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
+            [STLog print:[NSString stringWithFormat:@"上传的进度->%.2lld",uploadProgress.completedUnitCount / uploadProgress.totalUnitCount]];
+    } downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
+        [STLog print:[NSString stringWithFormat:@"下载的进度->%.2f",1.0 *downloadProgress.completedUnitCount / downloadProgress.totalUnitCount]];
+    } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error){
         if(error){
             [self handleFail:response failure:failure url:url];
         }else{

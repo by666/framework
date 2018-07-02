@@ -30,6 +30,7 @@
 #import "PageManager.h"
 #import "STNetUtil.h"
 #import "STUploadImageUtil.h"
+#import "FaceLoginPage.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>
 
@@ -42,7 +43,7 @@
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     id controller;
     if([[AccountManager sharedAccountManager]isLogin]){
-        controller = [[MainPage alloc]init];
+        controller = [[NextLoginPage alloc]init];
     }else{
         controller = [[LoginPage alloc]init];
     }

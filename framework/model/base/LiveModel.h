@@ -23,6 +23,7 @@
 @property(assign, nonatomic)int delState;
 @property(copy, nonatomic)NSString *createTime;
 @property(copy, nonatomic)NSString *modifyTime;
+@property(assign, nonatomic)int verifyId;
 
 //状态
 @property(assign, nonatomic)int statu;

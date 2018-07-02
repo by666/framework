@@ -10,7 +10,7 @@
 #import "BaseViewController.h"
 
 
-@interface FaceEnterPage2 : BaseViewController
+@interface FaceLoginPage : BaseViewController
 
 +(void)show:(BaseViewController *)controller;
 

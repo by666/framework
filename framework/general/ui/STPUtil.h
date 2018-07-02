@@ -43,4 +43,8 @@
 //通过身份证号获取性别
 +(NSString *)getGenderfromIdNum:(NSString *)numberStr;
 
+//11位电话号码隐藏
++(NSString *)getSecretPhoneNum:(NSString *)phoneNum;
+
+
 @end

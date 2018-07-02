@@ -85,6 +85,7 @@
 #pragma mark 请求登录
 -(void)doLogin:(NSString *)phoneNum verifyCode:(NSString *)verifyCode{
     if(_delegate){
+        [_delegate onRequestBegin];
         if(![STPUtil isPhoneNumValid:phoneNum]){
             _loginModel.msgStr = MSG_PHONENUM_ERROR;
             _loginModel.msgColor = c07;

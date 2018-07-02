@@ -59,6 +59,11 @@
     if(_authStatuView){
         [_authStatuView onHurryRequest:YES];
     }
+    
+    //***test***
+    if([respondModel.requestUrl isEqualToString:URL_VERIFY_USER]){
+        [STToastUtil showSuccessTips:@"恭喜您，账户通过验证！"];
+    }
 }
 
 -(void)onRequestFail:(NSString *)msg{

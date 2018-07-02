@@ -8,6 +8,7 @@
 
 #import "UpdatePhoneNumView.h"
 #import "STCodeView.h"
+#import "AccountManager.h"
 
 @interface UpdatePhoneNumView()<STCodeViewDelegate>
 
@@ -32,7 +33,8 @@
     tipsLabel.frame = CGRectMake(STWidth(27), STHeight(20), ScreenWidth - STWidth(54), [STPUtil textSize:MSG_UPDATEPHONENUM_TIPS maxWidth:(ScreenWidth - STWidth(54)) font:STFont(14)].height);
     [self addSubview:tipsLabel];
     
-    UILabel *phoneNumLabel = [[UILabel alloc]initWithFont:STFont(18) text:@"186****6420" textAlignment:NSTextAlignmentCenter textColor:c20 backgroundColor:nil multiLine:NO];
+    UserModel *model = [[AccountManager sharedAccountManager]getUserModel];
+    UILabel *phoneNumLabel = [[UILabel alloc]initWithFont:STFont(18) text:[STPUtil getSecretPhoneNum:model.phoneNum] textAlignment:NSTextAlignmentCenter textColor:c20 backgroundColor:nil multiLine:NO];
     phoneNumLabel.frame = CGRectMake(0, STHeight(84), ScreenWidth, STHeight(18));
     [self addSubview:phoneNumLabel];
     

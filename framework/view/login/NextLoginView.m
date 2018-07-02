@@ -7,7 +7,7 @@
 //
 
 #import "NextLoginView.h"
-
+#import "AccountManager.h"
 
 @interface NextLoginView()
 
@@ -35,7 +35,8 @@
     avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:avatarImageView];
     
-    UILabel *phoneLabel = [[UILabel alloc]initWithFont:STFont(15) text:@"186****6420" textAlignment:NSTextAlignmentCenter textColor:c10 backgroundColor:nil multiLine:NO];
+    UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
+    UILabel *phoneLabel = [[UILabel alloc]initWithFont:STFont(15) text:[STPUtil getSecretPhoneNum:userModel.phoneNum] textAlignment:NSTextAlignmentCenter textColor:c10 backgroundColor:nil multiLine:NO];
     phoneLabel.frame = CGRectMake(0, STHeight(157), ScreenWidth, STHeight(15));
     [self addSubview:phoneLabel];
     

@@ -90,11 +90,6 @@
 -(void)onRequestFail:(NSString *)msg{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [STToastUtil showFailureAlertSheet:msg];
-    if([msg isEqualToString:STATU_CHECKIN_DIFF_OWNNER_INFO] || [msg isEqualToString:STATU_CHECKIN_HAS_APPLY]){
-        if(_authFaceView){
-            [_authFaceView onCommitFinish];
-        }
-    }
 }
 
 
@@ -147,14 +142,13 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     [picker dismissViewControllerAnimated:YES completion:nil];
-    UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    UIImage* image= [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     NSString *imagePath = [STFileUtil saveImageFile:image];
-    WS(weakSelf)
-    
-    CGRect previewRect;
-    [[IDLFaceDetectionManager sharedInstance] detectStratrgyWithImage:image previewRect:previewRect detectRect:previewRect completionHandler:^(NSDictionary *images, DetectRemindCode remindCode){
-        if(remindCode == DetectRemindCodeOK){
+    WS(weakSelf)    
+    [[FaceSDKManager sharedInstance] livenessWithImage:image completion:^(FaceInfo *faceinfo, LivenessState *state, ResultCode resultCode) {
+        if(resultCode == ResultCodeOK || resultCode == ResultCodeDataHitOne){
             [weakSelf.authFaceView updateView:imagePath];
+            [STLog print:@"人脸识别成功!"];
         }else{
             [STToastUtil showFailureAlertSheet:MSG_FACEDETECT_FAIL];
         }

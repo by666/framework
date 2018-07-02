@@ -21,4 +21,6 @@
 
 -(void)doHurryRequest;
 
+//****验证用户
+-(void)verifyUser;
 @end

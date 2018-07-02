@@ -26,6 +26,8 @@
 #define URL_LOGIN               [TestUrl stringByAppendingString:@"/user/login/smsLogin"]
 //登出
 #define URL_LOGOUT              [TestUrl stringByAppendingString:@"/user/logout"]
+//人脸登录
+#define URL_FACE_LOGIN          [TestUrl stringByAppendingString:@"/user/login/faceLogin"]
 
 #pragma mark 获取用户资料
 
@@ -99,6 +101,10 @@
 //验证新手机短信
 #define URL_VERIFYMSG_TO_NEW  [TestUrl stringByAppendingString:@"/user/validateNewMobile"]
 
+
+
+#pragma mark 验证身份测试
+#define URL_VERIFY_USER [TestUrl stringByAppendingString:@"/user/testPassManageApply"]
 
 
 /*------------------------------------------------------------------------*/
@@ -175,16 +181,18 @@
 
 //定位房子错误
 #define STATU_CHECKIN_POSITION_ERROR @"10001007001"
-//已经在房屋有记录错误
+//已经在房屋有记录错误(不通过)
 #define STATU_CHECKIN_HAS_RECORD @"10001007002"
-//业主与预留信息不符
+//业主与预留信息不符(审核)
 #define STATU_CHECKIN_DIFF_OWNNER_INFO @"10001007003"
-//此房已经有业主
+//此房已经有业主(不通过)
 #define STATU_CHECKIN_HAS_OWNNER @"10001007004"
-//已经申请过该房子
+//已经申请过该房子(不通过)
 #define STATU_CHECKIN_HAS_APPLY @"10001007005"
-//身份证重复
+//身份证重复(不通过)
 #define STATU_CHECKIN_COMMON_IDNUM @"10001007006"
+
+
 //房屋门牌号没有完全匹配
 #define STATU_CHECKIN_DOOR_NULL @"10001010003"
 

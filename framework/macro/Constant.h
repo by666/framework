@@ -94,7 +94,7 @@
 #define MSG_UPDATEPHONENUM_TITLE @"安全验证"
 #define MSG_UPDATEPHONENUM_TIPS @"为了保障您的账号安全，请验证身份成功后进行下一步操作。"
 #define MSG_UPDATEPHONENUM_TIPS2 @"验证码短信已发送"
-#define MSG_UPDATEPHONENUM_TIPS3 @"您的账号目前绑定的手机是186****6420,请输入您希望绑定的新手机号码"
+#define MSG_UPDATEPHONENUM_TIPS3 @"您的账号目前绑定的手机是%@,请输入您希望绑定的新手机号码"
 
 
 //关于页面

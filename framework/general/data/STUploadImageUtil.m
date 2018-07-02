@@ -63,8 +63,13 @@ SINGLETON_IMPLEMENTION(STUploadImageUtil)
     return [NSURL URLWithString:constrainURL];
 }
 
-#pragma mark OSS上传图片
 -(void)uploadImageForOSS:(NSString *)filePath success:(void (^)(NSString *))success failure:(void (^)(NSString *))failure{
+    [self uploadImageForOSS:(NSString *)filePath success:success failure:failure progress:nil];
+}
+
+
+#pragma mark OSS上传图片
+-(void)uploadImageForOSS:(NSString *)filePath success:(void (^)(NSString *))success failure:(void (^)(NSString *))failure progress:(void(^)(double))progress{
     if(_client == nil){
         [STLog print:@"Oss未初始化"];
         return;
@@ -76,7 +81,9 @@ SINGLETON_IMPLEMENTION(STUploadImageUtil)
     request.objectKey = objectKey;
     request.uploadingFileURL = [NSURL fileURLWithPath:filePath];
     request.uploadProgress = ^(int64_t bytesSent, int64_t totalByteSent, int64_t totalBytesExpectedToSend) {
-        [STLog print:@"图片上传进度" content:[NSString stringWithFormat:@"%.2f",(double)totalByteSent * 100 / (double)totalBytesExpectedToSend]];
+        dispatch_main_sync_safe(^{
+            progress((double)totalByteSent * 100 / (double)totalBytesExpectedToSend);
+        });
     };
     OSSTask * task = [_client putObject:request];
     [task continueWithBlock:^id(OSSTask *task) {

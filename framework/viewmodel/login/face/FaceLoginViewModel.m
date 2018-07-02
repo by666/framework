@@ -6,19 +6,21 @@
 //  Copyright © 2018年 黄成实. All rights reserved.
 //
 
-#import "FaceEnterViewModel2.h"
+#import "FaceLoginViewModel.h"
 #import <IDLFaceSDK/IDLFaceSDK.h>
 #import <AVFoundation/AVFoundation.h>
 #import "VideoCaptureDevice.h"
+#import "STNetUtil.h"
+#import "AccountManager.h"
 
-@interface FaceEnterViewModel2()<CaptureDataOutputProtocol>
+@interface FaceLoginViewModel()<CaptureDataOutputProtocol>
 
 @property(assign, nonatomic)Boolean hasFinished;
 @property(strong, nonatomic)VideoCaptureDevice *videoCapture;
 
 @end
 
-@implementation FaceEnterViewModel2
+@implementation FaceLoginViewModel
 
 
 //设置人脸识别
@@ -113,18 +115,13 @@
 
 
 - (void)faceProcesss:(UIImage *)image{
-    if (_hasFinished) {
+    if(_hasFinished){
         return;
     }
-    WS(weakSelf)
     [[IDLFaceDetectionManager sharedInstance] detectStratrgyWithImage:image previewRect:_previewRect detectRect:_detectRect completionHandler:^(NSDictionary *images, DetectRemindCode remindCode) {
         switch (remindCode) {
             case DetectRemindCodeOK: {
-                  weakSelf.hasFinished = YES;
                 if (images[@"bestImage"] != nil && [images[@"bestImage"] count] != 0) {
-//                    NSData* data = [[NSData alloc] initWithBase64EncodedString:[images[@"bestImage"] lastObject] options:NSDataBase64DecodingIgnoreUnknownCharacters];
-//                    UIImage* bestImage = [UIImage imageWithData:data];
-//                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, NULL);
                     [self warningStatus:CommonStatus warning:@"非常好" image:image];
                 }
                 break;
@@ -237,6 +234,49 @@
     }
 }
 
+
+-(void)verifyImage:(NSString *)imagePath{
+    if(!_hasFinished){
+        _hasFinished = YES;
+    }else{
+        return;
+    }
+    if(_delegate){
+        WS(weakSelf)
+        [[STUploadImageUtil sharedSTUploadImageUtil]uploadImageForOSS:imagePath success:^(NSString *imageUrl){
+            [weakSelf verifyByServer:imageUrl];
+        } failure:^(NSString *errorStr) {
+            [weakSelf.delegate onRequestFail:errorStr];
+        } progress:^(double progress) {
+            [weakSelf.delegate onProgress:(progress/100) * 0.5];
+        }];
+    }
+
+}
+
+-(void)verifyByServer:(NSString *)faceUrl{
+    if(_delegate){
+        UserModel *userModel = [[AccountManager sharedAccountManager] getUserModel];
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        dic[@"faceUrl"] = faceUrl;
+        dic[@"userUid"] = userModel.userUid;
+        WS(weakSelf)
+        [STNetUtil post:URL_FACE_LOGIN content:dic.mj_JSONString success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                UserModel *model = [[AccountManager sharedAccountManager]getUserModel];
+                model.token = [respondModel.data objectForKey:@"token"];
+                model.userUid = [respondModel.data objectForKey:@"userUid"];
+                [[AccountManager sharedAccountManager]saveUserModel:model];
+                [weakSelf.delegate onRequestSuccess:respondModel data:nil];
+            }else{
+                [weakSelf.delegate onRequestFail:respondModel.msg];
+            }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        }];
+    }
+
+}
 
 
 @end

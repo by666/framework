@@ -39,7 +39,7 @@
 //            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
 //        }];
         WS(weakSelf)
-        [[STUploadImageUtil sharedSTUploadImageUtil]uploadImageForOSS:_model.facePath success:^(NSString *imageUrl) {
+        [[STUploadImageUtil sharedSTUploadImageUtil]uploadImageForOSS:_model.facePath success:^(NSString *imageUrl)  {
             weakSelf.model.faceUrl = imageUrl;
             [self uploadAddMember];
         } failure:^(NSString *errorStr) {

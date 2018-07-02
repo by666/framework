@@ -139,4 +139,13 @@
     return sex;
 }
 
+
++(NSString *)getSecretPhoneNum:(NSString *)phoneNum{
+    if(IS_NS_STRING_EMPTY(phoneNum) || phoneNum.length != 11){
+        return @"";
+    }
+    NSString *start = [phoneNum substringWithRange:NSMakeRange(0, 3)];
+    NSString *end = [phoneNum substringWithRange:NSMakeRange(7, 4)];
+    return [NSString stringWithFormat:@"%@****%@",start,end];
+}
 @end

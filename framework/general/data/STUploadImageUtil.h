@@ -18,8 +18,10 @@ SINGLETON_DECLARATION(STUploadImageUtil)
 //通过objectKey拿到真实的图片url
 -(NSURL *)getRealUrl:(NSString *)objectKey;
 
-//上传图片
 -(void)uploadImageForOSS:(NSString *)filePath success:(void (^)(NSString *))success failure:(void (^)(NSString *))failure;
+
+//上传图片
+-(void)uploadImageForOSS:(NSString *)filePath success:(void (^)(NSString *))success failure:(void (^)(NSString *))failure progress:(void(^)(double))progress;
 
 
 

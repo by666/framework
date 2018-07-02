@@ -9,6 +9,7 @@
 #import "LoginView.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "STNavigationView.h"
+#import "AccountManager.h"
 @interface LoginView()
 
 @property(strong, nonatomic) LoginViewModel *mViewModel;
@@ -72,7 +73,7 @@
     _phoneNumTF = [[UITextField alloc]initWithFont:STFont(16) textColor:cwhite backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:STWidth(2)];
     _phoneNumTF.frame =  CGRectMake(STWidth(47), STHeight(256), STWidth(280), STHeight(41));
     _phoneNumTF.keyboardType = UIKeyboardTypePhonePad;
-    _phoneNumTF.text = @"18680686420";
+    _phoneNumTF.text = [[AccountManager sharedAccountManager]getUserModel].phoneNum;
     NSAttributedString *phoneNumStr = [[NSAttributedString alloc] initWithString:MSG_LOGIN_PHONENUM_HINT attributes:
                                       @{NSForegroundColorAttributeName:[cwhite colorWithAlphaComponent:0.5f],
                                         NSFontAttributeName:_phoneNumTF.font
