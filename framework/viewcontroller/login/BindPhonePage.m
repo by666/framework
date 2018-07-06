@@ -29,6 +29,13 @@
 }
 
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self setStatuBarBackgroud:[UIColor clearColor]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+}
+
+
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleDefault;
 }

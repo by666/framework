@@ -66,6 +66,7 @@
 
 -(void)updateProfile{
     [_datas removeAllObjects];
+    LiveModel *liveModel = [[AccountManager sharedAccountManager] getLiveModel];
     [_datas addObject:[TitleContentModel buildModel:MSG_PROFILE_AVATAR content:_model.headUrl]];
     [_datas addObject:[TitleContentModel buildModel:MSG_PROFILE_NAME content:_model.name]];
     [_datas addObject:[TitleContentModel buildModel:MSG_PROFILE_GENDER content:_model.gender]];
@@ -73,6 +74,8 @@
     [_datas addObject:[TitleContentModel buildModel:MSG_PROFILE_IDNUM content:_model.idNum]];
     [_datas addObject:[TitleContentModel buildModel:MSG_PROFILE_IDENTIFY content:_model.identify]];
     [_datas addObject:[TitleContentModel buildModel:MSG_PROFILE_PHONENUM content:[STPUtil getSecretPhoneNum:_model.phoneNum]]];
+    [_datas addObject:[TitleContentModel buildModel:MSG_PROFILE_ADDRESS content:liveModel.homeFullName]];
+
     if(_delegate){
         [_delegate onUpdateProfile];
     }

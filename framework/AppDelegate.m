@@ -10,7 +10,6 @@
 #import "STDataBaseUtil.h"
 #import "STRuntimeUtil.h"
 #import "LoginPage.h"
-#import <iflyMSC/IFlyFaceSDK.h>
 #import "UserModel.h"
 #import "STUserDefaults.h"
 #import <WXApi.h>
@@ -18,7 +17,6 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import "STUpdateUtil.h"
 #import "MainPage.h"
-#import "ByViewController.h"
 #import "NextLoginPage.h"
 #import "AccountManager.h"
 #import "MinePage.h"
@@ -31,6 +29,7 @@
 #import "STNetUtil.h"
 #import "STUploadImageUtil.h"
 #import "FaceLoginPage.h"
+#import "LocalFaceDetect.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>
 
@@ -52,7 +51,6 @@
     [self.window makeKeyAndVisible];
 
     [[STObserverManager sharedSTObserverManager]setup];
-    [self initIFly];
     [self initDB];
     [self initJPush:launchOptions];
     [self initWechat];
@@ -70,25 +68,6 @@
     return YES;
 }
 
--(void)initIFly{
-    //设置log等级，此处log为默认在app沙盒目录下的msc.log文件
-    [IFlySetting setLogFile:LVL_ALL];
-    
-    //输出在console的log开关
-    [IFlySetting showLogcat:YES];
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *cachePath = [paths objectAtIndex:0];
-    //设置msc.log的保存路径
-    [IFlySetting setLogFilePath:cachePath];
-    
-    //创建语音配置,appid必须要传入，仅执行一次则可
-    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@,",IFLY_FACE_APPID];
-    
-    //所有服务启动前，需要确保执行createUtility
-    [IFlySpeechUtility createUtility:initString];
-    
-}
 
 -(void)initDB{
     [[STDataBaseUtil sharedSTDataBaseUtil]createTable:@"sthl" model:[UserModel class]];
@@ -133,6 +112,9 @@
 }
 
 -(void)initBaidu{
+    //获取百度access_token
+    [LocalFaceDetect requestBaiduToken];
+    //初始化百度人脸识别sdk
     if ([[FaceSDKManager sharedInstance] canWork]) {
         NSString* licensePath = [[NSBundle mainBundle] pathForResource:FACE_LICENSE_NAME ofType:FACE_LICENSE_SUFFIX];
         [[FaceSDKManager sharedInstance] setLicenseID:FACE_LICENSE_ID andLocalLicenceFile:licensePath];
@@ -277,7 +259,6 @@
     [alertController addAction:updateAction];
     [_window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
-
 
 
 @end

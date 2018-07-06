@@ -191,6 +191,7 @@
     _idNumTF.textAlignment = NSTextAlignmentRight;
     _idNumTF.frame = CGRectMake(ScreenWidth - STWidth(215), STHeight(114), STWidth(200),  STHeight(57));
     [_idNumTF setMaxLength:@"18"];
+    _idNumTF.delegate = self;
     [view addSubview:_idNumTF];
     
 }
@@ -318,7 +319,12 @@
         if(_mViewModel){
             [_mViewModel getCommunityDoor:textField.text];
         }
-     
+    }else if(textField == _idNumTF){
+        if([STPUtil isIdNumberValid:textField.text]){
+            _tipsLabel.text = @"";
+        }else{
+            _tipsLabel.text = MSG_AUTHUSER_ERROR_ERRORIDNUM;
+        }
     }
 }
 

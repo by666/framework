@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0006DF132089875E005A4465 /* ByViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF122089875E005A4465 /* ByViewController.m */; };
 		0006DF1820898BDE005A4465 /* STRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF1720898BDE005A4465 /* STRefreshTableView.m */; };
 		0006DF1C20898F70005A4465 /* TouchScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF1B20898F70005A4465 /* TouchScrollView.m */; };
 		0006DF20208DB0B5005A4465 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF1F208DB0B5005A4465 /* libz.tbd */; };
@@ -27,24 +26,6 @@
 		0006DF48208DBA5D005A4465 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF25208DB0C9005A4465 /* AVFoundation.framework */; };
 		0006DF4A208DBA6B005A4465 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF49208DBA6B005A4465 /* MobileCoreServices.framework */; };
 		0006DF4B208DBA7B005A4465 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF2F208DB0EA005A4465 /* QuartzCore.framework */; };
-		0006DF59208DBBC9005A4465 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF58208DBBC9005A4465 /* iflyMSC.framework */; };
-		0006DF75208DBC76005A4465 /* FaceDetectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF6B208DBC75005A4465 /* FaceDetectorViewController.m */; };
-		0006DF76208DBC76005A4465 /* FaceStreamDetectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF6D208DBC75005A4465 /* FaceStreamDetectorViewController.m */; };
-		0006DF78208DBC76005A4465 /* FaceRequestSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF72208DBC76005A4465 /* FaceRequestSettingViewController.m */; };
-		0006DF79208DBC76005A4465 /* FaceRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF74208DBC76005A4465 /* FaceRequestViewController.m */; };
-		0006DF95208DBCAD005A4465 /* CalculatorTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF7C208DBCA8005A4465 /* CalculatorTools.m */; };
-		0006DF96208DBCAD005A4465 /* IFlyFaceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF7E208DBCA8005A4465 /* IFlyFaceImage.m */; };
-		0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF80208DBCA8005A4465 /* UIImage+compress.m */; };
-		0006DF98208DBCAD005A4465 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF82208DBCA8005A4465 /* UIImage+Extensions.m */; };
-		0006DF99208DBCAD005A4465 /* CaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF85208DBCA9005A4465 /* CaptureManager.m */; };
-		0006DF9A208DBCAD005A4465 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF87208DBCA9005A4465 /* CaptureSessionManager.m */; };
-		0006DF9B208DBCAD005A4465 /* IFlyFaceResultDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF8A208DBCAA005A4465 /* IFlyFaceResultDetector.m */; };
-		0006DF9C208DBCAD005A4465 /* IFlyFaceResultKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF8C208DBCAA005A4465 /* IFlyFaceResultKeys.m */; };
-		0006DF9D208DBCAD005A4465 /* IFlyFaceResultTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF8E208DBCAA005A4465 /* IFlyFaceResultTrack.m */; };
-		0006DF9E208DBCAD005A4465 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF91208DBCAC005A4465 /* CanvasView.m */; };
-		0006DF9F208DBCAD005A4465 /* PermissionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF94208DBCAD005A4465 /* PermissionDetector.m */; };
-		0006DFA2208DC05B005A4465 /* SystemFacePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DFA1208DC05B005A4465 /* SystemFacePage.m */; };
-		0006DFA8208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DFA7208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m */; };
 		002F942C20AEBA9000F84094 /* MessageSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F942B20AEBA9000F84094 /* MessageSettingView.m */; };
 		002F943020AEBABB00F84094 /* MessageSettingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F942F20AEBABB00F84094 /* MessageSettingViewModel.m */; };
 		002F943320AEC19500F84094 /* MessageSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F943220AEC19500F84094 /* MessageSettingCell.m */; };
@@ -160,6 +141,7 @@
 		003EDB0F20C1263800CFCFE9 /* SystemMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB0E20C1263800CFCFE9 /* SystemMsgCell.m */; };
 		003EDB1220C147E400CFCFE9 /* PropertyMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB1120C147E400CFCFE9 /* PropertyMsgCell.m */; };
 		003EDB1520C5249800CFCFE9 /* STSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB1420C5249800CFCFE9 /* STSwitchView.m */; };
+		00444FAA20ECA300002F121A /* ApplyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00444FA920ECA300002F121A /* ApplyModel.m */; };
 		004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51620A16DC400BA9602 /* STAlertUtil.m */; };
 		004EF51A20A1A37E00BA9602 /* STSheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF51920A1A37E00BA9602 /* STSheetModel.m */; };
 		004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF52120A2A23C00BA9602 /* LoginViewModel.m */; };
@@ -204,9 +186,6 @@
 		004EF5B620ABFE3300BA9602 /* ProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF5B520ABFE3300BA9602 /* ProfileModel.m */; };
 		004EF5B920AC010700BA9602 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF5B820AC010700BA9602 /* ProfileCell.m */; };
 		004EF5BC20AC05D100BA9602 /* TitleContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF5BB20AC05D100BA9602 /* TitleContentModel.m */; };
-		004EF5C220AC2C1800BA9602 /* FaceEnterPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF5C120AC2C1800BA9602 /* FaceEnterPage.m */; };
-		004EF5C520AC2C8500BA9602 /* FaceEnterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF5C420AC2C8500BA9602 /* FaceEnterView.m */; };
-		004EF5C820AC2CD500BA9602 /* FaceEnterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF5C720AC2CD500BA9602 /* FaceEnterViewModel.m */; };
 		004EF5CB20AC44F900BA9602 /* SettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF5CA20AC44F900BA9602 /* SettingView.m */; };
 		004EF5CE20AC450900BA9602 /* SettingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF5CD20AC450900BA9602 /* SettingViewModel.m */; };
 		004EF5D120AC48AA00BA9602 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EF5D020AC48AA00BA9602 /* SettingCell.m */; };
@@ -231,7 +210,6 @@
 		0050800C20B6BB1700A976D9 /* AuthUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0050800B20B6BB1700A976D9 /* AuthUserView.m */; };
 		0050800F20B6BB2600A976D9 /* AuthUserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0050800E20B6BB2600A976D9 /* AuthUserViewModel.m */; };
 		0050801320B6BC4900A976D9 /* UserAuthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0050801220B6BC4900A976D9 /* UserAuthModel.m */; };
-		005F7A8920901F0C003CA4CA /* MasonryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F7A8820901F0C003CA4CA /* MasonryPage.m */; };
 		0070000120D8F83400A67B45 /* VideoCaptureDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0070FFFB20D8F83400A67B45 /* VideoCaptureDevice.m */; };
 		0070000320D8F83400A67B45 /* ImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0070000020D8F83400A67B45 /* ImageUtils.m */; };
 		0070000A20DA46F800A67B45 /* FaceEnterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0070000920DA46F800A67B45 /* FaceEnterView2.m */; };
@@ -251,6 +229,8 @@
 		007B1F5220858EB7009EA9F1 /* frameworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F5120858EB7009EA9F1 /* frameworkUITests.m */; };
 		00812BC52091A14500E2E70B /* STConvertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00812BC42091A14500E2E70B /* STConvertUtil.m */; };
 		00812BD42091BCAA00E2E70B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BD32091BCAA00E2E70B /* libresolv.tbd */; };
+		00AD859220EE20EA001D272C /* PermissionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AD859020EE20E9001D272C /* PermissionDetector.m */; };
+		00AD859520EE24B4001D272C /* LocalFaceDetect.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AD859420EE24B4001D272C /* LocalFaceDetect.m */; };
 		00B6331E20E325F200B558AA /* PassPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6331D20E325F200B558AA /* PassPage.m */; };
 		00B6332120E365BA00B558AA /* PassHistoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6332020E365BA00B558AA /* PassHistoryPage.m */; };
 		00B6332420E367C900B558AA /* PassHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6332320E367C900B558AA /* PassHistoryView.m */; };
@@ -264,8 +244,6 @@
 		00C2541E209AACDC00E8E306 /* STUpdateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C2541D209AACDC00E8E306 /* STUpdateUtil.m */; };
 		00C25427209B162A00E8E306 /* QRCodePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C25426209B162A00E8E306 /* QRCodePage.m */; };
 		00C25444209BF5B200E8E306 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00C25443209BF5B200E8E306 /* CodeScan.bundle */; };
-		00CCE9A8208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */; };
-		00CCE9AB208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9AA208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m */; };
 		00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9AD208ECB9300032B4A /* UserModel.m */; };
 		00CCE9B1208ECCDD00032B4A /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9B0208ECCDD00032B4A /* AccountManager.m */; };
 		00CCE9B4208ECDD300032B4A /* STUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9B3208ECDD300032B4A /* STUserDefaults.m */; };
@@ -278,7 +256,6 @@
 		00D324B1208598A7001EC82F /* STColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324A9208598A6001EC82F /* STColorUtil.m */; };
 		00D324B2208598A7001EC82F /* STTimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324AC208598A7001EC82F /* STTimeUtil.m */; };
 		00D324B3208598A7001EC82F /* STPUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324AD208598A7001EC82F /* STPUtil.m */; };
-		00D324CA2086E355001EC82F /* ByView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324C92086E355001EC82F /* ByView.m */; };
 		00D324CD2087277E001EC82F /* STNetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324CC2087277E001EC82F /* STNetUtil.m */; };
 		00D324D320873B14001EC82F /* RespondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324D220873B14001EC82F /* RespondModel.m */; };
 		00D324E0208742CC001EC82F /* STDataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D324DF208742CC001EC82F /* STDataBaseUtil.m */; };
@@ -336,8 +313,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0006DF112089875E005A4465 /* ByViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ByViewController.h; sourceTree = "<group>"; };
-		0006DF122089875E005A4465 /* ByViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ByViewController.m; sourceTree = "<group>"; };
 		0006DF1620898BDE005A4465 /* STRefreshTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STRefreshTableView.h; sourceTree = "<group>"; };
 		0006DF1720898BDE005A4465 /* STRefreshTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STRefreshTableView.m; sourceTree = "<group>"; };
 		0006DF1A20898F70005A4465 /* TouchScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchScrollView.h; sourceTree = "<group>"; };
@@ -362,41 +337,6 @@
 		0006DF43208DBA2C005A4465 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		0006DF45208DBA48005A4465 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		0006DF49208DBA6B005A4465 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		0006DF58208DBBC9005A4465 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
-		0006DF6A208DBC75005A4465 /* FaceDetectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceDetectorViewController.h; sourceTree = "<group>"; };
-		0006DF6B208DBC75005A4465 /* FaceDetectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceDetectorViewController.m; sourceTree = "<group>"; };
-		0006DF6C208DBC75005A4465 /* FaceStreamDetectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceStreamDetectorViewController.h; sourceTree = "<group>"; };
-		0006DF6D208DBC75005A4465 /* FaceStreamDetectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceStreamDetectorViewController.m; sourceTree = "<group>"; };
-		0006DF71208DBC76005A4465 /* FaceRequestSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceRequestSettingViewController.h; sourceTree = "<group>"; };
-		0006DF72208DBC76005A4465 /* FaceRequestSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceRequestSettingViewController.m; sourceTree = "<group>"; };
-		0006DF73208DBC76005A4465 /* FaceRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceRequestViewController.h; sourceTree = "<group>"; };
-		0006DF74208DBC76005A4465 /* FaceRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceRequestViewController.m; sourceTree = "<group>"; };
-		0006DF7B208DBCA8005A4465 /* CalculatorTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorTools.h; sourceTree = "<group>"; };
-		0006DF7C208DBCA8005A4465 /* CalculatorTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorTools.m; sourceTree = "<group>"; };
-		0006DF7D208DBCA8005A4465 /* IFlyFaceImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFlyFaceImage.h; sourceTree = "<group>"; };
-		0006DF7E208DBCA8005A4465 /* IFlyFaceImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFlyFaceImage.m; sourceTree = "<group>"; };
-		0006DF7F208DBCA8005A4465 /* UIImage+compress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+compress.h"; sourceTree = "<group>"; };
-		0006DF80208DBCA8005A4465 /* UIImage+compress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+compress.m"; sourceTree = "<group>"; };
-		0006DF81208DBCA8005A4465 /* UIImage+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extensions.h"; sourceTree = "<group>"; };
-		0006DF82208DBCA8005A4465 /* UIImage+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extensions.m"; sourceTree = "<group>"; };
-		0006DF84208DBCA9005A4465 /* CaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureManager.h; sourceTree = "<group>"; };
-		0006DF85208DBCA9005A4465 /* CaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureManager.m; sourceTree = "<group>"; };
-		0006DF86208DBCA9005A4465 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
-		0006DF87208DBCA9005A4465 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
-		0006DF89208DBCAA005A4465 /* IFlyFaceResultDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFlyFaceResultDetector.h; sourceTree = "<group>"; };
-		0006DF8A208DBCAA005A4465 /* IFlyFaceResultDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFlyFaceResultDetector.m; sourceTree = "<group>"; };
-		0006DF8B208DBCAA005A4465 /* IFlyFaceResultKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFlyFaceResultKeys.h; sourceTree = "<group>"; };
-		0006DF8C208DBCAA005A4465 /* IFlyFaceResultKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFlyFaceResultKeys.m; sourceTree = "<group>"; };
-		0006DF8D208DBCAA005A4465 /* IFlyFaceResultTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFlyFaceResultTrack.h; sourceTree = "<group>"; };
-		0006DF8E208DBCAA005A4465 /* IFlyFaceResultTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFlyFaceResultTrack.m; sourceTree = "<group>"; };
-		0006DF90208DBCAC005A4465 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
-		0006DF91208DBCAC005A4465 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
-		0006DF93208DBCAD005A4465 /* PermissionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionDetector.h; sourceTree = "<group>"; };
-		0006DF94208DBCAD005A4465 /* PermissionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionDetector.m; sourceTree = "<group>"; };
-		0006DFA0208DC05B005A4465 /* SystemFacePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemFacePage.h; sourceTree = "<group>"; };
-		0006DFA1208DC05B005A4465 /* SystemFacePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemFacePage.m; sourceTree = "<group>"; };
-		0006DFA6208DCB66005A4465 /* IFlyOnlineFaceDetectPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFlyOnlineFaceDetectPage.h; sourceTree = "<group>"; };
-		0006DFA7208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFlyOnlineFaceDetectPage.m; sourceTree = "<group>"; };
 		002F942A20AEBA9000F84094 /* MessageSettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageSettingView.h; sourceTree = "<group>"; };
 		002F942B20AEBA9000F84094 /* MessageSettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageSettingView.m; sourceTree = "<group>"; };
 		002F942E20AEBABB00F84094 /* MessageSettingViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageSettingViewModel.h; sourceTree = "<group>"; };
@@ -627,6 +567,8 @@
 		003EDB1120C147E400CFCFE9 /* PropertyMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PropertyMsgCell.m; sourceTree = "<group>"; };
 		003EDB1320C5249800CFCFE9 /* STSwitchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSwitchView.h; sourceTree = "<group>"; };
 		003EDB1420C5249800CFCFE9 /* STSwitchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STSwitchView.m; sourceTree = "<group>"; };
+		00444FA820ECA300002F121A /* ApplyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplyModel.h; sourceTree = "<group>"; };
+		00444FA920ECA300002F121A /* ApplyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplyModel.m; sourceTree = "<group>"; };
 		004EF51520A16DC400BA9602 /* STAlertUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STAlertUtil.h; sourceTree = "<group>"; };
 		004EF51620A16DC400BA9602 /* STAlertUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAlertUtil.m; sourceTree = "<group>"; };
 		004EF51820A1A37E00BA9602 /* STSheetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSheetModel.h; sourceTree = "<group>"; };
@@ -715,12 +657,6 @@
 		004EF5B820AC010700BA9602 /* ProfileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
 		004EF5BA20AC05D100BA9602 /* TitleContentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleContentModel.h; sourceTree = "<group>"; };
 		004EF5BB20AC05D100BA9602 /* TitleContentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleContentModel.m; sourceTree = "<group>"; };
-		004EF5C020AC2C1800BA9602 /* FaceEnterPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceEnterPage.h; sourceTree = "<group>"; };
-		004EF5C120AC2C1800BA9602 /* FaceEnterPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceEnterPage.m; sourceTree = "<group>"; };
-		004EF5C320AC2C8500BA9602 /* FaceEnterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceEnterView.h; sourceTree = "<group>"; };
-		004EF5C420AC2C8500BA9602 /* FaceEnterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceEnterView.m; sourceTree = "<group>"; };
-		004EF5C620AC2CD500BA9602 /* FaceEnterViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceEnterViewModel.h; sourceTree = "<group>"; };
-		004EF5C720AC2CD500BA9602 /* FaceEnterViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceEnterViewModel.m; sourceTree = "<group>"; };
 		004EF5C920AC44F900BA9602 /* SettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingView.h; sourceTree = "<group>"; };
 		004EF5CA20AC44F900BA9602 /* SettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingView.m; sourceTree = "<group>"; };
 		004EF5CC20AC450900BA9602 /* SettingViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewModel.h; sourceTree = "<group>"; };
@@ -769,8 +705,6 @@
 		0050800E20B6BB2600A976D9 /* AuthUserViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthUserViewModel.m; sourceTree = "<group>"; };
 		0050801120B6BC4900A976D9 /* UserAuthModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserAuthModel.h; sourceTree = "<group>"; };
 		0050801220B6BC4900A976D9 /* UserAuthModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserAuthModel.m; sourceTree = "<group>"; };
-		005F7A8720901F0C003CA4CA /* MasonryPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryPage.h; sourceTree = "<group>"; };
-		005F7A8820901F0C003CA4CA /* MasonryPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryPage.m; sourceTree = "<group>"; };
 		0070000020D8F83400A67B45 /* ImageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtils.m; sourceTree = "<group>"; };
 		0070000420D8FECF00A67B45 /* FaceParameterConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceParameterConfig.h; path = framework/threeparty/face/FaceParameterConfig.h; sourceTree = SOURCE_ROOT; };
 		0070000820DA46F800A67B45 /* FaceEnterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceEnterView2.h; sourceTree = "<group>"; };
@@ -810,6 +744,10 @@
 		00812BC42091A14500E2E70B /* STConvertUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STConvertUtil.m; sourceTree = "<group>"; };
 		00812BC62091B34400E2E70B /* framework.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = framework.entitlements; sourceTree = "<group>"; };
 		00812BD32091BCAA00E2E70B /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		00AD859020EE20E9001D272C /* PermissionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionDetector.m; sourceTree = "<group>"; };
+		00AD859120EE20EA001D272C /* PermissionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionDetector.h; sourceTree = "<group>"; };
+		00AD859320EE24B4001D272C /* LocalFaceDetect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalFaceDetect.h; sourceTree = "<group>"; };
+		00AD859420EE24B4001D272C /* LocalFaceDetect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalFaceDetect.m; sourceTree = "<group>"; };
 		00B6331C20E325F200B558AA /* PassPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PassPage.h; sourceTree = "<group>"; };
 		00B6331D20E325F200B558AA /* PassPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PassPage.m; sourceTree = "<group>"; };
 		00B6331F20E365BA00B558AA /* PassHistoryPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PassHistoryPage.h; sourceTree = "<group>"; };
@@ -835,10 +773,6 @@
 		00C25425209B162A00E8E306 /* QRCodePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodePage.h; sourceTree = "<group>"; };
 		00C25426209B162A00E8E306 /* QRCodePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodePage.m; sourceTree = "<group>"; };
 		00C25443209BF5B200E8E306 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
-		00CCE9A6208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFlyOfflineFaceDetectPage.h; sourceTree = "<group>"; };
-		00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFlyOfflineFaceDetectPage.m; sourceTree = "<group>"; };
-		00CCE9A9208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFlyOfflineVedioDetectPage.h; sourceTree = "<group>"; };
-		00CCE9AA208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFlyOfflineVedioDetectPage.m; sourceTree = "<group>"; };
 		00CCE9AC208ECB9300032B4A /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		00CCE9AD208ECB9300032B4A /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		00CCE9AF208ECCDD00032B4A /* AccountManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
@@ -868,8 +802,6 @@
 		00D324AD208598A7001EC82F /* STPUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPUtil.m; sourceTree = "<group>"; };
 		00D324AE208598A7001EC82F /* STPUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPUtil.h; sourceTree = "<group>"; };
 		00D324AF208598A7001EC82F /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
-		00D324C82086E355001EC82F /* ByView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ByView.h; sourceTree = "<group>"; };
-		00D324C92086E355001EC82F /* ByView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ByView.m; sourceTree = "<group>"; };
 		00D324CB2087277E001EC82F /* STNetUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STNetUtil.h; sourceTree = "<group>"; };
 		00D324CC2087277E001EC82F /* STNetUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STNetUtil.m; sourceTree = "<group>"; };
 		00D324D120873B14001EC82F /* RespondModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RespondModel.h; sourceTree = "<group>"; };
@@ -935,7 +867,6 @@
 				0006DF38208DB15D005A4465 /* libc++.tbd in Frameworks */,
 				0006DF20208DB0B5005A4465 /* libz.tbd in Frameworks */,
 				0006DF44208DBA2C005A4465 /* CoreMedia.framework in Frameworks */,
-				0006DF59208DBBC9005A4465 /* iflyMSC.framework in Frameworks */,
 				0070FFF020D8F42D00A67B45 /* IDLFaceSDK.framework in Frameworks */,
 				0006DF41208DBA13005A4465 /* CoreVideo.framework in Frameworks */,
 				0006DF3F208DBA08005A4465 /* CoreMotion.framework in Frameworks */,
@@ -1043,120 +974,11 @@
 		0006DF53208DBB7B005A4465 /* threeparty */ = {
 			isa = PBXGroup;
 			children = (
+				00AD859120EE20EA001D272C /* PermissionDetector.h */,
+				00AD859020EE20E9001D272C /* PermissionDetector.m */,
 				0070FFE820D8F3CF00A67B45 /* face */,
-				0006DF54208DBB81005A4465 /* ifly */,
 			);
 			path = threeparty;
-			sourceTree = "<group>";
-		};
-		0006DF54208DBB81005A4465 /* ifly */ = {
-			isa = PBXGroup;
-			children = (
-				0006DF64208DBC29005A4465 /* ui */,
-				0006DF58208DBBC9005A4465 /* iflyMSC.framework */,
-				0006DF55208DBB85005A4465 /* tools */,
-			);
-			path = ifly;
-			sourceTree = "<group>";
-		};
-		0006DF55208DBB85005A4465 /* tools */ = {
-			isa = PBXGroup;
-			children = (
-				0006DF8F208DBCAC005A4465 /* CanvasView */,
-				0006DF83208DBCA9005A4465 /* Capture */,
-				0006DF7A208DBCA8005A4465 /* Image */,
-				0006DF92208DBCAD005A4465 /* Permission */,
-				0006DF88208DBCAA005A4465 /* Result */,
-			);
-			path = tools;
-			sourceTree = "<group>";
-		};
-		0006DF64208DBC29005A4465 /* ui */ = {
-			isa = PBXGroup;
-			children = (
-				0006DF69208DBC75005A4465 /* FaceDetector */,
-				0006DF70208DBC76005A4465 /* FaceRequest */,
-			);
-			path = ui;
-			sourceTree = "<group>";
-		};
-		0006DF69208DBC75005A4465 /* FaceDetector */ = {
-			isa = PBXGroup;
-			children = (
-				0006DF6A208DBC75005A4465 /* FaceDetectorViewController.h */,
-				0006DF6B208DBC75005A4465 /* FaceDetectorViewController.m */,
-				0006DF6C208DBC75005A4465 /* FaceStreamDetectorViewController.h */,
-				0006DF6D208DBC75005A4465 /* FaceStreamDetectorViewController.m */,
-			);
-			path = FaceDetector;
-			sourceTree = "<group>";
-		};
-		0006DF70208DBC76005A4465 /* FaceRequest */ = {
-			isa = PBXGroup;
-			children = (
-				0006DF71208DBC76005A4465 /* FaceRequestSettingViewController.h */,
-				0006DF72208DBC76005A4465 /* FaceRequestSettingViewController.m */,
-				0006DF73208DBC76005A4465 /* FaceRequestViewController.h */,
-				0006DF74208DBC76005A4465 /* FaceRequestViewController.m */,
-			);
-			path = FaceRequest;
-			sourceTree = "<group>";
-		};
-		0006DF7A208DBCA8005A4465 /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				0006DF7B208DBCA8005A4465 /* CalculatorTools.h */,
-				0006DF7C208DBCA8005A4465 /* CalculatorTools.m */,
-				0006DF7D208DBCA8005A4465 /* IFlyFaceImage.h */,
-				0006DF7E208DBCA8005A4465 /* IFlyFaceImage.m */,
-				0006DF7F208DBCA8005A4465 /* UIImage+compress.h */,
-				0006DF80208DBCA8005A4465 /* UIImage+compress.m */,
-				0006DF81208DBCA8005A4465 /* UIImage+Extensions.h */,
-				0006DF82208DBCA8005A4465 /* UIImage+Extensions.m */,
-			);
-			path = Image;
-			sourceTree = "<group>";
-		};
-		0006DF83208DBCA9005A4465 /* Capture */ = {
-			isa = PBXGroup;
-			children = (
-				0006DF84208DBCA9005A4465 /* CaptureManager.h */,
-				0006DF85208DBCA9005A4465 /* CaptureManager.m */,
-				0006DF86208DBCA9005A4465 /* CaptureSessionManager.h */,
-				0006DF87208DBCA9005A4465 /* CaptureSessionManager.m */,
-			);
-			path = Capture;
-			sourceTree = "<group>";
-		};
-		0006DF88208DBCAA005A4465 /* Result */ = {
-			isa = PBXGroup;
-			children = (
-				0006DF89208DBCAA005A4465 /* IFlyFaceResultDetector.h */,
-				0006DF8A208DBCAA005A4465 /* IFlyFaceResultDetector.m */,
-				0006DF8B208DBCAA005A4465 /* IFlyFaceResultKeys.h */,
-				0006DF8C208DBCAA005A4465 /* IFlyFaceResultKeys.m */,
-				0006DF8D208DBCAA005A4465 /* IFlyFaceResultTrack.h */,
-				0006DF8E208DBCAA005A4465 /* IFlyFaceResultTrack.m */,
-			);
-			path = Result;
-			sourceTree = "<group>";
-		};
-		0006DF8F208DBCAC005A4465 /* CanvasView */ = {
-			isa = PBXGroup;
-			children = (
-				0006DF90208DBCAC005A4465 /* CanvasView.h */,
-				0006DF91208DBCAC005A4465 /* CanvasView.m */,
-			);
-			path = CanvasView;
-			sourceTree = "<group>";
-		};
-		0006DF92208DBCAD005A4465 /* Permission */ = {
-			isa = PBXGroup;
-			children = (
-				0006DF93208DBCAD005A4465 /* PermissionDetector.h */,
-				0006DF94208DBCAD005A4465 /* PermissionDetector.m */,
-			);
-			path = Permission;
 			sourceTree = "<group>";
 		};
 		002F942820AEBA5500F84094 /* messagesetting */ = {
@@ -1629,34 +1451,6 @@
 			path = alert;
 			sourceTree = "<group>";
 		};
-		004EF51C20A2A1BA00BA9602 /* test */ = {
-			isa = PBXGroup;
-			children = (
-				0006DF112089875E005A4465 /* ByViewController.h */,
-				0006DF122089875E005A4465 /* ByViewController.m */,
-				0006DFA0208DC05B005A4465 /* SystemFacePage.h */,
-				0006DFA1208DC05B005A4465 /* SystemFacePage.m */,
-				0006DFA6208DCB66005A4465 /* IFlyOnlineFaceDetectPage.h */,
-				0006DFA7208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m */,
-				00CCE9A6208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.h */,
-				00CCE9A7208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m */,
-				00CCE9A9208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.h */,
-				00CCE9AA208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m */,
-				005F7A8720901F0C003CA4CA /* MasonryPage.h */,
-				005F7A8820901F0C003CA4CA /* MasonryPage.m */,
-			);
-			path = test;
-			sourceTree = "<group>";
-		};
-		004EF51D20A2A1CA00BA9602 /* test */ = {
-			isa = PBXGroup;
-			children = (
-				00D324C82086E355001EC82F /* ByView.h */,
-				00D324C92086E355001EC82F /* ByView.m */,
-			);
-			path = test;
-			sourceTree = "<group>";
-		};
 		004EF51E20A2A1D900BA9602 /* base */ = {
 			isa = PBXGroup;
 			children = (
@@ -1666,6 +1460,8 @@
 				00CCE9AD208ECB9300032B4A /* UserModel.m */,
 				0070FFE520D8997200A67B45 /* LiveModel.h */,
 				0070FFE620D8997200A67B45 /* LiveModel.m */,
+				00444FA820ECA300002F121A /* ApplyModel.h */,
+				00444FA920ECA300002F121A /* ApplyModel.m */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -1673,6 +1469,8 @@
 		004EF57120AAC48600BA9602 /* login */ = {
 			isa = PBXGroup;
 			children = (
+				00F24C3220EA2221003BBE94 /* FaceLoginPage.h */,
+				00F24C2E20EA2221003BBE94 /* FaceLoginPage.m */,
 				004EF52620A2A42800BA9602 /* LoginPage.h */,
 				004EF52720A2A42800BA9602 /* LoginPage.m */,
 				004EF53820A2FDB200BA9602 /* BindPhonePage.h */,
@@ -1695,6 +1493,8 @@
 		004EF57320AAC4A100BA9602 /* login */ = {
 			isa = PBXGroup;
 			children = (
+				00F24C3120EA2221003BBE94 /* FaceLoginView.h */,
+				00F24C2F20EA2221003BBE94 /* FaceLoginView.m */,
 				004EF52320A2A41500BA9602 /* LoginView.h */,
 				004EF52420A2A41500BA9602 /* LoginView.m */,
 				004EF53B20A2FF8200BA9602 /* BindPhoneView.h */,
@@ -1719,7 +1519,8 @@
 		004EF57520AAC4E100BA9602 /* login */ = {
 			isa = PBXGroup;
 			children = (
-				00F24C2D20EA21A8003BBE94 /* face */,
+				00F24C3020EA2221003BBE94 /* FaceLoginViewModel.h */,
+				00F24C3320EA2222003BBE94 /* FaceLoginViewModel.m */,
 				004EF52020A2A23C00BA9602 /* LoginViewModel.h */,
 				004EF52120A2A23C00BA9602 /* LoginViewModel.m */,
 				004EF53E20A2FFA400BA9602 /* BindPhoneViewModel.h */,
@@ -1869,8 +1670,8 @@
 		004EF5D620AC514500BA9602 /* profile */ = {
 			isa = PBXGroup;
 			children = (
-				004EF5C020AC2C1800BA9602 /* FaceEnterPage.h */,
-				004EF5C120AC2C1800BA9602 /* FaceEnterPage.m */,
+				0070FFF520D8F77F00A67B45 /* FaceEnterPage2.h */,
+				0070FFF620D8F77F00A67B45 /* FaceEnterPage2.m */,
 				004EF58620AAD32F00BA9602 /* ProfilePage.h */,
 				004EF58720AAD32F00BA9602 /* ProfilePage.m */,
 			);
@@ -1880,8 +1681,8 @@
 		004EF5D720AC516600BA9602 /* profile */ = {
 			isa = PBXGroup;
 			children = (
-				004EF5C320AC2C8500BA9602 /* FaceEnterView.h */,
-				004EF5C420AC2C8500BA9602 /* FaceEnterView.m */,
+				0070000820DA46F800A67B45 /* FaceEnterView2.h */,
+				0070000920DA46F800A67B45 /* FaceEnterView2.m */,
 				004EF5AE20ABFD8900BA9602 /* ProfileView.h */,
 				004EF5AF20ABFD8900BA9602 /* ProfileView.m */,
 				004EF5B720AC010700BA9602 /* ProfileCell.h */,
@@ -1906,10 +1707,10 @@
 		004EF5D920AC51A200BA9602 /* profile */ = {
 			isa = PBXGroup;
 			children = (
+				0070000B20DA470600A67B45 /* FaceEnterViewModel2.h */,
+				0070000C20DA470600A67B45 /* FaceEnterViewModel2.m */,
 				004EF5B120ABFDF200BA9602 /* ProfileViewModel.h */,
 				004EF5B220ABFDF200BA9602 /* ProfileViewModel.m */,
-				004EF5C620AC2CD500BA9602 /* FaceEnterViewModel.h */,
-				004EF5C720AC2CD500BA9602 /* FaceEnterViewModel.m */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -2040,6 +1841,8 @@
 				0070FFEB20D8F42C00A67B45 /* com.baidu.idl.face.model.bundle */,
 				0070FFEA20D8F42C00A67B45 /* idl-license.face-ios */,
 				0070FFEC20D8F42D00A67B45 /* IDLFaceSDK.framework */,
+				00AD859320EE24B4001D272C /* LocalFaceDetect.h */,
+				00AD859420EE24B4001D272C /* LocalFaceDetect.m */,
 			);
 			path = face;
 			sourceTree = "<group>";
@@ -2051,12 +1854,6 @@
 				0070000020D8F83400A67B45 /* ImageUtils.m */,
 				0070FFFF20D8F83400A67B45 /* VideoCaptureDevice.h */,
 				0070FFFB20D8F83400A67B45 /* VideoCaptureDevice.m */,
-				0070FFF520D8F77F00A67B45 /* FaceEnterPage2.h */,
-				0070FFF620D8F77F00A67B45 /* FaceEnterPage2.m */,
-				0070000820DA46F800A67B45 /* FaceEnterView2.h */,
-				0070000920DA46F800A67B45 /* FaceEnterView2.m */,
-				0070000B20DA470600A67B45 /* FaceEnterViewModel2.h */,
-				0070000C20DA470600A67B45 /* FaceEnterViewModel2.m */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -2192,7 +1989,6 @@
 				004EF57E20AAC97100BA9602 /* mine */,
 				004EF57420AAC4AB00BA9602 /* main */,
 				004EF57320AAC4A100BA9602 /* login */,
-				004EF51D20A2A1CA00BA9602 /* test */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -2254,7 +2050,6 @@
 				004EF57A20AAC95000BA9602 /* mine */,
 				004EF57220AAC49900BA9602 /* main */,
 				004EF57120AAC48600BA9602 /* login */,
-				004EF51C20A2A1BA00BA9602 /* test */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -2354,19 +2149,6 @@
 				00DA554920E0873F00798C9D /* PageManager.m */,
 			);
 			path = page;
-			sourceTree = "<group>";
-		};
-		00F24C2D20EA21A8003BBE94 /* face */ = {
-			isa = PBXGroup;
-			children = (
-				00F24C3220EA2221003BBE94 /* FaceLoginPage.h */,
-				00F24C2E20EA2221003BBE94 /* FaceLoginPage.m */,
-				00F24C3120EA2221003BBE94 /* FaceLoginView.h */,
-				00F24C2F20EA2221003BBE94 /* FaceLoginView.m */,
-				00F24C3020EA2221003BBE94 /* FaceLoginViewModel.h */,
-				00F24C3320EA2222003BBE94 /* FaceLoginViewModel.m */,
-			);
-			path = face;
 			sourceTree = "<group>";
 		};
 		CFB6D19D20B5341F00A0863B /* visitor */ = {
@@ -2660,26 +2442,23 @@
 				0038F1CE20CFAFB700094EB9 /* STExtendedLabel.m in Sources */,
 				003EDB1220C147E400CFCFE9 /* PropertyMsgCell.m in Sources */,
 				004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */,
-				0006DF79208DBC76005A4465 /* FaceRequestViewController.m in Sources */,
 				0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */,
 				0038F0E020C7D6B300094EB9 /* ReportFixViewModel.m in Sources */,
-				0006DF75208DBC76005A4465 /* FaceDetectorViewController.m in Sources */,
 				00D324A020859778001EC82F /* BaseViewController.m in Sources */,
 				00B6332120E365BA00B558AA /* PassHistoryPage.m in Sources */,
 				0006DF1C20898F70005A4465 /* TouchScrollView.m in Sources */,
-				0006DF9A208DBCAD005A4465 /* CaptureSessionManager.m in Sources */,
 				004EF5A620AAEAE200BA9602 /* HabitantViewModel.m in Sources */,
 				002F945020AFFBEF00F84094 /* AddCarViewModel.m in Sources */,
 				004EF58B20AAD3F400BA9602 /* MemberPage.m in Sources */,
 				004EF59D20AAD45200BA9602 /* HabitantPage.m in Sources */,
 				0050800020B6AC8800A976D9 /* AuthStatuView.m in Sources */,
 				00D324B2208598A7001EC82F /* STTimeUtil.m in Sources */,
-				005F7A8920901F0C003CA4CA /* MasonryPage.m in Sources */,
 				00BBBD972091D0E300556B90 /* STFileUtil.m in Sources */,
 				004EF58120AAC98100BA9602 /* MineView.m in Sources */,
 				0038F0F020C90D2C00094EB9 /* DeviceSharePage.m in Sources */,
 				00B6333320E47A7400B558AA /* STUploadImageUtil.m in Sources */,
 				00D324B3208598A7001EC82F /* STPUtil.m in Sources */,
+				00AD859520EE24B4001D272C /* LocalFaceDetect.m in Sources */,
 				002F94AD20B40E9100F84094 /* OnePaymentView.m in Sources */,
 				004EF60420AD887500BA9602 /* AddMemberPage.m in Sources */,
 				00DA554A20E0873F00798C9D /* PageManager.m in Sources */,
@@ -2705,18 +2484,16 @@
 				004EF58E20AAD40600BA9602 /* VisitorPage.m in Sources */,
 				002F945C20B25E7C00F84094 /* CarDetailViewModel.m in Sources */,
 				004EF5B320ABFDF200BA9602 /* ProfileViewModel.m in Sources */,
-				0006DF99208DBCAD005A4465 /* CaptureManager.m in Sources */,
 				003EDADC20BE733300CFCFE9 /* MessageCell.m in Sources */,
 				003EDAAD20BBD9CF00CFCFE9 /* STSinglePickerLayerView.m in Sources */,
-				0006DF78208DBC76005A4465 /* FaceRequestSettingViewController.m in Sources */,
 				004EF53120A2D6AA00BA9602 /* UIButton+Init.m in Sources */,
 				CFB6D1B720B55D6B00A0863B /* PassView.m in Sources */,
 				004EF54920A3088300BA9602 /* MainView.m in Sources */,
 				004EF56D20AA7DAF00BA9602 /* STLayerView.m in Sources */,
 				00C25427209B162A00E8E306 /* QRCodePage.m in Sources */,
+				00444FAA20ECA300002F121A /* ApplyModel.m in Sources */,
 				004EF5B620ABFE3300BA9602 /* ProfileModel.m in Sources */,
 				004EF5A320AAEAC600BA9602 /* HabitantView.m in Sources */,
-				0006DF9E208DBCAD005A4465 /* CanvasView.m in Sources */,
 				004EF5AD20ABDE6300BA9602 /* MineCell.m in Sources */,
 				0038F1CA20CFAF3900094EB9 /* STAlertSheet.m in Sources */,
 				003EDA8F20B8011000CFCFE9 /* STAddressLayerView.m in Sources */,
@@ -2725,7 +2502,6 @@
 				0038F0FF20CA2AA300094EB9 /* FixHistoryViewModel.m in Sources */,
 				003EDAFD20C117F700CFCFE9 /* SystemMsgViewModel.m in Sources */,
 				0038F0E320C7D8E800094EB9 /* ReportFixView.m in Sources */,
-				0006DF96208DBCAD005A4465 /* IFlyFaceImage.m in Sources */,
 				004EF58520AAC99A00BA9602 /* MineViewModel.m in Sources */,
 				002F94B420B40F5400F84094 /* OnePaymentViewModel.m in Sources */,
 				004EF57D20AAC96900BA9602 /* MinePage.m in Sources */,
@@ -2733,7 +2509,6 @@
 				00DD35F920D112EC00764F01 /* CommunityPositionModel.m in Sources */,
 				003EDACD20BD5A6100CFCFE9 /* MessagePage.m in Sources */,
 				002F948420B3B79E00F84094 /* NSString+Extension.m in Sources */,
-				0006DF98208DBCAD005A4465 /* UIImage+Extensions.m in Sources */,
 				004EF5D120AC48AA00BA9602 /* SettingCell.m in Sources */,
 				00CCE9B4208ECDD300032B4A /* STUserDefaults.m in Sources */,
 				00CCE9B1208ECCDD00032B4A /* AccountManager.m in Sources */,
@@ -2742,7 +2517,6 @@
 				00D324E420874874001EC82F /* STRuntimeUtil.m in Sources */,
 				002F947120B2BB8F00F84094 /* PaymentRecordViewModel.m in Sources */,
 				004EF5F120AD69FB00BA9602 /* MemberView.m in Sources */,
-				0006DF9F208DBCAD005A4465 /* PermissionDetector.m in Sources */,
 				004EF59A20AAD44600BA9602 /* MessageSettingPage.m in Sources */,
 				0070000D20DA470600A67B45 /* FaceEnterViewModel2.m in Sources */,
 				002F945F20B2713B00F84094 /* CarDetailCell.m in Sources */,
@@ -2764,13 +2538,10 @@
 				004EF52520A2A41500BA9602 /* LoginView.m in Sources */,
 				003EDAA120BB991D00CFCFE9 /* BuildingLayerModel.m in Sources */,
 				002F949D20B3F8E700F84094 /* VisitorPaymentModel.m in Sources */,
-				0006DF76208DBC76005A4465 /* FaceStreamDetectorViewController.m in Sources */,
 				004EF58820AAD32F00BA9602 /* ProfilePage.m in Sources */,
 				0038F12B20CA81F000094EB9 /* DeviceShareOrderViewCell.m in Sources */,
 				002F945320B02B9E00F84094 /* CarViewCell.m in Sources */,
 				00F24C3520EA2222003BBE94 /* FaceLoginView.m in Sources */,
-				00CCE9A8208DE7AB00032B4A /* IFlyOfflineFaceDetectPage.m in Sources */,
-				0006DF9D208DBCAD005A4465 /* IFlyFaceResultTrack.m in Sources */,
 				002F949120B3E8C200F84094 /* MonthPaymentView.m in Sources */,
 				004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */,
 				002F949A20B3F8C600F84094 /* VisitorPaymentCell.m in Sources */,
@@ -2779,7 +2550,6 @@
 				004EF56720A9B4E300BA9602 /* NextLoginView.m in Sources */,
 				0070FFE120D3916C00A67B45 /* STLocationManager.m in Sources */,
 				0038F10320CA2EA900094EB9 /* FixModel.m in Sources */,
-				004EF5C520AC2C8500BA9602 /* FaceEnterView.m in Sources */,
 				003EDAB320BBEB6200CFCFE9 /* AuthFacePage.m in Sources */,
 				004EF5BC20AC05D100BA9602 /* TitleContentModel.m in Sources */,
 				003EDB0020C1180400CFCFE9 /* PropertyMsgViewModel.m in Sources */,
@@ -2790,15 +2560,12 @@
 				003EDAC320BCF9A500CFCFE9 /* RecognizeModel.m in Sources */,
 				0038F0D720C7C0DB00094EB9 /* OpendoorViewModel.m in Sources */,
 				003EDA8620B7BF6800CFCFE9 /* CommunityViewModel.m in Sources */,
-				0006DFA8208DCB66005A4465 /* IFlyOnlineFaceDetectPage.m in Sources */,
 				007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */,
 				003EDB1520C5249800CFCFE9 /* STSwitchView.m in Sources */,
 				003EDAB620BBEC6800CFCFE9 /* AuthFaceView.m in Sources */,
 				0050800C20B6BB1700A976D9 /* AuthUserView.m in Sources */,
-				0006DFA2208DC05B005A4465 /* SystemFacePage.m in Sources */,
 				0038F11220CA690200094EB9 /* DeviceShareView.m in Sources */,
 				00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */,
-				004EF5C820AC2CD500BA9602 /* FaceEnterViewModel.m in Sources */,
 				CFB6D1A820B5358200A0863B /* VisitorHomePage.m in Sources */,
 				00B6331E20E325F200B558AA /* PassPage.m in Sources */,
 				004EF53D20A2FF8200BA9602 /* BindPhoneView.m in Sources */,
@@ -2818,7 +2585,6 @@
 				0038F1B020CE45E000094EB9 /* DeviceShareHistoryModel.m in Sources */,
 				0039FC2C20942BDF0044D92E /* STObserver.m in Sources */,
 				003EDAD920BE439700CFCFE9 /* MessageModel.m in Sources */,
-				0006DF97208DBCAD005A4465 /* UIImage+compress.m in Sources */,
 				004EF56A20A9B7FF00BA9602 /* NextLoginViewModel.m in Sources */,
 				00B6333020E382DD00B558AA /* PassViewModel.m in Sources */,
 				003EDAE820BE88E800CFCFE9 /* EnterAuthViewModel.m in Sources */,
@@ -2842,7 +2608,6 @@
 				CFB6D1AB20B535B300A0863B /* VisitorHomeViewModel.m in Sources */,
 				004EF5F820AD762A00BA9602 /* MemberModel.m in Sources */,
 				002F943C20AED4FF00F84094 /* HabitantCell.m in Sources */,
-				0006DF95208DBCAD005A4465 /* CalculatorTools.m in Sources */,
 				003EDB0320C1181600CFCFE9 /* SystemMsgView.m in Sources */,
 				002F949720B3EAEB00F84094 /* MonthPaymentModel.m in Sources */,
 				004EF5CE20AC450900BA9602 /* SettingViewModel.m in Sources */,
@@ -2867,22 +2632,17 @@
 				0038F0FC20CA2A9000094EB9 /* FixHistoryView.m in Sources */,
 				003EDA8320B7BF5D00CFCFE9 /* CommunityView.m in Sources */,
 				004EF5CB20AC44F900BA9602 /* SettingView.m in Sources */,
-				004EF5C220AC2C1800BA9602 /* FaceEnterPage.m in Sources */,
 				003EDA8920B7F5AD00CFCFE9 /* STBuildingLayerView.m in Sources */,
 				003EDB0F20C1263800CFCFE9 /* SystemMsgCell.m in Sources */,
 				004EF5E620AC558A00BA9602 /* UpdatePhoneNumViewModel.m in Sources */,
 				002F948E20B3E8A000F84094 /* VisitorPaymentView.m in Sources */,
 				0038F12520CA78E800094EB9 /* DeviceShareOrderView.m in Sources */,
-				0006DF9C208DBCAD005A4465 /* IFlyFaceResultKeys.m in Sources */,
-				00CCE9AB208DEC3F00032B4A /* IFlyOfflineVedioDetectPage.m in Sources */,
-				0006DF9B208DBCAD005A4465 /* IFlyFaceResultDetector.m in Sources */,
 				003EDAEB20BE94A000CFCFE9 /* EnterAuthCell.m in Sources */,
 				004EF5E320AC557700BA9602 /* UpdatePhoneNumView.m in Sources */,
 				0050800920B6BAEE00A976D9 /* AuthUserPage.m in Sources */,
 				002F946820B298EA00F84094 /* PaymentView.m in Sources */,
 				0038F0D320C7C0C400094EB9 /* OpendoorView.m in Sources */,
 				0038F0F620C92CD300094EB9 /* STOrderTimeLayerView.m in Sources */,
-				00D324CA2086E355001EC82F /* ByView.m in Sources */,
 				0070000A20DA46F800A67B45 /* FaceEnterView2.m in Sources */,
 				0070FFE420D3AE4C00A67B45 /* UserCommitModel.m in Sources */,
 				0038F12820CA811900094EB9 /* DeviceShareOrderViewModel.m in Sources */,
@@ -2895,7 +2655,6 @@
 				002F944720AFF6B600F84094 /* CarView.m in Sources */,
 				004EF53420A2DDCB00BA9602 /* LoginModel.m in Sources */,
 				002F94A420B4071200F84094 /* CarHistoryCell.m in Sources */,
-				0006DF132089875E005A4465 /* ByViewController.m in Sources */,
 				0070000320D8F83400A67B45 /* ImageUtils.m in Sources */,
 				00DD35FC20D144A500764F01 /* BuildingRespondModel.m in Sources */,
 				CFB6D1A120B5343500A0863B /* VisitorViewModel.m in Sources */,
@@ -2908,6 +2667,7 @@
 				00C2541E209AACDC00E8E306 /* STUpdateUtil.m in Sources */,
 				004EF54C20A3E27100BA9602 /* STNavigationView.m in Sources */,
 				003EDAC920BD4C6300CFCFE9 /* CommunityCell.m in Sources */,
+				00AD859220EE20EA001D272C /* PermissionDetector.m in Sources */,
 				004EF5FB20AD812600BA9602 /* MemberCell.m in Sources */,
 				003EDAEE20BF9CF300CFCFE9 /* VerificateUserView.m in Sources */,
 				0038F0DD20C7D64100094EB9 /* ReportFixPage.m in Sources */,
@@ -3077,6 +2837,7 @@
 				);
 				GCC_PREFIX_HEADER = framework/macro/STPrefixHeader.pch;
 				INFOPLIST_FILE = framework/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3146,6 +2907,7 @@
 				);
 				GCC_PREFIX_HEADER = framework/macro/STPrefixHeader.pch;
 				INFOPLIST_FILE = framework/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

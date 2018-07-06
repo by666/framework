@@ -138,7 +138,11 @@
 
     
     _sendVerifyCodeBtn =  [[UIButton alloc]initWithFont:STFont(14) text:_mViewModel.loginModel.verifyStr textColor:cwhite backgroundColor:[UIColor clearColor] corner:0 borderWidth:0 borderColor:nil];
-    _sendVerifyCodeBtn.frame = CGRectMake(STWidth(252), STHeight(300), STWidth(80), STHeight(56));
+    if(IS_IPHONE_X){
+        _sendVerifyCodeBtn.frame = CGRectMake(STWidth(232), STHeight(300), STWidth(100) , STHeight(56));
+    }else{
+        _sendVerifyCodeBtn.frame = CGRectMake(STWidth(252), STHeight(300), STWidth(80) , STHeight(56));
+    }
     _sendVerifyCodeBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_sendVerifyCodeBtn];
     [_sendVerifyCodeBtn addTarget:self action:@selector(doSendVerifyCode) forControlEvents:UIControlEventTouchUpInside];

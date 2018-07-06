@@ -11,6 +11,7 @@
 #import "PassViewModel.h"
 #import "STObserverManager.h"
 #import "VisitorPage.h"
+#import "PassHistoryPage.h"
 @interface PassPage ()<PassViewDelegate>
 
 @property(strong, nonatomic)PassView *passView;
@@ -49,6 +50,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 
@@ -90,6 +92,15 @@
         [VisitorPage show:self type:People model:visitorModel];
     }else{
         [VisitorPage show:self type:Car model:visitorModel];
+    }
+}
+
+-(void)backLastPage{
+    if(_needDelete){
+        [super backLastPage];
+    }else{
+        PassHistoryPage *passHistoryPage = [[PassHistoryPage alloc]init];
+        [self.navigationController pushViewController:passHistoryPage animated:YES];
     }
 }
 @end

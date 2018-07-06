@@ -64,7 +64,7 @@
     _mViewModel.model = model;
     [_mViewModel updateProfile];
     
-    if(liveModel.delState == 1){
+    if(liveModel.statu == STATU_YES){
         _tipsBtn.hidden = YES;
     }
 
@@ -77,7 +77,7 @@
             rows = 5;
             break;
         case 1:
-            rows = 2;
+            rows = 3;
             break;
     }
     return rows;
@@ -129,7 +129,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.section == 0 && indexPath.row == 0){
         if(_mViewModel){
-            [_mViewModel goFaceEnterPage];
+            LiveModel *model = [[AccountManager sharedAccountManager]getLiveModel];
+            if(model.statu == STATU_YES){
+                [_mViewModel goFaceEnterPage];
+            }else{
+                [STToastUtil showWarnTips:MSG_MINE_AUTH_TIPS];
+            }
         }
     }
 }

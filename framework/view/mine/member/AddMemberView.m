@@ -44,13 +44,13 @@
     
     
     _takePhotoBTN = [[UIButton alloc]initWithFont:STFont(30) text:@"" textColor:c12 backgroundColor:c15 corner:STHeight(70) borderWidth:3.25f borderColor:c22];
-    _takePhotoBTN.frame = CGRectMake(STWidth(118), STHeight(82), STHeight(140), STHeight(140));
+    _takePhotoBTN.frame = CGRectMake((ScreenWidth - STHeight(140))/2, STHeight(82), STHeight(140), STHeight(140));
     _takePhotoBTN.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [_takePhotoBTN addTarget:self action:@selector(OnClickTakePhotoBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_takePhotoBTN];
     
     UILabel *layerLabel= [[UILabel alloc]initWithFont:STFont(17) text:@"+" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:[c13 colorWithAlphaComponent:0.6f] multiLine:NO];
-    layerLabel.frame = CGRectMake(0, STHeight(101), STWidth(140), STHeight(39));
+    layerLabel.frame = CGRectMake(0, STHeight(101), STHeight(140), STHeight(39));
     [_takePhotoBTN addSubview:layerLabel];
     _takePhotoBTN.clipsToBounds = YES;
     

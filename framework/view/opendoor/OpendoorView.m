@@ -10,6 +10,8 @@
 #import <ZBarSDK/ZBarSDK.h>
 #import "LBXScanViewStyle.h"
 #import "LBXScanViewController.h"
+#import "STUserDefaults.h"
+#import "STTimeUtil.h"
 
 @interface OpendoorView()
 
@@ -17,6 +19,7 @@
 @property(strong, nonatomic)UIView *qrCodeView;
 @property(strong, nonatomic)UILabel *tipsLabel;
 @property(strong, nonatomic)UIButton *openBtn;
+@property(strong, nonatomic)UILabel *codeLabel;
 
 @end
 
@@ -45,6 +48,13 @@
     
     [self addSubview:[self qrCodeView]];
     [self buildQRCodeView];
+    
+    NSString *dateStr =[STTimeUtil generateDate:[STTimeUtil getCurrentTimeStamp]];
+    if([dateStr isEqualToString:[STUserDefaults getKeyValue:@"opendoor"]]){
+        [self onGenerateTempLock];
+        NSString *codeStr = [STUserDefaults getKeyValue:@"opencode"];
+        _codeLabel.text = codeStr;
+    }
     
 }
 
@@ -76,10 +86,10 @@
     
     
     NSString *codeStr = [NSString stringWithFormat:@"%d %d %d %d",arc4random() % 5,arc4random() % 5,arc4random() % 5,arc4random() % 5];
-    UILabel *codeLabel = [[UILabel alloc]initWithFont:STFont(18) text:codeStr textAlignment:NSTextAlignmentCenter textColor:c25 backgroundColor:nil multiLine:NO];
-    codeLabel.frame = CGRectMake(0, STHeight(295), ScreenWidth, STHeight(18));
-    [codeLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:STFont(18)]];
-    [_qrCodeView addSubview:codeLabel];
+    _codeLabel = [[UILabel alloc]initWithFont:STFont(18) text:codeStr textAlignment:NSTextAlignmentCenter textColor:c25 backgroundColor:nil multiLine:NO];
+    _codeLabel.frame = CGRectMake(0, STHeight(295), ScreenWidth, STHeight(18));
+    [_codeLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:STFont(18)]];
+    [_qrCodeView addSubview:_codeLabel];
     
     UIButton *shareBtn = [[UIButton alloc]initWithFont:STFont(14) text:MSG_OPENDOOR_SHAREBTN textColor:cwhite backgroundColor:c23 corner:STHeight(8) borderWidth:0 borderColor:nil];
     shareBtn.frame = CGRectMake(STWidth(127), STHeight(351), ScreenWidth - STWidth(127 * 2), STHeight(38));
@@ -95,6 +105,9 @@
 -(void)onClickOpenBtn{
     if(_mViewModel){
         [_mViewModel generateTempLock];
+        NSString *dateStr =[STTimeUtil generateDate:[STTimeUtil getCurrentTimeStamp]];
+        [STUserDefaults saveKeyValue:@"opencode" value:_codeLabel.text];
+        [STUserDefaults saveKeyValue:@"opendoor" value:dateStr];
     }
 }
 

@@ -35,10 +35,10 @@
     view.layer.cornerRadius = STHeight(6);
     [self.contentView addSubview:view];
     
-    _avatarImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(15), STHeight(20), STHeight(60), STHeight(60))];
+    _avatarImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(15), (STHeight(100) - STWidth(60))/2, STWidth(60), STWidth(60))];
     _avatarImageView.backgroundColor = cblack;
     _avatarImageView.layer.masksToBounds =YES;
-    _avatarImageView.layer.cornerRadius = STHeight(30);
+    _avatarImageView.layer.cornerRadius = STWidth(30);
     _avatarImageView.image = [UIImage imageNamed:@"ic_test1"];
     _avatarImageView.contentMode =UIViewContentModeScaleAspectFill;
     [view addSubview:_avatarImageView];

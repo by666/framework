@@ -80,11 +80,13 @@ SINGLETON_IMPLEMENTION(STUploadImageUtil)
     request.bucketName = BucketName;
     request.objectKey = objectKey;
     request.uploadingFileURL = [NSURL fileURLWithPath:filePath];
-    request.uploadProgress = ^(int64_t bytesSent, int64_t totalByteSent, int64_t totalBytesExpectedToSend) {
-        dispatch_main_sync_safe(^{
-            progress((double)totalByteSent * 100 / (double)totalBytesExpectedToSend);
-        });
-    };
+    if(progress){
+        request.uploadProgress = ^(int64_t bytesSent, int64_t totalByteSent, int64_t totalBytesExpectedToSend) {
+            dispatch_main_sync_safe(^{
+                progress((double)totalByteSent * 100 / (double)totalBytesExpectedToSend);
+            });
+        };
+    }
     OSSTask * task = [_client putObject:request];
     [task continueWithBlock:^id(OSSTask *task) {
         if (task.error) {

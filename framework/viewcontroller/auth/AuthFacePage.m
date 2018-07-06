@@ -11,14 +11,12 @@
 #import "FaceEnterPage2.h"
 #import "PermissionDetector.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "UIImage+Extensions.h"
-#import "UIImage+compress.h"
 #import "STFileUtil.h"
-#import "FaceEnterPage.h"
 #import "STObserverManager.h"
 #import "MainPage.h"
 #import "STTimeUtil.h"
 #import <IDLFaceSDK/IDLFaceSDK.h>
+#import "LocalFaceDetect.h"
 
 @interface AuthFacePage ()<AuthFaceViewModelDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,STObserverProtocol>
 
@@ -144,15 +142,26 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage* image= [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     NSString *imagePath = [STFileUtil saveImageFile:image];
-    WS(weakSelf)    
-    [[FaceSDKManager sharedInstance] livenessWithImage:image completion:^(FaceInfo *faceinfo, LivenessState *state, ResultCode resultCode) {
-        if(resultCode == ResultCodeOK || resultCode == ResultCodeDataHitOne){
-            [weakSelf.authFaceView updateView:imagePath];
-            [STLog print:@"人脸识别成功!"];
-        }else{
-            [STToastUtil showFailureAlertSheet:MSG_FACEDETECT_FAIL];
-        }
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    WS(weakSelf)
+    [LocalFaceDetect detectLocalImage:image success:^(id successStr) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [weakSelf.authFaceView updateView:imagePath];
+        [STToastUtil showSuccessTips:MSG_FACEDETECT_SUCCESS];
+    } failure:^(id failStr) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [STToastUtil showFailureAlertSheet:failStr];
     }];
+//
+//    WS(weakSelf)
+//    [[FaceSDKManager sharedInstance] livenessWithImage:image completion:^(FaceInfo *faceinfo, LivenessState *state, ResultCode resultCode) {
+//        if(resultCode == ResultCodeOK || resultCode == ResultCodeDataHitOne){
+//            [weakSelf.authFaceView updateView:imagePath];
+//            [STToastUtil showSuccessTips:MSG_FACEDETECT_SUCCESS];
+//        }else{
+//            [STToastUtil showFailureAlertSheet:MSG_FACEDETECT_FAIL];
+//        }
+//    }];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{

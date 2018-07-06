@@ -44,6 +44,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 -(void)onGetVisitoryHistoryDatas:(Boolean)success{

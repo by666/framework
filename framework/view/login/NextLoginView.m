@@ -26,12 +26,13 @@
 
 -(void)initView{
     
+    UserModel *model = [[AccountManager sharedAccountManager] getUserModel];
     UIImageView *avatarImageView = [[UIImageView alloc]init];
     avatarImageView.backgroundColor = cblack;
     avatarImageView.frame= CGRectMake(STWidth(157), STHeight(79), STWidth(62), STWidth(62));
     avatarImageView.layer.masksToBounds = YES;
     avatarImageView.layer.cornerRadius = STWidth(31);
-    avatarImageView.image = [UIImage imageNamed:@"ic_test1"];
+    [avatarImageView sd_setImageWithURL:[[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:model.headUrl]];
     avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:avatarImageView];
     
@@ -47,7 +48,8 @@
     [self addSubview:faceLoginBtn];
     
     UIButton *loginBtn = [[UIButton alloc]initWithFont:STFont(15) text:MSG_VERIFYCODE_LOGIN textColor:c08 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil];
-    loginBtn.frame = CGRectMake(STWidth(150), STHeight(274), STWidth(77), STHeight(21));
+    CGSize loginStrSize =  [MSG_VERIFYCODE_LOGIN sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(15)]];
+    loginBtn.frame = CGRectMake((ScreenWidth - loginStrSize.width )/2, STHeight(274), loginStrSize.width, STHeight(21));
     [loginBtn addTarget:self action:@selector(goLogin) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:loginBtn];
 }

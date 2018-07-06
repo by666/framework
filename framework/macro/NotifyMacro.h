@@ -37,3 +37,6 @@
 #define UD_USERMODEL @"ud_usermodel"
 #define UD_LIVEMODEL @"ud_livemodel"
 #define UD_MAINMODEL @"ud_mainmodel"
+#define UD_APPLYMODEL @"ud_applymodel"
+
+#define UD_BAIDUAK @"ud_baiduaccesstoken"

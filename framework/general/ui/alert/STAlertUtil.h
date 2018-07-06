@@ -21,6 +21,9 @@
 //对话框有取消和确认按钮,都有回调
 +(void)showAlertController:(NSString *)title content:(NSString *)content controller:(UIViewController *)controller confirm:(void (^)(void))confirmClick cancel:(void(^)(void))cancelClick;
 
+//对话框有取消和确认按钮,都有回调
++(void)showAlertController:(NSString *)title content:(NSString *)content controller:(UIViewController *)controller confirm:(void (^)(void))confirmClick cancel:(void(^)(void))cancelClick confirmStr:(NSString *)confirmStr cancelStr:(NSString *)cancelStr;
+
 //sheet
 +(void)showSheetController:(NSString *)title content:(NSString *)content controller:(UIViewController *)controller sheetModels:(NSMutableArray *)sheetModels;
 

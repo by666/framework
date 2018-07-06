@@ -10,15 +10,13 @@
 #import "ProfileView.h"
 #import "PermissionDetector.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "UIImage+Extensions.h"
-#import "UIImage+compress.h"
 #import "STFileUtil.h"
-#import "FaceEnterPage.h"
 #import "STObserverManager.h"
 #import "AuthStatuPage.h"
 #import "STNetUtil.h"
 #import "FaceEnterPage2.h"
 #import "STUploadImageUtil.h"
+#import <IDLFaceSDK/IDLFaceSDK.h>
 
 @interface ProfilePage ()<ProfileViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,STObserverProtocol>
 
@@ -54,6 +52,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 
@@ -122,9 +121,20 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
     NSString *imagePath = [STFileUtil saveImageFile:image];
-    if(_mViewModel){
-        [_mViewModel uploadHeadImage:imagePath];
-    }
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+    WS(weakSelf)
+    [[FaceSDKManager sharedInstance] livenessWithImage:image completion:^(FaceInfo *faceinfo, LivenessState *state, ResultCode resultCode) {
+        if(resultCode == ResultCodeOK || resultCode == ResultCodeDataHitOne){
+            if(weakSelf.mViewModel){
+                [weakSelf.mViewModel uploadHeadImage:imagePath];
+            }
+            [STToastUtil showSuccessTips:MSG_FACEDETECT_SUCCESS];
+        }else{
+            [STToastUtil showFailureAlertSheet:MSG_FACEDETECT_FAIL];
+        }
+    }];
+
 }
 
 

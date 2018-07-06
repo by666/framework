@@ -30,11 +30,10 @@
 }
 
 -(void)verifyUser{
-    UserModel *userModel = [[AccountManager sharedAccountManager] getUserModel];
-    LiveModel *liveModel = [[AccountManager sharedAccountManager] getLiveModel];
+    ApplyModel *applyModel = [[AccountManager sharedAccountManager] getApplyModel];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    dic[@"applyId"] = @(liveModel.verifyId);
-    if(liveModel.liveAttr == Live_Renter){
+    dic[@"applyId"] = @(applyModel.verifyId);
+    if(applyModel.applyType == Live_Renter){
         dic[@"overdue"] = @"1546075507000";
     }else{
         dic[@"overdue"] = @"";

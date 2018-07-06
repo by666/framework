@@ -24,6 +24,7 @@ typedef NS_ENUM(NSInteger,MessageType){
     UserAuth,        //用户认证消息
 };
 
+//消息状态
 typedef NS_ENUM(NSInteger,MessageStatu){
     DefaultStatu = 0,//默认
     Granted,         //已授权
@@ -43,6 +44,7 @@ typedef NS_ENUM(NSInteger,LIVEATRR){
 };
 
 
+//人脸识别提醒状态
 typedef NS_ENUM(NSUInteger,WarningStatus){
     CommonStatus,
     PoseStatus,
@@ -50,4 +52,22 @@ typedef NS_ENUM(NSUInteger,WarningStatus){
 };
 
 
+//催办状态
+typedef NS_ENUM(NSInteger, AttendStatu){
+    //用户未催办
+    PropertyAttend = 0,
+    //用户已催办
+    UserAttend = 1
+};
+
+
+//审批状态
+typedef NS_ENUM(NSInteger,ApplyStatu){
+    //未处理
+    APPLY_DEFAULT = 0,
+    //审批通过
+    APPLY_PASS,
+    //审批未通过
+    APPLY_REJECT
+};
 

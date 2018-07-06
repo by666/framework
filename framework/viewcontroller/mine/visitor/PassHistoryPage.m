@@ -10,6 +10,7 @@
 #import "PassHistoryView.h"
 #import "PassPage.h"
 #import "STObserverManager.h"
+#import "VisitorHomePage.h"
 @interface PassHistoryPage ()<PassHistoryViewDelegate,STObserverProtocol>
 
 @property(strong, nonatomic)PassHistoryView *passHistoryView;
@@ -31,9 +32,19 @@
     [[STObserverManager sharedSTObserverManager]registerSTObsever:Notify_DeleteCheck delegate:self];
 }
 
+-(void)backLastPage{
+    for (UIViewController *temp in self.navigationController.viewControllers) {
+        if ([temp isKindOfClass:[VisitorHomePage class]]) {
+            [self.navigationController popToViewController:temp animated:YES];
+            break;
+        }
+    }
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 -(void)dealloc{

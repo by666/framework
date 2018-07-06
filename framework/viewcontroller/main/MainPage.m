@@ -55,6 +55,9 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    [_mViewModel getUserInfo];
+    [_mViewModel getLiveInfo];
 }
 
 -(void)initView{
@@ -76,8 +79,7 @@
     [self.view addSubview:_mMainView];
     
     
-    [_mViewModel getUserInfo];
-    [_mViewModel getLiveInfo];
+
     
 }
 

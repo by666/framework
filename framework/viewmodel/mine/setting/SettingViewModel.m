@@ -47,6 +47,7 @@
                 [[AccountManager sharedAccountManager] clearUserModel];
                 [[AccountManager sharedAccountManager] clearLiveModel];
                 [[AccountManager sharedAccountManager] clearMainModel];
+                [[AccountManager sharedAccountManager] clearApplyModel];
                 [weakSelf.delegate onRequestSuccess:respondModel data:nil];
             }else{
                 [weakSelf.delegate onRequestFail:respondModel.msg];

@@ -63,6 +63,23 @@ SINGLETON_IMPLEMENTION(AccountManager)
 }
 
 
+//
+-(void)saveApplyModel:(ApplyModel *)model{
+    [STUserDefaults saveModel:UD_APPLYMODEL model:model];
+}
+
+-(ApplyModel *)getApplyModel{
+    if([STUserDefaults getModel:UD_APPLYMODEL]){
+        return [STUserDefaults getModel:UD_APPLYMODEL];
+    }
+    return [ApplyModel new];
+}
+
+-(void)clearApplyModel{
+    [STUserDefaults removeModel:UD_APPLYMODEL];
+}
+
+
 
 -(Boolean)isLogin{
     UserModel *model = [self getUserModel];

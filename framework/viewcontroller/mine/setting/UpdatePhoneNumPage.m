@@ -38,6 +38,12 @@
     [self.view addSubview:[self updatePhoneNumView]];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self setStatuBarBackgroud:cwhite];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+}
+
 -(UIView *)updatePhoneNumView{
     if(_updatePhoneNumView == nil){
         UpdatePhoneNumViewModel *viewModel = [[UpdatePhoneNumViewModel alloc]init];

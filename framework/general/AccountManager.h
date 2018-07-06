@@ -10,6 +10,7 @@
 #import "UserModel.h"
 #import "LiveModel.h"
 #import "MainModel.h"
+#import "ApplyModel.h"
 @interface AccountManager : NSObject
 SINGLETON_DECLARATION(AccountManager)
 
@@ -22,6 +23,9 @@ SINGLETON_DECLARATION(AccountManager)
 //清除用户账户信息
 -(void)clearUserModel;
 
+
+////////////////////////////////////
+
 //存储用户居住信息
 -(void)saveLiveModel:(LiveModel *)model;
 
@@ -31,6 +35,8 @@ SINGLETON_DECLARATION(AccountManager)
 //清除用户居住信息
 -(void)clearLiveModel;
 
+////////////////////////////////////
+
 //存储主页信息
 -(void)saveMainModel:(MainModel *)model;
 
@@ -39,6 +45,19 @@ SINGLETON_DECLARATION(AccountManager)
 
 //清除主页信息
 -(void)clearMainModel;
+
+////////////////////////////////////
+
+//存储审核信息
+-(void)saveApplyModel:(ApplyModel *)model;
+
+//获取审核信息
+-(ApplyModel *)getApplyModel;
+
+//清除审核信息
+-(void)clearApplyModel;
+
+////////////////////////////////////
 
 //是否登录
 -(Boolean)isLogin;

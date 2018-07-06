@@ -10,24 +10,24 @@
 #import "AddMemberView.h"
 #import "PermissionDetector.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "UIImage+Extensions.h"
-#import "UIImage+compress.h"
 #import "STFileUtil.h"
 #import "FaceEnterPage2.h"
 #import "STObserverManager.h"
 #import "AccountManager.h"
+#import <IDLFaceSDK/IDLFaceSDK.h>
+#import "ImageUtils.h"
+#import "LocalFaceDetect.h"
 
 @interface AddMemberPage ()<AddMemberViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,STObserverProtocol>
 
 @property(strong, nonatomic)AddMemberView *addMemberView;
 @property(strong, nonatomic)MemberModel *memberModel;
 @property(strong, nonatomic)AddMemberViewModel *viewModel;
+@property(assign, nonatomic)Boolean changePhoto;
 
 @end
 
-@implementation AddMemberPage{
-    Boolean changePhoto;
-}
+@implementation AddMemberPage
 
 +(void)show:(BaseViewController *)controller{
     AddMemberPage *page = [[AddMemberPage alloc]init];
@@ -64,6 +64,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 -(void)dealloc{
@@ -149,7 +150,7 @@
         return;
     }
     if(_viewModel){
-        [_viewModel checkUpdateMemberModel:[_addMemberView getCurrentModel] changePhoto:changePhoto];
+        [_viewModel checkUpdateMemberModel:[_addMemberView getCurrentModel] changePhoto:_changePhoto];
     }
 }
 
@@ -208,8 +209,19 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
     NSString *imagePath = [STFileUtil saveImageFile:image];
-    [_addMemberView updateView:imagePath];
-    changePhoto = YES;
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+    WS(weakSelf)
+    [LocalFaceDetect detectLocalImage:image success:^(id successStr) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [weakSelf.addMemberView updateView:imagePath];
+        weakSelf.changePhoto = YES;
+        [STToastUtil showSuccessTips:MSG_FACEDETECT_SUCCESS];
+    } failure:^(id failStr) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [STToastUtil showFailureAlertSheet:failStr];
+    }];
+
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
@@ -225,7 +237,7 @@
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
     [_addMemberView updateView:msg];
-    changePhoto = YES;
+    _changePhoto = YES;
 }
 
 

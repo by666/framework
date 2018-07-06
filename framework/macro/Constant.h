@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define APP_NAME @"三泰互联"
+#define APP_NAME @"智慧家"
 #define MSG_SUCCESS @"请求成功"
 #define MSG_ERROR @"网络错误码:%d"
 #define MSG_CANCEL @"取消"
@@ -19,6 +19,8 @@
 #define MSG_COMMIT @"提交"
 #define MSG_SEARCH @"搜索"
 #define MSG_MORE @"更多"
+#define MSG_EXIT @"退出"
+#define MSG_ONCE @"再试一次"
 #define MSG_DATE_FORMAT_ZH @"YYYY年MM月dd日"
 #define MSG_DATE_FORMAT_POINT @"YYYY.MM.dd"
 #define MSG_DATE_FORMAT_ALL @"YYYY-MM-dd HH:mm:ss"
@@ -37,7 +39,7 @@
 #define MSG_NOT_INSTALL_WECHAT @"请先安装微信客户端"
 #define MSG_VERIFYCODE_SUCCESS @"验证码短信已发送"
 #define MSG_LOGIN_SUCCESS @"登录成功"
-#define MSG_OPEN_WECHAT @"“三泰互联”想要打开“微信”"
+#define MSG_OPEN_WECHAT @"“智慧家”想要打开“微信”"
 #define MSG_WECHAT_TITLE @"首次微信登录，请完善您的手机号"
 #define MSG_GET_VERIFYCODE @"获取验证码"
 #define MSG_FACE_LOGIN @"刷脸登录"
@@ -62,6 +64,7 @@
 
 //个人主页
 #define MSG_MINE_TITLE @"我的"
+#define MSG_MINE_AUTH_TIPS @"审核中不可修改人脸信息，建议审核通过后再修改"
 
 //个人信息页
 #define MSG_PROFILE_TITLE @"个人主页"
@@ -72,6 +75,7 @@
 #define MSG_PROFILE_IDNUM @"身份证号"
 #define MSG_PROFILE_IDENTIFY @"居住身份"
 #define MSG_PROFILE_PHONENUM @"手机号"
+#define MSG_PROFILE_ADDRESS @"地址"
 #define MSG_PROFILE_VERIFY @"您的认证信息正在审核中>>"
 #define MSG_PROFILE_PHOTO @"拍照上传"
 #define MSG_PROFILE_ALBUM @"相册选择"
@@ -80,6 +84,13 @@
 #define MSG_FACEENTER_TITLE @"该照片用于门禁出入的人脸识别"
 #define MSG_FACEENTER_SUBTITLE @"请摆正位置，使您的头像被准确捕捉"
 #define MSG_FACEDETECT_FAIL @"未检测到人脸，请重新上传"
+#define MSG_FACEDETECT_SUCCESS @"人脸识别成功"
+#define MSG_FACEDETECT_MUTIPLE @"检测到多个人脸，请重新上传"
+#define MSG_FACEDETECT_PROBILITY @"人脸不够清晰或者未在中心，请重新上传"
+
+//刷脸登录页面
+#define MSG_FACELOGIN_ALERT_TITLE @"操作超时"
+#define MSG_FACELOGIN_ALERT_CONTENT @"提示：正对手机，更容易成功"
 
 
 //设置页面
@@ -89,6 +100,7 @@
 #define MSG_SETTING_UPDATE_PHONENUM @"修改手机号"
 #define MSG_SETTING_ABOUT @"关于我们"
 #define MSG_SETTING_LOGOUT @"退出登录"
+#define MSG_SETTING_AUTH_TIPS @"审核中不可修改手机号，建议审核通过后再修改"
 
 //修改手机号页面
 #define MSG_UPDATEPHONENUM_TITLE @"安全验证"

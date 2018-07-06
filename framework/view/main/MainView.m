@@ -129,7 +129,7 @@
     if([_mViewModel.statu isEqualToString:STATU_LIVEINFO_NO_INFO]){
         [_mViewModel openCheckInfoAlert];
         return;
-    }else if([_mViewModel.statu isEqualToString:STATU_LIVEINFO_HAS_REVIEW_INFO]){
+    }else if([_mViewModel.statu isEqualToString:STATU_LIVEINFO_HAS_REVIEW_INFO] && indexPath.row !=8){
         [_mViewModel goAuthStatuPage];
         return;
     }

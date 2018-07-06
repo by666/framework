@@ -8,6 +8,7 @@
 
 #import "SettingView.h"
 #import "SettingCell.h"
+#import "AccountManager.h"
 
 @interface SettingView()<UITableViewDelegate,UITableViewDataSource>
 
@@ -41,7 +42,7 @@
     
     _logoutBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_SETTING_LOGOUT textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
     [_logoutBtn addTarget:self action:@selector(onClickLogoutBtn) forControlEvents:UIControlEventTouchUpInside];
-    _logoutBtn.frame = CGRectMake(STWidth(50), STHeight(513), STHeight(276), STHeight(50));
+    _logoutBtn.frame = CGRectMake(STWidth(50), STHeight(513), STWidth(276), STHeight(50));
     [_logoutBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [self addSubview:_logoutBtn];
 }
@@ -77,11 +78,16 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    LiveModel *liveModel = [[AccountManager sharedAccountManager]getLiveModel];
     if(_mViewModel){
         NSInteger position = indexPath.row;
         switch (position) {
             case 2:
-                [_mViewModel goUpdatePhoneNumPage];
+                if(liveModel.statu == STATU_YES){
+                    [_mViewModel goUpdatePhoneNumPage];
+                }else{
+                    [STToastUtil showWarnTips:MSG_SETTING_AUTH_TIPS];
+                }
                 break;
             case 3:
                 [_mViewModel goAboutPage];

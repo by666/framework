@@ -42,8 +42,6 @@
 }
 
 +(Boolean)isIdNumberValid:(NSString *)idNum{
-    //测试修改
-    return YES;
     if (idNum.length != 18) return NO;
     NSString *regex = @"^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}([0-9]|X)$";
     NSPredicate *identityStringPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];

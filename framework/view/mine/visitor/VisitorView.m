@@ -182,7 +182,7 @@
     [_faceView addSubview:_imageBtn];
     
     UILabel *layerLabel= [[UILabel alloc]initWithFont:STFont(17) text:@"+" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:[c13 colorWithAlphaComponent:0.6f] multiLine:NO];
-    layerLabel.frame = CGRectMake(0, STHeight(101), STWidth(140), STHeight(39));
+    layerLabel.frame = CGRectMake(0, STHeight(101), STHeight(140), STHeight(39));
     [_imageBtn addSubview:layerLabel];
     _imageBtn.clipsToBounds = YES;
     
@@ -239,14 +239,14 @@
     if(_funcSwitch.on){
         [UIView animateWithDuration:0.3F animations:^{
             weakSelf.faceView.frame = CGRectMake(0, height, ScreenWidth, STHeight(252));
-            weakSelf.imageBtn.frame = CGRectMake(STWidth(118), STHeight(85), STWidth(140), STWidth(140));
+            weakSelf.imageBtn.frame = CGRectMake((ScreenWidth - STHeight(140))/2, STHeight(85), STHeight(140), STHeight(140));
             weakSelf.tipsLabel.frame = CGRectMake(STWidth(15), STHeight(262), ScreenWidth - STWidth(30), STHeight(12));
 
         }];
     }else{
         [UIView animateWithDuration:0.3F animations:^{
             weakSelf.faceView.frame = CGRectMake(0, height, ScreenWidth, STHeight(57));
-            weakSelf.imageBtn.frame = CGRectMake(STWidth(118), STHeight(85),0, 0);
+            weakSelf.imageBtn.frame = CGRectMake((ScreenWidth - STHeight(140))/2, STHeight(85),0, 0);
             weakSelf.tipsLabel.frame = CGRectMake(STWidth(15), STHeight(67), ScreenWidth - STWidth(30), STHeight(12));
 
         }];

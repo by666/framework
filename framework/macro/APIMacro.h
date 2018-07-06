@@ -125,6 +125,11 @@
 //参数错误
 #define STATU_PARAMEROOR @"2"
 
+//
+#define STATU_YES 1
+#define STATU_NO  0
+
+
 
 #pragma mark 用户注册登录
 /**手机验证码**/

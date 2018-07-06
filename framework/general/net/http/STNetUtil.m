@@ -57,7 +57,7 @@
     [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
     manager.requestSerializer.timeoutInterval = 20.f;
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
-    
+
     //header
     UserModel *model =[[AccountManager sharedAccountManager]getUserModel];
     if(!IS_NS_STRING_EMPTY(model.token) && !IS_NS_STRING_EMPTY(model.userUid)){
@@ -76,10 +76,13 @@
     }];
 }
 
++(void)post:(NSString *)url content:(NSString *)content success:(void (^)(RespondModel *))success failure:(void (^)(int))failure{
+    [self post:url content:content success:success failure:failure progress:nil];
+}
 
 
 #pragma mark post传递body
-+(void)post:(NSString *)url content:(NSString *)content success:(void (^)(RespondModel *))success failure:(void (^)(int))failure{
++(void)post:(NSString *)url content:(NSString *)content success:(void (^)(RespondModel *))success failure:(void (^)(int))failure progress:(void (^)(double))progress{
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -100,18 +103,15 @@
     //content-type
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
-    
     //body
     NSData *body  =[content dataUsingEncoding:NSUTF8StringEncoding];
-    [request setHTTPBody:body];
     
     
-    //post
-    [[manager dataTaskWithRequest:request uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
-            [STLog print:[NSString stringWithFormat:@"上传的进度->%.2lld",uploadProgress.completedUnitCount / uploadProgress.totalUnitCount]];
-    } downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
-        [STLog print:[NSString stringWithFormat:@"下载的进度->%.2f",1.0 *downloadProgress.completedUnitCount / downloadProgress.totalUnitCount]];
-    } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error){
+    [[manager uploadTaskWithRequest:request fromData:body progress:^(NSProgress * _Nonnull uploadProgress) {
+        if(progress){
+            progress(1.0 *uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
+        }
+    } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         if(error){
             [self handleFail:response failure:failure url:url];
         }else{
@@ -233,5 +233,49 @@
     [manager startMonitoring];
 }
 
+
+
+
+#pragma mark post传递body
++(void)postImage:(NSString *)url content:(NSString *)content success:(void (^)(id))success failure:(void (^)(id))failure{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    manager.requestSerializer.timeoutInterval = 20.f;
+    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+    
+    //header
+    NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:nil error:nil];
+    
+    //content-type
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    //body
+    NSData *body  =[content dataUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    [[manager uploadTaskWithRequest:request fromData:body progress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if(error){
+            failure(MSG_FACEDETECT_FAIL);
+        }else{
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:(NSJSONReadingMutableLeaves) error:nil];
+            long error_code = [[dic objectForKey:@"error_code"] longValue];
+            if(error_code == 0){
+                id result = [dic objectForKey:@"result"];
+                int faceNum = [[result objectForKey:@"face_num"] intValue];
+                if(faceNum > 1){
+                    failure(MSG_FACEDETECT_MUTIPLE);
+                }else{
+                    success(result);
+                }
+            }else{
+                failure(MSG_FACEDETECT_FAIL);
+            }
+        }
+    }] resume];
+}
 
 @end

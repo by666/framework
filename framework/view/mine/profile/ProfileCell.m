@@ -84,7 +84,7 @@
         _contentLabel.hidden = NO;
     }
     
-    if(position == 4 || position == 6){
+    if(position == 4 || position == 7){
         [_lineView setHidden:YES];
     }else{
         [_lineView setHidden:NO];

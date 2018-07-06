@@ -40,14 +40,18 @@
     subContent.frame = CGRectMake(STWidth(32), STHeight(62), ScreenWidth - STWidth(64), subSize.height);
     [self addSubview:subContent];
     
-    _addPhotoBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"" textColor:c12 backgroundColor:c15 corner:STHeight(70) borderWidth:3.25f borderColor:c22];
+    _addPhotoBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"" textColor:c12 backgroundColor:c15 corner:STWidth(70) borderWidth:3.25f borderColor:c22];
     _addPhotoBtn.frame = CGRectMake(STWidth(118), STHeight(161), STWidth(140), STWidth(140));
     _addPhotoBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [_addPhotoBtn addTarget:self action:@selector(onClickAddPhotoBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_addPhotoBtn];
     
     UILabel *layerLabel= [[UILabel alloc]initWithFont:STFont(17) text:@"+" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:[c13 colorWithAlphaComponent:0.6f] multiLine:NO];
-    layerLabel.frame = CGRectMake(0, STHeight(101), STWidth(140), STHeight(39));
+    if(IS_IPHONE_X){
+        layerLabel.frame = CGRectMake(0, STHeight(81), STWidth(140), STWidth(140) - STHeight(81));
+    }else{
+        layerLabel.frame = CGRectMake(0, STHeight(101), STWidth(140), STHeight(39));
+    }
     [_addPhotoBtn addSubview:layerLabel];
     _addPhotoBtn.clipsToBounds = YES;
     

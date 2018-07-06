@@ -49,7 +49,7 @@
 //比例宽高
 #define STWidth(width) ([STPUtil getActualWidth:width])
 #define STHeight(height) ([STPUtil getActualHeight:height])
-#define STFont(font) ([STPUtil getActualHeight:font])
+#define STFont(font) IS_IPHONE_X ? ([STPUtil getActualHeight:font-2]) :  ([STPUtil getActualHeight:font])
 
 //获取当前屏幕的高度
 #define ScreenHeight ([[UIScreen mainScreen] bounds].size.height)
@@ -92,6 +92,9 @@
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 #define LineHeight 0.5
+
+//人脸识别超时时间
+#define FACE_DETECT_OVERTIME 40
 
 #endif /* STPrefixHeader_pch */
 

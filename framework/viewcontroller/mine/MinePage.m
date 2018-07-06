@@ -20,6 +20,8 @@
 #import "HabitantPage.h"
 #import "SettingPage.h"
 #import "STObserverManager.h"
+#import "AccountManager.h"
+#import "AuthStatuPage.h"
 
 @interface MinePage ()<MineViewDelegate,STObserverProtocol>
 
@@ -37,6 +39,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setStatuBarBackgroud:[UIColor clearColor]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
@@ -46,9 +49,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
+
     MineViewModel *viewModel = [[MineViewModel alloc]init];
     viewModel.delegate = self;
     
@@ -71,31 +72,59 @@
 }
 
 -(void)onGoMemberPage{
-    [MemberPage show:self];
+    if([self hasLiveInfo]){
+        [MemberPage show:self];
+    }else{
+        [AuthStatuPage show:self];
+    }
 }
 
 -(void)onGoVictorPage{
-    [VisitorHomePage show:self];
+    if([self hasLiveInfo]){
+        [VisitorHomePage show:self];
+    }else{
+        [AuthStatuPage show:self];
+    }
 }
 
 -(void)onGoVictorHistoryPage{
-    [VisitorHistoryPage show:self];
+    if([self hasLiveInfo]){
+        [VisitorHistoryPage show:self];
+    }else{
+        [AuthStatuPage show:self];
+    }
 }
 
 -(void)onGoCarPage{
-    [CarPage show:self];
+    if([self hasLiveInfo]){
+        [CarPage show:self];
+    }else{
+        [AuthStatuPage show:self];
+    }
 }
 
 -(void)onGoCarHistoryPage{
-    [CarHistoryPage show:self];
+    if([self hasLiveInfo]){
+        [CarHistoryPage show:self];
+    }else{
+        [AuthStatuPage show:self];
+    }
 }
 
 -(void)onGoMessageSettingPage{
-    [MessageSettingPage show:self];
+    if([self hasLiveInfo]){
+        [MessageSettingPage show:self];
+    }else{
+        [AuthStatuPage show:self];
+    }
 }
 
 -(void)onGoAccountManagePage{
-    [HabitantPage show:self];
+    if([self hasLiveInfo]){
+        [HabitantPage show:self];
+    }else{
+        [AuthStatuPage show:self];
+    }
 }
 
 -(void)onGoSettingPage{
@@ -112,4 +141,9 @@
     }
 }
 
+
+-(Boolean)hasLiveInfo{
+    LiveModel *model = [[AccountManager sharedAccountManager] getLiveModel];
+    return  (model.statu == STATU_YES);
+}
 @end

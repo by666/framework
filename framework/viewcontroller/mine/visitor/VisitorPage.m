@@ -11,11 +11,11 @@
 #import "FaceEnterPage2.h"
 #import "PermissionDetector.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "UIImage+Extensions.h"
-#import "UIImage+compress.h"
 #import "STFileUtil.h"
 #import "PassPage.h"
 #import "STObserverManager.h"
+#import <IDLFaceSDK/IDLFaceSDK.h>
+#import "LocalFaceDetect.h"
 
 @interface VisitorPage ()<VisitorViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,STObserverProtocol>
 
@@ -58,6 +58,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 -(void)dealloc{
@@ -144,7 +145,28 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
     NSString *imagePath = [STFileUtil saveImageFile:image];
-    [_visitorView updateView:imagePath];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+    WS(weakSelf)
+    [LocalFaceDetect detectLocalImage:image success:^(id successStr) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [weakSelf.visitorView updateView:imagePath];
+        [STToastUtil showSuccessTips:MSG_FACEDETECT_SUCCESS];
+    } failure:^(id failStr) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [STToastUtil showFailureAlertSheet:failStr];
+    }];
+    
+//    WS(weakSelf)
+//    [[FaceSDKManager sharedInstance] livenessWithImage:image completion:^(FaceInfo *faceinfo, LivenessState *state, ResultCode resultCode) {
+//        if(resultCode == ResultCodeOK || resultCode == ResultCodeDataHitOne){
+//            [weakSelf.visitorView updateView:imagePath];
+//            [STToastUtil showSuccessTips:MSG_FACEDETECT_FAIL];
+//
+//        }else{
+//            [STToastUtil showFailureAlertSheet:MSG_FACEDETECT_FAIL];
+//        }
+//    }];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{

@@ -48,6 +48,20 @@
 }
 
 
++(void)showAlertController:(NSString *)title content:(NSString *)content controller:(UIViewController *)controller confirm:(void (^)(void))confirmClick cancel:(void(^)(void))cancelClick confirmStr:(NSString *)confirmStr cancelStr:(NSString *)cancelStr{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:content preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelStr style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        cancelClick();
+    }];
+    
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:confirmStr style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        confirmClick();
+    }];
+    [alertController addAction:cancelAction];
+    [alertController addAction:confirmAction];
+    [controller presentViewController:alertController animated:YES completion:nil];
+}
+
 +(void)showSheetController:(NSString *)title content:(NSString *)content controller:(UIViewController *)controller sheetModels:(NSMutableArray *)sheetModels{
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:content preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {

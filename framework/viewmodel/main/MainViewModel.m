@@ -119,12 +119,13 @@
    [STNetUtil get:URL_GETLIVEINFO parameters:nil success:^(RespondModel *respondModel) {
        if([respondModel.status isEqualToString:STATU_SUCCESS]){
            LiveModel *model = [LiveModel mj_objectWithKeyValues:respondModel.data];
+           model.statu = STATU_YES;
            [[AccountManager sharedAccountManager]saveLiveModel:model];
            [weakSelf.delegate onRequestSuccess:respondModel data:respondModel.data];
            [self getMainInfo:model.districtUid];
        }else{
-           LiveModel *model = [LiveModel mj_objectWithKeyValues:respondModel.data];
-           [[AccountManager sharedAccountManager]saveLiveModel:model];
+           ApplyModel *model = [ApplyModel mj_objectWithKeyValues:respondModel.data];
+           [[AccountManager sharedAccountManager]saveApplyModel:model];
            [weakSelf.delegate onRequestFail:respondModel.status];
        }
    } failure:^(int errorCode) {

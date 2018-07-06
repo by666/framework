@@ -8,6 +8,7 @@
 
 #import "AuthStatuView.h"
 #import "STResultView.h"
+#import "AccountManager.h"
 
 @interface AuthStatuView()
 
@@ -72,28 +73,46 @@
     tipsLabel.frame = CGRectMake(STWidth(25), STHeight(537), ScreenWidth - STWidth(50), tipsSize.height);
     [self addSubview:tipsLabel];
     
+    ApplyModel *model = [[AccountManager sharedAccountManager]getApplyModel];
+    if(model.visualFlag  == UserAttend){
+        [self hasAttend];
+    }
+    
+    UIButton *testBtn = [[UIButton alloc]initWithFont:STFont(14) text:@"测试审核通过" textColor:cwhite backgroundColor:c23 corner:STHeight(22.5) borderWidth:0 borderColor:nil];
+    testBtn.frame = CGRectMake(STWidth(112), STHeight(240), STWidth(151), STHeight(45));
+    [testBtn addTarget:self action:@selector(OnClickTestBtn) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:testBtn];
+}
+
+
+-(void)OnClickTestBtn{
+    [_mViewModel verifyUser];
 }
 
 
 -(void)OnClickHurryBtn{
     if(_mViewModel){
-        [_mViewModel verifyUser];
-//        [_mViewModel doHurryRequest];
+        [_mViewModel doHurryRequest];
     }
 }
 
 -(void)onHurryRequest:(Boolean)success{
     if(success){
-        [_hurryBtn setBackgroundColor:c27];
-        [_hurryBtn setTitle:MSG_AUTHSTATU_HURRYBTN_CLICKED forState:UIControlStateNormal];
-        _hurryBtn.enabled = NO;
-        
-        _hurryTipsLabel.text = MSG_AUTHSTATU_STATU_TIPS2;
-        CGSize hurrySize = [MSG_AUTHSTATU_STATU_TIPS2 sizeWithMaxWidth:ScreenWidth - STWidth(54) font:[UIFont systemFontOfSize:STFont(14)]];
-        _hurryTipsLabel.frame = CGRectMake(STWidth(27), STHeight(108), ScreenWidth - STWidth(54), hurrySize.height);
-        
-      
+        [self hasAttend];
     }
+}
+
+
+//已经催办过
+-(void)hasAttend{
+    [_hurryBtn setBackgroundColor:c27];
+    [_hurryBtn setTitle:MSG_AUTHSTATU_HURRYBTN_CLICKED forState:UIControlStateNormal];
+    _hurryBtn.enabled = NO;
+    
+    _hurryTipsLabel.text = MSG_AUTHSTATU_STATU_TIPS2;
+    CGSize hurrySize = [MSG_AUTHSTATU_STATU_TIPS2 sizeWithMaxWidth:ScreenWidth - STWidth(54) font:[UIFont systemFontOfSize:STFont(14)]];
+    _hurryTipsLabel.frame = CGRectMake(STWidth(27), STHeight(108), ScreenWidth - STWidth(54), hurrySize.height);
+    
 }
 
 @end
