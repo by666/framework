@@ -43,7 +43,7 @@
     _expiryDateLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentRight textColor:c12 backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_expiryDateLabel];
     
-    _cardTypeLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentRight textColor:c06 backgroundColor:nil multiLine:NO];
+    _cardTypeLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentRight textColor:c16 backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_cardTypeLabel];
     
     UILabel *amountTitleLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"缴费金额" textAlignment:NSTextAlignmentLeft textColor:c11 backgroundColor:nil multiLine:NO];
@@ -70,12 +70,12 @@
 -(void)updateData:(MonthPaymentModel *)model{
     _carNumLabel.text = model.carNum;
     CGSize carNumSize = [model.carNum sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
-    _carNumLabel.frame = CGRectMake(STWidth(15), STHeight(16), carNumSize.width, STHeight(16));
+    _carNumLabel.frame = CGRectMake(ScreenWidth - STWidth(15) - carNumSize.width, STHeight(16), carNumSize.width, STHeight(16));
 
     NSString *nameStr = [NSString stringWithFormat:@"车主：%@",model.name];
     _nameLabel.text = nameStr;
     CGSize nameSize = [nameStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
-    _nameLabel.frame = CGRectMake(ScreenWidth - STWidth(15) - nameSize.width, STHeight(16), nameSize.width, STHeight(16));
+    _nameLabel.frame = CGRectMake(STWidth(15), STHeight(16), nameSize.width, STHeight(16));
     
     _expiryDateLabel.text = model.expiryDate;
     CGSize expiryDateSize = [model.expiryDate sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];

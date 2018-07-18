@@ -37,12 +37,10 @@
     _tableView.contentSize = CGSizeMake(ScreenWidth, STHeight(183)*[_mViewModel.datas count]);
     
     _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestMore)];
-    _tableView.mj_footer.backgroundColor = cwhite;
     
     MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestNew)];
     header.lastUpdatedTimeLabel.hidden = YES;
     _tableView.mj_header = header;
-    _tableView.mj_header.backgroundColor = cwhite;
     
     [_tableView useDefaultProperty];
     

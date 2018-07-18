@@ -28,4 +28,8 @@ typedef NS_ENUM(NSInteger,ColorDirector){
 #pragma mark 模糊图层
 +(UIImage *)boxblurImage:(UIImage *)image withBlurNumber:(CGFloat)blur;
 
+#pragma mark 生成带颜色的图片
++(UIImage *) imageWithTintColor:(UIColor *)tintColor image:(UIImage *)originImage;
+
+
 @end

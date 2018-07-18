@@ -40,12 +40,10 @@
     _tableView.contentSize = CGSizeMake(ScreenWidth, STHeight(183)*[_mViewModel.datas count]);
     
     _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestMore)];
-    _tableView.mj_footer.backgroundColor = cwhite;
     
     MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestNew)];
     header.lastUpdatedTimeLabel.hidden = YES;
     _tableView.mj_header = header;
-    _tableView.mj_header.backgroundColor = cwhite;
     
     [self addSubview:_tableView];
 
@@ -72,9 +70,9 @@
     FixModel *data = [_mViewModel.datas objectAtIndex:indexPath.section];
     if(data.expand){
         CGSize detailSize = [data.detail sizeWithMaxWidth:(ScreenWidth - STWidth(30)) font:[UIFont systemFontOfSize:STFont(16)]];
-        return detailSize.height + STHeight(147);
+        return detailSize.height + STHeight(167);
     }
-    return STHeight(173);
+    return STHeight(193);
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

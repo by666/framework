@@ -28,13 +28,13 @@
 
 -(void)initView{
     _headImageView = [[UIImageView alloc]init];
-    _headImageView.frame = CGRectMake(STWidth(15), STHeight(14.5), STHeight(30), STHeight(30));
+    _headImageView.frame = CGRectMake(STWidth(15), STHeight(10), STHeight(40), STHeight(40));
     _headImageView.layer.masksToBounds = YES;
-    _headImageView.layer.cornerRadius = STHeight(15);
+    _headImageView.layer.cornerRadius = STHeight(20);
     _headImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:_headImageView];
     
-    _titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
+    _titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentCenter textColor:c16 backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_titleLabel];
     
     _idetifyLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c19 multiLine:NO];
@@ -59,7 +59,7 @@
     
     _titleLabel.text = model.nickname;
     CGSize titleSize = [STPUtil textSize:model.nickname maxWidth:ScreenWidth font:STFont(16)];
-    _titleLabel.frame = CGRectMake(STWidth(60), STHeight(21.5),titleSize.width , STHeight(16));
+    _titleLabel.frame = CGRectMake(STWidth(60), 0,titleSize.width , STHeight(59.5));
 
     if(!IS_NS_STRING_EMPTY(model.identify)){
         _idetifyLabel.hidden = NO;

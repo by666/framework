@@ -31,20 +31,20 @@
 
 -(void)initView{
     _headImageView = [[UIImageView alloc]init];
-    _headImageView.frame = CGRectMake(STWidth(15), STHeight(15), STHeight(30), STHeight(30));
+    _headImageView.frame = CGRectMake(STWidth(15), STHeight(10), STHeight(40), STHeight(40));
     _headImageView.layer.masksToBounds = YES;
-    _headImageView.layer.cornerRadius = STHeight(15);
+    _headImageView.layer.cornerRadius = STHeight(20);
     _headImageView.contentMode = UIViewContentModeScaleAspectFill;
-    _headImageView.image = [UIImage imageNamed:@"ic_default"];
+    _headImageView.image = [UIImage imageNamed:@"ic_head"];
     [self.contentView addSubview:_headImageView];
     
     _titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
-    _titleLabel.frame = CGRectMake(STWidth(55), STHeight(21), STWidth(100), STHeight(16));
+    _titleLabel.frame = CGRectMake(STWidth(65), STHeight(21), STWidth(100), STHeight(16));
     [self.contentView addSubview:_titleLabel];
     
     _idetifyLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
     _idetifyLabel.layer.masksToBounds = YES;
-    _idetifyLabel.layer.cornerRadius = STHeight(9);
+    _idetifyLabel.layer.cornerRadius = STWidth(10);
     [self.contentView addSubview:_idetifyLabel];
     
     _validDateTitleLabel = [[UILabel alloc]initWithFont:STFont(12) text:@"有效期至" textAlignment:NSTextAlignmentLeft textColor:c12 backgroundColor:nil multiLine:NO];
@@ -77,7 +77,7 @@
     _titleLabel.text = model.userName;
     
     _idetifyLabel.text = [STPUtil getLiveAttr:model.liveAttr];
-    _idetifyLabel.frame = CGRectMake(_titleLabel.contentSize.width + STWidth(55 + 12), STHeight(21),_idetifyLabel.contentSize.width + STWidth(14), STHeight(18));
+    _idetifyLabel.frame = CGRectMake(_titleLabel.contentSize.width + STWidth(65 + 12), STHeight(21),_idetifyLabel.contentSize.width + STWidth(14), STWidth(20));
     if([_idetifyLabel.text isEqualToString:MSG_AUTHUSER_PART2_IDENTIFY_MEMBER]){
         _idetifyLabel.backgroundColor = c19;
     }else{

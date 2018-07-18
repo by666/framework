@@ -79,6 +79,10 @@
     _textView.font = [UIFont systemFontOfSize:STFont(16)];
     _textView.delegate = self;
     [_textView setPlaceholder:MSG_REPORTFIX_DETAIL_TIPS placeholdColor:c12];
+    _textView.textContainerInset = UIEdgeInsetsMake(STHeight(10), STWidth(10), 0, STWidth(10));
+    _textView.contentInset = UIEdgeInsetsMake(0, 0, STHeight(10), 0);
+    _textView.layoutManager.allowsNonContiguousLayout=NO;
+    
     [self addSubview:_textView];
     
     _confirmBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_CONFIRM textColor:cwhite backgroundColor:c19 corner:STHeight(25) borderWidth:0 borderColor:nil];

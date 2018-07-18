@@ -102,7 +102,7 @@
     _settingBtn = [[UIButton alloc]init];
     [_settingBtn setImage:[UIImage imageNamed:@"ic_setting"] forState:UIControlStateNormal];
     _settingBtn.frame = CGRectMake(STWidth(342), STHeight(31.4), STWidth(20), STWidth(20));
-    _settingBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _settingBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [_settingBtn addTarget:self action:@selector(onClickSettingBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_settingBtn];
     

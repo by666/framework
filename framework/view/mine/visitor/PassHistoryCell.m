@@ -37,16 +37,16 @@
     _headImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:_headImageView];
     
-    _nameLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
+    _nameLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_nameLabel];
     
-    _carNumLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
+    _carNumLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_carNumLabel];
     
-    _visitTimeLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
+    _visitTimeLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_visitTimeLabel];
     
-    _checkTimeLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
+    _checkTimeLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_checkTimeLabel];
     
     _passBtn = [[UIButton alloc]initWithFont:STFont(12) text:MSG_PASSHISTORY_PASSBTN textColor:c13 backgroundColor:nil corner:STHeight(12.5) borderWidth:1 borderColor:c13];
@@ -62,9 +62,9 @@
 -(void)updateData:(PassHistoryModel *)model{
     
     NSString *nameStr = [NSString stringWithFormat:MSG_PASSHISTORY_NAME,model.userName];
-    CGSize nameSize = [nameStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    CGSize nameSize = [nameStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
     _nameLabel.text = nameStr;
-    _nameLabel.frame = CGRectMake(STWidth(90), STHeight(22), nameSize.width, STHeight(16));
+    _nameLabel.frame = CGRectMake(STWidth(90), STHeight(22), nameSize.width, STHeight(14));
     
     if(IS_NS_STRING_EMPTY(model.licenseNum)){
         _headImageView.frame = CGRectMake(STWidth(15), STHeight(22), STHeight(60), STHeight(60));
@@ -101,26 +101,26 @@
 
 -(void)setCarNum:(NSString *)carNum height:(CGFloat)height{
     NSString *carNumStr = [NSString stringWithFormat:MSG_PASSHISTORY_CARNUM,carNum];
-    CGSize carNumSize = [carNumStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    CGSize carNumSize = [carNumStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
     _carNumLabel.text = carNumStr;
-    _carNumLabel.frame = CGRectMake(STWidth(90), height, carNumSize.width, STHeight(16));
+    _carNumLabel.frame = CGRectMake(STWidth(90), height, carNumSize.width, STHeight(14));
 }
 
 -(void)setVisitTime:(NSString *)visitTime height:(CGFloat)height{
     NSString *visitTimeStr = [NSString stringWithFormat:MSG_PASSHISTORY_VISITTIME,visitTime];
     visitTimeStr = [visitTimeStr stringByReplacingOccurrencesOfString:@"-" withString:@"."];
-    CGSize visitTimeSize = [visitTimeStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    CGSize visitTimeSize = [visitTimeStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
     _visitTimeLabel.text = visitTimeStr;
-    _visitTimeLabel.frame = CGRectMake(STWidth(90), height, visitTimeSize.width, STHeight(16));
+    _visitTimeLabel.frame = CGRectMake(STWidth(90), height, visitTimeSize.width, STHeight(14));
 }
 
 
 -(void)setCheckTime:(NSString *)checkTime height:(CGFloat)height{
     NSString *checkTimeStr = [NSString stringWithFormat:MSG_PASSHISTORY_CHECKTIME,checkTime];
     checkTimeStr = [checkTimeStr stringByReplacingOccurrencesOfString:@"-" withString:@"."];
-    CGSize checkTimeSize = [checkTimeStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    CGSize checkTimeSize = [checkTimeStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
     _checkTimeLabel.text = checkTimeStr;
-    _checkTimeLabel.frame = CGRectMake(STWidth(90), height, checkTimeSize.width, STHeight(16));
+    _checkTimeLabel.frame = CGRectMake(STWidth(90), height, checkTimeSize.width, STHeight(14));
 }
 
 +(NSString *)identify{

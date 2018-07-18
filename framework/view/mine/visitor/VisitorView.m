@@ -76,7 +76,7 @@
     
     UIImageView *imageView = [[UIImageView alloc]init];
     imageView.image = [UIImage imageNamed:@"ic_arrow_bottom"];
-    imageView.frame = CGRectMake(ScreenWidth - STWidth(26), STHeight(83), STWidth(11), STHeight(7));
+    imageView.frame = CGRectMake(ScreenWidth - STWidth(26), STHeight(83), STWidth(7), STHeight(7));
     [commonView addSubview:imageView];
     
     UIView *lineView =[[UIView alloc]initWithFrame:CGRectMake(STWidth(15), STHeight(57.5) - 1, ScreenWidth - STWidth(30),1 )];

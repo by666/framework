@@ -39,14 +39,14 @@
     
     STEdgeLabel *enterTitleLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"进" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c32 multiLine:NO];
     enterTitleLabel.layer.masksToBounds = YES;
-    enterTitleLabel.layer.cornerRadius = STHeight(9);
-    enterTitleLabel.frame = CGRectMake(STWidth(15), STHeight(69), STHeight(18), STHeight(18));
+    enterTitleLabel.layer.cornerRadius = STWidth(10);
+    enterTitleLabel.frame = CGRectMake(STWidth(15), STHeight(69), STWidth(20), STWidth(20));
     [self.contentView addSubview:enterTitleLabel];
     
     STEdgeLabel *exitTitleLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"出" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c19 multiLine:NO];
     exitTitleLabel.layer.masksToBounds = YES;
-    exitTitleLabel.layer.cornerRadius = STHeight(9);
-    exitTitleLabel.frame = CGRectMake(STWidth(15), STHeight(96), STHeight(18), STHeight(18));
+    exitTitleLabel.layer.cornerRadius = STWidth(10);
+    exitTitleLabel.frame = CGRectMake(STWidth(15), STHeight(96), STWidth(20), STWidth(20));
     [self.contentView addSubview:exitTitleLabel];
     
     _enterTimeLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];

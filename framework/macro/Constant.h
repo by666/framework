@@ -229,7 +229,7 @@
 
 //临时开锁码
 #define MSG_PASSVIEW_TITLE @"详细来访信息"
-#define MSG_PASSVIEW_NAME @"拜访人：%@"
+#define MSG_PASSVIEW_NAME @"访客%@"
 #define MSG_PASSVIEW_DATE @"预计来访时间：%@"
 #define MSG_PASSVIEW_CARNUM @"车牌号码：%@"
 #define MSG_PASSVIEW_LOCKCODE @"开锁码"

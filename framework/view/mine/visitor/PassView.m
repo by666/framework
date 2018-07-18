@@ -46,13 +46,6 @@
     avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:avatarImageView];
     
-    if(!IS_NS_STRING_EMPTY(_mViewModel.mVisitorModel.faceUrl)){
-        NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil]getRealUrl:_mViewModel.mVisitorModel.faceUrl];
-        [avatarImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_head"]];
-        avatarImageView.hidden = NO;
-    }else{
-        avatarImageView.hidden = YES;
-    }
     
     NSString *nameStr = [NSString stringWithFormat:MSG_PASSVIEW_NAME,_mViewModel.mVisitorModel.name];
     UILabel *nameLabel = [[UILabel alloc]initWithFont:STFont(24) text:nameStr textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
@@ -66,14 +59,44 @@
     dateLabel.frame = CGRectMake(STWidth(35), STHeight(69), dateSize.width, STHeight(14));
     [self addSubview:dateLabel];
     
-
-    if(!IS_NS_STRING_EMPTY(_mViewModel.mVisitorModel.carNum)){
-        NSString *carNumStr = [NSString stringWithFormat:MSG_PASSVIEW_CARNUM,_mViewModel.mVisitorModel.carNum];
-        UILabel *carNumLabel = [[UILabel alloc]initWithFont:STFont(14) text:carNumStr textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
-        CGSize carNumSize = [carNumStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
-        carNumLabel.frame = CGRectMake(STWidth(35), STHeight(89), carNumSize.width, STHeight(14));
-        [self addSubview:carNumLabel];
+    
+    NSString *carNumStr = [NSString stringWithFormat:MSG_PASSVIEW_CARNUM,_mViewModel.mVisitorModel.carNum];
+    UILabel *carNumLabel = [[UILabel alloc]initWithFont:STFont(14) text:carNumStr textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    CGSize carNumSize = [carNumStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
+    carNumLabel.frame = CGRectMake(STWidth(35), STHeight(89), carNumSize.width, STHeight(14));
+    [self addSubview:carNumLabel];
+    
+    
+    if(!IS_NS_STRING_EMPTY(_mViewModel.mVisitorModel.faceUrl)){
+        NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil]getRealUrl:_mViewModel.mVisitorModel.faceUrl];
+        [avatarImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_head"]];
+        avatarImageView.hidden = NO;
+        if(IS_NS_STRING_EMPTY(_mViewModel.mVisitorModel.carNum)){
+            carNumLabel.hidden = YES;
+            nameLabel.frame = CGRectMake(STWidth(35), STHeight(40), nameSize.width, STHeight(24));
+            dateLabel.frame = CGRectMake(STWidth(35), STHeight(76), dateSize.width, STHeight(14));
+        }
+        else{
+            carNumLabel.hidden = NO;
+            nameLabel.frame = CGRectMake(STWidth(35), STHeight(33), nameSize.width, STHeight(24));
+            dateLabel.frame = CGRectMake(STWidth(35), STHeight(69), dateSize.width, STHeight(14));
+            carNumLabel.frame = CGRectMake(STWidth(35), STHeight(89), carNumSize.width, STHeight(14));
+        }
+    }else{
+        avatarImageView.hidden = YES;
+        if(IS_NS_STRING_EMPTY(_mViewModel.mVisitorModel.carNum)){
+            carNumLabel.hidden = YES;
+            nameLabel.frame = CGRectMake(0, STHeight(40), ScreenWidth, STHeight(24));
+            dateLabel.frame = CGRectMake(0, STHeight(76), ScreenWidth, STHeight(14));
+        }else{
+            carNumLabel.hidden = NO;
+            nameLabel.frame = CGRectMake(0, STHeight(33), ScreenWidth, STHeight(24));
+            dateLabel.frame = CGRectMake(0, STHeight(69), ScreenWidth, STHeight(14));
+            carNumLabel.frame = CGRectMake(0, STHeight(89), ScreenWidth, STHeight(14));
+            
+        }
     }
+    
     
     
     UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
@@ -118,6 +141,7 @@
         [self addSubview:shareBtn];
     }else{
         
+        topView.backgroundColor = c12;
         UILabel *invalidLabel = [[UILabel alloc]initWithFont:STFont(14) text:MSG_PASSVIEW_INVAILD textAlignment:NSTextAlignmentCenter textColor:c18 backgroundColor:nil multiLine:NO];
         invalidLabel.frame = CGRectMake(0, STHeight(475), ScreenWidth, STHeight(14));
         [self addSubview:invalidLabel];
@@ -129,6 +153,12 @@
         
         lockCodeLabel.textColor = [c20 colorWithAlphaComponent:0.33f];
         codeLabel.textColor = [c20 colorWithAlphaComponent:0.33f];
+        
+        UIImageView *invalidImageView = [[UIImageView alloc]initWithFrame:CGRectMake((ScreenWidth - STWidth(61))/2, STHeight(380), STWidth(61), STHeight(38))];
+        invalidImageView.image = [UIImage imageNamed:@"ic_invalid"];
+        [self addSubview:invalidImageView];
+        
+        qrCodeImageView.alpha = 0.33f;
     }
     
 }
@@ -153,5 +183,10 @@
         [_mViewModel goVisitorPage];
     }
 }
+
+
+
+
+
 
 @end

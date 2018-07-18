@@ -92,7 +92,7 @@
     [_qrCodeView addSubview:_codeLabel];
     
     UIButton *shareBtn = [[UIButton alloc]initWithFont:STFont(14) text:MSG_OPENDOOR_SHAREBTN textColor:cwhite backgroundColor:c23 corner:STHeight(8) borderWidth:0 borderColor:nil];
-    shareBtn.frame = CGRectMake(STWidth(127), STHeight(351), ScreenWidth - STWidth(127 * 2), STHeight(38));
+    shareBtn.frame = CGRectMake(STWidth(127), STHeight(340), ScreenWidth - STWidth(127 * 2), STHeight(38));
     [shareBtn addTarget:self action:@selector(onClickShareBtn) forControlEvents:UIControlEventTouchUpInside];
     [_qrCodeView addSubview:shareBtn];
     

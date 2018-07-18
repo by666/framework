@@ -38,7 +38,7 @@
     [self.contentView addSubview:_idetifyLabel];
     
     _nameLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:c12 backgroundColor:nil multiLine:NO];
-    _nameLabel.frame = CGRectMake(STWidth(15), STHeight(35), ScreenWidth - STWidth(30), STHeight(14));
+    _nameLabel.frame = CGRectMake(STWidth(40), STHeight(35), ScreenWidth - STWidth(30), STHeight(14));
     _nameLabel.hidden = YES;
     [self.contentView addSubview:_nameLabel];
     

@@ -69,9 +69,14 @@
 -(void)setTitle:(NSString *)title content:(NSString *)content{
     _titleLabel.text = title;
     
-    CGSize contentSize = [content sizeWithMaxWidth:(ScreenWidth - STWidth(30)) font:[UIFont systemFontOfSize:STFont(14)]];
+   
+    
+    NSDictionary *dic = @{NSKernAttributeName:@2.0f};
+    NSMutableAttributedString * attributedString =     [[NSMutableAttributedString alloc] initWithString:content attributes:dic];
+    [_contentLabel setAttributedText:attributedString];
+    [_contentLabel sizeToFit];
+    CGSize contentSize = [_contentLabel.text sizeWithMaxWidth:(ScreenWidth - STWidth(30)) font:[UIFont systemFontOfSize:STFont(14)]];
     _contentLabel.frame = CGRectMake(0, 0, ScreenWidth - STWidth(30), contentSize.height);
-    _contentLabel.text = content;
     
     _scrollView.contentSize = CGSizeMake(ScreenWidth - STWidth(30), contentSize.height);
 

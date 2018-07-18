@@ -124,4 +124,17 @@
     return returnImage;
 }
 
+
++ (UIImage *) imageWithTintColor:(UIColor *)tintColor image:(UIImage *)originImage
+{
+    UIGraphicsBeginImageContextWithOptions(originImage.size, NO, 0.0f);
+    [tintColor setFill];
+    CGRect bounds = CGRectMake(0, 0, originImage.size.width, originImage.size.height);
+    UIRectFill(bounds);
+    [originImage drawInRect:bounds blendMode:kCGBlendModeOverlay alpha:1.0f];
+    UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return tintedImage;
+    
+}
 @end

@@ -42,7 +42,7 @@
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     id controller;
     if([[AccountManager sharedAccountManager]isLogin]){
-        controller = [[NextLoginPage alloc]init];
+        controller = [[MainPage alloc]init];
     }else{
         controller = [[LoginPage alloc]init];
     }
