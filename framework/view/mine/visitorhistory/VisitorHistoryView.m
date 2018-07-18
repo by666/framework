@@ -28,7 +28,6 @@
 }
 
 -(void)initView{
-    [_mViewModel getVisitoryHistoryDatas];
     
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight)];
     _tableView.backgroundColor = c15;
@@ -89,10 +88,16 @@
         VisitorHistoryModel *model = [_mViewModel.datas objectAtIndex:position];
         if(_mViewModel){
             VisitorModel *tempModel = [[VisitorModel alloc]init];
-            tempModel.name = model.name;
+            tempModel.name = model.userName;
+            tempModel.faceUrl = model.faceUrl;
+            tempModel.carNum = model.licenseNum;
             [_mViewModel goVisitorPage:tempModel];
         }
     }
     
+}
+
+-(void)updateView{
+    [_tableView reloadData];
 }
 @end

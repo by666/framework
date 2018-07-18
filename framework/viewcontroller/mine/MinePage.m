@@ -144,6 +144,10 @@
 
 -(Boolean)hasLiveInfo{
     LiveModel *model = [[AccountManager sharedAccountManager] getLiveModel];
+    UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
+    if(IS_NS_STRING_EMPTY(userModel.headUrl)){
+        model.statu = STATU_NO;
+    }
     return  (model.statu == STATU_YES);
 }
 @end

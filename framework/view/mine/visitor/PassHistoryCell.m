@@ -33,7 +33,7 @@
 -(void)initView{
     _headImageView = [[UIImageView alloc]init];
     _headImageView.layer.masksToBounds = YES;
-    _headImageView.layer.cornerRadius = STHeight(8);
+    _headImageView.layer.cornerRadius = STHeight(30);
     _headImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:_headImageView];
     
@@ -93,10 +93,9 @@
 
 -(void)setHeadUrl:(NSString *)faceUrl{
     if(IS_NS_STRING_EMPTY(faceUrl)){
-        _headImageView.backgroundColor = c01;
-        [_headImageView sd_setImageWithURL:nil];
+        [_headImageView sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"ic_head"]];
     }else{
-        [_headImageView sd_setImageWithURL:[[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:faceUrl]];
+        [_headImageView sd_setImageWithURL:[[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:faceUrl] placeholderImage:[UIImage imageNamed:@"ic_head"]];
     }
 }
 

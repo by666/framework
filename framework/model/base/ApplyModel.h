@@ -15,5 +15,6 @@
 @property(assign, nonatomic)int visualFlag;
 @property(assign, nonatomic)int applyType;
 @property(assign, nonatomic)int verifyId;
+@property(assign, nonatomic)bool hasOwner;
 
 @end

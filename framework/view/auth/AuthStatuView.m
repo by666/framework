@@ -77,8 +77,11 @@
     if(model.visualFlag  == UserAttend){
         [self hasAttend];
     }
+    if(!model.hasOwner){
+        [self hasNoOwner];
+    }
     
-    UIButton *testBtn = [[UIButton alloc]initWithFont:STFont(14) text:@"测试审核通过" textColor:cwhite backgroundColor:c23 corner:STHeight(22.5) borderWidth:0 borderColor:nil];
+    UIButton *testBtn = [[UIButton alloc]initWithFont:STFont(14) text:@"物业审核" textColor:cwhite backgroundColor:c23 corner:STHeight(22.5) borderWidth:0 borderColor:nil];
     testBtn.frame = CGRectMake(STWidth(112), STHeight(240), STWidth(151), STHeight(45));
     [testBtn addTarget:self action:@selector(OnClickTestBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:testBtn];
@@ -102,6 +105,10 @@
     }
 }
 
+//房屋无业主
+-(void)hasNoOwner{
+    _hurryBtn.hidden = YES;
+}
 
 //已经催办过
 -(void)hasAttend{

@@ -88,6 +88,11 @@
     if(indexPath.section == 0 && indexPath.row == 0){
         return STHeight(90);
     }
+    if(indexPath.section == 1 && indexPath.row == 2){
+        TitleContentModel *model = [_mViewModel.datas objectAtIndex:7];
+        CGSize addressSize = [model.content sizeWithMaxWidth:ScreenWidth -  STWidth(150) font:[UIFont systemFontOfSize:STFont(16)]];
+        return addressSize.height + STHeight(38);
+    }
     return STHeight(54);
 }
 

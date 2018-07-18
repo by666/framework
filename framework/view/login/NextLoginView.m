@@ -28,11 +28,10 @@
     
     UserModel *model = [[AccountManager sharedAccountManager] getUserModel];
     UIImageView *avatarImageView = [[UIImageView alloc]init];
-    avatarImageView.backgroundColor = cblack;
     avatarImageView.frame= CGRectMake(STWidth(157), STHeight(79), STWidth(62), STWidth(62));
     avatarImageView.layer.masksToBounds = YES;
     avatarImageView.layer.cornerRadius = STWidth(31);
-    [avatarImageView sd_setImageWithURL:[[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:model.headUrl]];
+    [avatarImageView sd_setImageWithURL:[[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:model.headUrl] placeholderImage:[UIImage imageNamed:@"ic_default"]];
     avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:avatarImageView];
     

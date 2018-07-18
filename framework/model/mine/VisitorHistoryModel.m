@@ -11,12 +11,5 @@
 @implementation VisitorHistoryModel
 
 
-+(VisitorHistoryModel *)buildModel:(NSString *)name enterTime:(NSString *)enterTime exitTime:(NSString *)exitTime{
-    VisitorHistoryModel *model = [[VisitorHistoryModel alloc]init];
-    model.name = name;
-    model.enterTime = enterTime;
-    model.exitTime = exitTime;
-    return model;
-}
 
 @end

@@ -40,7 +40,6 @@
     
     _headImageView = [[UIImageView alloc]init];
     _headImageView.frame = CGRectMake(ScreenWidth - STWidth(75), STHeight(17), STHeight(60), STHeight(60));
-    _headImageView.backgroundColor = cblack;
     _headImageView.layer.masksToBounds = YES;
     _headImageView.layer.cornerRadius = STHeight(30);
     _headImageView.hidden = YES;

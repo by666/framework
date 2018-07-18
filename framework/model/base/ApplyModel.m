@@ -21,6 +21,7 @@
         self.applyType = (int)[aDecoder decodeIntegerForKey:@"applyType"];
         self.userUid = [aDecoder decodeObjectForKey:@"userUid"];
         self.verifyId = (int)[aDecoder decodeIntegerForKey:@"verifyId"];
+        self.hasOwner = [aDecoder decodeBoolForKey:@"hasOwner"];
     }
     return self;
 }
@@ -31,6 +32,8 @@
     [aCoder encodeInteger:self.applyType forKey:@"applyType"];
     [aCoder encodeObject:self.userUid forKey:@"userUid"];
     [aCoder encodeInteger:self.verifyId forKey:@"verifyId"];
+    [aCoder encodeBool:self.hasOwner forKey:@"hasOwner"];
+
 }
 
 @end

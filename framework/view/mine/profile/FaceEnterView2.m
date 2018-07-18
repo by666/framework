@@ -54,12 +54,9 @@
 -(void)initView{
     
     UILabel *titieLabel = [[UILabel alloc]initWithFont:STFont(18) text:MSG_FACEENTER_TITLE textAlignment:NSTextAlignmentCenter textColor:c19 backgroundColor:nil multiLine:NO];
-    titieLabel.frame = CGRectMake(0, STHeight(30), ScreenWidth, STHeight(18));
+    titieLabel.frame = CGRectMake(0, STHeight(50), ScreenWidth, STHeight(18));
     [self addSubview:titieLabel];
     
-    _subLabel = [[UILabel alloc]initWithFont:STFont(14) text:MSG_FACEENTER_SUBTITLE textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
-    _subLabel.frame = CGRectMake(0, STHeight(58), ScreenWidth, STHeight(14));
-    [self addSubview:_subLabel];
     
     
     CGFloat circlewidth = STWidth(217);
@@ -74,7 +71,16 @@
     _previewView.layer.masksToBounds = YES;
     _previewView.layer.cornerRadius = width/2;
     _previewView.contentMode = UIViewContentModeScaleAspectFill;
+    _previewView.clipsToBounds = YES;
     [self addSubview:_previewView];
+    
+    UIView *tipsView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, width, STHeight(60))];
+    tipsView.backgroundColor = [cblack colorWithAlphaComponent:0.75f];
+    [_previewView addSubview:tipsView];
+    
+    _subLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_FACEENTER_SUBTITLE textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    _subLabel.frame = CGRectMake(0, STHeight(30), width , STHeight(16));
+    [tipsView addSubview:_subLabel];
     
     float scaleValue = 0.7f;
     _mViewModel.previewRect = CGRectMake(_previewView.frame.origin.x- _previewView.frame.size.width*(1/scaleValue-1)/2.0, _previewView.frame.origin.y - _previewView.frame.size.height*(1/scaleValue-1)/2.0 - 60 + StatuBarHeight + NavigationBarHeight, _previewView.frame.size.width/scaleValue, _previewView.frame.size.height/scaleValue);
@@ -130,7 +136,7 @@
 
 
 -(void)handlProgress{
-    _progress += 0.02;
+    _progress += 0.2f;
     _progressView.progress = _progress;
     [STLog print:[NSString stringWithFormat:@"%f",_progress]];
 }
@@ -141,15 +147,6 @@
     WS(weakSelf)
     dispatch_sync(dispatch_get_main_queue(), ^(){
         weakSelf.previewView.image = image;
-//        if(weakSelf.progress >= 1){
-//            [STLog print:@"识别成功"];
-//            NSString *imagePath = [STFileUtil saveImageFile:@"head.jpg" image:image];
-//            [[STObserverManager sharedSTObserverManager] sendMessage:Notify_UpdateAvatar msg:imagePath];
-//            [weakSelf.mViewModel releaseCamera];
-//            [weakSelf.mViewModel goBack];
-//            return;
-//        }
-//        [self handlProgress];
     });
     
 }
@@ -157,14 +154,19 @@
 
 
 -(void)onDetectFaceResult:(Boolean)success image:(UIImage *)image tips:(NSString *)tips{
-    
     WS(weakSelf)
     dispatch_main_async_safe(^{
         weakSelf.subLabel.text = tips;
         if(success){
+            weakSelf.progress = 1.0f;
+            weakSelf.progressView.progress = 1.0f;
             [weakSelf handleSuccess:image];
         }else{
-            
+            if(weakSelf.progress <= 0.8f){
+                if(![tips isEqualToString:@"把脸移入框内"]){
+                    [self handlProgress];
+                }
+            }
         }
     });
 

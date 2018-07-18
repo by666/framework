@@ -48,7 +48,7 @@
     
     if(!IS_NS_STRING_EMPTY(_mViewModel.mVisitorModel.faceUrl)){
         NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil]getRealUrl:_mViewModel.mVisitorModel.faceUrl];
-        [avatarImageView sd_setImageWithURL:url];
+        [avatarImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_head"]];
         avatarImageView.hidden = NO;
     }else{
         avatarImageView.hidden = YES;

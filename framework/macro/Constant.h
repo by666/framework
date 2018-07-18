@@ -75,7 +75,7 @@
 #define MSG_PROFILE_IDNUM @"身份证号"
 #define MSG_PROFILE_IDENTIFY @"居住身份"
 #define MSG_PROFILE_PHONENUM @"手机号"
-#define MSG_PROFILE_ADDRESS @"地址"
+#define MSG_PROFILE_ADDRESS @"居住地址"
 #define MSG_PROFILE_VERIFY @"您的认证信息正在审核中>>"
 #define MSG_PROFILE_PHOTO @"拍照上传"
 #define MSG_PROFILE_ALBUM @"相册选择"

@@ -10,19 +10,24 @@
 #import "PassHistoryView.h"
 #import "PassPage.h"
 #import "STObserverManager.h"
-#import "VisitorHomePage.h"
+#import "MainPage.h"
 @interface PassHistoryPage ()<PassHistoryViewDelegate,STObserverProtocol>
 
 @property(strong, nonatomic)PassHistoryView *passHistoryView;
 @property(strong, nonatomic)PassHistoryViewModel *viewModel;
+@property(assign, nonatomic)Boolean backHome;
+
 @end
 
 @implementation PassHistoryPage
 
-+(void)show:(BaseViewController *)controller{
+
++(void)show:(BaseViewController *)controller backHome:(Boolean)backHome{
     PassHistoryPage *page = [[PassHistoryPage alloc]init];
+    page.backHome = backHome;
     [controller pushPage:page];
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,12 +38,17 @@
 }
 
 -(void)backLastPage{
-    for (UIViewController *temp in self.navigationController.viewControllers) {
-        if ([temp isKindOfClass:[VisitorHomePage class]]) {
-            [self.navigationController popToViewController:temp animated:YES];
-            break;
+    if(_backHome){
+        for (UIViewController *temp in self.navigationController.viewControllers) {
+            if ([temp isKindOfClass:[MainPage class]]) {
+                [self.navigationController popToViewController:temp animated:YES];
+                break;
+            }
         }
+    }else{
+        [super backLastPage];
     }
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{

@@ -13,6 +13,6 @@
 
 
 -(instancetype)initWithViewModel:(VisitorHistoryViewModel *)viewModel;
-
+-(void)updateView;
 
 @end

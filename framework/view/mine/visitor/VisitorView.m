@@ -194,7 +194,7 @@
         [_funcSwitch setOn:YES];
         [self onSwitchStatuChange:YES];
         NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil]getRealUrl:_mViewModel.data.faceUrl];
-        [_imageBtn sd_setImageWithURL:url forState:UIControlStateNormal];
+        [_imageBtn sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"ic_default"]];
     }
 
 

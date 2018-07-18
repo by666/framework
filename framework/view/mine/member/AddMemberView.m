@@ -57,7 +57,7 @@
     
     if(_mViewModel.model && !IS_NS_STRING_EMPTY(_mViewModel.model.faceUrl)){
         NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:_mViewModel.model.faceUrl];
-        [_takePhotoBTN sd_setImageWithURL:url forState:UIControlStateNormal];
+        [_takePhotoBTN sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"ic_default"]];
     }
     
     UILabel *tips2Label = [[UILabel alloc]initWithFont:STFont(14) text:MSG_ADDMEMBER_TIPS2 textAlignment:NSTextAlignmentLeft textColor:c20 backgroundColor:nil multiLine:NO];

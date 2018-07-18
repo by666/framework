@@ -33,7 +33,7 @@
     _titleLabel.frame = CGRectMake(STWidth(15), STHeight(19),STWidth(100) , STHeight(16));
     [self.contentView addSubview:_titleLabel];
     
-    _contentLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentRight textColor:c12 backgroundColor:nil multiLine:NO];
+    _contentLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentRight textColor:c12 backgroundColor:nil multiLine:YES];
     [self.contentView addSubview:_contentLabel];
     
     _lineView = [[UIView alloc]init];
@@ -42,7 +42,6 @@
     
     _headImageView = [[UIImageView alloc]init];
     _headImageView.frame = CGRectMake(STWidth(285), STHeight(20), STHeight(50), STHeight(50));
-    _headImageView.backgroundColor = cblack;
     _headImageView.layer.masksToBounds = YES;
     _headImageView.layer.cornerRadius = STHeight(25);
     _headImageView.hidden = YES;
@@ -62,7 +61,6 @@
 -(void)updateData:(TitleContentModel *)model position:(NSInteger)position{
     _titleLabel.text = model.title;
     _contentLabel.text = model.content;
-    _contentLabel.frame = CGRectMake(ScreenWidth - STWidth(14) - _contentLabel.contentSize.width, STHeight(19),_contentLabel.contentSize.width , STHeight(16));
 
     if(position == 0){
         _lineView.frame = CGRectMake(STWidth(15), STHeight(89), ScreenWidth - STWidth(30), LineHeight);
@@ -72,7 +70,7 @@
         if(!IS_NS_STRING_EMPTY(model.content)){
             UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
             NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:userModel.headUrl];
-            [_headImageView sd_setImageWithURL:url];
+            [_headImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_default"]];
         }
         _contentLabel.hidden = YES;
 
@@ -88,6 +86,13 @@
         [_lineView setHidden:YES];
     }else{
         [_lineView setHidden:NO];
+    }
+    
+    if(position == 7){
+        CGSize cSize = [model.content sizeWithMaxWidth:ScreenWidth -  STWidth(150) font:[UIFont systemFontOfSize:STFont(16)]];
+        _contentLabel.frame = CGRectMake(STWidth(135), STHeight(19),ScreenWidth - STWidth(150), cSize.height);
+    }else{
+        _contentLabel.frame = CGRectMake(STWidth(135), STHeight(19),ScreenWidth - STWidth(150), STHeight(16));
     }
 }
 

@@ -11,6 +11,7 @@
 #import "VisitorPage.h"
 @interface VisitorHistoryPage ()<VisitorHistoryViewDelegate>
 
+@property(strong, nonatomic)VisitorHistoryView *visitorHistoryView;
 @end
 
 @implementation VisitorHistoryPage
@@ -34,10 +35,13 @@
     VisitorHistoryViewModel *viewModel = [[VisitorHistoryViewModel alloc]init];
     viewModel.delegate = self;
     
-    VisitorHistoryView *visitorHistoryView = [[VisitorHistoryView alloc]initWithViewModel:viewModel];
-    visitorHistoryView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
-    visitorHistoryView.backgroundColor = c15;
-    [self.view addSubview:visitorHistoryView];
+    _visitorHistoryView = [[VisitorHistoryView alloc]initWithViewModel:viewModel];
+    _visitorHistoryView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
+    _visitorHistoryView.backgroundColor = c15;
+    [self.view addSubview:_visitorHistoryView];
+    
+    [viewModel getVisitoryHistoryDatas];
+
     
 }
 
@@ -47,8 +51,20 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
--(void)onGetVisitoryHistoryDatas:(Boolean)success{
-    
+-(void)onRequestBegin{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if(_visitorHistoryView){
+        [_visitorHistoryView updateView];
+    }
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [STToastUtil showFailureAlertSheet:msg];
 }
 
 -(void)onGoVisitorPage:(VisitorModel *)model{

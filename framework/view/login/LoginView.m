@@ -80,6 +80,7 @@
                                         }];
     [_phoneNumTF setMaxLength:@"11"];
     _phoneNumTF.attributedPlaceholder = phoneNumStr;
+    [_phoneNumTF addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self addSubview:_phoneNumTF];
     
     UIView *phoneLine = [[UIView alloc]init];
@@ -96,6 +97,7 @@
                                          }];
     [_verifyCodeTF setMaxLength:@"6"];
     _verifyCodeTF.attributedPlaceholder = verifyCodeStr;
+    [_verifyCodeTF addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self addSubview:_verifyCodeTF];
     
     UIView *verifyLine = [[UIView alloc]init];
@@ -108,10 +110,11 @@
     [self addSubview:_tipLabel];
     
     
-    _loginBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_LOGIN_BTN_LOGIN textColor:c04 backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
+    _loginBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_LOGIN_BTN_LOGIN textColor:c04 backgroundColor:c08c corner:STHeight(25) borderWidth:0 borderColor:nil];
     _loginBtn.frame = CGRectMake(STWidth(27), STHeight(414), STWidth(320), STWidth(50));
     [_loginBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [self addSubview:_loginBtn];
+    _loginBtn.enabled = NO;
     [_loginBtn addTarget:self action:@selector(doLogin) forControlEvents:UIControlEventTouchUpInside];
 
     
@@ -131,7 +134,7 @@
     
     _wechatLoginBtn =  [[UIButton alloc]init];
     [_wechatLoginBtn setImage:[UIImage imageNamed:@"ic_wechat"] forState:UIControlStateNormal];
-    _wechatLoginBtn.imageView.contentMode = UIViewContentModeScaleToFill;
+    _wechatLoginBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
     _wechatLoginBtn.frame = CGRectMake(STWidth(172), STHeight(617), STWidth(31), STWidth(31));
     [self addSubview:_wechatLoginBtn];
     [_wechatLoginBtn addTarget:self action:@selector(doWechatLogin) forControlEvents:UIControlEventTouchUpInside];
@@ -193,6 +196,7 @@
 
 -(void)blankCode:(NSString *)code{
     [_verifyCodeTF setText:code];
+    _loginBtn.enabled = YES;
 }
 
 -(void)doBack{
@@ -206,4 +210,14 @@
     [_verifyCodeTF resignFirstResponder];
 }
 
+
+- (void)textFieldDidChange:(UITextField *)textField{
+    if(!IS_NS_STRING_EMPTY(_phoneNumTF.text) && !IS_NS_STRING_EMPTY(_verifyCodeTF.text)){
+        [_loginBtn setBackgroundColor:c08 forState:UIControlStateNormal];
+        _loginBtn.enabled = YES;
+    }else{
+        [_loginBtn setBackgroundColor:c08c forState:UIControlStateNormal];
+        _loginBtn.enabled = NO;
+    }
+}
 @end

@@ -28,7 +28,6 @@
 
 -(void)initView{
     _headImageView = [[UIImageView alloc]init];
-    _headImageView.backgroundColor = c01;
     _headImageView.frame = CGRectMake(STWidth(15), STHeight(14.5), STHeight(30), STHeight(30));
     _headImageView.layer.masksToBounds = YES;
     _headImageView.layer.cornerRadius = STHeight(15);
@@ -40,7 +39,8 @@
     
     _idetifyLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c19 multiLine:NO];
     _idetifyLabel.layer.masksToBounds = YES;
-    _idetifyLabel.layer.cornerRadius = STHeight(9);
+    _idetifyLabel.layer.cornerRadius = STWidth(10);
+    _idetifyLabel.clipsToBounds = YES;
     [self.contentView addSubview:_idetifyLabel];
     
     _arrowImageView = [[UIImageView alloc]init];
@@ -64,14 +64,14 @@
     if(!IS_NS_STRING_EMPTY(model.identify)){
         _idetifyLabel.hidden = NO;
         _idetifyLabel.text = model.identify;
-        _idetifyLabel.frame = CGRectMake(STWidth(75) + titleSize.width, STHeight(20.5),_idetifyLabel.contentSize.width + STWidth(8), STHeight(18));
+        _idetifyLabel.frame = CGRectMake(STWidth(75)  + titleSize.width, STHeight(20.5),_idetifyLabel.contentSize.width + STWidth(8), STWidth(20));
         _arrowImageView.hidden = YES;
     }else{
         _idetifyLabel.hidden = YES;
         _arrowImageView.hidden = NO;
     }
     
-    [_headImageView sd_setImageWithURL:[[STUploadImageUtil sharedSTUploadImageUtil]getRealUrl:model.faceUrl]];
+    [_headImageView sd_setImageWithURL:[[STUploadImageUtil sharedSTUploadImageUtil]getRealUrl:model.faceUrl] placeholderImage:[UIImage imageNamed:@"ic_default"]];
  
 }
 

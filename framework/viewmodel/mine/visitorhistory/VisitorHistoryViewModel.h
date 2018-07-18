@@ -10,9 +10,8 @@
 #import "VisitorHistoryModel.h"
 #import "VisitorModel.h"
 
-@protocol VisitorHistoryViewDelegate
+@protocol VisitorHistoryViewDelegate<BaseRequestDelegate>
 
--(void)onGetVisitoryHistoryDatas:(Boolean)success;
 -(void)onGoVisitorPage:(VisitorModel *)model;
 
 @end

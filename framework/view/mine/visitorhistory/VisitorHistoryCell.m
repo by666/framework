@@ -36,10 +36,8 @@
     [self.contentView addSubview:view];
     
     _avatarImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(15), (STHeight(100) - STWidth(60))/2, STWidth(60), STWidth(60))];
-    _avatarImageView.backgroundColor = cblack;
     _avatarImageView.layer.masksToBounds =YES;
     _avatarImageView.layer.cornerRadius = STWidth(30);
-    _avatarImageView.image = [UIImage imageNamed:@"ic_test1"];
     _avatarImageView.contentMode =UIViewContentModeScaleAspectFill;
     [view addSubview:_avatarImageView];
     
@@ -67,19 +65,23 @@
 
 -(void)updateData:(VisitorHistoryModel *)model{
 
-    _nameLabel.text = model.name;
-    CGSize nameSize = [model.name sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    _nameLabel.text = model.userName;
+    CGSize nameSize = [model.userName sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     _nameLabel.frame = CGRectMake(STWidth(89), STHeight(20), nameSize.width, STHeight(16));
     
-    NSString *enterStr = [NSString stringWithFormat:MSG_VISITORHOME_ENTER_TIME,model.enterTime];
+    NSString *enterStr = [NSString stringWithFormat:MSG_VISITORHOME_ENTER_TIME,model.occurTime];
     _enterTimeLabel.text = enterStr;
     CGSize enterTimeSize = [enterStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(12)]];
     _enterTimeLabel.frame = CGRectMake(STWidth(89), STHeight(44), enterTimeSize.width, STHeight(12));
     
-    NSString *exitStr = [NSString stringWithFormat:MSG_VISITORHOME_EXIT_TIME,model.exitTime];
-    _exitTimeLabel.text = exitStr;
-    CGSize exitTimeSize = [exitStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(12)]];
-    _exitTimeLabel.frame = CGRectMake(STWidth(89), STHeight(63), exitTimeSize.width, STHeight(12));
+    if(!IS_NS_STRING_EMPTY(model.faceUrl)){
+        WS(weakSelf)
+        [_avatarImageView sd_setImageWithURL:[[STUploadImageUtil sharedSTUploadImageUtil]getRealUrl:model.faceUrl] placeholderImage:[UIImage imageNamed:@"ic_head"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if(error){
+                weakSelf.avatarImageView.image = [UIImage imageNamed:@"ic_head"];
+            }
+        }];
+    }
     
     
 }

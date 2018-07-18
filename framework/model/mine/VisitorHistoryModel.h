@@ -10,11 +10,15 @@
 
 @interface VisitorHistoryModel : NSObject
 
-@property(copy, nonatomic)NSString *imageUrl;
-@property(copy, nonatomic)NSString *name;
-@property(copy, nonatomic)NSString *enterTime;
+@property(copy, nonatomic)NSString *faceUrl;
+@property(copy, nonatomic)NSString *userName;
+@property(copy, nonatomic)NSString *occurTime;
 @property(copy, nonatomic)NSString *exitTime;
+@property(copy, nonatomic)NSString *userUid;
+@property(assign, nonatomic)long checkId;
+@property(copy, nonatomic)NSString *pwd;
+@property(copy, nonatomic)NSString *districtUid;
+@property(copy, nonatomic)NSString *licenseNum;
 
 
-+(VisitorHistoryModel *)buildModel:(NSString *)name enterTime:(NSString *)enterTime exitTime:(NSString *)exitTime;
 @end

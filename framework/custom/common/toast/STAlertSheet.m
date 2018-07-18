@@ -249,7 +249,7 @@
 
 - (void)showSuccess
 {
-    [self showWithColor:@"#67b801"];
+    [self showWithColor:@"#5fceff"];
 }
 
 - (void)showFailure

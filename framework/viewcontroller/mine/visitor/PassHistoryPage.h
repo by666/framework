@@ -10,6 +10,7 @@
 
 @interface PassHistoryPage : BaseViewController
 
-+(void)show:(BaseViewController *)controller;
++(void)show:(BaseViewController *)controller backHome:(Boolean)backHome;
 
 @end
+    

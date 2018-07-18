@@ -9,12 +9,13 @@
 #import "MineView.h"
 #import "MineCell.h"
 #import "AccountManager.h"
+#import "STImageButton.h"
 
 @interface MineView()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong, nonatomic)MineViewModel *mViewModel;
 @property(strong, nonatomic)UIView *topView;
-@property(strong, nonatomic)UIButton *avatarBtn;
+@property(strong, nonatomic)STImageButton *avatarBtn;
 @property(strong, nonatomic)UIButton *backBtn;
 @property(strong, nonatomic)UIButton *settingBtn;
 @property(strong, nonatomic)UILabel *nameLabel;
@@ -55,15 +56,16 @@
     
     
 
-    _avatarBtn = [[UIButton alloc]init];
-    _avatarBtn.backgroundColor = cblack;
+    _avatarBtn = [[STImageButton alloc]init];
+    _avatarBtn.backgroundColor = cwhite;
     _avatarBtn.frame = CGRectMake(STWidth(156), STHeight(78), STWidth(62), STWidth(62));
     _avatarBtn.layer.masksToBounds = YES;
     _avatarBtn.layer.cornerRadius = STWidth(31);
     _avatarBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [_avatarBtn setImage:[UIImage imageNamed:@"ic_default"] forState:UIControlStateNormal];
     if(!IS_NS_STRING_EMPTY(userModel.headUrl)){
         NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:userModel.headUrl];
-        [_avatarBtn sd_setImageWithURL:url forState:UIControlStateNormal];
+        [_avatarBtn sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"ic_default"]];
     }
     [_avatarBtn addTarget:self action:@selector(OnClickAvatarBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_avatarBtn];
@@ -249,7 +251,7 @@
     UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
     if(!IS_NS_STRING_EMPTY(userModel.headUrl)){
         NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:userModel.headUrl];
-        [_avatarBtn sd_setImageWithURL:url forState:UIControlStateNormal];
+        [_avatarBtn sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"ic_default"]];
     }
 }
 @end

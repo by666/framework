@@ -99,8 +99,7 @@
     if(_needDelete){
         [super backLastPage];
     }else{
-        PassHistoryPage *passHistoryPage = [[PassHistoryPage alloc]init];
-        [self.navigationController pushViewController:passHistoryPage animated:YES];
+        [PassHistoryPage show:self backHome:YES];
     }
 }
 @end

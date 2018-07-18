@@ -31,9 +31,10 @@
     _titleLabel = [[UILabel alloc]initWithFont:STFont(18) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_titleLabel];
     
-    _idetifyLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    _idetifyLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:cwhite multiLine:NO];
     _idetifyLabel.layer.masksToBounds = YES;
-    _idetifyLabel.layer.cornerRadius = STHeight(9);
+    _idetifyLabel.layer.cornerRadius = STWidth(10);
+    _idetifyLabel.clipsToBounds = YES;
     [self.contentView addSubview:_idetifyLabel];
     
     _nameLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:c12 backgroundColor:nil multiLine:NO];
@@ -55,7 +56,7 @@
 -(void)updateData:(CarModel *)model{
     
     _idetifyLabel.text = model.carType;
-    _idetifyLabel.frame = CGRectMake(STWidth(15), STHeight(20), STHeight(18), STHeight(18));
+    _idetifyLabel.frame = CGRectMake(STWidth(15), STHeight(20), STWidth(20), STWidth(20));
 
     if([model.carType isEqualToString:@"月"]){
         _idetifyLabel.backgroundColor = c19;
@@ -78,7 +79,7 @@
         _paymentBtn.frame = CGRectMake(STWidth(265), STHeight(18), STWidth(97), STHeight(24));
         
         if([model.carType isEqualToString:@"月"]){
-            _idetifyLabel.frame = CGRectMake(STWidth(15), STHeight(10), STHeight(18), STHeight(18));
+            _idetifyLabel.frame = CGRectMake(STWidth(15), STHeight(10), STWidth(20), STWidth(20));
             _titleLabel.frame = CGRectMake(STWidth(40), STHeight(10), titleSize.width, STHeight(18));
             _nameLabel.text = [NSString stringWithFormat:MSG_CAR_BIND,model.name];
             _nameLabel.hidden = NO;

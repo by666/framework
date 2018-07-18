@@ -229,6 +229,7 @@
 		007B1F5220858EB7009EA9F1 /* frameworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F5120858EB7009EA9F1 /* frameworkUITests.m */; };
 		00812BC52091A14500E2E70B /* STConvertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00812BC42091A14500E2E70B /* STConvertUtil.m */; };
 		00812BD42091BCAA00E2E70B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00812BD32091BCAA00E2E70B /* libresolv.tbd */; };
+		008DF70820F7427A00D83382 /* STImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 008DF70720F7427A00D83382 /* STImageButton.m */; };
 		00AD859220EE20EA001D272C /* PermissionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AD859020EE20E9001D272C /* PermissionDetector.m */; };
 		00AD859520EE24B4001D272C /* LocalFaceDetect.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AD859420EE24B4001D272C /* LocalFaceDetect.m */; };
 		00B6331E20E325F200B558AA /* PassPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B6331D20E325F200B558AA /* PassPage.m */; };
@@ -744,6 +745,8 @@
 		00812BC42091A14500E2E70B /* STConvertUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STConvertUtil.m; sourceTree = "<group>"; };
 		00812BC62091B34400E2E70B /* framework.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = framework.entitlements; sourceTree = "<group>"; };
 		00812BD32091BCAA00E2E70B /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		008DF70620F7427A00D83382 /* STImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STImageButton.h; sourceTree = "<group>"; };
+		008DF70720F7427A00D83382 /* STImageButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STImageButton.m; sourceTree = "<group>"; };
 		00AD859020EE20E9001D272C /* PermissionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionDetector.m; sourceTree = "<group>"; };
 		00AD859120EE20EA001D272C /* PermissionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionDetector.h; sourceTree = "<group>"; };
 		00AD859320EE24B4001D272C /* LocalFaceDetect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalFaceDetect.h; sourceTree = "<group>"; };
@@ -967,6 +970,8 @@
 				0038F0F520C92CD300094EB9 /* STOrderTimeLayerView.m */,
 				0038F11D20CA726600094EB9 /* STDetailView.h */,
 				0038F11E20CA726600094EB9 /* STDetailView.m */,
+				008DF70620F7427A00D83382 /* STImageButton.h */,
+				008DF70720F7427A00D83382 /* STImageButton.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -2560,6 +2565,7 @@
 				003EDAC320BCF9A500CFCFE9 /* RecognizeModel.m in Sources */,
 				0038F0D720C7C0DB00094EB9 /* OpendoorViewModel.m in Sources */,
 				003EDA8620B7BF6800CFCFE9 /* CommunityViewModel.m in Sources */,
+				008DF70820F7427A00D83382 /* STImageButton.m in Sources */,
 				007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */,
 				003EDB1520C5249800CFCFE9 /* STSwitchView.m in Sources */,
 				003EDAB620BBEC6800CFCFE9 /* AuthFaceView.m in Sources */,

@@ -28,7 +28,7 @@
     self.view.backgroundColor = cwhite;
     WS(weakSelf)
     [self showSTNavigationBar:MSG_VISITORHOME_TITLE needback:YES rightBtn:MSG_VISITORHOME_RIGHTBTN rightColor:c13 block:^{
-        [PassHistoryPage show:weakSelf];
+        [PassHistoryPage show:weakSelf backHome:NO];
     }];
     [self initView];
 }

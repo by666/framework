@@ -31,11 +31,11 @@
 
 -(void)initView{
     _headImageView = [[UIImageView alloc]init];
-    _headImageView.backgroundColor = c01;
     _headImageView.frame = CGRectMake(STWidth(15), STHeight(15), STHeight(30), STHeight(30));
     _headImageView.layer.masksToBounds = YES;
     _headImageView.layer.cornerRadius = STHeight(15);
     _headImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _headImageView.image = [UIImage imageNamed:@"ic_default"];
     [self.contentView addSubview:_headImageView];
     
     _titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
@@ -71,7 +71,7 @@
     
     if(!IS_NS_STRING_EMPTY(model.headUrl)){
         NSURL *url = [[STUploadImageUtil sharedSTUploadImageUtil]getRealUrl:model.headUrl];
-        [_headImageView sd_setImageWithURL:url];
+        [_headImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ic_default"]];
     }
 
     _titleLabel.text = model.userName;

@@ -85,6 +85,8 @@
 #define URL_PRECHECKIN_HISTORY [TestUrl stringByAppendingString:@"/usercheckIn/getCheckIn"]
 //删除预登记访客/车辆
 #define URL_DELETE_PRECHECKIN  [TestUrl stringByAppendingString:@"/usercheckIn/delCheckIn"]
+//访客通行记录
+#define URL_CHECKIN_HISTORY    [TestUrl stringByAppendingString:@"/usercheckIn/getCheckInHistory"]
 
 #pragma mark 上传图片
 #define URL_UPLOAD_IMAGE @"http://192.168.0.4:9090/upload"
