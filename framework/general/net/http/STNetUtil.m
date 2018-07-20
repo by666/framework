@@ -188,7 +188,7 @@
 +(void)handleFail : (NSURLResponse *)response failure:(void (^)(int))failure url:(NSString *)url{
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
     NSInteger errorCode = httpResponse.statusCode;
-    if(errorCode == STATU_USERAUTH_FAIL){
+    if(errorCode == STATU_USERAUTH_FAIL || errorCode == STATU_SERVER_FAIL){
         [[STObserverManager sharedSTObserverManager]sendMessage:Notify_AUTHFAIL msg:nil];
     }
     NSString *errorInfo = [NSString stringWithFormat:@"\n------------------------------------\n***url:%@\n***网络错误码:%ld\n------------------------------------",url,errorCode];

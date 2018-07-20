@@ -116,7 +116,7 @@
 
 //用户鉴权失败
 #define STATU_USERAUTH_FAIL  401
-
+#define STATU_SERVER_FAIL  500
 
 #pragma mark 通用码
 

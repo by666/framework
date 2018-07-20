@@ -113,38 +113,6 @@
             endingLineNumber = "51"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[PassHistoryPage backLastPage]"
-                  moduleName = "framework"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/huangchengshi/Desktop/master/framework/viewcontroller/mine/visitor/PassHistoryPage.m"
-                  timestampString = "553070513.827563"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "76">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[PassHistoryPage backLastPage]"
-                  moduleName = "framework"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/huangchengshi/Desktop/master/framework/viewcontroller/mine/visitor/PassHistoryPage.m"
-                  timestampString = "553070513.8291481"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "100">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

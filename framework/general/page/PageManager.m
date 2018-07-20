@@ -8,6 +8,7 @@
 
 #import "PageManager.h"
 #import "LoginPage.h"
+#import "AccountManager.h"
 
 @interface PageManager()
 
@@ -38,6 +39,23 @@ SINGLETON_IMPLEMENTION(PageManager)
 
 
 -(void)popToLoginPage:(BaseViewController *)page{
-
+    
+    Boolean hasLoginPage = NO;
+    for(id controller in page.navigationController.viewControllers){
+        if([controller isKindOfClass:[LoginPage class]]){
+            hasLoginPage = YES;
+            [page.navigationController popToViewController:controller animated:YES];
+            break;
+        }
+        [STLog print:@"队列中的page" content:NSStringFromClass([controller class])];
+    }
+    
+    if(!hasLoginPage){
+        [[AccountManager sharedAccountManager] clearUserModel];
+        [[AccountManager sharedAccountManager] clearLiveModel];
+        [[AccountManager sharedAccountManager] clearMainModel];
+        [[AccountManager sharedAccountManager] clearApplyModel];
+        [LoginPage show:page needBack:NO];
+    }
 }
 @end
