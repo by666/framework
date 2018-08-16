@@ -4,7 +4,7 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/AFNetworking/AFNetworking.framework/Headers",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/AFNetworking/AFNetworking.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -39,7 +39,7 @@
         {
           'type': 'file',
           'name': "AFNetworking-Swift.h",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/AFNetworking/AFNetworking.framework/Headers/AFNetworking-Swift.h"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/AFNetworking/AFNetworking.framework/Headers/AFNetworking-Swift.h"
         },
         {
           'type': 'file',
@@ -115,23 +115,23 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/AFNetworking/AFNetworking.framework/Modules",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/AFNetworking/AFNetworking.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphoneos/AFNetworking.build/module.modulemap"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphonesimulator/AFNetworking.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/AliyunOSSiOS/AliyunOSSiOS.framework/Headers",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/AliyunOSSiOS/AliyunOSSiOS.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "AliyunOSSiOS-Swift.h",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/AliyunOSSiOS/AliyunOSSiOS.framework/Headers/AliyunOSSiOS-Swift.h"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/AliyunOSSiOS/AliyunOSSiOS.framework/Headers/AliyunOSSiOS-Swift.h"
         },
         {
           'type': 'file',
@@ -347,23 +347,23 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/AliyunOSSiOS/AliyunOSSiOS.framework/Modules",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/AliyunOSSiOS/AliyunOSSiOS.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphoneos/AliyunOSSiOS.build/module.modulemap"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphonesimulator/AliyunOSSiOS.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/FMDB/FMDB.framework/Headers",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/FMDB/FMDB.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "FMDB-Swift.h",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/FMDB/FMDB.framework/Headers/FMDB-Swift.h"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/FMDB/FMDB.framework/Headers/FMDB-Swift.h"
         },
         {
           'type': 'file',
@@ -404,23 +404,23 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/FMDB/FMDB.framework/Modules",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/FMDB/FMDB.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphoneos/FMDB.build/module.modulemap"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphonesimulator/FMDB.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/LBXScan/LBXScan.framework/Headers",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/LBXScan/LBXScan.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "LBXScan-Swift.h",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/LBXScan/LBXScan.framework/Headers/LBXScan-Swift.h"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/LBXScan/LBXScan.framework/Headers/LBXScan-Swift.h"
         },
         {
           'type': 'file',
@@ -1676,23 +1676,23 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/LBXScan/LBXScan.framework/Modules",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/LBXScan/LBXScan.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphoneos/LBXScan.build/module.modulemap"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphonesimulator/LBXScan.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework/Headers",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "MBProgressHUD-Swift.h",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD-Swift.h"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD-Swift.h"
         },
         {
           'type': 'file',
@@ -1708,23 +1708,23 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework/Modules",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphoneos/MBProgressHUD.build/module.modulemap"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphonesimulator/MBProgressHUD.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/MJExtension/MJExtension.framework/Headers",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/MJExtension/MJExtension.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "MJExtension-Swift.h",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/MJExtension/MJExtension.framework/Headers/MJExtension-Swift.h"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/MJExtension/MJExtension.framework/Headers/MJExtension-Swift.h"
         },
         {
           'type': 'file',
@@ -1790,23 +1790,23 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/MJExtension/MJExtension.framework/Modules",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/MJExtension/MJExtension.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphoneos/MJExtension.build/module.modulemap"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphonesimulator/MJExtension.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/MJRefresh/MJRefresh.framework/Headers",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "MJRefresh-Swift.h",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/MJRefresh/MJRefresh.framework/Headers/MJRefresh-Swift.h"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework/Headers/MJRefresh-Swift.h"
         },
         {
           'type': 'file',
@@ -1917,18 +1917,18 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/MJRefresh/MJRefresh.framework/Modules",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphoneos/MJRefresh.build/module.modulemap"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphonesimulator/MJRefresh.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/Masonry/Masonry.framework/Headers",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -1973,7 +1973,7 @@
         {
           'type': 'file',
           'name': "Masonry-Swift.h",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/Masonry/Masonry.framework/Headers/Masonry-Swift.h"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework/Headers/Masonry-Swift.h"
         },
         {
           'type': 'file',
@@ -2019,18 +2019,18 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/Masonry/Masonry.framework/Modules",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphoneos/Masonry.build/module.modulemap"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphonesimulator/Masonry.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/Pods_framework.framework/Headers",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/Pods_framework.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -2040,24 +2040,24 @@
         {
           'type': 'file',
           'name': "Pods_framework-Swift.h",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/Pods_framework.framework/Headers/Pods_framework-Swift.h"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/Pods_framework.framework/Headers/Pods_framework-Swift.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/Pods_framework.framework/Modules",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/Pods_framework.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphoneos/Pods-framework.build/module.modulemap"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-framework.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/ReactiveCocoa/ReactiveCocoa.framework/Headers",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/ReactiveCocoa/ReactiveCocoa.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -2437,7 +2437,7 @@
         {
           'type': 'file',
           'name': "ReactiveCocoa-Swift.h",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/ReactiveCocoa/ReactiveCocoa.framework/Headers/ReactiveCocoa-Swift.h"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/ReactiveCocoa/ReactiveCocoa.framework/Headers/ReactiveCocoa-Swift.h"
         },
         {
           'type': 'file',
@@ -2548,18 +2548,18 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/ReactiveCocoa/ReactiveCocoa.framework/Modules",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/ReactiveCocoa/ReactiveCocoa.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphoneos/ReactiveCocoa.build/module.modulemap"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphonesimulator/ReactiveCocoa.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/ReactiveCocoa/ReactiveCocoa.framework/PrivateHeaders",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/ReactiveCocoa/ReactiveCocoa.framework/PrivateHeaders",
       'contents': [
         {
           'type': 'file',
@@ -2585,7 +2585,7 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/SDWebImage/SDWebImage.framework/Headers",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -2600,7 +2600,7 @@
         {
           'type': 'file',
           'name': "SDWebImage-Swift.h",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/SDWebImage/SDWebImage.framework/Headers/SDWebImage-Swift.h"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework/Headers/SDWebImage-Swift.h"
         },
         {
           'type': 'file',
@@ -2676,18 +2676,18 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/SDWebImage/SDWebImage.framework/Modules",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphoneos/SDWebImage.build/module.modulemap"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphonesimulator/SDWebImage.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/ZBarSDK/ZBarSDK.framework/Headers",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/ZBarSDK/ZBarSDK.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -2737,7 +2737,7 @@
         {
           'type': 'file',
           'name': "ZBarSDK-Swift.h",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/ZBarSDK/ZBarSDK.framework/Headers/ZBarSDK-Swift.h"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/ZBarSDK/ZBarSDK.framework/Headers/ZBarSDK-Swift.h"
         },
         {
           'type': 'file',
@@ -2773,12 +2773,12 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphoneos/ZBarSDK/ZBarSDK.framework/Modules",
+      'name': "/Users/by.huang/Desktop/st/framework/Build/Products/Debug-iphonesimulator/ZBarSDK/ZBarSDK.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphoneos/ZBarSDK.build/module.modulemap"
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Build/Intermediates/Pods.build/Debug-iphonesimulator/ZBarSDK.build/module.modulemap"
         }
       ]
     }

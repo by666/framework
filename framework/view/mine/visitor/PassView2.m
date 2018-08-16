@@ -66,8 +66,7 @@
     
  
     NSString *codeStr = _mViewModel.mPassModel.password;
-    UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
-    NSString *qrCodeStr = [NSString stringWithFormat:@"%@&%@",userModel.userUid,_mViewModel.mPassModel.userUid];
+    NSString *qrCodeStr = codeStr;
     UIImage *qrCodeImage = [LBXScanNative createQRWithString:qrCodeStr QRSize:CGSizeMake(1024,1024)];
     
     _cardView.clipsToBounds = YES;
@@ -183,7 +182,7 @@
     UITapGestureRecognizer *recongnizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickBigQrCodeView)];
     [_bigQrCodeView addGestureRecognizer:recongnizer];
     
-    UIImageView *bigImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(27), STHeight(130), STWidth(322), STHeight(344))];
+    UIImageView *bigImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(60), (STHeight(344) - STWidth(250))/2 + STHeight(130), STWidth(250), STWidth(250))];
     bigImageView.image =qrcodeImage;
     bigImageView.contentMode = UIViewContentModeScaleAspectFill;
     [_bigQrCodeView addSubview:bigImageView];
