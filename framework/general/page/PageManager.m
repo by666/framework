@@ -58,4 +58,11 @@ SINGLETON_IMPLEMENTION(PageManager)
         [LoginPage show:page needBack:NO];
     }
 }
+
+-(BaseViewController *)getCurrentPage{
+    if(!IS_NS_COLLECTION_EMPTY(_pages)){
+        return  [_pages objectAtIndex:0];
+    }
+    return nil;
+}
 @end

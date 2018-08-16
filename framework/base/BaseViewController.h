@@ -9,6 +9,8 @@
 #import "STNavigationView.h"
 @interface BaseViewController : UIViewController
 
+@property(strong, nonatomic)STNavigationView *navigationView;
+
 //隐藏导航栏
 -(void)hideNavigationBar : (Boolean) hidden;
 
@@ -25,5 +27,6 @@
 -(void)showSTNavigationBar:(NSString *)title needback:(Boolean)needback rightBtn:(NSString *)rightStr block:(void (^)(void))click;
 
 -(void)showSTNavigationBar:(NSString *)title needback:(Boolean)needback rightBtn:(NSString *)rightStr rightColor:(UIColor *)color block:(void (^)(void))click;
+
 
 @end

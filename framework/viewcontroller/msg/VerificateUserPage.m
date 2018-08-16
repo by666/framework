@@ -36,6 +36,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 -(void)initView{
@@ -46,16 +47,30 @@
     _verificateUserView.frame = CGRectMake(0,StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     _verificateUserView.backgroundColor = c15;
     [self.view addSubview:_verificateUserView];
+    
+    [viewModel requestData];
 }
 
--(void)onDoReject:(MessageModel *)model{
-    [[STObserverManager sharedSTObserverManager]sendMessage:Notify_MESSAGE_REJECT msg:model];
-    [self backLastPage];
+
+-(void)onRequestBegin{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
--(void)onDoAgree:(MessageModel *)model{
-    [[STObserverManager sharedSTObserverManager]sendMessage:Notify_MESSAGE_AGREE msg:model];
-    [self backLastPage];
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if([respondModel.requestUrl isEqualToString:URL_GET_MESSAGE_APPLY]){
+        if(_verificateUserView){
+            [_verificateUserView updateView];
+        }
+    }else if([respondModel.requestUrl isEqualToString:URL_POST_MESSAGE_APPLY]){
+        [[STObserverManager sharedSTObserverManager]sendMessage:Notify_Message_Statu_Change msg:data];
+        [self backLastPage];
+    }
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    [STToastUtil showFailureAlertSheet:msg];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 @end

@@ -22,6 +22,6 @@
 @property(strong, nonatomic)DeviceShareModel *data;
 
 -(instancetype)initWithData:(DeviceShareModel *)model;
--(void)doWechatPay;
+-(void)doWechatPay:(int)days;
 
 @end

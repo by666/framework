@@ -16,5 +16,9 @@
 @property(assign, nonatomic)int applyType;
 @property(assign, nonatomic)int verifyId;
 @property(assign, nonatomic)bool hasOwner;
+@property(copy, nonatomic)NSString *homeLocator;
+@property(copy, nonatomic)NSString *districtUid;
+@property(copy, nonatomic)NSString *homeFullName;
+@property(assign, nonatomic)int statu;
 
 @end

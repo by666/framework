@@ -29,25 +29,24 @@
 
 -(void)initView{
     
-    UILabel *titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_MEMBER_TIPS textAlignment:NSTextAlignmentCenter textColor:c16 backgroundColor:nil multiLine:NO];
-    titleLabel.frame = CGRectMake(STWidth(15), STHeight(16), ScreenWidth - STWidth(30), STHeight(16));
+    UILabel *titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_MEMBER_TIPS textAlignment:NSTextAlignmentLeft textColor:c11 backgroundColor:nil multiLine:NO];
+    titleLabel.frame = CGRectMake(STWidth(15), STHeight(15), ScreenWidth - STWidth(30), STHeight(16));
     [self addSubview:titleLabel];
     
     _addMemberBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_MEMBER_ADDBTN textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
-    _addMemberBtn.frame = CGRectMake(STWidth(49), STHeight(503), STWidth(276), STHeight(50));
+    _addMemberBtn.frame = CGRectMake(STWidth(49),ContentHeight - STHeight(90), STWidth(276), STHeight(50));
     [_addMemberBtn addTarget:self action:@selector(onClickAddMemberBtn) forControlEvents:UIControlEventTouchUpInside];
     [_addMemberBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [self addSubview:_addMemberBtn];
     
     _tableView = [[UITableView alloc]init];
     _tableView.frame = CGRectMake(0, STHeight(48), ScreenWidth, ContentHeight - STHeight(200));
-    _tableView.backgroundColor = cwhite;
-    _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.showsHorizontalScrollIndicator = NO;
+    _tableView.backgroundColor = c15;
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:_tableView];
+    
+    [_tableView useDefaultProperty];
     
 }
 
@@ -58,7 +57,7 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return STHeight(59.5);
+    return STHeight(84);
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

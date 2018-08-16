@@ -30,7 +30,6 @@
         self.overdue = [aDecoder decodeObjectForKey:@"overdue"];
         self.createTime = [aDecoder decodeObjectForKey:@"createTime"];
         self.modifyTime = [aDecoder decodeObjectForKey:@"modifyTime"];
-        self.statu = (int)[aDecoder decodeIntegerForKey:@"statu"];
         self.homeFullName = [aDecoder decodeObjectForKey:@"homeFullName"];
 
     }
@@ -52,7 +51,6 @@
     [aCoder encodeObject:self.overdue forKey:@"overdue"];
     [aCoder encodeObject:self.createTime forKey:@"createTime"];
     [aCoder encodeObject:self.modifyTime forKey:@"modifyTime"];
-    [aCoder encodeInteger:self.statu forKey:@"statu"];
     [aCoder encodeObject:self.homeFullName forKey:@"homeFullName"];
 
 

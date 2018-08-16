@@ -8,12 +8,13 @@
 
 #import "FixHistoryView.h"
 #import "FixHistoryCell.h"
+#import "BaseNoDataView.h"
 
 @interface FixHistoryView()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong, nonatomic)FixHistoryViewModel *mViewModel;
 @property(strong, nonatomic)UITableView *tableView;
-
+@property(strong, nonatomic)BaseNoDataView *noDataView;
 @end
 
 @implementation FixHistoryView
@@ -28,8 +29,6 @@
 
 -(void)initView{
     
-    [_mViewModel requestNew];
-
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight)];
     _tableView.backgroundColor = c15;
     _tableView.showsVerticalScrollIndicator = NO;
@@ -37,7 +36,7 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.contentSize = CGSizeMake(ScreenWidth, STHeight(183)*[_mViewModel.datas count]);
+    _tableView.contentSize = CGSizeMake(ScreenWidth, STHeight(261)*[_mViewModel.datas count]);
     
     _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestMore)];
     
@@ -46,6 +45,10 @@
     _tableView.mj_header = header;
     
     [self addSubview:_tableView];
+    
+    _noDataView = [[BaseNoDataView alloc]initWithImage:@"共享设备订单页_ic_无记录" title:MSG_NO_FIXHISTORY buttonTitle:@"" onclick:nil];
+    _noDataView.hidden = YES;
+    [self addSubview:_noDataView];
 
 }
 
@@ -70,9 +73,9 @@
     FixModel *data = [_mViewModel.datas objectAtIndex:indexPath.section];
     if(data.expand){
         CGSize detailSize = [data.detail sizeWithMaxWidth:(ScreenWidth - STWidth(30)) font:[UIFont systemFontOfSize:STFont(16)]];
-        return detailSize.height + STHeight(167);
+        return detailSize.height + STHeight(239);
     }
-    return STHeight(193);
+    return STHeight(261);
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -119,6 +122,17 @@
 -(void)requestNew{
     [_tableView.mj_header endRefreshing];
     [_tableView.mj_footer endRefreshing];
+}
+
+-(void)updateView{
+    if(IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
+        _noDataView.hidden = NO;
+        _tableView.hidden = YES;
+    }else{
+        _noDataView.hidden = YES;
+        _tableView.hidden = NO;
+    }
+    [_tableView reloadData];
 }
 
 

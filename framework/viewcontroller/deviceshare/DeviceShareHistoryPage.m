@@ -8,15 +8,19 @@
 
 #import "DeviceShareHistoryPage.h"
 #import "DeviceShareHistoryView.h"
+#import "MainPage.h"
 @interface DeviceShareHistoryPage ()<DeviceShareHistoryDelegate>
 
 @property(strong, nonatomic)DeviceShareHistoryView *deviceShareHistoryView;
+@property(assign, nonatomic)Boolean fromOrder;
+
 @end
 
 @implementation DeviceShareHistoryPage
 
-+(void)show:(BaseViewController *)controller{
++(void)show:(BaseViewController *)controller fromOrder:(Boolean)fromOrder{
     DeviceShareHistoryPage *page = [[DeviceShareHistoryPage alloc]init];
+    page.fromOrder = fromOrder;
     [controller pushPage:page];
 }
 
@@ -43,16 +47,27 @@
     _deviceShareHistoryView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     _deviceShareHistoryView.backgroundColor = c15;
     [self.view addSubview:_deviceShareHistoryView];
+    
+    [viewModel requestDatas];
+
 }
 
 -(void)onRequestDatas:(Boolean)success{
-    if(success){
-        WS(weakSelf)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)( 1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf.deviceShareHistoryView updateView];
-            });
-        });
+    if(_deviceShareHistoryView){
+        [_deviceShareHistoryView updateView];
+    }
+}
+
+-(void)backLastPage{
+    if(_fromOrder){
+        for (UIViewController *temp in self.navigationController.viewControllers) {
+            if ([temp isKindOfClass:[MainPage class]]) {
+                [self.navigationController popToViewController:temp animated:YES];
+                break;
+            }
+        }
+    }else{
+        [super backLastPage];
     }
 }
 

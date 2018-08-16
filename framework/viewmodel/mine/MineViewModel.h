@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@protocol MineViewDelegate
+@protocol MineViewDelegate<BaseRequestDelegate>
 
 -(void)onGoProfilePage;
 -(void)onGoMemberPage;
@@ -20,6 +20,13 @@
 -(void)onGoMessageSettingPage;
 -(void)onGoAccountManagePage;
 -(void)onGoSettingPage;
+-(void)onGoReportFixPage;
+-(void)onGoDeviceSharePage;
+-(void)onGoAboutPage;
+-(void)onDoLogout;
+-(void)onOpenCheckInfoAlert;
+-(void)onGoAuthStatuPage;
+-(void)onShowAuthFailDialog;
 -(void)onGoBack;
 
 @end
@@ -56,6 +63,28 @@
 
 //跳转到设置页面
 -(void)goSettingPage;
+
+//跳转到室内报修页面
+-(void)goReportFixPage;
+
+//跳转到设备共享页面
+-(void)goDeviceSharePage;
+
+//跳转到关于页面
+-(void)goAboutPage;
+
+//退出登录
+-(void)doLogout;
+
+//未审核弹框
+-(void)openCheckInfoAlert;
+
+//审核中弹框
+-(void)goAuthStatuPage;
+
+//审核失败弹框
+-(void)showAuthFailDialog;
+
 
 -(void)goBack;
 

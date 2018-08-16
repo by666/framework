@@ -10,6 +10,7 @@
 #import <IDLFaceSDK/IDLFaceSDK.h>
 #import <AVFoundation/AVFoundation.h>
 #import "VideoCaptureDevice.h"
+#import "STFileUtil.h"
 
 @interface FaceEnterViewModel2()<CaptureDataOutputProtocol>
 
@@ -39,16 +40,16 @@
     [[FaceSDKManager sharedInstance] setCropFaceSizeWidth:400];
     
     // 设置人脸遮挡阀值
-    [[FaceSDKManager sharedInstance] setOccluThreshold:0.5];
+    [[FaceSDKManager sharedInstance] setOccluThreshold:0.3];
     
     // 设置亮度阀值
-    [[FaceSDKManager sharedInstance] setIllumThreshold:40];
+    [[FaceSDKManager sharedInstance] setIllumThreshold:95];
     
     // 设置图像模糊阀值
-    [[FaceSDKManager sharedInstance] setBlurThreshold:0.7];
+    [[FaceSDKManager sharedInstance] setBlurThreshold:0.3];
     
     // 设置头部姿态角度
-    [[FaceSDKManager sharedInstance] setEulurAngleThrPitch:10 yaw:10 roll:10];
+    [[FaceSDKManager sharedInstance] setEulurAngleThrPitch:6 yaw:2 roll:6];
     
     // 设置是否进行人脸图片质量检测
     [[FaceSDKManager sharedInstance] setIsCheckQuality:YES];
@@ -135,9 +136,11 @@
             case DetectRemindCodeOK: {
                 if (images[@"bestImage"] != nil && [images[@"bestImage"] count] != 0) {
                     [[FaceSDKManager sharedInstance]detectWithImage:image completion:^(FaceInfo *faceinfo, ResultCode resultCode) {
-                        if(faceinfo.score > 0.9999500){
+                        if(faceinfo.score > 0.9999500){      
                             weakSelf.hasFinished = YES;
-                            [self warningStatus:CommonStatus warning:@"非常好" image:image];
+                            NSData* data = [[NSData alloc] initWithBase64EncodedString:[images[@"bestImage"] lastObject] options:NSDataBase64DecodingIgnoreUnknownCharacters];
+                            UIImage* outImage = [UIImage imageWithData:data];
+                            [self warningStatus:CommonStatus warning:@"非常好" image:outImage];
                         }
                     }];
                 }

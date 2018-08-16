@@ -14,6 +14,7 @@
 #import "STResultView.h"
 #import "STTimeUtil.h"
 #import "STOrderTimeLayerView.h"
+#import "FixHistroyPage.h"
 
 @interface ReportFixView()<STSinglePickerLayerViewDelegate,STOrderTimeLayerViewDelegate,UITextViewDelegate>
 
@@ -29,7 +30,10 @@
 @end
 
 
-@implementation ReportFixView
+@implementation ReportFixView{
+    NSString *orderTimeStr;
+    NSString *categoryStr;
+}
 
 -(instancetype)initWithViewModel:(ReportFixViewModel *)viewModel{
     if(self == [super init]){
@@ -63,35 +67,43 @@
     }
     
     
-    _categorySelectBtn = [[STSelectLayerButton alloc]initWithFrame:CGRectMake(ScreenWidth - STWidth(75), STHeight(10), STWidth(60), STHeight(60))];
-    [_categorySelectBtn setSelectText:[MSG_REPORTFIX_CATEGORY_ARRAY componentsSeparatedByString:@"|"][0]];
+    categoryStr = [MSG_REPORTFIX_CATEGORY_ARRAY componentsSeparatedByString:@"|"][0];
+    CGSize categorySize = [categoryStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    _categorySelectBtn = [[STSelectLayerButton alloc]initWithFrame:CGRectMake(ScreenWidth - STWidth(36) - categorySize.width, STHeight(10), STWidth(36) + categorySize.width, STHeight(60))];
+    [_categorySelectBtn setSelectText:categoryStr];
     [_categorySelectBtn addTarget:self action:@selector(onClickCategorySelectBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_categorySelectBtn];
     
-    _dateSelectBtn = [[STSelectLayerButton alloc]initWithFrame:CGRectMake(ScreenWidth - STWidth(125), STHeight(70), STWidth(110), STHeight(60))];
+    CGSize dateSize = [MSG_CHOOSE sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    _dateSelectBtn = [[STSelectLayerButton alloc]initWithFrame:CGRectMake(ScreenWidth - STWidth(36) - dateSize.width, STHeight(70), STWidth(36) + dateSize.width, STHeight(60))];
     [_dateSelectBtn setSelectText:MSG_CHOOSE];
     [_dateSelectBtn addTarget:self action:@selector(onClickDateSelectBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_dateSelectBtn];
     
     _textView = [[UITextView alloc]init];
     _textView.frame = CGRectMake(STWidth(15), STHeight(182), ScreenWidth - STWidth(30), STHeight(140));
-    _textView.backgroundColor = c15;
+//    _textView.backgroundColor = c15;
     _textView.font = [UIFont systemFontOfSize:STFont(16)];
     _textView.delegate = self;
-    [_textView setPlaceholder:MSG_REPORTFIX_DETAIL_TIPS placeholdColor:c12];
-    _textView.textContainerInset = UIEdgeInsetsMake(STHeight(10), STWidth(10), 0, STWidth(10));
-    _textView.contentInset = UIEdgeInsetsMake(0, 0, STHeight(10), 0);
-    _textView.layoutManager.allowsNonContiguousLayout=NO;
+    _textView.textColor = c12;
+    [_textView setPlaceholder:MSG_REPORTFIX_DETAIL_TIPS placeholdColor:c17];
+//    _textView.textContainerInset = UIEdgeInsetsMake(0,0, 0, 0);
+//    _textView.contentInset = UIEdgeInsetsMake(0, 0, STHeight(10), 0);
+//    _textView.layoutManager.allowsNonContiguousLayout=NO;
     
     [self addSubview:_textView];
     
-    _confirmBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_CONFIRM textColor:cwhite backgroundColor:c19 corner:STHeight(25) borderWidth:0 borderColor:nil];
-    _confirmBtn.frame = CGRectMake(STWidth(50), STHeight(513), STWidth(276), STHeight(50));
-    [_confirmBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
+    UIView *lineView = [[UIView alloc]init];
+    lineView.frame = CGRectMake(0, STHeight(320)-LineHeight, ScreenWidth, LineHeight);
+    lineView.backgroundColor = cline;
+    [self addSubview:lineView];
+    
+    _confirmBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_COMMIT textColor:c09 backgroundColor:c15 corner:STHeight(25) borderWidth:0 borderColor:nil];
+    _confirmBtn.frame = CGRectMake(STWidth(50), ContentHeight - STHeight(90), STWidth(276), STHeight(50));
+    [_confirmBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [_confirmBtn addTarget:self action:@selector(onClickConfirmBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_confirmBtn];
     
-    _confirmBtn.backgroundColor = c19b;
     _confirmBtn.enabled = NO;
     
     
@@ -123,13 +135,14 @@
 
 -(void)onClickConfirmBtn{
     if(_mViewModel){
-        [_mViewModel doReprotFix];
+        [_mViewModel doReprotFix:orderTimeStr category:categoryStr detail:_textView.text];
     }
 }
 
 -(void)onReportFixSuccess{
-    _resultView = [[STResultView alloc]initWithTips:MSG_REPORTFIX_RESULT_TIPS tips2:MSG_REPORTFIX_RESULT_TIPS2];
-    [self addSubview:_resultView];
+//    _resultView = [[STResultView alloc]initWithTips:MSG_REPORTFIX_RESULT_TIPS tips2:MSG_REPORTFIX_RESULT_TIPS2];
+//    [self addSubview:_resultView];
+    
 }
 
 -(void)onClickCategorySelectBtn{
@@ -143,12 +156,14 @@
 }
 
 -(void)onSelectResult:(NSString *)result{
+    categoryStr = result;
     [_categorySelectBtn setSelectText:result];
     [self changeBtnStatu];
 }
 
 -(void)OnOrderTimeSelectResult:(NSString *)orderTime{
-    [_dateSelectBtn setSelectText:orderTime];
+    orderTimeStr = [[orderTime stringByReplacingOccurrencesOfString:@"月" withString:@"."] stringByReplacingOccurrencesOfString:@"日" withString:@""];
+    [_dateSelectBtn setSelectText:orderTimeStr];
     [self changeBtnStatu];
 }
 
@@ -160,17 +175,20 @@
 -(void)changeBtnStatu{
     if(IS_NS_STRING_EMPTY(_textView.text)){
         _confirmBtn.enabled = NO;
-        _confirmBtn.backgroundColor = c19b;
+        _confirmBtn.backgroundColor = c15;
+        [_confirmBtn setTitleColor:c09 forState:UIControlStateNormal];
         return;
     }
     
     if([[_dateSelectBtn getSelectText] isEqualToString:MSG_CHOOSE]){
         _confirmBtn.enabled = NO;
-        _confirmBtn.backgroundColor = c19b;
+        _confirmBtn.backgroundColor = c15;
+        [_confirmBtn setTitleColor:c09 forState:UIControlStateNormal];
         return;
     }
     _confirmBtn.enabled = YES;
-    _confirmBtn.backgroundColor = c19;
+    _confirmBtn.backgroundColor = c08;
+    [_confirmBtn setTitleColor:cwhite forState:UIControlStateNormal];
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

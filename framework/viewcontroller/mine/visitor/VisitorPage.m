@@ -157,16 +157,6 @@
         [STToastUtil showFailureAlertSheet:failStr];
     }];
     
-//    WS(weakSelf)
-//    [[FaceSDKManager sharedInstance] livenessWithImage:image completion:^(FaceInfo *faceinfo, LivenessState *state, ResultCode resultCode) {
-//        if(resultCode == ResultCodeOK || resultCode == ResultCodeDataHitOne){
-//            [weakSelf.visitorView updateView:imagePath];
-//            [STToastUtil showSuccessTips:MSG_FACEDETECT_FAIL];
-//
-//        }else{
-//            [STToastUtil showFailureAlertSheet:MSG_FACEDETECT_FAIL];
-//        }
-//    }];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{

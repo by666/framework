@@ -15,5 +15,5 @@ SINGLETON_DECLARATION(PageManager)
 -(void)pageAppear:(BaseViewController *)page;
 -(void)pageDisappear:(BaseViewController *)page;
 -(void)popToLoginPage:(BaseViewController *)page;
-
+-(BaseViewController *)getCurrentPage;
 @end

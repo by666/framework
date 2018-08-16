@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MainModel.h"
+#import "MessageModel.h"
 
 @protocol MainViewDelegate<BaseRequestDelegate>
 -(void)onGoOpendoorPage;
@@ -19,16 +20,27 @@
 -(void)onDoCallProperty;
 -(void)onGoMessagePage;
 -(void)onGoMinePage;
+-(void)onGoMessageDetailPage:(MessageModel *)msgModel;
+-(void)onGoAddMemberPage;
+-(void)onGoMemberPage;
+-(void)onGoAuthUserPage;
+
 -(void)onOpenCheckInfoAlert;
 -(void)onGoAuthStatuPage;
+-(void)onShowAuthFailDialog;
+-(void)onUpdateNavigationBarColor:(CGFloat )alpha;
 @end
 
 @interface MainViewModel : NSObject
 
 @property(weak, nonatomic)id <MainViewDelegate>delegate;
 @property(strong, nonatomic)MainModel *model;
-@property(copy, nonatomic)NSString *statu;
+@property(strong, nonatomic)NSMutableArray *memberDatas;
+@property(strong, nonatomic)NSMutableArray *msgDatas;
+@property(strong, nonatomic)NSMutableArray *propertyDatas;
 
+
+//跳转
 -(void)goOpendoorPage;
 
 -(void)goCarPage;
@@ -41,19 +53,42 @@
 
 -(void)goDeviceSharePage;
 
--(void)doCallProperty;
-
 -(void)goMessagePage;
 
 -(void)goMinePage;
 
+-(void)doCallProperty;
+
+-(void)goMessageDetailPage:(MessageModel *)msgModel;
+
+-(void)goAddMemberPage;
+
+-(void)goMemberPage;
+
+-(void)goAuthUserPage;
+
+
+
+//弹框
+-(void)openCheckInfoAlert;
+
+-(void)goAuthStatuPage;
+
+-(void)showAuthFailDialog;
+
+
+
+//网络请求
 -(void)getUserInfo;
 
 -(void)getLiveInfo;
 
--(void)openCheckInfoAlert;
+-(void)requestMemberDatas;
 
--(void)goAuthStatuPage;
+-(void)requestMessageList;
+
+//导航条颜色
+-(void)updateNavigationBarColor:(CGFloat )alpha;
 
 
 @end

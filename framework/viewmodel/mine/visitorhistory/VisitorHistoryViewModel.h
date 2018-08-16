@@ -13,6 +13,7 @@
 @protocol VisitorHistoryViewDelegate<BaseRequestDelegate>
 
 -(void)onGoVisitorPage:(VisitorModel *)model;
+-(void)onBackLastPage;
 
 @end
 
@@ -23,6 +24,7 @@
 
 -(void)getVisitoryHistoryDatas;
 -(void)goVisitorPage:(VisitorModel *)model;
+-(void)backLastPage;
 
 
 @end

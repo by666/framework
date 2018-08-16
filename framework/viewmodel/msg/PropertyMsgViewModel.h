@@ -12,6 +12,7 @@
 @protocol PropertyMsgViewDelegate
 
 -(void)onRequestCallback:(Boolean)success datas:(NSMutableArray *)datas;
+-(void)onBackLastPage;
 
 @end
 
@@ -22,5 +23,6 @@
 
 -(void)requestMoreDatas;
 -(void)requestNewDatas;
+-(void)backLastPage;
 
 @end

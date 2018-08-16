@@ -10,9 +10,9 @@
 
 @interface STUploadImageModel : NSObject
 
-@property(copy , nonatomic)NSString *realUrl;
+@property(copy, nonatomic)NSString *realUrl;
 @property(copy, nonatomic)NSString *objectKey;
-@property(assign, nonatomic)long Expires;
-@property(assign, nonatomic)long imageTimeStamp;
+@property(copy, nonatomic)NSString *Expires;
+@property(copy, nonatomic)NSString *imageTimeStamp;
 
 @end

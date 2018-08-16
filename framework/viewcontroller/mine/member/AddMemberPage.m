@@ -48,17 +48,21 @@
     [self initView];
 
     WS(weakSelf)
-    if(IS_NS_STRING_EMPTY(_memberModel.nickname)){
-        [self showSTNavigationBar:MSG_ADDMEMBER_TITLE needback:YES rightBtn:MSG_COMMIT rightColor:c13 block:^{
-            [weakSelf.addMemberView saveMember];
+//    if(IS_NS_STRING_EMPTY(_memberModel.nickname)){
+        [self showSTNavigationBar:MSG_ADDMEMBER_TITLE needback:YES rightBtn:MSG_ADDMEMBER_SAVE rightColor:c13 block:^{
+            if(IS_NS_STRING_EMPTY(weakSelf.memberModel.nickname)){
+                [weakSelf.addMemberView saveMember];
+            }else{
+                [weakSelf.viewModel updateMemberModel:[weakSelf.addMemberView getCurrentModel] changePhoto:weakSelf.changePhoto];
+            }
         }];
-    }else{
-        [self showSTNavigationBar:MSG_ADDMEMBER_TITLE needback:YES rightBtn:MSG_ADDMEMBER_DELETE block:^{
-            [STAlertUtil showAlertController:MSG_WARN content:MSG_MEMBER_DELETE_TIPS controller:weakSelf confirm:^{
-                [weakSelf.viewModel deleteMemberModel:weakSelf.viewModel.model];
-            }];
-        }];
-    }
+//    }else{
+//        [self showSTNavigationBar:MSG_ADDMEMBER_TITLE needback:YES rightBtn:MSG_ADDMEMBER_DELETE block:^{
+//            [STAlertUtil showAlertController:MSG_WARN content:MSG_MEMBER_DELETE_TIPS controller:weakSelf confirm:^{
+//                [weakSelf.viewModel deleteMemberModel:weakSelf.viewModel.model];
+//            }];
+//        }];
+//    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{

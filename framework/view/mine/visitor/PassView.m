@@ -175,7 +175,9 @@
 }
 
 -(void)onClickShareBtn{
-    
+    if(_mViewModel){
+        [_mViewModel doShare];
+    }
 }
 
 -(void)onClickGenerateBtn{

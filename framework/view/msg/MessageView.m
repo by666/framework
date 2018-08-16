@@ -8,6 +8,7 @@
 
 #import "MessageView.h"
 #import "MessageCell.h"
+#import "AccountManager.h"
 
 @interface MessageView()<UITableViewDelegate,UITableViewDataSource>
 
@@ -17,8 +18,8 @@
 @property(strong, nonatomic)UIButton *systemBtn;
 @property(strong, nonatomic)UITableView *tableView;
 @property(strong, nonatomic)UIView *selectView;
-@property(strong, nonatomic)UIScrollView *scrollView;
-@property(strong, nonatomic)UILabel *tipsLabel;
+
+@property(strong, nonatomic)UIView *noDataView;
 
 @end
 
@@ -36,44 +37,46 @@
 }
 
 -(void)initView{
-    
-    _scrollView = [[UIScrollView alloc]init];
-    _scrollView.frame = CGRectMake(0, 0, ScreenWidth, ContentHeight);
-    _scrollView.showsVerticalScrollIndicator = NO;
-    _scrollView.showsHorizontalScrollIndicator = NO;
-    _scrollView.backgroundColor = c15;
-    _scrollView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestMore)];
-    _scrollView.mj_footer.backgroundColor = cwhite;
-    
-    _scrollView.contentSize = CGSizeMake(ScreenWidth, STHeight(111) + [_mViewModel.datas count] * STHeight(82));
-    MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestNew)];
-    header.lastUpdatedTimeLabel.hidden = YES;
-    _scrollView.mj_header = header;
-    _scrollView.mj_header.backgroundColor = cwhite;
-    [self addSubview:_scrollView];
 
     _propertyBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, STHeight(13), ScreenWidth/2, STHeight(88))];
     _propertyBtn.backgroundColor = cwhite;
     [_propertyBtn addTarget:self action:@selector(onClickPropertyBtn) forControlEvents:UIControlEventTouchUpInside];
-    [_scrollView addSubview:_propertyBtn];
-    [self addSubviewInBtn:_propertyBtn title:MSG_MESSAGE_PROPERTY_BTN image:[UIImage imageNamed:@"ic_property_msg"] superscript:2];
+    [self addSubview:_propertyBtn];
+    [self addSubviewInBtn:_propertyBtn title:MSG_MESSAGE_PROPERTY_BTN image:[UIImage imageNamed:@"消息中心_icon_物业消息"] superscript:2];
     
     _systemBtn = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth/2, STHeight(13), ScreenWidth/2, STHeight(88))];
     _systemBtn.backgroundColor = cwhite;
     [_systemBtn addTarget:self action:@selector(onClickSystemBtn) forControlEvents:UIControlEventTouchUpInside];
-    [_scrollView addSubview:_systemBtn];
-    [self addSubviewInBtn:_systemBtn title:MSG_MESSAGE_SYSTEM_BTN image:[UIImage imageNamed:@"ic_system_msg"] superscript:199];
+    [self addSubview:_systemBtn];
+    [self addSubviewInBtn:_systemBtn title:MSG_MESSAGE_SYSTEM_BTN image:[UIImage imageNamed:@"消息中心_icon_系统消息"] superscript:199];
     
-    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(ScreenWidth/2, STHeight(13), 1, STHeight(88))];
-    lineView.backgroundColor = c17;
-    [_scrollView addSubview:lineView];
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(ScreenWidth/2, STHeight(13), LineHeight, STHeight(88))];
+    lineView.backgroundColor = cline;
+    [self addSubview:lineView];
     
     [self initTableView];
-    if(IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
-        _scrollView.hidden = YES;
-        [self addSubview:[self tipsLabel]];
-    }
+    [self addSubview:[self noDataView]];
     
+}
+
+
+-(UIView *)noDataView{
+    if(_noDataView == nil){
+        _noDataView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(111), ScreenWidth, ContentHeight - STHeight(111))];
+        _noDataView.backgroundColor = cwhite;
+        _noDataView.hidden = YES;
+        [self addSubview:_noDataView];
+        
+        UIImageView *noDataimageView = [[UIImageView alloc]initWithFrame:CGRectMake((ScreenWidth - STWidth(100))/2, STHeight(70), STWidth(100), STWidth(100))];
+        noDataimageView.image = [UIImage imageNamed:@"消息中心_ic_无消息"];
+        noDataimageView.contentMode =UIViewContentModeScaleAspectFill;
+        [_noDataView addSubview:noDataimageView];
+        
+        UILabel *tipsLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_MESSAGE_NO_DATAS textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
+        tipsLabel.frame = CGRectMake(0, STHeight(190), ScreenWidth, STHeight(16));
+        [_noDataView addSubview:tipsLabel];
+    }
+    return _noDataView;
 }
 
 -(void)addSubviewInBtn:(UIView *)view title:(NSString *)title image:(UIImage *)image superscript:(NSInteger)count{
@@ -101,16 +104,21 @@
 
 
 -(void)initTableView{
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, STHeight(111), ScreenWidth, STHeight(82)*[_mViewModel.datas count])];
-    _tableView.backgroundColor = c01;
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, STHeight(111), ScreenWidth, ContentHeight - STHeight(111))];
+    _tableView.backgroundColor = c15;
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.showsHorizontalScrollIndicator = NO;
     _tableView.delegate = self;
-    _tableView.scrollEnabled = NO;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    _tableView.contentSize = CGSizeMake(ScreenWidth, STHeight(82)*[_mViewModel.datas count]);
-    [_scrollView addSubview:_tableView];
+    [self addSubview:_tableView];
+                                                              
+   _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestMore)];
+    
+    MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestNew)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    _tableView.mj_header = header;
+
     
 }
 
@@ -149,11 +157,27 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if(!IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
         MessageModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
+        MessageType messageType = [MessageModel translateType:model.applyType];
+        if(messageType == UserAuth){
+            UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
+            ApplyModel *applyModel = [[AccountManager sharedAccountManager]getApplyModel];
+            if(![model.receiverUid isEqualToString:userModel.userUid]){
+                if(model.applyState == 1){
+                    return;
+                }else if(model.applyState == 2){
+                    if(applyModel.statu == APPLY_PASS){
+                        [STToastUtil showSuccessTips:MSG_MESSAGE_HAS_AUTH_SUCCESS];
+                    }else{
+                        [_mViewModel goAuthUserPage];
+                    }
+                    return;
+                }
+            }
+       }
         if(_mViewModel){
             [_mViewModel goMessageDetailPage:model];
         }
     }
-    
 }
 
 
@@ -165,14 +189,6 @@
     return _selectView;
 }
 
-
--(UILabel *)tipsLabel{
-    if(_tipsLabel == nil){
-        _tipsLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_MESSAGE_NO_DATAS textAlignment:NSTextAlignmentCenter textColor:c16 backgroundColor:nil multiLine:NO];
-        _tipsLabel.frame = CGRectMake(0, STHeight(183), ScreenWidth, STHeight(16));
-    }
-    return _tipsLabel;
-}
 
 -(void)onClickPropertyBtn{
     if(_mViewModel){
@@ -194,29 +210,36 @@
     }
 }
 
--(void)onRejectCallback:(MessageModel *)model{
-    if(_mViewModel){
-        [_mViewModel doReject:model];
+-(void)updateView:(Boolean)hasMoreData{
+    if(IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
+        _tableView.hidden = YES;
+        _noDataView.hidden = NO;
+    }else{
+        _tableView.hidden = NO;
+        _noDataView.hidden = YES;
     }
-}
-
--(void)onAgreeCallback:(MessageModel *)model{
-    if(_mViewModel){
-        [_mViewModel doAgree:model];
+    if(!hasMoreData){
+        [_tableView.mj_footer endRefreshingWithNoMoreData];
+    }else{
+        [_tableView.mj_footer endRefreshing];
     }
-}
-
--(void)updateView{
+    [_tableView.mj_header endRefreshing];
     [_tableView reloadData];
+
 }
 
 
 -(void)requestMore{
-    [_scrollView.mj_footer endRefreshingWithNoMoreData];
+    if(_mViewModel){
+        [_mViewModel requestMessageList:YES];
+    }
+ 
 }
 
 -(void)requestNew{
-    [_scrollView.mj_header endRefreshing];
+    if(_mViewModel){
+        [_mViewModel requestMessageList:NO];
+    }
 }
 
 @end

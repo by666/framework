@@ -47,5 +47,10 @@
     }
 }
 
+-(void)goVisitorPage{
+    if(_delegate){
+        [_delegate onGoVisitorPage];
+    }
+}
 
 @end

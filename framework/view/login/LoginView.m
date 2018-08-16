@@ -110,7 +110,7 @@
     [self addSubview:_tipLabel];
     
     
-    _loginBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_LOGIN_BTN_LOGIN textColor:c04 backgroundColor:c08c corner:STHeight(25) borderWidth:0 borderColor:nil];
+    _loginBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_LOGIN_BTN_LOGIN textColor:[cwhite colorWithAlphaComponent:0.5f] backgroundColor:[c08 colorWithAlphaComponent:0.5f] corner:STHeight(25) borderWidth:0 borderColor:nil];
     _loginBtn.frame = CGRectMake(STWidth(27), STHeight(414), STWidth(320), STWidth(50));
     [_loginBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [self addSubview:_loginBtn];
@@ -133,7 +133,7 @@
     
     
     _wechatLoginBtn =  [[UIButton alloc]init];
-    [_wechatLoginBtn setImage:[UIImage imageNamed:@"ic_wechat"] forState:UIControlStateNormal];
+    [_wechatLoginBtn setImage:[UIImage imageNamed:@"登录_icon_微信"] forState:UIControlStateNormal];
     _wechatLoginBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
     _wechatLoginBtn.frame = CGRectMake(STWidth(172), STHeight(617), STWidth(31), STWidth(31));
     [self addSubview:_wechatLoginBtn];
@@ -180,6 +180,7 @@
 
 -(void)updateVerifyBtn:(Boolean)complete{
     [_sendVerifyCodeBtn setTitle:_mViewModel.loginModel.verifyStr forState:UIControlStateNormal];
+    [self changeLoginBtnStatu];
     if(complete){
         [_sendVerifyCodeBtn setEnabled:YES];
         [_sendVerifyCodeBtn setTitleColor:cwhite forState:UIControlStateNormal];
@@ -212,12 +213,19 @@
 
 
 - (void)textFieldDidChange:(UITextField *)textField{
+    [self changeLoginBtnStatu];
+}
+
+-(void)changeLoginBtnStatu{
     if(!IS_NS_STRING_EMPTY(_phoneNumTF.text) && !IS_NS_STRING_EMPTY(_verifyCodeTF.text)){
-        [_loginBtn setBackgroundColor:c08 forState:UIControlStateNormal];
+        [_loginBtn setBackgroundColor:c08b forState:UIControlStateNormal];
         _loginBtn.enabled = YES;
+        [_loginBtn setTitleColor:c08 forState:UIControlStateNormal];
     }else{
-        [_loginBtn setBackgroundColor:c08c forState:UIControlStateNormal];
+        [_loginBtn setBackgroundColor:[c08 colorWithAlphaComponent:0.5f] forState:UIControlStateNormal];
         _loginBtn.enabled = NO;
+        [_loginBtn setTitleColor:[cwhite colorWithAlphaComponent:0.5f] forState:UIControlStateNormal];
     }
 }
+
 @end

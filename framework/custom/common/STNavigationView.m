@@ -75,7 +75,7 @@
     
     UIView *lineView = [[UIView alloc]init];
     lineView.frame = CGRectMake(0, NavigationBarHeight - LineHeight, ScreenWidth, LineHeight);
-    lineView.backgroundColor = c17;
+    lineView.backgroundColor = cline;
     [self addSubview:lineView];
     
     if(!IS_NS_STRING_EMPTY(mRightStr)){
@@ -88,6 +88,8 @@
         button.titleLabel.textAlignment = NSTextAlignmentCenter;
         [button addTarget:self action:@selector(onClickRightBtn) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
+        
+        
         
       
     }
@@ -109,6 +111,12 @@
 -(void)onClickRightBtn{
     if(_delegate && [_delegate respondsToSelector:@selector(onRightBtnClicked)]){
         [_delegate onRightBtnClicked];
+    }
+}
+
+-(void)hideBackBtn{
+    if(_backBtn){
+        [_backBtn setHidden:YES];
     }
 }
 

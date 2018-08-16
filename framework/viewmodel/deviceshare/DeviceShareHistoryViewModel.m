@@ -7,6 +7,7 @@
 //
 
 #import "DeviceShareHistoryViewModel.h"
+#import "TestModelManager.h"
 
 @implementation DeviceShareHistoryViewModel
 
@@ -20,7 +21,7 @@
 
 -(void)requestDatas{
     if(_delegate){
-        _datas = [DeviceShareHistoryModel getTestDatas];
+        _datas = [TestModelManager sharedTestModelManager].deviceShareDatas;
         [_delegate onRequestDatas:YES];
     }
 }

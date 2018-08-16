@@ -14,7 +14,7 @@
 @property(copy, nonatomic)NSString *name;
 @property(copy, nonatomic)NSString *price;
 @property(copy, nonatomic)NSString *brief;
-@property(copy, nonatomic)NSString *detail;
+@property(strong, nonatomic)NSMutableArray *detailDatas;
 
 
 +(NSMutableArray *)getTestDatas;

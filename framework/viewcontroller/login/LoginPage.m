@@ -81,6 +81,12 @@
         [_mViewModel getTestCode:phoneNum];
     }else if([respondModel.requestUrl isEqualToString:URL_LOGIN]){
          [MainPage show:self];
+    }else if([respondModel.requestUrl isEqualToString:URL_WX_LOGIN]){
+        if([data isEqualToString:MSG_SUCCESS]){
+            [MainPage show:self];
+        }else{
+            [BindPhonePage show:self wxToken:data viewModel:_mViewModel];
+        }
     }
 }
 
@@ -114,9 +120,7 @@
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
     if([Notify_WXLogin isEqualToString:key]){
-        _mViewModel.loginModel.msgStr = msg;
-        BindPhonePage *page = [[BindPhonePage alloc]init];
-        [self pushPage:page];
+        [_mViewModel requestWechatLogin:msg];
     }
 }
 

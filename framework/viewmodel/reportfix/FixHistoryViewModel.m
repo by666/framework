@@ -7,7 +7,7 @@
 //
 
 #import "FixHistoryViewModel.h"
-
+#import "TestModelManager.h"
 @implementation FixHistoryViewModel
 
 
@@ -22,14 +22,14 @@
 
 -(void)requestNew{
     if(_delegate){
-        _datas = [FixModel getTestDatas];
+        _datas = [TestModelManager sharedTestModelManager].reportFixDatas;
         [_delegate onRequestDatasCallback:YES datas:_datas];
     }
 }
 
 -(void)requestMore{
     if(_delegate){
-        _datas = [FixModel getTestDatas];
+        _datas = [TestModelManager sharedTestModelManager].reportFixDatas;
         [_delegate onRequestDatasCallback:YES datas:_datas];
     }
 }

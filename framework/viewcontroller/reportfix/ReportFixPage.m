@@ -28,8 +28,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = c15;
     WS(weakSelf)
-    [self showSTNavigationBar:MSG_REPORTFIX_TITLE needback:YES rightBtn:MSG_REPORTFIX_RIGHT_BTN rightColor:c13 block:^{
-        [FixHistroyPage show:weakSelf];
+    [self showSTNavigationBar:MSG_REPORTFIX_TITLE needback:YES rightBtn:MSG_REPORTFIX_RIGHT_BTN rightColor:c08 block:^{
+        [FixHistroyPage show:weakSelf fromReportFix:NO];
     }];
     [self initView];
 }
@@ -38,6 +38,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 
@@ -57,7 +58,8 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         dispatch_async(dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
-            [weakSelf.reportFixView onReportFixSuccess];
+            [FixHistroyPage show:weakSelf fromReportFix:YES];
+
         });
     });
 }

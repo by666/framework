@@ -8,11 +8,13 @@
 
 #import "SystemMsgView.h"
 #import "SystemMsgCell.h"
+#import "BaseNoDataView.h"
 
 @interface SystemMsgView()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong,nonatomic)SystemMsgViewModel *mViewModel;
 @property(strong,nonatomic)UITableView *tableView;
+@property(strong,nonatomic)BaseNoDataView *noDataView;
 
 @end
 
@@ -50,6 +52,12 @@
     }
     [self addSubview:_tableView];
     
+    WS(weakSelf)
+    _noDataView = [[BaseNoDataView alloc]initWithImage:@"消息中心_ic_无消息" title:MSG_NO_MESSAGE buttonTitle:MSG_BACK_HOME onclick:^{
+        [weakSelf.mViewModel backLastPage];
+    }];
+    _noDataView.hidden = YES;
+    [self addSubview:_noDataView];
 }
 
 
@@ -92,17 +100,16 @@
 }
 
 -(void)updateView{
-    WS(weakSelf)
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.tableView.mj_header endRefreshing];
-            [weakSelf.tableView.mj_footer endRefreshing];
-            [weakSelf.tableView reloadData];
-
-
-        });
-    });
-
+    if(IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
+        _noDataView.hidden = NO;
+        _tableView.hidden = YES;
+    }else{
+        _noDataView.hidden = YES;
+        _tableView.hidden = NO;
+    }
+    [_tableView.mj_header endRefreshing];
+    [_tableView.mj_footer endRefreshing];
+    [_tableView reloadData];
 }
 
 @end

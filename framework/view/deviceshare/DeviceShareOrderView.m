@@ -23,11 +23,13 @@
 
 @implementation DeviceShareOrderView{
     int per;
+    int days;
 }
 
 -(instancetype)initWithViewModel:(DeviceShareOrderViewModel *)viewModel{
     if(self == [self init]){
         _mViewModel = viewModel;
+        days = 1;
         [self initView];
     }
     return self;
@@ -36,7 +38,7 @@
 -(void)initView{
     
     
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, STHeight(10), ScreenWidth, STHeight(60)*[_mViewModel.titleDatas count])];
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, STHeight(10), ScreenWidth, STHeight(56.5)*[_mViewModel.titleDatas count])];
     _tableView.backgroundColor = cwhite;
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.showsHorizontalScrollIndicator = NO;
@@ -50,16 +52,17 @@
     payView.backgroundColor = c20;
     [self addSubview:payView];
     
-    UIButton *paymentBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_PAYMENT_PAY textColor:cwhite backgroundColor:c19 corner:0 borderWidth:0 borderColor:nil];
+    UIButton *paymentBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_PAYMENT_PAY textColor:cwhite backgroundColor:c08 corner:0 borderWidth:0 borderColor:nil];
     paymentBtn.frame = CGRectMake(ScreenWidth -  STWidth(114),0, STWidth(114), STHeight(50));
     [paymentBtn addTarget:self action:@selector(doPay) forControlEvents:UIControlEventTouchUpInside];
-    [paymentBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
+    [paymentBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [payView addSubview:paymentBtn];
     
     per = [[_mViewModel.data.price substringWithRange:NSMakeRange(0, _mViewModel.data.price.length - 3)] intValue];
-    _moneyLabel = [[UILabel alloc]initWithFont:STFont(18) text:[NSString stringWithFormat:@"¥ %d",per] textAlignment:NSTextAlignmentLeft textColor:cwhite backgroundColor:nil multiLine:YES];
-    CGSize moneySize = [STPUtil textSize:[NSString stringWithFormat:@"¥ %d",per] maxWidth:ScreenWidth font:STFont(18)];
-    _moneyLabel.frame = CGRectMake(STWidth(15), STHeight(16), moneySize.width, STHeight(18));
+    NSString *moneyStr = [NSString stringWithFormat:@"¥ %d元",per];
+    _moneyLabel = [[UILabel alloc]initWithFont:STFont(18) text:moneyStr textAlignment:NSTextAlignmentLeft textColor:cwhite backgroundColor:nil multiLine:YES];
+    [_moneyLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:STFont(18)]];
+    _moneyLabel.frame = CGRectMake(STWidth(15), STHeight(16), ScreenWidth - STWidth(15) - STWidth(114), STHeight(18));
     [payView addSubview:_moneyLabel];
     
     NSMutableArray *datas = [[NSMutableArray alloc]init];
@@ -86,7 +89,7 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return STHeight(60);
+    return STHeight(56.5);
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -118,10 +121,8 @@
 -(void)onSelectResult:(NSString *)result{
     TitleContentModel *model = [_mViewModel.titleDatas objectAtIndex:1];
     model.content = [result substringWithRange:NSMakeRange(0, result.length -1)];
-    NSString *priceStr = [NSString stringWithFormat:@"¥ %d",per * [model.content intValue]];
-    _moneyLabel.text = priceStr;
-    CGSize moneySize = [STPUtil textSize:priceStr maxWidth:ScreenWidth font:STFont(18)];
-    _moneyLabel.frame = CGRectMake(STWidth(15), STHeight(16), moneySize.width, STHeight(18));
+    days = [model.content intValue];
+    _moneyLabel.text = [NSString stringWithFormat:@"¥ %d元",per * days];
     [_tableView reloadData];
 }
 
@@ -129,7 +130,7 @@
 
 -(void)doPay{
     if(_mViewModel){
-        [_mViewModel doWechatPay];
+        [_mViewModel doWechatPay:days];
     }
 }
 

@@ -24,17 +24,17 @@
 }
 
 -(void)setupMonthPaymentDatas{
-    [_monthPaymentDatas addObject:[MonthPaymentModel buildModel:@"粤B Y6666" name:@"张三丰" expiryDate:@"2018.5.22-2019.5.22" cardType:@"月卡A" amount:@"300" payDate:@"2018.5.22 12:30"]];
-    [_monthPaymentDatas addObject:[MonthPaymentModel buildModel:@"粤B 1234H" name:@"张三丰" expiryDate:@"2018.5.22-2019.5.22" cardType:@"月卡A" amount:@"300" payDate:@"2018.5.22 12:30"]];
-    [_monthPaymentDatas addObject:[MonthPaymentModel buildModel:@"粤B 3FC84" name:@"张翠山" expiryDate:@"2018.5.22-2019.5.22" cardType:@"月卡A" amount:@"300" payDate:@"2018.5.22 12:30"]];
-    [_monthPaymentDatas addObject:[MonthPaymentModel buildModel:@"粤B 4380DF" name:@"张无忌" expiryDate:@"2018.5.22-2019.5.22" cardType:@"月卡A" amount:@"300" payDate:@"2018.5.22 12:30"]];
+    [_monthPaymentDatas addObject:[MonthPaymentModel buildModel:@"粤B Y6666" name:@"张三丰" expiryDate:@"2018.05.22-2019.05.22" cardType:@"月卡A" amount:@"300" payDate:@"2018.05.22 12:30"]];
+    [_monthPaymentDatas addObject:[MonthPaymentModel buildModel:@"粤B 1234H" name:@"张三丰" expiryDate:@"2018.05.22-2019.05.22" cardType:@"月卡A" amount:@"300" payDate:@"2018.05.22 12:30"]];
+    [_monthPaymentDatas addObject:[MonthPaymentModel buildModel:@"粤B 3FC84" name:@"张翠山" expiryDate:@"2018.05.22-2019.05.22" cardType:@"月卡A" amount:@"300" payDate:@"2018.05.22 12:30"]];
+    [_monthPaymentDatas addObject:[MonthPaymentModel buildModel:@"粤B 4380DF" name:@"张无忌" expiryDate:@"2018.05.22-2019.05.22" cardType:@"月卡A" amount:@"300" payDate:@"2018.05.22 12:30"]];
 }
 
 -(void)setupVisitorPaymentDatas{
-    [_visitorPaymentDatas addObject:[VisitorPaymentModel buildModel:@"粤B 23452" name:@"乔峰" enterTime:@"2018.5.22 12:35" exitTime:@"2018.5.22 14:40" parkTime:@"2小时5分钟" amount:@"10"]];
-    [_visitorPaymentDatas addObject:[VisitorPaymentModel buildModel:@"粤B FD893" name:@"段誉" enterTime:@"2018.5.22 13:35" exitTime:@"2018.5.22 14:00" parkTime:@"0小时25分钟" amount:@"5"]];
-    [_visitorPaymentDatas addObject:[VisitorPaymentModel buildModel:@"粤B SD78F" name:@"杨过" enterTime:@"2018.5.22 14:35" exitTime:@"2018.5.22 18:35" parkTime:@"4小时0分钟" amount:@"20"]];
-    [_visitorPaymentDatas addObject:[VisitorPaymentModel buildModel:@"粤B SD932" name:@"黄蓉" enterTime:@"2018.5.22 14:00" exitTime:@"2018.5.22 14:40" parkTime:@"0小时40分钟" amount:@"8"]];
+    [_visitorPaymentDatas addObject:[VisitorPaymentModel buildModel:@"粤B 23452" name:@"乔峰" enterTime:@"2018.05.22 12:35" exitTime:@"2018.05.22 14:40" parkTime:@"2小时5分钟" amount:@"10"]];
+    [_visitorPaymentDatas addObject:[VisitorPaymentModel buildModel:@"粤B FD893" name:@"段誉" enterTime:@"2018.05.22 13:35" exitTime:@"2018.05.22 14:00" parkTime:@"0小时25分钟" amount:@"5"]];
+    [_visitorPaymentDatas addObject:[VisitorPaymentModel buildModel:@"粤B SD78F" name:@"杨过" enterTime:@"2018.05.22 14:35" exitTime:@"2018.05.22 18:35" parkTime:@"4小时0分钟" amount:@"20"]];
+    [_visitorPaymentDatas addObject:[VisitorPaymentModel buildModel:@"粤B SD932" name:@"黄蓉" enterTime:@"2018.05.22 14:00" exitTime:@"2018.05.22 14:40" parkTime:@"0小时40分钟" amount:@"8"]];
 
 }
 

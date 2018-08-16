@@ -9,11 +9,14 @@
 
 #import "DeviceShareHistoryView.h"
 #import "DeviceShareHistotyViewCell.h"
+#import "BaseNoDataView.h"
 
 @interface DeviceShareHistoryView()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong, nonatomic)DeviceShareHistoryViewModel *mViewModel;
 @property(strong, nonatomic)UITableView *tableView;
+@property(strong, nonatomic)BaseNoDataView *noDataView;
+
 
 @end
 @implementation DeviceShareHistoryView
@@ -22,7 +25,6 @@
     if(self == [super init]){
         _mViewModel = viewModel;
         [self initView];
-        [self requestNew];
     }
     return self;
 }
@@ -34,15 +36,16 @@
     _tableView.dataSource = self;
     
     _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestMore)];
-    _tableView.mj_footer.backgroundColor = cwhite;
-    
     MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestNew)];
     header.lastUpdatedTimeLabel.hidden = YES;
     _tableView.mj_header = header;
-    _tableView.mj_header.backgroundColor = cwhite;
     
     [_tableView useDefaultProperty];
     [self addSubview:_tableView];
+    
+    _noDataView = [[BaseNoDataView alloc]initWithImage:@"共享设备订单页_ic_无记录" title:MSG_NO_DEVICESHAREHISTORY buttonTitle:@"" onclick:nil];
+    _noDataView.hidden = YES;
+    [self addSubview:_noDataView];
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -52,7 +55,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return STHeight(12);
+    return STHeight(10);
 }
 
 
@@ -99,9 +102,17 @@
 
 
 -(void)updateView{
+    if(IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
+        _noDataView.hidden = NO;
+        _tableView.hidden = YES;
+    }else{
+        _noDataView.hidden = YES;
+        _tableView.hidden = NO;
+    }
     [_tableView reloadData];
     [_tableView.mj_header endRefreshing];
     [_tableView.mj_footer endRefreshing];
+    _tableView.contentSize = CGSizeMake(ScreenWidth, STHeight(128) * [_mViewModel.datas count]);
 }
 
 

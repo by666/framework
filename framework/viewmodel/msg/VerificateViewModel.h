@@ -9,10 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "MessageModel.h"
 
-@protocol VerificateViewDelegate
+@protocol VerificateViewDelegate<BaseRequestDelegate>
 
--(void)onDoAgree:(MessageModel *)model;
--(void)onDoReject:(MessageModel *)model;
 
 @end
 
@@ -25,7 +23,7 @@
 @property(strong, nonatomic)MessageModel *model;
 @property(strong, nonatomic)NSMutableArray *vaildArray;
 
--(void)doAgree;
--(void)doReject;
+-(void)requestData;
+-(void)doAgree:(bool)isAgree valid:(int)validType userTime:(NSString *)userTime;
 
 @end

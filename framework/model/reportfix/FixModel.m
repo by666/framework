@@ -23,8 +23,8 @@
 
 +(FixModel *)buildModel:(NSString *)detail{
     FixModel *model = [[FixModel alloc]init];
-    model.orderTime = @"2018.06.09 11:27";
-    model.reportTime = @"06.08 15:10";
+    model.reportTime = @"07.08 11:27";
+    model.orderTime = @"07.09 10:00-11:00";
     model.category = @"电器类";
     model.detail = detail;
     model.expand = NO;

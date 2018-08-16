@@ -12,8 +12,6 @@
 
 
 -(instancetype)initWithViewModel:(MessageViewModel *)viewModel;
--(void)onAgreeCallback:(MessageModel *)model;
--(void)onRejectCallback:(MessageModel *)model;
--(void)updateView;
+-(void)updateView:(Boolean)hasMoreData;
 
 @end

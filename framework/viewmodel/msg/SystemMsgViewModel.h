@@ -12,6 +12,7 @@
 @protocol SystemMsgViewDelegate
 
 -(void)onRequestCallback:(Boolean)success datas:(NSMutableArray *)datas;
+-(void)onBackLastPage;
 
 @end
 
@@ -23,5 +24,6 @@
 -(void)requestMoreDatas;
 -(void)requestNewDatas;
 -(CGFloat)countDynamicHeight;
+-(void)backLastPage;
 
 @end

@@ -7,14 +7,16 @@
 //
 
 #import "MineViewModel.h"
+#import "STNetUtil.h"
+#import "AccountManager.h"
 
 @implementation MineViewModel
 
 
 -(instancetype)init{
     if(self == [super init]){
-        _titleArray = @[MSG_MEMBER_TITLE,MSG_VISITORHOME_TITLE,MSG_VISITORHISTORY_TITLE,MSG_CAR_TITLE,MSG_CARHISTORY_TITLE,MSG_MESSAGESETTING_TITLE,MSG_HABITANT_TITLE];
-        _imageArray = @[@"ic_member",@"ic_visitor",@"ic_visitor_history",@"ic_car",@"ic_car_history",@"ic_message_setting",@"ic_habitant"];
+        _titleArray = @[MSG_MEMBER_TITLE,MSG_VISITORHOME_TITLE,MSG_VISITORHISTORY_TITLE,MSG_REPORTFIX_TITLE,MSG_DEVICESHARE_TITLE,MSG_HABITANT_TITLE,MSG_ABOUT_TITLE,MSG_SETTING_LOGOUT];
+        _imageArray = @[@"我_icon_家庭成员",@"我_icon_访客登记",@"我_icon_访客通行记录",@"我_icon_室内保修",@"我_icon_设备共享",@"我_icon_住户管理",@"我_icon_关于我们",@""];
     }
     return self;
 }
@@ -53,6 +55,57 @@
 
 -(void)goSettingPage{
     if(_delegate){[_delegate onGoSettingPage];}
+}
+
+-(void)goReportFixPage{
+    if(_delegate){[_delegate onGoReportFixPage];}
+}
+
+-(void)goDeviceSharePage{
+    if(_delegate){[_delegate onGoDeviceSharePage];}
+}
+
+-(void)goAboutPage{
+    if(_delegate){[_delegate onGoAboutPage];}
+}
+
+-(void)doLogout{
+    if(_delegate){
+        [_delegate onRequestBegin];
+        
+        WS(weakSelf)
+        [STNetUtil post:URL_LOGOUT content:@"" success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                [[AccountManager sharedAccountManager] clearUserModel];
+                [[AccountManager sharedAccountManager] clearLiveModel];
+                [[AccountManager sharedAccountManager] clearMainModel];
+                [[AccountManager sharedAccountManager] clearApplyModel];
+                [weakSelf.delegate onRequestSuccess:respondModel data:nil];
+            }else{
+                [weakSelf.delegate onRequestFail:respondModel.msg];
+            }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:@"%d",errorCode]];
+        }];
+    }
+}
+
+-(void)openCheckInfoAlert{
+    if(_delegate){
+        [_delegate onOpenCheckInfoAlert];
+    }
+}
+
+-(void)goAuthStatuPage{
+    if(_delegate){
+        [_delegate onGoAuthStatuPage];
+    }
+}
+
+-(void)showAuthFailDialog{
+    if(_delegate){
+        [_delegate onShowAuthFailDialog];
+    }
 }
 
 -(void)goBack{

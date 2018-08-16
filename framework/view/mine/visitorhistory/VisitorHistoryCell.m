@@ -7,6 +7,7 @@
 //
 
 #import "VisitorHistoryCell.h"
+#import "STEdgeLabel.h"
 
 @interface VisitorHistoryCell()
 
@@ -29,34 +30,52 @@
 
 -(void)initView{
     
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(STWidth(15), 0, ScreenWidth - STWidth(30), STHeight(100))];
-    view.backgroundColor = cwhite;
-    view.layer.masksToBounds = YES;
-    view.layer.cornerRadius = STHeight(6);
-    [self.contentView addSubview:view];
     
-    _avatarImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(15), (STHeight(100) - STWidth(60))/2, STWidth(60), STWidth(60))];
+    self.contentView.backgroundColor = cwhite;
+    
+    _avatarImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(15), (STHeight(108) - STWidth(44))/2, STWidth(44), STWidth(44))];
     _avatarImageView.layer.masksToBounds =YES;
-    _avatarImageView.layer.cornerRadius = STWidth(30);
+    _avatarImageView.layer.cornerRadius = STWidth(22);
+    _avatarImageView.image = [UIImage imageNamed:@"ic_head"];
     _avatarImageView.contentMode =UIViewContentModeScaleAspectFill;
-    [view addSubview:_avatarImageView];
+    [self.contentView addSubview:_avatarImageView];
     
     
-    _nameLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentRight textColor:c16 backgroundColor:nil multiLine:NO];
-    [view addSubview:_nameLabel];
+    _nameLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentRight textColor:c11 backgroundColor:nil multiLine:NO];
+    [self.contentView addSubview:_nameLabel];
     
 
-    _enterTimeLabel = [[UILabel alloc]initWithFont:STFont(12) text:@"" textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
-    [view addSubview:_enterTimeLabel];
+    STEdgeLabel *enterTitleLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:MSG_VISITORHISTORY_ENTER textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c32 multiLine:NO];
+    enterTitleLabel.layer.masksToBounds = YES;
+    enterTitleLabel.layer.cornerRadius = STWidth(8);
+    enterTitleLabel.frame = CGRectMake(STWidth(76), STHeight(46), STWidth(16), STWidth(16));
+    [self.contentView addSubview:enterTitleLabel];
     
-    _exitTimeLabel = [[UILabel alloc]initWithFont:STFont(12) text:@"" textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
-    [view addSubview:_exitTimeLabel];
+    _enterTimeLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
+    [self.contentView addSubview:_enterTimeLabel];
+    
+    
+    STEdgeLabel *exitTitleLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:MSG_VISITORHISTORY_EXIT textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c19 multiLine:NO];
+    exitTitleLabel.layer.masksToBounds = YES;
+    exitTitleLabel.layer.cornerRadius = STWidth(8);
+    exitTitleLabel.frame = CGRectMake(STWidth(76), STHeight(72), STWidth(16), STWidth(16));
+    [self.contentView addSubview:exitTitleLabel];
+    
+    _exitTimeLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
+    [self.contentView addSubview:_exitTimeLabel];
+    
+    
     
     
     _authBtn = [[UIButton alloc]initWithFont:STFont(12) text:MSG_VISITORHISTORY_AUTH textColor:c13 backgroundColor:nil corner:STHeight(5) borderWidth:1 borderColor:c13];
-    _authBtn.frame = CGRectMake(STWidth(265), STHeight(15), STWidth(65), STHeight(20));
+    _authBtn.frame = CGRectMake(ScreenWidth - STWidth(82), STHeight(43), STWidth(66), STHeight(22));
     _authBtn.userInteractionEnabled = NO;
-    [view addSubview:_authBtn];
+    [self.contentView addSubview:_authBtn];
+    
+    UIView *lineView = [[UIView alloc]init];
+    lineView.frame = CGRectMake(0, STHeight(108)-LineHeight, ScreenWidth, LineHeight);
+    lineView.backgroundColor = cline;
+    [self.contentView addSubview:lineView];
 
     
     
@@ -67,12 +86,20 @@
 
     _nameLabel.text = model.userName;
     CGSize nameSize = [model.userName sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
-    _nameLabel.frame = CGRectMake(STWidth(89), STHeight(20), nameSize.width, STHeight(16));
+    _nameLabel.frame = CGRectMake(STWidth(76), STHeight(20), nameSize.width, STHeight(16));
     
-    NSString *enterStr = [NSString stringWithFormat:MSG_VISITORHOME_ENTER_TIME,model.occurTime];
+    NSString *enterStr = [model.occurTime stringByReplacingOccurrencesOfString:@"-" withString:@"."];
     _enterTimeLabel.text = enterStr;
-    CGSize enterTimeSize = [enterStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(12)]];
-    _enterTimeLabel.frame = CGRectMake(STWidth(89), STHeight(44), enterTimeSize.width, STHeight(12));
+    CGSize enterTimeSize = [enterStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
+    _enterTimeLabel.frame = CGRectMake(STWidth(100), STHeight(46), enterTimeSize.width, STHeight(14));
+    
+    NSString *exitStr = [model.lastOccurTime stringByReplacingOccurrencesOfString:@"-" withString:@"."];
+    if(IS_NS_STRING_EMPTY(exitStr)){
+        exitStr = MSG_VISITORHISTORY_UNKNOW;
+    }
+    _exitTimeLabel.text = exitStr;
+    CGSize exitTimeSize = [exitStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
+    _exitTimeLabel.frame = CGRectMake(STWidth(100), STHeight(72), exitTimeSize.width, STHeight(14));
     
     if(!IS_NS_STRING_EMPTY(model.faceUrl)){
         WS(weakSelf)

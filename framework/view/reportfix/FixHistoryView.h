@@ -12,5 +12,5 @@
 @interface FixHistoryView : UIView
 
 -(instancetype)initWithViewModel:(FixHistoryViewModel *)viewModel;
-
+-(void)updateView;
 @end

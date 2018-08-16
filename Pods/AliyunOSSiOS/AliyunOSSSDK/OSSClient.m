@@ -671,7 +671,10 @@ static NSObject *lock;
 - (OSSTask *)listParts:(OSSListPartsRequest *)request {
     OSSNetworkingRequestDelegate * requestDelegate = request.requestDelegate;
 
-    NSMutableDictionary * querys = [NSMutableDictionary dictionaryWithObjectsAndKeys:request.uploadId, @"uploadId", nil];
+    NSMutableDictionary *querys = [NSMutableDictionary dictionary];
+    [querys setObject: request.uploadId forKey: @"uploadId"];
+    [querys setObject: [NSString stringWithFormat:@"%d",request.partNumberMarker] forKey: @"part-number-marker"];
+    
     requestDelegate.responseParser = [[OSSHttpResponseParser alloc] initForOperationType:OSSOperationTypeListMultipart];
     requestDelegate.allNeededMessage = [[OSSAllRequestNeededMessage alloc] initWithEndpoint:self.endpoint
                                                 httpMethod:@"GET"
@@ -976,60 +979,74 @@ static NSObject *lock;
 
 - (OSSTask *)processListPartsWithObjectKey:(nonnull NSString *)objectKey bucket:(nonnull NSString *)bucket uploadId:(NSString * _Nonnull *)uploadId uploadedParts:(nonnull NSMutableArray *)uploadedParts uploadedLength:(NSUInteger *)uploadedLength totalSize:(NSUInteger)totalSize partSize:(NSUInteger)partSize
 {
-    OSSListPartsRequest * listParts = [OSSListPartsRequest new];
-    listParts.bucketName = bucket;
-    listParts.objectKey = objectKey;
-    listParts.uploadId = *uploadId;
-    OSSTask * listPartsTask = [self listParts:listParts];
-    [listPartsTask waitUntilFinished];
-    if (listPartsTask.error)
-    {
-        if ([listPartsTask.error.domain isEqualToString: OSSServerErrorDomain] && listPartsTask.error.code == -1 * 404)
+    BOOL isTruncated = NO;
+    int nextPartNumberMarker = 0;
+    
+    do {
+        OSSListPartsRequest * listParts = [OSSListPartsRequest new];
+        listParts.bucketName = bucket;
+        listParts.objectKey = objectKey;
+        listParts.uploadId = *uploadId;
+        listParts.partNumberMarker = nextPartNumberMarker;
+        OSSTask * listPartsTask = [self listParts:listParts];
+        [listPartsTask waitUntilFinished];
+        
+        if (listPartsTask.error)
         {
-            OSSLogVerbose(@"local record existes but the remote record is deleted");
-            *uploadId = nil;
-        } else
+            isTruncated = NO;
+            [uploadedParts removeAllObjects];
+            if ([listPartsTask.error.domain isEqualToString: OSSServerErrorDomain] && listPartsTask.error.code == -404)
+            {
+                OSSLogVerbose(@"local record existes but the remote record is deleted");
+                *uploadId = nil;
+            } else
+            {
+                return listPartsTask;
+            }
+        }
+        else
         {
-            return listPartsTask;
+            OSSListPartsResult *res = listPartsTask.result;
+            isTruncated = res.isTruncated;
+            nextPartNumberMarker = res.nextPartNumberMarker;
+            OSSLogVerbose(@"resumableUpload listpart ok");
+            if (res.parts.count > 0) {
+                [uploadedParts addObjectsFromArray:res.parts];
+            }
         }
-    }
-    else
-    {
-        OSSLogVerbose(@"resumableUpload listpart ok");
-        OSSListPartsResult * result = listPartsTask.result;
-        if (result.parts.count) {
-            [uploadedParts addObjectsFromArray:result.parts];
-        }
-        __block NSUInteger firstPartSize = 0;
-        __block NSUInteger bUploadedLength = 0;
-        [uploadedParts enumerateObjectsUsingBlock:^(NSDictionary *part, NSUInteger idx, BOOL * _Nonnull stop) {
-            unsigned long long iPartSize = 0;
-            NSString *partSizeString = [part objectForKey:OSSSizeXMLTOKEN];
-            NSScanner *scanner = [NSScanner scannerWithString:partSizeString];
-            [scanner scanUnsignedLongLong:&iPartSize];
+    } while (isTruncated);
+    
+    __block NSUInteger firstPartSize = 0;
+    __block NSUInteger bUploadedLength = 0;
+    [uploadedParts enumerateObjectsUsingBlock:^(NSDictionary *part, NSUInteger idx, BOOL * _Nonnull stop) {
+        unsigned long long iPartSize = 0;
+        NSString *partSizeString = [part objectForKey:OSSSizeXMLTOKEN];
+        NSScanner *scanner = [NSScanner scannerWithString:partSizeString];
+        [scanner scanUnsignedLongLong:&iPartSize];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wshorten-64-to-32"
-            bUploadedLength += iPartSize;
-            if (idx == 0)
-            {
-                firstPartSize = iPartSize;
-            }
+        bUploadedLength += iPartSize;
+        if (idx == 0)
+        {
+            firstPartSize = iPartSize;
+        }
 #pragma clang diagnostic pop
-        }];
-        *uploadedLength = bUploadedLength;
-        
-        if (totalSize < bUploadedLength)
-        {
-            return [OSSTask taskWithError:[NSError errorWithDomain:OSSClientErrorDomain
-                                                              code:OSSClientErrorCodeCannotResumeUpload
-                                                          userInfo:@{OSSErrorMessageTOKEN: @"The uploading file is inconsistent with before"}]];
-        }
-        else if (firstPartSize != 0 && firstPartSize != partSize && totalSize != firstPartSize)
-        {
-            return [OSSTask taskWithError:[NSError errorWithDomain:OSSClientErrorDomain
-                                                              code:OSSClientErrorCodeCannotResumeUpload
-                                                          userInfo:@{OSSErrorMessageTOKEN: @"The part size setting is inconsistent with before"}]];
-        }
+    }];
+    *uploadedLength = bUploadedLength;
+    
+    if (totalSize < bUploadedLength)
+    {
+        NSError *error = [NSError errorWithDomain:OSSClientErrorDomain
+                                             code:OSSClientErrorCodeCannotResumeUpload
+                                         userInfo:@{OSSErrorMessageTOKEN: @"The uploading file is inconsistent with before"}];
+        return [OSSTask taskWithError: error];
+    }
+    else if (firstPartSize != 0 && firstPartSize != partSize && totalSize != firstPartSize)
+    {
+        NSError *error = [NSError errorWithDomain:OSSClientErrorDomain
+                                             code:OSSClientErrorCodeCannotResumeUpload
+                                         userInfo:@{OSSErrorMessageTOKEN: @"The part size setting is inconsistent with before"}];
+        return [OSSTask taskWithError: error];
     }
     return nil;
 }
@@ -1114,7 +1131,7 @@ static NSObject *lock;
         
         // while operationCount >= 5,the loop will stay here
         while (queue.operationCount >= 5) {
-            
+            [NSThread sleepForTimeInterval: 0.15f];
         }
         
         if (idx == partCout) {
@@ -1165,8 +1182,10 @@ static NSObject *lock;
     
     OSSTask * uploadPartTask = [self uploadPart:uploadPart];
     [uploadPartTask waitUntilFinished];
-    if (uploadPartTask.error && uploadPartTask.error.code != 409) {
-        *errorTask = uploadPartTask;
+    if (uploadPartTask.error) {
+        if (uploadPartTask.error.code != -409) {
+            *errorTask = uploadPartTask;
+        }
     } else {
         OSSUploadPartResult * result = uploadPartTask.result;
         OSSPartInfo * partInfo = [OSSPartInfo new];
@@ -1259,7 +1278,7 @@ static NSObject *lock;
     
     return [[OSSTask taskWithResult:nil] continueWithExecutor:self.ossOperationExecutor withBlock:^id(OSSTask *task) {
         
-        static NSUInteger uploadedLength = 0;
+        __block NSUInteger uploadedLength = 0;
         uploadedLength = 0;
         __block OSSTask * errorTask;
         __block NSString *uploadId;
@@ -1728,9 +1747,11 @@ static NSObject *lock;
                 
                 OSSTask * uploadPartTask = [self uploadPart:uploadPart];
                 [uploadPartTask waitUntilFinished];
-                if (uploadPartTask.error && uploadPartTask.error.code != 409) {
-                    errorTask = uploadPartTask;
-                    break;
+                if (uploadPartTask.error) {
+                    if (uploadPartTask.error.code != -409) {
+                        errorTask = uploadPartTask;
+                        break;
+                    }
                 } else {
                     OSSUploadPartResult * result = uploadPartTask.result;
                     OSSPartInfo * partInfo = [OSSPartInfo new];

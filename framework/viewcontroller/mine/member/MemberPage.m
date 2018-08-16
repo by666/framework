@@ -10,10 +10,13 @@
 #import "MemberView.h"
 #import "AddMemberPage.h"
 #import "STObserverManager.h"
+#import "BaseNoNetView.h"
+#import "STNetUtil.h"
 @interface MemberPage ()<MemberViewDelegate,STObserverProtocol>
 
 @property(strong, nonatomic)MemberView *memberView;
 @property(strong, nonatomic)MemberViewModel *viewModel;
+@property(strong, nonatomic)BaseNoNetView *noNetView;
 @end
 
 @implementation MemberPage
@@ -47,21 +50,28 @@
 }
 
 
--(UIView *)memberView{
-    if(_memberView == nil){
-        _viewModel = [[MemberViewModel alloc]init];
-        _viewModel.delegate = self;
-        _memberView = [[MemberView alloc]initWithViewModel:_viewModel];
-        _memberView.backgroundColor = cwhite;
-        _memberView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight + STHeight(10), ScreenWidth, ContentHeight-STHeight(10));
-    }
-    return _memberView;
-}
+
 
 -(void)initView{
-    [self.view addSubview:[self memberView]];
-    if(_viewModel){
-        [_viewModel requestMemberDatas];
+    _viewModel = [[MemberViewModel alloc]init];
+    _viewModel.delegate = self;
+    _memberView = [[MemberView alloc]initWithViewModel:_viewModel];
+    _memberView.frame = CGRectMake(0, StatuNavHeight, ScreenWidth, ContentHeight);
+    [self.view addSubview:_memberView];
+    if([STNetUtil isNetAvailable]){
+        _memberView.hidden = NO;
+        if(_viewModel){
+            [_viewModel requestMemberDatas];
+        }
+    }else{
+        _memberView.hidden = YES;
+        WS(weakSelf)
+        _noNetView = [[BaseNoNetView alloc]initWithBlock:^{
+            if(weakSelf.viewModel){
+                [weakSelf.viewModel requestMemberDatas];
+            }
+        }];
+        [self.view addSubview:_noNetView];
     }
 }
 
@@ -77,6 +87,8 @@
 }
 
 -(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    _memberView.hidden = NO;
+    _noNetView.hidden = YES;
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if(_memberView){
         [_memberView updateView];
@@ -94,10 +106,16 @@
 
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
-    if([key isEqualToString:Notify_AddMember] || [key isEqualToString:Notify_DeleteMember] || [key isEqualToString:Notify_UpdateMember]){
+    if([key isEqualToString:Notify_AddMember]){
+        [_viewModel.datas addObject:msg];
+        [_memberView updateView];
+        return;
+    }
+    if([key isEqualToString:Notify_DeleteMember] || [key isEqualToString:Notify_UpdateMember]){
         if(_viewModel){
             [_viewModel requestMemberDatas];
         }
+        return;
     }
 }
 

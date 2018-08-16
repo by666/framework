@@ -12,6 +12,8 @@
 #import "OpendoorPage.h"
 #import "CarPage.h"
 #import "STCircleLabelView.h"
+#import "AccountManager.h"
+#import "STNetUtil.h"
 
 @interface MainView()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -126,10 +128,16 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    if([_mViewModel.statu isEqualToString:STATU_LIVEINFO_NO_INFO]){
+    ApplyModel *applyModel = [[AccountManager sharedAccountManager]getApplyModel];
+    if(applyModel.statu == APPLY_REJECT && indexPath.row !=8 && indexPath.row !=7){
+        [_mViewModel showAuthFailDialog];
+        return;
+    }
+    if(applyModel.statu == APPLY_DEFAULT  && indexPath.row !=8 && indexPath.row !=7){
         [_mViewModel openCheckInfoAlert];
         return;
-    }else if([_mViewModel.statu isEqualToString:STATU_LIVEINFO_HAS_REVIEW_INFO] && indexPath.row !=8){
+    }
+    if(applyModel.statu == APPLYING && indexPath.row !=8 && indexPath.row !=7){
         [_mViewModel goAuthStatuPage];
         return;
     }
@@ -171,13 +179,6 @@
 
 
 -(void)onClickMoreBtn{
-    if([_mViewModel.statu isEqualToString:STATU_LIVEINFO_NO_INFO]){
-        [_mViewModel openCheckInfoAlert];
-        return;
-    }else if([_mViewModel.statu isEqualToString:STATU_LIVEINFO_HAS_REVIEW_INFO]){
-        [_mViewModel goAuthStatuPage];
-        return;
-    }
     if(_mViewModel){
         [_mViewModel goMessagePage];
     }

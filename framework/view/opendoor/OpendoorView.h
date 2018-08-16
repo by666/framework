@@ -12,6 +12,6 @@
 @interface OpendoorView : UIView
 
 -(instancetype)initWithViewModel:(OpendoorViewModel *)viewModel;
--(void)onGenerateTempLock;
+-(void)onGenerateTempLock:(NSString *)codeStr;
 
 @end

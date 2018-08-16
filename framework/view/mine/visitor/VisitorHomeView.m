@@ -26,7 +26,7 @@
 
 -(void)initView{
     
-    UIButton *peopleVisitorBtn = [[UIButton alloc]initWithFont:STFont(18) text:@"" textColor:cwhite backgroundColor:c13 corner:STHeight(5) borderWidth:0 borderColor:nil];
+    UIButton *peopleVisitorBtn = [[UIButton alloc]initWithFont:STFont(18) text:@"" textColor:cwhite backgroundColor:c06 corner:STHeight(5) borderWidth:0 borderColor:nil];
     peopleVisitorBtn.frame = CGRectMake(STWidth(15), STHeight(30), ScreenWidth - STWidth(30), STHeight(174));
     [peopleVisitorBtn addTarget:self action:@selector(onClickPeopleBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:peopleVisitorBtn];

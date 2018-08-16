@@ -95,7 +95,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     DeviceShareModel *data = [_mViewModel.datas objectAtIndex:indexPath.section];
     _detailView.hidden = NO;
-    [_detailView setTitle:data.name content:data.detail];
+    [_detailView setDatas:data.detailDatas name:data.name];
 }
 
 -(STDetailView *)detailView{

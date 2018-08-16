@@ -11,7 +11,7 @@
 @interface DeviceShareHistoryModel : NSObject
 
 @property(copy, nonatomic)NSString *orderNum;
-@property(copy, nonatomic)NSString *orderStatu;
+@property(copy, nonatomic)NSString *orderTime;
 @property(copy, nonatomic)NSString *imageSrc;
 @property(copy, nonatomic)NSString *name;
 @property(copy, nonatomic)NSString *price;

@@ -22,6 +22,10 @@
         self.userUid = [aDecoder decodeObjectForKey:@"userUid"];
         self.verifyId = (int)[aDecoder decodeIntegerForKey:@"verifyId"];
         self.hasOwner = [aDecoder decodeBoolForKey:@"hasOwner"];
+        self.homeLocator = [aDecoder decodeObjectForKey:@"homeLocator"];
+        self.districtUid = [aDecoder decodeObjectForKey:@"districtUid"];
+        self.homeFullName = [aDecoder decodeObjectForKey:@"homeFullName"];
+        self.statu = (int)[aDecoder decodeIntegerForKey:@"statu"];
     }
     return self;
 }
@@ -33,6 +37,11 @@
     [aCoder encodeObject:self.userUid forKey:@"userUid"];
     [aCoder encodeInteger:self.verifyId forKey:@"verifyId"];
     [aCoder encodeBool:self.hasOwner forKey:@"hasOwner"];
+    [aCoder encodeObject:self.homeLocator forKey:@"homeLocator"];
+    [aCoder encodeObject:self.districtUid forKey:@"districtUid"];
+    [aCoder encodeObject:self.homeFullName forKey:@"homeFullName"];
+    [aCoder encodeInteger:self.statu forKey:@"statu"];
+
 
 }
 

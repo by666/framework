@@ -46,4 +46,10 @@
     }
 }
 
+-(void)backLastPage{
+    if(_delegate){
+        [_delegate onBackLastPage];
+    }
+}
+
 @end

@@ -73,12 +73,12 @@
     
     UIView *lineView1 = [[UIView alloc]init];
     lineView1.frame = CGRectMake(0, STHeight(48), ScreenWidth, LineHeight);
-    lineView1.backgroundColor = c17;
+    lineView1.backgroundColor = cline;
     [self.contentView addSubview:lineView1];
     
     UIView *lineView2= [[UIView alloc]init];
     lineView2.frame = CGRectMake(0, STHeight(130), ScreenWidth,LineHeight);
-    lineView2.backgroundColor = c17;
+    lineView2.backgroundColor = cline;
     [self.contentView addSubview:lineView2];
     
 }

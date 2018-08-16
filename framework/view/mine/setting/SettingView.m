@@ -78,12 +78,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    LiveModel *liveModel = [[AccountManager sharedAccountManager]getLiveModel];
+    ApplyModel *applyModel = [[AccountManager sharedAccountManager]getApplyModel];
     if(_mViewModel){
         NSInteger position = indexPath.row;
         switch (position) {
             case 2:
-                if(liveModel.statu == STATU_YES){
+                if(applyModel.statu == APPLY_PASS){
                     [_mViewModel goUpdatePhoneNumPage];
                 }else{
                     [STToastUtil showWarnTips:MSG_SETTING_AUTH_TIPS];

@@ -13,11 +13,14 @@
 #pragma mark 格式化时间（YYYY年MM月dd日 HH:mm）
 +(NSString *)generateAll : (NSString *)timestamp;
 
+#pragma mark 格式化时间（自定格式）
++(NSString *)generateDate:(NSString *)timestamp format:(NSString *)formatStr;
+
 #pragma mark 格式化日期（YYYY年MM月dd日）
-+(NSString *)generateDate : (NSString *)timestamp;
++(NSString *)generateDate_CH : (NSString *)timestamp;
 
 #pragma mark 格式化时间（YYYY.MM.dd)
-+(NSString *)generateDate2 : (NSString *)timestamp;
++(NSString *)generateDate_EN : (NSString *)timestamp;
 
 #pragma mark 格式化时间（HH:mm）
 +(NSString *)generateTime : (NSString *)timestamp;

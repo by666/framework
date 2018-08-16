@@ -48,7 +48,7 @@
     [self addSubview:contentView];
     
     UIView *lineView = [[UIView alloc]init];
-    lineView.backgroundColor = c17;
+    lineView.backgroundColor = cline;
     lineView.frame = CGRectMake(0, STHeight(60),STWidth(ScreenWidth), LineHeight);
     [contentView addSubview:lineView];
     

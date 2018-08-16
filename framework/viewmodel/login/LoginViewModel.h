@@ -27,9 +27,11 @@
 -(void)sendVerifyCode:(NSString *)phoneNum;
 -(void)getTestCode:(NSString *)phoneNum;
 -(void)doLogin:(NSString *)phoneNum verifyCode:(NSString *)verifyCode;
+-(void)doLogin:(NSString *)phoneNum verifyCode:(NSString *)verifyCode wxToken:(NSString *)wxToken;
 -(void)startCountTime;
 
 -(void)doWechatLogin;
+-(void)requestWechatLogin:(NSString *)code;
 -(void)doFaceLogin;
 -(void)goback;
 

@@ -8,11 +8,13 @@
 
 #import "VisitorHistoryView.h"
 #import "VisitorHistoryCell.h"
+#import "BaseNoDataView.h"
 
 @interface  VisitorHistoryView()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong, nonatomic)VisitorHistoryViewModel *mViewModel;
 @property(strong, nonatomic)UITableView *tableView;
+@property(strong, nonatomic)BaseNoDataView *noDataView;
 
 @end
 
@@ -30,39 +32,33 @@
 -(void)initView{
     
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight)];
-    _tableView.backgroundColor = c15;
-    _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.showsHorizontalScrollIndicator = NO;
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.contentSize = CGSizeMake(ScreenWidth, STHeight(110)*[_mViewModel.datas count]);
+    [_tableView useDefaultProperty];
     [self addSubview:_tableView];
+    
+    WS(weakSelf)
+    _noDataView = [[BaseNoDataView alloc]initWithImage:@"共享设备订单页_ic_无记录" title:MSG_NO_VISITOR buttonTitle:MSG_BACK_HOME onclick:^{
+        if(weakSelf.mViewModel){
+            [weakSelf.mViewModel backLastPage];
+        }
+    }];
+    _noDataView.hidden = YES;
+    [self addSubview:_noDataView];
 }
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *view = [[UIView alloc]init];
-    view.backgroundColor = c15;
-    return view;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return STHeight(10);
-}
-
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
-}
-
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return STHeight(100);
+    return [_mViewModel.datas count];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return [_mViewModel.datas count];
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return STHeight(108);
 }
 
 
@@ -72,7 +68,6 @@
     if(!cell){
         cell = [[VisitorHistoryCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[VisitorHistoryCell identify]];
     }
-    [cell setBackgroundColor:c15];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     VisitorHistoryModel *model = [_mViewModel.datas objectAtIndex:indexPath.section];
     [cell updateData:model];
@@ -98,6 +93,13 @@
 }
 
 -(void)updateView{
+    if(IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
+        _noDataView.hidden = NO;
+        _tableView.hidden = YES;
+    }else{
+        _noDataView.hidden = YES;
+        _tableView.hidden = NO;
+    }
     [_tableView reloadData];
 }
 @end

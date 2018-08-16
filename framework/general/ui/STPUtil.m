@@ -16,6 +16,10 @@
 }
 
 +(CGFloat)getActualHeight : (CGFloat)height{
+    if(IS_IPHONE_X){
+        return (ScreenHeight * height * 1920 /2436) / 676 ;
+
+    }
     return (ScreenHeight * height) / 676;
 }
 
@@ -57,7 +61,7 @@
     NSInteger idCardMod=idCardWiSum % 11;
     NSString *idCardLast= [idNum substringWithRange:NSMakeRange(17, 1)];
     if(idCardMod==2) {
-        if(![idCardLast isEqualToString:@"X"]|| ![idCardLast isEqualToString:@"x"]) {
+        if(![idCardLast isEqualToString:@"X"] && ![idCardLast isEqualToString:@"x"]) {
             return NO;
         }
     }
@@ -117,6 +121,9 @@
 
 
 +(NSString *)getGenderfromIdNum:(NSString *)numberStr{
+    if(IS_NS_STRING_EMPTY(numberStr)){
+        return @"";
+    }
     NSString *sex = @"";
     if (numberStr.length==18){
         int sexInt=[[numberStr substringWithRange:NSMakeRange(16,1)] intValue];

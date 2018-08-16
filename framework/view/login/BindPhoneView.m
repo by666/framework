@@ -10,13 +10,14 @@
 
 @interface BindPhoneView()
 
-@property(strong, nonatomic) BindPhoneViewModel *mViewModel;
+@property(strong, nonatomic) LoginViewModel *mViewModel;
 
 @property(strong, nonatomic) UITextField *phoneNumTF;
 @property(strong, nonatomic) UITextField *verifyCodeTF;
 @property(strong, nonatomic) UIButton *sendVerifyCodeBtn;
 @property(strong, nonatomic) UILabel *tipLabel;
-@property(strong, nonatomic) UIButton *submitBtn;
+@property(strong, nonatomic) UIButton *loginBtn;
+@property(copy, nonatomic)NSString *wxToken;
 
 @end
 
@@ -24,7 +25,7 @@
     NSString *mTitle;
 }
 
--(instancetype)initWithViewModel:(BindPhoneViewModel *)viewModel title:(NSString *)title{
+-(instancetype)initWithViewModel:(LoginViewModel *)viewModel title:(NSString *)title{
     if(self == [super init]){
         _mViewModel = viewModel;
         mTitle = title;
@@ -33,10 +34,20 @@
     return self;
 }
 
+-(instancetype)initWithViewModel:(LoginViewModel *)viewModel title:(NSString *)title wxToken:(NSString *)wxToken{
+    if(self == [super init]){
+        _mViewModel = viewModel;
+        mTitle = title;
+        _wxToken = wxToken;
+        [self initView];
+    }
+    return self;
+}
+
 -(void)initView{
     
-    UILabel *titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:mTitle textAlignment:NSTextAlignmentCenter textColor:c08 backgroundColor:nil multiLine:YES];
-    titleLabel.frame = CGRectMake(STWidth(27), STHeight(75), ScreenWidth-STWidth(54), [STPUtil textSize:mTitle maxWidth:ScreenWidth-STWidth(54) font:STFont(16)].height);
+    UILabel *titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:mTitle textAlignment:NSTextAlignmentCenter textColor:c11 backgroundColor:nil multiLine:YES];
+    titleLabel.frame = CGRectMake(0 , STHeight(85), ScreenWidth,STHeight(16));
     [self addSubview:titleLabel];
     
     
@@ -48,6 +59,8 @@
                                          NSFontAttributeName:_phoneNumTF.font
                                          }];
     _phoneNumTF.attributedPlaceholder = phoneNumStr;
+    [_phoneNumTF setMaxLength:@"11"];
+    [_phoneNumTF addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self addSubview:_phoneNumTF];
     
     UIView *phoneLine = [[UIView alloc]init];
@@ -63,6 +76,8 @@
                                            NSFontAttributeName:_verifyCodeTF.font
                                            }];
     _verifyCodeTF.attributedPlaceholder = verifyCodeStr;
+    [_verifyCodeTF addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [_verifyCodeTF setMaxLength:@"6"];
     [self addSubview:_verifyCodeTF];
     
     UIView *verifyLine = [[UIView alloc]init];
@@ -71,7 +86,7 @@
     [self addSubview:verifyLine];
     
     
-    _sendVerifyCodeBtn =  [[UIButton alloc]initWithFont:STFont(14) text:_mViewModel.bindPhoneModel.verifyStr textColor:c08 backgroundColor:[UIColor clearColor] corner:0 borderWidth:0 borderColor:nil];
+    _sendVerifyCodeBtn =  [[UIButton alloc]initWithFont:STFont(14) text:_mViewModel.loginModel.verifyStr textColor:c08 backgroundColor:[UIColor clearColor] corner:0 borderWidth:0 borderColor:nil];
     [_sendVerifyCodeBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     _sendVerifyCodeBtn.frame = CGRectMake(STWidth(252), STHeight(188), STWidth(80), STHeight(60));
     _sendVerifyCodeBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -85,36 +100,37 @@
     [self addSubview:_tipLabel];
     
     
-    _submitBtn = [[UIButton alloc]initWithFont:STFont(18) text:@"提交" textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
-    _submitBtn.frame = CGRectMake(STWidth(27), STHeight(313), STWidth(320), STWidth(50));
-    [_submitBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
-    [self addSubview:_submitBtn];
-    [_submitBtn addTarget:self action:@selector(doBindPhone) forControlEvents:UIControlEventTouchUpInside];
+    _loginBtn = [[UIButton alloc]initWithFont:STFont(18) text:@"提交" textColor:c12 backgroundColor:c37 corner:STHeight(25) borderWidth:0 borderColor:nil];
+    _loginBtn.frame = CGRectMake(STWidth(27), STHeight(313), STWidth(320), STWidth(50));
+    [_loginBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
+    [_loginBtn setEnabled:NO];
+    [self addSubview:_loginBtn];
+    [_loginBtn addTarget:self action:@selector(doBindPhone) forControlEvents:UIControlEventTouchUpInside];
     
     
 }
 -(void)doSendVerifyCode{
-    [MBProgressHUD showHUDAddedTo:self animated:YES];
     if(_mViewModel){
         [_mViewModel sendVerifyCode:_phoneNumTF.text];
     }
 }
 
 -(void)doBindPhone{
-    [MBProgressHUD showHUDAddedTo:self animated:YES];
     if(_mViewModel){
-        [_mViewModel doBindPhone:_phoneNumTF.text verifyCode:_verifyCodeTF.text];
+        [_mViewModel doLogin:_phoneNumTF.text verifyCode:_verifyCodeTF.text wxToken:_wxToken];
     }
 }
 
+
 -(void)updateView{
-    [MBProgressHUD hideHUDForView:self animated:YES];
-    _tipLabel.text = _mViewModel.bindPhoneModel.msgStr;
-    _tipLabel.textColor = _mViewModel.bindPhoneModel.msgColor;
+    _tipLabel.text = _mViewModel.loginModel.msgStr;
+    _tipLabel.textColor = _mViewModel.loginModel.msgColor;
 }
 
+
 -(void)updateVerifyBtn:(Boolean)complete{
-    [_sendVerifyCodeBtn setTitle:_mViewModel.bindPhoneModel.verifyStr forState:UIControlStateNormal];
+    [_sendVerifyCodeBtn setTitle:_mViewModel.loginModel.verifyStr forState:UIControlStateNormal];
+    [self changeLoginBtnStatu];
     if(complete){
         [_sendVerifyCodeBtn setEnabled:YES];
         [_sendVerifyCodeBtn setTitleColor:c08 forState:UIControlStateNormal];
@@ -128,5 +144,28 @@
     [_phoneNumTF resignFirstResponder];
     [_verifyCodeTF resignFirstResponder];
 }
+
+
+- (void)textFieldDidChange:(UITextField *)textField{
+    [self changeLoginBtnStatu];
+}
+
+-(void)changeLoginBtnStatu{
+    if(!IS_NS_STRING_EMPTY(_phoneNumTF.text) && !IS_NS_STRING_EMPTY(_verifyCodeTF.text)){
+        [_loginBtn setBackgroundColor:c08 forState:UIControlStateNormal];
+        _loginBtn.enabled = YES;
+        [_loginBtn setTitleColor:cwhite forState:UIControlStateNormal];
+    }else{
+        [_loginBtn setBackgroundColor:c37 forState:UIControlStateNormal];
+        _loginBtn.enabled = NO;
+        [_loginBtn setTitleColor:c12 forState:UIControlStateNormal];
+    }
+}
+
+-(void)blankCode:(NSString *)code{
+    [_verifyCodeTF setText:code];
+    _loginBtn.enabled = YES;
+}
+
 
 @end

@@ -80,6 +80,9 @@
 
 -(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if(self.navigationView){
+        [self.navigationView hideBackBtn];
+    }
     if(_authFaceView){
         [_authFaceView onCommitFinish];
     }
@@ -152,16 +155,6 @@
         [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         [STToastUtil showFailureAlertSheet:failStr];
     }];
-//
-//    WS(weakSelf)
-//    [[FaceSDKManager sharedInstance] livenessWithImage:image completion:^(FaceInfo *faceinfo, LivenessState *state, ResultCode resultCode) {
-//        if(resultCode == ResultCodeOK || resultCode == ResultCodeDataHitOne){
-//            [weakSelf.authFaceView updateView:imagePath];
-//            [STToastUtil showSuccessTips:MSG_FACEDETECT_SUCCESS];
-//        }else{
-//            [STToastUtil showFailureAlertSheet:MSG_FACEDETECT_FAIL];
-//        }
-//    }];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{

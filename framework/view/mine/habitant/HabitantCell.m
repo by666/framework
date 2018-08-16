@@ -31,15 +31,15 @@
 
 -(void)initView{
     _headImageView = [[UIImageView alloc]init];
-    _headImageView.frame = CGRectMake(STWidth(15), STHeight(10), STHeight(40), STHeight(40));
+    _headImageView.frame = CGRectMake(STWidth(15), STHeight(20), STHeight(44), STHeight(44));
     _headImageView.layer.masksToBounds = YES;
-    _headImageView.layer.cornerRadius = STHeight(20);
+    _headImageView.layer.cornerRadius = STHeight(22);
     _headImageView.contentMode = UIViewContentModeScaleAspectFill;
     _headImageView.image = [UIImage imageNamed:@"ic_head"];
     [self.contentView addSubview:_headImageView];
     
     _titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
-    _titleLabel.frame = CGRectMake(STWidth(65), STHeight(21), STWidth(100), STHeight(16));
+    _titleLabel.frame = CGRectMake(STWidth(75), STHeight(20), STWidth(100), STHeight(16));
     [self.contentView addSubview:_titleLabel];
     
     _idetifyLabel = [[STEdgeLabel alloc]initWithFont:STFont(10) text:@"" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
@@ -47,8 +47,9 @@
     _idetifyLabel.layer.cornerRadius = STWidth(10);
     [self.contentView addSubview:_idetifyLabel];
     
-    _validDateTitleLabel = [[UILabel alloc]initWithFont:STFont(12) text:@"有效期至" textAlignment:NSTextAlignmentLeft textColor:c12 backgroundColor:nil multiLine:NO];
-    _validDateTitleLabel.frame = CGRectMake(STWidth(297), STHeight(14), STWidth(60), STHeight(12));
+    _validDateTitleLabel = [[UILabel alloc]initWithFont:STFont(14) text:MSG_HABITANT_VALID textAlignment:NSTextAlignmentRight textColor:c12 backgroundColor:nil multiLine:NO];
+    CGSize vdSize = [MSG_HABITANT_VALID sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(14)]];
+    _validDateTitleLabel.frame = CGRectMake(ScreenWidth - STWidth(43) - vdSize.width, STHeight(26.5), vdSize.width, STHeight(14));
     [self.contentView addSubview:_validDateTitleLabel];
     
     
@@ -57,12 +58,12 @@
     
     _arrowImageView = [[UIImageView alloc]init];
     [_arrowImageView setImage:[UIImage imageNamed:@"ic_arrow_right"]];
-    _arrowImageView.frame = CGRectMake(STWidth(354), STHeight(21), STWidth(7), STHeight(11));
+    _arrowImageView.frame = CGRectMake(ScreenWidth - STWidth(33), (STHeight(84.5) - STWidth(13))/2, STWidth(13), STWidth(13));
     [self.contentView addSubview:_arrowImageView];
     
     UIView *lineView = [[UIView alloc]init];
-    lineView.frame = CGRectMake(0, STHeight(59), ScreenWidth,LineHeight);
-    lineView.backgroundColor = c17;
+    lineView.frame = CGRectMake(0, STHeight(84.5)- LineHeight, ScreenWidth,LineHeight);
+    lineView.backgroundColor = cline;
     [self.contentView addSubview:lineView];
 }
 
@@ -77,22 +78,25 @@
     _titleLabel.text = model.userName;
     
     _idetifyLabel.text = [STPUtil getLiveAttr:model.liveAttr];
-    _idetifyLabel.frame = CGRectMake(_titleLabel.contentSize.width + STWidth(65 + 12), STHeight(21),_idetifyLabel.contentSize.width + STWidth(14), STWidth(20));
+    _idetifyLabel.frame = CGRectMake(STWidth(75), STHeight(46),STWidth(54), STWidth(20));
     if([_idetifyLabel.text isEqualToString:MSG_AUTHUSER_PART2_IDENTIFY_MEMBER]){
-        _idetifyLabel.backgroundColor = c19;
+        _idetifyLabel.backgroundColor = c08;
     }else{
-        _idetifyLabel.backgroundColor = c13;
+        _idetifyLabel.backgroundColor = c19;
     }
     
-    if(model.liveAttr == Live_Member || model.liveAttr == Live_Owner){
+    if(model.liveAttr == Live_Owner){
         _arrowImageView.hidden = YES;
         _validDateLabel.text  = MSG_HABITANT_FOREVER;
     }else{
         _arrowImageView.hidden = NO;
-        _validDateLabel.text = model.overdue;
+        NSString *overdue = [model.overdue stringByReplacingOccurrencesOfString:@"年" withString:@"."];
+        overdue = [overdue stringByReplacingOccurrencesOfString:@"月" withString:@"."];
+        overdue = [overdue stringByReplacingOccurrencesOfString:@"日" withString:@""];
+        _validDateLabel.text = overdue;
     }
     CGSize size = [STPUtil textSize:_validDateLabel.text maxWidth:ScreenWidth font:STFont(14)];
-    _validDateLabel.frame = CGRectMake(ScreenWidth - STWidth(26) -size.width, STHeight(32), size.width, STHeight(14));
+    _validDateLabel.frame = CGRectMake(ScreenWidth - STWidth(43) - size.width, STHeight(43.5), size.width, STHeight(14));
     
 }
 

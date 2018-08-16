@@ -14,6 +14,8 @@
 @property(copy, nonatomic) NSString *userUid;
 @property(copy, nonatomic) NSString *overdue;
 @property(copy, nonatomic) NSString *headUrl;
+@property(copy, nonatomic) NSString *creid;
+@property(copy, nonatomic) NSString *mobile;
 @property(assign, nonatomic) int liveAttr;
 
 @end

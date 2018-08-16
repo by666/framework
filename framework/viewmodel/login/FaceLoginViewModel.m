@@ -12,6 +12,7 @@
 #import "VideoCaptureDevice.h"
 #import "STNetUtil.h"
 #import "AccountManager.h"
+#import "STUserDefaults.h"
 
 
 @interface FaceLoginViewModel()<CaptureDataOutputProtocol>
@@ -36,31 +37,31 @@
     _videoCapture.delegate = self;
     
     // 设置最小检测人脸阈值
-    [[FaceSDKManager sharedInstance] setMinFaceSize:200];
+    [[FaceSDKManager sharedInstance] setMinFaceSize:100];
     
     // 设置截取人脸图片大小
     [[FaceSDKManager sharedInstance] setCropFaceSizeWidth:400];
-
+    
     // 设置人脸遮挡阀值
-    [[FaceSDKManager sharedInstance] setOccluThreshold:0.5];
+    [[FaceSDKManager sharedInstance] setOccluThreshold:0.3];
     
     // 设置亮度阀值
-    [[FaceSDKManager sharedInstance] setIllumThreshold:40];
+    [[FaceSDKManager sharedInstance] setIllumThreshold:95];
     
     // 设置图像模糊阀值
-    [[FaceSDKManager sharedInstance] setBlurThreshold:0.7];
+    [[FaceSDKManager sharedInstance] setBlurThreshold:0.3];
     
     // 设置头部姿态角度
-    [[FaceSDKManager sharedInstance] setEulurAngleThrPitch:10 yaw:10 roll:10];
+    [[FaceSDKManager sharedInstance] setEulurAngleThrPitch:6 yaw:2 roll:6];
     
     // 设置是否进行人脸图片质量检测
     [[FaceSDKManager sharedInstance] setIsCheckQuality:YES];
     
     // 设置超时时间
-    [[FaceSDKManager sharedInstance] setConditionTimeout:FACE_DETECT_OVERTIME];
+    [[FaceSDKManager sharedInstance] setConditionTimeout:60];
     
     // 设置人脸检测精度阀值
-    [[FaceSDKManager sharedInstance] setNotFaceThreshold:0.6];
+    [[FaceSDKManager sharedInstance] setNotFaceThreshold:0.393241];
     
     // 设置照片采集张数
     [[FaceSDKManager sharedInstance] setMaxCropImageNum:1];
@@ -134,7 +135,9 @@
         switch (remindCode) {
             case DetectRemindCodeOK: {
                 if (images[@"bestImage"] != nil && [images[@"bestImage"] count] != 0) {
-                    [self warningStatus:CommonStatus warning:@"非常好" image:image];
+                    NSData* data = [[NSData alloc] initWithBase64EncodedString:[images[@"bestImage"] lastObject] options:NSDataBase64DecodingIgnoreUnknownCharacters];
+                    UIImage* outImage = [UIImage imageWithData:data];
+                    [self warningStatus:CommonStatus warning:@"非常好" image:outImage];
                 }
                 break;
             }
@@ -275,6 +278,7 @@
         NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
         dic[@"faceUrl"] = faceUrl;
         dic[@"userUid"] = userModel.userUid;
+        dic[@"registrationId"] = [STUserDefaults getKeyValue:UD_PUSHID];
         WS(weakSelf)
         [STNetUtil post:URL_FACE_LOGIN content:dic.mj_JSONString success:^(RespondModel *respondModel) {
             if([respondModel.status isEqualToString:STATU_SUCCESS]){

@@ -28,30 +28,31 @@
 }
 
 -(void)initView{
-    _titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
+    _titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentLeft textColor:c11 backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_titleLabel];
     
     _contentLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentRight textColor:c12 backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_contentLabel];
     
     
-    _selectBtn = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - STWidth(200), 0, STWidth(200), STHeight(60))];
+    _selectBtn = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - STWidth(250), 0, STWidth(250), STHeight(60))];
     _selectBtn.backgroundColor = cclear;
     _selectBtn.hidden = YES;
     [self.contentView addSubview:_selectBtn];
     
-    _arrowImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(200) - STWidth(26), STHeight(26), STWidth(11), STHeight(11))];
+    _arrowImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(250) - STWidth(31), (STHeight(56.5) - STHeight(16))/2, STWidth(16), STWidth(16))];
     _arrowImageView.image = [UIImage imageNamed:@"ic_arrow_bottom"];
     _arrowImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _arrowImageView.userInteractionEnabled = NO;
     [_selectBtn addSubview:_arrowImageView];
     
     _selectLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"" textAlignment:NSTextAlignmentRight textColor:c12 backgroundColor:nil multiLine:YES];
-    _selectLabel.frame = CGRectMake(0, 0, STWidth(200) - STWidth(36), STHeight(60));
+    _selectLabel.frame = CGRectMake(0, 0, STWidth(250) - STWidth(41), STHeight(60));
     [_selectBtn addSubview:_selectLabel];
     
     UIView *lineView = [[UIView alloc]init];
-    lineView.frame = CGRectMake(0, STHeight(60)-LineHeight, ScreenWidth, LineHeight);
-    lineView.backgroundColor = c17;
+    lineView.frame = CGRectMake(0, STHeight(56.5)-LineHeight, ScreenWidth, LineHeight);
+    lineView.backgroundColor = cline;
     [self.contentView addSubview:lineView];
 }
 
@@ -62,9 +63,9 @@
     _titleLabel.frame = CGRectMake(STWidth(15), STHeight(22), titleSize.width, STHeight(16));
     
     if([model.title isEqualToString:MSG_DEVICESHAREORDER_DAYS]){
-        NSString *start = [STTimeUtil generateDate2:[STTimeUtil getCurrentTimeStamp]];
-        NSString *end = [STTimeUtil generateDate2:[STTimeUtil getTimeStampWithDays:[model.content intValue]]];
-        NSString *result = [NSString stringWithFormat:@"%@天\n%@-%@",model.content,start,end];
+        NSString *start = [STTimeUtil generateDate_EN:[STTimeUtil getCurrentTimeStamp]];
+        NSString *end = [STTimeUtil generateDate_EN:[STTimeUtil getTimeStampWithDays:[model.content intValue]]];
+        NSString *result = [NSString stringWithFormat:@"%@天,%@-%@",model.content,start,end];
         _selectLabel.text = result;
         _selectBtn.hidden = NO;
     }else{

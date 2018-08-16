@@ -12,6 +12,7 @@
 #import "STCarNumLayerView.h"
 #import "PassView.h"
 #import "STSwitchView.h"
+#import "STSelectLayerButton.h"
 
 @interface VisitorView()<STDateLayerViewDelegate,STCarNumLayerViewDelegate,STSwitchViewDelegate>
 
@@ -19,7 +20,7 @@
 @property(assign, nonatomic)VisitorType mType;
 
 @property(strong, nonatomic)UITextField *nameTextField;
-@property(strong, nonatomic)UIButton *dateBtn;
+//@property(strong, nonatomic)UIButton *dateBtn;
 @property(strong, nonatomic)STDateLayerView *dateLayerView;
 @property(strong, nonatomic)UIButton *headBtn;
 @property(strong, nonatomic)UITextField *numberTextField;
@@ -28,7 +29,10 @@
 @property(strong, nonatomic)UIView *faceView;
 @property(strong, nonatomic)UIButton *generateBtn;
 @property(strong, nonatomic)UIButton *imageBtn;
+@property(strong, nonatomic)UIView *layerView;
+@property(strong, nonatomic)UIImageView *addImageView;
 @property(strong, nonatomic)UILabel *tipsLabel;
+@property(strong, nonatomic)STSelectLayerButton *dateBtn;
 
 @end
 
@@ -54,7 +58,7 @@
     NSArray *commonTitles = @[MSG_VISITOR_NAME,MSG_VISITOR_DATE];
     for(int i = 0 ; i < commonTitles.count ; i++){
         NSString *title = [commonTitles objectAtIndex:i];
-        UILabel *label = [[UILabel alloc]initWithFont:STFont(16) text:title textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
+        UILabel *label = [[UILabel alloc]initWithFont:STFont(16) text:title textAlignment:NSTextAlignmentLeft textColor:c11 backgroundColor:nil multiLine:NO];
         CGSize labelSize = [title sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
         label.frame = CGRectMake(STWidth(15), STHeight(20.5) + i * STHeight(57), labelSize.width, STHeight(16));
         [commonView addSubview:label];
@@ -67,20 +71,29 @@
     [_nameTextField setPlaceholder:MSG_VISITOR_NAME_TIPS color:c17 fontSize:STFont(16)];
     [commonView addSubview:_nameTextField];
     
+    
     NSString *dateStr = [STTimeUtil getTomorrowDate];
-    _dateBtn = [[UIButton alloc]initWithFont:STFont(16) text:dateStr textColor:c12 backgroundColor:cclear corner:0 borderWidth:0 borderColor:nil];
+//    _dateBtn = [[UIButton alloc]initWithFont:STFont(16) text:dateStr textColor:c12 backgroundColor:cclear corner:0 borderWidth:0 borderColor:nil];
+//    CGSize dateSize = [dateStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+//    _dateBtn.frame = CGRectMake(ScreenWidth - dateSize.width - STWidth(35), STHeight(57), dateSize.width, STHeight(57));
+//    [_dateBtn addTarget:self action:@selector(OnClickDateBtn) forControlEvents:UIControlEventTouchUpInside];
+//    [commonView addSubview:_dateBtn];
+    
     CGSize dateSize = [dateStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
-    _dateBtn.frame = CGRectMake(ScreenWidth - dateSize.width - STWidth(31), STHeight(57), dateSize.width, STHeight(57));
+    _dateBtn = [[STSelectLayerButton alloc]initWithFrame:CGRectMake(ScreenWidth - (dateSize.width + STWidth(36)), STHeight(57), dateSize.width + STWidth(36), STHeight(57))];
+    [_dateBtn setSelectText:dateStr];
     [_dateBtn addTarget:self action:@selector(OnClickDateBtn) forControlEvents:UIControlEventTouchUpInside];
     [commonView addSubview:_dateBtn];
     
-    UIImageView *imageView = [[UIImageView alloc]init];
-    imageView.image = [UIImage imageNamed:@"ic_arrow_bottom"];
-    imageView.frame = CGRectMake(ScreenWidth - STWidth(26), STHeight(83), STWidth(7), STHeight(7));
-    [commonView addSubview:imageView];
+//    UIImageView *imageView = [[UIImageView alloc]init];
+//    imageView.image = [UIImage imageNamed:@"ic_arrow_bottom"];
+//    imageView.frame = CGRectMake(ScreenWidth - STWidth(28), STHeight(57) + (STHeight(57) - STWidth(13))/2, STWidth(13), STWidth(13));
+//    UITapGestureRecognizer *recongnizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(OnClickDateBtn)];
+//    [imageView addGestureRecognizer:recongnizer];
+//    [commonView addSubview:imageView];
     
-    UIView *lineView =[[UIView alloc]initWithFrame:CGRectMake(STWidth(15), STHeight(57.5) - 1, ScreenWidth - STWidth(30),1 )];
-    lineView.backgroundColor = c17;
+    UIView *lineView =[[UIView alloc]initWithFrame:CGRectMake(0, STHeight(57.5) - LineHeight, ScreenWidth,LineHeight)];
+    lineView.backgroundColor = cline;
     [commonView addSubview:lineView];
     
     
@@ -90,10 +103,10 @@
     
     [self initFaceView];
     
-    _generateBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_VISITOR_GENERATE_BTN textColor:cwhite backgroundColor:c19 corner:STHeight(25) borderWidth:0 borderColor:nil];
-    _generateBtn.frame = CGRectMake(STWidth(50), STHeight(513), ScreenWidth - STWidth(100), STHeight(50));
+    _generateBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_VISITOR_GENERATE_BTN textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
+    _generateBtn.frame = CGRectMake(STWidth(50), ContentHeight - STHeight(90), STWidth(276), STHeight(50));
     [_generateBtn addTarget:self action:@selector(onClickGenerateBtn) forControlEvents:UIControlEventTouchUpInside];
-    [_generateBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
+    [_generateBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [self addSubview:_generateBtn];
     
     _dateLayerView = [[STDateLayerView alloc]initWithTitle:nil frame:CGRectMake(0, 0, ScreenWidth, ContentHeight)];
@@ -161,7 +174,7 @@
     [self addSubview:_faceView];
     
     UILabel *label = [[UILabel alloc]initWithFont:STFont(16) text:MSG_VISITOR_FACEDECTED textAlignment:NSTextAlignmentLeft textColor:c16 backgroundColor:nil multiLine:NO];
-    CGSize labelSize = [MSG_VISITOR_CAR_TITLE sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    CGSize labelSize = [MSG_VISITOR_FACEDECTED sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     label.frame = CGRectMake(STWidth(15), STHeight(20.5), labelSize.width, STHeight(16));
     [_faceView addSubview:label];
     
@@ -172,19 +185,38 @@
     [_faceView addSubview:_funcSwitch];
     
     UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(57), ScreenWidth, LineHeight)];
-    lineView.backgroundColor = c17;
+    lineView.backgroundColor = cline;
     [_faceView addSubview:lineView];
     
-    _imageBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"" textColor:c12 backgroundColor:c15 corner:STHeight(70) borderWidth:3.25f borderColor:c22];
+
+    _imageBtn = [[UIButton alloc]initWithFont:STFont(30) text:@"" textColor:c12 backgroundColor:c36 corner:STHeight(70) borderWidth:0 borderColor:nil];
     _imageBtn.frame = CGRectMake(STWidth(118), STHeight(85), 0, 0);
     _imageBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [_imageBtn addTarget:self action:@selector(onClickImageBtn) forControlEvents:UIControlEventTouchUpInside];
     [_faceView addSubview:_imageBtn];
     
-    UILabel *layerLabel= [[UILabel alloc]initWithFont:STFont(17) text:@"+" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:[c13 colorWithAlphaComponent:0.6f] multiLine:NO];
-    layerLabel.frame = CGRectMake(0, STHeight(101), STHeight(140), STHeight(39));
-    [_imageBtn addSubview:layerLabel];
+    _addImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STHeight(52), STHeight(55), STHeight(36), STHeight(30))];
+    _addImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _addImageView.image = [UIImage imageNamed:@"用户认证_icon_相机大"];
+    _addImageView.userInteractionEnabled = NO;
+    [_imageBtn addSubview:_addImageView];
+    
+    _layerView= [[UIView alloc]init];
+    _layerView.hidden = YES;
+    _layerView.userInteractionEnabled = NO;
+    _layerView.backgroundColor = [c35 colorWithAlphaComponent:0.6f];
+    _layerView.frame = CGRectMake(0, STHeight(100), STHeight(140), STHeight(40));
+    [_imageBtn addSubview:_layerView];
+    
+    UIImageView *layerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STHeight(60), STHeight(10), STHeight(20), STHeight(20))];
+    layerImageView.image = [UIImage imageNamed:@"用户认证_icon_相机大"];
+    layerImageView.userInteractionEnabled = NO;
+    layerImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [_layerView addSubview:layerImageView];
+    
     _imageBtn.clipsToBounds = YES;
+    
+    
     
     _tipsLabel = [[UILabel alloc]initWithFont:STFont(12) text:MSG_VISITOR_TIPS textAlignment:NSTextAlignmentLeft textColor:c12 backgroundColor:nil multiLine:NO];
     _tipsLabel.frame = CGRectMake(STWidth(15), STHeight(67), ScreenWidth - STWidth(30), STHeight(12));
@@ -215,9 +247,7 @@
 
 //日期选择回调
 -(void)OnDateSelectResult:(NSString *)dateStr{
-    [_dateBtn setTitle:dateStr forState:UIControlStateNormal];
-    CGSize dateSize = [dateStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
-    _dateBtn.frame = CGRectMake(ScreenWidth - dateSize.width - STWidth(31), STHeight(57), dateSize.width, STHeight(57));
+    [_dateBtn setSelectText:dateStr];
 }
 
 
@@ -261,12 +291,13 @@
             return;
         }
         NSString *nameStr = _nameTextField.text;
-        NSString *dateStr = _dateBtn.titleLabel.text;
+        NSString *dateStr = [_dateBtn getSelectText];
         NSString *carStr = @"";
         if(_mType == Car){
             carStr = [NSString stringWithFormat:@"%@%@",_headBtn.titleLabel.text,_numberTextField.text];
         }
         [_mViewModel generatePass:nameStr date:dateStr carNum:carStr on:_funcSwitch.on imagePath:mImagePath type:_mType imageUrl:_mViewModel.data.faceUrl];
+  
     }
 }
 
@@ -283,6 +314,8 @@
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     [_imageBtn setImage:image forState:UIControlStateNormal];
     [_imageBtn setImage:image forState:UIControlStateHighlighted];
+    _layerView.hidden = NO;
+    _addImageView.hidden = YES;
 
 }
 

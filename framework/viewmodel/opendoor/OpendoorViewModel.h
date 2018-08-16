@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol OpendoorViewDelegate
+@protocol OpendoorViewDelegate<BaseRequestDelegate>
 
--(void)onGenerateTempLock:(Boolean)success;
+-(void)onDoShare:(NSString *)codeStr;
 
 @end
 
@@ -19,5 +19,6 @@
 @property(weak, nonatomic)id<OpendoorViewDelegate> delegate;
 
 -(void)generateTempLock;
+-(void)doShare:(NSString *)codeStr;
 
 @end

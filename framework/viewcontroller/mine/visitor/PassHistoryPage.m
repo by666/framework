@@ -11,6 +11,7 @@
 #import "PassPage.h"
 #import "STObserverManager.h"
 #import "MainPage.h"
+#import "VisitorPage.h"
 @interface PassHistoryPage ()<PassHistoryViewDelegate,STObserverProtocol>
 
 @property(strong, nonatomic)PassHistoryView *passHistoryView;
@@ -100,7 +101,7 @@
     
     VisitorModel *visitorModel = [[VisitorModel alloc]init];
     visitorModel.name = model.userName;
-    visitorModel.visitDate = model.startTime;
+    visitorModel.visitDate = [model.startTime stringByReplacingOccurrencesOfString:@"-" withString:@"."];
     visitorModel.carNum = model.licenseNum;
     visitorModel.faceUrl = model.faceUrl;
     
@@ -113,6 +114,10 @@
             [_viewModel requestDatas];
         }
     }
+}
+
+-(void)onGoVisitorPage{
+    [VisitorPage show:self type:People];
 }
 
 @end

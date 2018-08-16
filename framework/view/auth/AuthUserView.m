@@ -1,4 +1,4 @@
-//
+    //
 //  AuthUserView.m
 //  framework
 //
@@ -11,6 +11,7 @@
 #import "STSinglePickerLayerView.h"
 #import "STRecognizeView.h"
 #import "RecognizeModel.h"
+#import "AccountManager.h"
 
 @interface AuthUserView()<STBuildingLayerViewDelegate,STSinglePickerLayerViewDelegate,UITextFieldDelegate,STRecognizeViewDelegate>
 
@@ -44,14 +45,14 @@
     [self initPart1];
     [self initPart2];
   
-    UIButton *nextBtn = [[UIButton alloc]initWithFont:STFont(18) text:MSG_AUTHUSER_BTN textColor:cwhite backgroundColor:c19 corner:STHeight(25) borderWidth:0 borderColor:nil];
-    nextBtn.frame = CGRectMake(STWidth(50), STHeight(513), STWidth(276), STHeight(50));
+    UIButton *nextBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_AUTHUSER_BTN textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
+    nextBtn.frame = CGRectMake(STWidth(50), ContentHeight - STHeight(90), STWidth(276), STHeight(50));
     [nextBtn addTarget:self action:@selector(onClickNextBtn) forControlEvents:UIControlEventTouchUpInside];
-    [nextBtn setBackgroundColor:c19a forState:UIControlStateHighlighted];
+    [nextBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
     [self addSubview:nextBtn];
     
-    _tipsLabel = [[UILabel alloc]initWithFont:STFont(12) text:@"" textAlignment:NSTextAlignmentLeft textColor:c18 backgroundColor:nil multiLine:NO];
-    _tipsLabel.frame = CGRectMake(STWidth(15), STHeight(450), ScreenWidth - STWidth(30), STHeight(12));
+    _tipsLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:c07 backgroundColor:nil multiLine:NO];
+    _tipsLabel.frame = CGRectMake(STWidth(15), STHeight(455), ScreenWidth - STWidth(30), STHeight(20));
     [self addSubview:_tipsLabel];
     
     [self addSubview:[self identifyLayerView]];
@@ -73,7 +74,7 @@
 }
 
 -(void)initPart1{
-    UILabel *titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_AUTHUSER_PART1_TITLE textAlignment:NSTextAlignmentLeft textColor:c11 backgroundColor:nil multiLine:NO];
+    UILabel *titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_AUTHUSER_PART1_TITLE textAlignment:NSTextAlignmentLeft textColor:c12 backgroundColor:nil multiLine:NO];
     CGSize titleSize = [MSG_AUTHUSER_PART1_TITLE sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     titleLabel.frame = CGRectMake(STWidth(15), STHeight(16),titleSize.width , STHeight(16));
     [self addSubview:titleLabel];
@@ -93,7 +94,7 @@
     
     for(int i = 0 ; i < [titieArray count] - 1 ; i ++){
         UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(57) * (i+1), ScreenWidth, LineHeight)];
-        lineView.backgroundColor = c17;
+        lineView.backgroundColor = cline;
         [view addSubview:lineView];
     }
     
@@ -136,11 +137,13 @@
 
 -(void)initPart2{
     
+    UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
+    ApplyModel *applyModel = [[AccountManager sharedAccountManager]getApplyModel];
     _part2View = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(218 - 57 * 2), ScreenWidth, ContentHeight-STHeight(218))];
     _part2View.backgroundColor = c15;
     [self addSubview:_part2View];
     
-    UILabel *titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_AUTHUSER_PART2_TITLE textAlignment:NSTextAlignmentCenter textColor:c11 backgroundColor:nil multiLine:NO];
+    UILabel *titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_AUTHUSER_PART2_TITLE textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
     CGSize titleSize = [MSG_AUTHUSER_PART1_TITLE sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     titleLabel.frame = CGRectMake(STWidth(15),0,titleSize.width , STHeight(47));
     [_part2View addSubview:titleLabel];
@@ -160,18 +163,25 @@
     
     for(int i = 0 ; i < [titieArray count] - 1 ; i ++){
         UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, STHeight(57) * (i+1), ScreenWidth, LineHeight)];
-        lineView.backgroundColor = c17;
+        lineView.backgroundColor = cline;
         [view addSubview:lineView];
     }
     
     _nameTF = [[UITextField alloc]initWithFont:STFont(16) textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:0];
     [_nameTF setPlaceholder:MSG_AUTHUSER_PART2_NAME_HINT color:c17 fontSize:STFont(16)];
     _nameTF.textAlignment = NSTextAlignmentRight;
+    _nameTF.text = userModel.userName;
     _nameTF.frame = CGRectMake(ScreenWidth - STWidth(215), 0, STWidth(200),  STHeight(57));
     [view addSubview:_nameTF];
     
     
-    _mViewModel.data.identify = MSG_AUTHUSER_PART2_IDENTIFY_DEFAULT;
+    if(applyModel != nil){
+        _mViewModel.data.identify = [STPUtil getLiveAttr:applyModel.applyType];
+        _mViewModel.userCommitModel.liveAttr = [NSString stringWithFormat:@"%d",applyModel.applyType];
+    }else{
+        _mViewModel.data.identify = MSG_AUTHUSER_PART2_IDENTIFY_DEFAULT;
+        _mViewModel.userCommitModel.liveAttr = [NSString stringWithFormat:@"%ld",Live_Owner];
+    }
     _identifyBtn = [[UIButton alloc]initWithFont:STFont(16) text:_mViewModel.data.identify textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil];
     CGSize buildingSize = [MSG_AUTHUSER_PART1_BUILDING_HINT sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     _identifyBtn.frame = CGRectMake(ScreenWidth - STWidth(36) - buildingSize.width, STHeight(57),buildingSize.width, STHeight(57));
@@ -189,6 +199,9 @@
     _idNumTF = [[UITextField alloc]initWithFont:STFont(16) textColor:c12 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:0];
     [_idNumTF setPlaceholder:MSG_AUTHUSER_PART2_IDNUM_HINT color:c17 fontSize:STFont(16)];
     _idNumTF.textAlignment = NSTextAlignmentRight;
+    if(!IS_NS_STRING_EMPTY(userModel.creid)){
+        _idNumTF.text = userModel.creid;
+    }
     _idNumTF.frame = CGRectMake(ScreenWidth - STWidth(215), STHeight(114), STWidth(200),  STHeight(57));
     [_idNumTF setMaxLength:@"18"];
     _idNumTF.delegate = self;
@@ -376,6 +389,24 @@
     [_buildingLayerView removeFromSuperview];
     _buildingLayerView = nil;
     [self addSubview: [self buildingLayerView:data level:level]];
+    
+    ApplyModel *applyModel = [[AccountManager sharedAccountManager]getApplyModel];
+    if(applyModel && !IS_NS_STRING_EMPTY(applyModel.districtUid) && !IS_NS_STRING_EMPTY(applyModel.homeLocator)){
+        NSString *result = @"";
+        NSString *fatherLocator = @"";
+        NSArray *homeFullNameArray = [applyModel.homeFullName componentsSeparatedByString:@","];
+        if(!IS_NS_COLLECTION_EMPTY(homeFullNameArray) && [homeFullNameArray count] >= 3){
+            NSString *startStr = homeFullNameArray[0];
+            NSString *lastStr = homeFullNameArray[homeFullNameArray.count - 1];
+            result = [applyModel.homeFullName substringWithRange:NSMakeRange(startStr.length+1,applyModel.homeFullName.length - startStr.length - 2 - lastStr.length)];
+        }
+        NSArray *homeLocatorArray = [applyModel.homeLocator componentsSeparatedByString:@"."];
+        if(!IS_NS_COLLECTION_EMPTY(homeLocatorArray)){
+            NSString *lastStr = homeLocatorArray[homeLocatorArray.count -1];
+            fatherLocator = [applyModel.homeLocator substringWithRange:NSMakeRange(0, applyModel.homeLocator.length - lastStr.length-1)];
+        }
+        [self OnBuildingSelectResult:result fatherLocator:fatherLocator];
+    }
 }
 
 -(void)OnBuildingSelectResult:(NSString *)result fatherLocator:(NSString *)fatherLocator{
@@ -390,6 +421,14 @@
     [UIView animateWithDuration:0.3f animations:^{
         weakSelf.part2View.frame = CGRectMake(0, STHeight(218), ScreenWidth, ContentHeight-STHeight(218));
     }];
+    
+    ApplyModel *applyModel = [[AccountManager sharedAccountManager]getApplyModel];
+    if(applyModel && !IS_NS_STRING_EMPTY(applyModel.homeFullName)){
+        NSArray *homeFullNameArray = [applyModel.homeFullName componentsSeparatedByString:@","];
+        NSString *lastStr = homeFullNameArray[homeFullNameArray.count - 1];
+        _doorTF.text = lastStr;
+        _mViewModel.userCommitModel.homeLocator = applyModel.homeLocator;
+    }
 }
 
 @end

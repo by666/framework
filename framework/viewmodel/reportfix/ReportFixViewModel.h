@@ -19,6 +19,6 @@
 
 @property(weak, nonatomic)id<ReportFixViewDelegate> delegate;
 
--(void)doReprotFix;
+-(void)doReprotFix:(NSString *)orderTimeStr category:(NSString *)categoryStr detail:(NSString *)detailStr;
 
 @end

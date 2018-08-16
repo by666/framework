@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "MessageModel.h"
 
-@protocol MessageViewDelegate
+@protocol MessageViewDelegate<BaseRequestDelegate>
 
 -(void)onGoPropertyPage;
 -(void)onGoSystemPage;
 -(void)onGoMessageDetailPage:(MessageModel *)model;
 -(void)onDataChange;
+-(void)onGoAuthUserPage;
 
 @end
 
@@ -23,10 +24,12 @@
 @property(weak, nonatomic)id<MessageViewDelegate> delegate;
 @property(strong, nonatomic)NSMutableArray *datas;
 
+-(void)requestMessageList:(Boolean)isRequestMore;
 -(void)goPropertyPage;
 -(void)goSystemPage;
 -(void)goMessageDetailPage:(MessageModel *)model;
 -(void)doReject:(MessageModel *)model;
 -(void)doAgree:(MessageModel *)model;
+-(void)goAuthUserPage;
 
 @end

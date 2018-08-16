@@ -12,5 +12,5 @@
 @interface VerificateUserView : UIView
 
 -(instancetype)initWithViewModel:(VerificateViewModel *)viewModel;
-
+-(void)updateView;
 @end

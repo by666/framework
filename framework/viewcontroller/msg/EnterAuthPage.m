@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = c15;
-    if(_data.messageType == VisitorEnter){
+    if(IS_NS_STRING_EMPTY(_data.licenseNum)){
         [self showSTNavigationBar:MSG_ENTERAUTH_VISITOR_TITLE needback:YES];
     }else{
         [self showSTNavigationBar:MSG_ENTERAUTH_CAR_TITLE needback:YES];
@@ -40,6 +40,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    
 }
 
 -(void)initView{
@@ -50,17 +52,32 @@
     _enterAuthView = [[EnterAuthView alloc]initWithViewModel:viewModel];
     _enterAuthView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     [self.view addSubview:_enterAuthView];
+    
+    [viewModel requestData];
 
 }
 
--(void)onDoReject:(MessageModel *)model{
-    [[STObserverManager sharedSTObserverManager]sendMessage:Notify_MESSAGE_REJECT msg:model];
-    [self backLastPage];
+
+
+-(void)onRequestBegin{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
--(void)onDoAgree:(MessageModel *)model{
-    [[STObserverManager sharedSTObserverManager]sendMessage:Notify_MESSAGE_AGREE msg:model];
-    [self backLastPage];
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if([respondModel.requestUrl isEqualToString:URL_GET_MESSAGE_VISITOR]){
+        if(_enterAuthView){
+            [_enterAuthView updateView];
+        }
+    }else if([respondModel.requestUrl isEqualToString:URL_POST_MESSAGE_VISITOR]){
+        [[STObserverManager sharedSTObserverManager]sendMessage:Notify_Message_Statu_Change msg:data];
+        [self backLastPage];
+    }
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    [STToastUtil showFailureAlertSheet:msg];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 @end

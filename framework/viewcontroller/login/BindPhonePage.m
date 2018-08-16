@@ -7,24 +7,29 @@
 //
 
 #import "BindPhonePage.h"
-#import "BindPhoneViewModel.h"
 #import "BindPhoneView.h"
 #import "MainPage.h"
 
-@interface BindPhonePage ()<PhoneDelegate>
+@interface BindPhonePage ()<LoginDelegate>
 
-@property(strong, nonatomic)BindPhoneViewModel *mViewModel;
+@property(strong, nonatomic)LoginViewModel *mViewModel;
 @property(strong, nonatomic)BindPhoneView *mBindPhoneView;
+@property(strong, nonatomic)NSString *wxToken;
 
 @end
 
 @implementation BindPhonePage
 
 
++(void)show:(BaseViewController *)controller wxToken:(NSString *)wxToken viewModel:(LoginViewModel *)viewModel{
+    BindPhonePage *page = [[BindPhonePage alloc]init];
+    page.wxToken = wxToken;
+    page.mViewModel = viewModel;
+    [controller pushPage:page];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _mViewModel = [[BindPhoneViewModel alloc]init];
-    _mViewModel.delegate = self;
     [self initView];
 }
 
@@ -43,28 +48,47 @@
 -(void)initView{
     self.view.backgroundColor = cwhite;
     
-    _mBindPhoneView = [[BindPhoneView alloc]initWithViewModel:_mViewModel title:MSG_WECHAT_TITLE];
+    _mViewModel.delegate = self;
+    _mBindPhoneView = [[BindPhoneView alloc]initWithViewModel:_mViewModel title:MSG_WECHAT_TITLE wxToken:_wxToken];
     _mBindPhoneView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     _mBindPhoneView.backgroundColor = cwhite;
     [self.view addSubview:_mBindPhoneView];
 }
 
--(void)onBindPhone:(Boolean)success{
-    [MBProgressHUD hideHUDForView:_mBindPhoneView animated:YES];
-    [_mBindPhoneView updateView];
-    if(success){
-        [_mBindPhoneView updateView];
-        [MainPage show:self];
-    }
-}
-
-- (void)onSendVerifyCode:(Boolean)success {
-    [_mBindPhoneView updateView];
-}
 
 
 - (void)onTimeCount:(Boolean)complete {
     [_mBindPhoneView updateVerifyBtn:complete];
+}
+
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    });
+}
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [_mBindPhoneView updateView];
+    if([respondModel.requestUrl isEqualToString:URL_GETVERIFYCODE]){
+        NSString *phoneNum = data;
+        [_mViewModel getTestCode:phoneNum];
+    }else if([respondModel.requestUrl isEqualToString:URL_LOGIN]){
+        [MainPage show:self];
+    }
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [_mBindPhoneView updateView];
+}
+
+
+////////测试验证码代码
+-(void)onGetTestCode:(NSString *)code{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [_mBindPhoneView blankCode:code];
 }
 
 

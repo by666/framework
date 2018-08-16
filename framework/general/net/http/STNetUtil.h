@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "RespondModel.h"
+#import <AFNetworking/AFNetworking.h>
+
 
 @interface STNetUtil : NSObject
 
@@ -21,11 +23,12 @@ typedef void(^ByDownloadCallback)(id respondObj);
 +(void)post:(NSString *)url content:(NSString *)content success:(void (^)(RespondModel *))success failure:(void (^)(int))errorCode;
 +(void)post:(NSString *)url content:(NSString *)content success:(void (^)(RespondModel *))success failure:(void (^)(int))failure progress:(void (^)(double))progress;
 
-+(void)upload:(UIImage *)image url:(NSString *)url success:(void (^)(RespondModel *))success failure:(void (^)(int))errorCode;
+//+(void)upload:(UIImage *)image url:(NSString *)url success:(void (^)(RespondModel *))success failure:(void (^)(int))errorCode;
 
-+(void)download : (NSString *)url callback : (ByDownloadCallback) callback;
+//+(void)download : (NSString *)url callback : (ByDownloadCallback) callback;
 
-+(void)startListenNetWork;
++(void)startListenNetWork:(void (^)(AFNetworkReachabilityStatus))result;
++(Boolean)isNetAvailable;
 
 +(void)postImage:(NSString *)url content:(NSString *)content success:(void (^)(id))success failure:(void (^)(id))failure;
 @end

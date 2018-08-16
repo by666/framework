@@ -7,7 +7,6 @@
 //
 
 #import "STNetUtil.h"
-#import <AFNetworking/AFNetworking.h>
 #import "RespondModel.h"
 #import <MJExtension/MJExtension.h>
 #import "AccountManager.h"
@@ -16,10 +15,16 @@
 
 @implementation STNetUtil
 
+static AFNetworkReachabilityStatus mStatus = AFNetworkReachabilityStatusUnknown;
 
 #pragma mark get传参
 +(void)get:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(RespondModel *))success failure:(void (^)(int))failure{
 
+    if(mStatus == AFNetworkReachabilityStatusNotReachable){
+        [STToastUtil showFailureAlertSheet:MSG_NET_ERROR];
+        failure(STATU_NONET);
+        return;
+    }
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
@@ -49,6 +54,11 @@
 
 #pragma mark post传参
 + (void)post:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(RespondModel *))success failure:(void (^)(int))failure{
+    if(mStatus == AFNetworkReachabilityStatusNotReachable){
+        [STToastUtil showFailureAlertSheet:MSG_NET_ERROR];
+        failure(STATU_NONET);
+        return;
+    }
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -77,12 +87,22 @@
 }
 
 +(void)post:(NSString *)url content:(NSString *)content success:(void (^)(RespondModel *))success failure:(void (^)(int))failure{
+    if(mStatus == AFNetworkReachabilityStatusNotReachable){
+        [STToastUtil showFailureAlertSheet:MSG_NET_ERROR];
+        failure(STATU_NONET);
+        return;
+    }
     [self post:url content:content success:success failure:failure progress:nil];
 }
 
 
 #pragma mark post传递body
 +(void)post:(NSString *)url content:(NSString *)content success:(void (^)(RespondModel *))success failure:(void (^)(int))failure progress:(void (^)(double))progress{
+    if(mStatus == AFNetworkReachabilityStatusNotReachable){
+        [STToastUtil showFailureAlertSheet:MSG_NET_ERROR];
+        failure(STATU_NONET);
+        return;
+    }
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -122,42 +142,51 @@
 
 
 #pragma mark 上传
-+(void)upload:(UIImage *)image url:(NSString *)url success:(void (^)(RespondModel *))success failure:(void (^)(int))errorCode{
-    
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    [manager.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
-    NSData *data = UIImageJPEGRepresentation(image,1.0);
-    [manager POST:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        [formData appendPartWithFileData:data name:@"file" fileName:@"upload.png" mimeType:@"image/png"];
-    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [self handleSuccess:responseObject success:success url:url];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [self handleFail:task.response failure:errorCode url:url];
-  }];
-    
-
-}
+//+(void)upload:(UIImage *)image url:(NSString *)url success:(void (^)(RespondModel *))success failure:(void (^)(int))errorCode{
+//    if(mStatus == AFNetworkReachabilityStatusNotReachable){
+//        [STToastUtil showFailureAlertSheet:MSG_NET_ERROR];
+//        failure(STATU_NONET);
+//        return;
+//    }
+//    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+//
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+//    [manager.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
+//    NSData *data = UIImageJPEGRepresentation(image,1.0);
+//    [manager POST:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+//        [formData appendPartWithFileData:data name:@"file" fileName:@"upload.png" mimeType:@"image/png"];
+//    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        [self handleSuccess:responseObject success:success url:url];
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        [self handleFail:task.response failure:errorCode url:url];
+//  }];
+//
+//
+//}
 #pragma mark 下载
-+(void)download : (NSString *)url callback : (ByDownloadCallback) callback{
-    
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    
-    NSURL *URL = [NSURL URLWithString:url];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    
-    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
-        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
-    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
-        NSLog(@"File downloaded to: %@", filePath);
-    }];
-    [downloadTask resume];
-}
+//+(void)download : (NSString *)url callback : (ByDownloadCallback) callback{
+//    if(mStatus == AFNetworkReachabilityStatusNotReachable){
+//        [STToastUtil showFailureAlertSheet:MSG_NET_ERROR];
+//        failure(STATU_NONET);
+//        return;
+//    }
+//
+//    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+//    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+//
+//    NSURL *URL = [NSURL URLWithString:url];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+//
+//    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+//        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+//        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+//    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+//        NSLog(@"File downloaded to: %@", filePath);
+//    }];
+//    [downloadTask resume];
+//}
 
 
 #pragma mark 成功处理
@@ -176,6 +205,9 @@
             }
             
         }else{
+            if([model.status isEqualToString:STATU_INVAILDTOKEN]){
+                [[STObserverManager sharedSTObserverManager]sendMessage:Notify_AUTHFAIL msg:nil];
+            }
             [self printErrorInfo:model url:url];
         }
         success(model);
@@ -217,9 +249,11 @@
 
 
 #pragma mark 监听网络状态
-+(void)startListenNetWork{
++(void)startListenNetWork:(void (^)(AFNetworkReachabilityStatus))result{
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
     [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        mStatus = status;
+        result(status);
         if (status == AFNetworkReachabilityStatusUnknown) {
             NSLog(@"当前网络：未知网络");
         } else if (status == AFNetworkReachabilityStatusNotReachable) {
@@ -234,10 +268,23 @@
 }
 
 
++(Boolean)isNetAvailable{
+    if(mStatus == AFNetworkReachabilityStatusNotReachable){
+        return NO;
+    }
+    return YES;
+}
+
 
 
 #pragma mark post传递body
 +(void)postImage:(NSString *)url content:(NSString *)content success:(void (^)(id))success failure:(void (^)(id))failure{
+    
+    if(mStatus == AFNetworkReachabilityStatusNotReachable){
+        [STToastUtil showFailureAlertSheet:MSG_NET_ERROR];
+        failure([NSString stringWithFormat:@"%d",STATU_NONET]);
+        return;
+    }
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];

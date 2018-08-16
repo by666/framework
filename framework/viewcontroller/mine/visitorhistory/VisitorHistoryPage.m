@@ -9,9 +9,14 @@
 #import "VisitorHistoryPage.h"
 #import "VisitorHistoryView.h"
 #import "VisitorPage.h"
+#import "BaseNoNetView.h"
+#import "STNetUtil.h"
 @interface VisitorHistoryPage ()<VisitorHistoryViewDelegate>
 
 @property(strong, nonatomic)VisitorHistoryView *visitorHistoryView;
+@property(strong, nonatomic)BaseNoNetView *noNetView;
+@property(strong, nonatomic)VisitorHistoryViewModel *viewModel;
+
 @end
 
 @implementation VisitorHistoryPage
@@ -32,15 +37,28 @@
 }
 
 -(void)initView{
-    VisitorHistoryViewModel *viewModel = [[VisitorHistoryViewModel alloc]init];
-    viewModel.delegate = self;
+    _viewModel = [[VisitorHistoryViewModel alloc]init];
+    _viewModel.delegate = self;
     
-    _visitorHistoryView = [[VisitorHistoryView alloc]initWithViewModel:viewModel];
+    _visitorHistoryView = [[VisitorHistoryView alloc]initWithViewModel:_viewModel];
     _visitorHistoryView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     _visitorHistoryView.backgroundColor = c15;
     [self.view addSubview:_visitorHistoryView];
     
-    [viewModel getVisitoryHistoryDatas];
+    if([STNetUtil isNetAvailable]){
+        _visitorHistoryView.hidden = NO;
+        [_viewModel getVisitoryHistoryDatas];
+        
+    }else{
+        _visitorHistoryView.hidden = YES;
+        WS(weakSelf)
+        _noNetView = [[BaseNoNetView alloc]initWithBlock:^{
+            if(weakSelf.viewModel){
+                [weakSelf.viewModel getVisitoryHistoryDatas];
+            }
+        }];
+        [self.view addSubview:_noNetView];
+    }
 
     
 }
@@ -56,6 +74,8 @@
 }
 
 -(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    _visitorHistoryView.hidden = NO;
+    _noNetView.hidden = YES;
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if(_visitorHistoryView){
         [_visitorHistoryView updateView];
@@ -69,6 +89,10 @@
 
 -(void)onGoVisitorPage:(VisitorModel *)model{
     [VisitorPage show:self type:People model:model];
+}
+
+-(void)onBackLastPage{
+    [self backLastPage];
 }
 
 @end

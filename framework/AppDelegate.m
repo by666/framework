@@ -1,4 +1,4 @@
-//
+
 //  AppDelegate.m
 //  framework
 //
@@ -13,8 +13,9 @@
 #import "UserModel.h"
 #import "STUserDefaults.h"
 #import <WXApi.h>
+#import <Bugly/Bugly.h>
 #import "STObserverManager.h"
-#import "AFNetworkActivityIndicatorManager.h"
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 #import "STUpdateUtil.h"
 #import "MainPage.h"
 #import "NextLoginPage.h"
@@ -30,8 +31,15 @@
 #import "STUploadImageUtil.h"
 #import "FaceLoginPage.h"
 #import "LocalFaceDetect.h"
+#import "TestModelManager.h"
+#import "MessagePage.h"
+#import "PageManager.h"
+#import "PushMsgModel.h"
+#import "LoginPage.h"
+#import "AuthStatuPage.h"
+#import "PageManager.h"
 
-@interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>
+@interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate,UIAlertViewDelegate>
 
 @end
 
@@ -56,23 +64,34 @@
     [self initWechat];
     [self initNet];
     [self initBaidu];
+    [[AccountManager sharedAccountManager] clearApplyModel];
     [STUpdateUtil checkUpdate:^(NSString *appname, NSString *url, double version) {
 //        [self showUpdateAlert:url version:version];
     }];
     
     [[PageManager sharedPageManager]initManager];
     
-    [STNetUtil startListenNetWork];
+    [STNetUtil startListenNetWork:^(AFNetworkReachabilityStatus status) {
+//        if(status == AFNetworkReachabilityStatusNotReachable){
+//            [[[PageManager sharedPageManager]getCurrentPage] addNoNetView];
+//        }
+    }];
     [[STUploadImageUtil sharedSTUploadImageUtil]initOSS];
 
+    [[TestModelManager sharedTestModelManager]initTestDatas];
+    
+    [Bugly startWithAppId:BUGLY_APPID];
     return YES;
 }
+
 
 
 -(void)initDB{
     [[STDataBaseUtil sharedSTDataBaseUtil]createTable:@"sthl" model:[UserModel class]];
     [[AccountManager sharedAccountManager]getUserModel];
 }
+
+
 
 -(void)initJPush:(NSDictionary *)launchOptions {
 
@@ -88,13 +107,54 @@
     //2.1.9版本新增获取registration id block接口。
     [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
         if(resCode == 0){
+            [STUserDefaults saveKeyValue:UD_PUSHID value:registrationID];
             NSLog(@"registrationID获取成功：%@",registrationID);
-            
         }
         else{
             NSLog(@"registrationID获取失败，code：%d",resCode);
         }
     }];
+    
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kJPFNetworkDidReceiveMessageNotification object:nil];
+}
+
+
+- (void)networkDidReceiveMessage:(NSNotification *)notification {
+    NSDictionary * userInfo = [notification userInfo];
+    NSString *content = [userInfo valueForKey:@"content"];
+    NSString *messageID = [userInfo valueForKey:@"_j_msgid"];
+    
+    PushMsgModel *model = [PushMsgModel mj_objectWithKeyValues:content];
+    model.messageId = messageID;
+    
+    if(model.serviceType == Push_Other_Login){
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:model.title message:model.alert delegate:self cancelButtonTitle:MSG_CONFIRM otherButtonTitles:nil, nil];
+        alert.tag = model.serviceType;
+        [alert show];
+    }else{
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:model.title message:model.alert delegate:self cancelButtonTitle:MSG_CANCEL otherButtonTitles:MSG_SEE, nil];
+        alert.tag = model.serviceType;
+        [alert show];
+    }
+
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSInteger tag = alertView.tag;
+    BaseViewController *page = [[PageManager sharedPageManager]getCurrentPage];
+    if(page != nil){
+        switch (tag) {
+            case Push_Other_Login:
+                [[PageManager sharedPageManager] popToLoginPage:page];
+                break;
+            default:
+                if(buttonIndex == 1){
+                    [MessagePage show:page];
+                }
+                break;
+        }
+    }
 }
 
 -(void)initWechat{
@@ -152,31 +212,30 @@
 }
 
 #pragma mark- JPUSHRegisterDelegate
-
-// iOS 10 Support
-- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
-    // Required
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler  API_AVAILABLE(ios(10.0)){
     NSDictionary * userInfo = notification.request.content.userInfo;
-    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        [JPUSHService handleRemoteNotification:userInfo];
+    if (@available(iOS 10.0, *)) {
+        if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+            [JPUSHService handleRemoteNotification:userInfo];
+        }
+        completionHandler(UNNotificationPresentationOptionSound);
     }
-    completionHandler(UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以选择设置
+//    id aps = [userInfo objectForKey:@"aps"];
 }
 
-// iOS 10 Support
-- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
-    // Required
+
+
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler  API_AVAILABLE(ios(10.0)){
     NSDictionary * userInfo = response.notification.request.content.userInfo;
-    //这里处理推送带来的数据
-    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        [JPUSHService handleRemoteNotification:userInfo];
+    if (@available(iOS 10.0, *)) {
+        if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+            [JPUSHService handleRemoteNotification:userInfo];
+        }
     }
-    completionHandler();  // 系统要求执行这个方法
+    completionHandler();
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    
-    // Required, iOS 7 Support
     [JPUSHService handleRemoteNotification:userInfo];
     completionHandler(UIBackgroundFetchResultNewData);
 }
@@ -210,9 +269,11 @@
     //微信登录回调
     if ([resp isKindOfClass:[SendAuthResp class]]) {
         SendAuthResp *authResp = (SendAuthResp *)resp;
-        NSString *code =  authResp.code;
-        [STLog print:@"微信登录票据" content:code];
-        [[STObserverManager sharedSTObserverManager]sendMessage:Notify_WXLogin msg:code];
+        if([authResp.state isEqualToString:@"wxLogin"]){
+            NSString *code =  authResp.code;
+            [STLog print:@"微信登录票据" content:code];
+            [[STObserverManager sharedSTObserverManager]sendMessage:Notify_WXLogin msg:code];
+        }
     }
     //微信支付回调
     if([resp isKindOfClass:[PayResp class]]){
@@ -244,6 +305,8 @@
     return YES;
 }
 
+
+
 //打开更新对话框
 -(void)showUpdateAlert:(NSString *)downUrl version:(double)version{
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"检测到新版本" message:[NSString stringWithFormat:@"是否更新到新版本v%.2f",version] preferredStyle:UIAlertControllerStyleAlert];
@@ -259,6 +322,8 @@
     [alertController addAction:updateAction];
     [_window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
+
+
 
 
 @end

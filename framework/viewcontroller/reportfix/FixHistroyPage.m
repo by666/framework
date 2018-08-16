@@ -8,17 +8,20 @@
 
 #import "FixHistroyPage.h"
 #import "FixHistoryView.h"
+#import "MainPage.h"
 
 @interface FixHistroyPage ()<FixHistoryViewDelegate>
 
 @property(strong, nonatomic)FixHistoryView *fixHistoryView;
+@property(assign, nonatomic)Boolean fromReportFix;
+
 @end
 
 @implementation FixHistroyPage
 
-
-+(void)show:(BaseViewController *)controller{
++(void)show:(BaseViewController *)controller fromReportFix:(Boolean)fromReportFix{
     FixHistroyPage *page = [[FixHistroyPage alloc]init];
+    page.fromReportFix = fromReportFix;
     [controller pushPage:page];
 }
 
@@ -47,10 +50,27 @@
     _fixHistoryView.backgroundColor = c15;
     
     [self.view addSubview:_fixHistoryView];
+    
+    [viewModel requestNew];
+
 }
 
+ -(void)backLastPage{
+     if(_fromReportFix){
+         for (UIViewController *temp in self.navigationController.viewControllers) {
+             if ([temp isKindOfClass:[MainPage class]]) {
+                 [self.navigationController popToViewController:temp animated:YES];
+                 break;
+             }
+         }
+     }else{
+         [super backLastPage];
+     }
+ }
+     
+     
 -(void)onRequestDatasCallback:(Boolean)success datas:(NSMutableArray *)datas{
-    
+    [_fixHistoryView updateView];
 }
 
 @end

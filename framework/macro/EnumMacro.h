@@ -14,6 +14,7 @@ typedef NS_ENUM(NSInteger,VisitorType){
 };
 
 
+
 //用户认证30天过期，门禁1天过期
 typedef NS_ENUM(NSInteger,MessageType){
     DefaultMessage = 0, //默认消息
@@ -21,16 +22,23 @@ typedef NS_ENUM(NSInteger,MessageType){
     System,          //系统消息
     VisitorEnter,    //访客门禁申请消息
     CarEnter,        //车辆申请消息
-    UserAuth,        //用户认证消息
+    UserAuth,        //业主接收到的用户认证消息(用户接收到的认证结果消息)
 };
 
 //消息状态
 typedef NS_ENUM(NSInteger,MessageStatu){
     DefaultStatu = 0,//默认
     Granted,         //已授权
+    Reject,          //已拒绝
     Expired,         //已过期
-    Reject           //已拒绝
-    
+};
+
+//推送消息
+typedef NS_ENUM(NSInteger, PushMsgType){
+    Push_Auth = 0,//0：收到用户认证请求
+    Push_Visitor, //1：临时访客申请
+    Push_AuthResult,//2：收取用户认证结果
+    Push_Other_Login,//3：其他地方登陆
 };
 
 
@@ -68,6 +76,8 @@ typedef NS_ENUM(NSInteger,ApplyStatu){
     //审批通过
     APPLY_PASS,
     //审批未通过
-    APPLY_REJECT
+    APPLY_REJECT,
+    //审批中
+    APPLYING,
 };
 

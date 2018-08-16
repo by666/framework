@@ -28,6 +28,8 @@
 #define URL_LOGOUT              [TestUrl stringByAppendingString:@"/user/logout"]
 //人脸登录
 #define URL_FACE_LOGIN          [TestUrl stringByAppendingString:@"/user/login/faceLogin"]
+//微信登录
+#define URL_WX_LOGIN            [TestUrl stringByAppendingString:@"/user/login/wxLogin"]
 
 #pragma mark 获取用户资料
 
@@ -79,6 +81,8 @@
 
 #pragma mark 访客/车辆登记
 
+//手机开门
+#define URL_OPENDOOR           [TestUrl stringByAppendingString:@"/userMainPage/viewPwd"]
 //预登记访客/车辆
 #define URL_PRECHECKIN         [TestUrl stringByAppendingString:@"/usercheckIn/preCheckIn"]
 //查询预登记访客/车辆
@@ -104,6 +108,17 @@
 #define URL_VERIFYMSG_TO_NEW  [TestUrl stringByAppendingString:@"/user/validateNewMobile"]
 
 
+#pragma mark 功能消息
+//获取功能消息列表
+#define URL_GET_MESSAGELIST  [TestUrl stringByAppendingString:@"/message/getUserFunctionMessageList"]
+//获取长住用户申请详情
+#define URL_GET_MESSAGE_APPLY  [TestUrl stringByAppendingString:@"/message/getUserAuthenticationApplyDetailInfo"]
+//获取临时访客申请详情
+#define URL_GET_MESSAGE_VISITOR [TestUrl stringByAppendingString:@"/message/getVisitorRequestDetailInfo"]
+//审批长住用户申请
+#define URL_POST_MESSAGE_APPLY   [TestUrl stringByAppendingString:@"/message/handleUserAuthenticationApply"]
+//审批临时访客申请
+#define URL_POST_MESSAGE_VISITOR [TestUrl stringByAppendingString:@"/message/handleVisitorRequest"]
 
 #pragma mark 验证身份测试
 #define URL_VERIFY_USER [TestUrl stringByAppendingString:@"/user/testPassManageApply"]
@@ -115,17 +130,21 @@
 #pragma mark 网络错误码
 
 //用户鉴权失败
-#define STATU_USERAUTH_FAIL  401
+#define STATU_USERAUTH_FAIL  200
 #define STATU_SERVER_FAIL  500
 
 #pragma mark 通用码
 
+//无网络
+#define STATU_NONET -1
 //请求成功
 #define STATU_SUCCESS @"0"
 //未知错误
 #define STATU_UNKONOW @"1"
 //参数错误
 #define STATU_PARAMEROOR @"2"
+//header错误（相当于token无效）
+#define STATU_INVAILDTOKEN @"3"
 
 //
 #define STATU_YES 1
@@ -150,6 +169,12 @@
 #define STATU_LOGIN_VERIFYCODE_ERROR @"10001002001"
 //手机格式错误
 #define STATU_LOGIN_PHONE_FORMAT_EROOR @"10001002002"
+
+
+/**微信登录**/
+#define STATU_WXLOGN_NOT_BINDPHONE  @"30001001001"
+#define STATU_WXLOGN_HAS_BINDPHONE  @"30001001001"
+#define STATU_WXLOGN_CODE_USED @"20001001001"
 
 /**人脸登录**/
 

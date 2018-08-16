@@ -11,14 +11,14 @@
 
 @implementation STToastUtil
 
-+ (STAlertSheet *)showDialog:(NSString *)title withDelegate:(id<IDSAlertSheetDelegate>)delegate
-{
-    NSArray *buttons = [NSArray arrayWithObjects:@"确定", @"取消", nil];
+
++ (STAlertSheet *)showDialog:(NSString *)title withDelegate:(id<IDSAlertSheetDelegate>)delegate{
+    NSArray *buttons = [NSArray arrayWithObjects:MSG_CONFIRM, MSG_CANCEL, nil];
     STAlertSheet *dialog = [[STAlertSheet alloc] initWithTitle:title buttonTitles:buttons];
     if (delegate) {
         dialog.alertDelegate = delegate;
     }
-    
+
     [dialog setSheetButtonTitleColor:1 withColor:[UIColor redColor]];
     [dialog showDimMask];
     dialog.outerSideCanCancel = NO;
@@ -53,9 +53,6 @@
 
 + (void)showFailureAlertSheet:(NSString *)title
 {
-    if ([title isEqualToString:@"成功"]) {
-        return;
-    }
     UIImage *image = [UIImage imageNamed:@"ic_error_cross_normal"];
     STAlertSheet *sheet = [[STAlertSheet alloc] initWithTitle: title titleIcon:image];
     [sheet showFailure];

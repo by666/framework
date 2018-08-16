@@ -27,4 +27,6 @@
 
 -(void)setTitle:(NSString *)title;
 
+-(void)hideBackBtn;
+
 @end

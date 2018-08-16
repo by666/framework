@@ -13,6 +13,8 @@
 @protocol PassViewDelegate<BaseRequestDelegate>
 
 -(void)onGoVisitorPage:(VisitorModel *)visitorModel;
+-(void)onDoShare:(VisitorModel *)visitorModel passModel:(PassModel *)passModel;
+
 @end
 
 @interface PassViewModel : NSObject
@@ -23,5 +25,6 @@
 
 -(void)deletePass:(NSString *)userUid checkId:(NSString *)checkId;
 -(void)goVisitorPage;
+-(void)doShare;
 
 @end

@@ -43,15 +43,16 @@
         
         if(i == 2){
             imageView.image = [UIImage imageNamed:@"ic_verify_wait"];
-            label.textColor = c12;
+            label.textColor = [c12 colorWithAlphaComponent:0.5f];
         }else{
             imageView.image = [UIImage imageNamed:@"ic_verify_success"];
-            label.textColor = c19;
+            label.textColor = c08;
+            
         }
     }
     
     for(int i = 0 ; i < 2 ; i++){
-        UILabel *label = [[UILabel alloc]initWithFont:STFont(14) text:@"-----------------" textAlignment:NSTextAlignmentCenter textColor:c09 backgroundColor:nil multiLine:NO];
+        UILabel *label = [[UILabel alloc]initWithFont:STFont(14) text:@"---------------" textAlignment:NSTextAlignmentCenter textColor:c09 backgroundColor:nil multiLine:NO];
         label.frame = CGRectMake(STWidth(65) + STWidth(136) * i, STHeight(35), STWidth(108), STHeight(20));
         [self addSubview:label];
     }
@@ -59,18 +60,17 @@
     
     _hurryTipsLabel = [[UILabel alloc]initWithFont:STFont(14) text:MSG_AUTHSTATU_STATU_TIPS textAlignment:NSTextAlignmentCenter textColor:c16 backgroundColor:nil multiLine:YES];
     CGSize hurrySize = [MSG_AUTHSTATU_STATU_TIPS sizeWithMaxWidth:ScreenWidth - STWidth(54) font:[UIFont systemFontOfSize:STFont(14)]];
-    _hurryTipsLabel.frame = CGRectMake(STWidth(27), STHeight(108), ScreenWidth - STWidth(54), hurrySize.height);
+    _hurryTipsLabel.frame = CGRectMake(STWidth(27), STHeight(111), ScreenWidth - STWidth(54), hurrySize.height);
     [self addSubview:_hurryTipsLabel];
     
-    _hurryBtn = [[UIButton alloc]initWithFont:STFont(14) text:MSG_AUTHSTATU_HURRYBTN textColor:cwhite backgroundColor:c23 corner:STHeight(22.5) borderWidth:0 borderColor:nil];
-    _hurryBtn.frame = CGRectMake(STWidth(112), STHeight(171), STWidth(151), STHeight(45));
+    _hurryBtn = [[UIButton alloc]initWithFont:STFont(14) text:MSG_AUTHSTATU_HURRYBTN textColor:cwhite backgroundColor:c08 corner:STHeight(25) borderWidth:0 borderColor:nil];
+    _hurryBtn.frame = CGRectMake((ScreenWidth - STWidth(150))/2, ContentHeight - STHeight(120), STWidth(150), STHeight(50));
     [_hurryBtn addTarget:self action:@selector(OnClickHurryBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_hurryBtn];
     
     
-    UILabel *tipsLabel = [[UILabel alloc]initWithFont:STFont(14) text:MSG_AUTHSTATU_HURRY_TIPS textAlignment:NSTextAlignmentCenter textColor:c20 backgroundColor:nil multiLine:YES];
-    CGSize tipsSize = [MSG_AUTHSTATU_HURRY_TIPS sizeWithMaxWidth:ScreenWidth - STWidth(50) font:[UIFont systemFontOfSize:STFont(14)]];
-    tipsLabel.frame = CGRectMake(STWidth(25), STHeight(537), ScreenWidth - STWidth(50), tipsSize.height);
+    UILabel *tipsLabel = [[UILabel alloc]initWithFont:STFont(14) text:MSG_AUTHSTATU_HURRY_TIPS textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
+    tipsLabel.frame = CGRectMake(0, ContentHeight - STHeight(51), ScreenWidth, STHeight(31));
     [self addSubview:tipsLabel];
     
     ApplyModel *model = [[AccountManager sharedAccountManager]getApplyModel];
@@ -112,7 +112,7 @@
 
 //已经催办过
 -(void)hasAttend{
-    [_hurryBtn setBackgroundColor:c27];
+    [_hurryBtn setBackgroundColor:[c08 colorWithAlphaComponent:0.5f]];
     [_hurryBtn setTitle:MSG_AUTHSTATU_HURRYBTN_CLICKED forState:UIControlStateNormal];
     _hurryBtn.enabled = NO;
     

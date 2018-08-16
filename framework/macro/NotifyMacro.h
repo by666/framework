@@ -20,9 +20,9 @@
 #define Notify_AddCar @"add_car"
 #define Notify_UpdateAddress @"update_address"
 #define Notify_DeleteCheck @"delete_check"
+#define Notify_UpdateHabitant @"update_habitant"
 
-#define Notify_MESSAGE_AGREE @"msg_agree"
-#define Notify_MESSAGE_REJECT @"msg_reject"
+#define Notify_Message_Statu_Change @"msg_statu_change"
 
 #define Notify_Update_User_Face @"update_user_face"
 
@@ -40,3 +40,4 @@
 #define UD_APPLYMODEL @"ud_applymodel"
 
 #define UD_BAIDUAK @"ud_baiduaccesstoken"
+#define UD_PUSHID  @"ud_pushid"

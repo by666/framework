@@ -13,8 +13,8 @@
 
 #define IFLY_FACE_APPID @"5add784a"
 #define JPUSH_APPKEY @"49828a3f5529d51df648f0ad"
-#define WECHAT_APPID @"wx3349545f4d083130"
-
+#define WECHAT_APPID @"wxbc2d656f23e6c0f1"
+#define BUGLY_APPID @"7793f1d5e4"
 
 
 #ifdef __OBJC__

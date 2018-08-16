@@ -7,6 +7,7 @@
 //
 
 #import "AboutPage.h"
+#import "AboutView.h"
 
 @interface AboutPage ()
 
@@ -33,6 +34,9 @@
 }
 
 -(void)initView{
+    AboutView *aboutView = [[AboutView alloc]initWithFrame:CGRectMake(0, StatuNavHeight, ScreenWidth, ContentHeight)];
+    [self.view addSubview:aboutView];
+
     
 }
 

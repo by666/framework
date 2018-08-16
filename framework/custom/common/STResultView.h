@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface STResultView : UIView
+typedef void (^OnClick)(NSString *result);
 
 -(instancetype)initWithTips:(NSString *)tips1 tips2:(NSString *)tips2;
+-(instancetype)initWithTips:(NSString *)tips1 tips2:(NSString *)tips2 btnTxt:(NSString *)btnTxt click:(OnClick)click;
 -(void)setTips1Text:(NSString *)text;
 @end

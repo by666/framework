@@ -15,6 +15,8 @@ SINGLETON_DECLARATION(STUploadImageUtil)
 //初始化OSS
 -(void)initOSS;
 
+-(NSString *)getRealUrl2:(NSString *)objectKey;
+
 //通过objectKey拿到真实的图片url
 -(NSURL *)getRealUrl:(NSString *)objectKey;
 

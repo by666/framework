@@ -12,6 +12,7 @@
 @protocol PassHistoryViewDelegate<BaseRequestDelegate>
 
 -(void)onGoPassPage:(PassHistoryModel *)model;
+-(void)onGoVisitorPage;
 
 @end
 
@@ -23,5 +24,6 @@
 -(instancetype)init;
 -(void)requestDatas;
 -(void)goPassPage:(PassHistoryModel *)model;
+-(void)goVisitorPage;
 
 @end

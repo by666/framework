@@ -21,7 +21,18 @@
     return dateStr;
 }
 
-+(NSString *)generateDate : (NSString *)timestamp{
++(NSString *)generateDate:(NSString *)timestamp format:(NSString *)formatStr{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:formatStr];
+    
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[timestamp doubleValue]/ 1000.0];
+    NSString* dateStr = [formatter stringFromDate:date];
+    return dateStr;
+}
+
++(NSString *)generateDate_CH : (NSString *)timestamp{
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
@@ -32,7 +43,7 @@
     return dateStr;
 }
 
-+(NSString *)generateDate2 : (NSString *)timestamp{
++(NSString *)generateDate_EN:(NSString *)timestamp{
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
@@ -133,11 +144,11 @@
     for(int i = 0 ; i < 7 ; i ++){
         timeInterval += 3600 * 24 * 1000;
         NSDate* date = [NSDate dateWithTimeIntervalSince1970:timeInterval / 1000.0];
-        NSString *dateStr = [self generateDate:[NSString stringWithFormat:@"%.f",timeInterval]];
+        NSString *dateStr = [self generateDate_CH:[NSString stringWithFormat:@"%.f",timeInterval]];
         NSString *weakStr = [self getCurrentWeek:date];
         dateStr = [dateStr substringWithRange:NSMakeRange(5, dateStr.length - 5)];
         NSString *result = [NSString stringWithFormat:@"%@ %@",dateStr,weakStr];
-        [datas addObject:result];
+        [datas addObject:dateStr];
         [STLog print:result];
     }
     return datas;
@@ -153,5 +164,6 @@
     NSInteger timeSp = [[NSNumber numberWithDouble:[date timeIntervalSince1970]] integerValue];
     return (long)timeSp;
 }
+
 
 @end

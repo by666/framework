@@ -88,30 +88,12 @@
     }
 }
 
--(void)updateHabitant:(HabitantModel *)model{
-    if(_delegate){
-        [_delegate onRequestBegin];
-        LiveModel *liveModel = [[AccountManager sharedAccountManager]getLiveModel];
-        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-        dic[@"districtUid"] = liveModel.districtUid;
-        dic[@"homeLocator"] = liveModel.homeLocator;
-        dic[@"userUid"] = model.userUid;
-        NSString *overdue = [model.overdue stringByReplacingOccurrencesOfString:@"年" withString:@"-"];
-        overdue = [overdue stringByReplacingOccurrencesOfString:@"月" withString:@"-"];
-        overdue = [overdue stringByReplacingOccurrencesOfString:@"日" withString:@""];
-        dic[@"overdue"] = overdue;
-        WS(weakSelf)
-        [STNetUtil post:URL_UPDATE_HABITANT content:dic.mj_JSONString success:^(RespondModel *respondModel) {
-            if([respondModel.status isEqualToString:STATU_SUCCESS]){
-                [weakSelf.delegate onRequestSuccess:respondModel data:respondModel.data];
-            }else{
-                [weakSelf.delegate onRequestFail:respondModel.msg];
-            }
-        } failure:^(int errorCode) {
-            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
 
-        }];
+-(void)goUserInfoPage:(HabitantModel *)model{
+    if(_delegate){
+        [_delegate onGoUserInfoPage:model];
     }
 }
+
 
 @end

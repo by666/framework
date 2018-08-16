@@ -26,8 +26,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = c15;
     WS(weakSelf)
-    [self showSTNavigationBar:MSG_DEVICESHARE_TITLE needback:YES rightBtn:MSG_DEVICESHARE_RIGHT_BTN rightColor:c13 block:^{
-        [DeviceShareHistoryPage show:weakSelf];
+    [self showSTNavigationBar:MSG_DEVICESHARE_TITLE needback:YES rightBtn:MSG_DEVICESHARE_RIGHT_BTN rightColor:c08 block:^{
+        [DeviceShareHistoryPage show:weakSelf fromOrder:NO];
     }];
     [self initView];
 }
@@ -36,6 +36,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setStatuBarBackgroud:cwhite];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 

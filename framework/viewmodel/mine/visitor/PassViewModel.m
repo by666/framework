@@ -39,4 +39,10 @@
         [_delegate onGoVisitorPage:_mVisitorModel];
     }
 }
+
+-(void)doShare{
+    if(_delegate){
+        [_delegate onDoShare:_mVisitorModel passModel:_mPassModel];
+    }
+}
 @end

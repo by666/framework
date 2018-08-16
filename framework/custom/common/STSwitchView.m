@@ -55,7 +55,7 @@
     }else{
         [UIView animateWithDuration:0.1f delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
             weakSelf.pointView.frame = CGRectMake(STWidth(18), STHeight(2), STWidth(22), STHeight(22));
-            weakSelf.backgroundColor = c13;
+            weakSelf.backgroundColor = c08;
         } completion:^(BOOL finished) {
             
         }];
@@ -71,7 +71,7 @@
     _on = on;
     if(_on){
         _pointView.frame = CGRectMake(STWidth(18), STHeight(2), STWidth(22), STHeight(22));
-        self.backgroundColor = c13;
+        self.backgroundColor = c08;
     }else{
         _pointView.frame = CGRectMake(STWidth(2), STHeight(2), STWidth(22), STHeight(22));
         self.backgroundColor = c12;

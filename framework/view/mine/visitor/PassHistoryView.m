@@ -8,11 +8,12 @@
 
 #import "PassHistoryView.h"
 #import "PassHistoryCell.h"
-
+#import "BaseNoDataView.h"
 @interface PassHistoryView()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong,nonatomic)PassHistoryViewModel *mViewModel;
 @property(strong,nonatomic)UITableView *tableView;
+@property(strong, nonatomic)BaseNoDataView *noDataView;
 
 @end
 
@@ -37,6 +38,17 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:_tableView];
     
+    
+    WS(weakSelf)
+    _noDataView = [[BaseNoDataView alloc]initWithImage:@"共享设备订单页_ic_无记录" title:MSG_PASSHISTORY_NODATA buttonTitle:MSG_PASSHISTORY_BTN onclick:^{
+        if(weakSelf.mViewModel){
+            [weakSelf.mViewModel goVisitorPage];
+        }
+    }];
+    _noDataView.hidden = YES;
+    [self addSubview:_noDataView];
+    
+    
 }
 
 
@@ -46,14 +58,7 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(!IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
-        PassHistoryModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
-        if(IS_NS_STRING_EMPTY(model.licenseNum)){
-            return STHeight(105);
-        }
-        return STHeight(126);
-    }
-    return 0;
+    return STHeight(108);
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -88,18 +93,15 @@
 }
 
 -(void)updateView{
-    CGFloat countHeight = 0;
     if(!IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
-        for(PassHistoryModel *model in _mViewModel.datas){
-            if(IS_NS_STRING_EMPTY(model.licenseNum)){
-                countHeight +=STHeight(105);
-            }else{
-                countHeight +=STHeight(126);
-            }
-        }
+        _noDataView.hidden = YES;
+        _tableView.hidden = NO;
+    }else{
+        _noDataView.hidden = NO;
+        _tableView.hidden = YES;
     }
-    _tableView.contentSize = CGSizeMake(ScreenWidth, countHeight);
     [_tableView reloadData];
+    
 }
 
 

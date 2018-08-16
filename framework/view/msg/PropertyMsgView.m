@@ -8,12 +8,14 @@
 
 #import "PropertyMsgView.h"
 #import "PropertyMsgCell.h"
+#import "BaseNoDataView.h"
 
 @interface PropertyMsgView()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong,nonatomic)PropertyMsgViewModel *mViewModel;
 @property(strong,nonatomic)UITableView *tableView;
 @property(strong,nonatomic)UIView *selectView;
+@property(strong,nonatomic)BaseNoDataView *noDataView;
 
 
 @end
@@ -51,6 +53,13 @@
         _tableView.contentInsetAdjustmentBehavior= UIScrollViewContentInsetAdjustmentNever;
     }
     [self addSubview:_tableView];
+    
+    WS(weakSelf)
+    _noDataView = [[BaseNoDataView alloc]initWithImage:@"消息中心_ic_无消息" title:MSG_NO_MESSAGE buttonTitle:MSG_BACK_HOME onclick:^{
+        [weakSelf.mViewModel backLastPage];
+    }];
+    _noDataView.hidden = YES;
+    [self addSubview:_noDataView];
     
 }
 
@@ -109,15 +118,16 @@
 }
 
 -(void)updateView{
-    WS(weakSelf)
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.tableView.mj_header endRefreshing];
-            [weakSelf.tableView.mj_footer endRefreshing];
-            [weakSelf.tableView reloadData];
-        });
-    });
-    
+    if(IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
+        _noDataView.hidden = NO;
+        _tableView.hidden = YES;
+    }else{
+        _noDataView.hidden = YES;
+        _tableView.hidden = NO;
+    }
+    [_tableView.mj_header endRefreshing];
+    [_tableView.mj_footer endRefreshing];
+    [_tableView reloadData];
 }
 
 @end

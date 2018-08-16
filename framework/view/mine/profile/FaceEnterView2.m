@@ -53,83 +53,51 @@
 
 -(void)initView{
     
-    UILabel *titieLabel = [[UILabel alloc]initWithFont:STFont(18) text:MSG_FACEENTER_TITLE textAlignment:NSTextAlignmentCenter textColor:c19 backgroundColor:nil multiLine:NO];
-    titieLabel.frame = CGRectMake(0, STHeight(50), ScreenWidth, STHeight(18));
+    
+    UILabel *titieLabel = [[UILabel alloc]initWithFont:STFont(17) text:MSG_FACEENTER_TITLE textAlignment:NSTextAlignmentCenter textColor:c08 backgroundColor:nil multiLine:NO];
+    titieLabel.frame = CGRectMake(0, STHeight(40), ScreenWidth, STHeight(17));
     [self addSubview:titieLabel];
     
+    UILabel *subLabel = [[UILabel alloc]initWithFont:STFont(14) text:MSG_FACEENTER_SUBTITLE textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
+    subLabel.frame = CGRectMake(0, STHeight(68), ScreenWidth, STHeight(14));
+    [self addSubview:subLabel];
     
     
     CGFloat circlewidth = STWidth(217);
-    _progressView = [[CircularProgressView alloc]initWithFrame:CGRectMake((ScreenWidth - circlewidth)/2, STHeight(103), circlewidth, circlewidth) backColor:c14 progressColor:c13 lineWidth:STWidth(2) audioURL:nil];
+    _progressView = [[CircularProgressView alloc]initWithFrame:CGRectMake((ScreenWidth - circlewidth)/2, STHeight(113), circlewidth, circlewidth) backColor:c14 progressColor:c13 lineWidth:STWidth(4) audioURL:nil];
     _progressView.progress = _progress;
     [self addSubview:_progressView];
     
-    CGFloat width = STWidth(206);
+    CGFloat width = STWidth(200);
     _previewView = [[UIImageView alloc]init];
     _previewView.backgroundColor = [UIColor blackColor];
-    _previewView.frame = CGRectMake((ScreenWidth - width)/2, STHeight(108.5), width, width);
+    _previewView.frame = CGRectMake((ScreenWidth - width)/2, STHeight(121.5), width, width);
     _previewView.layer.masksToBounds = YES;
     _previewView.layer.cornerRadius = width/2;
     _previewView.contentMode = UIViewContentModeScaleAspectFill;
     _previewView.clipsToBounds = YES;
     [self addSubview:_previewView];
     
-    UIView *tipsView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, width, STHeight(60))];
-    tipsView.backgroundColor = [cblack colorWithAlphaComponent:0.75f];
+    UIView *tipsView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, width, STHeight(50))];
+    tipsView.backgroundColor = [c35 colorWithAlphaComponent:0.6f];
     [_previewView addSubview:tipsView];
     
     _subLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_FACEENTER_SUBTITLE textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
-    _subLabel.frame = CGRectMake(0, STHeight(30), width , STHeight(16));
+    _subLabel.frame = CGRectMake(0, STHeight(23), width , STHeight(16));
     [tipsView addSubview:_subLabel];
     
     float scaleValue = 0.7f;
     _mViewModel.previewRect = CGRectMake(_previewView.frame.origin.x- _previewView.frame.size.width*(1/scaleValue-1)/2.0, _previewView.frame.origin.y - _previewView.frame.size.height*(1/scaleValue-1)/2.0 - 60 + StatuBarHeight + NavigationBarHeight, _previewView.frame.size.width/scaleValue, _previewView.frame.size.height/scaleValue);
     _mViewModel.detectRect = CGRectMake(ScreenWidth*(1-scaleValue)/2.0, ScreenHeight*(1-scaleValue)/2.0, ScreenWidth*scaleValue, ScreenHeight*scaleValue);
     
-//    [_mViewModel setupFaceDetect:self.previewView];
     
-    
-    //
-    //    CGFloat circlewidth = STWidth(217);
-    //    _progressView = [[CircularProgressView alloc]initWithFrame:CGRectMake((ScreenWidth - circlewidth)/2, STHeight(103), circlewidth, circlewidth) backColor:c14 progressColor:c13 lineWidth:STWidth(2) audioURL:nil];
-    //    _progressView.progress = _progress;
-    //    [self.view addSubview:_progressView];
-    //
-    //    CGFloat width = STWidth(206);
-    //
-    //    // 用于播放视频流
-    //    self.detectRect = CGRectMake((ScreenWidth - width)/2, STHeight(108.5), width, width);
-    //    self.previewRect = CGRectMake((ScreenWidth - width)/2, STHeight(108.5), width, width);
-    //
-    //
-    //    _displayImageView = [[UIImageView alloc] initWithFrame:self.previewRect];
-    //    _displayImageView.layer.masksToBounds = YES;
-    //    _displayImageView.layer.cornerRadius = width/2;
-    //    _displayImageView.contentMode = UIViewContentModeScaleAspectFill;
-    //    [self.view addSubview:_displayImageView];
-    //
-    //
-    //    // 提示框
-    //    self.remindLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 400, ScreenWidth, 30)];
-    //    self.remindLabel.textAlignment = NSTextAlignmentCenter;
-    //    self.remindLabel.textColor = c01;
-    //    self.remindLabel.font = [UIFont boldSystemFontOfSize:22.0];
-    //    [self.view addSubview:self.remindLabel];
-    //
-    //
-    //    self.remindDetailLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,500, ScreenWidth, 30)];
-    //    self.remindDetailLabel.font = [UIFont systemFontOfSize:20];
-    //    self.remindDetailLabel.textColor = [UIColor blueColor];
-    //    self.remindDetailLabel.textAlignment = NSTextAlignmentCenter;
-    //    [self.view addSubview:self.remindDetailLabel];
-    //
-    //
-        self.animaView = [[UIView alloc] initWithFrame:CGRectMake((ScreenWidth - width)/2, STHeight(108.5), width, width)];
-        self.animaView.backgroundColor = [UIColor whiteColor];
-        self.animaView.layer.masksToBounds = YES;
-        self.animaView.layer.cornerRadius = width/2;
-        self.animaView.alpha = 0;
-        [self addSubview:self.animaView];
+    self.animaView = [[UIView alloc] initWithFrame:CGRectMake((ScreenWidth - width)/2, STHeight(118.5), width, width)];
+    self.animaView.backgroundColor = [UIColor whiteColor];
+    self.animaView.layer.masksToBounds = YES;
+    self.animaView.layer.cornerRadius = width/2;
+    self.animaView.alpha = 0;
+    [self addSubview:self.animaView];
+
     
     
 }

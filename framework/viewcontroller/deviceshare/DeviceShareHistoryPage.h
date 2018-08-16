@@ -10,6 +10,6 @@
 
 @interface DeviceShareHistoryPage : BaseViewController
 
-+(void)show:(BaseViewController *)controller;
++(void)show:(BaseViewController *)controller fromOrder:(Boolean)fromOrder;
 
 @end

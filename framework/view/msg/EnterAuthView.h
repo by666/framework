@@ -12,5 +12,5 @@
 @interface EnterAuthView : UIView
 
 -(instancetype)initWithViewModel:(EnterAuthViewModel *)viewModel;
-
+-(void)updateView;
 @end

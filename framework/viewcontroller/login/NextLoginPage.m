@@ -45,7 +45,6 @@
     nextLoginView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     [self.view addSubview:nextLoginView];
     
-    
 }
 
 -(void)onGoFaceLoginPage{
@@ -53,7 +52,28 @@
 }
 
 -(void)onGoLoginPage{
-    [LoginPage show:self needBack:YES];
+    WS(weakSelf)
+
+    NSMutableArray *datas  =[[NSMutableArray alloc]init];
+
+    //手机号登录
+    STSheetModel *phoneModel = [[STSheetModel alloc]init];
+    phoneModel.title = MSG_PHONE_LOGIN;
+    phoneModel.click = ^{
+        [LoginPage show:weakSelf needBack:YES];
+    };
+    [datas addObject:phoneModel];
+    
+    //微信登录
+    STSheetModel *wechatModel = [[STSheetModel alloc]init];
+    wechatModel.title = MSG_WECHAT_LOGIN;
+    wechatModel.click = ^{
+        
+    };
+    [datas addObject:wechatModel];
+    
+    
+    [STAlertUtil showSheetController:@"" content:MSG_OTHER_LOGIN controller:self sheetModels:datas];
 }
 
 

@@ -9,17 +9,13 @@
 #import "HabitantView.h"
 #import "HabitantCell.h"
 #import "STTimeUtil.h"
+#import "BaseNoDataView.h"
 
 @interface HabitantView()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong, nonatomic)HabitantViewModel *mViewModel;
 @property(strong, nonatomic)UITableView *tableView;
-@property(strong, nonatomic)UIView *layerView;
-@property(strong, nonatomic)HabitantModel *currentModel;
-@property(strong, nonatomic)UIDatePicker *picker;
-@property(strong, nonatomic)UIButton *cancelBtn;
-@property(strong, nonatomic)UIButton *confirmBtn;
-@property(strong, nonatomic)UILabel *tipsLabel;
+@property(strong, nonatomic)BaseNoDataView *noDataView;
 
 @end
 
@@ -28,7 +24,6 @@
 -(instancetype)initWithViewModel:(HabitantViewModel *)viewModel{
     if(self == [super init]){
         _mViewModel = viewModel;
-        _currentModel = [[HabitantModel alloc]init];
         [self initView];
     }
     return self;
@@ -39,66 +34,16 @@
     _tableView.frame = CGRectMake(0, STHeight(10), ScreenWidth, ContentHeight - STHeight(10));
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.showsHorizontalScrollIndicator = NO;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:_tableView];
     
-    _layerView = [[UIView alloc]init];
-    _layerView.frame =  CGRectMake(0, 0, ScreenWidth, ContentHeight);
-    _layerView.backgroundColor = [cblack colorWithAlphaComponent:0.8];
-    _layerView.hidden = YES;
-    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(OnClickLayerView)];
-    [_layerView addGestureRecognizer:recognizer];
-    [self addSubview:_layerView];
-    [_layerView addSubview:[self picker]];
+    [_tableView useDefaultProperty];
     
-    [_layerView addSubview:[self tipsLabel]];
-    [_layerView addSubview:[self cancelBtn]];
-    [_layerView addSubview:[self confirmBtn]];
-    
-    [_mViewModel requestDatas];
-}
-
--(UILabel *)tipsLabel{
-    if(_tipsLabel == nil){
-        NSString *text = [NSString stringWithFormat:MSG_HABITANT_TIPS,_currentModel.userName];
-        _tipsLabel = [[UILabel alloc]initWithFont:STFont(14) text:text textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c19 multiLine:NO];
-        _tipsLabel.frame = CGRectMake(0, ContentHeight - STHeight(290), ScreenWidth, STHeight(40));
-    }
-    return _tipsLabel;
-}
-
--(UIButton *)cancelBtn{
-    if(_cancelBtn == nil){
-        _cancelBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_CANCEL textColor:c12 backgroundColor:c15 corner:0 borderWidth:0 borderColor:nil];
-        _cancelBtn.frame = CGRectMake(0, ContentHeight - STHeight(250), ScreenWidth/2, STHeight(50));
-        [_cancelBtn addTarget:self action:@selector(OnClickCancelBtn) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _cancelBtn;
-}
-
--(UIButton *)confirmBtn{
-    if(_confirmBtn == nil){
-        _confirmBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_CONFIRM textColor:c20 backgroundColor:c15 corner:0 borderWidth:0 borderColor:nil];
-        _confirmBtn.frame = CGRectMake(ScreenWidth/2, ContentHeight - STHeight(250), ScreenWidth/2, STHeight(50));
-        [_confirmBtn addTarget:self action:@selector(OnClickConfirmBtn) forControlEvents:UIControlEventTouchUpInside];
-
-    }
-    return _confirmBtn;
+    _noDataView = [[BaseNoDataView alloc]initWithImage:@"住户管理_ic_无记录" title:MSG_NO_HABITANT buttonTitle:@"" onclick:nil];
+    _noDataView.hidden = YES;
+    [self addSubview:_noDataView];
 }
 
 
--(UIDatePicker *)picker{
-    if(_picker == nil){
-        _picker = [[UIDatePicker alloc]init];
-        _picker.frame = CGRectMake(0, ContentHeight - STHeight(200), ScreenWidth, STHeight(200));
-        _picker.datePickerMode = UIDatePickerModeDate;
-        [_picker setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"zh_Hans_CN"]];
-        _picker.backgroundColor = cwhite;
-    }
-    return _picker;
-}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_mViewModel.datas count];
@@ -109,7 +54,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return STHeight(60);
+    return STHeight(84.5);
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -126,29 +71,22 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    _currentModel = [_mViewModel.datas objectAtIndex:indexPath.row];
-    //家属业主不可点击
-    if(_currentModel.liveAttr == Live_Member || _currentModel.liveAttr == Live_Owner){
-        return;
+    if(_mViewModel){
+        
+        HabitantModel *currentModel = [_mViewModel.datas objectAtIndex:indexPath.row];
+        //业主不可点击
+        if(currentModel.liveAttr == Live_Owner){
+            return;
+        }
+        [_mViewModel goUserInfoPage:currentModel];
     }
-    NSString *dateStr = [STTimeUtil generateDate:[STTimeUtil getCurrentTimeStamp]];
-    if(![_currentModel.overdue isEqualToString:MSG_HABITANT_FOREVER]){
-        dateStr = _currentModel.overdue;
-    }
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:MSG_DATE_FORMAT_ZH];
-    NSDate *date = [dateFormatter dateFromString:dateStr];
-    [_picker setDate:date];
-    _tipsLabel.text =  [NSString stringWithFormat:MSG_HABITANT_TIPS,_currentModel.userName];
-    _layerView.hidden = NO;
 }
 
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     HabitantModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
-    //家属业主不可点击
-    if(model.liveAttr == Live_Member || model.liveAttr == Live_Owner){
+    //业主不可点击
+    if(model.liveAttr == Live_Owner){
         return NO;
     }
     return YES;
@@ -182,36 +120,14 @@
 }
 
 
--(void)OnClickLayerView{
-    _layerView.hidden = YES;
-}
-
--(void)OnClickCancelBtn{
-    _layerView.hidden = YES;
-}
-
--(void)OnClickConfirmBtn{
-    _layerView.hidden = YES;
-    
-    NSDate *date = _picker.date;
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = MSG_DATE_FORMAT_ZH;
-
-    for(int i = 0 ; i < [_mViewModel.datas count] ; i++){
-        HabitantModel *model = [[_mViewModel datas]objectAtIndex:i];
-        if([_currentModel.userUid isEqualToString: model.userUid]){
-            _currentModel.overdue = [dateFormatter stringFromDate:date];
-            [_mViewModel.datas replaceObjectAtIndex:i withObject:_currentModel];
-        }
-    }
-    
-    if(_mViewModel){
-        [_mViewModel updateHabitant:_currentModel];
-    }
-        
-}
-
 -(void)updateView{
+    if(IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
+        _noDataView.hidden = NO;
+        _tableView.hidden = YES;
+    }else{
+        _noDataView.hidden = YES;
+        _tableView.hidden = NO;
+    }
     [_tableView reloadData];
 }
 

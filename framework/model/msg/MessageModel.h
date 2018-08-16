@@ -13,22 +13,26 @@
 
 //消息id
 @property(assign, nonatomic)long mid;
-//消息类型
-@property(assign, nonatomic)MessageType messageType;
-//消息标题
-@property(copy, nonatomic)NSString *title;
-//消息副标题
-@property(copy, nonatomic)NSString *subTitle;
-//消息内容
-@property(copy, nonatomic)NSString *content;
-//消息发送时间
-@property(copy, nonatomic)NSString *timestamp;
-//消息状态
-@property(assign, nonatomic)MessageStatu messageStatu;
+////消息状态
+//@property(assign, nonatomic)MessageStatu messageStatu;
 
-+(NSMutableArray *)getTestDatas;
 
-+(NSString *)translateType:(MessageType)type;
-+(NSString *)translateStatu:(MessageStatu)statu;
+@property(copy, nonatomic)NSString *userUid;
+@property(copy, nonatomic)NSString *userName;
+@property(copy, nonatomic)NSString *receiverUid;
+@property(copy, nonatomic)NSString *homeLocator;
+@property(assign, nonatomic)int applyType;
+@property(copy, nonatomic)NSString *licenseNum;
+@property(assign, nonatomic)int applyState;
+@property(copy, nonatomic)NSString *overdueDate;
+@property(copy, nonatomic)NSString *handleUid;
+@property(assign, nonatomic)int visualFlag;
+@property(copy, nonatomic)NSString *createTime;
+@property(copy, nonatomic)NSString *modifyTime;
+@property(copy, nonatomic)NSString *handleDesc;
+
+
++(MessageType)translateType:(int)applyType;
++(NSString *)translateStatu:(int)applyState overdueDate:(NSString *)overdueDate;
 
 @end

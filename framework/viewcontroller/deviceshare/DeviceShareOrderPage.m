@@ -8,6 +8,7 @@
 
 #import "DeviceShareOrderPage.h"
 #import "DeviceShareOrderView.h"
+#import "DeviceShareHistoryPage.h"
 
 @interface DeviceShareOrderPage ()<DeviceShareOrderViewDelegate>
 
@@ -55,7 +56,8 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         dispatch_async(dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
-            [weakSelf.deviceOrderView onPaySuccess];
+//            [weakSelf.deviceOrderView onPaySuccess];
+            [DeviceShareHistoryPage show:weakSelf fromOrder:YES];
         });
     });
 }

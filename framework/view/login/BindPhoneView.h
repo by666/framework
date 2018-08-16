@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BindPhoneViewModel.h"
+#import "LoginViewModel.h"
 
 @interface BindPhoneView : UIView
 
--(instancetype)initWithViewModel:(BindPhoneViewModel *)viewModel title:(NSString *)title;
+-(instancetype)initWithViewModel:(LoginViewModel *)viewModel title:(NSString *)title;
+-(instancetype)initWithViewModel:(LoginViewModel *)viewModel title:(NSString *)title wxToken:(NSString *)wxToken;
+
 -(void)updateVerifyBtn:(Boolean)complete;
 -(void)updateView;
+//测试验证码
+-(void)blankCode:(NSString *)code;
 
 @end

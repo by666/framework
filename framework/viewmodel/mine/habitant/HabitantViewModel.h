@@ -12,6 +12,7 @@
 
 @protocol HabitantViewDelegate<BaseRequestDelegate>
 
+-(void)onGoUserInfoPage:(HabitantModel *)model;
 
 @end
 
@@ -25,6 +26,5 @@
 -(instancetype)initWithController:(BaseViewController *)controller;
 -(void)requestDatas;
 -(void)deleteHabitant:(HabitantModel *)model;
--(void)updateHabitant:(HabitantModel *)model;
-
+-(void)goUserInfoPage:(HabitantModel *)model;
 @end

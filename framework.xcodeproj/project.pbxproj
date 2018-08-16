@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0005ACBB2121878B0090CC3E /* STDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0005ACBA2121878B0090CC3E /* STDetailCell.m */; };
+		0005ACBE2122DD580090CC3E /* UserInfoPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0005ACBD2122DD580090CC3E /* UserInfoPage.m */; };
+		0005ACC12122DDF50090CC3E /* UserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0005ACC02122DDF50090CC3E /* UserInfoView.m */; };
+		0005ACC42122DE160090CC3E /* UserInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0005ACC32122DE160090CC3E /* UserInfoViewModel.m */; };
+		0005ACC72122E23F0090CC3E /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0005ACC62122E23F0090CC3E /* UserInfoCell.m */; };
+		0005ACCA212419B10090CC3E /* BaseNoDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0005ACC9212419B10090CC3E /* BaseNoDataView.m */; };
+		0005ACCD21242DC00090CC3E /* BaseNoNetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0005ACCC21242DC00090CC3E /* BaseNoNetView.m */; };
 		0006DF1820898BDE005A4465 /* STRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF1720898BDE005A4465 /* STRefreshTableView.m */; };
 		0006DF1C20898F70005A4465 /* TouchScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0006DF1B20898F70005A4465 /* TouchScrollView.m */; };
 		0006DF20208DB0B5005A4465 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0006DF1F208DB0B5005A4465 /* libz.tbd */; };
@@ -100,6 +107,8 @@
 		0038F1CE20CFAFB700094EB9 /* STExtendedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F1CD20CFAFB700094EB9 /* STExtendedLabel.m */; };
 		0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2820942ABD0044D92E /* STObserverManager.m */; };
 		0039FC2C20942BDF0044D92E /* STObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039FC2B20942BDF0044D92E /* STObserver.m */; };
+		003B27D72106F62C00FD24FE /* TestModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B27D62106F62C00FD24FE /* TestModelManager.m */; };
+		003B27DB2107340F00FD24FE /* WeChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B27DA2107340F00FD24FE /* WeChatManager.m */; };
 		003EDA8320B7BF5D00CFCFE9 /* CommunityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDA8220B7BF5D00CFCFE9 /* CommunityView.m */; };
 		003EDA8620B7BF6800CFCFE9 /* CommunityViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDA8520B7BF6800CFCFE9 /* CommunityViewModel.m */; };
 		003EDA8920B7F5AD00CFCFE9 /* STBuildingLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDA8820B7F5AD00CFCFE9 /* STBuildingLayerView.m */; };
@@ -210,6 +219,7 @@
 		0050800C20B6BB1700A976D9 /* AuthUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0050800B20B6BB1700A976D9 /* AuthUserView.m */; };
 		0050800F20B6BB2600A976D9 /* AuthUserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0050800E20B6BB2600A976D9 /* AuthUserViewModel.m */; };
 		0050801320B6BC4900A976D9 /* UserAuthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0050801220B6BC4900A976D9 /* UserAuthModel.m */; };
+		00539FF72114497000C65093 /* PushMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00539FF62114497000C65093 /* PushMsgModel.m */; };
 		0070000120D8F83400A67B45 /* VideoCaptureDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0070FFFB20D8F83400A67B45 /* VideoCaptureDevice.m */; };
 		0070000320D8F83400A67B45 /* ImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0070000020D8F83400A67B45 /* ImageUtils.m */; };
 		0070000A20DA46F800A67B45 /* FaceEnterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0070000920DA46F800A67B45 /* FaceEnterView2.m */; };
@@ -245,6 +255,11 @@
 		00C2541E209AACDC00E8E306 /* STUpdateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C2541D209AACDC00E8E306 /* STUpdateUtil.m */; };
 		00C25427209B162A00E8E306 /* QRCodePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C25426209B162A00E8E306 /* QRCodePage.m */; };
 		00C25444209BF5B200E8E306 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00C25443209BF5B200E8E306 /* CodeScan.bundle */; };
+		00C54E3B2117F21100189C36 /* MainView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C54E3A2117F21100189C36 /* MainView2.m */; };
+		00C54E3E2118200D00189C36 /* MainCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C54E3D2118200D00189C36 /* MainCardCell.m */; };
+		00C54E4121193B1B00189C36 /* MainCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C54E4021193B1B00189C36 /* MainCell2.m */; };
+		00C54E44211C2CF400189C36 /* PassView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C54E43211C2CEF00189C36 /* PassView2.m */; };
+		00C54E4721212DB600189C36 /* AboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C54E4621212DB000189C36 /* AboutView.m */; };
 		00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9AD208ECB9300032B4A /* UserModel.m */; };
 		00CCE9B1208ECCDD00032B4A /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9B0208ECCDD00032B4A /* AccountManager.m */; };
 		00CCE9B4208ECDD300032B4A /* STUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCE9B3208ECDD300032B4A /* STUserDefaults.m */; };
@@ -314,6 +329,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0005ACB92121878B0090CC3E /* STDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STDetailCell.h; sourceTree = "<group>"; };
+		0005ACBA2121878B0090CC3E /* STDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDetailCell.m; sourceTree = "<group>"; };
+		0005ACBC2122DD580090CC3E /* UserInfoPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoPage.h; sourceTree = "<group>"; };
+		0005ACBD2122DD580090CC3E /* UserInfoPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoPage.m; sourceTree = "<group>"; };
+		0005ACBF2122DDF50090CC3E /* UserInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoView.h; sourceTree = "<group>"; };
+		0005ACC02122DDF50090CC3E /* UserInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoView.m; sourceTree = "<group>"; };
+		0005ACC22122DE160090CC3E /* UserInfoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoViewModel.h; sourceTree = "<group>"; };
+		0005ACC32122DE160090CC3E /* UserInfoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewModel.m; sourceTree = "<group>"; };
+		0005ACC52122E23F0090CC3E /* UserInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoCell.h; sourceTree = "<group>"; };
+		0005ACC62122E23F0090CC3E /* UserInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoCell.m; sourceTree = "<group>"; };
+		0005ACC8212419B10090CC3E /* BaseNoDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNoDataView.h; sourceTree = "<group>"; };
+		0005ACC9212419B10090CC3E /* BaseNoDataView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNoDataView.m; sourceTree = "<group>"; };
+		0005ACCB21242DC00090CC3E /* BaseNoNetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNoNetView.h; sourceTree = "<group>"; };
+		0005ACCC21242DC00090CC3E /* BaseNoNetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNoNetView.m; sourceTree = "<group>"; };
 		0006DF1620898BDE005A4465 /* STRefreshTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STRefreshTableView.h; sourceTree = "<group>"; };
 		0006DF1720898BDE005A4465 /* STRefreshTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STRefreshTableView.m; sourceTree = "<group>"; };
 		0006DF1A20898F70005A4465 /* TouchScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchScrollView.h; sourceTree = "<group>"; };
@@ -487,6 +516,10 @@
 		0039FC2820942ABD0044D92E /* STObserverManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObserverManager.m; sourceTree = "<group>"; };
 		0039FC2A20942BDF0044D92E /* STObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObserver.h; sourceTree = "<group>"; };
 		0039FC2B20942BDF0044D92E /* STObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObserver.m; sourceTree = "<group>"; };
+		003B27D52106F62C00FD24FE /* TestModelManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestModelManager.h; sourceTree = "<group>"; };
+		003B27D62106F62C00FD24FE /* TestModelManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestModelManager.m; sourceTree = "<group>"; };
+		003B27D92107340F00FD24FE /* WeChatManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChatManager.h; sourceTree = "<group>"; };
+		003B27DA2107340F00FD24FE /* WeChatManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChatManager.m; sourceTree = "<group>"; };
 		003EDA8120B7BF5D00CFCFE9 /* CommunityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityView.h; sourceTree = "<group>"; };
 		003EDA8220B7BF5D00CFCFE9 /* CommunityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityView.m; sourceTree = "<group>"; };
 		003EDA8420B7BF6800CFCFE9 /* CommunityViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityViewModel.h; sourceTree = "<group>"; };
@@ -706,6 +739,9 @@
 		0050800E20B6BB2600A976D9 /* AuthUserViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthUserViewModel.m; sourceTree = "<group>"; };
 		0050801120B6BC4900A976D9 /* UserAuthModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserAuthModel.h; sourceTree = "<group>"; };
 		0050801220B6BC4900A976D9 /* UserAuthModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserAuthModel.m; sourceTree = "<group>"; };
+		00539FF52114497000C65093 /* PushMsgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushMsgModel.h; sourceTree = "<group>"; };
+		00539FF62114497000C65093 /* PushMsgModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushMsgModel.m; sourceTree = "<group>"; };
+		00539FF8211458BE00C65093 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0070000020D8F83400A67B45 /* ImageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtils.m; sourceTree = "<group>"; };
 		0070000420D8FECF00A67B45 /* FaceParameterConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceParameterConfig.h; path = framework/threeparty/face/FaceParameterConfig.h; sourceTree = SOURCE_ROOT; };
 		0070000820DA46F800A67B45 /* FaceEnterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceEnterView2.h; sourceTree = "<group>"; };
@@ -776,6 +812,16 @@
 		00C25425209B162A00E8E306 /* QRCodePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodePage.h; sourceTree = "<group>"; };
 		00C25426209B162A00E8E306 /* QRCodePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodePage.m; sourceTree = "<group>"; };
 		00C25443209BF5B200E8E306 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
+		00C54E392117F21100189C36 /* MainView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainView2.h; sourceTree = "<group>"; };
+		00C54E3A2117F21100189C36 /* MainView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainView2.m; sourceTree = "<group>"; };
+		00C54E3C2118200D00189C36 /* MainCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainCardCell.h; sourceTree = "<group>"; };
+		00C54E3D2118200D00189C36 /* MainCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainCardCell.m; sourceTree = "<group>"; };
+		00C54E3F21193B1B00189C36 /* MainCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainCell2.h; sourceTree = "<group>"; };
+		00C54E4021193B1B00189C36 /* MainCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainCell2.m; sourceTree = "<group>"; };
+		00C54E42211C2CEF00189C36 /* PassView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PassView2.h; sourceTree = "<group>"; };
+		00C54E43211C2CEF00189C36 /* PassView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PassView2.m; sourceTree = "<group>"; };
+		00C54E4521212DB000189C36 /* AboutView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutView.h; sourceTree = "<group>"; };
+		00C54E4621212DB000189C36 /* AboutView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutView.m; sourceTree = "<group>"; };
 		00CCE9AC208ECB9300032B4A /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		00CCE9AD208ECB9300032B4A /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		00CCE9AF208ECCDD00032B4A /* AccountManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
@@ -968,6 +1014,8 @@
 				0038F0F220C918BE00094EB9 /* STCircleLabelView.m */,
 				0038F0F420C92CD300094EB9 /* STOrderTimeLayerView.h */,
 				0038F0F520C92CD300094EB9 /* STOrderTimeLayerView.m */,
+				0005ACB92121878B0090CC3E /* STDetailCell.h */,
+				0005ACBA2121878B0090CC3E /* STDetailCell.m */,
 				0038F11D20CA726600094EB9 /* STDetailView.h */,
 				0038F11E20CA726600094EB9 /* STDetailView.m */,
 				008DF70620F7427A00D83382 /* STImageButton.h */,
@@ -979,6 +1027,7 @@
 		0006DF53208DBB7B005A4465 /* threeparty */ = {
 			isa = PBXGroup;
 			children = (
+				003B27D8210733E000FD24FE /* wechat */,
 				00AD859120EE20EA001D272C /* PermissionDetector.h */,
 				00AD859020EE20E9001D272C /* PermissionDetector.m */,
 				0070FFE820D8F3CF00A67B45 /* face */,
@@ -1020,6 +1069,8 @@
 			children = (
 				004EF59B20AAD45200BA9602 /* HabitantPage.h */,
 				004EF59C20AAD45200BA9602 /* HabitantPage.m */,
+				0005ACBC2122DD580090CC3E /* UserInfoPage.h */,
+				0005ACBD2122DD580090CC3E /* UserInfoPage.m */,
 			);
 			name = habitant;
 			sourceTree = "<group>";
@@ -1083,6 +1134,10 @@
 				004EF5A220AAEAC600BA9602 /* HabitantView.m */,
 				002F943A20AED4FF00F84094 /* HabitantCell.h */,
 				002F943B20AED4FF00F84094 /* HabitantCell.m */,
+				0005ACBF2122DDF50090CC3E /* UserInfoView.h */,
+				0005ACC02122DDF50090CC3E /* UserInfoView.m */,
+				0005ACC52122E23F0090CC3E /* UserInfoCell.h */,
+				0005ACC62122E23F0090CC3E /* UserInfoCell.m */,
 			);
 			path = habitant;
 			sourceTree = "<group>";
@@ -1178,6 +1233,8 @@
 				00B6332320E367C900B558AA /* PassHistoryView.m */,
 				00B6332B20E3701600B558AA /* PassHistoryCell.h */,
 				00B6332C20E3701600B558AA /* PassHistoryCell.m */,
+				00C54E42211C2CEF00189C36 /* PassView2.h */,
+				00C54E43211C2CEF00189C36 /* PassView2.m */,
 			);
 			path = visitor;
 			sourceTree = "<group>";
@@ -1322,6 +1379,15 @@
 			path = toast;
 			sourceTree = "<group>";
 		};
+		003B27D8210733E000FD24FE /* wechat */ = {
+			isa = PBXGroup;
+			children = (
+				003B27D92107340F00FD24FE /* WeChatManager.h */,
+				003B27DA2107340F00FD24FE /* WeChatManager.m */,
+			);
+			path = wechat;
+			sourceTree = "<group>";
+		};
 		003EDA8C20B800F100CFCFE9 /* address */ = {
 			isa = PBXGroup;
 			children = (
@@ -1432,6 +1498,8 @@
 				003EDB0820C1184800CFCFE9 /* SystemMsgModel.m */,
 				003EDB0A20C1185000CFCFE9 /* PropertyMsgModel.h */,
 				003EDB0B20C1185000CFCFE9 /* PropertyMsgModel.m */,
+				00539FF52114497000C65093 /* PushMsgModel.h */,
+				00539FF62114497000C65093 /* PushMsgModel.m */,
 			);
 			path = msg;
 			sourceTree = "<group>";
@@ -1441,6 +1509,8 @@
 			children = (
 				004EF5A420AAEAE200BA9602 /* HabitantViewModel.h */,
 				004EF5A520AAEAE200BA9602 /* HabitantViewModel.m */,
+				0005ACC22122DE160090CC3E /* UserInfoViewModel.h */,
+				0005ACC32122DE160090CC3E /* UserInfoViewModel.m */,
 			);
 			path = habitant;
 			sourceTree = "<group>";
@@ -1517,6 +1587,12 @@
 				004EF54820A3088300BA9602 /* MainView.m */,
 				0038F0EA20C8E01000094EB9 /* MainCell.h */,
 				0038F0EB20C8E01000094EB9 /* MainCell.m */,
+				00C54E392117F21100189C36 /* MainView2.h */,
+				00C54E3A2117F21100189C36 /* MainView2.m */,
+				00C54E3C2118200D00189C36 /* MainCardCell.h */,
+				00C54E3D2118200D00189C36 /* MainCardCell.m */,
+				00C54E3F21193B1B00189C36 /* MainCell2.h */,
+				00C54E4021193B1B00189C36 /* MainCell2.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -1705,6 +1781,8 @@
 				004EF5D020AC48AA00BA9602 /* SettingCell.m */,
 				004EF5E120AC557700BA9602 /* UpdatePhoneNumView.h */,
 				004EF5E220AC557700BA9602 /* UpdatePhoneNumView.m */,
+				00C54E4521212DB000189C36 /* AboutView.h */,
+				00C54E4621212DB000189C36 /* AboutView.m */,
 			);
 			path = setting;
 			sourceTree = "<group>";
@@ -1934,6 +2012,10 @@
 				00C25425209B162A00E8E306 /* QRCodePage.h */,
 				00C25426209B162A00E8E306 /* QRCodePage.m */,
 				0038F1C220CF773900094EB9 /* BaseRequestDelegate.h */,
+				0005ACC8212419B10090CC3E /* BaseNoDataView.h */,
+				0005ACC9212419B10090CC3E /* BaseNoDataView.m */,
+				0005ACCB21242DC00090CC3E /* BaseNoNetView.h */,
+				0005ACCC21242DC00090CC3E /* BaseNoNetView.m */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -1979,6 +2061,8 @@
 				004EF5BD20AC05E100BA9602 /* main */,
 				004EF5A720AAEB0700BA9602 /* mine */,
 				004EF51E20A2A1D900BA9602 /* base */,
+				003B27D52106F62C00FD24FE /* TestModelManager.h */,
+				003B27D62106F62C00FD24FE /* TestModelManager.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -2194,6 +2278,7 @@
 		F4CB1C08952DCB6FCA6926B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00539FF8211458BE00C65093 /* Security.framework */,
 				00812BD32091BCAA00E2E70B /* libresolv.tbd */,
 				0006DF49208DBA6B005A4465 /* MobileCoreServices.framework */,
 				0006DF45208DBA48005A4465 /* AssetsLibrary.framework */,
@@ -2452,13 +2537,16 @@
 				00D324A020859778001EC82F /* BaseViewController.m in Sources */,
 				00B6332120E365BA00B558AA /* PassHistoryPage.m in Sources */,
 				0006DF1C20898F70005A4465 /* TouchScrollView.m in Sources */,
+				00C54E44211C2CF400189C36 /* PassView2.m in Sources */,
 				004EF5A620AAEAE200BA9602 /* HabitantViewModel.m in Sources */,
 				002F945020AFFBEF00F84094 /* AddCarViewModel.m in Sources */,
 				004EF58B20AAD3F400BA9602 /* MemberPage.m in Sources */,
+				0005ACCD21242DC00090CC3E /* BaseNoNetView.m in Sources */,
 				004EF59D20AAD45200BA9602 /* HabitantPage.m in Sources */,
 				0050800020B6AC8800A976D9 /* AuthStatuView.m in Sources */,
 				00D324B2208598A7001EC82F /* STTimeUtil.m in Sources */,
 				00BBBD972091D0E300556B90 /* STFileUtil.m in Sources */,
+				0005ACC42122DE160090CC3E /* UserInfoViewModel.m in Sources */,
 				004EF58120AAC98100BA9602 /* MineView.m in Sources */,
 				0038F0F020C90D2C00094EB9 /* DeviceSharePage.m in Sources */,
 				00B6333320E47A7400B558AA /* STUploadImageUtil.m in Sources */,
@@ -2466,6 +2554,7 @@
 				00AD859520EE24B4001D272C /* LocalFaceDetect.m in Sources */,
 				002F94AD20B40E9100F84094 /* OnePaymentView.m in Sources */,
 				004EF60420AD887500BA9602 /* AddMemberPage.m in Sources */,
+				0005ACBB2121878B0090CC3E /* STDetailCell.m in Sources */,
 				00DA554A20E0873F00798C9D /* PageManager.m in Sources */,
 				0038F0F920CA298200094EB9 /* FixHistroyPage.m in Sources */,
 				003EDABC20BCF5A100CFCFE9 /* STRecognizeView.m in Sources */,
@@ -2473,6 +2562,7 @@
 				004EF54620A3085C00BA9602 /* MainViewModel.m in Sources */,
 				004EF53A20A2FDB200BA9602 /* BindPhonePage.m in Sources */,
 				00812BC52091A14500E2E70B /* STConvertUtil.m in Sources */,
+				003B27D72106F62C00FD24FE /* TestModelManager.m in Sources */,
 				00D3249D208596ED001EC82F /* UILabel+ContentSize.m in Sources */,
 				00507FFC20B6ABDD00A976D9 /* AuthStatuViewModel.m in Sources */,
 				00B6332A20E3680100B558AA /* PassHistoryViewModel.m in Sources */,
@@ -2492,6 +2582,7 @@
 				003EDADC20BE733300CFCFE9 /* MessageCell.m in Sources */,
 				003EDAAD20BBD9CF00CFCFE9 /* STSinglePickerLayerView.m in Sources */,
 				004EF53120A2D6AA00BA9602 /* UIButton+Init.m in Sources */,
+				0005ACC12122DDF50090CC3E /* UserInfoView.m in Sources */,
 				CFB6D1B720B55D6B00A0863B /* PassView.m in Sources */,
 				004EF54920A3088300BA9602 /* MainView.m in Sources */,
 				004EF56D20AA7DAF00BA9602 /* STLayerView.m in Sources */,
@@ -2507,6 +2598,7 @@
 				0038F0FF20CA2AA300094EB9 /* FixHistoryViewModel.m in Sources */,
 				003EDAFD20C117F700CFCFE9 /* SystemMsgViewModel.m in Sources */,
 				0038F0E320C7D8E800094EB9 /* ReportFixView.m in Sources */,
+				0005ACCA212419B10090CC3E /* BaseNoDataView.m in Sources */,
 				004EF58520AAC99A00BA9602 /* MineViewModel.m in Sources */,
 				002F94B420B40F5400F84094 /* OnePaymentViewModel.m in Sources */,
 				004EF57D20AAC96900BA9602 /* MinePage.m in Sources */,
@@ -2530,10 +2622,12 @@
 				CFB6D1B420B544BB00A0863B /* STCarNumLayerView.m in Sources */,
 				002F948A20B3C87B00F84094 /* STTabBarView.m in Sources */,
 				CFB6D1BA20B55DA200A0863B /* VisitorModel.m in Sources */,
+				00539FF72114497000C65093 /* PushMsgModel.m in Sources */,
 				004EF5E020AC525E00BA9602 /* AboutPage.m in Sources */,
 				003EDAF420BFA34B00CFCFE9 /* VerificateViewCell.m in Sources */,
 				0038F11520CA6AEC00094EB9 /* DeviceShareCell.m in Sources */,
 				003EDAD120BD5A7300CFCFE9 /* MessageView.m in Sources */,
+				0005ACC72122E23F0090CC3E /* UserInfoCell.m in Sources */,
 				004EF52B20A2CD6200BA9602 /* UITextField+Init.m in Sources */,
 				004EF5B020ABFD8900BA9602 /* ProfileView.m in Sources */,
 				CF43E3D520B5802B0069AAFA /* VisitorHistoryModel.m in Sources */,
@@ -2554,6 +2648,7 @@
 				003EDB0C20C1185000CFCFE9 /* PropertyMsgModel.m in Sources */,
 				004EF56720A9B4E300BA9602 /* NextLoginView.m in Sources */,
 				0070FFE120D3916C00A67B45 /* STLocationManager.m in Sources */,
+				00C54E4121193B1B00189C36 /* MainCell2.m in Sources */,
 				0038F10320CA2EA900094EB9 /* FixModel.m in Sources */,
 				003EDAB320BBEB6200CFCFE9 /* AuthFacePage.m in Sources */,
 				004EF5BC20AC05D100BA9602 /* TitleContentModel.m in Sources */,
@@ -2576,6 +2671,7 @@
 				00B6331E20E325F200B558AA /* PassPage.m in Sources */,
 				004EF53D20A2FF8200BA9602 /* BindPhoneView.m in Sources */,
 				002F94A120B406FD00F84094 /* CarHistoryView.m in Sources */,
+				0005ACBE2122DD580090CC3E /* UserInfoPage.m in Sources */,
 				0050801320B6BC4900A976D9 /* UserAuthModel.m in Sources */,
 				004EF5DD20AC51D600BA9602 /* UpdatePhoneNumPage.m in Sources */,
 				002F94BB20B42A8800F84094 /* VisitorView.m in Sources */,
@@ -2585,9 +2681,11 @@
 				0038F0F320C918BE00094EB9 /* STCircleLabelView.m in Sources */,
 				00D32491208594F4001EC82F /* STLog.m in Sources */,
 				00DD35FF20D20BB100764F01 /* BuildingModel.m in Sources */,
+				00C54E4721212DB600189C36 /* AboutView.m in Sources */,
 				004EF54020A2FFA400BA9602 /* BindPhoneViewModel.m in Sources */,
 				CF43E3CF20B57F7C0069AAFA /* VisitorHistoryView.m in Sources */,
 				002F94AA20B407C500F84094 /* CarHistoryModel.m in Sources */,
+				003B27DB2107340F00FD24FE /* WeChatManager.m in Sources */,
 				0038F1B020CE45E000094EB9 /* DeviceShareHistoryModel.m in Sources */,
 				0039FC2C20942BDF0044D92E /* STObserver.m in Sources */,
 				003EDAD920BE439700CFCFE9 /* MessageModel.m in Sources */,
@@ -2621,10 +2719,12 @@
 				002F942C20AEBA9000F84094 /* MessageSettingView.m in Sources */,
 				003EDADF20BE810A00CFCFE9 /* EnterAuthPage.m in Sources */,
 				003EDB0620C1182000CFCFE9 /* PropertyMsgView.m in Sources */,
+				00C54E3E2118200D00189C36 /* MainCardCell.m in Sources */,
 				002F946E20B2B96900F84094 /* PaymentRecordPage.m in Sources */,
 				004EF52E20A2D30800BA9602 /* UILabel+Init.m in Sources */,
 				003EDAC620BD276A00CFCFE9 /* CommunityModel.m in Sources */,
 				CFB6D1B120B5405600A0863B /* STDateLayerView.m in Sources */,
+				00C54E3B2117F21100189C36 /* MainView2.m in Sources */,
 				0070000120D8F83400A67B45 /* VideoCaptureDevice.m in Sources */,
 				0038F0E920C7E31D00094EB9 /* STSelectLayerButton.m in Sources */,
 				003EDAF720C116E600CFCFE9 /* SystemMsgPage.m in Sources */,

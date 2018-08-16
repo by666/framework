@@ -13,7 +13,7 @@
 @property(copy, nonatomic)NSString *faceUrl;
 @property(copy, nonatomic)NSString *userName;
 @property(copy, nonatomic)NSString *occurTime;
-@property(copy, nonatomic)NSString *exitTime;
+@property(copy, nonatomic)NSString *lastOccurTime;
 @property(copy, nonatomic)NSString *userUid;
 @property(assign, nonatomic)long checkId;
 @property(copy, nonatomic)NSString *pwd;

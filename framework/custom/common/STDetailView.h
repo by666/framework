@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TitleContentModel.h"
 @interface STDetailView : UIView
 
 -(instancetype)init;
--(void)setTitle:(NSString *)title content:(NSString *)content;
+-(void)setDatas:(NSMutableArray *)datas name:(NSString *)name;
+
 @end

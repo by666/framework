@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "LoginViewModel.h"
 
 @interface BindPhonePage : BaseViewController
+
++(void)show:(BaseViewController *)controller wxToken:(NSString *)wxToken viewModel:(LoginViewModel *)viewModel;
 
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MessageModel.h"
-@protocol EnterAuthViewDelegate
+@protocol EnterAuthViewDelegate<BaseRequestDelegate>
 
 -(void)onDoAgree:(MessageModel *)model;
 -(void)onDoReject:(MessageModel *)model;
@@ -21,10 +21,11 @@
 
 @property(strong, nonatomic)NSMutableArray *datas;
 @property(strong, nonatomic)MessageModel *model;
+@property(strong, nonatomic)NSString *faceUrl;
 
 @property(weak, nonatomic)id<EnterAuthViewDelegate> delegate;
 
--(void)doAgree;
--(void)doReject;
+-(void)requestData;
+-(void)doAgree:(MessageStatu)statu;
 
 @end

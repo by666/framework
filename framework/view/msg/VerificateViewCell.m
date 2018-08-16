@@ -7,6 +7,7 @@
 //
 
 #import "VerificateViewCell.h"
+
 @interface VerificateViewCell()
 
 @property(strong, nonatomic)UILabel *titleLabel;
@@ -35,15 +36,15 @@
     [self.contentView addSubview:_contentLabel];
     
     _lineView = [[UIView alloc]init];
-    _lineView.backgroundColor = c17;
+    _lineView.backgroundColor = cline;
     [self.contentView addSubview:_lineView];
     
     _headImageView = [[UIImageView alloc]init];
-    _headImageView.frame = CGRectMake(ScreenWidth - STWidth(75), STHeight(17), STHeight(60), STHeight(60));
+    _headImageView.frame = CGRectMake(ScreenWidth - STWidth(90), (STHeight(96) - STWidth(75))/2, STWidth(75), STWidth(75));
     _headImageView.layer.masksToBounds = YES;
-    _headImageView.layer.cornerRadius = STHeight(30);
+    _headImageView.layer.cornerRadius = STHeight(37.5);
     _headImageView.hidden = YES;
-    _headImageView.image = [UIImage imageNamed:@"ic_test1"];
+    _headImageView.image = [UIImage imageNamed:@"ic_head"];
     _headImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:_headImageView];
     
@@ -54,24 +55,31 @@
 
 -(void)updateData:(TitleContentModel *)model position:(NSInteger)position{
     _titleLabel.text = model.title;
-    _contentLabel.text = model.content;
+    if(!IS_NS_STRING_EMPTY(model.content)){
+        _contentLabel.text = model.content;
+    }
     _contentLabel.frame = CGRectMake(ScreenWidth - STWidth(14) - _contentLabel.contentSize.width, STHeight(22),_contentLabel.contentSize.width , STHeight(16));
     
     if(position == 0){
-        _lineView.frame = CGRectMake(0, STHeight(95)- LineHeight, ScreenWidth, LineHeight);
-        _titleLabel.frame = CGRectMake(STWidth(15), STHeight(39),STWidth(100) , STHeight(16));
+        _lineView.frame = CGRectMake(0, STHeight(96)- LineHeight, ScreenWidth, LineHeight);
+        _titleLabel.frame = CGRectMake(STWidth(15), STHeight(40),STWidth(100) , STHeight(16));
         _headImageView.hidden = NO;
         if(!IS_NS_STRING_EMPTY(model.content)){
-            UIImage *image=[[UIImage alloc]initWithContentsOfFile:model.content];
-            _headImageView.image = image;
+            [_headImageView sd_setImageWithURL:[[STUploadImageUtil sharedSTUploadImageUtil]getRealUrl:model.content] placeholderImage:[UIImage imageNamed:@"ic_head"]];
         }
         _contentLabel.hidden = YES;
         
     }else{
         _lineView.frame = CGRectMake(0, STHeight(60)-LineHeight, ScreenWidth, LineHeight);
-        _titleLabel.frame = CGRectMake(STWidth(15), STHeight(19),STWidth(100) , STHeight(16));
+        _titleLabel.frame = CGRectMake(STWidth(15), STHeight(20),STWidth(100) , STHeight(16));
         _headImageView.hidden = YES;
         _contentLabel.hidden = NO;
+    }
+    
+    if(position == 4){
+        _lineView.hidden = YES;
+    }else{
+        _lineView.hidden = NO;
     }
     
 }

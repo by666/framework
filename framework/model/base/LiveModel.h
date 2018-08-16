@@ -25,8 +25,7 @@
 @property(copy, nonatomic)NSString *modifyTime;
 @property(copy, nonatomic)NSString *homeFullName;
 
-//状态
-@property(assign, nonatomic)int statu;
+
 
 
 @end

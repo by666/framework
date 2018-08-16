@@ -11,6 +11,7 @@
 #import "BuildingRespondModel.h"
 #import "BuildingModel.h"
 #import "RecognizeModel.h"
+#import "AccountManager.h"
 
 @interface AuthUserViewModel()
 
@@ -79,29 +80,48 @@
 
 #pragma mark 小区定位
 -(void)getCommunityPosition:(CGFloat)longtitude latitude:(CGFloat)latitude{
-    if(_delegate){
-        [_delegate onRequestBegin];
-    }
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    dic[@"longtitude"] = @(longtitude);
-    dic[@"latitude"] = @(latitude);
-    WS(weakSelf)
-    [STNetUtil get:URL_GETCOMMUNITYPOSITION parameters:dic success:^(RespondModel *respondModel) {
-        if([respondModel.status isEqualToString:STATU_SUCCESS]){
-            NSMutableArray *datas = [CommunityPositionModel mj_objectArrayWithKeyValuesArray:respondModel.data];
-            if(!IS_NS_COLLECTION_EMPTY(datas)){
-                CommunityPositionModel *data = [datas objectAtIndex:1];
-                [weakSelf.delegate onRequestSuccess:respondModel data:data.districtName];
-                [self getCommunityLayer:data];
-            }else{
-                [weakSelf.delegate onRequestSuccess:respondModel data:MSG_AUTHUSER_POSITION_ERROR];
+    ApplyModel *applyModel = [[AccountManager sharedAccountManager]getApplyModel];
+    if(applyModel && !IS_NS_STRING_EMPTY(applyModel.districtUid) && !IS_NS_STRING_EMPTY(applyModel.homeLocator)){
+        if(_delegate){
+            CommunityPositionModel *model = [[CommunityPositionModel alloc]init];
+            model.districtUid = applyModel.districtUid;
+            int strCount =  (int)[self countOccurencesOfString:applyModel.homeFullName countStr:@","];
+            if(strCount < 1){
+                [[AccountManager sharedAccountManager]clearApplyModel];
+                [self getCommunityPosition:longtitude latitude:latitude];
             }
-        }else{
-            [weakSelf.delegate onRequestFail:respondModel.msg];
+            model.layerLevel = (int)[self countOccurencesOfString:applyModel.homeFullName countStr:@","] -1;
+            NSString *homeFullName = [applyModel.homeFullName componentsSeparatedByString:@","][0];
+            RespondModel *respondModel = [[RespondModel alloc]init];
+            respondModel.requestUrl = URL_GETCOMMUNITYPOSITION;
+            [_delegate onRequestSuccess:respondModel data:homeFullName];
+            [self getCommunityLayer:model];
         }
-    } failure:^(int errorCode) {
-        [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
-    }];
+    }else{
+        if(_delegate){
+            [_delegate onRequestBegin];
+        }
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        dic[@"longtitude"] = @(longtitude);
+        dic[@"latitude"] = @(latitude);
+        WS(weakSelf)
+        [STNetUtil get:URL_GETCOMMUNITYPOSITION parameters:dic success:^(RespondModel *respondModel) {
+            if([respondModel.status isEqualToString:STATU_SUCCESS]){
+                NSMutableArray *datas = [CommunityPositionModel mj_objectArrayWithKeyValuesArray:respondModel.data];
+                if(!IS_NS_COLLECTION_EMPTY(datas)){
+                    CommunityPositionModel *data = [datas objectAtIndex:1];
+                    [weakSelf.delegate onRequestSuccess:respondModel data:data.districtName];
+                    [self getCommunityLayer:data];
+                }else{
+                    [weakSelf.delegate onRequestSuccess:respondModel data:MSG_AUTHUSER_POSITION_ERROR];
+                }
+            }else{
+                [weakSelf.delegate onRequestFail:respondModel.msg];
+            }
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        }];
+    }
 }
 
 #pragma mark 小区楼栋查询
@@ -146,7 +166,10 @@
 }
 
 
-
+- (NSInteger)countOccurencesOfString:(NSString *)originStr countStr:(NSString*)countStr {
+    NSInteger strCount = [originStr length] - [[originStr stringByReplacingOccurrencesOfString:countStr withString:@""] length];
+    return strCount;
+}
 
 
 @end

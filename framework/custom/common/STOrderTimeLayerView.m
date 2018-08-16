@@ -19,10 +19,10 @@
 
 @implementation STOrderTimeLayerView{
     NSArray *dateArray1;
-    NSArray *dateArray2;
+//    NSArray *dateArray2;
     NSArray *dateArray3;
     NSInteger row1;
-    NSInteger row2;
+//    NSInteger row2;
     NSInteger row3;
 
 }
@@ -30,7 +30,7 @@
 -(instancetype)init{
     if(self == [super init]){
         dateArray1 = [self getDatas1];
-        dateArray2 = [self getDatas2];
+//        dateArray2 = [self getDatas2];
         dateArray3 = [self getDatas3];
         [self initView];
     }
@@ -96,9 +96,9 @@
             label.text = [dateArray1 objectAtIndex:row];
             break;
         case 1:
-            label.text = [dateArray2 objectAtIndex:row];
-            break;
-        case 2:
+//            label.text = [dateArray2 objectAtIndex:row];
+//            break;
+//        case 2:
             label.text = [dateArray3 objectAtIndex:row];
             break;
             
@@ -114,24 +114,27 @@
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 3;
+//    return 3;
+    return 2;
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     if(component == 0){
         return  [dateArray1 count];
-    }else if(component == 1){
-        return [dateArray2 count];
     }
+//    else if(component == 1){
+//        return [dateArray2 count];
+//    }
     return [dateArray3 count];
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     if(component == 0){
         return  [dateArray1 objectAtIndex:row];
-    }else if(component == 1){
-        return [dateArray2 objectAtIndex:row];
     }
+//    else if(component == 1){
+//        return [dateArray2 objectAtIndex:row];
+//    }
     return [dateArray3 objectAtIndex:row];
 }
 
@@ -140,9 +143,10 @@
     if(component == 0){
         row1 = row;
     }
-    else if(component == 1){
-        row2 = row;
-    }else{
+//    else if(component == 1){
+//        row2 = row;
+//    }
+    else{
         row3 = row;
     }
 }
@@ -162,8 +166,8 @@
     NSString *resultStr = @"";
     resultStr = [resultStr stringByAppendingString:[dateArray1 objectAtIndex:row1]];
     resultStr = [resultStr stringByAppendingString:@" "];
-    resultStr = [resultStr stringByAppendingString:[dateArray2 objectAtIndex:row2]];
-    resultStr = [resultStr stringByAppendingString:@" "];
+//    resultStr = [resultStr stringByAppendingString:[dateArray2 objectAtIndex:row2]];
+//    resultStr = [resultStr stringByAppendingString:@" "];
     resultStr = [resultStr stringByAppendingString:[dateArray3 objectAtIndex:row3]];
     if(_delegate){
         [_delegate OnOrderTimeSelectResult:resultStr];
@@ -175,13 +179,13 @@
     return [STTimeUtil getOneWeeks];
 }
 
--(NSArray *)getDatas2{
-    return @[@"上午",@"下午"];
- 
-}
+//-(NSArray *)getDatas2{
+//    return @[@"上午",@"下午"];
+//
+//}
 
 -(NSArray *)getDatas3{
-    return @[@"00:00-01:00",@"01:00-02:00",@"02:00-03:00",@"03:00-04:00",@"04:00-05:00",@"05:00-06:00",@"06:00-07:00",@"07:00-08:00",@"08:00-09:00",@"09:00-10:00",@"10:00-11:00",@"11:00-12:00"];
+    return @[@"09:00-10:00",@"10:00-11:00",@"11:00-12:00",@"12:00-13:00",@"13:00-14:00",@"14:00-15:00",@"15:00-16:00",@"16:00-17:00",@"17:00-18:00",@"18:00-19:00",@"19:00-20:00",@"20:00-21:00",@"21:00-22:00"];
 }
 
 
@@ -195,15 +199,15 @@
             break;
         }
     }
-    NSString *secondStr = datas[1];
-    for(int i = 0 ; i < [dateArray2 count] ; i++){
-        if([secondStr isEqualToString:[dateArray2 objectAtIndex:i]]){
-            row2 = i;
-            break;
-        }
-    }
-    
-    NSString *thirdStr = datas[2];
+//    NSString *secondStr = datas[1];
+//    for(int i = 0 ; i < [dateArray2 count] ; i++){
+//        if([secondStr isEqualToString:[dateArray2 objectAtIndex:i]]){
+//            row2 = i;
+//            break;
+//        }
+//    }
+//
+    NSString *thirdStr = datas[1];
     for(int i = 0 ; i < [dateArray3 count] ; i++){
         if([thirdStr isEqualToString:[dateArray3 objectAtIndex:i]]){
             row3 = i;
@@ -211,8 +215,8 @@
         }
     }
     [_datePickerView selectRow:row1 inComponent:0 animated:YES];
-    [_datePickerView selectRow:row2 inComponent:1 animated:YES];
-    [_datePickerView selectRow:row3 inComponent:2 animated:YES];
+//    [_datePickerView selectRow:row2 inComponent:1 animated:YES];
+    [_datePickerView selectRow:row3 inComponent:1 animated:YES];
 
 }
 

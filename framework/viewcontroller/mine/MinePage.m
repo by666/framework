@@ -22,6 +22,12 @@
 #import "STObserverManager.h"
 #import "AccountManager.h"
 #import "AuthStatuPage.h"
+#import "AuthUserPage.h"
+#import "DeviceSharePage.h"
+#import "ReportFixPage.h"
+#import "AboutPage.h"
+#import "LoginPage.h"
+#import "PageManager.h"
 
 @interface MinePage ()<MineViewDelegate,STObserverProtocol>
 
@@ -72,64 +78,69 @@
 }
 
 -(void)onGoMemberPage{
-    if([self hasLiveInfo]){
-        [MemberPage show:self];
-    }else{
-        [AuthStatuPage show:self];
-    }
+    [MemberPage show:self];
 }
 
 -(void)onGoVictorPage{
-    if([self hasLiveInfo]){
-        [VisitorHomePage show:self];
-    }else{
-        [AuthStatuPage show:self];
-    }
+    [VisitorHomePage show:self];
 }
 
 -(void)onGoVictorHistoryPage{
-    if([self hasLiveInfo]){
-        [VisitorHistoryPage show:self];
-    }else{
-        [AuthStatuPage show:self];
-    }
+    [VisitorHistoryPage show:self];
 }
 
 -(void)onGoCarPage{
-    if([self hasLiveInfo]){
-        [CarPage show:self];
-    }else{
-        [AuthStatuPage show:self];
-    }
+    [CarPage show:self];
 }
 
 -(void)onGoCarHistoryPage{
-    if([self hasLiveInfo]){
-        [CarHistoryPage show:self];
-    }else{
-        [AuthStatuPage show:self];
-    }
+    [CarHistoryPage show:self];
 }
 
 -(void)onGoMessageSettingPage{
-    if([self hasLiveInfo]){
-        [MessageSettingPage show:self];
-    }else{
-        [AuthStatuPage show:self];
-    }
+    [MessageSettingPage show:self];
 }
 
 -(void)onGoAccountManagePage{
-    if([self hasLiveInfo]){
-        [HabitantPage show:self];
-    }else{
-        [AuthStatuPage show:self];
-    }
+    [HabitantPage show:self];
 }
 
 -(void)onGoSettingPage{
     [SettingPage show:self];
 }
+
+-(void)onGoReportFixPage{
+    [ReportFixPage show:self];
+}
+
+-(void)onGoDeviceSharePage{
+    [DeviceSharePage show:self];
+}
+
+-(void)onGoAboutPage{
+    [AboutPage show:self];
+}
+
+-(void)onOpenCheckInfoAlert{
+    WS(weakSelf)
+    [STAlertUtil showAlertController:@"" content:MSG_MAIN_CHECKIN controller:self confirm:^{
+        [AuthUserPage show:weakSelf];
+    }];
+}
+
+-(void)onGoAuthStatuPage{
+    [AuthStatuPage show:self];
+}
+
+-(void)onShowAuthFailDialog{
+    WS(weakSelf)
+    [STAlertUtil showAlertController:@"" content:MSG_MESSAGE_AUTH_FAIL_CONTENT controller:self confirm:^{
+        [AuthUserPage show:weakSelf];
+    } cancel:^{
+        
+    } confirmStr:MSG_REAUTH cancelStr:MSG_CANCEL];
+}
+
 
 -(void)onGoBack{
     [self backLastPage];
@@ -142,12 +153,23 @@
 }
 
 
--(Boolean)hasLiveInfo{
-    LiveModel *model = [[AccountManager sharedAccountManager] getLiveModel];
-    UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
-    if(IS_NS_STRING_EMPTY(userModel.headUrl)){
-        model.statu = STATU_NO;
-    }
-    return  (model.statu == STATU_YES);
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    });
 }
+
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+}
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [[PageManager sharedPageManager] popToLoginPage:self];
+}
+
+
+
 @end
