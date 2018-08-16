@@ -1751,8 +1751,6 @@
 		004EF5D620AC514500BA9602 /* profile */ = {
 			isa = PBXGroup;
 			children = (
-				0070FFF520D8F77F00A67B45 /* FaceEnterPage2.h */,
-				0070FFF620D8F77F00A67B45 /* FaceEnterPage2.m */,
 				004EF58620AAD32F00BA9602 /* ProfilePage.h */,
 				004EF58720AAD32F00BA9602 /* ProfilePage.m */,
 			);
@@ -1762,8 +1760,6 @@
 		004EF5D720AC516600BA9602 /* profile */ = {
 			isa = PBXGroup;
 			children = (
-				0070000820DA46F800A67B45 /* FaceEnterView2.h */,
-				0070000920DA46F800A67B45 /* FaceEnterView2.m */,
 				004EF5AE20ABFD8900BA9602 /* ProfileView.h */,
 				004EF5AF20ABFD8900BA9602 /* ProfileView.m */,
 				004EF5B720AC010700BA9602 /* ProfileCell.h */,
@@ -2070,6 +2066,7 @@
 		007B1F6320858F1D009EA9F1 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				CF8E685921254BA800C2D214 /* face */,
 				0038F10F20CA68F300094EB9 /* deviceshare */,
 				0038F0D920C7D5C300094EB9 /* reportfix */,
 				0038F0D020C7C0B000094EB9 /* opendoor */,
@@ -2131,6 +2128,7 @@
 		00D324B52085EE3F001EC82F /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				CF8E685A21254BB600C2D214 /* face */,
 				0038F0ED20C90D0100094EB9 /* deviceshare */,
 				0038F0D820C7D59F00094EB9 /* reportfix */,
 				0038F0CC20C7C07F00094EB9 /* opendoor */,
@@ -2238,6 +2236,24 @@
 				00DA554920E0873F00798C9D /* PageManager.m */,
 			);
 			path = page;
+			sourceTree = "<group>";
+		};
+		CF8E685921254BA800C2D214 /* face */ = {
+			isa = PBXGroup;
+			children = (
+				0070000820DA46F800A67B45 /* FaceEnterView2.h */,
+				0070000920DA46F800A67B45 /* FaceEnterView2.m */,
+			);
+			path = face;
+			sourceTree = "<group>";
+		};
+		CF8E685A21254BB600C2D214 /* face */ = {
+			isa = PBXGroup;
+			children = (
+				0070FFF520D8F77F00A67B45 /* FaceEnterPage2.h */,
+				0070FFF620D8F77F00A67B45 /* FaceEnterPage2.m */,
+			);
+			path = face;
 			sourceTree = "<group>";
 		};
 		CFB6D19D20B5341F00A0863B /* visitor */ = {
