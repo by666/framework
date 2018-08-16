@@ -30,7 +30,7 @@
     UIImageView *avatarImageView = [[UIImageView alloc]init];
     avatarImageView.frame= CGRectMake((ScreenWidth - STWidth(75))/2, STHeight(94), STWidth(75), STWidth(75));
     avatarImageView.layer.masksToBounds = YES;
-    avatarImageView.layer.cornerRadius = STWidth(31);
+    avatarImageView.layer.cornerRadius = STWidth(37.5);
     [avatarImageView sd_setImageWithURL:[[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:model.headUrl] placeholderImage:[UIImage imageNamed:@"ic_default"]];
     avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:avatarImageView];

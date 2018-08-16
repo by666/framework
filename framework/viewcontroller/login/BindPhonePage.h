@@ -11,6 +11,6 @@
 
 @interface BindPhonePage : BaseViewController
 
-+(void)show:(BaseViewController *)controller wxToken:(NSString *)wxToken viewModel:(LoginViewModel *)viewModel;
++(void)show:(BaseViewController *)controller wxToken:(NSString *)wxToken;
 
 @end

@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol NextLoginDelegate
+@protocol NextLoginDelegate<BaseRequestDelegate>
 
 -(void)onGoLoginPage;
 -(void)onGoFaceLoginPage;
+-(void)onWechatLogin:(Boolean)success msg:(NSString *)msg;
 
 @end
 
@@ -21,5 +22,7 @@
 
 -(void)goLoginPage;
 -(void)goFaceLoginPage;
+-(void)doWechatLogin;
+-(void)requestWechatLogin:(NSString *)code;
 
 @end

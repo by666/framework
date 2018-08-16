@@ -2949,7 +2949,7 @@
 				CODE_SIGN_ENTITLEMENTS = framework/framework.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AB86U4DT8H;
+				DEVELOPMENT_TEAM = WZFSPV55WT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3019,7 +3019,7 @@
 				CODE_SIGN_ENTITLEMENTS = framework/framework.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AB86U4DT8H;
+				DEVELOPMENT_TEAM = WZFSPV55WT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

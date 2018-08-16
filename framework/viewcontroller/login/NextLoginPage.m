@@ -11,8 +11,12 @@
 #import "NextLoginViewModel.h"
 #import "LoginPage.h"
 #import "FaceLoginPage.h"
-@interface NextLoginPage ()<NextLoginDelegate>
+#import "STObserverManager.h"
+#import "MainPage.h"
+#import "BindPhonePage.h"
+@interface NextLoginPage ()<NextLoginDelegate,STObserverProtocol>
 
+@property(strong, nonatomic)NextLoginViewModel *viewModel;
 @end
 
 @implementation NextLoginPage
@@ -25,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initView];
+    [[STObserverManager sharedSTObserverManager]registerSTObsever:Notify_WXLogin delegate:self];
+
 }
 
 
@@ -34,14 +40,17 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
+-(void)dealloc{
+    [[STObserverManager sharedSTObserverManager]removeSTObsever:Notify_WXLogin];
+}
 
 -(void)initView{
     
     self.view.backgroundColor = cwhite;
     
-    NextLoginViewModel *viewModel = [[NextLoginViewModel alloc]init];
-    viewModel.delegate = self;
-    NextLoginView *nextLoginView = [[NextLoginView alloc]initWithViewModel:viewModel];
+    _viewModel = [[NextLoginViewModel alloc]init];
+    _viewModel.delegate = self;
+    NextLoginView *nextLoginView = [[NextLoginView alloc]initWithViewModel:_viewModel];
     nextLoginView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     [self.view addSubview:nextLoginView];
     
@@ -68,7 +77,7 @@
     STSheetModel *wechatModel = [[STSheetModel alloc]init];
     wechatModel.title = MSG_WECHAT_LOGIN;
     wechatModel.click = ^{
-        
+        [weakSelf.viewModel doWechatLogin];
     };
     [datas addObject:wechatModel];
     
@@ -78,4 +87,35 @@
 
 
 
+
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    });
+}
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if([respondModel.requestUrl isEqualToString:URL_LOGIN]){
+        [MainPage show:self];
+    }else if([respondModel.requestUrl isEqualToString:URL_WX_LOGIN]){
+        if([data isEqualToString:MSG_SUCCESS]){
+            [MainPage show:self];
+        }else{
+            [BindPhonePage show:self wxToken:data];
+        }
+    }
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [STToastUtil showFailureAlertSheet:msg];
+}
+
+-(void)onReciveResult:(NSString *)key msg:(id)msg{
+    if([Notify_WXLogin isEqualToString:key]){
+        [_viewModel requestWechatLogin:msg];
+    }
+}
 @end

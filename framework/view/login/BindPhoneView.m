@@ -10,7 +10,7 @@
 
 @interface BindPhoneView()
 
-@property(strong, nonatomic) LoginViewModel *mViewModel;
+@property(strong, nonatomic) BindPhoneViewModel *mViewModel;
 
 @property(strong, nonatomic) UITextField *phoneNumTF;
 @property(strong, nonatomic) UITextField *verifyCodeTF;
@@ -25,7 +25,7 @@
     NSString *mTitle;
 }
 
--(instancetype)initWithViewModel:(LoginViewModel *)viewModel title:(NSString *)title{
+-(instancetype)initWithViewModel:(BindPhoneViewModel *)viewModel title:(NSString *)title{
     if(self == [super init]){
         _mViewModel = viewModel;
         mTitle = title;
@@ -34,7 +34,7 @@
     return self;
 }
 
--(instancetype)initWithViewModel:(LoginViewModel *)viewModel title:(NSString *)title wxToken:(NSString *)wxToken{
+-(instancetype)initWithViewModel:(BindPhoneViewModel *)viewModel title:(NSString *)title wxToken:(NSString *)wxToken{
     if(self == [super init]){
         _mViewModel = viewModel;
         mTitle = title;

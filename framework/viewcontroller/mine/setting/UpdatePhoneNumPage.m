@@ -13,7 +13,7 @@
 #import "AccountManager.h"
 
 
-@interface UpdatePhoneNumPage ()<UpdatePhoneNumViewDelegate,PhoneDelegate>
+@interface UpdatePhoneNumPage ()<UpdatePhoneNumViewDelegate,BindPhoneDelegate>
 
 @property(strong, nonatomic) UpdatePhoneNumView *updatePhoneNumView;
 @property(strong, nonatomic) BindPhoneView *bindPhoneView;
@@ -56,11 +56,11 @@
 
 -(UIView *)bindPhoneView{
     if(_bindPhoneView == nil){
-        UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
-        BindPhoneViewModel *viewModel = [[BindPhoneViewModel alloc]init];
-        viewModel.delegate = self;
-        _bindPhoneView = [[BindPhoneView alloc]initWithViewModel:viewModel title:[NSString stringWithFormat:MSG_UPDATEPHONENUM_TIPS3,[STPUtil getSecretPhoneNum:userModel.phoneNum]]];
-        _bindPhoneView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
+//        UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
+//        BindPhoneViewModel *viewModel = [[BindPhoneViewModel alloc]init];
+//        viewModel.delegate = self;
+//        _bindPhoneView = [[BindPhoneView alloc]initWithViewModel:viewModel title:[NSString stringWithFormat:MSG_UPDATEPHONENUM_TIPS3,[STPUtil getSecretPhoneNum:userModel.phoneNum]]];
+//        _bindPhoneView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     }
     return _bindPhoneView;
 }

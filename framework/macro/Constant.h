@@ -60,7 +60,7 @@
 #define MSG_OTHER_LOGIN @"其他登录方式"
 #define MSG_WECHAT_LOGIN @"微信登录"
 #define MSG_PHONE_LOGIN @"手机验证登录"
-
+#define MSG_BINDPHONE_TITLE @"绑定手机号"
 
 //首页
 #define MSG_MAIN_PROPERTY @"物业消息"

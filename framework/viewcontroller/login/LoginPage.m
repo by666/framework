@@ -85,7 +85,7 @@
         if([data isEqualToString:MSG_SUCCESS]){
             [MainPage show:self];
         }else{
-            [BindPhonePage show:self wxToken:data viewModel:_mViewModel];
+            [BindPhonePage show:self wxToken:data];
         }
     }
 }

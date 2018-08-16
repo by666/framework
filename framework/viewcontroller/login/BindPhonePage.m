@@ -10,9 +10,9 @@
 #import "BindPhoneView.h"
 #import "MainPage.h"
 
-@interface BindPhonePage ()<LoginDelegate>
+@interface BindPhonePage ()<BindPhoneDelegate>
 
-@property(strong, nonatomic)LoginViewModel *mViewModel;
+@property(strong, nonatomic)BindPhoneViewModel *mViewModel;
 @property(strong, nonatomic)BindPhoneView *mBindPhoneView;
 @property(strong, nonatomic)NSString *wxToken;
 
@@ -21,15 +21,15 @@
 @implementation BindPhonePage
 
 
-+(void)show:(BaseViewController *)controller wxToken:(NSString *)wxToken viewModel:(LoginViewModel *)viewModel{
++(void)show:(BaseViewController *)controller wxToken:(NSString *)wxToken{
     BindPhonePage *page = [[BindPhonePage alloc]init];
     page.wxToken = wxToken;
-    page.mViewModel = viewModel;
     [controller pushPage:page];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self showSTNavigationBar:MSG_BINDPHONE_TITLE needback:YES];
     [self initView];
 }
 
@@ -48,9 +48,11 @@
 -(void)initView{
     self.view.backgroundColor = cwhite;
     
+    _mViewModel = [[BindPhoneViewModel alloc]init];
     _mViewModel.delegate = self;
+    
     _mBindPhoneView = [[BindPhoneView alloc]initWithViewModel:_mViewModel title:MSG_WECHAT_TITLE wxToken:_wxToken];
-    _mBindPhoneView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+    _mBindPhoneView.frame = CGRectMake(0,StatuNavHeight, ScreenWidth, ContentHeight);
     _mBindPhoneView.backgroundColor = cwhite;
     [self.view addSubview:_mBindPhoneView];
 }

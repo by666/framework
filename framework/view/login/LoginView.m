@@ -163,12 +163,9 @@
 
 
 -(void)doWechatLogin{
-    __weak LoginViewModel *viewModel = _mViewModel;
-    [STAlertUtil showAlertController:@"" content:MSG_OPEN_WECHAT controller:_page confirm:^{
-        if(viewModel){
-            [viewModel doWechatLogin];
-        }
-    }];
+    if(_mViewModel){
+        [_mViewModel doWechatLogin];
+    }
 }
 
 -(void)doLogin{

@@ -7,24 +7,32 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BindPhoneModel.h"
+#import "LoginModel.h"
 
-@protocol PhoneDelegate
+@protocol BindPhoneDelegate<BaseRequestDelegate>
 
--(void)onSendVerifyCode:(Boolean)success;
--(void)onBindPhone:(Boolean)success;
+-(void)onGetTestCode:(NSString *)code;
+-(void)onWechatLogin:(Boolean)success msg:(NSString *)msg;
 -(void)onTimeCount:(Boolean)complete;
+-(void)onFaceLogin;
+-(void)onGoback;
 
 @end
-@interface BindPhoneViewModel : NSObject
 
-@property(weak, nonatomic)id <PhoneDelegate>delegate;
+@interface BindPhoneViewModel:NSObject
 
-
-@property(strong, nonatomic)BindPhoneModel *bindPhoneModel;
+@property(weak, nonatomic)id <BindPhoneDelegate>delegate;
+@property(strong, nonatomic)LoginModel *loginModel;
 
 -(void)sendVerifyCode:(NSString *)phoneNum;
--(void)doBindPhone:(NSString *)phoneNum verifyCode:(NSString *)verifyCode;
+-(void)getTestCode:(NSString *)phoneNum;
+-(void)doLogin:(NSString *)phoneNum verifyCode:(NSString *)verifyCode;
+-(void)doLogin:(NSString *)phoneNum verifyCode:(NSString *)verifyCode wxToken:(NSString *)wxToken;
 -(void)startCountTime;
+
+-(void)doWechatLogin;
+-(void)requestWechatLogin:(NSString *)code;
+-(void)doFaceLogin;
+-(void)goback;
 
 @end

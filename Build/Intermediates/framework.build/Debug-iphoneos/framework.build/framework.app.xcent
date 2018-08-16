@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>AB86U4DT8H.com.st.owner</string>
+	<string>WZFSPV55WT.com.st.owner</string>
 	<key>aps-environment</key>
 	<string>development</string>
 	<key>com.apple.developer.team-identifier</key>
-	<string>AB86U4DT8H</string>
+	<string>WZFSPV55WT</string>
 	<key>get-task-allow</key>
 	<true/>
 </dict>
