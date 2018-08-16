@@ -74,7 +74,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		3eAzdgs15QLa/NTCPs9sytLgmbw=
+		c95XCb5V475kODDxtI4HPz0SDHI=
 		</data>
 		<key>CodeScan.bundle/device_scan@2x.png</key>
 		<data>
@@ -134,31 +134,31 @@
 		</data>
 		<key>Frameworks/AFNetworking.framework/AFNetworking</key>
 		<data>
-		3mLhdkJAw+aitAi4PV+ytLwb/oE=
+		wZS0k9NBYRuNXQbsTWHI8MIlc2c=
 		</data>
 		<key>Frameworks/AFNetworking.framework/Info.plist</key>
 		<data>
-		oQ3wykZTFQTY4aXDwF+I/CFescc=
+		SKRMqeRb11f3G/SW7/mr0zVv+2k=
 		</data>
 		<key>Frameworks/AFNetworking.framework/_CodeSignature/CodeResources</key>
 		<data>
-		Ex0d2dHq34fd5aiPy5efs8t6qVA=
+		Z46F3aThOCwISXDToctVyKUTaAI=
 		</data>
 		<key>Frameworks/AliyunOSSiOS.framework/AliyunOSSiOS</key>
 		<data>
-		JJGYqBXdDPJlP+PBcy9/PFMzuf8=
+		e2FpkYUh09B9hELXAta2IJVKgbc=
 		</data>
 		<key>Frameworks/AliyunOSSiOS.framework/Info.plist</key>
 		<data>
-		o2uhboii7H402XNEtEp0mM4BKtQ=
+		XGY6+j0GVr580mXEY4vC3MnUjgY=
 		</data>
 		<key>Frameworks/AliyunOSSiOS.framework/_CodeSignature/CodeResources</key>
 		<data>
-		gbRR9oEjjluX9ID5Nk8Z+O8ETL8=
+		/kELTEsChL4sHZqLHqLmHbdQdOE=
 		</data>
 		<key>Frameworks/FMDB.framework/FMDB</key>
 		<data>
-		wQBo0L9iP8JNugPXxC0+t6eBdMM=
+		ePndrT3h5dMZaMnVIPgfwVyCjQw=
 		</data>
 		<key>Frameworks/FMDB.framework/Info.plist</key>
 		<data>
@@ -230,7 +230,7 @@
 		</data>
 		<key>Frameworks/LBXScan.framework/LBXScan</key>
 		<data>
-		dHAAfiGMxyE4pARz1MoH6vhIWyI=
+		avyAk/bgdPk1HSUHlReGTWn7/K4=
 		</data>
 		<key>Frameworks/LBXScan.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -242,7 +242,7 @@
 		</data>
 		<key>Frameworks/MBProgressHUD.framework/MBProgressHUD</key>
 		<data>
-		NlVQniSZUxd/X0FUoYuc96fnyRA=
+		nudQzH1Faw1WOW8An7IpsZyldO8=
 		</data>
 		<key>Frameworks/MBProgressHUD.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -250,15 +250,15 @@
 		</data>
 		<key>Frameworks/MJExtension.framework/Info.plist</key>
 		<data>
-		dthUgSrL4ETk4Ghem/fivQ4scbk=
+		p2qI6enU9HC8aRrIFLqmcqLUUcE=
 		</data>
 		<key>Frameworks/MJExtension.framework/MJExtension</key>
 		<data>
-		GDDnJPPt97Bs5wkUgVkjUNJmtzY=
+		2MU4ZlBPRPxJ3gdwLy4ewh4X6ns=
 		</data>
 		<key>Frameworks/MJExtension.framework/_CodeSignature/CodeResources</key>
 		<data>
-		BgaE/RVUOgvBoQ20MHN0RewSQCY=
+		VAsVyi7uIAL8/mxxdNK6cVr9RoI=
 		</data>
 		<key>Frameworks/MJRefresh.framework/Info.plist</key>
 		<data>
@@ -266,7 +266,7 @@
 		</data>
 		<key>Frameworks/MJRefresh.framework/MJRefresh</key>
 		<data>
-		d1FMTQQIRtHTFLI2RQaQpk/Di7Q=
+		0lkphnbv8J7Zbz+iON2U7AF9QyM=
 		</data>
 		<key>Frameworks/MJRefresh.framework/MJRefresh.bundle/arrow@2x.png</key>
 		<data>
@@ -309,7 +309,7 @@
 		</data>
 		<key>Frameworks/Masonry.framework/Masonry</key>
 		<data>
-		IUdQRJzaH/dLXlp7ehEKiqp+63c=
+		rZKv1X28ZitZfrdclKryGKcveuQ=
 		</data>
 		<key>Frameworks/Masonry.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -321,7 +321,7 @@
 		</data>
 		<key>Frameworks/ReactiveCocoa.framework/ReactiveCocoa</key>
 		<data>
-		BJ7VrdX4dzqR4z3c3UKmAy0V/es=
+		nPGsGi1u74WR0ChcIPEasnYKKGA=
 		</data>
 		<key>Frameworks/ReactiveCocoa.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -333,7 +333,7 @@
 		</data>
 		<key>Frameworks/SDWebImage.framework/SDWebImage</key>
 		<data>
-		DWc8k599LZoNce/2jC2YraIZ6z4=
+		eKtQpNVIWYHYHyvjHkk1N9GjW34=
 		</data>
 		<key>Frameworks/SDWebImage.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -345,7 +345,7 @@
 		</data>
 		<key>Frameworks/ZBarSDK.framework/ZBarSDK</key>
 		<data>
-		MtS3UQMnr6UAsKCXY9IGzKzw1SU=
+		lBY7b0+N8z+S3k+vuWLXtm3pgMM=
 		</data>
 		<key>Frameworks/ZBarSDK.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -369,7 +369,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		IxYZufRT3YnNFW59N+EDevTLH+w=
+		FXJeAuGcNLLodU1Xv2lX0X7FMAM=
 		</data>
 		<key>LaunchImage-1100-Portrait-2436h@3x.png</key>
 		<data>
@@ -481,7 +481,7 @@
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		5Z3+ShlWkbjxqjHfcFKRCNLiBqI=
+		OvPFz+nr6n6U7WBL9PLrc0vAu/4=
 		</data>
 		<key>idl-license.face-ios</key>
 		<data>
@@ -681,11 +681,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3eAzdgs15QLa/NTCPs9sytLgmbw=
+			c95XCb5V475kODDxtI4HPz0SDHI=
 			</data>
 			<key>hash2</key>
 			<data>
-			Iyxo3BtMYrAd/vYt+CZCQPzSqRPhrAxbQQ5L9yidWpA=
+			O1ufXHNkn4Jj+DaBAGn5jDWzZr+/trwMGe7vUK+nh04=
 			</data>
 		</dict>
 		<key>CodeScan.bundle/device_scan@2x.png</key>
@@ -846,77 +846,77 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3mLhdkJAw+aitAi4PV+ytLwb/oE=
+			wZS0k9NBYRuNXQbsTWHI8MIlc2c=
 			</data>
 			<key>hash2</key>
 			<data>
-			F1cWtZKvzSAN3HYthf9tOfoYQvUGn78qjViiUe3ymrI=
+			xddWR26hpqoo31ip3ye22yJAls16StPQ8QqKaPsA9f4=
 			</data>
 		</dict>
 		<key>Frameworks/AFNetworking.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oQ3wykZTFQTY4aXDwF+I/CFescc=
+			SKRMqeRb11f3G/SW7/mr0zVv+2k=
 			</data>
 			<key>hash2</key>
 			<data>
-			5eiwjHy4eEZLuGH2PGSPiVy2pY8A3/7zNzK1LOOrwpE=
+			4xC4iKJSa/JqirFY0HU8EWvOk05k1BWQgE2ZySdd5KE=
 			</data>
 		</dict>
 		<key>Frameworks/AFNetworking.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Ex0d2dHq34fd5aiPy5efs8t6qVA=
+			Z46F3aThOCwISXDToctVyKUTaAI=
 			</data>
 			<key>hash2</key>
 			<data>
-			LjYc6e+1LzAxSnxCYcpsjbhWWiKWS8orQvEuUVAkz94=
+			8AHIYzi/SK3FurMZ32nfG/AZUf6Io0y0343w0Mq3czc=
 			</data>
 		</dict>
 		<key>Frameworks/AliyunOSSiOS.framework/AliyunOSSiOS</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JJGYqBXdDPJlP+PBcy9/PFMzuf8=
+			e2FpkYUh09B9hELXAta2IJVKgbc=
 			</data>
 			<key>hash2</key>
 			<data>
-			6xGIPYcRfBkLqHOHmSr6KSupkFUZG3ee/F5ngXK2P3I=
+			F47awyUmvU2yCWKxkcorc6HGqS51OX6UFnVzBqfjDxM=
 			</data>
 		</dict>
 		<key>Frameworks/AliyunOSSiOS.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			o2uhboii7H402XNEtEp0mM4BKtQ=
+			XGY6+j0GVr580mXEY4vC3MnUjgY=
 			</data>
 			<key>hash2</key>
 			<data>
-			U3VqD88n7wLMvfnz2B01MPEeBBkV5fm5PmDRbGpQd4E=
+			W6f7MLctlh8wv3O+rAmWGp5fjHlTrW7ImBgaObaPr+Q=
 			</data>
 		</dict>
 		<key>Frameworks/AliyunOSSiOS.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gbRR9oEjjluX9ID5Nk8Z+O8ETL8=
+			/kELTEsChL4sHZqLHqLmHbdQdOE=
 			</data>
 			<key>hash2</key>
 			<data>
-			BsQZ7gyOZGZSLglokJhL5gLUYMps1ts72uuXevitI9o=
+			Mb2AdYy584H0xysCPwxIzOqhbx+MLcnh935nTK8+SvY=
 			</data>
 		</dict>
 		<key>Frameworks/FMDB.framework/FMDB</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wQBo0L9iP8JNugPXxC0+t6eBdMM=
+			ePndrT3h5dMZaMnVIPgfwVyCjQw=
 			</data>
 			<key>hash2</key>
 			<data>
-			hwJXCr+ThF84pfj7wjfnD1sQa6Z0/pq4djYvqjcBWxE=
+			Vr5eSRxlyvpzOdPGDC+8O06UvwWzahsQjNNRBJcxFrM=
 			</data>
 		</dict>
 		<key>Frameworks/FMDB.framework/Info.plist</key>
@@ -1110,11 +1110,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dHAAfiGMxyE4pARz1MoH6vhIWyI=
+			avyAk/bgdPk1HSUHlReGTWn7/K4=
 			</data>
 			<key>hash2</key>
 			<data>
-			Y5S9pdyT5XGXZRJD+Rmy7p+FHtyDAbF3MluJK3Yp94Q=
+			twBT9LS0iN2cMdcmsBMCtz4jtIWrlowxF8yhqNiGD1w=
 			</data>
 		</dict>
 		<key>Frameworks/LBXScan.framework/_CodeSignature/CodeResources</key>
@@ -1143,11 +1143,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NlVQniSZUxd/X0FUoYuc96fnyRA=
+			nudQzH1Faw1WOW8An7IpsZyldO8=
 			</data>
 			<key>hash2</key>
 			<data>
-			NNt+eRv6+LFYR2OHLgYnO/Pe3UFPNGzG5xc7aWpySMQ=
+			HRHsbvP74xpDNjGQM8/zCMSW25jk1KWM7MY9eDs+n+g=
 			</data>
 		</dict>
 		<key>Frameworks/MBProgressHUD.framework/_CodeSignature/CodeResources</key>
@@ -1165,33 +1165,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dthUgSrL4ETk4Ghem/fivQ4scbk=
+			p2qI6enU9HC8aRrIFLqmcqLUUcE=
 			</data>
 			<key>hash2</key>
 			<data>
-			4kRlSrjE3ex0vIo6DZl4oNf6Er6OL/s02/qyVmHCHUs=
+			3B0Zps8Nr9Va5tC5rPIdAL1sNpFlPjooWaDLFf5VfP0=
 			</data>
 		</dict>
 		<key>Frameworks/MJExtension.framework/MJExtension</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GDDnJPPt97Bs5wkUgVkjUNJmtzY=
+			2MU4ZlBPRPxJ3gdwLy4ewh4X6ns=
 			</data>
 			<key>hash2</key>
 			<data>
-			a7lh+u/HC0lr7Wsx5i5a1zTDvm1x2CqP64KMIvaby4Y=
+			LIxaqnVlYCMQ8lzDnZjx9vPtm1h8mvPYdHeYVEO5V0E=
 			</data>
 		</dict>
 		<key>Frameworks/MJExtension.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BgaE/RVUOgvBoQ20MHN0RewSQCY=
+			VAsVyi7uIAL8/mxxdNK6cVr9RoI=
 			</data>
 			<key>hash2</key>
 			<data>
-			rMsEIqZZkCymcg49Ibpe4KBJbMZN1pqQ8YGouyUL7OI=
+			b643a0sVoXKzc9fpcAf8ArhCW3lnpuJUr8qam1xdCrk=
 			</data>
 		</dict>
 		<key>Frameworks/MJRefresh.framework/Info.plist</key>
@@ -1209,11 +1209,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			d1FMTQQIRtHTFLI2RQaQpk/Di7Q=
+			0lkphnbv8J7Zbz+iON2U7AF9QyM=
 			</data>
 			<key>hash2</key>
 			<data>
-			ve8LNKUJ8+wGMxacP0uLaAyZhyYOmqeaqwamams3QUE=
+			IB6ROGxF3ds2Y4YNm0krdR3jD0dMk0XNF6M4OSN2RJU=
 			</data>
 		</dict>
 		<key>Frameworks/MJRefresh.framework/MJRefresh.bundle/arrow@2x.png</key>
@@ -1292,11 +1292,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IUdQRJzaH/dLXlp7ehEKiqp+63c=
+			rZKv1X28ZitZfrdclKryGKcveuQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			cT3rAzAXL10iax9EgwLvQ1L8W5kv/vE76ouGBmbVdtM=
+			xkNsfwZr2HKN6nw3Vfe1GcdFGVSucXuU3CV71Qt9hA8=
 			</data>
 		</dict>
 		<key>Frameworks/Masonry.framework/_CodeSignature/CodeResources</key>
@@ -1325,11 +1325,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BJ7VrdX4dzqR4z3c3UKmAy0V/es=
+			nPGsGi1u74WR0ChcIPEasnYKKGA=
 			</data>
 			<key>hash2</key>
 			<data>
-			dh9X9vSEN/27EdibFl3GoSvBmBaXJbUJbVPNFoO3dkY=
+			HKjQNz+h6GhDu2DwYmexKKZaXL33z3XOAqSHijWKiy8=
 			</data>
 		</dict>
 		<key>Frameworks/ReactiveCocoa.framework/_CodeSignature/CodeResources</key>
@@ -1358,11 +1358,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DWc8k599LZoNce/2jC2YraIZ6z4=
+			eKtQpNVIWYHYHyvjHkk1N9GjW34=
 			</data>
 			<key>hash2</key>
 			<data>
-			CmK/2lI3DozE0uPxBWHhtghndxkUswWTnlGxf2F3x8I=
+			ySp9kET75cGTZIiXBvK2dyvIgPwP6vPQHItrfKQXniI=
 			</data>
 		</dict>
 		<key>Frameworks/SDWebImage.framework/_CodeSignature/CodeResources</key>
@@ -1391,11 +1391,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MtS3UQMnr6UAsKCXY9IGzKzw1SU=
+			lBY7b0+N8z+S3k+vuWLXtm3pgMM=
 			</data>
 			<key>hash2</key>
 			<data>
-			5anAJPQV8uVo1D3LHvwpIxbxrgZaqWn8IweVagbp/MM=
+			Xjs50CjzK6UF67AbdAvBXDiH4mCY7kTE0Ls6dFnh1tA=
 			</data>
 		</dict>
 		<key>Frameworks/ZBarSDK.framework/_CodeSignature/CodeResources</key>
@@ -1743,11 +1743,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5Z3+ShlWkbjxqjHfcFKRCNLiBqI=
+			OvPFz+nr6n6U7WBL9PLrc0vAu/4=
 			</data>
 			<key>hash2</key>
 			<data>
-			QCtW9Q2ggQJJeCcoeagIa5nH4j7uZGV15Q46c0e4toA=
+			fOzvHEbBD2vFvRykFzVGcgtmcTmO1jOrUATK3CA/wfU=
 			</data>
 		</dict>
 		<key>idl-license.face-ios</key>

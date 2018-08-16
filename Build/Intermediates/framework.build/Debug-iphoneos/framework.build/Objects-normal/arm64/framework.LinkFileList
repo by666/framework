@@ -18,13 +18,16 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/BaseViewController.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/PassHistoryPage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/TouchScrollView.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/PassView2.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/HabitantViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/AddCarViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MemberPage.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/BaseNoNetView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/HabitantPage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/AuthStatuView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STTimeUtil.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STFileUtil.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/UserInfoViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MineView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/DeviceSharePage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STUploadImageUtil.o
@@ -32,6 +35,7 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/LocalFaceDetect.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/OnePaymentView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/AddMemberPage.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STDetailCell.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/PageManager.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/FixHistroyPage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STRecognizeView.o
@@ -39,6 +43,7 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MainViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/BindPhonePage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STConvertUtil.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/TestModelManager.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/UILabel+ContentSize.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/AuthStatuViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/PassHistoryViewModel.o
@@ -58,6 +63,7 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MessageCell.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STSinglePickerLayerView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/UIButton+Init.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/UserInfoView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/PassView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MainView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STLayerView.o
@@ -73,6 +79,7 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/FixHistoryViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/SystemMsgViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/ReportFixView.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/BaseNoDataView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MineViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/OnePaymentViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MinePage.o
@@ -96,10 +103,12 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STCarNumLayerView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STTabBarView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/VisitorModel.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/PushMsgModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/AboutPage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/VerificateViewCell.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/DeviceShareCell.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MessageView.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/UserInfoCell.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/UITextField+Init.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/ProfileView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/VisitorHistoryModel.o
@@ -120,6 +129,7 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/PropertyMsgModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/NextLoginView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STLocationManager.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MainCell2.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/FixModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/AuthFacePage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/TitleContentModel.o
@@ -142,6 +152,7 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/PassPage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/BindPhoneView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/CarHistoryView.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/UserInfoPage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/UserAuthModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/UpdatePhoneNumPage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/VisitorView.o
@@ -151,9 +162,11 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STCircleLabelView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STLog.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/BuildingModel.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/AboutView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/BindPhoneViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/VisitorHistoryView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/CarHistoryModel.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/WeChatManager.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/DeviceShareHistoryModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STObserver.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MessageModel.o
@@ -187,10 +200,12 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MessageSettingView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/EnterAuthPage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/PropertyMsgView.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MainCardCell.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/PaymentRecordPage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/UILabel+Init.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/CommunityModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STDateLayerView.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/MainView2.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/VideoCaptureDevice.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/STSelectLayerButton.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/arm64/SystemMsgPage.o

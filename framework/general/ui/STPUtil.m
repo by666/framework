@@ -17,7 +17,8 @@
 
 +(CGFloat)getActualHeight : (CGFloat)height{
     if(IS_IPHONE_X){
-        return (ScreenHeight * height * 1920 /2436) / 676 ;
+        
+        return height * 1.1;
 
     }
     return (ScreenHeight * height) / 676;

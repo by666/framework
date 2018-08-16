@@ -195,7 +195,7 @@
     [_imageBtn addTarget:self action:@selector(onClickImageBtn) forControlEvents:UIControlEventTouchUpInside];
     [_faceView addSubview:_imageBtn];
     
-    _addImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STHeight(52), STHeight(55), STHeight(36), STHeight(30))];
+    _addImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STHeight(52), (STHeight(140) - STWidth(36))/2, STWidth(36), STWidth(36))];
     _addImageView.contentMode = UIViewContentModeScaleAspectFill;
     _addImageView.image = [UIImage imageNamed:@"用户认证_icon_相机大"];
     _addImageView.userInteractionEnabled = NO;

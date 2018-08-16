@@ -94,6 +94,7 @@
 
 
 -(void)initJPush:(NSDictionary *)launchOptions {
+    [STUserDefaults saveKeyValue:UD_PUSHID value:@"171976fa8adb6fd285d"];
 
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;

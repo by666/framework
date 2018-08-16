@@ -13,6 +13,11 @@
         },
         {
           'type': 'file',
+          'name': "AFCompatibilityMacros.h",
+          'external-contents': "/Users/by.huang/Desktop/st/framework/Pods/AFNetworking/AFNetworking/AFCompatibilityMacros.h"
+        },
+        {
+          'type': 'file',
           'name': "AFHTTPSessionManager.h",
           'external-contents': "/Users/by.huang/Desktop/st/framework/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h"
         },

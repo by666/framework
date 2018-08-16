@@ -49,7 +49,7 @@
     [self addSubview:_addPhotoBtn];
     
     
-    _addImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(76), STHeight(79), STWidth(54), STHeight(44))];
+    _addImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(76), STWidth(77), STWidth(54),  STWidth(54))];
     _addImageView.contentMode = UIViewContentModeScaleAspectFill;
     _addImageView.image = [UIImage imageNamed:@"用户认证_icon_相机大"];
     _addImageView.userInteractionEnabled = NO;
