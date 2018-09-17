@@ -20,6 +20,7 @@
 +(NSString *)saveImageFile:(NSString *)filePath image:(UIImage *)image{
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *imageFilePath = [path stringByAppendingPathComponent:filePath];
+    
     BOOL statu = [UIImageJPEGRepresentation(image, 100) writeToFile:imageFilePath  atomically:YES];
     if(statu){
         [STLog print:@"图片保存成功"];

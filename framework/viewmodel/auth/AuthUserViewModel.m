@@ -109,7 +109,7 @@
             if([respondModel.status isEqualToString:STATU_SUCCESS]){
                 NSMutableArray *datas = [CommunityPositionModel mj_objectArrayWithKeyValuesArray:respondModel.data];
                 if(!IS_NS_COLLECTION_EMPTY(datas)){
-                    CommunityPositionModel *data = [datas objectAtIndex:1];
+                    CommunityPositionModel *data = [datas objectAtIndex:0];
                     [weakSelf.delegate onRequestSuccess:respondModel data:data.districtName];
                     [self getCommunityLayer:data];
                 }else{

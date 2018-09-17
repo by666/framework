@@ -73,6 +73,8 @@
 
     float scaleValue = 0.7f;
     _mViewModel.previewRect = CGRectMake(_previewView.frame.origin.x- _previewView.frame.size.width*(1/scaleValue-1)/2.0, _previewView.frame.origin.y - _previewView.frame.size.height*(1/scaleValue-1)/2.0 - 60 + StatuBarHeight + NavigationBarHeight, _previewView.frame.size.width/scaleValue, _previewView.frame.size.height/scaleValue);
+    
+    
     _mViewModel.detectRect = CGRectMake(ScreenWidth*(1-scaleValue)/2.0, ScreenHeight*(1-scaleValue)/2.0, ScreenWidth*scaleValue, ScreenHeight*scaleValue);
     
     

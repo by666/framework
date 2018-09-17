@@ -81,6 +81,7 @@
             _titleLabel.text = MSG_MESSAGE_USERAUTH_TITLE;
             _subTitleLabel.text = [NSString stringWithFormat:MSG_MESSAGE_USERAUTH_CONTENT,model.userName,[STPUtil getLiveAttr:model.applyType]];
         }else{
+            _statuLabel.text = @"";
             if(model.applyState == 1){
                 _titleLabel.text = MSG_MESSAGE_AUTH_RESULT_SUCCESS;
                 _subTitleLabel.text = MSG_MESSAGE_AUTH_RESULT_SUCCESS_CONTENT;

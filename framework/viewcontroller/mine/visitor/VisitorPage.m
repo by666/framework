@@ -16,6 +16,7 @@
 #import "STObserverManager.h"
 #import <IDLFaceSDK/IDLFaceSDK.h>
 #import "LocalFaceDetect.h"
+#import "UIImage+FixOrientation.h"
 
 @interface VisitorPage ()<VisitorViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,STObserverProtocol>
 
@@ -143,7 +144,7 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     [picker dismissViewControllerAnimated:YES completion:nil];
-    UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    UIImage* image=[[info objectForKey:@"UIImagePickerControllerOriginalImage"] fixOrientation];
     NSString *imagePath = [STFileUtil saveImageFile:image];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 

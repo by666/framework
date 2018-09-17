@@ -15,6 +15,7 @@
 #import "UserModel.h"
 #import "AccountManager.h"
 #import "MainPage.h"
+#import "NextLoginPage.h"
 @interface LoginPage ()<LoginDelegate,STObserverProtocol>
 
 @property(strong, nonatomic)LoginViewModel *mViewModel;
@@ -45,6 +46,11 @@
     [super viewWillAppear:animated];
     [self setStatuBarBackgroud:[UIColor clearColor]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    if([[AccountManager sharedAccountManager]isLogin]){
+        [_mLoginView showBackBtn:YES];
+    }else{
+        [_mLoginView showBackBtn:NO];
+    }
 }
 
 
@@ -59,7 +65,7 @@
 
 
 -(void)initView{
-    _mLoginView = [[LoginView alloc]initWithViewModel:_mViewModel controller:self needBack:_needBack];
+    _mLoginView = [[LoginView alloc]initWithViewModel:_mViewModel needBack:_needBack];
     _mLoginView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     [self.view addSubview:_mLoginView];
 
@@ -127,8 +133,6 @@
 -(void)onGoback{
     if([[AccountManager sharedAccountManager] isLogin]){
         [self backLastPage];
-    }else{
-        [MainPage show:self];
     }
 }
 

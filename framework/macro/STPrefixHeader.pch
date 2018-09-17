@@ -94,7 +94,7 @@
 #define LineHeight 0.5
 
 //人脸识别超时时间
-#define FACE_DETECT_OVERTIME 40
+#define FACE_DETECT_OVERTIME 30
 
 #endif /* STPrefixHeader_pch */
 

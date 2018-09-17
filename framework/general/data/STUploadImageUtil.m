@@ -11,8 +11,8 @@
 #import "STUploadImageModel.h"
 #import "STDataBaseUtil.h"
 
-#define BucketName @"santai-test"
-#define EndPoint @"https://oss-cn-beijing.aliyuncs.com"
+#define BucketName @"santaihulian"
+#define EndPoint @"https://oss-cn-shenzhen.aliyuncs.com"
 #define AccessKeyId @"LTAIgAxC5iDCnS6R"
 #define AccessKeySecret @"yTZscLQVNZUB6WaWFXiUgajSRe7NaZ"
 
@@ -134,6 +134,7 @@ SINGLETON_IMPLEMENTION(STUploadImageUtil)
             [STLog print:[NSString stringWithFormat:@"Result - requestId: %@, headerFields: %@",
                           result.requestId,
                           result.httpResponseHeaderFields]];
+            [STLog print:@"图片真实地址"  content:[self getRealUrl2:objectKey]];
             dispatch_main_async_safe(^{
                 success(objectKey);
             });

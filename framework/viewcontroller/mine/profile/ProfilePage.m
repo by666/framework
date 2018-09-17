@@ -1,4 +1,4 @@
-//
+  //
 //  ProfilePage.m
 //  framework
 //
@@ -17,6 +17,8 @@
 #import "FaceEnterPage2.h"
 #import "STUploadImageUtil.h"
 #import <IDLFaceSDK/IDLFaceSDK.h>
+#import "LocalFaceDetect.h"
+#import "UIImage+FixOrientation.h"
 
 @interface ProfilePage ()<ProfileViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,STObserverProtocol>
 
@@ -38,6 +40,7 @@
     self.view.backgroundColor = c15;
     [self showSTNavigationBar:MSG_PROFILE_TITLE needback:YES];
     [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_UpdateAvatar delegate:self];
+    [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_Face_Add delegate:self];
     [self initView];
 }
 
@@ -58,6 +61,8 @@
 
 -(void)dealloc{
     [[STObserverManager sharedSTObserverManager]removeSTObsever:Notify_UpdateAvatar];
+    [[STObserverManager sharedSTObserverManager] removeSTObsever:Notify_Face_Add];
+
 }
 
 #pragma mark 相册选择
@@ -119,21 +124,40 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     [picker dismissViewControllerAnimated:YES completion:nil];
-    UIImage* image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    UIImage* image=[[info objectForKey:@"UIImagePickerControllerOriginalImage"] fixOrientation];
+    [STFileUtil saveImageFile:image];
     NSString *imagePath = [STFileUtil saveImageFile:image];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    [_mViewModel uploadHeadImage:imagePath];
+//    WS(weakSelf)
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(FACE_DETECT_OVERTIME * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        dispatch_main_async_safe(^{
+//            [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+//            [STToastUtil showFailureAlertSheet:@"上传失败"];
+//        });
+//
+//    });
 
+    
     WS(weakSelf)
-    [[FaceSDKManager sharedInstance] livenessWithImage:image completion:^(FaceInfo *faceinfo, LivenessState *state, ResultCode resultCode) {
-        if(resultCode == ResultCodeOK || resultCode == ResultCodeDataHitOne){
-            if(weakSelf.mViewModel){
-                [weakSelf.mViewModel uploadHeadImage:imagePath];
-            }
-            [STToastUtil showSuccessTips:MSG_FACEDETECT_SUCCESS];
-        }else{
-            [STToastUtil showFailureAlertSheet:MSG_FACEDETECT_FAIL];
+    [LocalFaceDetect detectLocalImage:image success:^(id respond) {
+        if(weakSelf.mViewModel){
+            [weakSelf.mViewModel uploadHeadImage:imagePath];
         }
+    } failure:^(id fail) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [STToastUtil showFailureAlertSheet:fail];
     }];
+//    WS(weakSelf)
+//    [[FaceSDKManager sharedInstance] livenessWithImage:image completion:^(FaceInfo *faceinfo, LivenessState *state, ResultCode resultCode) {
+//        if(resultCode == ResultCodeOK || resultCode == ResultCodeDataHitOne){
+//            if(weakSelf.mViewModel){
+//                [weakSelf.mViewModel uploadHeadImage:imagePath];
+//            }
+//            [STToastUtil showSuccessTips:MSG_FACEDETECT_SUCCESS];
+//        }else{
+//            [STToastUtil showFailureAlertSheet:MSG_FACEDETECT_FAIL];
+//        }
+//    }];
 
 }
 
@@ -163,9 +187,25 @@
 
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
-    if(_mViewModel){
-        [_mViewModel uploadHeadImage:msg];
+    if([key isEqualToString:Notify_UpdateAvatar]){
+        if(_mViewModel){
+            [_mViewModel uploadHeadImage:msg];
+        }
+        return;
     }
+    if([key isEqualToString:Notify_Face_Add]){
+        int result = [msg intValue];
+        if(result == 1){
+            if(_profileView){
+                [_profileView updateTableView];
+            }
+        }else{
+            [STToastUtil showFailureAlertSheet:MSG_FACEDETECT_FAIL];
+        }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        return;
+    }
+
 }
 
 

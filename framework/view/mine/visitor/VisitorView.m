@@ -72,16 +72,17 @@
     [commonView addSubview:_nameTextField];
     
     
-    NSString *dateStr = [STTimeUtil getTomorrowDate];
+    NSString *dateStr = [STTimeUtil generateDate_EN:[STTimeUtil getCurrentTimeStamp]];
+    NSString *dateShowStr = [NSString stringWithFormat:@"今天  %@",dateStr];
 //    _dateBtn = [[UIButton alloc]initWithFont:STFont(16) text:dateStr textColor:c12 backgroundColor:cclear corner:0 borderWidth:0 borderColor:nil];
 //    CGSize dateSize = [dateStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
 //    _dateBtn.frame = CGRectMake(ScreenWidth - dateSize.width - STWidth(35), STHeight(57), dateSize.width, STHeight(57));
 //    [_dateBtn addTarget:self action:@selector(OnClickDateBtn) forControlEvents:UIControlEventTouchUpInside];
 //    [commonView addSubview:_dateBtn];
     
-    CGSize dateSize = [dateStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
+    CGSize dateSize = [dateShowStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
     _dateBtn = [[STSelectLayerButton alloc]initWithFrame:CGRectMake(ScreenWidth - (dateSize.width + STWidth(36)), STHeight(57), dateSize.width + STWidth(36), STHeight(57))];
-    [_dateBtn setSelectText:dateStr];
+    [_dateBtn setSelectText:dateShowStr];
     [_dateBtn addTarget:self action:@selector(OnClickDateBtn) forControlEvents:UIControlEventTouchUpInside];
     [commonView addSubview:_dateBtn];
     
@@ -247,7 +248,9 @@
 
 //日期选择回调
 -(void)OnDateSelectResult:(NSString *)dateStr{
-    [_dateBtn setSelectText:dateStr];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[STTimeUtil getTimeStamp:[NSString stringWithFormat:@"%@ 23:59:59",dateStr] format:@"yyyy.MM.dd HH:mm:ss"]];
+    NSString *resultStr = [NSString stringWithFormat:@"%@  %@",[STTimeUtil getCurrentWeek:date],dateStr];
+    [_dateBtn setSelectText:resultStr];
 }
 
 
@@ -291,7 +294,7 @@
             return;
         }
         NSString *nameStr = _nameTextField.text;
-        NSString *dateStr = [_dateBtn getSelectText];
+        NSString *dateStr = [[_dateBtn getSelectText] substringWithRange:NSMakeRange(4,  [_dateBtn getSelectText].length - 4)];
         NSString *carStr = @"";
         if(_mType == Car){
             carStr = [NSString stringWithFormat:@"%@%@",_headBtn.titleLabel.text,_numberTextField.text];

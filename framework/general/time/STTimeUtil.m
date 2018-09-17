@@ -128,6 +128,18 @@
 
 
 +(NSString *)getCurrentWeek:(NSDate *)date{
+    long now = [[self getCurrentTimeStamp] longLongValue];
+    long time = [date timeIntervalSince1970]*1000;
+    long per = 3600 * 24 * 1000;
+    if(time - now > 0 &&  time - now <= per){
+        return @"今天";
+    }
+    if(time - now <= 2 * per && time - now > per){
+        return @"明天";
+    }
+    if(time - now <= 3 * per && time - now > 2 * per){
+        return @"后天";
+    }
     NSDateFormatter *dataFormatter = [[NSDateFormatter alloc] init];
     [dataFormatter setDateFormat:@"YYYY年MM月dd日"];
     NSDateComponents *componets = [[NSCalendar autoupdatingCurrentCalendar] components:NSCalendarUnitWeekday fromDate:date];

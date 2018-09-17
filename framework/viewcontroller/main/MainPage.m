@@ -170,8 +170,8 @@
     if([respondModel.requestUrl isEqualToString:URL_GETMAININFO]){
         if(_mMainView){
 //            [_mMainView updateView];
-            MainModel *model = data;
-            _positionLabel.text = model.districtName;
+            MainModel *mainModel = [[AccountManager sharedAccountManager]getMainModel];
+            _positionLabel.text = mainModel.districtName;
 
         }
     }else if([respondModel.requestUrl isEqualToString:URL_GETLIVEINFO]){
@@ -184,6 +184,7 @@
                 [_mViewModel.memberDatas addObject:model];
                 [_mMainView updateMemberView];
                 [_mMainView updateMsgView];
+
                 return;
             }
             [_mViewModel requestMemberDatas];
@@ -251,11 +252,8 @@
         [_msgBtn setImage:[UIImage imageNamed:@"首页_icon_消息_黑"] forState:UIControlStateNormal];
     }
     
-    LiveModel *liveModel = [[AccountManager sharedAccountManager]getLiveModel];
-    NSArray *array =  [liveModel.homeFullName componentsSeparatedByString:@","];
-    if(!IS_NS_COLLECTION_EMPTY(array)){
-        _positionLabel.text = [array objectAtIndex:0];
-    }
+    MainModel *mainModel = [[AccountManager sharedAccountManager]getMainModel];
+    _positionLabel.text = mainModel.districtName;
     
 }
 

@@ -50,6 +50,8 @@
     _opendoorView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     _opendoorView.backgroundColor = cwhite;
     [self.view addSubview:_opendoorView];
+    
+    [viewModel generateTempLock];
 }
 
 

@@ -12,8 +12,8 @@
 
 #pragma mark 定义API相关
 
-#define RootUrl @"https://www.baidu.com"
-#define TestUrl @"http://192.168.0.5:8081/cellos-appserver/userApp"
+#define TestUrl @"https://cellos.santaihulian.com/cellos-appserver/userApp"
+//#define TestUrl @"http://192.168.0.5:8081/cellos-appserver/userApp"
 
 
 #pragma mark 登录
@@ -135,6 +135,8 @@
 
 #pragma mark 通用码
 
+//接口有误
+#define STATU_ERRORURL -99
 //无网络
 #define STATU_NONET -1
 //请求成功
@@ -146,9 +148,7 @@
 //header错误（相当于token无效）
 #define STATU_INVAILDTOKEN @"3"
 
-//
-#define STATU_YES 1
-#define STATU_NO  0
+
 
 
 

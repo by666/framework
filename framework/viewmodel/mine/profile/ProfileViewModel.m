@@ -42,6 +42,8 @@
     if(_delegate){
         NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
         dic[@"faceUrl"] = faceUrl;
+        LiveModel *liveModel = [[AccountManager sharedAccountManager]getLiveModel];
+        dic[@"districtUid"] = liveModel.districtUid;
         WS(weakSelf)
         [STNetUtil post:URL_UPDATEFACE parameters:dic  success:^(RespondModel *respondModel) {
             if([respondModel.status isEqualToString:STATU_SUCCESS]){

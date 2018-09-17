@@ -224,7 +224,7 @@
               
                 //添加自己
                 UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
-                MemberModel *memberModel = [MemberModel buildModel:userModel.userName homeLocator:model.homeLocator cretype:userModel.cretype creid:userModel.creid faceUrl:userModel.headUrl districtUid:model.districtUid userUid:model.userUid];
+                MemberModel *memberModel = [MemberModel buildModel:MSG_MEMBER_ME homeLocator:model.homeLocator cretype:userModel.cretype creid:userModel.creid faceUrl:userModel.headUrl districtUid:model.districtUid userUid:model.userUid];
                 memberModel.identify = MSG_MEMBER_ROOT;
                 [weakSelf.memberDatas insertObject:memberModel atIndex:0];
                 

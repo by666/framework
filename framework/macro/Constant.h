@@ -103,6 +103,7 @@
 #define MSG_FACEDETECT_SUCCESS @"人脸识别成功"
 #define MSG_FACEDETECT_MUTIPLE @"检测到多个人脸，请重新上传"
 #define MSG_FACEDETECT_PROBILITY @"人脸不够清晰或者未在中心，请重新上传"
+#define MSG_FACEDETECT_ANGLE @"人脸角度过大，请重新上传"
 
 //刷脸登录页面
 #define MSG_FACELOGIN_ALERT_TITLE @"操作超时"
@@ -150,6 +151,7 @@
 #define MSG_MEMBER_ADDBTN @"添加家庭成员"
 #define MSG_MEMBER_DELETE_TIPS @"此操作将会删除和该成员绑定的一切信息，是否确定删除？"
 #define MSG_MEMBER_ROOT @"管理员"
+#define MSG_MEMBER_ME @"我"
 
 //添加家庭成员页面
 #define MSG_ADDMEMBER_TITLE @"添加家庭成员"
@@ -166,7 +168,8 @@
 #define MSG_ADDMEMBER_NAME_TIPS @"请填写您的姓名"
 #define MSG_ADDMEMBER_IDNUM_TIPS @"请填写您的身份证号"
 #define MSG_ADDMEMBER_UPDATE_TIPS @"用户信息发生变动，确认修改吗？"
-#define MSG_ADDMEMBER_FACE_TIPS @"点击更换人脸照片"
+#define MSG_ADDMEMBER_FACE_TIPS @"点击添加人脸照片"
+#define MSG_ADDMEMBER_FACE_TIPS2 @"点击更换人脸照片"
 
 
 //住户管理

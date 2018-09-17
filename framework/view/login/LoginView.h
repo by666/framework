@@ -12,12 +12,15 @@
 
 @interface LoginView : UIView
 
--(instancetype)initWithViewModel:(LoginViewModel *)viewModel controller:(LoginPage *)page needBack:(Boolean)needBack;
+-(instancetype)initWithViewModel:(LoginViewModel *)viewModel needBack:(Boolean)needBack;
 
 //验证码按钮UI变化
 -(void)updateVerifyBtn:(Boolean)complete;
 //登录验证
 -(void)updateView;
+
+//显示返回按钮
+-(void)showBackBtn:(Boolean)needBack;
 
 
 //测试验证码

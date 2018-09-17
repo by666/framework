@@ -39,6 +39,8 @@ typedef NS_ENUM(NSInteger, PushMsgType){
     Push_Visitor, //1：临时访客申请
     Push_AuthResult,//2：收取用户认证结果
     Push_Other_Login,//3：其他地方登陆
+    Push_FACE_ADD,//4：face++进底片库结果
+
 };
 
 

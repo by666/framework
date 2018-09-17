@@ -15,6 +15,6 @@
 @property(assign, nonatomic)int layerLevel;
 @property(copy, nonatomic)NSString *detailAddr;
 @property(copy, nonatomic)NSString *addrStr;
-
+@property(copy, nonatomic)NSString *sliderUrls;
 
 @end

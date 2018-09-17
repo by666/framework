@@ -51,7 +51,7 @@
     _headImageView.frame = CGRectMake(STWidth(273), STHeight(20), STHeight(60), STHeight(60));
     _headImageView.layer.masksToBounds = YES;
     _headImageView.layer.cornerRadius = STHeight(30);
-    _headImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _headImageView.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [_headImageView setImage:[UIImage imageNamed:@"ic_default"] forState:UIControlStateNormal]; ;
     _headImageView.contentMode = UIViewContentModeScaleAspectFill;
     

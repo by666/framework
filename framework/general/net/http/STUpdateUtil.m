@@ -12,7 +12,7 @@
 @implementation STUpdateUtil
 
 +(void)checkUpdate:(UpdateBlock)block{
-    NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/lookup?id=1205941337"];
+    NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/lookup?id=1428381007"];
     NSURLRequest *request =[NSURLRequest requestWithURL:url];
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *sessionDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {

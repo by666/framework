@@ -232,6 +232,12 @@
 		0070FFEF20D8F42D00A67B45 /* com.baidu.idl.face.model.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0070FFEB20D8F42C00A67B45 /* com.baidu.idl.face.model.bundle */; };
 		0070FFF020D8F42D00A67B45 /* IDLFaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0070FFEC20D8F42D00A67B45 /* IDLFaceSDK.framework */; };
 		0070FFF720D8F78000A67B45 /* FaceEnterPage2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0070FFF620D8F77F00A67B45 /* FaceEnterPage2.m */; };
+		007367A621266AFD004CCA0C /* LocalFaceDetectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 007367A521266AFD004CCA0C /* LocalFaceDetectModel.m */; };
+		007367A921266B32004CCA0C /* LocalFacePositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 007367A821266B32004CCA0C /* LocalFacePositionModel.m */; };
+		007367AC21266B8C004CCA0C /* LocalFaceAngleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 007367AB21266B8C004CCA0C /* LocalFaceAngleModel.m */; };
+		007367B221269B3C004CCA0C /* LocalFaceItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 007367B121269B3C004CCA0C /* LocalFaceItemModel.m */; };
+		007367B52126ABD9004CCA0C /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 007367B42126ABD9004CCA0C /* UIImage+FixOrientation.m */; };
+		007367B82126BBFC004CCA0C /* STWifiUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 007367B72126BBFC004CCA0C /* STWifiUtil.m */; };
 		007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F2E20858EB3009EA9F1 /* AppDelegate.m */; };
 		007B1F3720858EB6009EA9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007B1F3620858EB6009EA9F1 /* Assets.xcassets */; };
 		007B1F3D20858EB6009EA9F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 007B1F3C20858EB6009EA9F1 /* main.m */; };
@@ -763,6 +769,18 @@
 		0070FFFB20D8F83400A67B45 /* VideoCaptureDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCaptureDevice.m; sourceTree = "<group>"; };
 		0070FFFE20D8F83400A67B45 /* ImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtils.h; sourceTree = "<group>"; };
 		0070FFFF20D8F83400A67B45 /* VideoCaptureDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCaptureDevice.h; sourceTree = "<group>"; };
+		007367A421266AFD004CCA0C /* LocalFaceDetectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalFaceDetectModel.h; sourceTree = "<group>"; };
+		007367A521266AFD004CCA0C /* LocalFaceDetectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalFaceDetectModel.m; sourceTree = "<group>"; };
+		007367A721266B32004CCA0C /* LocalFacePositionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalFacePositionModel.h; sourceTree = "<group>"; };
+		007367A821266B32004CCA0C /* LocalFacePositionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalFacePositionModel.m; sourceTree = "<group>"; };
+		007367AA21266B8C004CCA0C /* LocalFaceAngleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalFaceAngleModel.h; sourceTree = "<group>"; };
+		007367AB21266B8C004CCA0C /* LocalFaceAngleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalFaceAngleModel.m; sourceTree = "<group>"; };
+		007367B021269B3C004CCA0C /* LocalFaceItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalFaceItemModel.h; sourceTree = "<group>"; };
+		007367B121269B3C004CCA0C /* LocalFaceItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalFaceItemModel.m; sourceTree = "<group>"; };
+		007367B32126ABD9004CCA0C /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		007367B42126ABD9004CCA0C /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		007367B62126BBFC004CCA0C /* STWifiUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STWifiUtil.h; sourceTree = "<group>"; };
+		007367B72126BBFC004CCA0C /* STWifiUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STWifiUtil.m; sourceTree = "<group>"; };
 		007B1F2A20858EB3009EA9F1 /* framework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = framework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007B1F2D20858EB3009EA9F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		007B1F2E20858EB3009EA9F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -971,6 +989,8 @@
 				0038F0E520C7DF7400094EB9 /* UITextView+Placeholder.m */,
 				0038F1B720CE5D0400094EB9 /* UITableView+Init.h */,
 				0038F1B820CE5D0400094EB9 /* UITableView+Init.m */,
+				007367B32126ABD9004CCA0C /* UIImage+FixOrientation.h */,
+				007367B42126ABD9004CCA0C /* UIImage+FixOrientation.m */,
 			);
 			path = categories;
 			sourceTree = "<group>";
@@ -1033,6 +1053,15 @@
 				0070FFE820D8F3CF00A67B45 /* face */,
 			);
 			path = threeparty;
+			sourceTree = "<group>";
+		};
+		002E235F212A74A600E8B93D /* face */ = {
+			isa = PBXGroup;
+			children = (
+				0070000B20DA470600A67B45 /* FaceEnterViewModel2.h */,
+				0070000C20DA470600A67B45 /* FaceEnterViewModel2.m */,
+			);
+			path = face;
 			sourceTree = "<group>";
 		};
 		002F942820AEBA5500F84094 /* messagesetting */ = {
@@ -1786,8 +1815,6 @@
 		004EF5D920AC51A200BA9602 /* profile */ = {
 			isa = PBXGroup;
 			children = (
-				0070000B20DA470600A67B45 /* FaceEnterViewModel2.h */,
-				0070000C20DA470600A67B45 /* FaceEnterViewModel2.m */,
 				004EF5B120ABFDF200BA9602 /* ProfileViewModel.h */,
 				004EF5B220ABFDF200BA9602 /* ProfileViewModel.m */,
 			);
@@ -1922,6 +1949,14 @@
 				0070FFEC20D8F42D00A67B45 /* IDLFaceSDK.framework */,
 				00AD859320EE24B4001D272C /* LocalFaceDetect.h */,
 				00AD859420EE24B4001D272C /* LocalFaceDetect.m */,
+				007367A421266AFD004CCA0C /* LocalFaceDetectModel.h */,
+				007367A521266AFD004CCA0C /* LocalFaceDetectModel.m */,
+				007367A721266B32004CCA0C /* LocalFacePositionModel.h */,
+				007367A821266B32004CCA0C /* LocalFacePositionModel.m */,
+				007367AA21266B8C004CCA0C /* LocalFaceAngleModel.h */,
+				007367AB21266B8C004CCA0C /* LocalFaceAngleModel.m */,
+				007367B021269B3C004CCA0C /* LocalFaceItemModel.h */,
+				007367B121269B3C004CCA0C /* LocalFaceItemModel.m */,
 			);
 			path = face;
 			sourceTree = "<group>";
@@ -2113,6 +2148,7 @@
 		00D324B42085EE25001EC82F /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				002E235F212A74A600E8B93D /* face */,
 				0038F10820CA654D00094EB9 /* deviceshare */,
 				0038F0DA20C7D5CC00094EB9 /* reportfix */,
 				0038F0D420C7C0CC00094EB9 /* opendoor */,
@@ -2157,6 +2193,8 @@
 				00D324CC2087277E001EC82F /* STNetUtil.m */,
 				00C2541C209AACDC00E8E306 /* STUpdateUtil.h */,
 				00C2541D209AACDC00E8E306 /* STUpdateUtil.m */,
+				007367B62126BBFC004CCA0C /* STWifiUtil.h */,
+				007367B72126BBFC004CCA0C /* STWifiUtil.m */,
 			);
 			path = http;
 			sourceTree = "<group>";
@@ -2560,6 +2598,7 @@
 				0005ACCD21242DC00090CC3E /* BaseNoNetView.m in Sources */,
 				004EF59D20AAD45200BA9602 /* HabitantPage.m in Sources */,
 				0050800020B6AC8800A976D9 /* AuthStatuView.m in Sources */,
+				007367A921266B32004CCA0C /* LocalFacePositionModel.m in Sources */,
 				00D324B2208598A7001EC82F /* STTimeUtil.m in Sources */,
 				00BBBD972091D0E300556B90 /* STFileUtil.m in Sources */,
 				0005ACC42122DE160090CC3E /* UserInfoViewModel.m in Sources */,
@@ -2650,6 +2689,7 @@
 				00D324CD2087277E001EC82F /* STNetUtil.m in Sources */,
 				004EF59420AAD42400BA9602 /* CarPage.m in Sources */,
 				00D324B0208598A7001EC82F /* STSoundUtil.m in Sources */,
+				007367B52126ABD9004CCA0C /* UIImage+FixOrientation.m in Sources */,
 				004EF52520A2A41500BA9602 /* LoginView.m in Sources */,
 				003EDAA120BB991D00CFCFE9 /* BuildingLayerModel.m in Sources */,
 				002F949D20B3F8E700F84094 /* VisitorPaymentModel.m in Sources */,
@@ -2659,6 +2699,7 @@
 				00F24C3520EA2222003BBE94 /* FaceLoginView.m in Sources */,
 				002F949120B3E8C200F84094 /* MonthPaymentView.m in Sources */,
 				004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */,
+				007367B221269B3C004CCA0C /* LocalFaceItemModel.m in Sources */,
 				002F949A20B3F8C600F84094 /* VisitorPaymentCell.m in Sources */,
 				0038F1B920CE5D0400094EB9 /* UITableView+Init.m in Sources */,
 				003EDB0C20C1185000CFCFE9 /* PropertyMsgModel.m in Sources */,
@@ -2674,12 +2715,14 @@
 				0070FFE720D8997200A67B45 /* LiveModel.m in Sources */,
 				002F949420B3EA6B00F84094 /* MonthPaymentCell.m in Sources */,
 				003EDAC320BCF9A500CFCFE9 /* RecognizeModel.m in Sources */,
+				007367A621266AFD004CCA0C /* LocalFaceDetectModel.m in Sources */,
 				0038F0D720C7C0DB00094EB9 /* OpendoorViewModel.m in Sources */,
 				003EDA8620B7BF6800CFCFE9 /* CommunityViewModel.m in Sources */,
 				008DF70820F7427A00D83382 /* STImageButton.m in Sources */,
 				007B1F2F20858EB3009EA9F1 /* AppDelegate.m in Sources */,
 				003EDB1520C5249800CFCFE9 /* STSwitchView.m in Sources */,
 				003EDAB620BBEC6800CFCFE9 /* AuthFaceView.m in Sources */,
+				007367B82126BBFC004CCA0C /* STWifiUtil.m in Sources */,
 				0050800C20B6BB1700A976D9 /* AuthUserView.m in Sources */,
 				0038F11220CA690200094EB9 /* DeviceShareView.m in Sources */,
 				00CCE9AE208ECB9300032B4A /* UserModel.m in Sources */,
@@ -2752,6 +2795,7 @@
 				004EF5F520AD6A0D00BA9602 /* MemberViewModel.m in Sources */,
 				002F94B020B40ED500F84094 /* OnePaymentPage.m in Sources */,
 				0038F0FC20CA2A9000094EB9 /* FixHistoryView.m in Sources */,
+				007367AC21266B8C004CCA0C /* LocalFaceAngleModel.m in Sources */,
 				003EDA8320B7BF5D00CFCFE9 /* CommunityView.m in Sources */,
 				004EF5CB20AC44F900BA9602 /* SettingView.m in Sources */,
 				003EDA8920B7F5AD00CFCFE9 /* STBuildingLayerView.m in Sources */,

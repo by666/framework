@@ -38,15 +38,22 @@
 #import "LoginPage.h"
 #import "AuthStatuPage.h"
 #import "PageManager.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <Photos/Photos.h>
+#import "STFileUtil.h"
+#import "LocalFaceDetect.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate,UIAlertViewDelegate>
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate{
+    NSMutableArray *imageDatas;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    imageDatas = [[NSMutableArray alloc]init];
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     id controller;
     if([[AccountManager sharedAccountManager]isLogin]){
@@ -65,8 +72,9 @@
     [self initNet];
     [self initBaidu];
     [[AccountManager sharedAccountManager] clearApplyModel];
+    WS(weakSelf)
     [STUpdateUtil checkUpdate:^(NSString *appname, NSString *url, double version) {
-//        [self showUpdateAlert:url version:version];
+        [weakSelf showUpdateAlert:url version:version];
     }];
     
     [[PageManager sharedPageManager]initManager];
@@ -81,27 +89,64 @@
     [[TestModelManager sharedTestModelManager]initTestDatas];
     
     [Bugly startWithAppId:BUGLY_APPID];
+   
+    
+//    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//
+//
+//    NSString *directryPath = [path stringByAppendingPathComponent:@"degree"];
+//    [fileManager createDirectoryAtPath:directryPath withIntermediateDirectories:YES attributes:nil error:nil];
+//
+//    NSString *directryPath2 = [path stringByAppendingPathComponent:@"error"];
+//    [fileManager createDirectoryAtPath:directryPath2 withIntermediateDirectories:YES attributes:nil error:nil];
+//
+//    NSString *directryPath3 = [path stringByAppendingPathComponent:@"mutiple"];
+//    [fileManager createDirectoryAtPath:directryPath3 withIntermediateDirectories:YES attributes:nil error:nil];
+//
+//    NSString *directryPath4 = [path stringByAppendingPathComponent:@"probility"];
+//    [fileManager createDirectoryAtPath:directryPath4 withIntermediateDirectories:YES attributes:nil error:nil];
+//
+//    NSString *directryPath5 = [path stringByAppendingPathComponent:@"fail"];
+//    [fileManager createDirectoryAtPath:directryPath5 withIntermediateDirectories:YES attributes:nil error:nil];
+//
+//
+//    [self getOriginalImages];
+//
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        for(UIImage *image in imageDatas){
+//            [self detect:image];
+//        }
+//    });
     return YES;
 }
 
+//
+//-(void)detect:(UIImage *)image{
+//    [LocalFaceDetect detectLocalImage:image success:^(id respond) {
+//        [STLog print:@"成功"];
+//    } failure:^(id fail) {
+//        [STLog print:fail];
+//    }];
+//}
 
 
 -(void)initDB{
-    [[STDataBaseUtil sharedSTDataBaseUtil]createTable:@"sthl" model:[UserModel class]];
+    [[STDataBaseUtil sharedSTDataBaseUtil]createTable:ST_TABLENAME model:[UserModel class]];
     [[AccountManager sharedAccountManager]getUserModel];
 }
 
 
 
 -(void)initJPush:(NSDictionary *)launchOptions {
-    [STUserDefaults saveKeyValue:UD_PUSHID value:@"171976fa8adb6fd285d"];
+    [STUserDefaults saveKeyValue:UD_PUSHID value:JPUSH_APPID];
 
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
     
     [JPUSHService setupWithOption:launchOptions appKey:JPUSH_APPKEY
-                          channel:@"st"
+                          channel:CHANNELID
                  apsForProduction:NO
             advertisingIdentifier:nil];
     
@@ -133,6 +178,12 @@
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:model.title message:model.alert delegate:self cancelButtonTitle:MSG_CONFIRM otherButtonTitles:nil, nil];
         alert.tag = model.serviceType;
         [alert show];
+    }else if(model.serviceType == Push_FACE_ADD){
+        if([model.alert containsString:@"失败"]){
+            [[STObserverManager sharedSTObserverManager] sendMessage:Notify_Face_Add msg:@NO];
+        }else{
+            [[STObserverManager sharedSTObserverManager] sendMessage:Notify_Face_Add msg:@YES];
+        }
     }else{
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:model.title message:model.alert delegate:self cancelButtonTitle:MSG_CANCEL otherButtonTitles:MSG_SEE, nil];
         alert.tag = model.serviceType;
@@ -251,12 +302,8 @@
 #pragma mark 3D Touch
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler{
     if ([shortcutItem.type isEqualToString:@"ShortCutOpen"]) {
-        [STLog print:@"打开App"];
     }
     
-    if ([shortcutItem.type isEqualToString:@"ShortCutShare"]) {
-        [STLog print:@"分享"];
-    }
     
 }
 
@@ -315,7 +362,7 @@
 
     }];
     UIAlertAction *updateAction = [UIAlertAction actionWithTitle:@"更新" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-           [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124?mt=8&v0=WWW-GCCN-ITSTOP100-FREEAPPS&l=&ign-mpt=uo%3D4"]];
+           [[UIApplication sharedApplication] openURL:[NSURL URLWithString:APPSTORE_DOWNLOAD_URL]];
 
     }];
 
@@ -323,6 +370,49 @@
     [alertController addAction:updateAction];
     [_window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
+
+//
+//- (void)getOriginalImages
+//{
+//    // 获得所有的自定义相簿
+//    PHFetchResult<PHAssetCollection *> *assetCollections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+//    // 遍历所有的自定义相簿
+//    for (PHAssetCollection *assetCollection in assetCollections) {
+//        [self enumerateAssetsInAssetCollection:assetCollection original:YES];
+//    }
+//
+//    // 获得相机胶卷
+//    PHAssetCollection *cameraRoll = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeSmartAlbumUserLibrary options:nil].lastObject;
+//    // 遍历相机胶卷,获取大图
+//    [self enumerateAssetsInAssetCollection:cameraRoll original:YES];
+//}
+//
+//- (void)enumerateAssetsInAssetCollection:(PHAssetCollection *)assetCollection original:(BOOL)original
+//{
+//    NSLog(@"相簿名:%@", assetCollection.localizedTitle);
+//
+//    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+//    // 同步获得图片, 只会返回1张图片
+//    options.synchronous = YES;
+//
+//    // 获得某个相簿中的所有PHAsset对象
+//    PHFetchResult<PHAsset *> *assets = [PHAsset fetchAssetsInAssetCollection:assetCollection options:nil];
+//    for (PHAsset *asset in assets) {
+//        // 是否要原图
+//        CGSize size = original ? CGSizeMake(asset.pixelWidth, asset.pixelHeight) : CGSizeZero;
+//
+//        // 从asset中获得图片
+//        [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+//            NSLog(@"%@", result);
+//            [imageDatas addObject:result];
+//        }];
+//    }
+//}
+//
+
+
+
+
 
 
 

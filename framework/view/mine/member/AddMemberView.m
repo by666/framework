@@ -73,7 +73,11 @@
     
     _takePhotoBTN.clipsToBounds = YES;
     
-    _faceTipsLabel = [[UILabel alloc]initWithFont:STFont(14) text:MSG_ADDMEMBER_FACE_TIPS textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
+    NSString *faceTips = MSG_ADDMEMBER_FACE_TIPS;
+    if(!IS_NS_STRING_EMPTY(_mViewModel.model.faceUrl)){
+        faceTips = MSG_ADDMEMBER_FACE_TIPS2;
+    }
+    _faceTipsLabel = [[UILabel alloc]initWithFont:STFont(14) text:faceTips textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
     _faceTipsLabel.frame = CGRectMake(0, STHeight(254), ScreenWidth, STHeight(14));
     [self addSubview:_faceTipsLabel];
     
@@ -171,6 +175,7 @@
 }
 
 -(void)updateView:(NSString *)imagePath{
+    _faceTipsLabel.text =  MSG_ADDMEMBER_FACE_TIPS2;
     _mViewModel.model.facePath = imagePath;
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     [_takePhotoBTN setImage:image forState:UIControlStateNormal];

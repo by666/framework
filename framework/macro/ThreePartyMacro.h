@@ -9,9 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+
+#pragma mark app渠道号，sql表，下载地址
+
+#define CHANNELID @"st"
+#define ST_TABLENAME @"sthl"
+#define APPSTORE_DOWNLOAD_URL @"https://itunes.apple.com/us/app/%E6%99%BA%E6%85%A7%E5%AE%B6iot/id1428381007?l=zh&ls=1&mt=8"
+
+
 #pragma mark 定义三方库appid,appkey....
 
 #define IFLY_FACE_APPID @"5add784a"
+#define JPUSH_APPID @"171976fa8adb6fd285d"
 #define JPUSH_APPKEY @"49828a3f5529d51df648f0ad"
 #define WECHAT_APPID @"wxbc2d656f23e6c0f1"
 #define BUGLY_APPID @"7793f1d5e4"

@@ -82,7 +82,7 @@
     tipsView.backgroundColor = [c35 colorWithAlphaComponent:0.6f];
     [_previewView addSubview:tipsView];
     
-    _subLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_FACEENTER_SUBTITLE textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    _subLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"把脸移入框内" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
     _subLabel.frame = CGRectMake(0, STHeight(23), width , STHeight(16));
     [tipsView addSubview:_subLabel];
     

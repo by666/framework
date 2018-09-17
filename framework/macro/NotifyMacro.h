@@ -22,6 +22,9 @@
 #define Notify_DeleteCheck @"delete_check"
 #define Notify_UpdateHabitant @"update_habitant"
 
+
+#define Notify_Face_Add @"face_add"
+
 #define Notify_Message_Statu_Change @"msg_statu_change"
 
 #define Notify_Update_User_Face @"update_user_face"

@@ -220,10 +220,17 @@ static AFNetworkReachabilityStatus mStatus = AFNetworkReachabilityStatusUnknown;
 +(void)handleFail : (NSURLResponse *)response failure:(void (^)(int))failure url:(NSString *)url{
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
     NSInteger errorCode = httpResponse.statusCode;
-    if(errorCode == STATU_USERAUTH_FAIL || errorCode == STATU_SERVER_FAIL){
-        [[STObserverManager sharedSTObserverManager]sendMessage:Notify_AUTHFAIL msg:nil];
+    NSString *errorInfo = @"";
+    if(httpResponse == nil){
+        errorInfo = @"请在hi1008-5G环境下访问！";
+        errorCode = STATU_ERRORURL;
+        [STToastUtil showFailureAlertSheet:errorInfo];
+    }else{
+        errorInfo = [NSString stringWithFormat:@"\n------------------------------------\n***url:%@\n***网络错误码:%ld\n------------------------------------",url,errorCode];
+        if(errorCode == STATU_USERAUTH_FAIL || errorCode == STATU_SERVER_FAIL){
+            [[STObserverManager sharedSTObserverManager]sendMessage:Notify_AUTHFAIL msg:nil];
+        }
     }
-    NSString *errorInfo = [NSString stringWithFormat:@"\n------------------------------------\n***url:%@\n***网络错误码:%ld\n------------------------------------",url,errorCode];
     [STLog print:errorInfo];
     dispatch_main_async_safe(^{
         failure((int)errorCode);
@@ -267,12 +274,59 @@ static AFNetworkReachabilityStatus mStatus = AFNetworkReachabilityStatusUnknown;
     [manager startMonitoring];
 }
 
+//过滤后台返回字符串中的标签
++ (NSString *)flattenHTML:(NSString *)html {
+    
+    NSScanner *theScanner;
+    NSString *text = nil;
+    
+    theScanner = [NSScanner scannerWithString:html];
+    
+    while ([theScanner isAtEnd] == NO) {
+        // find start of tag
+        [theScanner scanUpToString:@"<" intoString:NULL] ;
+        // find end of tag
+        [theScanner scanUpToString:@">" intoString:&text] ;
+        // replace the found tag with a space
+        //(you can filter multi-spaces out later if you wish)
+        html = [html stringByReplacingOccurrencesOfString:
+                [NSString stringWithFormat:@"%@>", text]
+                                               withString:@""];
+    }
+    return html;
+}
 
 +(Boolean)isNetAvailable{
-    if(mStatus == AFNetworkReachabilityStatusNotReachable){
+    // 1.将网址初始化成一个OC字符串对象
+    NSString *urlStr = @"http://captive.apple.com";
+    // 如果网址中存在中文,进行URLEncode
+    NSString *newUrlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    // 2.构建网络URL对象, NSURL
+    NSURL *url = [NSURL URLWithString:newUrlStr];
+    // 3.创建网络请求
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:3];
+    // 创建同步链接
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    NSString* result1 = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    //解析html页面
+    NSString *str = [self flattenHTML:result1];
+    //除掉换行符
+    NSString *nstr = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    
+    if ([nstr isEqualToString:@"SuccessSuccess"])
+    {
+        // NSLog(@"可以上网了");
+        //   [PronetwayGeneralHandle shareHandle].NetworkCanUse = YES;
+        return YES;
+    }else {
+        // NSLog(@"未联网");
+        //[self showNetworkStatus:@"未联网"];
+        //   [PronetwayGeneralHandle shareHandle].NetworkCanUse = NO;
         return NO;
     }
-    return YES;
 }
 
 
@@ -298,8 +352,10 @@ static AFNetworkReachabilityStatus mStatus = AFNetworkReachabilityStatusUnknown;
     NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:nil error:nil];
     
     //content-type
-    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
+//    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+
+    [request addValue:@"aapplication/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+
     //body
     NSData *body  =[content dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -312,12 +368,7 @@ static AFNetworkReachabilityStatus mStatus = AFNetworkReachabilityStatusUnknown;
             long error_code = [[dic objectForKey:@"error_code"] longValue];
             if(error_code == 0){
                 id result = [dic objectForKey:@"result"];
-                int faceNum = [[result objectForKey:@"face_num"] intValue];
-                if(faceNum > 1){
-                    failure(MSG_FACEDETECT_MUTIPLE);
-                }else{
-                    success(result);
-                }
+                success(result);
             }else{
                 failure(MSG_FACEDETECT_FAIL);
             }

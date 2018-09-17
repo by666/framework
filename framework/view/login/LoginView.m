@@ -23,7 +23,6 @@
 @property(strong, nonatomic) UITextField *verifyCodeTF;
 @property(strong, nonatomic) UIButton *sendVerifyCodeBtn;
 @property(strong, nonatomic) UILabel *tipLabel;
-@property(strong, nonatomic) LoginPage *page;
 
 @property(assign, nonatomic) Boolean needBack;
 
@@ -32,10 +31,9 @@
 
 @implementation LoginView
 
--(instancetype)initWithViewModel:(LoginViewModel *)viewModel controller:(LoginPage *)page needBack:(Boolean)needBack{
+-(instancetype)initWithViewModel:(LoginViewModel *)viewModel  needBack:(Boolean)needBack{
     if(self == [super init]){
         _mViewModel = viewModel;
-        _page = page;
         _needBack = needBack;
         [self initView];
     }
@@ -223,6 +221,10 @@
         _loginBtn.enabled = NO;
         [_loginBtn setTitleColor:[cwhite colorWithAlphaComponent:0.5f] forState:UIControlStateNormal];
     }
+}
+
+-(void)showBackBtn:(Boolean)needBack{
+    _backBtn.hidden = !needBack;
 }
 
 @end
