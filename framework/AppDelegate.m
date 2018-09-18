@@ -25,7 +25,6 @@
 #import "CommunityPage.h"
 #import "MessagePage.h"
 #import "IDLFaceSDK/IDLFaceSDK.h"
-#import "FaceParameterConfig.h"
 #import "PageManager.h"
 #import "STNetUtil.h"
 #import "STUploadImageUtil.h"
@@ -42,7 +41,8 @@
 #import <Photos/Photos.h>
 #import "STFileUtil.h"
 #import "LocalFaceDetect.h"
-
+#import "WYManager.h"
+#import "VideoPage.h"
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate,UIAlertViewDelegate>
 
 @end
@@ -71,6 +71,7 @@
     [self initWechat];
     [self initNet];
     [self initBaidu];
+    [[WYManager sharedWYManager]initSDK];
     [[AccountManager sharedAccountManager] clearApplyModel];
     WS(weakSelf)
     [STUpdateUtil checkUpdate:^(NSString *appname, NSString *url, double version) {
@@ -118,6 +119,12 @@
 //            [self detect:image];
 //        }
 //    });
+    
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [VideoPage show:[[PageManager sharedPageManager]getCurrentPage]];
+
+        });
+    
     return YES;
 }
 
@@ -232,6 +239,7 @@
         [[FaceSDKManager sharedInstance] setLicenseID:FACE_LICENSE_ID andLocalLicenceFile:licensePath];
     }
 }
+
 
 
 

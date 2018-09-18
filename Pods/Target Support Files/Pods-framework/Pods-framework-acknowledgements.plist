@@ -280,6 +280,16 @@ THE SOFTWARE.</string>
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Copyright 2017 Netease </string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>NIMSDK</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>**Copyright (c) 2012 - 2015, GitHub, Inc.**
 **All rights reserved.**
 

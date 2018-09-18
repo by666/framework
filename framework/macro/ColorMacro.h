@@ -54,6 +54,7 @@
 #define c37 [STColorUtil colorWithHexString:@"#E9EFF7"]
 #define c38 [STColorUtil colorWithHexString:@"#AEB4BC"]
 #define c38a [STColorUtil colorWithHexString:@"#AEB4BC" alpha:0.3f]
+#define c39 [STColorUtil colorWithHexString:@"#0A0F2F"]
 
 
 #define cwhite [STColorUtil colorWithHexString:@"#ffffff"]

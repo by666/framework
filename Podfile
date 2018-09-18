@@ -17,5 +17,6 @@ pod 'JCore', '1.2.0'
 pod 'LBXScan', '~> 2.3'
 pod 'Bugly'
 pod 'AliyunOSSiOS'
+pod 'NIMSDK'
 
 end

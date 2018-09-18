@@ -290,6 +290,9 @@
 		00F24C3420EA2222003BBE94 /* FaceLoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F24C2E20EA2221003BBE94 /* FaceLoginPage.m */; };
 		00F24C3520EA2222003BBE94 /* FaceLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F24C2F20EA2221003BBE94 /* FaceLoginView.m */; };
 		00F24C3620EA2222003BBE94 /* FaceLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F24C3320EA2222003BBE94 /* FaceLoginViewModel.m */; };
+		CF2D992921509B0700745817 /* VideoPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D992821509B0700745817 /* VideoPage.m */; };
+		CF2D992D21509B2400745817 /* VideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D992C21509B2400745817 /* VideoView.m */; };
+		CF2D993521509FBC00745817 /* WYManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D993421509FBC00745817 /* WYManager.m */; };
 		CF43E3CF20B57F7C0069AAFA /* VisitorHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF43E3CE20B57F7C0069AAFA /* VisitorHistoryView.m */; };
 		CF43E3D220B57F9B0069AAFA /* VisitorHistoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF43E3D120B57F9B0069AAFA /* VisitorHistoryViewModel.m */; };
 		CF43E3D520B5802B0069AAFA /* VisitorHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF43E3D420B5802B0069AAFA /* VisitorHistoryModel.m */; };
@@ -302,6 +305,23 @@
 		CFB6D1B420B544BB00A0863B /* STCarNumLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6D1B320B544BB00A0863B /* STCarNumLayerView.m */; };
 		CFB6D1B720B55D6B00A0863B /* PassView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6D1B620B55D6B00A0863B /* PassView.m */; };
 		CFB6D1BA20B55DA200A0863B /* VisitorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6D1B920B55DA200A0863B /* VisitorModel.m */; };
+		CFFCFA5C2150A73700CF2071 /* renderer_yuv444p10le.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA3A2150A73700CF2071 /* renderer_yuv444p10le.c */; };
+		CFFCFA5D2150A73700CF2071 /* common.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA3B2150A73700CF2071 /* common.c */; };
+		CFFCFA5E2150A73700CF2071 /* mvp.vsh.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA3E2150A73700CF2071 /* mvp.vsh.c */; };
+		CFFCFA5F2150A73700CF2071 /* renderer_rgb.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA3F2150A73700CF2071 /* renderer_rgb.c */; };
+		CFFCFA602150A73700CF2071 /* renderer_yuv420p.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA402150A73700CF2071 /* renderer_yuv420p.c */; };
+		CFFCFA612150A73700CF2071 /* renderer_yuv420sp.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA412150A73700CF2071 /* renderer_yuv420sp.c */; };
+		CFFCFA622150A73700CF2071 /* shader.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA422150A73700CF2071 /* shader.c */; };
+		CFFCFA632150A73700CF2071 /* renderer.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA432150A73700CF2071 /* renderer.c */; };
+		CFFCFA642150A73700CF2071 /* yuv444p10le.fsh.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA452150A73700CF2071 /* yuv444p10le.fsh.c */; };
+		CFFCFA652150A73700CF2071 /* yuv420p.fsh.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA462150A73700CF2071 /* yuv420p.fsh.c */; };
+		CFFCFA662150A73700CF2071 /* yuv420sp.fsh.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA472150A73700CF2071 /* yuv420sp.fsh.c */; };
+		CFFCFA672150A73700CF2071 /* rgb.fsh.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA482150A73700CF2071 /* rgb.fsh.c */; };
+		CFFCFA682150A73700CF2071 /* color.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA492150A73700CF2071 /* color.c */; };
+		CFFCFA692150A73700CF2071 /* IJKSDLGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA532150A73700CF2071 /* IJKSDLGLView.m */; };
+		CFFCFA6A2150A73700CF2071 /* ijksdl_timer.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA5B2150A73700CF2071 /* ijksdl_timer.c */; };
+		CFFCFA6D2150AB5B00CF2071 /* NTESGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA6B2150AB5B00CF2071 /* NTESGLView.m */; };
+		CFFCFA7121510B4F00CF2071 /* VideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA7021510B4F00CF2071 /* VideoViewModel.m */; };
 		F7CC18FEA014615A522B69A1 /* Pods_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD31C7F288F0669DDF6673 /* Pods_framework.framework */; };
 /* End PBXBuildFile section */
 
@@ -850,7 +870,7 @@
 		00D3248C208593CA001EC82F /* NotifyMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotifyMacro.h; sourceTree = "<group>"; };
 		00D3248F208594F4001EC82F /* STLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STLog.h; sourceTree = "<group>"; };
 		00D32490208594F4001EC82F /* STLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STLog.m; sourceTree = "<group>"; };
-		00D3249220859626001EC82F /* ThreePartyMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreePartyMacro.h; sourceTree = "<group>"; };
+		00D3249220859626001EC82F /* ThirdPartyMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdPartyMacro.h; sourceTree = "<group>"; };
 		00D32495208596EC001EC82F /* UILabel+StringFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+StringFrame.m"; sourceTree = "<group>"; };
 		00D32496208596EC001EC82F /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		00D32497208596EC001EC82F /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
@@ -896,6 +916,12 @@
 		44CB19A2824E78F5D9947AB8 /* Pods-framework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-framework.release.xcconfig"; path = "Pods/Target Support Files/Pods-framework/Pods-framework.release.xcconfig"; sourceTree = "<group>"; };
 		70AB2E3AF702425BEFAEA1B9 /* Pods-framework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-framework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-framework/Pods-framework.debug.xcconfig"; sourceTree = "<group>"; };
 		C7AD31C7F288F0669DDF6673 /* Pods_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF2D992721509B0700745817 /* VideoPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPage.h; sourceTree = "<group>"; };
+		CF2D992821509B0700745817 /* VideoPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPage.m; sourceTree = "<group>"; };
+		CF2D992B21509B2400745817 /* VideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoView.h; sourceTree = "<group>"; };
+		CF2D992C21509B2400745817 /* VideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoView.m; sourceTree = "<group>"; };
+		CF2D993321509FBC00745817 /* WYManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYManager.h; sourceTree = "<group>"; };
+		CF2D993421509FBC00745817 /* WYManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYManager.m; sourceTree = "<group>"; };
 		CF43E3CD20B57F7C0069AAFA /* VisitorHistoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorHistoryView.h; sourceTree = "<group>"; };
 		CF43E3CE20B57F7C0069AAFA /* VisitorHistoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorHistoryView.m; sourceTree = "<group>"; };
 		CF43E3D020B57F9B0069AAFA /* VisitorHistoryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorHistoryViewModel.h; sourceTree = "<group>"; };
@@ -921,6 +947,44 @@
 		CFB6D1B620B55D6B00A0863B /* PassView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PassView.m; sourceTree = "<group>"; };
 		CFB6D1B820B55DA200A0863B /* VisitorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorModel.h; sourceTree = "<group>"; };
 		CFB6D1B920B55DA200A0863B /* VisitorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorModel.m; sourceTree = "<group>"; };
+		CFFCFA362150A73700CF2071 /* ijksdl_gles2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_gles2.h; sourceTree = "<group>"; };
+		CFFCFA372150A73700CF2071 /* ijksdl_stdinc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_stdinc.h; sourceTree = "<group>"; };
+		CFFCFA382150A73700CF2071 /* ijksdl_vout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_vout.h; sourceTree = "<group>"; };
+		CFFCFA3A2150A73700CF2071 /* renderer_yuv444p10le.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = renderer_yuv444p10le.c; sourceTree = "<group>"; };
+		CFFCFA3B2150A73700CF2071 /* common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = common.c; sourceTree = "<group>"; };
+		CFFCFA3C2150A73700CF2071 /* internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
+		CFFCFA3E2150A73700CF2071 /* mvp.vsh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mvp.vsh.c; sourceTree = "<group>"; };
+		CFFCFA3F2150A73700CF2071 /* renderer_rgb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = renderer_rgb.c; sourceTree = "<group>"; };
+		CFFCFA402150A73700CF2071 /* renderer_yuv420p.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = renderer_yuv420p.c; sourceTree = "<group>"; };
+		CFFCFA412150A73700CF2071 /* renderer_yuv420sp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = renderer_yuv420sp.c; sourceTree = "<group>"; };
+		CFFCFA422150A73700CF2071 /* shader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shader.c; sourceTree = "<group>"; };
+		CFFCFA432150A73700CF2071 /* renderer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = renderer.c; sourceTree = "<group>"; };
+		CFFCFA452150A73700CF2071 /* yuv444p10le.fsh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yuv444p10le.fsh.c; sourceTree = "<group>"; };
+		CFFCFA462150A73700CF2071 /* yuv420p.fsh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yuv420p.fsh.c; sourceTree = "<group>"; };
+		CFFCFA472150A73700CF2071 /* yuv420sp.fsh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yuv420sp.fsh.c; sourceTree = "<group>"; };
+		CFFCFA482150A73700CF2071 /* rgb.fsh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rgb.fsh.c; sourceTree = "<group>"; };
+		CFFCFA492150A73700CF2071 /* color.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = color.c; sourceTree = "<group>"; };
+		CFFCFA4A2150A73700CF2071 /* ijksdl_mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_mutex.h; sourceTree = "<group>"; };
+		CFFCFA4B2150A73700CF2071 /* ijksdl_fourcc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_fourcc.h; sourceTree = "<group>"; };
+		CFFCFA4C2150A73700CF2071 /* ijksdl_video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_video.h; sourceTree = "<group>"; };
+		CFFCFA4D2150A73700CF2071 /* ijksdl_endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_endian.h; sourceTree = "<group>"; };
+		CFFCFA4E2150A73700CF2071 /* ijksdl_class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_class.h; sourceTree = "<group>"; };
+		CFFCFA4F2150A73700CF2071 /* ijksdl_timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_timer.h; sourceTree = "<group>"; };
+		CFFCFA502150A73700CF2071 /* ijksdl_inc_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_inc_internal.h; sourceTree = "<group>"; };
+		CFFCFA522150A73700CF2071 /* ijksdl_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_ios.h; sourceTree = "<group>"; };
+		CFFCFA532150A73700CF2071 /* IJKSDLGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJKSDLGLView.m; sourceTree = "<group>"; };
+		CFFCFA542150A73700CF2071 /* ijksdl_vout_overlay_videotoolbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_vout_overlay_videotoolbox.h; sourceTree = "<group>"; };
+		CFFCFA552150A73700CF2071 /* IJKSDLGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJKSDLGLView.h; sourceTree = "<group>"; };
+		CFFCFA562150A73700CF2071 /* ijksdl_thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_thread.h; sourceTree = "<group>"; };
+		CFFCFA572150A73700CF2071 /* ijksdl_log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_log.h; sourceTree = "<group>"; };
+		CFFCFA582150A73700CF2071 /* ijksdl_misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_misc.h; sourceTree = "<group>"; };
+		CFFCFA592150A73700CF2071 /* ijksdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl.h; sourceTree = "<group>"; };
+		CFFCFA5A2150A73700CF2071 /* ijksdl_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_error.h; sourceTree = "<group>"; };
+		CFFCFA5B2150A73700CF2071 /* ijksdl_timer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ijksdl_timer.c; sourceTree = "<group>"; };
+		CFFCFA6B2150AB5B00CF2071 /* NTESGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESGLView.m; sourceTree = "<group>"; };
+		CFFCFA6C2150AB5B00CF2071 /* NTESGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESGLView.h; sourceTree = "<group>"; };
+		CFFCFA6F21510B4F00CF2071 /* VideoViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoViewModel.h; path = framework/viewmodel/video/VideoViewModel.h; sourceTree = SOURCE_ROOT; };
+		CFFCFA7021510B4F00CF2071 /* VideoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoViewModel.m; path = framework/viewmodel/video/VideoViewModel.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1044,15 +1108,16 @@
 			path = common;
 			sourceTree = "<group>";
 		};
-		0006DF53208DBB7B005A4465 /* threeparty */ = {
+		0006DF53208DBB7B005A4465 /* thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				CF2D993221509F8800745817 /* wangyi */,
 				003B27D8210733E000FD24FE /* wechat */,
 				00AD859120EE20EA001D272C /* PermissionDetector.h */,
 				00AD859020EE20E9001D272C /* PermissionDetector.m */,
 				0070FFE820D8F3CF00A67B45 /* face */,
 			);
-			path = threeparty;
+			path = thirdparty;
 			sourceTree = "<group>";
 		};
 		002E235F212A74A600E8B93D /* face */ = {
@@ -1998,7 +2063,7 @@
 			isa = PBXGroup;
 			children = (
 				00812BC62091B34400E2E70B /* framework.entitlements */,
-				0006DF53208DBB7B005A4465 /* threeparty */,
+				0006DF53208DBB7B005A4465 /* thirdparty */,
 				00D324B52085EE3F001EC82F /* viewcontroller */,
 				007B1F6320858F1D009EA9F1 /* view */,
 				007B1F6220858F17009EA9F1 /* model */,
@@ -2101,6 +2166,7 @@
 		007B1F6320858F1D009EA9F1 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				CF2D992A21509B1300745817 /* video */,
 				CF8E685921254BA800C2D214 /* face */,
 				0038F10F20CA68F300094EB9 /* deviceshare */,
 				0038F0D920C7D5C300094EB9 /* reportfix */,
@@ -2120,7 +2186,7 @@
 				007B1F6620858F87009EA9F1 /* STPrefixHeader.pch */,
 				007B1F6720859123009EA9F1 /* APIMacro.h */,
 				00D3248C208593CA001EC82F /* NotifyMacro.h */,
-				00D3249220859626001EC82F /* ThreePartyMacro.h */,
+				00D3249220859626001EC82F /* ThirdPartyMacro.h */,
 				00D324A4208597DF001EC82F /* ColorMacro.h */,
 				00CCE9B5208EDCAA00032B4A /* Constant.h */,
 				CFB6D1AC20B5363600A0863B /* EnumMacro.h */,
@@ -2148,6 +2214,7 @@
 		00D324B42085EE25001EC82F /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				CFFCFA6E21510B1800CF2071 /* video */,
 				002E235F212A74A600E8B93D /* face */,
 				0038F10820CA654D00094EB9 /* deviceshare */,
 				0038F0DA20C7D5CC00094EB9 /* reportfix */,
@@ -2164,6 +2231,7 @@
 		00D324B52085EE3F001EC82F /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				CF2D992621509AED00745817 /* video */,
 				CF8E685A21254BB600C2D214 /* face */,
 				0038F0ED20C90D0100094EB9 /* deviceshare */,
 				0038F0D820C7D59F00094EB9 /* reportfix */,
@@ -2276,6 +2344,36 @@
 			path = page;
 			sourceTree = "<group>";
 		};
+		CF2D992621509AED00745817 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				CF2D992721509B0700745817 /* VideoPage.h */,
+				CF2D992821509B0700745817 /* VideoPage.m */,
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
+		CF2D992A21509B1300745817 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				CF2D992B21509B2400745817 /* VideoView.h */,
+				CF2D992C21509B2400745817 /* VideoView.m */,
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
+		CF2D993221509F8800745817 /* wangyi */ = {
+			isa = PBXGroup;
+			children = (
+				CFFCFA6C2150AB5B00CF2071 /* NTESGLView.h */,
+				CFFCFA6B2150AB5B00CF2071 /* NTESGLView.m */,
+				CFFCFA352150A73700CF2071 /* ijksdl */,
+				CF2D993321509FBC00745817 /* WYManager.h */,
+				CF2D993421509FBC00745817 /* WYManager.m */,
+			);
+			path = wangyi;
+			sourceTree = "<group>";
+		};
 		CF8E685921254BA800C2D214 /* face */ = {
 			isa = PBXGroup;
 			children = (
@@ -2329,6 +2427,89 @@
 			path = visitorhistory;
 			sourceTree = "<group>";
 		};
+		CFFCFA352150A73700CF2071 /* ijksdl */ = {
+			isa = PBXGroup;
+			children = (
+				CFFCFA362150A73700CF2071 /* ijksdl_gles2.h */,
+				CFFCFA372150A73700CF2071 /* ijksdl_stdinc.h */,
+				CFFCFA382150A73700CF2071 /* ijksdl_vout.h */,
+				CFFCFA392150A73700CF2071 /* gles2 */,
+				CFFCFA4A2150A73700CF2071 /* ijksdl_mutex.h */,
+				CFFCFA4B2150A73700CF2071 /* ijksdl_fourcc.h */,
+				CFFCFA4C2150A73700CF2071 /* ijksdl_video.h */,
+				CFFCFA4D2150A73700CF2071 /* ijksdl_endian.h */,
+				CFFCFA4E2150A73700CF2071 /* ijksdl_class.h */,
+				CFFCFA4F2150A73700CF2071 /* ijksdl_timer.h */,
+				CFFCFA502150A73700CF2071 /* ijksdl_inc_internal.h */,
+				CFFCFA512150A73700CF2071 /* ios */,
+				CFFCFA562150A73700CF2071 /* ijksdl_thread.h */,
+				CFFCFA572150A73700CF2071 /* ijksdl_log.h */,
+				CFFCFA582150A73700CF2071 /* ijksdl_misc.h */,
+				CFFCFA592150A73700CF2071 /* ijksdl.h */,
+				CFFCFA5A2150A73700CF2071 /* ijksdl_error.h */,
+				CFFCFA5B2150A73700CF2071 /* ijksdl_timer.c */,
+			);
+			path = ijksdl;
+			sourceTree = "<group>";
+		};
+		CFFCFA392150A73700CF2071 /* gles2 */ = {
+			isa = PBXGroup;
+			children = (
+				CFFCFA3A2150A73700CF2071 /* renderer_yuv444p10le.c */,
+				CFFCFA3B2150A73700CF2071 /* common.c */,
+				CFFCFA3C2150A73700CF2071 /* internal.h */,
+				CFFCFA3D2150A73700CF2071 /* vsh */,
+				CFFCFA3F2150A73700CF2071 /* renderer_rgb.c */,
+				CFFCFA402150A73700CF2071 /* renderer_yuv420p.c */,
+				CFFCFA412150A73700CF2071 /* renderer_yuv420sp.c */,
+				CFFCFA422150A73700CF2071 /* shader.c */,
+				CFFCFA432150A73700CF2071 /* renderer.c */,
+				CFFCFA442150A73700CF2071 /* fsh */,
+				CFFCFA492150A73700CF2071 /* color.c */,
+			);
+			path = gles2;
+			sourceTree = "<group>";
+		};
+		CFFCFA3D2150A73700CF2071 /* vsh */ = {
+			isa = PBXGroup;
+			children = (
+				CFFCFA3E2150A73700CF2071 /* mvp.vsh.c */,
+			);
+			path = vsh;
+			sourceTree = "<group>";
+		};
+		CFFCFA442150A73700CF2071 /* fsh */ = {
+			isa = PBXGroup;
+			children = (
+				CFFCFA452150A73700CF2071 /* yuv444p10le.fsh.c */,
+				CFFCFA462150A73700CF2071 /* yuv420p.fsh.c */,
+				CFFCFA472150A73700CF2071 /* yuv420sp.fsh.c */,
+				CFFCFA482150A73700CF2071 /* rgb.fsh.c */,
+			);
+			path = fsh;
+			sourceTree = "<group>";
+		};
+		CFFCFA512150A73700CF2071 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				CFFCFA522150A73700CF2071 /* ijksdl_ios.h */,
+				CFFCFA532150A73700CF2071 /* IJKSDLGLView.m */,
+				CFFCFA542150A73700CF2071 /* ijksdl_vout_overlay_videotoolbox.h */,
+				CFFCFA552150A73700CF2071 /* IJKSDLGLView.h */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		CFFCFA6E21510B1800CF2071 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				CFFCFA6F21510B4F00CF2071 /* VideoViewModel.h */,
+				CFFCFA7021510B4F00CF2071 /* VideoViewModel.m */,
+			);
+			name = video;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		F4CB1C08952DCB6FCA6926B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2380,6 +2561,7 @@
 				007B1F2720858EB3009EA9F1 /* Frameworks */,
 				007B1F2820858EB3009EA9F1 /* Resources */,
 				E16904A781865EC1EDCA8D82 /* [CP] Embed Pods Frameworks */,
+				11583A80CBAD1EF67FD6C116 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 				003276B920941C0500EDE5F8 /* PBXBuildRule */,
@@ -2526,6 +2708,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		11583A80CBAD1EF67FD6C116 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-framework/Pods-framework-resources.sh",
+				"${PODS_ROOT}/NIMSDK/NIMAVChat/Resources/NMCVideoFilter.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NMCVideoFilter.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-framework/Pods-framework-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E16904A781865EC1EDCA8D82 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2541,6 +2741,9 @@
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${PODS_ROOT}/NIMSDK/NIMSDK/NIMSDK.framework",
+				"${PODS_ROOT}/NIMSDK/NIMAVChat/NIMAVChat.framework",
+				"${PODS_ROOT}/NIMSDK/NIMAVChat/NVS.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/ZBarSDK/ZBarSDK.framework",
@@ -2555,6 +2758,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIMSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIMAVChat.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZBarSDK.framework",
@@ -2571,6 +2777,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFCFA5D2150A73700CF2071 /* common.c in Sources */,
 				00D3249C208596ED001EC82F /* UIView+Frame.m in Sources */,
 				004EF56120A9AD4A00BA9602 /* BindPhoneModel.m in Sources */,
 				004EF57920AAC50900BA9602 /* MainModel.m in Sources */,
@@ -2581,13 +2788,16 @@
 				004EF57020AA8F1100BA9602 /* CircularProgressView.m in Sources */,
 				002F945920B25E0B00F84094 /* CarDetailView.m in Sources */,
 				0038F1C720CFAF1400094EB9 /* STToastUtil.m in Sources */,
+				CFFCFA5E2150A73700CF2071 /* mvp.vsh.c in Sources */,
 				003EDAD520BD5A8400CFCFE9 /* MessageViewModel.m in Sources */,
 				004EF60720AD892B00BA9602 /* AddMemberViewModel.m in Sources */,
 				0038F1CE20CFAFB700094EB9 /* STExtendedLabel.m in Sources */,
+				CFFCFA6D2150AB5B00CF2071 /* NTESGLView.m in Sources */,
 				003EDB1220C147E400CFCFE9 /* PropertyMsgCell.m in Sources */,
 				004EF51720A16DC400BA9602 /* STAlertUtil.m in Sources */,
 				0039FC2920942ABD0044D92E /* STObserverManager.m in Sources */,
 				0038F0E020C7D6B300094EB9 /* ReportFixViewModel.m in Sources */,
+				CFFCFA652150A73700CF2071 /* yuv420p.fsh.c in Sources */,
 				00D324A020859778001EC82F /* BaseViewController.m in Sources */,
 				00B6332120E365BA00B558AA /* PassHistoryPage.m in Sources */,
 				0006DF1C20898F70005A4465 /* TouchScrollView.m in Sources */,
@@ -2613,10 +2823,12 @@
 				00DA554A20E0873F00798C9D /* PageManager.m in Sources */,
 				0038F0F920CA298200094EB9 /* FixHistroyPage.m in Sources */,
 				003EDABC20BCF5A100CFCFE9 /* STRecognizeView.m in Sources */,
+				CFFCFA7121510B4F00CF2071 /* VideoViewModel.m in Sources */,
 				0038F1AD20CE455200094EB9 /* DeviceShareHistoryViewModel.m in Sources */,
 				004EF54620A3085C00BA9602 /* MainViewModel.m in Sources */,
 				004EF53A20A2FDB200BA9602 /* BindPhonePage.m in Sources */,
 				00812BC52091A14500E2E70B /* STConvertUtil.m in Sources */,
+				CF2D992D21509B2400745817 /* VideoView.m in Sources */,
 				003B27D72106F62C00FD24FE /* TestModelManager.m in Sources */,
 				00D3249D208596ED001EC82F /* UILabel+ContentSize.m in Sources */,
 				00507FFC20B6ABDD00A976D9 /* AuthStatuViewModel.m in Sources */,
@@ -2635,6 +2847,7 @@
 				002F945C20B25E7C00F84094 /* CarDetailViewModel.m in Sources */,
 				004EF5B320ABFDF200BA9602 /* ProfileViewModel.m in Sources */,
 				003EDADC20BE733300CFCFE9 /* MessageCell.m in Sources */,
+				CFFCFA622150A73700CF2071 /* shader.c in Sources */,
 				003EDAAD20BBD9CF00CFCFE9 /* STSinglePickerLayerView.m in Sources */,
 				004EF53120A2D6AA00BA9602 /* UIButton+Init.m in Sources */,
 				0005ACC12122DDF50090CC3E /* UserInfoView.m in Sources */,
@@ -2656,6 +2869,7 @@
 				0005ACCA212419B10090CC3E /* BaseNoDataView.m in Sources */,
 				004EF58520AAC99A00BA9602 /* MineViewModel.m in Sources */,
 				002F94B420B40F5400F84094 /* OnePaymentViewModel.m in Sources */,
+				CFFCFA692150A73700CF2071 /* IJKSDLGLView.m in Sources */,
 				004EF57D20AAC96900BA9602 /* MinePage.m in Sources */,
 				002F946520B296F900F84094 /* MonthPaymentPage.m in Sources */,
 				00DD35F920D112EC00764F01 /* CommunityPositionModel.m in Sources */,
@@ -2667,6 +2881,7 @@
 				002F944A20AFFAA600F84094 /* AddCarPage.m in Sources */,
 				0038F1B320CE47F900094EB9 /* DeviceShareHistoryView.m in Sources */,
 				00D324E420874874001EC82F /* STRuntimeUtil.m in Sources */,
+				CFFCFA642150A73700CF2071 /* yuv444p10le.fsh.c in Sources */,
 				002F947120B2BB8F00F84094 /* PaymentRecordViewModel.m in Sources */,
 				004EF5F120AD69FB00BA9602 /* MemberView.m in Sources */,
 				004EF59A20AAD44600BA9602 /* MessageSettingPage.m in Sources */,
@@ -2683,6 +2898,7 @@
 				0038F11520CA6AEC00094EB9 /* DeviceShareCell.m in Sources */,
 				003EDAD120BD5A7300CFCFE9 /* MessageView.m in Sources */,
 				0005ACC72122E23F0090CC3E /* UserInfoCell.m in Sources */,
+				CFFCFA662150A73700CF2071 /* yuv420sp.fsh.c in Sources */,
 				004EF52B20A2CD6200BA9602 /* UITextField+Init.m in Sources */,
 				004EF5B020ABFD8900BA9602 /* ProfileView.m in Sources */,
 				CF43E3D520B5802B0069AAFA /* VisitorHistoryModel.m in Sources */,
@@ -2695,16 +2911,19 @@
 				002F949D20B3F8E700F84094 /* VisitorPaymentModel.m in Sources */,
 				004EF58820AAD32F00BA9602 /* ProfilePage.m in Sources */,
 				0038F12B20CA81F000094EB9 /* DeviceShareOrderViewCell.m in Sources */,
+				CFFCFA602150A73700CF2071 /* renderer_yuv420p.c in Sources */,
 				002F945320B02B9E00F84094 /* CarViewCell.m in Sources */,
 				00F24C3520EA2222003BBE94 /* FaceLoginView.m in Sources */,
 				002F949120B3E8C200F84094 /* MonthPaymentView.m in Sources */,
 				004EF52220A2A23C00BA9602 /* LoginViewModel.m in Sources */,
+				CF2D993521509FBC00745817 /* WYManager.m in Sources */,
 				007367B221269B3C004CCA0C /* LocalFaceItemModel.m in Sources */,
 				002F949A20B3F8C600F84094 /* VisitorPaymentCell.m in Sources */,
 				0038F1B920CE5D0400094EB9 /* UITableView+Init.m in Sources */,
 				003EDB0C20C1185000CFCFE9 /* PropertyMsgModel.m in Sources */,
 				004EF56720A9B4E300BA9602 /* NextLoginView.m in Sources */,
 				0070FFE120D3916C00A67B45 /* STLocationManager.m in Sources */,
+				CFFCFA612150A73700CF2071 /* renderer_yuv420sp.c in Sources */,
 				00C54E4121193B1B00189C36 /* MainCell2.m in Sources */,
 				0038F10320CA2EA900094EB9 /* FixModel.m in Sources */,
 				003EDAB320BBEB6200CFCFE9 /* AuthFacePage.m in Sources */,
@@ -2736,6 +2955,7 @@
 				002F94BB20B42A8800F84094 /* VisitorView.m in Sources */,
 				00D3249B208596ED001EC82F /* UILabel+StringFrame.m in Sources */,
 				004EF52820A2A42800BA9602 /* LoginPage.m in Sources */,
+				CF2D992921509B0700745817 /* VideoPage.m in Sources */,
 				003EDAB020BBE70B00CFCFE9 /* CommunityPage.m in Sources */,
 				0038F0F320C918BE00094EB9 /* STCircleLabelView.m in Sources */,
 				00D32491208594F4001EC82F /* STLog.m in Sources */,
@@ -2743,6 +2963,7 @@
 				00C54E4721212DB600189C36 /* AboutView.m in Sources */,
 				004EF54020A2FFA400BA9602 /* BindPhoneViewModel.m in Sources */,
 				CF43E3CF20B57F7C0069AAFA /* VisitorHistoryView.m in Sources */,
+				CFFCFA6A2150A73700CF2071 /* ijksdl_timer.c in Sources */,
 				002F94AA20B407C500F84094 /* CarHistoryModel.m in Sources */,
 				003B27DB2107340F00FD24FE /* WeChatManager.m in Sources */,
 				0038F1B020CE45E000094EB9 /* DeviceShareHistoryModel.m in Sources */,
@@ -2789,22 +3010,26 @@
 				003EDAF720C116E600CFCFE9 /* SystemMsgPage.m in Sources */,
 				0050800620B6B70500A976D9 /* STResultView.m in Sources */,
 				00DA550120DE33BF00798C9D /* PassModel.m in Sources */,
+				CFFCFA5F2150A73700CF2071 /* renderer_rgb.c in Sources */,
 				0050800F20B6BB2600A976D9 /* AuthUserViewModel.m in Sources */,
 				0006DF1820898BDE005A4465 /* STRefreshTableView.m in Sources */,
 				003EDA9B20B80BDD00CFCFE9 /* AddressLayerModel.m in Sources */,
 				004EF5F520AD6A0D00BA9602 /* MemberViewModel.m in Sources */,
 				002F94B020B40ED500F84094 /* OnePaymentPage.m in Sources */,
 				0038F0FC20CA2A9000094EB9 /* FixHistoryView.m in Sources */,
+				CFFCFA632150A73700CF2071 /* renderer.c in Sources */,
 				007367AC21266B8C004CCA0C /* LocalFaceAngleModel.m in Sources */,
 				003EDA8320B7BF5D00CFCFE9 /* CommunityView.m in Sources */,
 				004EF5CB20AC44F900BA9602 /* SettingView.m in Sources */,
 				003EDA8920B7F5AD00CFCFE9 /* STBuildingLayerView.m in Sources */,
 				003EDB0F20C1263800CFCFE9 /* SystemMsgCell.m in Sources */,
+				CFFCFA5C2150A73700CF2071 /* renderer_yuv444p10le.c in Sources */,
 				004EF5E620AC558A00BA9602 /* UpdatePhoneNumViewModel.m in Sources */,
 				002F948E20B3E8A000F84094 /* VisitorPaymentView.m in Sources */,
 				0038F12520CA78E800094EB9 /* DeviceShareOrderView.m in Sources */,
 				003EDAEB20BE94A000CFCFE9 /* EnterAuthCell.m in Sources */,
 				004EF5E320AC557700BA9602 /* UpdatePhoneNumView.m in Sources */,
+				CFFCFA682150A73700CF2071 /* color.c in Sources */,
 				0050800920B6BAEE00A976D9 /* AuthUserPage.m in Sources */,
 				002F946820B298EA00F84094 /* PaymentView.m in Sources */,
 				0038F0D320C7C0C400094EB9 /* OpendoorView.m in Sources */,
@@ -2812,6 +3037,7 @@
 				0070000A20DA46F800A67B45 /* FaceEnterView2.m in Sources */,
 				0070FFE420D3AE4C00A67B45 /* UserCommitModel.m in Sources */,
 				0038F12820CA811900094EB9 /* DeviceShareOrderViewModel.m in Sources */,
+				CFFCFA672150A73700CF2071 /* rgb.fsh.c in Sources */,
 				004EF59720AAD43100BA9602 /* CarHistoryPage.m in Sources */,
 				004EF5FE20AD863E00BA9602 /* STEdgeLabel.m in Sources */,
 				0038F0CF20C7C0A800094EB9 /* OpendoorPage.m in Sources */,
@@ -2997,11 +3223,19 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/framework/threeparty",
-					"$(PROJECT_DIR)/framework/threeparty/ifly",
-					"$(PROJECT_DIR)/framework/threeparty/face",
+					"$(PROJECT_DIR)/framework/thirdparty",
+					"$(PROJECT_DIR)/framework/thirdparty/ifly",
+					"$(PROJECT_DIR)/framework/thirdparty/face",
+					"$(PROJECT_DIR)/framework/thirdparty/wangyi",
 				);
 				GCC_PREFIX_HEADER = framework/macro/STPrefixHeader.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JPush\"",
+					"\"${PODS_ROOT}/Headers/Public/WechatOpenSDK\"",
+					"$(SRCROOT)",
+				);
 				INFOPLIST_FILE = framework/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3010,7 +3244,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/framework/threeparty/jpush",
+					"$(PROJECT_DIR)/framework/thirdparty/jpush",
 				);
 				OTHER_LDFLAGS = (
 					"-l\"WeChatSDK\"",
@@ -3051,6 +3285,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -3067,11 +3302,19 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/framework/threeparty",
-					"$(PROJECT_DIR)/framework/threeparty/ifly",
-					"$(PROJECT_DIR)/framework/threeparty/face",
+					"$(PROJECT_DIR)/framework/thirdparty",
+					"$(PROJECT_DIR)/framework/thirdparty/ifly",
+					"$(PROJECT_DIR)/framework/thirdparty/face",
+					"$(PROJECT_DIR)/framework/thirdparty/wangyi",
 				);
 				GCC_PREFIX_HEADER = framework/macro/STPrefixHeader.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JPush\"",
+					"\"${PODS_ROOT}/Headers/Public/WechatOpenSDK\"",
+					"$(SRCROOT)",
+				);
 				INFOPLIST_FILE = framework/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3080,7 +3323,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/framework/threeparty/jpush",
+					"$(PROJECT_DIR)/framework/thirdparty/jpush",
 				);
 				OTHER_LDFLAGS = (
 					"-l\"WeChatSDK\"",
@@ -3121,6 +3364,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

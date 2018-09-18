@@ -25,6 +25,7 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/BaseNoNetView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/HabitantPage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/AuthStatuView.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/LocalFacePositionModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/STTimeUtil.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/STFileUtil.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/UserInfoViewModel.o
@@ -115,6 +116,7 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/STNetUtil.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/CarPage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/STSoundUtil.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/UIImage+FixOrientation.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/LoginView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/BuildingLayerModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/VisitorPaymentModel.o
@@ -124,6 +126,7 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/FaceLoginView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/MonthPaymentView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/LoginViewModel.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/LocalFaceItemModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/VisitorPaymentCell.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/UITableView+Init.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/PropertyMsgModel.o
@@ -139,12 +142,14 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/LiveModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/MonthPaymentCell.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/RecognizeModel.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/LocalFaceDetectModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/OpendoorViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/CommunityViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/STImageButton.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/AppDelegate.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/STSwitchView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/AuthFaceView.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/STWifiUtil.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/AuthUserView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/DeviceShareView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/UserModel.o
@@ -217,6 +222,7 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/MemberViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/OnePaymentPage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/FixHistoryView.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/LocalFaceAngleModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/CommunityView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/SettingView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphonesimulator/framework.build/Objects-normal/x86_64/STBuildingLayerView.o
