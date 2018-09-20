@@ -12,11 +12,11 @@
 
 typedef NS_ENUM(NSInteger,CallStatu){
     ReciveCall = 0, //被叫收到来电邀请
-    RespondCall,    //被叫接听或拒接主叫来电
-    Calling,        //被叫正在通话中
-    ConnectSuccess, //通话建立成功
-    Hangup,         //通话挂断
-    Disconnect,     //连接异常挂断
+    RespondCall = 1,    //被叫接听或拒接主叫来电
+    Calling = 2,        //被叫正在通话中
+    ConnectSuccess = 3, //通话建立成功
+    Hangup = 4,         //通话挂断
+    Disconnect = 5,     //连接异常挂断
 };
 
 @protocol WYDelegate
@@ -25,7 +25,6 @@ typedef NS_ENUM(NSInteger,CallStatu){
 -(void)onDoCallCallback:(Boolean)success msg:(NSString *)errorMsg;
 -(void)onDoRespondCallback:(Boolean)success msg:(NSString *)errorMsg;
 -(void)onCallStatuCallback:(CallStatu)statu callId:(UInt64)callID caller:(NSString *)caller callee:(NSString *)callee type:(NIMNetCallMediaType)type accept:(Boolean)accept;
--(void)onTimeDuration:(int)time;
 
 
 @end
@@ -45,13 +44,11 @@ SINGLETON_DECLARATION(WYManager)
 
 -(Boolean)doMute:(Boolean)mute;
 
--(void)doHangup;
+-(void)doHangup:(UInt64)callID;
 
 -(void)doChangeAudioOrVideo:(Boolean)isAudio;
 
--(void)setMyView:(UIView *)myView;
+-(void)setVideoView:(UIView *)videoView;
 
--(void)setOtherView:(UIView *)otherView;
-
-
+-(void)changeDisplay;
 @end

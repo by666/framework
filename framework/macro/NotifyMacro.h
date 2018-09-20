@@ -22,6 +22,13 @@
 #define Notify_DeleteCheck @"delete_check"
 #define Notify_UpdateHabitant @"update_habitant"
 
+#define Notify_CALL_ACCEPT @"call_accept"
+#define Notify_CALL_REJECT @"call_reject"
+#define Notify_CALL_CALLING @"call_calling"
+#define Notify_CALL_CONNECTED @"call_connected"
+#define Notify_CALL_HUNGUP @"call_hungup"
+#define Notify_CALL_DISCONNECT @"call_disconnect"
+
 
 #define Notify_Face_Add @"face_add"
 

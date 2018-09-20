@@ -24,7 +24,7 @@
 #define JPUSH_APPKEY @"49828a3f5529d51df648f0ad"
 #define WECHAT_APPID @"wxbc2d656f23e6c0f1"
 #define BUGLY_APPID @"7793f1d5e4"
-#define WANGYI_APPKEY @"3d23dc4561956f18bca3d3f59ed6d278"
+#define WANGYI_APPKEY @"1e66758b4d721a95c410a835f425f11a"
 
 
 #ifdef __OBJC__

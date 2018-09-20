@@ -177,5 +177,10 @@
     return (long)timeSp;
 }
 
++(NSString *)getCallTime:(long)count{
+    return [self generateDate:[NSString stringWithFormat:@"%ld",count * 1000] format:@"mm:ss"];
+}
+
+
 
 @end

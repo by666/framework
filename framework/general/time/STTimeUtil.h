@@ -43,7 +43,10 @@
 #pragma mark 获取从今天开始一周
 +(NSMutableArray *)getOneWeeks;
 
-#pragma mark 讲日期转为时间戳
+#pragma mark 将日期转为时间戳
 +(long)getTimeStamp:(NSString *)dateStr format:(NSString *)format;
+
+#pragma mark 将秒转为(00:00)
++(NSString *)getCallTime:(long)count;
 
 @end

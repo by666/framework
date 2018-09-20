@@ -12,8 +12,8 @@
 
 #pragma mark 定义API相关
 
-#define TestUrl @"https://cellos.santaihulian.com/cellos-appserver/userApp"
-//#define TestUrl @"http://192.168.0.5:8081/cellos-appserver/userApp"
+//#define TestUrl @"https://cellos.santaihulian.com/cellos-appserver/userApp"
+#define TestUrl @"http://192.168.0.5:8081/cellos-appserver/userApp"
 
 
 #pragma mark 登录

@@ -43,7 +43,7 @@
 #import "LocalFaceDetect.h"
 #import "WYManager.h"
 #import "VideoPage.h"
-@interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate,UIAlertViewDelegate>
+@interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate,UIAlertViewDelegate,WYDelegate>
 
 @end
 
@@ -71,7 +71,7 @@
     [self initWechat];
     [self initNet];
     [self initBaidu];
-    [[WYManager sharedWYManager]initSDK];
+    [self initWY];
     [[AccountManager sharedAccountManager] clearApplyModel];
     WS(weakSelf)
     [STUpdateUtil checkUpdate:^(NSString *appname, NSString *url, double version) {
@@ -119,11 +119,6 @@
 //            [self detect:image];
 //        }
 //    });
-    
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [VideoPage show:[[PageManager sharedPageManager]getCurrentPage]];
-
-        });
     
     return YES;
 }
@@ -420,7 +415,65 @@
 
 
 
+-(void)initWY{
+    [[WYManager sharedWYManager]initSDK];
+    [WYManager sharedWYManager].delegate = self;
+}
 
+-(void)onDoLoginCallback:(Boolean)success msg:(NSString *)errorMsg{
+    [STLog print:errorMsg];
+}
+
+-(void)onDoCallCallback:(Boolean)success msg:(NSString *)errorMsg{
+    [STLog print:errorMsg];
+}
+
+-(void)onDoRespondCallback:(Boolean)success msg:(NSString *)errorMsg{
+    [STLog print:errorMsg];
+}
+
+-(void)onCallStatuCallback:(CallStatu)statu callId:(UInt64)callID caller:(NSString *)caller callee:(NSString *)callee type:(NIMNetCallMediaType)type accept:(Boolean)accept{
+    switch (statu) {
+        case ReciveCall:
+            [VideoPage show:[[PageManager sharedPageManager]getCurrentPage] callID:callID];
+            [STLog print:@"接收到来电邀请"];
+            break;
+            //被叫接听或拒接主叫来电
+        case RespondCall:
+            [STLog print: accept ? @"接听" : @"拒绝"];
+            if(accept){
+                [[STObserverManager sharedSTObserverManager] sendMessage:Notify_CALL_ACCEPT msg:[NSString stringWithFormat:@"%llu",callID]];
+            }else{
+                [[STObserverManager sharedSTObserverManager] sendMessage:Notify_CALL_REJECT msg:[NSString stringWithFormat:@"%llu",callID]];
+            }
+            break;
+            //被叫正在通话中
+        case Calling:
+            [STLog print:@"被叫正在通话中"];
+            [[STObserverManager sharedSTObserverManager] sendMessage:Notify_CALL_CALLING msg:[NSString stringWithFormat:@"%llu",callID]];
+            break;
+            //通话建立成功
+        case ConnectSuccess:
+            [STLog print:@"通话成功"];
+            [[STObserverManager sharedSTObserverManager] sendMessage:Notify_CALL_CONNECTED msg:[NSString stringWithFormat:@"%llu",callID]];
+            break;
+            //通话挂断
+        case Hangup:
+            [STLog print:@"通话挂断"];
+            [[STObserverManager sharedSTObserverManager] sendMessage:Notify_CALL_HUNGUP msg:[NSString stringWithFormat:@"%llu",callID]];
+            break;
+            //连接异常挂断
+        case Disconnect:
+            [[STObserverManager sharedSTObserverManager] sendMessage:Notify_CALL_DISCONNECT msg:[NSString stringWithFormat:@"%llu",callID]];
+
+            [STLog print:@"通话被动或异常挂断"];
+            break;
+        default:
+            break;
+    }
+
+    
+}
 
 
 

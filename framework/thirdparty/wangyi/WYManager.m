@@ -12,8 +12,8 @@
 @interface WYManager()<NIMNetCallManagerDelegate>
 
 @property(strong, nonatomic)NTESGLView *remoteGLView;
-@property(strong, nonatomic)UIView *myView;
-@property(strong, nonatomic)UIView *otherView;
+@property(strong, nonatomic)UIView *videoView;
+@property(assign, nonatomic)Boolean isChange;
 
 @end
 
@@ -41,9 +41,9 @@ SINGLETON_IMPLEMENTION(WYManager)
     WS(weakSelf)
     [[[NIMSDK sharedSDK] loginManager] login:username token:password completion:^(NSError * _Nullable error) {
         if(error == nil){
-            [weakSelf.delegate onDoLoginCallback:YES msg:@""];
+            [weakSelf.delegate onDoLoginCallback:YES msg:@"网易账号登录成功"];
         }else{
-            [weakSelf.delegate onDoLoginCallback:NO msg:@"登录失败"];
+            [weakSelf.delegate onDoLoginCallback:NO msg:@"网易账号登录失败"];
         }
     }];
 }
@@ -84,17 +84,27 @@ SINGLETON_IMPLEMENTION(WYManager)
     WS(weakSelf)
     [[NIMAVChatSDK sharedSDK].netCallManager response:callId accept:accept option: [self getVideoParamOption] completion:^(NSError *error, UInt64 callID) {
         if (!error) {
-            [weakSelf.delegate onDoRespondCallback:YES msg:@""];
+            if(accept){
+                [weakSelf.delegate onDoRespondCallback:YES msg:@"被叫接听成功"];
+            }else{
+                [weakSelf.delegate onDoRespondCallback:YES msg:@"被叫拒绝成功"];
+            }
             return ;
         }
-        [weakSelf.delegate onDoRespondCallback:NO msg:@"被叫接听失败"];
+        if(accept){
+            [weakSelf.delegate onDoRespondCallback:NO msg:@"被叫接听失败"];
+        }else{
+            [weakSelf.delegate onDoRespondCallback:NO msg:@"被叫拒绝失败"];
+        }
     }];
 }
 
 #pragma mark 挂断
--(void)doHangup{
+-(void)doHangup:(UInt64)callID{
     UInt64 callId = [[NIMAVChatSDK sharedSDK].netCallManager currentCallID];
     [[NIMAVChatSDK sharedSDK].netCallManager hangup:callId];
+    [[NIMAVChatSDK sharedSDK].netCallManager hangup:callID];
+
 }
 
 
@@ -115,29 +125,20 @@ SINGLETON_IMPLEMENTION(WYManager)
 
 #pragma mark 视频部分
 
-#pragma mark 设置自己视频显示区域
--(void)setMyView:(UIView *)myView{
-    _myView = myView;
-}
-
-#pragma mark 设置用户视频显示区域
--(void)setOtherView:(UIView *)otherView{
-    _otherView = otherView;
+#pragma mark 设置视频显示区域
+-(void)setVideoView:(UIView *)videoView{
+    _videoView = videoView;
 }
 
 
 #pragma mark 采集渲染
 - (void)onLocalDisplayviewReady:(UIView *)displayView
 {
-    if(_myView){
-        displayView.frame = CGRectMake(0, 0, _myView.bounds.size.width, _myView.bounds.size.height);
-        [_myView addSubview:displayView];
-    }
-
-    if(_otherView){
-        _remoteGLView = [[NTESGLView alloc]initWithFrame:CGRectMake(0, 0, _otherView.bounds.size.width, _otherView.bounds.size.height)];
-        [_otherView addSubview:_remoteGLView];
-    }
+    _remoteGLView = [[NTESGLView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+    [_videoView addSubview:_remoteGLView];
+    
+    displayView.frame = CGRectMake(ScreenWidth - STWidth(118), STHeight(30), STWidth(100), STWidth(130));
+    [_videoView addSubview:displayView];
     [self startCapture];
 }
 
@@ -206,6 +207,7 @@ SINGLETON_IMPLEMENTION(WYManager)
 #pragma mark 通话回调
 //收到来电邀请
 -(void)onReceive:(UInt64)callID from:(NSString *)caller type:(NIMNetCallMediaType)type message:(NSString *)extendMessage{
+    [STLog print:@"----来电----"];
     if(_delegate ){
         [_delegate onCallStatuCallback:ReciveCall callId:callID caller:caller callee:@"" type:type accept:NO];
     }
@@ -261,12 +263,22 @@ SINGLETON_IMPLEMENTION(WYManager)
 }
 
 
-#pragma mark 通话时长
-- (void)onSessionTimeDuration:(UInt64)timeDuration{
-    if(_delegate){
-        [_delegate onTimeDuration:(int)timeDuration];
-    }
-}
+#pragma mark 切换显示
+-(void)changeDisplay{
+    if(_isChange){
+        UIView *displayView = [_videoView subviews][0];
+        displayView.frame = CGRectMake(ScreenWidth - STWidth(118), STHeight(30), STWidth(100), STWidth(130));
+        _remoteGLView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+        [_videoView bringSubviewToFront:displayView];
 
+    }else{
+        UIView *displayView = [_videoView subviews][1];
+        displayView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+        _remoteGLView.frame = CGRectMake(ScreenWidth - STWidth(118), STHeight(30), STWidth(100), STWidth(130));
+        [_videoView bringSubviewToFront:_remoteGLView];
+    }
+    _isChange = ! _isChange;
+
+}
 
 @end

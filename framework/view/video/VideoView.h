@@ -11,6 +11,7 @@
 @interface VideoView : UIView
 
 
--(instancetype)initWithViewModel:(VideoViewModel *)viewModel;
+-(instancetype)initWithViewModel:(VideoViewModel *)viewModel callID:(UInt64)callID;
+-(void)updateTime:(NSString *)timeStr;
 
 @end

@@ -13,6 +13,7 @@
 #import "STNetUtil.h"
 #import "AccountManager.h"
 #import "STUserDefaults.h"
+#import "WYManager.h"
 
 #define TIMECOUNT 60
 
@@ -121,6 +122,9 @@
                 model.phoneNum = phoneNum;
                 model.token = [repondModel.data objectForKey:@"token"];
                 model.userUid = [repondModel.data objectForKey:@"userUid"];
+                
+                model.neteaseUser = [WYUserModel mj_objectWithKeyValues:[repondModel.data objectForKey:@"neteaseUser"]];
+                [[WYManager sharedWYManager]doLogin:model.neteaseUser.accId psw:model.neteaseUser.token];
                 [[AccountManager sharedAccountManager]saveUserModel:model];
                 weakSelf.loginModel.msgStr = MSG_LOGIN_SUCCESS;
                 weakSelf.loginModel.msgColor = c06;

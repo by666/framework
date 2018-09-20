@@ -322,6 +322,7 @@
 		CFFCFA6A2150A73700CF2071 /* ijksdl_timer.c in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA5B2150A73700CF2071 /* ijksdl_timer.c */; };
 		CFFCFA6D2150AB5B00CF2071 /* NTESGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA6B2150AB5B00CF2071 /* NTESGLView.m */; };
 		CFFCFA7121510B4F00CF2071 /* VideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA7021510B4F00CF2071 /* VideoViewModel.m */; };
+		CFFCFAB52153A3C000CF2071 /* WYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFAB42153A3C000CF2071 /* WYUserModel.m */; };
 		F7CC18FEA014615A522B69A1 /* Pods_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD31C7F288F0669DDF6673 /* Pods_framework.framework */; };
 /* End PBXBuildFile section */
 
@@ -985,6 +986,8 @@
 		CFFCFA6C2150AB5B00CF2071 /* NTESGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESGLView.h; sourceTree = "<group>"; };
 		CFFCFA6F21510B4F00CF2071 /* VideoViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoViewModel.h; path = framework/viewmodel/video/VideoViewModel.h; sourceTree = SOURCE_ROOT; };
 		CFFCFA7021510B4F00CF2071 /* VideoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoViewModel.m; path = framework/viewmodel/video/VideoViewModel.m; sourceTree = SOURCE_ROOT; };
+		CFFCFAB32153A3C000CF2071 /* WYUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYUserModel.h; sourceTree = "<group>"; };
+		CFFCFAB42153A3C000CF2071 /* WYUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYUserModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1631,6 +1634,8 @@
 				0070FFE620D8997200A67B45 /* LiveModel.m */,
 				00444FA820ECA300002F121A /* ApplyModel.h */,
 				00444FA920ECA300002F121A /* ApplyModel.m */,
+				CFFCFAB32153A3C000CF2071 /* WYUserModel.h */,
+				CFFCFAB42153A3C000CF2071 /* WYUserModel.m */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -2995,6 +3000,7 @@
 				003EDB0320C1181600CFCFE9 /* SystemMsgView.m in Sources */,
 				002F949720B3EAEB00F84094 /* MonthPaymentModel.m in Sources */,
 				004EF5CE20AC450900BA9602 /* SettingViewModel.m in Sources */,
+				CFFCFAB52153A3C000CF2071 /* WYUserModel.m in Sources */,
 				002F946B20B298FD00F84094 /* PaymentViewModel.m in Sources */,
 				002F942C20AEBA9000F84094 /* MessageSettingView.m in Sources */,
 				003EDADF20BE810A00CFCFE9 /* EnterAuthPage.m in Sources */,

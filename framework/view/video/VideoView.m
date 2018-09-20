@@ -25,12 +25,14 @@
 
 @property(strong, nonatomic)UIButton *cutShootBtn;
 @property(strong, nonatomic)UIButton *muteBtn;
+@property(strong, nonatomic)UIImageView *muteImageView;
 
-@property(strong, nonatomic)UIView *displayView;
-@property(strong, nonatomic)UIImageView *myView;
-@property(strong, nonatomic)UIImageView *otherView;
+@property(strong, nonatomic)UIView *videoDisplayView;
 
 @property(strong, nonatomic)UIToolbar *toolbar;
+
+
+@property(assign, nonatomic)UInt64 callID;
 
 @end
 
@@ -39,10 +41,13 @@
     //statu = 1, 转为语音
     //statu = 2, 转为视频
     int statu;
+    Boolean isMute;
+    Boolean isConnected;
 }
 
--(instancetype)initWithViewModel:(VideoViewModel *)viewModel{
+-(instancetype)initWithViewModel:(VideoViewModel *)viewModel callID:(UInt64)callID{
     if(self == [super init]){
+        _callID = callID;
         _mViewModel = viewModel;
         [self initView];
     }
@@ -51,11 +56,7 @@
 
 -(void)initView{
     
-    _displayView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
-    [self addSubview:_displayView];
-    
-    [self myView];
-    [self otherView];
+    [self videoDisplayView];
     [self faceImageView];
     [self positionBtn];
     [self acceptBtn];
@@ -72,28 +73,15 @@
    
 }
 
-//我的视频流
--(UIImageView *)myView{
-    if(_myView == nil){
-        _myView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
-        _myView.image = [UIImage imageNamed:@"test_myview"];
-        _myView.hidden = YES;
-        _myView.contentMode = UIViewContentModeScaleAspectFill;
-        [_displayView addSubview:_myView];
-    }
-    return _myView;
-}
+//视频显示区域
 
-//他人视频流
--(UIImageView *)otherView{
-    if(_otherView == nil){
-        _otherView = [[UIImageView alloc]initWithFrame:CGRectMake(ScreenWidth - STWidth(118), STHeight(30), STWidth(100), STWidth(130))];
-        _otherView.image = [UIImage imageNamed:@"test_otherview"];
-        _otherView.hidden = YES;
-        _otherView.contentMode = UIViewContentModeScaleAspectFill;
-        [_displayView addSubview:_otherView];
+-(UIView *)videoDisplayView{
+    if(_videoDisplayView == nil){
+        _videoDisplayView = [[UIView alloc]initWithFrame:CGRectMake(0,0,ScreenWidth,ScreenHeight)];
+        _videoDisplayView.hidden = YES;
+        [self addSubview:_videoDisplayView];
     }
-    return _otherView;
+    return _videoDisplayView;
 }
 
 
@@ -254,10 +242,10 @@
         _muteBtn = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - STWidth(20) - muteSize.width, STHeight(396), muteSize.width, muteSize.width)];
         [self addSubview:_muteBtn];
         
-        UIImageView *muteImageView = [[UIImageView alloc]initWithFrame:CGRectMake((muteSize.width - STWidth(40))/2, 0, STWidth(40), STWidth(40))];
-        muteImageView.image = [UIImage imageNamed:@"icon_静音"];
-        muteImageView.contentMode = UIViewContentModeScaleAspectFill;
-        [_muteBtn addSubview:muteImageView];
+        _muteImageView = [[UIImageView alloc]initWithFrame:CGRectMake((muteSize.width - STWidth(40))/2, 0, STWidth(40), STWidth(40))];
+        _muteImageView.image = [UIImage imageNamed:@"icon_静音_normal"];
+        _muteImageView.contentMode = UIViewContentModeScaleAspectFill;
+        [_muteBtn addSubview:_muteImageView];
         
         UILabel *muteLabel = [[UILabel alloc]initWithFont:STFont(14) text:muteStr textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
         muteLabel.frame = CGRectMake(0, STWidth(48), muteSize.width, STHeight(14));
@@ -307,13 +295,21 @@
 //点击接听
 -(void)onClickAccept{
     if(statu == 0 ){
-        [self audioUI];
-    }else if(statu == 1){
         [self videoUI];
+        if(_mViewModel){
+            if(isConnected){
+                [_mViewModel changeAudioOrVideo:NO];
+            }else{
+                [_mViewModel doAccept:_callID videoView:_videoDisplayView];
+            }
+        }
+    }else if(statu == 1){
+        [self audioUI];
+        if(_mViewModel){
+            [_mViewModel changeAudioOrVideo:YES];
+        }
     }
 
-
-  
     NSLog(@"点击接听");
 }
 
@@ -328,36 +324,46 @@
 //点击拒绝
 -(void)onClickReject{
     if(_mViewModel){
-        [_mViewModel doReject];
+        if(statu == 0){
+            [_mViewModel doReject:_callID];
+            NSLog(@"点击拒绝");
+        }else{
+            [_mViewModel doHungup:_callID];
+            NSLog(@"点击挂断");
+        }
+        
     }
-    NSLog(@"点击拒绝");
+
 }
 
 
 //点击语音接听
 -(void)onClickAudioAcceptBtn{
     NSLog(@"点击语音接听");
-    [self videoUI];
+    [self audioUI];
+    [_mViewModel doAccept:_callID videoView:_videoDisplayView];
+    [_mViewModel changeAudioOrVideo:YES];
+
 }
 
 
-static bool cutshoot = true;
 //切换镜头
 -(void)onClickCutShootBtn{
-    CGRect tempRect = _myView.frame;
-    _myView.frame = _otherView.frame;
-    _otherView.frame = tempRect;
-    if(cutshoot){
-        [_displayView bringSubviewToFront:_myView];
-    }else{
-        [_displayView bringSubviewToFront:_otherView];
+    if(_mViewModel){
+        [_mViewModel changeDisplay];
     }
-    cutshoot = !cutshoot;
     NSLog(@"点击切换镜头");
 }
 
 //静音
 -(void)onClickMuteBtn{
+    isMute = ! isMute;
+    if(isMute){
+        _muteImageView.image = [UIImage imageNamed:@"icon_静音_pressde"];
+    }else{
+        _muteImageView.image = [UIImage imageNamed:@"icon_静音_normal"];
+    }
+    [[WYManager sharedWYManager] doMute:isMute];
     NSLog(@"点击静音");
 }
 
@@ -366,10 +372,9 @@ static bool cutshoot = true;
     _toolbar.hidden = YES;
 }
 
-//语音通话UI
--(void)audioUI{
-    _myView.hidden = NO;
-    _otherView.hidden = NO;
+//视频通话UI
+-(void)videoUI{
+    _videoDisplayView.hidden = NO;
     _faceImageView.hidden = YES;
     _positionBtn.hidden = YES;
     _audioAcceptBtn.hidden = YES;
@@ -382,12 +387,14 @@ static bool cutshoot = true;
     [self setAcceptText:@"转为语音"];
     [self setRejectText:@"挂断"];
     statu = 1;
+    
+
+
 }
 
-//视频通话UI
--(void)videoUI{
-    _myView.hidden = YES;
-    _otherView.hidden = YES;
+//语音通话UI
+-(void)audioUI{
+    _videoDisplayView.hidden = YES;
     _faceImageView.hidden = NO;
     _positionBtn.hidden = NO;
     _audioAcceptBtn.hidden = YES;
@@ -400,6 +407,14 @@ static bool cutshoot = true;
     [self setAcceptText:@"转为视频"];
     [self setRejectText:@"挂断"];
     statu = 0;
+   
 }
+
+//通话时长
+-(void)updateTime:(NSString *)timeStr{
+    _timeLabel.text = timeStr;
+    isConnected = YES;
+}
+
 
 @end

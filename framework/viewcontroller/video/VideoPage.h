@@ -10,6 +10,7 @@
 
 @interface VideoPage : BaseViewController
 
-+(void)show:(BaseViewController *)controller;
++(void)show:(BaseViewController *)controller callID:(UInt64)callID;
+-(void)updateTime:(int)time;
 
 @end

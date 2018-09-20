@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WYUserModel.h"
 
 @interface UserModel : NSObject<NSCoding>
 
@@ -18,6 +19,7 @@
 
 @property (copy, nonatomic) NSString *token;
 @property (copy, nonatomic) NSString *userUid;
+@property (strong, nonatomic)WYUserModel *neteaseUser;
 
 
 

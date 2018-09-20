@@ -8,24 +8,44 @@
 
 #import "VideoPage.h"
 #import "VideoView.h"
-
-@interface VideoPage ()<VideoViewDelegate>
+#import "STObserverManager.h"
+@interface VideoPage ()<VideoViewDelegate,STObserverProtocol>
 
 @property(strong, nonatomic)VideoView *videoView;
+@property(assign, nonatomic)UInt64 callID;
+@property(strong, nonatomic)VideoViewModel *viewModel;
 
 @end
 
 @implementation VideoPage
 
 
-+(void)show:(BaseViewController *)controller{
++(void)show:(BaseViewController *)controller callID:(UInt64)callID{
     VideoPage *page = [[VideoPage alloc]init];
+    page.callID = callID;
     [controller presentViewController:page animated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initView];
+    [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_CALL_ACCEPT delegate:self];
+    [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_CALL_REJECT delegate:self];
+    [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_CALL_CALLING delegate:self];
+    [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_CALL_HUNGUP delegate:self];
+    [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_CALL_CONNECTED delegate:self];
+    [[STObserverManager sharedSTObserverManager] registerSTObsever:Notify_CALL_DISCONNECT delegate:self];
+
+}
+
+-(void)dealloc{
+    [[STObserverManager sharedSTObserverManager] removeSTObsever:Notify_CALL_ACCEPT];
+    [[STObserverManager sharedSTObserverManager] removeSTObsever:Notify_CALL_REJECT];
+    [[STObserverManager sharedSTObserverManager] removeSTObsever:Notify_CALL_CALLING];
+    [[STObserverManager sharedSTObserverManager] removeSTObsever:Notify_CALL_HUNGUP];
+    [[STObserverManager sharedSTObserverManager] removeSTObsever:Notify_CALL_CONNECTED];
+    [[STObserverManager sharedSTObserverManager] removeSTObsever:Notify_CALL_DISCONNECT];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -36,17 +56,54 @@
 
 
 -(void)initView{
-    VideoViewModel *viewModel = [[VideoViewModel alloc]init];
-    viewModel.delegate = self;
+    _viewModel = [[VideoViewModel alloc]init];
+    _viewModel.delegate = self;
     
-    _videoView = [[VideoView alloc]initWithViewModel:viewModel];
+    _videoView = [[VideoView alloc]initWithViewModel:_viewModel callID:_callID];
     _videoView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     _videoView.backgroundColor =c39;
     [self.view addSubview:_videoView];
 }
 
--(void)onDoReject{
+-(void)onRejectOrHungUp{
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)onReciveResult:(NSString *)key msg:(id)msg{
+    UInt64 callID = [msg intValue];
+    if([key isEqualToString:Notify_CALL_HUNGUP]){
+        [_viewModel doHungup:callID];
+    }else if([key isEqualToString:Notify_CALL_ACCEPT]){
+        
+    }else if([key isEqualToString:Notify_CALL_REJECT]){
+        
+    }else if([key isEqualToString:Notify_CALL_CALLING]){
+        
+    }else if([key isEqualToString:Notify_CALL_HUNGUP]){
+        [_viewModel doHungup:callID];
+    }else if([key isEqualToString:Notify_CALL_CONNECTED]){
+        [_viewModel countTime];
+    }else if([key isEqualToString:Notify_CALL_DISCONNECT]){
+        [_viewModel doHungup:callID];
+    }
+}
+
+-(void)onCountTime:(NSString *)timeStr{
+    if(_videoView){
+        [_videoView updateTime:timeStr];
+    }
+}
+
+-(void)onRequestBegin{
+    
+}
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    
 }
 
 

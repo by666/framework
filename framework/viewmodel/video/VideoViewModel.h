@@ -11,34 +11,43 @@
 
 @protocol VideoViewDelegate<BaseRequestDelegate>
 
--(void)onDoReject;
-
+-(void)onRejectOrHungUp;
+-(void)onCountTime:(NSString *)timeStr;
 @end
 
 @interface VideoViewModel : NSObject
 
 @property(weak, nonatomic)id<VideoViewDelegate> delegate;
 
-//接听
--(void)doAccept;
+
+//音频接听
+-(void)doAccept:(UInt64)callID;
+
+//音视频接听
+-(void)doAccept:(UInt64)callID videoView:(UIView *)videoView;
 
 //拒绝
--(void)doReject;
+-(void)doReject:(UInt64)callID;
 
 //静音
--(Boolean)doMute;
+-(void)doMute:(Boolean)isMute;
+
+//挂断
+-(void)doHungup:(UInt64)callID;
 
 //切换镜头
--(Boolean)changeDisplay;
+-(void)changeDisplay;
+
+//计算时间
+-(void)countTime;
 
 //音视频转换
--(Boolean)changeAudioOrVideo;
+-(void)changeAudioOrVideo:(Boolean)isAudio;
 
 //开门
 -(void)openDoor;
 
-//计时
--(void)countTime;
+
 
 
 @end
