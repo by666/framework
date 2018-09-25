@@ -123,8 +123,9 @@
                 model.token = [repondModel.data objectForKey:@"token"];
                 model.userUid = [repondModel.data objectForKey:@"userUid"];
                 
-                model.neteaseUser = [WYUserModel mj_objectWithKeyValues:[repondModel.data objectForKey:@"neteaseUser"]];
-                [[WYManager sharedWYManager]doLogin:model.neteaseUser.accId psw:model.neteaseUser.token];
+                WYUserModel *wyUserModel = [WYUserModel mj_objectWithKeyValues:[repondModel.data objectForKey:@"neteaseUser"]];
+                [[WYManager sharedWYManager]doLogin:wyUserModel.accId psw:wyUserModel.token];
+                [[AccountManager sharedAccountManager]saveWYUserModel:wyUserModel];
                 [[AccountManager sharedAccountManager]saveUserModel:model];
                 weakSelf.loginModel.msgStr = MSG_LOGIN_SUCCESS;
                 weakSelf.loginModel.msgColor = c06;

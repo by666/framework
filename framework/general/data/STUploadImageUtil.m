@@ -11,8 +11,11 @@
 #import "STUploadImageModel.h"
 #import "STDataBaseUtil.h"
 
+//#define BucketName @"santai-test"
+//#define EndPoint @"https://oss-cn-beijing.aliyuncs.com"
 #define BucketName @"santaihulian"
 #define EndPoint @"https://oss-cn-shenzhen.aliyuncs.com"
+
 #define AccessKeyId @"LTAIgAxC5iDCnS6R"
 #define AccessKeySecret @"yTZscLQVNZUB6WaWFXiUgajSRe7NaZ"
 

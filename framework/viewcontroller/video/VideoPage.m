@@ -14,15 +14,17 @@
 @property(strong, nonatomic)VideoView *videoView;
 @property(assign, nonatomic)UInt64 callID;
 @property(strong, nonatomic)VideoViewModel *viewModel;
+@property(strong, nonatomic)UserModel *callerModel;
 
 @end
 
 @implementation VideoPage
 
 
-+(void)show:(BaseViewController *)controller callID:(UInt64)callID{
++(void)show:(BaseViewController *)controller callID:(UInt64)callID userModel:(UserModel *)model{
     VideoPage *page = [[VideoPage alloc]init];
     page.callID = callID;
+    page.callerModel  = model;
     [controller presentViewController:page animated:YES completion:nil];
 }
 
@@ -56,7 +58,7 @@
 
 
 -(void)initView{
-    _viewModel = [[VideoViewModel alloc]init];
+    _viewModel = [[VideoViewModel alloc]initWithCaller:_callerModel];
     _viewModel.delegate = self;
     
     _videoView = [[VideoView alloc]initWithViewModel:_viewModel callID:_callID];

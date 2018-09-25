@@ -323,6 +323,9 @@
 		CFFCFA6D2150AB5B00CF2071 /* NTESGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA6B2150AB5B00CF2071 /* NTESGLView.m */; };
 		CFFCFA7121510B4F00CF2071 /* VideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA7021510B4F00CF2071 /* VideoViewModel.m */; };
 		CFFCFAB52153A3C000CF2071 /* WYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFAB42153A3C000CF2071 /* WYUserModel.m */; };
+		CFFCFAB92154DF6800CF2071 /* STAudioUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFAB82154DF6800CF2071 /* STAudioUtil.m */; };
+		CFFCFAC32154F58400CF2071 /* ring.wav in Resources */ = {isa = PBXBuildFile; fileRef = CFFCFAC22154F58400CF2071 /* ring.wav */; };
+		CFFCFAC52154FB7200CF2071 /* notify_ring.wav in Resources */ = {isa = PBXBuildFile; fileRef = CFFCFAC42154FB7200CF2071 /* notify_ring.wav */; };
 		F7CC18FEA014615A522B69A1 /* Pods_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD31C7F288F0669DDF6673 /* Pods_framework.framework */; };
 /* End PBXBuildFile section */
 
@@ -988,6 +991,10 @@
 		CFFCFA7021510B4F00CF2071 /* VideoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoViewModel.m; path = framework/viewmodel/video/VideoViewModel.m; sourceTree = SOURCE_ROOT; };
 		CFFCFAB32153A3C000CF2071 /* WYUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYUserModel.h; sourceTree = "<group>"; };
 		CFFCFAB42153A3C000CF2071 /* WYUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYUserModel.m; sourceTree = "<group>"; };
+		CFFCFAB72154DF6800CF2071 /* STAudioUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STAudioUtil.h; sourceTree = "<group>"; };
+		CFFCFAB82154DF6800CF2071 /* STAudioUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAudioUtil.m; sourceTree = "<group>"; };
+		CFFCFAC22154F58400CF2071 /* ring.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ring.wav; sourceTree = "<group>"; };
+		CFFCFAC42154FB7200CF2071 /* notify_ring.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = notify_ring.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2081,6 +2088,8 @@
 				007B1F2E20858EB3009EA9F1 /* AppDelegate.m */,
 				00C25443209BF5B200E8E306 /* CodeScan.bundle */,
 				007B1F3620858EB6009EA9F1 /* Assets.xcassets */,
+				CFFCFAC22154F58400CF2071 /* ring.wav */,
+				CFFCFAC42154FB7200CF2071 /* notify_ring.wav */,
 				007B1F3B20858EB6009EA9F1 /* Info.plist */,
 				007B1F3C20858EB6009EA9F1 /* main.m */,
 			);
@@ -2293,6 +2302,8 @@
 			children = (
 				00D324A8208598A6001EC82F /* STSoundUtil.h */,
 				00D324A7208598A6001EC82F /* STSoundUtil.m */,
+				CFFCFAB72154DF6800CF2071 /* STAudioUtil.h */,
+				CFFCFAB82154DF6800CF2071 /* STAudioUtil.m */,
 			);
 			path = sound;
 			sourceTree = "<group>";
@@ -2670,7 +2681,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				007B1F3720858EB6009EA9F1 /* Assets.xcassets in Resources */,
+				CFFCFAC32154F58400CF2071 /* ring.wav in Resources */,
 				0070FFEE20D8F42D00A67B45 /* idl-license.face-ios in Resources */,
+				CFFCFAC52154FB7200CF2071 /* notify_ring.wav in Resources */,
 				0070FFEF20D8F42D00A67B45 /* com.baidu.idl.face.model.bundle in Resources */,
 				003EDA8B20B8005300CFCFE9 /* address.txt in Resources */,
 				0070FFED20D8F42D00A67B45 /* com.baidu.idl.face.faceSDK.bundle in Resources */,
@@ -2907,6 +2920,7 @@
 				004EF52B20A2CD6200BA9602 /* UITextField+Init.m in Sources */,
 				004EF5B020ABFD8900BA9602 /* ProfileView.m in Sources */,
 				CF43E3D520B5802B0069AAFA /* VisitorHistoryModel.m in Sources */,
+				CFFCFAB92154DF6800CF2071 /* STAudioUtil.m in Sources */,
 				00D324CD2087277E001EC82F /* STNetUtil.m in Sources */,
 				004EF59420AAD42400BA9602 /* CarPage.m in Sources */,
 				00D324B0208598A7001EC82F /* STSoundUtil.m in Sources */,

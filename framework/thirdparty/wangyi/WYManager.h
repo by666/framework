@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger,CallStatu){
 -(void)onDoCallCallback:(Boolean)success msg:(NSString *)errorMsg;
 -(void)onDoRespondCallback:(Boolean)success msg:(NSString *)errorMsg;
 -(void)onCallStatuCallback:(CallStatu)statu callId:(UInt64)callID caller:(NSString *)caller callee:(NSString *)callee type:(NIMNetCallMediaType)type accept:(Boolean)accept;
+-(void)onRecordCall:(NIMNetCallNotificationContent *)content;
 
 
 @end

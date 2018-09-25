@@ -79,6 +79,23 @@ SINGLETON_IMPLEMENTION(AccountManager)
     [STUserDefaults removeModel:UD_APPLYMODEL];
 }
 
+//
+-(void)saveWYUserModel:(WYUserModel *)model{
+    [STUserDefaults saveModel:UD_WYMODEL model:model];
+}
+
+-(WYUserModel *)getWYUserModel{
+    if([STUserDefaults getModel:UD_WYMODEL]){
+        return [STUserDefaults getModel:UD_WYMODEL];
+    }
+    return [WYUserModel new];
+}
+
+-(void)clearWYUserModel{
+    [STUserDefaults removeModel:UD_WYMODEL];
+}
+
+
 
 
 -(Boolean)isLogin{

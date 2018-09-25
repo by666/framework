@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WYManager.h"
+#import "UserModel.h"
 
 @protocol VideoViewDelegate<BaseRequestDelegate>
 
@@ -18,7 +19,9 @@
 @interface VideoViewModel : NSObject
 
 @property(weak, nonatomic)id<VideoViewDelegate> delegate;
+@property(strong, nonatomic)UserModel *callerModel;
 
+-(instancetype)initWithCaller:(UserModel *)callerModel;
 
 //音频接听
 -(void)doAccept:(UInt64)callID;

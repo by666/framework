@@ -7,10 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "UserModel.h"
 
 @interface VideoPage : BaseViewController
 
-+(void)show:(BaseViewController *)controller callID:(UInt64)callID;
++(void)show:(BaseViewController *)controller callID:(UInt64)callID userModel:(UserModel *)model;
 -(void)updateTime:(int)time;
 
 @end

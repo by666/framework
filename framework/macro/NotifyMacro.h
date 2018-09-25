@@ -48,6 +48,16 @@
 #define UD_LIVEMODEL @"ud_livemodel"
 #define UD_MAINMODEL @"ud_mainmodel"
 #define UD_APPLYMODEL @"ud_applymodel"
+#define UD_WYMODEL @"ud_wymodel"
 
 #define UD_BAIDUAK @"ud_baiduaccesstoken"
 #define UD_PUSHID  @"ud_pushid"
+
+
+
+#define UD_CALL_STARTTIME  @"ud_call_starttime"
+#define UD_CALL_CALLEDTIME  @"ud_call_calledtime"
+#define UD_CALL_ENTTIME  @"ud_call_endtime"
+#define UD_CALL_CALLER  @"ud_call_caller"
+#define UD_CALL_CALLEE  @"ud_call_callee"
+

@@ -11,6 +11,7 @@
 #import "LiveModel.h"
 #import "MainModel.h"
 #import "ApplyModel.h"
+#import "WYUserModel.h"
 @interface AccountManager : NSObject
 SINGLETON_DECLARATION(AccountManager)
 
@@ -58,6 +59,15 @@ SINGLETON_DECLARATION(AccountManager)
 -(void)clearApplyModel;
 
 ////////////////////////////////////
+
+-(void)saveWYUserModel:(WYUserModel *)model;
+
+-(WYUserModel *)getWYUserModel;
+
+-(void)clearWYUserModel;
+
+
+//////////////////////////////////
 
 //是否登录
 -(Boolean)isLogin;

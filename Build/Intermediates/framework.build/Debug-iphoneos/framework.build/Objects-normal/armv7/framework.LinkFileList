@@ -123,6 +123,7 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/UITextField+Init.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/ProfileView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/VisitorHistoryModel.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/STAudioUtil.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/STNetUtil.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/CarPage.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/STSoundUtil.o
@@ -216,6 +217,7 @@
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/SystemMsgView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/MonthPaymentModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/SettingViewModel.o
+/Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/WYUserModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/PaymentViewModel.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/MessageSettingView.o
 /Users/by.huang/Desktop/st/framework/Build/Intermediates/framework.build/Debug-iphoneos/framework.build/Objects-normal/armv7/EnterAuthPage.o

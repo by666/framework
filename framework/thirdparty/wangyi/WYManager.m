@@ -9,7 +9,7 @@
 #import "WYManager.h"
 #import "NTESGLView.h"
 
-@interface WYManager()<NIMNetCallManagerDelegate>
+@interface WYManager()<NIMNetCallManagerDelegate,NIMChatManagerDelegate>
 
 @property(strong, nonatomic)NTESGLView *remoteGLView;
 @property(strong, nonatomic)UIView *videoView;
@@ -24,11 +24,14 @@ SINGLETON_IMPLEMENTION(WYManager)
 #pragma mark 初始化
 -(void)initSDK{
     NIMSDKOption *option  = [NIMSDKOption optionWithAppKey:WANGYI_APPKEY];
-    option.apnsCername    =  nil;
-    option.pkCername      =  nil;
+    option.apnsCername    =  @"pushdev";
+    option.pkCername      =  @"voippushdev";
     [[NIMSDK sharedSDK] registerWithOption:option];
+    [[NIMAVChatSDK sharedSDK].netCallManager selectVideoAdaptiveStrategy:NIMAVChatVideoAdaptiveStrategyQuality];
     [[NIMAVChatSDK sharedSDK].netCallManager addDelegate:self];
+    [[NIMSDK sharedSDK].chatManager addDelegate:self];
 }
+
 
 #pragma mark 登录
 -(void)doLogin:(NSString *)username psw:(NSString *)password{
@@ -263,6 +266,9 @@ SINGLETON_IMPLEMENTION(WYManager)
 }
 
 
+-(void)onSessionTimeDuration:(UInt64)timeDuration{
+    
+}
 #pragma mark 切换显示
 -(void)changeDisplay{
     if(_isChange){
@@ -280,5 +286,28 @@ SINGLETON_IMPLEMENTION(WYManager)
     _isChange = ! _isChange;
 
 }
+
+
+#pragma mark 接收消息
+//需要先自己获取消息 message
+- (void)onRecvMessages:(NSArray *)messages
+{
+    NIMMessage *message = messages.firstObject;
+    [self messageFormContent:message];
+}
+
+//然后解析 解析过程
+- (void)messageFormContent:(NIMMessage *)message{
+    if (message.messageType == NIMMessageTypeNotification ) {
+        NIMNotificationObject *object = message.messageObject;
+        if (object.notificationType == NIMNotificationTypeNetCall) {
+            NIMNetCallNotificationContent *content = (NIMNetCallNotificationContent *)object.content;
+            if(_delegate){
+                [_delegate onRecordCall:content];
+            }
+        }
+    }
+}
+
 
 @end

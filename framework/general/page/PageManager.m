@@ -55,6 +55,7 @@ SINGLETON_IMPLEMENTION(PageManager)
         [[AccountManager sharedAccountManager] clearLiveModel];
         [[AccountManager sharedAccountManager] clearMainModel];
         [[AccountManager sharedAccountManager] clearApplyModel];
+        [[AccountManager sharedAccountManager] clearWYUserModel];
         [LoginPage show:page needBack:NO];
     }
 }

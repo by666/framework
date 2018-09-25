@@ -13,6 +13,7 @@
 #import "STNetUtil.h"
 #import "AccountManager.h"
 #import "STUserDefaults.h"
+#import "WYManager.h"
 
 
 @interface FaceLoginViewModel()<CaptureDataOutputProtocol>
@@ -285,6 +286,9 @@
                 UserModel *model = [[AccountManager sharedAccountManager]getUserModel];
                 model.token = [respondModel.data objectForKey:@"token"];
                 model.userUid = [respondModel.data objectForKey:@"userUid"];
+                WYUserModel *wyUserModel = [WYUserModel mj_objectWithKeyValues:[respondModel.data objectForKey:@"neteaseUser"]];
+                [[WYManager sharedWYManager]doLogin:wyUserModel.accId psw:wyUserModel.token];
+                [[AccountManager sharedAccountManager]saveWYUserModel:wyUserModel];
                 [[AccountManager sharedAccountManager]saveUserModel:model];
                 weakSelf.progress = 1.0f;
                 [weakSelf.delegate onProgress:weakSelf.progress];

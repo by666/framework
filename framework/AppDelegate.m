@@ -43,8 +43,12 @@
 #import "LocalFaceDetect.h"
 #import "WYManager.h"
 #import "VideoPage.h"
+#import "STNetUtil.h"
+#import "STAudioUtil.h"
+#import "STTimeUtil.h"
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate,UIAlertViewDelegate,WYDelegate>
 
+@property(assign, nonatomic) Boolean isAppEnterBackgroud;
 @end
 
 @implementation AppDelegate{
@@ -57,7 +61,7 @@
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     id controller;
     if([[AccountManager sharedAccountManager]isLogin]){
-        controller = [[NextLoginPage alloc]init];
+        controller = [[MainPage alloc]init];
     }else{
         controller = [[LoginPage alloc]init];
     }
@@ -119,7 +123,6 @@
 //            [self detect:image];
 //        }
 //    });
-    
     return YES;
 }
 
@@ -244,10 +247,13 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    _isAppEnterBackgroud = YES;
 }
 
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {}
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    _isAppEnterBackgroud = NO;
+}
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {}
@@ -418,6 +424,10 @@
 -(void)initWY{
     [[WYManager sharedWYManager]initSDK];
     [WYManager sharedWYManager].delegate = self;
+    if([[AccountManager sharedAccountManager]isLogin]){
+        WYUserModel *wyUserModel = [[AccountManager sharedAccountManager]getWYUserModel];
+        [[WYManager sharedWYManager]doLogin:wyUserModel.accId psw:wyUserModel.token];
+    }
 }
 
 -(void)onDoLoginCallback:(Boolean)success msg:(NSString *)errorMsg{
@@ -432,11 +442,38 @@
     [STLog print:errorMsg];
 }
 
+-(void)onRecordCall:(NIMNetCallNotificationContent *)content{
+    NSString *caller = [STUserDefaults getKeyValue:UD_CALL_CALLER];
+    NSString *callee = [STUserDefaults getKeyValue:UD_CALL_CALLEE];
+    NSString *startTime = [STUserDefaults getKeyValue:UD_CALL_STARTTIME];
+    NSString *calledTime = [STUserDefaults getKeyValue:UD_CALL_CALLEDTIME];
+    NSString *endTime = [STUserDefaults getKeyValue:UD_CALL_ENTTIME];
+    LiveModel *liveModel = [[AccountManager sharedAccountManager]getLiveModel];
+    NSString *districtUid = liveModel.districtUid;
+    NSString *homeLocator =liveModel.homeLocator;
+    
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    dic[@"callerUserUid"] = caller;
+    dic[@"calleeUserUid"] = callee;
+    dic[@"startTime"] = startTime;
+    dic[@"calledTime"] = calledTime;
+    dic[@"endTime"] = endTime;
+    dic[@"districtUid"] = districtUid;
+    dic[@"homeLocator"] = homeLocator;
+
+    [STNetUtil post:URL_POST_CREATE_RECORD content:[dic mj_JSONString] success:^(RespondModel *respondModel) {
+        
+    } failure:^(int errorCode) {
+        
+    }];
+
+}
+
 -(void)onCallStatuCallback:(CallStatu)statu callId:(UInt64)callID caller:(NSString *)caller callee:(NSString *)callee type:(NIMNetCallMediaType)type accept:(Boolean)accept{
     switch (statu) {
         case ReciveCall:
-            [VideoPage show:[[PageManager sharedPageManager]getCurrentPage] callID:callID];
             [STLog print:@"接收到来电邀请"];
+            [self handleReciveCall:caller callID:callID];
             break;
             //被叫接听或拒接主叫来电
         case RespondCall:
@@ -455,18 +492,17 @@
             //通话建立成功
         case ConnectSuccess:
             [STLog print:@"通话成功"];
-            [[STObserverManager sharedSTObserverManager] sendMessage:Notify_CALL_CONNECTED msg:[NSString stringWithFormat:@"%llu",callID]];
+            [self handleConnectSuccess:callID];
             break;
             //通话挂断
         case Hangup:
             [STLog print:@"通话挂断"];
-            [[STObserverManager sharedSTObserverManager] sendMessage:Notify_CALL_HUNGUP msg:[NSString stringWithFormat:@"%llu",callID]];
+            [self handleHungup:callID];
             break;
             //连接异常挂断
         case Disconnect:
-            [[STObserverManager sharedSTObserverManager] sendMessage:Notify_CALL_DISCONNECT msg:[NSString stringWithFormat:@"%llu",callID]];
-
             [STLog print:@"通话被动或异常挂断"];
+            [self handleDisconnect:callID];
             break;
         default:
             break;
@@ -476,6 +512,67 @@
 }
 
 
+-(void)handleReciveCall:(NSString *)caller callID:(UInt64)callID{
+    //记录接收到通话的时间
+    NSString *recordStr = [STTimeUtil generateDate:[STTimeUtil getCurrentTimeStamp] format:@"YYYY-MM-dd HH:mm:ss"];
+    [STUserDefaults saveKeyValue:UD_CALL_STARTTIME value:recordStr];
+    
+    //记录被叫
+    UserModel *userModel = [[AccountManager sharedAccountManager]getUserModel];
+    [STUserDefaults saveKeyValue:UD_CALL_CALLEE value:userModel.userUid];
 
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    dic[@"accId"] = caller;
+    WS(weakSelf)
+    [STNetUtil get:URL_GET_USER_BY_ACCID parameters:dic success:^(RespondModel *respondModel) {
+        id user = [respondModel.data objectForKey:@"user"];
+        UserModel *userModel = [UserModel mj_objectWithKeyValues:user];
+        //记录主叫
+        [STUserDefaults saveKeyValue:UD_CALL_CALLER value:userModel.userUid];
+        [VideoPage show:[[PageManager sharedPageManager]getCurrentPage] callID:callID userModel:userModel];
+        [[STAudioUtil sharedSTAudioUtil]startPlay:@"ring"];
+        if(weakSelf.isAppEnterBackgroud){
+            [self sendLocalNotification:userModel];
+        }
+    } failure:^(int errorCode) {
+        [STLog print:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+    }];
+}
+
+-(void)handleConnectSuccess:(UInt64)callID{
+    //记录接通时间
+    NSString *recordStr = [STTimeUtil generateDate:[STTimeUtil getCurrentTimeStamp] format:@"YYYY-MM-dd HH:mm:ss"];
+    [STUserDefaults saveKeyValue:UD_CALL_CALLEDTIME value:recordStr];
+    [[STObserverManager sharedSTObserverManager] sendMessage:Notify_CALL_CONNECTED msg:[NSString stringWithFormat:@"%llu",callID]];
+}
+
+
+-(void)handleHungup:(UInt64)callID{
+    //记录结束时间
+    NSString *recordStr = [STTimeUtil generateDate:[STTimeUtil getCurrentTimeStamp] format:@"YYYY-MM-dd HH:mm:ss"];
+    [STUserDefaults saveKeyValue:UD_CALL_ENTTIME value:recordStr];
+    [[STObserverManager sharedSTObserverManager] sendMessage:Notify_CALL_HUNGUP msg:[NSString stringWithFormat:@"%llu",callID]];
+}
+
+-(void)handleDisconnect:(UInt64)callID{
+    //记录结束时间
+    NSString *recordStr = [STTimeUtil generateDate:[STTimeUtil getCurrentTimeStamp] format:@"YYYY-MM-dd HH:mm:ss"];
+    [STUserDefaults saveKeyValue:UD_CALL_ENTTIME value:recordStr];
+    [[STObserverManager sharedSTObserverManager] sendMessage:Notify_CALL_DISCONNECT msg:[NSString stringWithFormat:@"%llu",callID]];
+
+}
+
+
+-(void)sendLocalNotification:(UserModel *)userModel{
+    NSString *content = [NSString stringWithFormat:@"您有一个%@的来电",userModel.userName];
+    UILocalNotification *localNote = [[UILocalNotification alloc] init];
+    localNote.fireDate = [NSDate dateWithTimeIntervalSinceNow:30];
+    localNote.alertBody = content;
+    localNote.alertAction = content; // 锁屏状态下显示: 滑动来快点啊
+    localNote.alertTitle = @"来电请求";
+    localNote.soundName = @"notify_ring.wav";
+    localNote.userInfo = @{@"type":@1};
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNote];
+}
 
 @end

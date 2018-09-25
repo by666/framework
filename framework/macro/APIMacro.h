@@ -124,6 +124,17 @@
 #define URL_VERIFY_USER [TestUrl stringByAppendingString:@"/user/testPassManageApply"]
 
 
+#pragma mark 网易音视频
+
+//通过用户ID获取网易信息
+#define URL_GET_ACCID_BY_USER [TestUrl stringByAppendingString:@"/netease/getNeteaseUserByUserUid"]
+
+//通过网易ID获取用户信息
+#define URL_GET_USER_BY_ACCID [TestUrl stringByAppendingString:@"/netease/getNeteaseUserByAccid"]
+
+//创建通话记录
+#define URL_POST_CREATE_RECORD [TestUrl stringByAppendingString:@"/netease/createCallRecord"]
+
 /*------------------------------------------------------------------------*/
 
 

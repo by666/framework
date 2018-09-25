@@ -80,6 +80,7 @@
                 [[AccountManager sharedAccountManager] clearLiveModel];
                 [[AccountManager sharedAccountManager] clearMainModel];
                 [[AccountManager sharedAccountManager] clearApplyModel];
+                [[AccountManager sharedAccountManager] clearWYUserModel];
                 [weakSelf.delegate onRequestSuccess:respondModel data:nil];
             }else{
                 [weakSelf.delegate onRequestFail:respondModel.msg];

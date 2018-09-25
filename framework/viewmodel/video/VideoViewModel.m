@@ -9,6 +9,7 @@
 #import "VideoViewModel.h"
 #import "WYManager.h"
 #import "STTimeUtil.h"
+#import "STAudioUtil.h"
 
 @interface VideoViewModel()
 
@@ -19,6 +20,12 @@
 @implementation VideoViewModel
 
 
+-(instancetype)initWithCaller:(UserModel *)callerModel{
+    if(self == [super init]){
+        _callerModel = callerModel;
+    }
+    return self;
+}
 
 -(void)doAccept:(UInt64)callID{
     [[WYManager sharedWYManager]doRespond:callID accept:YES];
@@ -31,6 +38,7 @@
 
 
 -(void)doReject:(UInt64)callID{
+    [[STAudioUtil sharedSTAudioUtil]stopPlay];
     [[WYManager sharedWYManager] doRespond:callID accept:NO];
     if(_delegate){
         [_delegate onRejectOrHungUp];
@@ -39,6 +47,7 @@
 }
 
 -(void)doHungup:(UInt64)callID{
+    [[STAudioUtil sharedSTAudioUtil]stopPlay];
     [[WYManager sharedWYManager] doHangup:callID];
     if(_delegate){
         [_delegate onRejectOrHungUp];

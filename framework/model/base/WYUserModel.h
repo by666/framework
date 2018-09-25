@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WYUserModel : NSObject
+@interface WYUserModel : NSObject<NSCoding>
 
 @property(assign, nonatomic)long wyid;
 @property(copy, nonatomic)NSString *userUid;

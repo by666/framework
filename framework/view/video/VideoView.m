@@ -90,9 +90,13 @@
     if(_faceImageView == nil){
         CGFloat width = ScreenWidth - STWidth(36);
         _faceImageView = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(18), STHeight(56), width, width* 240 / 340)];
-        _faceImageView.contentMode = UIViewContentModeScaleAspectFill;
-        _faceImageView.backgroundColor = c01;
-        _faceImageView.image = [UIImage imageNamed:@"test_video"];
+        _faceImageView.contentMode = UIViewContentModeScaleAspectFit;
+        if(!IS_NS_STRING_EMPTY(_mViewModel.callerModel.headUrl)){
+            [_faceImageView sd_setImageWithURL:[[STUploadImageUtil sharedSTUploadImageUtil] getRealUrl:_mViewModel.callerModel.headUrl] placeholderImage:[UIImage imageNamed:@"ic_head"]];
+
+        }else{
+            _faceImageView.image = [UIImage imageNamed:@"test_video"];
+        }
         [self addSubview:_faceImageView];
     }
     return _faceImageView;
@@ -101,7 +105,7 @@
 //来电姓名
 -(UIButton *)positionBtn{
     if(_positionBtn == nil){
-        NSString *positionStr = @"A栋一单元本门口";
+        NSString *positionStr = _mViewModel.callerModel.userName;
         CGSize pSize = [positionStr sizeWithMaxWidth:ScreenWidth font:[UIFont systemFontOfSize:STFont(16)]];
         CGFloat pWidth = pSize.width + STWidth(22);
         
